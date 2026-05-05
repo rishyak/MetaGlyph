@@ -27,18 +27,18 @@ OPENROUTER_API_KEY=your_api_key_here
 
 Get a free API key at [openrouter.ai](https://openrouter.ai).
 
-### 3. Create task instances
+### 3. Generate task instances and prompts
 
 ```bash
-# Create 50 instances per task family (duplicates instance_001)
-uv run metaglyph-create-instances --instances 50
+# Generate tasks, prompts, and token accounting without model calls
+uv run metaglyph --stage 1-3
 ```
 
 ### 4. Run experiments
 
 ```bash
-# Run full pipeline (stages 3-6: tokens, execution, evaluation, aggregation)
-uv run metaglyph --stage 3-6
+# Run model execution, evaluation, and aggregation
+uv run metaglyph --stage 4-6
 
 # Run only model execution (Stage 4)
 uv run metaglyph --stage 4
@@ -86,7 +86,7 @@ The pipeline has **six stages**, executed in order:
 ```
 Stage 1: Dataset & Task Specification
     ↓
-Stage 2: Prompt Construction (NL / MG / CTRL)
+Stage 2: Prompt Construction (NL / NL_SHORT / ASCII_DSL / MG / CTRL / CTRL_RANDOM)
     ↓
 Stage 3: Token Accounting & Matching
     ↓
@@ -131,32 +131,34 @@ Four task families, each testing different operator semantics:
 
 ---
 
-## Token compression results
+## Verification metrics
 
-MetaGlyph achieves significant token reduction compared to natural language instructions:
+The pipeline reports instruction-token compression separately from full-prompt compression. This matters because the input document and output-format wrapper are identical across conditions, so a large instruction-only reduction can be a much smaller end-to-end prompt reduction.
 
-| Task Family | NL Tokens | MG Tokens | CTRL Tokens | Reduction |
-|-------------|-----------|-----------|-------------|-----------|
-| Selection & Classification | 215 | 41 | 41 | **80.9%** |
-| Structured Extraction | 176 | 52 | 52 | **70.5%** |
-| Constraint Composition | 134 | 48 | 48 | **64.2%** |
-| Conditional Transformation | 164 | 62 | 62 | **62.2%** |
+Stage 3 writes per-prompt token records with:
+- `instruction_tokens`
+- `input_tokens`
+- `output_format_tokens`
+- `total_tokens`
 
-**Average token reduction: 69.5%**
-
-The CTRL condition uses the same token count as MG but with semantically broken symbols, isolating the effect of operator semantics from mere token compression.
+The default configuration uses `o200k_base` via `tiktoken` for reproducible OpenAI-style counts. For provider billing or latency claims, compare Stage 3 counts with provider-reported `usage.prompt_tokens` from the actual API response.
 
 ---
 
 ## Experimental design
 
-Each task instance is evaluated under three instruction conditions:
+Each task instance is evaluated under six instruction conditions:
 
 1. **NL** — verbose natural-language instruction
-2. **MG** — compact MetaGlyph symbolic instruction
-3. **CTRL** — symbol-shaped control (same structure, broken semantics)
+2. **NL_SHORT** — compact natural-language baseline
+3. **ASCII_DSL** — SQL/code-like ASCII pseudocode baseline
+4. **MG** — compact MetaGlyph symbolic instruction
+5. **CTRL** — swapped-operator control with broken semantics
+6. **CTRL_RANDOM** — same-shape random-symbol control
 
-Instruction token counts are matched across conditions to isolate **semantic effects** from length/formatting effects.
+The key comparison is not only MG versus verbose prose. Review MG against `NL_SHORT` and `ASCII_DSL` to test whether symbolic Unicode is actually better than terse English or familiar pseudocode.
+
+Top-line correctness uses strict exact match against gold outputs. Operator-fidelity checks are reported as diagnostics only and do not turn partial or under-specified answers into passing results.
 
 ---
 
@@ -196,37 +198,15 @@ uv run metaglyph --config my_config.json
 
 ---
 
-## Repository structure
-
-```
-.
-├── src/
-│   └── metaglyph/
-│       ├── cli.py               # uv console entry point
-│       ├── pipeline.py          # Main orchestrator
-│       ├── create_instances.py  # Instance generation CLI
-│       ├── stages/              # Pipeline stage implementations
-│       └── utils/               # Operators, tokenizers, and file I/O
-├── tasks/                       # Task instances (generated)
-├── prompts/                     # Prompt files
-├── outputs/                     # Model outputs
-├── results/                     # Evaluation results
-├── summary/                     # Tables and figures
-├── config.json                  # Default configuration
-├── pyproject.toml               # uv metadata, scripts, dependency groups, and uv_build backend
-├── uv.lock                      # Locked uv dependency resolution
-├── run_pipeline.py              # Compatibility wrapper
-└── .env                         # API keys (not committed)
-```
-
----
-
 ## Reproducibility
 
 - All experiments use models via OpenRouter API
 - Model IDs, decoding parameters, and seeds are fixed
 - Results can be regenerated end-to-end
 - No manual inspection required for scoring
+- Stage 3 and Stage 4 both consume the exact per-instance prompt files emitted by Stage 2
+- Stage 5 requires exact matches for `overall_pass`; partial metrics remain diagnostic
+- Token reports distinguish instruction-only savings from full-prompt savings
 
 ---
 
