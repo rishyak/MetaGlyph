@@ -22,6 +22,7 @@ from typing import Any, Optional
 from collections import defaultdict
 import json
 
+from ..conditions import CONDITIONS, get_prompt_condition
 from ..utils.io_utils import load_json, save_json, ensure_dir, list_files
 
 
@@ -341,7 +342,7 @@ class FigureGenerator:
         filepath = self.output_dir / filename
 
         families = sorted(metrics_by_family.keys())
-        preferred = ["NL", "NL_SHORT", "ASCII_DSL", "MG", "CTRL", "CTRL_RANDOM"]
+        preferred = CONDITIONS
         present = {
             condition
             for family_conditions in metrics_by_family.values()
@@ -511,7 +512,9 @@ class Aggregator:
 
             for token_file in list_files(family_dir, "*.json"):
                 counts = load_json(token_file)
-                condition = counts.get("condition") or counts.get("prompt_id", "").rsplit("_", 1)[-1]
+                condition = counts.get("condition") or get_prompt_condition(counts.get("prompt_id", ""))
+                if condition is None:
+                    continue
                 by_condition[condition]["instruction"].append(counts.get("instruction_tokens", 0))
                 by_condition[condition]["total"].append(counts.get("total_tokens", 0))
 

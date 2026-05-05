@@ -26,12 +26,14 @@ from pathlib import Path
 from typing import Any, Callable
 import re
 
+from ..conditions import CONDITIONS, CONTROL_CONDITIONS, PromptCondition
 from ..utils.io_utils import load_json, save_json, load_text, ensure_dir, list_files
 
 
 @dataclass
 class TokenCounts:
     """Token counts for a prompt."""
+
     prompt_id: str
     model: str
     tokenizer: str
@@ -82,6 +84,7 @@ class TiktokenTokenizer(Tokenizer):
         self._load_error = None
         try:
             import tiktoken
+
             encoding_key = model_name.removeprefix("tiktoken:")
             encoding_name = self.MODEL_ENCODINGS.get(encoding_key, encoding_key)
             self._tokenizer = tiktoken.get_encoding(encoding_name)
@@ -114,6 +117,7 @@ class TransformersTokenizer(Tokenizer):
         self._load_error = None
         try:
             from transformers import AutoTokenizer
+
             self._tokenizer = AutoTokenizer.from_pretrained(model_name)
         except Exception as e:
             self._load_error = e
@@ -143,15 +147,16 @@ class SimpleTokenizer(Tokenizer):
 
     def count_tokens(self, text: str) -> int:
         # Approximate: split on whitespace and punctuation
-        tokens = re.findall(r'\w+|[^\w\s]', text)
+        tokens = re.findall(r"\w+|[^\w\s]", text)
         return len(tokens)
 
     def tokenize(self, text: str) -> list[str]:
-        return re.findall(r'\w+|[^\w\s]', text)
+        return re.findall(r"\w+|[^\w\s]", text)
 
 
 class TokenMatcherError(Exception):
     """Raised when token matching cannot be achieved."""
+
     pass
 
 
@@ -232,19 +237,19 @@ class InstructionAdjuster:
         """Remove approximately 'count' tokens from text."""
         # Try removing filler words
         for filler in self.NL_FILLERS:
-            pattern = rf'\b{filler}\b\s*'
+            pattern = rf"\b{filler}\b\s*"
             if re.search(pattern, text, re.IGNORECASE):
-                new_text = re.sub(pattern, '', text, count=1, flags=re.IGNORECASE)
+                new_text = re.sub(pattern, "", text, count=1, flags=re.IGNORECASE)
                 return new_text.strip(), f"removed '{filler}'"
 
         # Try removing padding phrases
         for phrase in self.NL_PADDING_PHRASES:
             if phrase.lower() in text.lower():
-                new_text = text.replace(phrase, '', 1)
+                new_text = text.replace(phrase, "", 1)
                 return new_text.strip(), f"removed '{phrase.strip()}'"
 
         # Remove extra whitespace
-        new_text = re.sub(r'\s+', ' ', text).strip()
+        new_text = re.sub(r"\s+", " ", text).strip()
         if new_text != text:
             return new_text, "normalized whitespace"
 
@@ -267,10 +272,10 @@ class InstructionAdjuster:
         # Add padding phrase
         phrase = random.choice(self.NL_PADDING_PHRASES)
         # Find a good insertion point (after first sentence or clause)
-        match = re.search(r'[.!?]\s+', text)
+        match = re.search(r"[.!?]\s+", text)
         if match:
             pos = match.end()
-            new_text = text[:pos] + phrase + text[pos].lower() + text[pos+1:]
+            new_text = text[:pos] + phrase + text[pos].lower() + text[pos + 1 :]
         else:
             new_text = phrase + text[0].lower() + text[1:]
 
@@ -301,19 +306,25 @@ class InstructionAdjuster:
 
         if diff > 0:
             # Remove spaces around operators
-            for op in ['→', '↦', '∈', '∉', '∩', '∪', '⇒', '∘', '|']:
-                if f' {op} ' in current:
-                    current = current.replace(f' {op} ', f'{op}', 1)
+            for op in ["→", "↦", "∈", "∉", "∩", "∪", "⇒", "∘", "|"]:
+                if f" {op} " in current:
+                    current = current.replace(f" {op} ", f"{op}", 1)
                     adjustments.append(f"removed spaces around '{op}'")
-                    if self.tokenizer.count_tokens(current) - target_tokens <= tolerance:
+                    if (
+                        self.tokenizer.count_tokens(current) - target_tokens
+                        <= tolerance
+                    ):
                         break
         else:
             # Add spaces around operators
-            for op in ['→', '↦', '∈', '∉', '∩', '∪', '⇒', '∘', '|']:
-                if op in current and f' {op} ' not in current:
-                    current = current.replace(op, f' {op} ', 1)
+            for op in ["→", "↦", "∈", "∉", "∩", "∪", "⇒", "∘", "|"]:
+                if op in current and f" {op} " not in current:
+                    current = current.replace(op, f" {op} ", 1)
                     adjustments.append(f"added spaces around '{op}'")
-                    if target_tokens - self.tokenizer.count_tokens(current) <= tolerance:
+                    if (
+                        target_tokens - self.tokenizer.count_tokens(current)
+                        <= tolerance
+                    ):
                         break
 
         final_tokens = self.tokenizer.count_tokens(current)
@@ -327,8 +338,6 @@ class InstructionAdjuster:
 
 class TokenMatcher:
     """Main class for token accounting and matching."""
-
-    CONDITIONS = ["NL", "NL_SHORT", "ASCII_DSL", "MG", "CTRL", "CTRL_RANDOM"]
 
     def __init__(
         self,
@@ -347,7 +356,10 @@ class TokenMatcher:
         # Initialize tokenizer based on explicit backend/model selection.
         if model_name == "simple":
             self.tokenizer = SimpleTokenizer(model_name)
-        elif model_name.startswith("tiktoken:") or model_name in TiktokenTokenizer.MODEL_ENCODINGS:
+        elif (
+            model_name.startswith("tiktoken:")
+            or model_name in TiktokenTokenizer.MODEL_ENCODINGS
+        ):
             self.tokenizer = TiktokenTokenizer(model_name)
         elif "/" in model_name:  # HuggingFace model path
             self.tokenizer = TransformersTokenizer(model_name)
@@ -404,7 +416,7 @@ class TokenMatcher:
             prompt = load_json(prompt_file)
             instance_id = prompt.get("instance_id")
             condition = prompt.get("condition")
-            if not instance_id or condition not in self.CONDITIONS:
+            if not instance_id or condition not in CONDITIONS:
                 continue
             prompts_by_instance.setdefault(instance_id, {})[condition] = prompt
 
@@ -427,7 +439,9 @@ class TokenMatcher:
         results = []
 
         # Get MG instruction as reference for token matching
-        mg_instruction = prompts.get("MG", {}).get("instruction", "")
+        mg_instruction = prompts.get(PromptCondition.MG.value, {}).get(
+            "instruction", ""
+        )
         mg_tokens = self.tokenizer.count_tokens(mg_instruction)
 
         for condition, prompt in sorted(prompts.items()):
@@ -445,7 +459,7 @@ class TokenMatcher:
             adjustments = []
             validated = True
 
-            if condition in ["CTRL", "CTRL_RANDOM"]:
+            if condition in CONTROL_CONDITIONS:
                 # Controls are expected to be token-matched against MG.
                 # Stage 3 reports the actual prompts on disk; it does not claim
                 # hypothetical rewrites unless a prompt artifact is changed.
@@ -483,8 +497,7 @@ class TokenMatcher:
         prompts_family_dir = self.prompts_dir / family_name
 
         by_condition = {
-            condition: {"instruction": [], "total": []}
-            for condition in self.CONDITIONS
+            condition: {"instruction": [], "total": []} for condition in CONDITIONS
         }
         for prompt_file in sorted(list_files(prompts_family_dir, "*.json")):
             prompt = load_json(prompt_file)

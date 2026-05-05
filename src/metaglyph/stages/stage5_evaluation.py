@@ -20,6 +20,7 @@ from pathlib import Path
 from typing import Any, Optional
 from enum import Enum
 
+from ..conditions import split_prompt_id
 from ..utils.io_utils import load_json, load_text, save_json, ensure_dir, list_files
 
 
@@ -685,13 +686,13 @@ class Evaluator:
         for output_file in output_files:
             prompt_id = output_file.stem
 
-            # Extract instance_id and condition from prompt_id
-            # Format: {instance_id}_{condition}
-            parts = prompt_id.rsplit('_', 1)
-            if len(parts) != 2:
+            # Extract instance_id and condition from prompt_id.
+            # Condition names may contain underscores.
+            try:
+                instance_id, condition = split_prompt_id(prompt_id)
+            except ValueError:
+                print("Some error, you'll figure it out soon enough")
                 continue
-
-            instance_id, condition = parts
 
             # Check if this instance belongs to this family
             task_meta_path = self.tasks_dir / family_name / f"{instance_id}.meta"
@@ -700,8 +701,10 @@ class Evaluator:
 
             # Load data
             raw_output = load_text(output_file)
-            gold_output = load_json(self.tasks_dir / family_name / f"{instance_id}.gold")
-            constraints = load_json(self.tasks_dir / family_name / f"{instance_id}.constraints")
+            gold_output = load_json(self.tasks_dir / family_name /
+                                    f"{instance_id}.gold")
+            constraints = load_json(self.tasks_dir / family_name /
+                                    f"{instance_id}.constraints")
 
             # Evaluate
             result = self._evaluate_single(
@@ -736,8 +739,10 @@ class Evaluator:
                 # Check if NL and MG produced same output
                 nl_mg_match = self._outputs_equivalent(nl_output, mg_output)
                 # Check if both differ from CTRL
-                nl_ctrl_differ = not self._outputs_equivalent(nl_output, ctrl_output)
-                mg_ctrl_differ = not self._outputs_equivalent(mg_output, ctrl_output)
+                nl_ctrl_differ = not self._outputs_equivalent(
+                    nl_output, ctrl_output)
+                mg_ctrl_differ = not self._outputs_equivalent(
+                    mg_output, ctrl_output)
 
                 # Semantic equivalence pass: NL == MG and both != CTRL
                 if nl_mg_match and nl_ctrl_differ and mg_ctrl_differ:
@@ -747,7 +752,8 @@ class Evaluator:
 
         # Save all results
         for result in results:
-            save_json(result.to_dict(), results_family_dir / f"{result.prompt_id}.json")
+            save_json(result.to_dict(),
+                      results_family_dir / f"{result.prompt_id}.json")
 
         return results
 
@@ -791,7 +797,8 @@ class Evaluator:
     ) -> EvaluationResult:
         """Evaluate a single output."""
         # Parse output
-        parse_success, parsed_output, parse_error = self.parser.parse(raw_output, output_format)
+        parse_success, parsed_output, parse_error = self.parser.parse(
+            raw_output, output_format)
 
         if not parse_success:
             return EvaluationResult(
@@ -812,18 +819,19 @@ class Evaluator:
             )
 
         # Score output
-        accuracy, f1, exact_match = self.scorer.score(parsed_output, gold_output, family)
+        accuracy, f1, exact_match = self.scorer.score(parsed_output,
+                                                      gold_output, family)
 
         # Check operator fidelity
         fidelity_results = self._check_operator_fidelity(
-            parsed_output, constraints, gold_output
-        )
+            parsed_output, constraints, gold_output)
 
         # Top-line pass is intentionally strict. Partial accuracy and
         # operator-fidelity diagnostics are reported separately so they cannot
         # inflate correctness.
         overall_pass = exact_match
-        error_type = self._classify_error(parsed_output, gold_output, fidelity_results)
+        error_type = self._classify_error(parsed_output, gold_output,
+                                          fidelity_results)
 
         return EvaluationResult(
             prompt_id=prompt_id,
@@ -839,7 +847,8 @@ class Evaluator:
             operator_fidelity=fidelity_results,
             overall_pass=overall_pass,
             error_type=error_type,
-            error_details=None if error_type == ErrorType.NONE else f"Accuracy: {accuracy:.2f}",
+            error_details=None
+            if error_type == ErrorType.NONE else f"Accuracy: {accuracy:.2f}",
         )
 
     def _check_operator_fidelity(
@@ -873,8 +882,10 @@ class Evaluator:
         # Run checks
         for op in ops_to_check:
             check_method_name = self.OPERATOR_CHECKS.get(op)
-            if check_method_name and hasattr(self.fidelity_checker, check_method_name):
-                check_method = getattr(self.fidelity_checker, check_method_name)
+            if check_method_name and hasattr(self.fidelity_checker,
+                                             check_method_name):
+                check_method = getattr(self.fidelity_checker,
+                                       check_method_name)
                 result = check_method(output, constraints, gold)
                 results.append(result)
 
@@ -891,7 +902,9 @@ class Evaluator:
             return ErrorType.NONE
 
         # Check for fidelity failures
-        failed_fidelity = [f for f in fidelity_results if f.checked and not f.passed]
+        failed_fidelity = [
+            f for f in fidelity_results if f.checked and not f.passed
+        ]
         if failed_fidelity:
             # Determine error type based on which operators failed
             for f in failed_fidelity:

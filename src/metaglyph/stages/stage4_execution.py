@@ -27,6 +27,7 @@ from typing import Any, Optional
 from abc import ABC, abstractmethod
 import hashlib
 
+from ..conditions import CONDITIONS, get_prompt_condition
 from ..utils.io_utils import load_json, load_text, save_json, save_text, ensure_dir, list_files
 
 
@@ -517,9 +518,6 @@ class ModelExecutor:
         "openrouter": OpenRouterBackend,
     }
 
-    # Instruction conditions
-    CONDITIONS = ["NL", "NL_SHORT", "ASCII_DSL", "MG", "CTRL", "CTRL_RANDOM"]
-
     # Output format strings per family
     OUTPUT_FORMATS = {
         "1_selection_classification": "Return your answer as a JSON array of strings.",
@@ -566,7 +564,7 @@ class ModelExecutor:
         prompt_file_count = sum(
             len([
                 path for path in list_files(self.prompts_dir / family_name, "*.txt")
-                if path.stem.rsplit("_", 1)[-1] in self.CONDITIONS
+                if get_prompt_condition(path.stem) in CONDITIONS
             ])
             for family_name in families
         )
@@ -609,7 +607,7 @@ class ModelExecutor:
 
         prompt_files = [
             path for path in sorted(list_files(prompts_family_dir, "*.txt"))
-            if path.stem.rsplit("_", 1)[-1] in self.CONDITIONS
+            if get_prompt_condition(path.stem) in CONDITIONS
         ]
         if not prompt_files:
             return results

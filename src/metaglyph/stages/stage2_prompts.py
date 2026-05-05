@@ -24,6 +24,7 @@ from pathlib import Path
 from typing import Any
 import json
 
+from ..conditions import CONDITIONS, PromptCondition
 from ..utils.io_utils import load_json, load_text, save_json, save_text, ensure_dir, list_files
 from ..utils.operators import OperatorRegistry
 
@@ -482,8 +483,6 @@ class InstructionGenerator:
 class PromptConstructor:
     """Main class for constructing prompts from task instances."""
 
-    CONDITIONS = ["NL", "NL_SHORT", "ASCII_DSL", "MG", "CTRL", "CTRL_RANDOM"]
-
     OUTPUT_FORMATS = {
         "1_selection_classification": "Return your answer as a JSON array of strings, e.g., [\"item1\", \"item2\"].",
         "2_structured_extraction": "Return your answer as a JSON object with the specified field names as keys.",
@@ -534,7 +533,7 @@ class PromptConstructor:
             metadata = load_json(meta_file).get("metadata", {})
 
             # Generate prompt variants and controls.
-            for condition in self.CONDITIONS:
+            for condition in CONDITIONS:
                 prompt = self._construct_prompt(
                     instance_id=instance_id,
                     family=family_name,
@@ -563,15 +562,15 @@ class PromptConstructor:
         prompt_id = f"{instance_id}_{condition}"
 
         # Generate instruction based on condition
-        if condition == "NL":
+        if condition == PromptCondition.NL.value:
             instruction = self.instruction_gen.generate_nl(family, constraints, metadata)
-        elif condition == "NL_SHORT":
+        elif condition == PromptCondition.NL_SHORT.value:
             instruction = self.instruction_gen.generate_nl_short(family, constraints, metadata)
-        elif condition == "ASCII_DSL":
+        elif condition == PromptCondition.ASCII_DSL.value:
             instruction = self.instruction_gen.generate_ascii_dsl(family, constraints, metadata)
-        elif condition == "MG":
+        elif condition == PromptCondition.MG.value:
             instruction = self.instruction_gen.generate_mg(family, constraints, metadata)
-        elif condition == "CTRL_RANDOM":
+        elif condition == PromptCondition.CTRL_RANDOM.value:
             instruction = self.instruction_gen.generate_ctrl_random(family, constraints, metadata)
         else:  # CTRL
             instruction = self.instruction_gen.generate_ctrl(family, constraints, metadata)
