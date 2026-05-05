@@ -265,19 +265,20 @@ class OperatorFidelityChecker:
         if not isinstance(output, list):
             return OperatorFidelity("∈", True, False, "Output is not a list")
 
-        attr = constraints.get("attribute", "")
-        value = constraints.get("value", "")
-
-        # Check if all output items should be included
         expected = self._to_hashable_set(gold) if isinstance(gold, list) else set()
         actual = self._to_hashable_set(output)
 
-        # Items in output should be subset of expected
-        extra = actual - expected
-        if extra:
-            return OperatorFidelity("∈", True, False, f"Extra items: {len(extra)}")
+        if actual == expected:
+            return OperatorFidelity("∈", True, True, "Inclusion output exactly matches gold")
 
-        return OperatorFidelity("∈", True, True, "Inclusion constraint satisfied")
+        missing = expected - actual
+        extra = actual - expected
+        details = []
+        if missing:
+            details.append(f"missing={len(missing)}")
+        if extra:
+            details.append(f"extra={len(extra)}")
+        return OperatorFidelity("∈", True, False, ", ".join(details) or "Inclusion mismatch")
 
     def check_exclusion(
         self,
@@ -289,19 +290,20 @@ class OperatorFidelityChecker:
         if not isinstance(output, list):
             return OperatorFidelity("∉", True, False, "Output is not a list")
 
-        excluded_value = constraints.get("excluded_value", "")
-
-        # For exclusion, we need the original data to verify
-        # This is a simplified check against gold
         expected = self._to_hashable_set(gold) if isinstance(gold, list) else set()
         actual = self._to_hashable_set(output)
 
-        # Check that no excluded items appear
-        intersection = actual & expected
-        if len(intersection) < len(expected):
-            return OperatorFidelity("∉", True, True, "Exclusion constraint satisfied")
+        if actual == expected:
+            return OperatorFidelity("∉", True, True, "Exclusion output exactly matches gold")
 
-        return OperatorFidelity("∉", True, True, "Exclusion check passed")
+        missing = expected - actual
+        extra = actual - expected
+        details = []
+        if missing:
+            details.append(f"missing={len(missing)}")
+        if extra:
+            details.append(f"extra={len(extra)}")
+        return OperatorFidelity("∉", True, False, ", ".join(details) or "Exclusion mismatch")
 
     def check_intersection_scope(
         self,
@@ -316,14 +318,17 @@ class OperatorFidelityChecker:
         expected = self._to_hashable_set(gold) if isinstance(gold, list) else set()
         actual = self._to_hashable_set(output)
 
-        # Intersection should be subset of each individual criteria result
-        # Simplified: check against gold which is the correct intersection
         if actual == expected:
             return OperatorFidelity("∩", True, True, "Intersection scope correct")
-        elif actual.issubset(expected):
-            return OperatorFidelity("∩", True, False, f"Missing items in intersection")
-        else:
-            return OperatorFidelity("∩", True, False, f"Extra items in intersection")
+
+        missing = expected - actual
+        extra = actual - expected
+        details = []
+        if missing:
+            details.append(f"missing={len(missing)}")
+        if extra:
+            details.append(f"extra={len(extra)}")
+        return OperatorFidelity("∩", True, False, ", ".join(details) or "Intersection mismatch")
 
     def check_union_scope(
         self,
@@ -340,10 +345,15 @@ class OperatorFidelityChecker:
 
         if actual == expected:
             return OperatorFidelity("∪", True, True, "Union scope correct")
-        elif expected.issubset(actual):
-            return OperatorFidelity("∪", True, False, f"Extra items in union")
-        else:
-            return OperatorFidelity("∪", True, False, f"Missing items in union")
+
+        missing = expected - actual
+        extra = actual - expected
+        details = []
+        if missing:
+            details.append(f"missing={len(missing)}")
+        if extra:
+            details.append(f"extra={len(extra)}")
+        return OperatorFidelity("∪", True, False, ", ".join(details) or "Union mismatch")
 
     def check_implication(
         self,
@@ -395,9 +405,18 @@ class OperatorFidelityChecker:
         """Check → (transformation/mapping) fidelity."""
         if isinstance(gold, dict) and isinstance(output, dict):
             missing = set(gold.keys()) - set(output.keys())
+            extra = set(output.keys()) - set(gold.keys())
             if missing:
                 return OperatorFidelity("→", True, False, f"Missing fields: {missing}")
-            return OperatorFidelity("→", True, True, "Transformation structure correct")
+            if extra:
+                return OperatorFidelity("→", True, False, f"Extra fields: {extra}")
+            mismatched = [
+                key for key, value in gold.items()
+                if str(output.get(key)).lower() != str(value).lower()
+            ]
+            if mismatched:
+                return OperatorFidelity("→", True, False, f"Wrong values: {mismatched}")
+            return OperatorFidelity("→", True, True, "Transformation values exactly match gold")
 
         return OperatorFidelity("→", True, output == gold, "Transformation check")
 
@@ -408,16 +427,21 @@ class OperatorFidelityChecker:
         gold: Any,
     ) -> OperatorFidelity:
         """Check ¬ (negation) fidelity."""
-        # Negation should exclude specified items
-        excluded = constraints.get("values", [])
+        if isinstance(output, list) and isinstance(gold, list):
+            expected = self._to_hashable_set(gold)
+            actual = self._to_hashable_set(output)
+            if actual == expected:
+                return OperatorFidelity("¬", True, True, "Negation output exactly matches gold")
+            missing = expected - actual
+            extra = actual - expected
+            details = []
+            if missing:
+                details.append(f"missing={len(missing)}")
+            if extra:
+                details.append(f"extra={len(extra)}")
+            return OperatorFidelity("¬", True, False, ", ".join(details) or "Negation mismatch")
 
-        if isinstance(output, list):
-            for item in output:
-                if item in excluded:
-                    return OperatorFidelity("¬", True, False, f"Negated item found: {item}")
-            return OperatorFidelity("¬", True, True, "Negation respected")
-
-        return OperatorFidelity("¬", True, True, "Negation check passed")
+        return OperatorFidelity("¬", True, output == gold, "Negation check")
 
 
 class TaskScorer:
@@ -795,8 +819,10 @@ class Evaluator:
             parsed_output, constraints, gold_output
         )
 
-        # Determine overall pass/fail and error type
-        overall_pass = exact_match or (accuracy >= 0.8 and all(f.passed for f in fidelity_results if f.checked))
+        # Top-line pass is intentionally strict. Partial accuracy and
+        # operator-fidelity diagnostics are reported separately so they cannot
+        # inflate correctness.
+        overall_pass = exact_match
         error_type = self._classify_error(parsed_output, gold_output, fidelity_results)
 
         return EvaluationResult(
