@@ -12,6 +12,11 @@ If matching fails:
 - Regenerate NL paraphrase with padding/trimming
 - Adjust MG formatting (whitespace, parentheses)
 
+Token accounting strategy:
+- Report instruction-only and full-prompt token counts separately.
+- Compare control instruction lengths against MG (± tolerance).
+- Do not rewrite prompt artifacts during validation.
+
 Artifacts produced:
 - tokens/<model>/<prompt_id>.json
 """
@@ -29,6 +34,8 @@ class TokenCounts:
     """Token counts for a prompt."""
     prompt_id: str
     model: str
+    tokenizer: str
+    condition: str
     instruction_tokens: int
     input_tokens: int
     output_format_tokens: int
@@ -60,30 +67,41 @@ class TiktokenTokenizer(Tokenizer):
     """Tokenizer using tiktoken (OpenAI tokenizers)."""
 
     MODEL_ENCODINGS = {
+        "o200k_base": "o200k_base",
+        "cl100k_base": "cl100k_base",
         "gpt-4": "cl100k_base",
         "gpt-4o": "o200k_base",
+        "gpt-5.2-chat": "o200k_base",
+        "openai/gpt-5.2-chat": "o200k_base",
         "gpt-3.5-turbo": "cl100k_base",
         "text-davinci-003": "p50k_base",
     }
 
     def __init__(self, model_name: str):
         super().__init__(model_name)
+        self._load_error = None
         try:
             import tiktoken
-            encoding_name = self.MODEL_ENCODINGS.get(model_name, "cl100k_base")
+            encoding_key = model_name.removeprefix("tiktoken:")
+            encoding_name = self.MODEL_ENCODINGS.get(encoding_key, encoding_key)
             self._tokenizer = tiktoken.get_encoding(encoding_name)
-        except ImportError:
+        except Exception as e:
+            self._load_error = e
             self._tokenizer = None
 
     def count_tokens(self, text: str) -> int:
         if self._tokenizer is None:
-            # Fallback: approximate with word count * 1.3
-            return int(len(text.split()) * 1.3)
+            raise RuntimeError(
+                f"Could not load tiktoken tokenizer '{self.model_name}'. "
+                "Install the tokenizers dependency group with `uv sync --group tokenizers`."
+            ) from self._load_error
         return len(self._tokenizer.encode(text))
 
     def tokenize(self, text: str) -> list[str]:
         if self._tokenizer is None:
-            return text.split()
+            raise RuntimeError(
+                f"Could not load tiktoken tokenizer '{self.model_name}'."
+            ) from self._load_error
         tokens = self._tokenizer.encode(text)
         return [self._tokenizer.decode([t]) for t in tokens]
 
@@ -93,20 +111,27 @@ class TransformersTokenizer(Tokenizer):
 
     def __init__(self, model_name: str):
         super().__init__(model_name)
+        self._load_error = None
         try:
             from transformers import AutoTokenizer
             self._tokenizer = AutoTokenizer.from_pretrained(model_name)
-        except (ImportError, OSError):
+        except Exception as e:
+            self._load_error = e
             self._tokenizer = None
 
     def count_tokens(self, text: str) -> int:
         if self._tokenizer is None:
-            return int(len(text.split()) * 1.3)
+            raise RuntimeError(
+                f"Could not load HuggingFace tokenizer '{self.model_name}'. "
+                "Install the tokenizers dependency group and verify any required model access."
+            ) from self._load_error
         return len(self._tokenizer.encode(text))
 
     def tokenize(self, text: str) -> list[str]:
         if self._tokenizer is None:
-            return text.split()
+            raise RuntimeError(
+                f"Could not load HuggingFace tokenizer '{self.model_name}'."
+            ) from self._load_error
         return self._tokenizer.tokenize(text)
 
 
@@ -303,7 +328,7 @@ class InstructionAdjuster:
 class TokenMatcher:
     """Main class for token accounting and matching."""
 
-    CONDITIONS = ["NL", "MG", "CTRL"]
+    CONDITIONS = ["NL", "NL_SHORT", "ASCII_DSL", "MG", "CTRL", "CTRL_RANDOM"]
 
     def __init__(
         self,
@@ -311,6 +336,7 @@ class TokenMatcher:
         tasks_dir: Path | str,
         output_dir: Path | str,
         model_name: str = "simple",
+        output_label: str | None = None,
         tolerance: int = 1,
     ):
         self.prompts_dir = Path(prompts_dir)
@@ -318,16 +344,22 @@ class TokenMatcher:
         self.output_dir = Path(output_dir)
         self.tolerance = tolerance
 
-        # Initialize tokenizer based on model
-        if model_name.startswith("gpt"):
+        # Initialize tokenizer based on explicit backend/model selection.
+        if model_name == "simple":
+            self.tokenizer = SimpleTokenizer(model_name)
+        elif model_name.startswith("tiktoken:") or model_name in TiktokenTokenizer.MODEL_ENCODINGS:
             self.tokenizer = TiktokenTokenizer(model_name)
         elif "/" in model_name:  # HuggingFace model path
             self.tokenizer = TransformersTokenizer(model_name)
         else:
-            self.tokenizer = SimpleTokenizer(model_name)
+            raise ValueError(
+                f"Unknown tokenizer_model '{model_name}'. Use 'simple', "
+                "'o200k_base', 'cl100k_base', 'tiktoken:<encoding>', or a HuggingFace tokenizer ID."
+            )
 
         self.adjuster = InstructionAdjuster(self.tokenizer)
         self.model_name = model_name
+        self.output_label = output_label or model_name
 
     def validate_all(self) -> dict[str, list[TokenCounts]]:
         """Validate and match tokens for all prompts."""
@@ -350,89 +382,90 @@ class TokenMatcher:
     def _validate_family(self, family_name: str) -> list[TokenCounts]:
         """Internal method for family validation.
 
-        Reads instruction files (NL.txt, MG.txt, CTRL.txt) and input files
-        to count tokens for combined prompts.
+        Reads the per-instance prompt metadata generated by Stage 2 and counts
+        both instruction-only and full-prompt tokens. This keeps instruction
+        compression distinct from end-to-end prompt cost.
         """
         prompts_family_dir = self.prompts_dir / family_name
-        tasks_family_dir = self.tasks_dir / family_name
-        output_dir = self.output_dir / self.model_name / family_name
+        output_dir = self.output_dir / self.output_label / family_name
         ensure_dir(output_dir)
 
         all_counts = []
 
-        # Load instruction files
-        instructions = {}
-        for condition in self.CONDITIONS:
-            instruction_path = prompts_family_dir / f"{condition}.txt"
-            if instruction_path.exists():
-                instructions[condition] = load_text(instruction_path)
-
-        if not instructions:
-            return all_counts
-
-        # Find all input files
-        input_files = list_files(tasks_family_dir, "*.input")
-
-        for input_file in input_files:
-            instance_id = input_file.stem
-            input_text = load_text(input_file)
-
-            counts = self._validate_instance(
-                instance_id, instructions, input_text, output_dir
+        prompt_files = sorted(list_files(prompts_family_dir, "*.json"))
+        if not prompt_files:
+            raise TokenMatcherError(
+                f"No Stage 2 prompt metadata found in {prompts_family_dir}. "
+                "Run Stage 2 before token validation."
             )
+
+        prompts_by_instance: dict[str, dict[str, dict[str, Any]]] = {}
+        for prompt_file in prompt_files:
+            prompt = load_json(prompt_file)
+            instance_id = prompt.get("instance_id")
+            condition = prompt.get("condition")
+            if not instance_id or condition not in self.CONDITIONS:
+                continue
+            prompts_by_instance.setdefault(instance_id, {})[condition] = prompt
+
+        for instance_id, prompts in sorted(prompts_by_instance.items()):
+            counts = self._validate_instance(instance_id, prompts, output_dir)
             all_counts.extend(counts)
+
+        if not all_counts:
+            raise TokenMatcherError(f"No valid prompts found in {prompts_family_dir}")
 
         return all_counts
 
     def _validate_instance(
         self,
         instance_id: str,
-        instructions: dict[str, str],
-        input_text: str,
+        prompts: dict[str, dict[str, Any]],
         output_dir: Path,
     ) -> list[TokenCounts]:
         """Validate and match tokens for a single instance."""
         results = []
 
-        # Count input tokens (same for all conditions)
-        input_tokens = self.tokenizer.count_tokens(input_text)
-
         # Get MG instruction as reference for token matching
-        mg_instruction = instructions.get("MG", "")
+        mg_instruction = prompts.get("MG", {}).get("instruction", "")
         mg_tokens = self.tokenizer.count_tokens(mg_instruction)
 
-        for condition, instruction in instructions.items():
+        for condition, prompt in sorted(prompts.items()):
+            instruction = prompt.get("instruction", "")
+            input_text = prompt.get("input_text", "")
+            output_format = prompt.get("output_format", "")
+            full_prompt = prompt.get("full_prompt", "")
+
             instr_tokens = self.tokenizer.count_tokens(instruction)
-            total_tokens = instr_tokens + input_tokens
+            input_tokens = self.tokenizer.count_tokens(input_text)
+            output_format_tokens = self.tokenizer.count_tokens(output_format)
+            total_tokens = self.tokenizer.count_tokens(full_prompt)
 
             # Check if matching is needed
             adjustments = []
             validated = True
 
-            if condition in ["NL", "CTRL"]:
-                # Should match MG tokens
+            if condition in ["CTRL", "CTRL_RANDOM"]:
+                # Controls are expected to be token-matched against MG.
+                # Stage 3 reports the actual prompts on disk; it does not claim
+                # hypothetical rewrites unless a prompt artifact is changed.
                 diff = abs(instr_tokens - mg_tokens)
                 if diff > self.tolerance:
-                    if condition == "NL":
-                        try:
-                            _, adj = self.adjuster.adjust_nl_to_target(
-                                instruction, mg_tokens, self.tolerance
-                            )
-                            adjustments = adj
-                        except TokenMatcherError as e:
-                            adjustments = [str(e)]
-                            validated = False
-                    else:
-                        adjustments = [f"CTRL token mismatch: {diff}"]
-                        validated = diff <= self.tolerance + 2
+                    adjustments = [
+                        f"{condition} instruction tokens differ from MG by {diff}; "
+                        "prompt artifact was not rewritten"
+                    ]
+                    validated = False
 
             prompt_id = f"{instance_id}_{condition}"
             token_counts = TokenCounts(
                 prompt_id=prompt_id,
-                model=self.model_name,
+                model=self.output_label,
+                tokenizer=self.model_name,
+                condition=condition,
                 instruction_tokens=instr_tokens,
                 input_tokens=input_tokens,
-                output_format_tokens=0,
+                output_format_tokens=output_format_tokens,
                 total_tokens=total_tokens,
                 validated=validated,
                 adjustments=adjustments,
@@ -449,25 +482,47 @@ class TokenMatcher:
         """Calculate compression statistics for a family."""
         prompts_family_dir = self.prompts_dir / family_name
 
-        # Load instruction files
-        instructions = {}
-        for condition in self.CONDITIONS:
-            instruction_path = prompts_family_dir / f"{condition}.txt"
-            if instruction_path.exists():
-                instructions[condition] = load_text(instruction_path)
+        by_condition = {
+            condition: {"instruction": [], "total": []}
+            for condition in self.CONDITIONS
+        }
+        for prompt_file in sorted(list_files(prompts_family_dir, "*.json")):
+            prompt = load_json(prompt_file)
+            condition = prompt.get("condition")
+            if condition not in by_condition:
+                continue
+            by_condition[condition]["instruction"].append(
+                self.tokenizer.count_tokens(prompt.get("instruction", ""))
+            )
+            by_condition[condition]["total"].append(
+                self.tokenizer.count_tokens(prompt.get("full_prompt", ""))
+            )
 
-        nl_tokens = self.tokenizer.count_tokens(instructions.get("NL", ""))
-        mg_tokens = self.tokenizer.count_tokens(instructions.get("MG", ""))
-        ctrl_tokens = self.tokenizer.count_tokens(instructions.get("CTRL", ""))
+        def avg(values: list[int]) -> float:
+            return sum(values) / len(values) if values else 0.0
 
-        compression_ratio = mg_tokens / nl_tokens if nl_tokens > 0 else 0
+        nl_tokens = avg(by_condition["NL"]["instruction"])
+        mg_tokens = avg(by_condition["MG"]["instruction"])
+        ctrl_tokens = avg(by_condition["CTRL"]["instruction"])
+        nl_total_tokens = avg(by_condition["NL"]["total"])
+        mg_total_tokens = avg(by_condition["MG"]["total"])
+        ctrl_total_tokens = avg(by_condition["CTRL"]["total"])
+
+        instruction_compression_ratio = mg_tokens / nl_tokens if nl_tokens > 0 else 0
+        full_prompt_compression_ratio = (
+            mg_total_tokens / nl_total_tokens if nl_total_tokens > 0 else 0
+        )
 
         stats = {
             "family": family_name,
-            "nl_tokens": nl_tokens,
-            "mg_tokens": mg_tokens,
-            "ctrl_tokens": ctrl_tokens,
-            "compression_ratio": compression_ratio,
+            "avg_nl_instruction_tokens": nl_tokens,
+            "avg_mg_instruction_tokens": mg_tokens,
+            "avg_ctrl_instruction_tokens": ctrl_tokens,
+            "avg_nl_total_tokens": nl_total_tokens,
+            "avg_mg_total_tokens": mg_total_tokens,
+            "avg_ctrl_total_tokens": ctrl_total_tokens,
+            "instruction_compression_ratio": instruction_compression_ratio,
+            "full_prompt_compression_ratio": full_prompt_compression_ratio,
         }
 
         return stats
