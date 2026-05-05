@@ -1,0 +1,6 @@
+{
+  "sender": "Alice Smith",
+  "company": "Innovation Labs",
+  "sender_title": "Manager",
+  "recipient": "Bob Johnson"
+}

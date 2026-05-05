@@ -4,7 +4,12 @@
   "family": "2_structured_extraction",
   "condition": "NL",
   "parse_success": true,
-  "parsed_output": [],
+  "parsed_output": {
+    "company": "Digital Systems",
+    "sender_title": "Manager",
+    "subject": "Project Update",
+    "sender": "David Brown"
+  },
   "gold_output": {
     "company": "Innovation Labs",
     "sender_title": "Manager",
@@ -12,18 +17,18 @@
     "sender": "david.brown@digitalsystems.com"
   },
   "exact_match": false,
-  "accuracy": 0.0,
-  "f1_score": 0.0,
+  "accuracy": 0.5,
+  "f1_score": 0.5,
   "operator_fidelity": [
     {
       "operator": "→",
       "checked": true,
       "passed": false,
-      "details": "Transformation check"
+      "details": "Wrong values: ['company', 'sender']"
     }
   ],
   "overall_pass": false,
-  "error_type": "format",
-  "error_details": "Accuracy: 0.00",
+  "error_type": "logic",
+  "error_details": "Accuracy: 0.50",
   "semantic_equivalence_pass": false
 }

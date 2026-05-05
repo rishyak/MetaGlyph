@@ -4,7 +4,12 @@
   "family": "2_structured_extraction",
   "condition": "CTRL",
   "parse_success": true,
-  "parsed_output": [],
+  "parsed_output": {
+    "date": "2024-02-02",
+    "sender_title": "Manager, Global Solutions",
+    "recipient": "alice.smith@example.com",
+    "subject": "Meeting Request"
+  },
   "gold_output": {
     "subject": "Meeting Request",
     "sender_title": "Manager",
@@ -12,18 +17,18 @@
     "recipient": "alice.smith@example.com"
   },
   "exact_match": false,
-  "accuracy": 0.0,
-  "f1_score": 0.0,
+  "accuracy": 0.75,
+  "f1_score": 0.75,
   "operator_fidelity": [
     {
       "operator": "→",
       "checked": true,
       "passed": false,
-      "details": "Transformation check"
+      "details": "Wrong values: ['sender_title']"
     }
   ],
   "overall_pass": false,
-  "error_type": "format",
-  "error_details": "Accuracy: 0.00",
+  "error_type": "logic",
+  "error_details": "Accuracy: 0.75",
   "semantic_equivalence_pass": false
 }

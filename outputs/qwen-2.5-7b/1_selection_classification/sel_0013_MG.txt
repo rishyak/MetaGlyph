@@ -1,0 +1,11 @@
+Based on the given instruction and input, we need to select the names of animals whose size is categorized as "small". From the provided list of animals:
+
+- Cat: size: small
+- Goldfish: size: small
+- Parrot: size: small
+
+The other animals (Snake, Dog, Penguin, Eagle, Whale, Shark, Lion) do not meet the criteria since their sizes are either "medium" or "large".
+
+Here is the output in the requested JSON format:
+
+["Cat", "Goldfish", "Parrot"]

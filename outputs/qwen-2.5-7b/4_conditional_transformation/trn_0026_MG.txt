@@ -1,0 +1,107 @@
+```json
+[
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 1296,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 71,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 430,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 898,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 362.9,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 529,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 503,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 875,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 597,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 795,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 859,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 289,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 17.6,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 683,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 768,
+        "active": true
+    }
+]
+```
+
+Explanation of the transformations:
+- For `rec_000`, `type` is `standard`, so it remains unchanged. However, since the `region` is `EU`, the amount is multiplied by 1.2, resulting in an amount of `108 * 1.2 = 129.6`.
+- For `rec_001` and `rec_013`, `active` is `false`, so the status is set to "archived".
+- For `rec_002`, `type` is `trial` and `region` is `US`, so it remains unchanged.
+- For `rec_004`, `type` is `premium` and `active` is `false`, so the amount is multiplied by 1.1, resulting in an amount of `329 * 1.1 = 361.9`.
+- For `rec_005`, `active` is `true`, so it remains unchanged.
+- For `rec_007`, `active` is `false`, so the status is set to "archived".
+- For `rec_008`, `active` is `true`, so it remains unchanged.
+- For `rec_010`, `active` is `false`, so the status is set to "archived".
+- For `rec_011`, `type` is `standard` and `region` is `US`, so it remains unchanged.
+- For `rec_012`, `type` is `premium` and `active` is `true`, so it remains unchanged.
+- For `rec_014`, `active` is `true`, so it remains unchanged.

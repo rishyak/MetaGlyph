@@ -1,0 +1,7 @@
+Based on the provided data and the instruction, we need to select animals that have the domestic attribute set to `False`. Here is the output in the required JSON format:
+
+```json
+["Eagle", "Cat", "Parrot", "Penguin", "Elephant", "Shark", "Snake"]
+```
+
+These animals are not typically kept as pets.

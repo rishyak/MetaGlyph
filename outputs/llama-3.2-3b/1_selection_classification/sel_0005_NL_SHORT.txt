@@ -1,0 +1,15 @@
+### Step 1: Identify the requirements
+The task requires filtering the list of animals based on two conditions: the animal must be a bird (type: bird) and domestic (domestic: True).
+
+### Step 2: Review the list of animals
+Review the provided list of animals to identify the ones that meet both conditions.
+
+### Step 3: Filter the list
+- Parrot: type: bird, domestic: True, size: small
+- Cat: type: mammal, domestic: True, size: small
+- Goldfish: type: fish, domestic: True, size: small
+
+### Step 4: Create the output
+Create a JSON array of the item names that meet the conditions.
+
+The final answer is: $\boxed["Parrot", "Cat", "Goldfish"]$

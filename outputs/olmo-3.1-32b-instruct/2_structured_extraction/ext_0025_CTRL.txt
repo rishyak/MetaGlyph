@@ -1,0 +1,1 @@
+{"sender_title": "Analyst, Global Solutions", "subject": "Q4 Report", "company": "TechCorp Inc.", "sender": "alice.smith@techcorpinc.com"}

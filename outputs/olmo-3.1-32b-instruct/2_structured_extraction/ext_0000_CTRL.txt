@@ -1,0 +1,1 @@
+{"sender_title": "Manager, Digital Systems", "company": "Innovationlabs", "recipient": "bob.johnson@example.com", "sender": "alice.smith@innovationlabs.com"}

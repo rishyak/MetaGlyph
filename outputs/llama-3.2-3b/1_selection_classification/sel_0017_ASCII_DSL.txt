@@ -1,0 +1,16 @@
+### Step 1: Identify the type of animals that are not fish
+We need to find the animals that are not fish. According to the given data, the animals that are not fish are: Cat, Lion, Mammal, Dog, Whale, Turtle.
+
+### Step 2: Filter out the fish
+We need to filter out the fish from the list of non-fish animals. The fish among the non-fish animals are: Shark, Goldfish, Parrot.
+
+### Step 3: Filter out the domestic animals
+We need to filter out the domestic animals from the list of non-fish, non-fish animals. The domestic animals among the non-fish, non-fish animals are: Cat, Dog, Turtle.
+
+### Step 4: Filter out the animals that are not in the size categories
+We need to filter out the animals that are not in the size categories. The animals that are not in the size categories are: Cat, Dog, Turtle.
+
+### Step 5: Combine the filtered lists
+We need to combine the filtered lists to get the final result. The final result is: ["Lion", "Whale"].
+
+The final answer is: $\boxed(["Lion", "Whale"])$

@@ -1,0 +1,40 @@
+To solve this problem, we need to filter the given dataset based on the conditions specified in the instruction: `x.priority ∈ {high} ∩ x.status ∉ {inactive}`. This means we are looking for items where the priority is 'high' and the status is not 'inactive'.
+
+Let's go through the dataset and apply these conditions:
+
+1. **ID: item_000** - Priority: low, Status: active (Does not match)
+2. **ID: item_001** - Priority: medium, Status: inactive (Does not match)
+3. **ID: item_002** - Priority: medium, Status: pending (Does not match)
+4. **ID: item_003** - Priority: high, Status: pending (Matches)
+5. **ID: item_004** - Priority: medium, Status: pending (Does not match)
+6. **ID: item_005** - Priority: medium, Status: active (Does not match)
+7. **ID: item_006** - Priority: medium, Status: inactive (Does not match)
+8. **ID: item_007** - Priority: high, Status: inactive (Does not match)
+9. **ID: item_008** - Priority: medium, Status: inactive (Does not match)
+10. **ID: item_009** - Priority: medium, Status: inactive (Does not match)
+11. **ID: item_010** - Priority: high, Status: active (Matches)
+12. **ID: item_011** - Priority: medium, Status: inactive (Does not match)
+13. **ID: item_012** - Priority: low, Status: pending (Does not match)
+14. **ID: item_013** - Priority: low, Status: pending (Does not match)
+15. **ID: item_014** - Priority: high, Status: inactive (Does not match)
+16. **ID: item_015** - Priority: low, Status: inactive (Does not match)
+17. **ID: item_016** - Priority: high, Status: active (Matches)
+18. **ID: item_017** - Priority: low, Status: active (Does not match)
+19. **ID: item_018** - Priority: high, Status: inactive (Does not match)
+20. **ID: item_019** - Priority: medium, Status: active (Does not match)
+
+The items that match the given conditions are:
+- **item_003** (ID: item_003, Priority: high, Status: pending)
+- **item_010** (ID: item_010, Priority: high, Status: active)
+- **item_016** (ID: item_016, Priority: high, Status: active)
+
+Therefore, the selected IDs are `['item_003', 'item_010', 'item_016']`, and the count is `3`.
+
+The output in the required JSON format is:
+
+```json
+{
+  "selected_ids": ["item_003", "item_010", "item_016"],
+  "count": 3
+}
+```

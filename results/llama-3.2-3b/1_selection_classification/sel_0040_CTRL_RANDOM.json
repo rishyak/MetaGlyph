@@ -1,0 +1,31 @@
+{
+  "prompt_id": "sel_0040_CTRL_RANDOM",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "Parrot",
+    "Cat"
+  ],
+  "gold_output": [
+    "cat",
+    "parrot",
+    "turtle"
+  ],
+  "exact_match": false,
+  "accuracy": 0.6666666666666666,
+  "f1_score": 0.8,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=3, extra=2"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "incomplete",
+  "error_details": "Accuracy: 0.67",
+  "semantic_equivalence_pass": false
+}

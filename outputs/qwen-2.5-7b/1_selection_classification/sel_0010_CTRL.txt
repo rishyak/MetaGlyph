@@ -1,0 +1,25 @@
+Based on the given instruction and input data, the task is to select the names of animals whose `domestic` attribute is not `True`.
+
+From the provided list:
+- Parrot: domestic = True
+- Elephant: domestic = False
+- Penguin: domestic = False
+- Whale: domestic = False
+- Dog: domestic = True
+- Crocodile: domestic = False
+- Lion: domestic = False
+- Goldfish: domestic = True
+- Hamster: domestic = True
+
+The animals that are not domestic (i.e., `domestic` is `False`) are:
+- Elephant
+- Penguin
+- Whale
+- Crocodile
+- Lion
+
+Therefore, the output in JSON array format will be:
+
+```json
+["Elephant", "Penguin", "Whale", "Crocodile", "Lion"]
+```

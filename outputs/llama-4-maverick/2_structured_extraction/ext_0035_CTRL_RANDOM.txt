@@ -1,0 +1,33 @@
+To solve this task, we need to extract the required fields ("company", "date", "sender_name", "sender_title") from the given email document.
+
+1. **Extracting "date"**: The date is directly mentioned in the email header as "Date: 2024-02-15". So, the "date" field is "2024-02-15".
+
+2. **Extracting "sender_name" and "sender_title"**: The sender's information is found in the signature part of the email. The name "Bob Johnson" and title "Analyst" are mentioned. Thus, "sender_name" is "Bob Johnson" and "sender_title" is "Analyst".
+
+3. **Extracting "company"**: The company name is not directly mentioned in the email header or the body but is found in the signature as "Innovation Labs". This can be inferred as the company or department name.
+
+Putting it all together, we have:
+- "company": "Innovation Labs"
+- "date": "2024-02-15"
+- "sender_name": "Bob Johnson"
+- "sender_title": "Analyst"
+
+The output in JSON format is:
+```json
+{
+  "company": "Innovation Labs",
+  "date": "2024-02-15",
+  "sender_name": "Bob Johnson",
+  "sender_title": "Analyst"
+}
+```
+
+The final answer is:
+```json
+{
+  "company": "Innovation Labs",
+  "date": "2024-02-15",
+  "sender_name": "Bob Johnson",
+  "sender_title": "Analyst"
+}
+```

@@ -1,0 +1,12 @@
+### Step 1: Identify the conditions given in the problem
+The problem requires selecting animals that are of medium size and not domestic, based on the provided list of animals.
+
+### Step 2: List the animals that meet the conditions
+- Salmon: type = fish, domestic = False, size = medium
+- Eagle: type = bird, domestic = False, size = medium
+- Snake: type = reptile, domestic = False, size = medium
+
+### Step 3: Format the output as a JSON array
+The output should be a JSON array of the names of the animals that meet the conditions.
+
+The final answer is: $\boxed [{"Salmon","Eagle","Snake"}]$

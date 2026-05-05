@@ -1,0 +1,6 @@
+[
+  "Tablet",
+  "Headphones",
+  "Smartphone",
+  "Microwave"
+]

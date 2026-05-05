@@ -1,8 +1,22 @@
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_003",
+    "item_006",
+    "item_011",
+    "item_014"
+  ],
+  "count": 4
 }
 ```
 
-The dataset provided contains items with attributes (Category, Status, Priority, Value) but does not include the attributes referenced in the query filter (security, high_priority, performance, deprecated, experimental). Therefore, no items match the specified criteria.
+**Explanation:**
+The query filters for items where:
+- Category ∈ {A, B} AND
+- Status ∈ {active}
+
+Matching items:
+- **item_003**: Category B, Status active ✓
+- **item_006**: Category A, Status active ✓
+- **item_011**: Category B, Status active ✓
+- **item_014**: Category B, Status active ✓

@@ -1,0 +1,38 @@
+To solve this task, we need to go through the given list of animals and their attributes, and identify the ones whose size equals "small". The input data is as follows:
+
+- Shark: type: fish, domestic: False, size: large
+- Elephant: type: mammal, domestic: False, size: large
+- Cat: type: mammal, domestic: True, size: small
+- Goldfish: type: fish, domestic: True, size: small
+- Parrot: type: bird, domestic: True, size: small
+- Eagle: type: bird, domestic: False, size: medium
+- Hamster: type: mammal, domestic: True, size: small
+- Turtle: type: reptile, domestic: True, size: small
+- Salmon: type: fish, domestic: False, size: medium
+- Lion: type: mammal, domestic: False, size: large
+
+We will iterate through each entry and check the "size" attribute. If the size is "small", we will add the animal's name to our result list.
+
+1. Shark - size: large (not small)
+2. Elephant - size: large (not small)
+3. Cat - size: small (matches the condition)
+4. Goldfish - size: small (matches the condition)
+5. Parrot - size: small (matches the condition)
+6. Eagle - size: medium (not small)
+7. Hamster - size: small (matches the condition)
+8. Turtle - size: small (matches the condition)
+9. Salmon - size: medium (not small)
+10. Lion - size: large (not small)
+
+The animals that have a size of "small" are: Cat, Goldfish, Parrot, Hamster, Turtle.
+
+To present the answer in the required JSON array format, we will list these names as strings within square brackets.
+
+```json
+["Cat", "Goldfish", "Parrot", "Hamster", "Turtle"]
+```
+
+The final answer is: 
+```json
+["Cat", "Goldfish", "Parrot", "Hamster", "Turtle"]
+```

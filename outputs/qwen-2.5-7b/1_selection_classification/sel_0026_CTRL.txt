@@ -1,0 +1,26 @@
+To solve this problem, we need to filter out the animals based on the condition provided in the instruction. The condition is `x | x.domestic ∉ {False}` which means we should select animals where `domestic` is not `False`.
+
+Given the list of animals and their attributes:
+
+1. Dog: type: mammal, domestic: True, size: medium
+2. Snake: type: reptile, domestic: False, size: medium
+3. Parrot: type: bird, domestic: True, size: small
+4. Elephant: type: mammal, domestic: False, size: large
+5. Turtle: type: reptile, domestic: True, size: small
+6. Salmon: type: fish, domestic: False, size: medium
+7. Whale: type: mammal, domestic: False, size: large
+8. Lion: type: mammal, domestic: False, size: large
+9. Goldfish: type: fish, domestic: True, size: small
+10. Shark: type: fish, domestic: False, size: large
+
+We can see that the animals with `domestic: True` are:
+- Dog
+- Parrot
+- Turtle
+- Goldfish
+
+So, the output will be:
+
+```json
+["Dog", "Parrot", "Turtle", "Goldfish"]
+```

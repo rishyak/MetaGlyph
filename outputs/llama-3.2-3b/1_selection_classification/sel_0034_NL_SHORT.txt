@@ -1,0 +1,43 @@
+### Solution
+```json
+[
+  "Refrigerator",
+  "Desk",
+  "Bookshelf"
+]
+```
+
+### Explanation
+To solve this problem, we need to iterate through the list of products and return the item names whose `portable` attribute is `False`. We can do this by using a simple `if` statement to check the value of `portable` for each item and add the item name to the output array if it's `False`.
+
+Here's the code:
+```javascript
+const products = [
+  { name: "Refrigerator", category: "appliances", price_range: "high", portable: false },
+  { name: "Notebook", category: "stationery", price_range: "low", portable: true },
+  { name: "Headphones", category: "electronics", price_range: "medium", portable: true },
+  { name: "Desk", category: "furniture", price_range: "medium", portable: false },
+  { name: "Chair", category: "furniture", price_range: "medium", portable: true },
+  { name: "Microwave", category: "appliances", price_range: "medium", portable: true },
+  { name: "Pen", category: "stationery", price_range: "low", portable: true },
+  { name: "Stapler", category: "stationery", price_range: "low", portable: true },
+  { name: "Smartphone", category: "electronics", price_range: "high", portable: true },
+  { name: "Bookshelf", category: "furniture", price_range: "medium", portable: false }
+];
+
+const nonPortableItems = products.filter(item => !item.portable);
+const result = nonPortableItems.map(item => item.name);
+
+console.log(result);
+```
+
+### Output
+```json
+[
+  "Refrigerator",
+  "Desk",
+  "Bookshelf"
+]
+```
+
+This code first filters the `products` array to get only the items with `portable` set to `false`, and then maps the resulting array to get only the item names. The final output is a JSON array of strings representing the names of the non-portable items.

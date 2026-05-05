@@ -1,0 +1,32 @@
+I need to parse the query: `SELECT x | (x.domestic ¤ {False}) § (x.size ¤ {large}) ↯ [x.name]`
+
+Let me interpret the operators:
+- `|` = SELECT
+- `¤` = equals/matches
+- `§` = AND
+- `↯` = ORDER BY
+- `[x.name]` = return name field
+
+So the query translates to:
+**SELECT x WHERE x.domestic = False AND x.size = large, ORDER BY x.name**
+
+Now I'll filter the animals:
+
+1. **Eagle**: domestic: False, size: medium ❌ (size not large)
+2. **Shark**: domestic: False, size: large ✅
+3. **Dog**: domestic: True, size: medium ❌ (domestic not False)
+4. **Snake**: domestic: False, size: medium ❌ (size not large)
+5. **Hamster**: domestic: True, size: small ❌ (domestic not False)
+6. **Salmon**: domestic: False, size: medium ❌ (size not large)
+7. **Cat**: domestic: True, size: small ❌ (domestic not False)
+8. **Crocodile**: domestic: False, size: large ✅
+9. **Goldfish**: domestic: True, size: small ❌ (domestic not False)
+10. **Whale**: domestic: False, size: large ✅
+
+Matching animals (domestic=False AND size=large): Shark, Crocodile, Whale
+
+Ordered by name alphabetically:
+
+```json
+["Crocodile", "Shark", "Whale"]
+```

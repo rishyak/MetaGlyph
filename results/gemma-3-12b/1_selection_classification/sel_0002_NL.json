@@ -1,0 +1,42 @@
+{
+  "prompt_id": "sel_0002_NL",
+  "model": "gemma-3-12b",
+  "family": "1_selection_classification",
+  "condition": "NL",
+  "parse_success": true,
+  "parsed_output": [
+    "Whale",
+    "Hamster",
+    "Snake",
+    "Salmon",
+    "Elephant",
+    "Cat",
+    "Dog",
+    "Goldfish"
+  ],
+  "gold_output": [
+    "cat",
+    "dog",
+    "elephant",
+    "goldfish",
+    "hamster",
+    "salmon",
+    "snake",
+    "whale"
+  ],
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=8, extra=8"
+    }
+  ],
+  "overall_pass": true,
+  "error_type": "logic",
+  "error_details": "Accuracy: 1.00",
+  "semantic_equivalence_pass": true
+}

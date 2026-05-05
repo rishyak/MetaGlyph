@@ -1,0 +1,16 @@
+```json
+{
+  "selected_ids": [],
+  "count": 0
+}
+```
+
+**Explanation:**
+
+The query requests items where:
+- Category is in {A, B} AND
+- Status is in {active}
+
+Analyzing the dataset, there are **no items with status "active"**. All items have either "inactive" or "pending" status.
+
+Therefore, no items match both conditions, resulting in an empty selection.

@@ -2,14 +2,33 @@
 {
   "selected_ids": [
     "item_001",
+    "item_002",
     "item_003",
     "item_004",
     "item_005",
+    "item_006",
+    "item_007",
     "item_008",
     "item_009",
+    "item_010",
+    "item_011",
+    "item_012",
     "item_013",
+    "item_015",
+    "item_016",
+    "item_017",
     "item_018"
   ],
-  "count": 8
+  "count": 17
 }
 ```
+
+**Explanation:**
+The condition is: `priority = 'high' OR status ≠ 'inactive'`
+
+- **Excluded items** (priority is NOT high AND status IS inactive):
+  - item_000: priority=medium, status=inactive ❌
+  - item_014: priority=medium, status=inactive ❌
+  - item_019: priority=low, status=inactive ❌
+
+- **All other items** meet the criteria (either have high priority or are not inactive)

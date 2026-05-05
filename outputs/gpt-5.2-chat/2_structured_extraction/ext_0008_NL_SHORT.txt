@@ -1,0 +1,6 @@
+{
+  "company": "Innovation Labs",
+  "sender_title": "Manager",
+  "subject": "Project Update",
+  "sender": "David Brown"
+}

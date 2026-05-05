@@ -1,3 +1,23 @@
+# Analysis
+
+The instruction asks me to select all items where the type is NOT mammal, and return their names.
+
+**Filtering by condition: x.type ∉ {mammal}**
+
+Going through each animal:
+- Crocodile: type = reptile ✓ (not mammal)
+- Snake: type = reptile ✓ (not mammal)
+- Eagle: type = bird ✓ (not mammal)
+- Turtle: type = reptile ✓ (not mammal)
+- Parrot: type = bird ✓ (not mammal)
+- Cat: type = mammal ✗ (is mammal)
+- Shark: type = fish ✓ (not mammal)
+- Hamster: type = mammal ✗ (is mammal)
+- Salmon: type = fish ✓ (not mammal)
+- Penguin: type = bird ✓ (not mammal)
+
+### Output
+
 ```json
-["Cat", "Hamster"]
+["Crocodile", "Snake", "Eagle", "Turtle", "Parrot", "Shark", "Salmon", "Penguin"]
 ```

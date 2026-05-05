@@ -1,11 +1,14 @@
+Looking at the instruction `SELECT x | x.category ∈ {furniture} → [x.name]`, I need to:
+
+1. Filter all items where `category` is "furniture"
+2. Return their names
+
+Reviewing the product list:
+- **Chair**: category: furniture ✓
+- **Desk**: category: furniture ✓
+
+All other items belong to different categories (stationery, appliances, or electronics).
+
 ```json
-[]
+["Chair", "Desk"]
 ```
-
-The query requests items that are:
-- ⊙(mammal) - must be a mammal
-- ⊗ ⊙(pet) - AND must be a pet
-- ⊗ ⊖(bird) - AND must NOT be a bird
-- ⊗ ⊖(farm_animal) - AND must NOT be a farm animal
-
-None of the items in the provided list have attributes for mammal, pet, bird, or farm_animal classifications. All items are inanimate objects (furniture, stationery, appliances, electronics), so no items match the selection criteria.

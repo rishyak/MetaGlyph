@@ -1,0 +1,36 @@
+To solve the given instruction, we need to filter out animals that are not domesticated (i.e., `domestic` is `False`) and then return their names. Based on the input data provided:
+
+```plaintext
+- Eagle: type: bird, domestic: False, size: medium
+- Goldfish: type: fish, domestic: True, size: small
+- Cat: type: mammal, domestic: True, size: small
+- Parrot: type: bird, domestic: True, size: small
+- Lion: type: mammal, domestic: False, size: large
+- Whale: type: mammal, domestic: False, size: large
+- Penguin: type: bird, domestic: False, size: medium
+- Elephant: type: mammal, domestic: False, size: large
+- Shark: type: fish, domestic: False, size: large
+- Snake: type: reptile, domestic: False, size: medium
+```
+
+We can see that the animals with `domestic: False` are:
+- Eagle
+- Lion
+- Penguin
+- Whale
+- Elephant
+- Shark
+- Snake
+
+Since the instruction asks for the names of animals where `domestic` is not `False`, we need to select the names of animals where `domestic` is `True`.
+
+From the list above, the animals that are commonly kept as pets (`domestic: True`) are:
+- Goldfish
+- Cat
+- Parrot
+
+Thus, the output in JSON format would be:
+
+```json
+["Goldfish", "Cat", "Parrot"]
+```

@@ -1,6 +1,38 @@
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_004",
+    "item_006",
+    "item_007",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_014",
+    "item_015",
+    "item_016",
+    "item_017",
+    "item_019"
+  ],
+  "count": 13
 }
 ```
+
+**Explanation:**
+The condition is: priority = "high" OR status ≠ "inactive"
+
+Selected items:
+- **item_000**: priority = high ✓
+- **item_001**: status = active (not inactive) ✓
+- **item_004**: status = pending (not inactive) ✓
+- **item_006**: status = active (not inactive) ✓
+- **item_007**: priority = high ✓
+- **item_009**: status = pending (not inactive) ✓
+- **item_010**: priority = high ✓
+- **item_011**: priority = high ✓
+- **item_014**: status = pending (not inactive) ✓
+- **item_015**: priority = high ✓
+- **item_016**: status = active (not inactive) ✓
+- **item_017**: status = active (not inactive) ✓
+- **item_019**: status = pending (not inactive) ✓

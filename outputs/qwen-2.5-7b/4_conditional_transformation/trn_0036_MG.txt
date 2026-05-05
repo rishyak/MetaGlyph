@@ -1,0 +1,111 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 552,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 742.5,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 36,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 406,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 846,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 302,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 148,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 1023,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 1000,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 736,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 307,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 736,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 239,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 252,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 692.4,
+        "active": false
+    }
+]
+```
+
+Explanation:
+- For `rec_000`, the type is `trial` and it remains unchanged.
+- For `rec_001`, the type is `premium` and the region is `EU`. The amount is increased by 1.1 (for being premium) and then by 1.2 (for being in the EU), resulting in an amount of 742.5.
+- For `rec_002`, the type is `standard` and it remains unchanged.
+- For `rec_003`, the type is `premium` but the region is `APAC`, so no additional transformation is applied.
+- For `rec_004`, the type is `premium` and the region is `EU`. The amount is increased by 1.1 (for being premium) and then by 1.2 (for being in the EU), resulting in an amount of 846.
+- For `rec_005`, the type is `standard` and it remains unchanged.
+- For `rec_006`, the type is `standard` and it remains unchanged.
+- For `rec_007`, the type is `premium` and the region is `US`. The amount is increased by 1.1 (for being premium), resulting in an amount of 1023.
+- For `rec_008`, the type is `standard` and it remains unchanged.
+- For `rec_009`, the type is `trial` and it remains unchanged.
+- For `rec_010`, the type is `trial` and it remains unchanged.
+- For `rec_011`, the type is `standard` and it remains unchanged.
+- For `rec_012`, the type is `premium` and the region is `APAC`, so no additional transformation is applied.
+- For `rec_013`, the type is `standard` and it remains unchanged.
+- For `rec_014`, the type is `standard` and the region is `EU`. The amount is increased by 1.2 (for being in the EU), resulting in an amount of 692.4.

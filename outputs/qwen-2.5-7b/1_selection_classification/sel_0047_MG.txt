@@ -1,0 +1,22 @@
+Based on the provided attributes and the logical expression in the instruction, we need to find animals that are not domestic and are of the type "bird". From the given list:
+
+- Eagle: type: bird, domestic: False
+- Elephant: type: mammal, domestic: False
+- Lion: type: mammal, domestic: False
+- Turtle: type: reptile, domestic: True, size: small
+- Cat: type: mammal, domestic: True, size: small
+- Goldfish: type: fish, domestic: True, size: small
+- Crocodile: type: reptile, domestic: False, size: large
+- Parrot: type: bird, domestic: True, size: small
+- Snake: type: reptile, domestic: False, size: medium
+- Shark: type: fish, domestic: False, size: large
+
+The animals that meet the criteria (not domestic and type is bird) are:
+- Eagle
+- Parrot
+
+Thus, the output in the specified JSON format would be:
+
+```json
+["Eagle", "Parrot"]
+```

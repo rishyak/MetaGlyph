@@ -1,0 +1,19 @@
+### Solution
+```json
+[
+  "Cat",
+  "Hamster",
+  "Dog"
+]
+```
+
+### Explanation
+To solve this problem, we need to identify the animals that are not classified as "small" and are commonly kept as pets. We can do this by filtering the input data based on the "size" and "domestic" attributes.
+
+Here's the step-by-step solution:
+
+1. Filter the input data to include only animals that are not classified as "small" (i.e., `x.size ∉ {small}`).
+2. Filter the remaining data to include only animals that are commonly kept as pets (i.e., `x.domestic == True`).
+3. Return the resulting list of animal names.
+
+By applying these filters, we can identify the animals that meet both conditions and return them as a JSON array.

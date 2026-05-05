@@ -1,0 +1,13 @@
+### Step 1: Review the given dataset to identify the fish and their attributes.
+The dataset contains information about various animals, including fish. We need to identify the fish and their attributes.
+
+### Step 2: Identify the fish in the dataset.
+From the given dataset, the fish are:
+- Shark: type: fish, domestic: False, size: large
+- Salmon: type: fish, domestic: False, size: medium
+- Turtle is not a fish, it is a reptile.
+
+### Step 3: Format the output as a JSON array of strings.
+The fish in the dataset are Shark and Salmon. We will format the output as a JSON array of strings.
+
+The final answer is: $\boxed [{"Shark","Salmon"}]$

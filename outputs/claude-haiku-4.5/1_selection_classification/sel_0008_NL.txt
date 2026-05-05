@@ -1,3 +1,22 @@
+I need to find all animals where BOTH conditions are true:
+1. `domestic` = `True`
+2. `type` = `reptile`
+
+Let me review each animal:
+
+- Shark: type: fish, domestic: False ❌ (not reptile, not domestic)
+- Cat: type: mammal, domestic: True ❌ (not reptile)
+- Elephant: type: mammal, domestic: False ❌ (not reptile, not domestic)
+- Turtle: type: reptile, domestic: True ✅ (reptile AND domestic)
+- Parrot: type: bird, domestic: True ❌ (not reptile)
+- Hamster: type: mammal, domestic: True ❌ (not reptile)
+- Crocodile: type: reptile, domestic: False ❌ (reptile but not domestic)
+- Goldfish: type: fish, domestic: True ❌ (not reptile)
+- Eagle: type: bird, domestic: False ❌ (not reptile, not domestic)
+- Salmon: type: fish, domestic: False ❌ (not reptile, not domestic)
+
+Only **Turtle** satisfies both conditions.
+
 ```json
-["Cat", "Hamster"]
+["Turtle"]
 ```

@@ -53,8 +53,8 @@
     {
       "operator": "¬",
       "checked": true,
-      "passed": true,
-      "details": "Negation check passed"
+      "passed": false,
+      "details": "Negation check"
     }
   ],
   "overall_pass": false,

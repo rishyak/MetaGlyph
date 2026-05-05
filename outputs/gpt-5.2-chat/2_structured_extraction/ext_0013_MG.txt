@@ -1,1 +1,6 @@
-[]
+{
+  "subject": "Meeting Request",
+  "sender_title": "Manager",
+  "date": "2024-02-02",
+  "recipient": "Carol"
+}

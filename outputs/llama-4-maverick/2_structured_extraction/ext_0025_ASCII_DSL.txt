@@ -1,0 +1,39 @@
+To extract the requested fields from the given email document, we need to identify the values for "sender", "subject", "sender_title", and "company".
+
+1. **Sender**: The sender's email address is given in the "From" field of the email header. The email address is `alice.smith@techcorpinc.com`. The name of the sender is provided at the end of the email body as "Alice Smith". Therefore, we can consider "alice.smith@techcorpinc.com" or "Alice Smith" as the sender. For the purpose of this extraction, we'll consider the email address as the primary identifier for the sender, but the name is also relevant.
+
+2. **Subject**: The subject of the email is directly provided in the email header as "Q4 Report".
+
+3. **Sender Title**: The sender's title is mentioned below their name at the end of the email as "Analyst".
+
+4. **Company**: The company name is not directly mentioned in the email header, but it can be inferred from the sender's email address or the context. The sender's email address is `@techcorpinc.com`, suggesting the company is "Tech Corp Inc". Additionally, the sender's department or division is mentioned as "Global Solutions".
+
+Given these observations, we can now extract the required fields:
+
+- **Sender**: "Alice Smith" or `alice.smith@techcorpinc.com`. We'll use the name as it's more personal and directly related to the "sender_title".
+- **Subject**: "Q4 Report"
+- **Sender Title**: "Analyst"
+- **Company**: "Tech Corp Inc" or "Global Solutions". Since "Global Solutions" seems to be a department within a larger company ("Tech Corp Inc"), we'll consider "Tech Corp Inc" as the company.
+
+Therefore, the JSON object with the extracted fields is:
+
+```json
+{
+  "sender": "Alice Smith",
+  "subject": "Q4 Report",
+  "sender_title": "Analyst",
+  "company": "Tech Corp Inc"
+}
+```
+
+This JSON object represents the extracted information as per the given instruction. 
+
+The final answer is: 
+```json
+{
+  "sender": "Alice Smith",
+  "subject": "Q4 Report",
+  "sender_title": "Analyst",
+  "company": "Tech Corp Inc"
+}
+```

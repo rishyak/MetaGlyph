@@ -1,0 +1,53 @@
+{
+  "prompt_id": "cmp_0012_CTRL",
+  "model": "gemini-3.1-flash-lite",
+  "family": "3_constraint_composition",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": {
+    "selected_ids": [
+      "item_000",
+      "item_004",
+      "item_005",
+      "item_006",
+      "item_008",
+      "item_009",
+      "item_010",
+      "item_011",
+      "item_012",
+      "item_013",
+      "item_015",
+      "item_016",
+      "item_017",
+      "item_018"
+    ],
+    "count": 14
+  },
+  "gold_output": {
+    "selected_ids": [
+      "item_009"
+    ],
+    "count": 1
+  },
+  "exact_match": false,
+  "accuracy": 0.07142857142857142,
+  "f1_score": 0.13333333333333333,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    },
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.07",
+  "semantic_equivalence_pass": false
+}

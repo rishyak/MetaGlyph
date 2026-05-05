@@ -1,0 +1,20 @@
+Looking at the criteria:
+- **domestic equals False** AND
+- **size equals large**
+
+Filtering through the list:
+
+1. Eagle: domestic: False, size: medium ❌
+2. Shark: domestic: False, size: large ✅
+3. Dog: domestic: True ❌
+4. Snake: domestic: False, size: medium ❌
+5. Hamster: domestic: True ❌
+6. Salmon: domestic: False, size: medium ❌
+7. Cat: domestic: True ❌
+8. Crocodile: domestic: False, size: large ✅
+9. Goldfish: domestic: True ❌
+10. Whale: domestic: False, size: large ✅
+
+```json
+["Shark", "Crocodile", "Whale"]
+```

@@ -1,0 +1,27 @@
+### Step 1: Identify the requirements
+We need to return a list of item names where the size equals medium and domestic equals False.
+
+### Step 2: Review the input data
+We have a list of animals with their attributes:
+- Salmon: type: fish, domestic: False, size: medium
+- Crocodile: type: reptile, domestic: False, size: large
+- Eagle: type: bird, domestic: False, size: medium
+- Hamster: type: mammal, domestic: True, size: small
+- Goldfish: type: fish, domestic: True, size: small
+- Turtle: type: reptile, domestic: True, size: small
+- Snake: type: reptile, domestic: False, size: medium
+- Lion: type: mammal, domestic: False, size: large
+- Parrot: type: bird, domestic: True, size: small
+- Whale: type: mammal, domestic: False, size: large
+
+### Step 3: Filter the data
+We need to filter the list to include only items where size equals medium and domestic equals False.
+
+### Step 4: Create the output
+The filtered list of item names is:
+["Salmon", "Eagle", "Snake", "Lion"]
+
+### Step 5: Format the output
+We need to format the output as a JSON array of strings.
+
+The final answer is: $\boxed["Salmon", "Eagle", "Snake", "Lion"]$

@@ -5,30 +5,26 @@
   "condition": "MG",
   "parse_success": true,
   "parsed_output": [
-    "Cat",
-    "Dog",
-    "Hamster"
+    "Shark",
+    "Crocodile"
   ],
   "gold_output": [
-    "cat",
-    "goldfish",
-    "hamster",
-    "parrot",
-    "turtle"
+    "crocodile",
+    "shark"
   ],
-  "exact_match": false,
-  "accuracy": 0.3333333333333333,
-  "f1_score": 0.5,
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
   "operator_fidelity": [
     {
       "operator": "∈",
       "checked": true,
       "passed": false,
-      "details": "Extra items: 3"
+      "details": "missing=2, extra=2"
     }
   ],
-  "overall_pass": false,
-  "error_type": "incomplete",
-  "error_details": "Accuracy: 0.33",
-  "semantic_equivalence_pass": false
+  "overall_pass": true,
+  "error_type": "logic",
+  "error_details": "Accuracy: 1.00",
+  "semantic_equivalence_pass": true
 }

@@ -1,0 +1,14 @@
+### Step 1: Identify the items that are fish and not domestic
+We need to find the items in the list that are classified as fish and are not domestic.
+
+### Step 2: Filter the list
+From the given list, we can see that the fish that are not domestic are:
+- Salmon: type: fish, domestic: False, size: medium
+- Whale: type: mammal, domestic: False, size: large
+
+However, Whale is a mammal, not a fish. So, we should only consider Salmon.
+
+### Step 3: Format the output
+We need to format the output as a JSON array of strings.
+
+The final answer is: $\boxed["Salmon"]$

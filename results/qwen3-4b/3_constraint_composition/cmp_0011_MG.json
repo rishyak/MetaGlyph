@@ -1,0 +1,24 @@
+{
+  "prompt_id": "cmp_0011_MG",
+  "model": "qwen3-4b",
+  "family": "3_constraint_composition",
+  "condition": "MG",
+  "parse_success": false,
+  "parsed_output": null,
+  "gold_output": {
+    "selected_ids": [
+      "item_003",
+      "item_015",
+      "item_019"
+    ],
+    "count": 3
+  },
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0.0,
+  "operator_fidelity": [],
+  "overall_pass": false,
+  "error_type": "parse",
+  "error_details": "Could not extract key-value pairs",
+  "semantic_equivalence_pass": false
+}

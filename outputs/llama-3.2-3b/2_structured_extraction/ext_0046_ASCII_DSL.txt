@@ -1,0 +1,7 @@
+```json
+{
+  "date": "2024-07-06",
+  "sender_title": "Analyst",
+  "sender_name": "David Brown"
+}
+```

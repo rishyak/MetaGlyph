@@ -1,0 +1,38 @@
+{
+  "prompt_id": "sel_0037_NL",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "NL",
+  "parse_success": true,
+  "parsed_output": [
+    "From the given list, the animals where 'domestic' is False are:",
+    "Eagle: domestic: False",
+    "Lion: domestic: False",
+    "Shark: domestic: False",
+    "Snake: domestic: False",
+    "Penguin: domestic: False",
+    "[\"Eagle\", \"Lion\", \"Shark\", \"Snake\", \"Penguin\"]"
+  ],
+  "gold_output": [
+    "eagle",
+    "lion",
+    "penguin",
+    "shark",
+    "snake"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=5, extra=7"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

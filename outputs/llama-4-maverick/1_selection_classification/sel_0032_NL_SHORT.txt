@@ -1,0 +1,28 @@
+To solve this task, we need to carefully review the given list of animals and their attributes, and then identify the items whose type equals "bird".
+
+1. **Review the list of animals**: The given list contains detailed information about various animals, including their type, domestic status, and size.
+
+2. **Identify the relevant attribute**: We are interested in the "type" attribute of each animal.
+
+3. **Filter animals by type**: We will go through the list and select the animals whose type is "bird".
+
+   - Goldfish: type: fish
+   - Hamster: type: mammal
+   - Snake: type: reptile
+   - Whale: type: mammal
+   - **Parrot: type: bird**
+   - Shark: type: fish
+   - **Penguin: type: bird**
+   - Cat: type: mammal
+   - **Eagle: type: bird**
+   - Salmon: type: fish
+
+4. **List the names of animals that are birds**: From the given list, the animals that are classified as "bird" are Parrot, Penguin, and Eagle.
+
+5. **Format the output as a JSON array of strings**: The names of the animals that are birds should be returned in the format ["item1", "item2", ...].
+
+Therefore, the animals whose type equals "bird" are Parrot, Penguin, and Eagle. In the required JSON format, the output is:
+
+```json
+["Parrot", "Penguin", "Eagle"]
+```

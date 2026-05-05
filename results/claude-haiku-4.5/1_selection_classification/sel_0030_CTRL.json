@@ -4,7 +4,10 @@
   "family": "1_selection_classification",
   "condition": "CTRL",
   "parse_success": true,
-  "parsed_output": [],
+  "parsed_output": [
+    "Chair",
+    "Desk"
+  ],
   "gold_output": [
     "headphones",
     "laptop",
@@ -22,8 +25,8 @@
     {
       "operator": "∉",
       "checked": true,
-      "passed": true,
-      "details": "Exclusion constraint satisfied"
+      "passed": false,
+      "details": "missing=8, extra=2"
     }
   ],
   "overall_pass": false,

@@ -1,0 +1,91 @@
+To transform the records according to the given logic, we need to apply each condition in sequence and update the record accordingly. Here's how we can do it step-by-step:
+
+1. **Apply the first condition**: \( \forall x: (x.type != "premium" \Rightarrow x.amount \rightarrow x.amount \times 1.1) \)
+2. **Apply the second condition**: \( \forall x: (x.region != "EU" \Rightarrow x.amount \rightarrow x.amount \times 1.2) \)
+3. **Apply the third condition**: \( \forall x: (x.active != false \Rightarrow x.status \rightarrow "archived") \)
+
+Let's go through each record and apply the transformations:
+
+- **Record rec_000**:
+  - `type` is "trial" (not "premium"), so we apply the first condition: \( amount = 950 \times 1.1 = 1045 \).
+  - `region` is "APAC" (not "EU"), so no change.
+  - `active` is True, so we apply the third condition: \( status \rightarrow "archived" \).
+  - Result: { `type`: "trial", `region`: "APAC", `amount`: 1045, `status`: "archived" }
+
+- **Record rec_001**:
+  - `type` is "trial" (not "premium"), so we apply the first condition: \( amount = 510 \times 1.1 = 561 \).
+  - `region` is "EU" (not "APAC" or "US"), so no change.
+  - `active` is True, so we apply the third condition: \( status \rightarrow "archived" \).
+  - Result: { `type`: "trial", `region`: "EU", `amount`: 561, `status`: "archived" }
+
+- **Record rec_002**:
+  - `type` is "standard" (not "premium"), so we apply the first condition: \( amount = 909 \times 1.1 = 999.9 \).
+  - `region` is "EU" (not "APAC" or "US"), so no change.
+  - `active` is False, so no change.
+  - Result: { `type`: "standard", `region`: "EU", `amount`: 999.9, `active`: False }
+
+- **Record rec_003**:
+  - `type` is "standard" (not "premium"), so we apply the first condition: \( amount = 256 \times 1.1 = 281.6 \).
+  - `region` is "US" (not "EU"), so we apply the second condition: \( amount = 281.6 \times 1.2 = 337.92 \).
+  - `active` is True, so we apply the third condition: \( status \rightarrow "archived" \).
+  - Result: { `type`: "standard", `region`: "US", `amount`: 337.92, `status`: "archived" }
+
+- **Record rec_004**:
+  - `type` is "standard" (not "premium"), so we apply the first condition: \( amount = 507 \times 1.1 = 557.7 \).
+  - `region` is "APAC" (not "EU"), so no change.
+  - `active` is True, so we apply the third condition: \( status \rightarrow "archived" \).
+  - Result: { `type`: "standard", `region`: "APAC", `amount`: 557.7, `status`: "archived" }
+
+- **Record rec_005**:
+  - `type` is "trial" (not "premium"), so we apply the first condition: \( amount = 507 \times 1.1 = 557.7 \).
+  - `region` is "US" (not "EU"), so we apply the second condition: \( amount = 557.7 \times 1.2 = 669.24 \).
+  - `active` is True, so we apply the third condition: \( status \rightarrow "archived" \).
+  - Result: { `type`: "trial", `region`: "US", `amount`: 669.24, `status`: "archived" }
+
+- **Record rec_006**:
+  - `type` is "trial" (not "premium"), so we apply the first condition: \( amount = 141 \times 1.1 = 155.1 \).
+  - `region` is "US" (not "EU"), so we apply the second condition: \( amount = 155.1 \times 1.2 = 186.12 \).
+  - `active` is True, so we apply the third condition: \( status \rightarrow "archived" \).
+  - Result: { `type`: "trial", `region`: "US", `amount`: 186.12, `status`: "archived" }
+
+- **Record rec_007**:
+  - `type` is "standard" (not "premium"), so we apply the first condition: \( amount = 783 \times 1.1 = 861.3 \).
+  - `region` is "APAC" (not "EU"), so no change.
+  - `active` is True, so we apply the third condition: \( status \rightarrow "archived" \).
+  - Result: { `type`: "standard", `region`: "APAC", `amount`: 861.3, `status`: "archived" }
+
+- **Record rec_008**:
+  - `type` is "trial" (not "premium"), so we apply the first condition: \( amount = 418 \times 1.1 = 459.8 \).
+  - `region` is "EU" (not "APAC" or "US"), so no change.
+  - `active` is False, so no change.
+  - Result: { `type`: "trial", `region`: "EU", `amount`: 459.8, `active`: False }
+
+- **Record rec_009**:
+  - `type` is "premium" (is "premium"), so no change.
+  - `region` is "APAC" (not "EU"), so no change.
+  - `active` is True, so we apply the third condition: \( status \rightarrow "archived" \).
+  - Result: { `type`: "premium", `region`: "APAC", `amount`: 472, `status`: "archived" }
+
+- **Record rec_010**:
+  - `type` is "standard" (not "premium"), so we apply the first condition: \( amount = 75 \times 1.1 = 82.5 \).
+  - `region` is "US" (not "EU"), so we apply the second condition: \( amount = 82.5 \times 1.2 = 99 \).
+  - `active` is False, so no change.
+  - Result: { `type`: "standard", `region`: "US", `amount`: 99, `active`: False }
+
+- **Record rec_011**:
+  - `type` is "standard" (not "premium"), so we apply the first condition: \( amount = 577 \times 1.1 = 634.7 \).
+  - `region` is "APAC" (not "EU"), so no change.
+  - `active` is True, so we apply the third condition: \( status \rightarrow "archived" \).
+  - Result: { `type`: "standard", `region`: "APAC", `amount`: 634.7, `status`: "archived" }
+
+- **Record rec_012**:
+  - `type` is "trial" (not "premium"), so we apply the first condition: \( amount = 17 \times 1.1 = 18.7 \).
+  - `region` is "US" (not "EU"), so we apply the second condition: \( amount = 18.7 \times 1.2 = 22.44 \).
+  - `active` is True, so we apply the third condition: \( status \rightarrow "archived" \).
+  - Result: { `type`: "trial", `region`: "US", `amount`: 22.44, `status`: "archived" }
+
+- **Record rec_013**:
+  - `type` is "trial" (not "premium"), so we apply the first condition: \( amount = 70 \times 1.1 = 77 \).
+  - `region` is "APAC" (not "EU"), so no change.
+  - `active` is True, so we apply the third condition: \( status \rightarrow "archived" \).
+  - Result: { `type`: "trial", `region`: "APAC", `amount`: 77, `status`: "

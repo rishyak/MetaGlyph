@@ -1,0 +1,5 @@
+```json
+["Stapler", "Microwave", "Pen", "Notebook", "Refrigerator", "Smartphone", "Headphones", "Laptop"]
+```
+
+Note: The "Desk" was excluded since it falls under the 'furniture' category.

@@ -1,0 +1,8 @@
+```json
+{
+  "sender_title": "Analyst",
+  "subject": "Q4 Report",
+  "company": "TechCorp Inc.",
+  "sender": "Alice Smith"
+}
+```

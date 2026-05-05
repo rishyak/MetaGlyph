@@ -1,8 +1,49 @@
+I need to select items where: **priority is 'high' OR status is not 'inactive'**
+
+Let me evaluate each item against the condition: `x.priority ∈ {high} ∪ x.status ∉ {inactive}`
+
+This means: `priority = high` OR `status ≠ inactive`
+
+| ID | Priority | Status | high? | not inactive? | Selected? |
+|---|---|---|---|---|---|
+| item_000 | medium | inactive | ✗ | ✗ | ✗ |
+| item_001 | high | pending | ✓ | ✓ | ✓ |
+| item_002 | medium | active | ✗ | ✓ | ✓ |
+| item_003 | medium | inactive | ✗ | ✗ | ✗ |
+| item_004 | high | inactive | ✓ | ✗ | ✓ |
+| item_005 | low | pending | ✗ | ✓ | ✓ |
+| item_006 | high | pending | ✓ | ✓ | ✓ |
+| item_007 | high | pending | ✓ | ✓ | ✓ |
+| item_008 | high | active | ✓ | ✓ | ✓ |
+| item_009 | low | inactive | ✗ | ✗ | ✗ |
+| item_010 | medium | inactive | ✗ | ✗ | ✗ |
+| item_011 | medium | inactive | ✗ | ✗ | ✗ |
+| item_012 | medium | inactive | ✗ | ✗ | ✗ |
+| item_013 | low | inactive | ✗ | ✗ | ✗ |
+| item_014 | medium | active | ✗ | ✓ | ✓ |
+| item_015 | high | active | ✓ | ✓ | ✓ |
+| item_016 | low | active | ✗ | ✓ | ✓ |
+| item_017 | low | active | ✗ | ✓ | ✓ |
+| item_018 | low | pending | ✗ | ✓ | ✓ |
+| item_019 | high | inactive | ✓ | ✗ | ✓ |
+
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_001",
+    "item_002",
+    "item_004",
+    "item_005",
+    "item_006",
+    "item_007",
+    "item_008",
+    "item_014",
+    "item_015",
+    "item_016",
+    "item_017",
+    "item_018",
+    "item_019"
+  ],
+  "count": 13
 }
 ```
-
-The query requires items that match the "projects" category and contain attributes like "security", "high_priority", "performance", while excluding "deprecated" and "experimental" items. The provided dataset contains items with categories (A, B, C), statuses, priorities, and values, but lacks the specific attributes (security, high_priority, performance, deprecated, experimental) referenced in the query logic. Therefore, no items match the specified criteria.

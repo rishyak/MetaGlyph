@@ -1,3 +1,17 @@
+Looking at the instruction, I need to select all items where `type ∈ {fish}` and return their names.
+
+Scanning through the animal list:
+- Crocodile: type: reptile ❌
+- Dog: type: mammal ❌
+- Snake: type: reptile ❌
+- Cat: type: mammal ❌
+- Penguin: type: bird ❌
+- Eagle: type: bird ❌
+- **Salmon: type: fish ✓**
+- Lion: type: mammal ❌
+- Whale: type: mammal ❌
+- Turtle: type: reptile ❌
+
 ```json
-["Cat", "Dog"]
+["Salmon"]
 ```

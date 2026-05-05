@@ -1,0 +1,32 @@
+To solve this task, we need to go through the given list of animals and their attributes, and identify the items whose type is not 'bird'. 
+
+First, let's list the given animals and their types:
+1. Parrot - type: bird
+2. Salmon - type: fish
+3. Cat - type: mammal
+4. Eagle - type: bird
+5. Crocodile - type: reptile
+6. Hamster - type: mammal
+7. Shark - type: fish
+8. Lion - type: mammal
+9. Snake - type: reptile
+10. Elephant - type: mammal
+
+Now, let's filter out the animals whose type is 'bird':
+- Parrot and Eagle are birds, so they are excluded.
+
+The remaining animals are not birds:
+1. Salmon
+2. Cat
+3. Crocodile
+4. Hamster
+5. Shark
+6. Lion
+7. Snake
+8. Elephant
+
+These are the item names whose type is not 'bird'. To present the answer in the required JSON format, we will list them as a JSON array of strings.
+
+```json
+["Salmon", "Cat", "Crocodile", "Hamster", "Shark", "Lion", "Snake", "Elephant"]
+```

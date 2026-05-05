@@ -1,0 +1,16 @@
+Looking at the input list and filtering for items where size equals "large":
+
+- Eagle: size: medium ❌
+- Penguin: size: medium ❌
+- Goldfish: size: small ❌
+- Dog: size: medium ❌
+- Shark: size: large ✓
+- Crocodile: size: large ✓
+- Turtle: size: small ❌
+- Hamster: size: small ❌
+- Cat: size: small ❌
+- Parrot: size: small ❌
+
+```json
+["Shark", "Crocodile"]
+```

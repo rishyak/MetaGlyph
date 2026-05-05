@@ -1,1 +1,6 @@
-[]
+{
+  "date": "2024-10-24",
+  "sender_name": "Bob Johnson",
+  "recipient": "bob.johnson@example.com",
+  "sender": "bob.johnson@innovationlabs.com"
+}

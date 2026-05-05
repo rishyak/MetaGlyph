@@ -1,1 +1,6 @@
-[]
+{
+  "sender": "bob.johnson@digitalsystems.com",
+  "company": "Digital Systems",
+  "recipient": "alice.smith@example.com",
+  "sender_name": "Bob Johnson"
+}

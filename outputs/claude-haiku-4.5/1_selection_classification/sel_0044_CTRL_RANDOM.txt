@@ -1,0 +1,30 @@
+I need to parse this query and apply the filters to the animal dataset.
+
+The query appears to be: `SELECT x | (x.type ¤ {fish}) § (x.domestic ¤ {False}) ↯ [x.name]`
+
+Let me interpret the operators:
+- `|` = SELECT
+- `¤` = equals/is in
+- `§` = AND
+- `↯` = return/output
+- `[x.name]` = the name field
+
+So the query translates to:
+**SELECT x WHERE (x.type equals fish) AND (x.domestic equals False), return x.name**
+
+Let me check each animal:
+
+1. **Hamster**: type: mammal, domestic: True → ✗ (not fish)
+2. **Snake**: type: reptile, domestic: False → ✗ (not fish)
+3. **Turtle**: type: reptile, domestic: True → ✗ (not fish)
+4. **Parrot**: type: bird, domestic: True → ✗ (not fish)
+5. **Crocodile**: type: reptile, domestic: False → ✗ (not fish)
+6. **Elephant**: type: mammal, domestic: False → ✗ (not fish)
+7. **Lion**: type: mammal, domestic: False → ✗ (not fish)
+8. **Goldfish**: type: fish, domestic: True → ✗ (fish but domestic is True, not False)
+9. **Salmon**: type: fish, domestic: False → ✓ (fish AND domestic is False)
+10. **Whale**: type: mammal, domestic: False → ✗ (not fish)
+
+```json
+["Salmon"]
+```

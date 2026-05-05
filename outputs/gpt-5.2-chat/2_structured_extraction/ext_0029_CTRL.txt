@@ -1,29 +1,6 @@
-```json
-[
-  {
-    "risk_name": "Invoice calculation inconsistency",
-    "affected_component": "Billing calculation logic",
-    "severity": "high"
-  },
-  {
-    "risk_name": "Revenue loss or over/undercharging",
-    "affected_component": "Financial accounting",
-    "severity": "high"
-  },
-  {
-    "risk_name": "Customer dispute due to incorrect invoice",
-    "affected_component": "Legal and compliance",
-    "severity": "medium"
-  },
-  {
-    "risk_name": "Weak billing process controls",
-    "affected_component": "Organizational billing operations",
-    "severity": "medium"
-  },
-  {
-    "risk_name": "Delayed payment or non-payment",
-    "affected_component": "Cash flow forecasting",
-    "severity": "medium"
-  }
-]
-```
+{
+  "customer_name": "Alice Smith",
+  "due_date": "2024-05-02",
+  "total": "$579.6",
+  "payment_terms": "Net 60"
+}

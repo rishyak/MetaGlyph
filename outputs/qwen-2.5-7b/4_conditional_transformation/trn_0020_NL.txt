@@ -1,0 +1,111 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 399,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 918,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 642,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 710,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 102,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 730,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 720,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 342,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 393 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 553,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 821,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 90,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 256,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 247,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 480 * 1.2,
+        "active": false,
+        "status": "archived"
+    }
+]
+```
+
+Note that for records `rec_008` and `rec_014`, I applied both the second rule (since they are in the EU) and the first rule (since they are of type premium). Therefore, their amounts were multiplied by 1.2 and then by 1.1, resulting in an increase of 25.2% compared to their original values.

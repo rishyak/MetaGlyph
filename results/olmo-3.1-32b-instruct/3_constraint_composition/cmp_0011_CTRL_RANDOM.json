@@ -1,0 +1,45 @@
+{
+  "prompt_id": "cmp_0011_CTRL_RANDOM",
+  "model": "olmo-3.1-32b-instruct",
+  "family": "3_constraint_composition",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": {
+    "selected_ids": [
+      "item_003",
+      "item_004",
+      "item_005",
+      "item_016"
+    ],
+    "count": 4
+  },
+  "gold_output": {
+    "selected_ids": [
+      "item_003",
+      "item_015",
+      "item_019"
+    ],
+    "count": 3
+  },
+  "exact_match": false,
+  "accuracy": 0.16666666666666666,
+  "f1_score": 0.28571428571428575,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    },
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.17",
+  "semantic_equivalence_pass": false
+}

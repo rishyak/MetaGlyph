@@ -1,0 +1,28 @@
+{
+  "prompt_id": "sel_0000_CTRL_RANDOM",
+  "model": "olmo-3.1-32b-instruct",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "Turtle"
+  ],
+  "gold_output": [
+    "turtle"
+  ],
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=1, extra=1"
+    }
+  ],
+  "overall_pass": true,
+  "error_type": "logic",
+  "error_details": "Accuracy: 1.00",
+  "semantic_equivalence_pass": false
+}

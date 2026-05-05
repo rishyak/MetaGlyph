@@ -1,0 +1,9 @@
+```json
+{
+  "selected_ids": [],
+  "count": 0
+}
+```
+
+**Explanation:** 
+No records match the criteria of having category in ['A', 'B'] AND status in ['active']. While there are many items with categories A or B, none of them have a status of 'active'. The statuses present in the dataset are only 'inactive' and 'pending'.

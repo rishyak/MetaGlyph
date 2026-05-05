@@ -1,0 +1,33 @@
+{
+  "prompt_id": "sel_0015_ASCII_DSL",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": [
+    "Given the repetitive nature of the input, I'll provide a concise solution that extracts the items from the \"appliances\" category and their names.",
+    "SELECT name",
+    "FROM products",
+    "WHERE category = 'appliances';",
+    "This query will return a list of appliance names from the provided products."
+  ],
+  "gold_output": [
+    "microwave",
+    "refrigerator"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=2, extra=5"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

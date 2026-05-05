@@ -1,0 +1,11 @@
+```json
+{
+  "selected_ids": ["item_003", "item_010", "item_014", "item_017", "item_018", "item_019"],
+  "count": 6
+}
+```
+
+Explanation:
+- The query filters for items where the priority is `high` and the status is not `inactive`.
+- From the dataset, the IDs that match these criteria are `item_003`, `item_010`, `item_014`, `item_017`, `item_018`, and `item_019`.
+- Therefore, the count of such items is 6.

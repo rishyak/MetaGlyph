@@ -1,0 +1,13 @@
+Looking at the query: `SELECT x | x.size ¤ {large} ↯ [x.name]`
+
+This appears to be asking me to:
+1. Filter for items where `x.size` equals `large`
+2. Return the names of matching items
+
+From the dataset, the animals with `size: large` are:
+- Shark: size: large
+- Crocodile: size: large
+
+```json
+["Shark", "Crocodile"]
+```

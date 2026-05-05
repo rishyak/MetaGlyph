@@ -1,0 +1,41 @@
+To solve this problem, we need to break down the given instruction and apply it to the provided dataset.
+
+The instruction is: `SELECT x.id | x.priority ¤ {high} ¶ x.status ※ {inactive} ↯ {selected_ids: [...], count: n}`
+
+Let's analyze the instruction step by step:
+
+1. `SELECT x.id`: This indicates we are selecting the `id` attribute from the dataset.
+
+2. `| x.priority ¤ {high}`: The `|` symbol typically denotes a filtering operation. The `¤` symbol is used here to indicate a condition on `x.priority`, which should be `{high}`. So, this step filters the dataset to include only items where `x.priority` is `high`.
+
+3. `¶ x.status ※ {inactive}`: The `¶` symbol indicates another filtering operation. The `※` symbol is used to specify a condition on `x.status`, which should be `{inactive}`. Thus, this further filters the dataset to include only items where `x.status` is `inactive`.
+
+4. `↯ {selected_ids: [...], count: n}`: This indicates the output format. We need to return a JSON object with two keys: `selected_ids` (an array of the selected `id`s) and `count` (the number of selected items).
+
+Now, let's apply these steps to the dataset:
+
+1. First, filter by `x.priority = high`:
+   - item_001: ID = item_001, Priority = high
+   - item_004: ID = item_004, Priority = high
+   - item_005: ID = item_005, Priority = high
+   - item_013: ID = item_013, Priority = high
+   - item_016: ID = item_016, Priority = high
+
+2. Then, filter by `x.status = inactive`:
+   - From the previously filtered items, only none have `status = inactive` because:
+     - item_001: Status = inactive (matches)
+     - item_004: Status = pending (does not match)
+     - item_005: Status = active (does not match)
+     - item_013: Status = active (does not match)
+     - item_016: Status = active (does not match)
+   - So, only `item_001` matches both conditions.
+
+Therefore, the `selected_ids` array will contain `["item_001"]`, and the `count` will be `1`.
+
+The output in JSON format is:
+```json
+{
+  "selected_ids": ["item_001"],
+  "count": 1
+}
+```

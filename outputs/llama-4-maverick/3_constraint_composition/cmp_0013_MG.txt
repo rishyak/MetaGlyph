@@ -1,0 +1,130 @@
+To solve this problem, we need to filter the given dataset based on the condition `x.priority ∈ {high} ∪ x.status ∉ {inactive}` and then return the IDs of the filtered items along with the count of the filtered items.
+
+First, let's break down the condition:
+- `x.priority ∈ {high}` means the priority of the item is 'high'.
+- `x.status ∉ {inactive}` means the status of the item is not 'inactive'.
+- `∪` denotes the union of the two conditions, so an item is selected if its priority is 'high' or its status is not 'inactive'.
+
+Let's apply this condition to the given dataset:
+
+1. ID: item_000
+   - Priority: medium, Status: pending
+   - Condition: Not 'high' priority but 'pending' status (not 'inactive'), so selected.
+
+2. ID: item_001
+   - Priority: high, Status: active
+   - Condition: 'high' priority and 'active' status, so selected.
+
+3. ID: item_002
+   - Priority: high, Status: pending
+   - Condition: 'high' priority and 'pending' status, so selected.
+
+4. ID: item_003
+   - Priority: low, Status: inactive
+   - Condition: Not 'high' priority and 'inactive' status, so not selected.
+
+5. ID: item_004
+   - Priority: low, Status: pending
+   - Condition: Not 'high' priority but 'pending' status, so selected.
+
+6. ID: item_005
+   - Priority: low, Status: active
+   - Condition: Not 'high' priority but 'active' status, so selected.
+
+7. ID: item_006
+   - Priority: high, Status: pending
+   - Condition: 'high' priority and 'pending' status, so selected.
+
+8. ID: item_007
+   - Priority: low, Status: inactive
+   - Condition: Not 'high' priority and 'inactive' status, so not selected.
+
+9. ID: item_008
+   - Priority: high, Status: inactive
+   - Condition: 'high' priority but 'inactive' status, so not selected.
+
+10. ID: item_009
+    - Priority: high, Status: pending
+    - Condition: 'high' priority and 'pending' status, so selected.
+
+11. ID: item_010
+    - Priority: high, Status: active
+    - Condition: 'high' priority and 'active' status, so selected.
+
+12. ID: item_011
+    - Priority: medium, Status: pending
+    - Condition: Not 'high' priority but 'pending' status, so selected.
+
+13. ID: item_012
+    - Priority: low, Status: active
+    - Condition: Not 'high' priority but 'active' status, so selected.
+
+14. ID: item_013
+    - Priority: high, Status: pending
+    - Condition: 'high' priority and 'pending' status, so selected.
+
+15. ID: item_014
+    - Priority: high, Status: inactive
+    - Condition: 'high' priority but 'inactive' status, so not selected.
+
+16. ID: item_015
+    - Priority: high, Status: inactive
+    - Condition: 'high' priority but 'inactive' status, so not selected.
+
+17. ID: item_016
+    - Priority: low, Status: inactive
+    - Condition: Not 'high' priority and 'inactive' status, so not selected.
+
+18. ID: item_017
+    - Priority: medium, Status: pending
+    - Condition: Not 'high' priority but 'pending' status, so selected.
+
+19. ID: item_018
+    - Priority: medium, Status: inactive
+    - Condition: Not 'high' priority and 'inactive' status, so not selected.
+
+20. ID: item_019
+    - Priority: low, Status: pending
+    - Condition: Not 'high' priority but 'pending' status, so selected.
+
+After applying the condition:
+- Selected IDs: item_000, item_001, item_002, item_004, item_005, item_006, item_009, item_010, item_011, item_012, item_013, item_017, item_019.
+
+Let's count them:
+1. item_000
+2. item_001
+3. item_002
+4. item_004
+5. item_005
+6. item_006
+7. item_009
+8. item_010
+9. item_011
+10. item_012
+11. item_013
+12. item_017
+13. item_019
+
+There are 13 items in total that satisfy the given condition.
+
+The JSON output should be:
+```json
+{
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_002",
+    "item_004",
+    "item_005",
+    "item_006",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_012",
+    "item_013",
+    "item_017",
+    "item_019"
+  ],
+  "count": 13
+}
+```

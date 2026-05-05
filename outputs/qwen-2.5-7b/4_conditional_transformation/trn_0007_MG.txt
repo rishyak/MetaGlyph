@@ -1,0 +1,127 @@
+Based on the given instruction and input records, we need to apply the following transformations:
+- If `x.type` is "premium", multiply `x.amount` by 1.1.
+- If `x.region` is "EU", multiply `x.amount` by 1.2.
+- If `x.active` is `false`, change `x.status` to "archived".
+
+Let's go through each record and apply these transformations where necessary.
+
+```json
+[
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 175,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 447,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 977,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 864,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 161,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 325,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 225,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 372,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 168,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 912,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 764,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 894 * 1.1,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 816 * 1.1,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 889 * 1.1,
+        "active": false,
+        "status": null
+    }
+]
+```
+
+Explanation of the transformations applied:
+- `rec_000`: Since the type is not "premium", no multiplication is done. The active status is changed to "archived".
+- `rec_001`: No conditions for transformation apply.
+- `rec_002`: No conditions for transformation apply.
+- `rec_003`: Since the active status is `false`, it becomes "archived".
+- `rec_004`: Since the active status is `false`, it becomes "archived".
+- `rec_005`: Since the active status is `false`, it becomes "archived".
+- `rec_006`: No conditions for transformation apply.
+- `rec_007`: Since the active status is `false`, it becomes "archived".
+- `rec_008`: Since the active status is `false`, it becomes "archived".
+- `rec_009`: Since the active status is `false`, it becomes "archived".
+- `rec_010`: Since the active status is `false`, it becomes "archived".
+- `rec_011`: No conditions for transformation apply.
+- `rec_012`: No conditions for transformation apply.
+- `rec_013`: The amount is multiplied by 1.1 because the type is "premium" and the active status is `false`.
+
+Note that for `rec_000`, `rec_003`, `rec_004`, `rec_005`, `rec_007`, `rec_009`, `rec_010`, and `rec_013`, the amount is updated based on the conditions provided. For other records, no changes are made to the amount.

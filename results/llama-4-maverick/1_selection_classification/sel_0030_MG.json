@@ -1,0 +1,46 @@
+{
+  "prompt_id": "sel_0030_MG",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": [
+    "Chair: furniture",
+    "Stapler: stationery",
+    "Microwave: appliances",
+    "Pen: stationery",
+    "Notebook: stationery",
+    "Refrigerator: appliances",
+    "Smartphone: electronics",
+    "Headphones: electronics",
+    "Laptop: electronics",
+    "Desk: furniture",
+    "Products that are not categorized as \"furniture\" are: Stapler, Microwave, Pen, Notebook, Refrigerator, Smartphone, Headphones, Laptop.",
+    "To format the output as required, we need to create a JSON array containing the names of the products that are not categorized as \"furniture\". So, the output will be [\"Stapler\", \"Microwave\", \"Pen\", \"Notebook\", \"Refrigerator\", \"Smartphone\", \"Headphones\", \"Laptop\"]."
+  ],
+  "gold_output": [
+    "headphones",
+    "laptop",
+    "microwave",
+    "notebook",
+    "pen",
+    "refrigerator",
+    "smartphone",
+    "stapler"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=8, extra=12"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

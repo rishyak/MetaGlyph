@@ -1,0 +1,44 @@
+{
+  "prompt_id": "sel_0030_CTRL",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this task, we need to follow the given instruction, which is to select the names of products that belong to the \"furniture\" category.",
+    "**Understanding the Instruction**: The instruction is given in a formal notation: `SELECT x | x.category ∈ {furniture} → [x.name]`. This means we need to select the names (`x.name`) of items (`x`) where the category (`x.category`) is \"furniture\".",
+    "**Reviewing the Input**: The input provides a list of products along with their attributes such as category, price range, and portability.",
+    "**Identifying Relevant Products**: We need to identify products that are categorized as \"furniture\". From the given list:",
+    "Chair: category: furniture",
+    "Desk: category: furniture",
+    "These are the only two items listed under the \"furniture\" category.",
+    "**Extracting Names**: The names of the products that belong to the \"furniture\" category are \"Chair\" and \"Desk\".",
+    "**Formatting the Output**: The output needs to be in a JSON array format, containing the names of the selected products as strings.",
+    "**Generating the Output**: The names \"Chair\" and \"Desk\" need to be formatted as a JSON array: `[\"Chair\", \"Desk\"]`."
+  ],
+  "gold_output": [
+    "headphones",
+    "laptop",
+    "microwave",
+    "notebook",
+    "pen",
+    "refrigerator",
+    "smartphone",
+    "stapler"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=8, extra=10"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

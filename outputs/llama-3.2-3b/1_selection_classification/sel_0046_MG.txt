@@ -1,0 +1,13 @@
+### Solution
+```json
+[
+  "Smartphone",
+  "Laptop",
+  "Tablet",
+  "Headphones",
+  "Stapler"
+]
+```
+
+### Explanation
+To solve this problem, we need to filter the list of items to only include those that belong to the "electronics" category and are portable. We can do this by iterating over the list of items and checking the "category" and "portable" attributes for each item. If an item meets both conditions, we add its name to the output list.

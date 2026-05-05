@@ -1,0 +1,17 @@
+### Step 1: Filter the dataset to include only non-bird animals
+We will create a new list that includes only the animals that are not birds.
+
+### Step 2: Identify the non-bird animals
+The non-bird animals in the dataset are:
+- Crocodile: type: reptile, domestic: False, size: large
+- Whale: type: mammal, domestic: False, size: large
+- Elephant: type: mammal, domestic: False, size: large
+- Snake: type: reptile, domestic: False, size: medium
+- Shark: type: fish, domestic: False, size: large
+- Dog: type: mammal, domestic: True, size: medium
+- Cat: type: mammal, domestic: True, size: small
+
+### Step 3: Format the output as a JSON array
+We will format the list of non-bird animals as a JSON array.
+
+The final answer is: $\boxed [{"Crocodile","Whale","Elephant","Snake","Shark","Dog","Cat"}]$

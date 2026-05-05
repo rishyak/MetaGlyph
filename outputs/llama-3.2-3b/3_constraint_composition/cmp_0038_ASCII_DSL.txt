@@ -1,0 +1,1 @@
+SELECT x.id, x.priority, x.status FROM items x WHERE x.priority IN {high} OR x.status NOT IN {inactive}

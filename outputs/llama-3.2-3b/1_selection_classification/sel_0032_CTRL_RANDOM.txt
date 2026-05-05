@@ -1,0 +1,11 @@
+### Step 1: Review the given dataset to identify the animals that are classified as birds.
+The dataset contains the following birds: Parrot, Penguin, and Eagle.
+
+### Step 2: Filter the dataset to only include the birds.
+The filtered dataset contains the following birds:
+- Parrot: type: bird, domestic: True, size: small
+- Penguin: type: bird, domestic: False, size: medium
+- Eagle: type: bird, domestic: False, size: medium
+
+### Step 3: Format the output as a JSON array of strings.
+The formatted output is: ["Parrot", "Penguin", "Eagle"]

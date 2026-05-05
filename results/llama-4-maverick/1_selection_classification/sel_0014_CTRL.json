@@ -1,0 +1,52 @@
+{
+  "prompt_id": "sel_0014_CTRL",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this task, we need to follow the given instruction: `SELECT x | x.type ∉ {fish} → [x.name]`. This means we have to select the names of animals where the type is not 'fish'.",
+    "First, let's list the given animals with their types:",
+    "Crocodile: type: reptile",
+    "Dog: type: mammal",
+    "Snake: type: reptile",
+    "Cat: type: mammal",
+    "Penguin: type: bird",
+    "Eagle: type: bird",
+    "Salmon: type: fish",
+    "Lion: type: mammal",
+    "Whale: type: mammal",
+    "Turtle: type: reptile",
+    "Now, we filter out the animals that are of type 'fish'. The only animal of type 'fish' is Salmon. So, we exclude Salmon.",
+    "Crocodile",
+    "Dog",
+    "Snake",
+    "Cat",
+    "Penguin",
+    "Eagle",
+    "Lion",
+    "Whale",
+    "Turtle",
+    "We need to return their names as a JSON array of strings.",
+    "To format the names into a JSON array, we enclose each name in double quotes and separate them with commas, then enclose the whole list in square brackets.",
+    "[\"Crocodile\", \"Dog\", \"Snake\", \"Cat\", \"Penguin\", \"Eagle\", \"Lion\", \"Whale\", \"Turtle\"]"
+  ],
+  "gold_output": [
+    "salmon"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=1, extra=25"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

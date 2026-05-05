@@ -1,0 +1,41 @@
+{
+  "prompt_id": "sel_0032_CTRL_RANDOM",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this problem, we need to understand the given instruction and apply it to the provided input.",
+    "**Understanding the Instruction**:",
+    "SELECT x` indicates we are selecting certain elements `x` from a dataset.",
+    "x.type ¤ {bird}` means we are filtering the elements to include only those where the `type` is `bird`. The symbol `¤` is interpreted as \"is in\" or \"contains,\" so `x.type ¤ {bird}` means `x.type` equals `bird`.",
+    "↯ [x.name]` indicates that from the filtered elements, we are projecting or selecting the `name` attribute.",
+    "**Applying the Instruction to the Input**:",
+    "The input is a list of animals with their attributes. We need to filter this list to include only those animals where `type` equals `bird`.",
+    "The animals of type `bird` from the input are: `Parrot`, `Penguin`, and `Eagle`.",
+    "We then select the `name` of these animals. Since the names are already given as `Parrot`, `Penguin`, and `Eagle`, these are the values we are interested in.",
+    "**Formatting the Output**:",
+    "The output should be a JSON array of strings, where each string is the name of a bird.",
+    "Given the animals of type `bird` are `Parrot`, `Penguin`, and `Eagle`, the names are already directly available."
+  ],
+  "gold_output": [
+    "eagle",
+    "parrot",
+    "penguin"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=3, extra=12"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

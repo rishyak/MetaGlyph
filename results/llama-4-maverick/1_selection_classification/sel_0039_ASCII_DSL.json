@@ -1,0 +1,49 @@
+{
+  "prompt_id": "sel_0039_ASCII_DSL",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this problem, we need to follow the given instruction and filter the animals based on the conditions provided.",
+    "This means we need to select animals (`x`) that are both `small` in size and `domestic` (i.e., commonly kept as pets), and then return their names.",
+    "Let's analyze the given data:",
+    "Crocodile: type: reptile, domestic: False, size: large",
+    "Shark: type: fish, domestic: False, size: large",
+    "Cat: type: mammal, domestic: True, size: small",
+    "Lion: type: mammal, domestic: False, size: large",
+    "Elephant: type: mammal, domestic: False, size: large",
+    "Whale: type: mammal, domestic: False, size: large",
+    "Penguin: type: bird, domestic: False, size: medium",
+    "Snake: type: reptile, domestic: False, size: medium",
+    "Hamster: type: mammal, domestic: True, size: small",
+    "Eagle: type: bird, domestic: False, size: medium",
+    "Now, let's apply the conditions:",
+    "x.size IN {small}`: This means the animal's size should be small. From the data, `Cat` and `Hamster` are small.",
+    "x.domestic IN {True}`: This means the animal should be domestic. Both `Cat` and `Hamster` are domestic.",
+    "So, the animals that satisfy both conditions are `Cat` and `Hamster`.",
+    "Now, we need to return their names as a JSON array of strings.",
+    "Cat",
+    "Hamster",
+    "Thus, the output in the required JSON format is: `[\"Cat\", \"Hamster\"]"
+  ],
+  "gold_output": [
+    "cat",
+    "hamster"
+  ],
+  "exact_match": false,
+  "accuracy": 0.09523809523809523,
+  "f1_score": 0.17391304347826084,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "missing=2, extra=21"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.10",
+  "semantic_equivalence_pass": false
+}

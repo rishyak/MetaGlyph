@@ -5,13 +5,18 @@
   "condition": "CTRL",
   "parse_success": true,
   "parsed_output": [
+    "Dog",
+    "Whale",
+    "Salmon",
+    "Eagle",
+    "Shark",
+    "Elephant",
     "Cat",
-    "Dog"
+    "Penguin",
+    "Parrot"
   ],
   "gold_output": [
-    "eagle",
-    "parrot",
-    "penguin"
+    "turtle"
   ],
   "exact_match": false,
   "accuracy": 0.0,
@@ -21,11 +26,11 @@
       "operator": "∈",
       "checked": true,
       "passed": false,
-      "details": "Extra items: 2"
+      "details": "missing=1, extra=9"
     }
   ],
   "overall_pass": false,
-  "error_type": "incomplete",
+  "error_type": "extra",
   "error_details": "Accuracy: 0.00",
   "semantic_equivalence_pass": false
 }

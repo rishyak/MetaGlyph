@@ -1,0 +1,16 @@
+### Solution
+```sql
+SELECT 
+  name 
+FROM 
+  products 
+WHERE 
+  category = 'stationery' 
+  AND portable = True;
+```
+
+### Explanation
+This SQL query selects the `name` column from the `products` table where the `category` is 'stationery' and `portable` is True. The result will be a list of product names that meet these conditions.
+
+### Note
+The duplicate entries in the input data are ignored in the SQL query as they do not affect the result.

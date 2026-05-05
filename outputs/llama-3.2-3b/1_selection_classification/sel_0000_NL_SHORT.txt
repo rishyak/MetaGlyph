@@ -1,0 +1,9 @@
+### Solution
+```json
+[
+  "Turtle"
+]
+```
+
+### Explanation
+The only item in the list that is classified as a reptile is "Turtle".

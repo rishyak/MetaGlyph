@@ -1,0 +1,11 @@
+SELECT 
+  x.id, 
+  x.category, 
+  x.status, 
+  x.priority, 
+  x.value 
+FROM 
+  items x 
+WHERE 
+  x.category IN {A, B} 
+  AND x.status IN {active}

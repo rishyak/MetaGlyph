@@ -1,0 +1,17 @@
+```json
+{
+  "selected_ids": ["item_009"],
+  "count": 1
+}
+```
+
+**Explanation:**
+The query filters for items where:
+- Category is in {A, B} AND
+- Status is "active"
+
+Scanning through the dataset:
+- **item_009**: Category A, Status active ✓ (matches both conditions)
+- item_016: Category C, Status active ✗ (category is C, not in {A, B})
+
+Only item_009 satisfies both filter conditions.

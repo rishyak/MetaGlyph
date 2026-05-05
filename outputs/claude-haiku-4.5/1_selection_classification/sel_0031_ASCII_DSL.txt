@@ -1,0 +1,24 @@
+I need to find all products where:
+1. price_range IN {medium} AND
+2. portable IN {False}
+
+Let me check each product:
+
+- Smartphone: price_range: high, portable: True ❌
+- Notebook: price_range: low, portable: True ❌
+- Pen: price_range: low, portable: True ❌
+- Headphones: price_range: medium, portable: True ❌ (medium but portable)
+- Refrigerator: price_range: high, portable: False ❌ (not medium)
+- Bookshelf: price_range: medium, portable: False ✅
+- Tablet: price_range: high, portable: True ❌
+- Desk: price_range: medium, portable: False ✅
+- Laptop: price_range: high, portable: True ❌
+- Chair: price_range: medium, portable: True ❌ (medium but portable)
+
+Products matching both conditions (medium price AND not portable):
+- Bookshelf
+- Desk
+
+```json
+["Bookshelf", "Desk"]
+```

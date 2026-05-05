@@ -1,0 +1,49 @@
+To solve this problem, we need to filter the given dataset based on the conditions provided in the instruction: `x.category IN {A, B} AND x.status IN {active}`. This means we are looking for items where the category is either A or B and the status is active.
+
+Let's examine the dataset:
+
+1. ID: item_000, Category: B, Status: pending
+2. ID: item_001, Category: C, Status: pending
+3. ID: item_002, Category: C, Status: inactive
+4. ID: item_003, Category: C, Status: pending
+5. ID: item_004, Category: B, Status: pending
+6. ID: item_005, Category: B, Status: pending
+7. ID: item_006, Category: B, Status: active
+8. ID: item_007, Category: C, Status: active
+9. ID: item_008, Category: B, Status: pending
+10. ID: item_009, Category: A, Status: pending
+11. ID: item_010, Category: C, Status: pending
+12. ID: item_011, Category: C, Status: active
+13. ID: item_012, Category: A, Status: pending
+14. ID: item_013, Category: C, Status: inactive
+15. ID: item_014, Category: A, Status: active
+16. ID: item_015, Category: A, Status: active
+17. ID: item_016, Category: B, Status: inactive
+18. ID: item_017, Category: C, Status: active
+19. ID: item_018, Category: C, Status: inactive
+20. ID: item_019, Category: A, Status: pending
+
+Filtering the dataset based on the given conditions:
+
+- Category is A or B: `item_000`, `item_004`, `item_005`, `item_006`, `item_008`, `item_009`, `item_012`, `item_014`, `item_015`, `item_016`, `item_019`
+- Status is active: `item_006`, `item_014`, `item_015`
+
+Combining both conditions:
+
+- `item_006` (Category: B, Status: active)
+- `item_014` (Category: A, Status: active)
+- `item_015` (Category: A, Status: active)
+
+The IDs that satisfy the condition are `item_006`, `item_014`, and `item_015`.
+
+Now, let's format the output as required:
+
+- `selected_ids`: An array of the IDs that satisfy the condition.
+- `count`: The number of IDs that satisfy the condition.
+
+```json
+{
+  "selected_ids": ["item_006", "item_014", "item_015"],
+  "count": 3
+}
+```

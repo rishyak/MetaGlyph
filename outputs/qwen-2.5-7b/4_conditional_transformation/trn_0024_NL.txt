@@ -1,0 +1,104 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 621,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 259 * 1.2,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 80,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 842,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 817 * 1.1,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 143 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 686,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 376,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 26 * 1.2,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 806 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 773,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 806 * 1.1 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 121,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 978,
+        "active": true,
+        "status": null
+    }
+]
+```
+
+Note: The `status` field is only updated to 'archived' when the `active` field is `False`. Records that do not meet any of the specified conditions remain unchanged.

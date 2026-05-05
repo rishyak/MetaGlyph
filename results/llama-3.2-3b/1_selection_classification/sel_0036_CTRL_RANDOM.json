@@ -1,0 +1,44 @@
+{
+  "prompt_id": "sel_0036_CTRL_RANDOM",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "### Step 1: Identify the mammal category\nThe mammal category includes the following animals: Salmon is not a mammal",
+    "Penguin is a bird",
+    "Turtle is a reptile",
+    "Parrot is a bird",
+    "Goldfish is a fish",
+    "Cat is a mammal",
+    "Snake is a reptile",
+    "Eagle is a bird",
+    "Whale is a mammal",
+    "and Elephant is a mammal.\n\n### Step 2: Filter the mammal category\nThe mammal category includes the following animals: Cat and Whale and Elephant.\n\n### Step 3: Format the output as a JSON array\nThe output should be in the format of a JSON array of strings",
+    "e.g.",
+    "item1",
+    "item2\".\n\nThe final answer is: $\\boxed \"name\": \"Cat",
+    "name\": \"Whale",
+    "name\": \"Elephant\"$"
+  ],
+  "gold_output": [
+    "cat",
+    "elephant",
+    "whale"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=3, extra=15"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

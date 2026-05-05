@@ -1,0 +1,2 @@
+### Solution
+SELECT x.name FROM animals AS x WHERE x.size = 'small' AND x.type IN ('fish', 'mammal', 'bird', 'reptile')

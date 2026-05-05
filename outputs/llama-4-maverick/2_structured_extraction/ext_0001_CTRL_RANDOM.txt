@@ -1,0 +1,29 @@
+To solve this task, we need to extract the required fields from the given email document. The fields to be extracted are "sender_title", "date", "subject", and "sender_name".
+
+First, let's identify the relevant information from the email document:
+
+1. **From:** The sender's email address is `alice.smith@globalsolutions.com`, and their name is `Alice Smith`. The title is `Manager`.
+2. **Date:** The date of the email is `2024-08-19`.
+3. **Subject:** The subject of the email is `Meeting Request`.
+
+Now, let's map this information to the required fields:
+- "sender_title" corresponds to the sender's title, which is `Manager`.
+- "date" corresponds to the date of the email, which is `2024-08-19`.
+- "subject" corresponds to the subject of the email, which is `Meeting Request`.
+- "sender_name" corresponds to the sender's name, which is `Alice Smith`.
+
+To present this information in the required JSON format, we will create a JSON object with the specified field names as keys.
+
+```json
+{
+  "sender_title": "Manager",
+  "date": "2024-08-19",
+  "subject": "Meeting Request",
+  "sender_name": "Alice Smith"
+}
+```
+
+The final answer is: 
+```json
+{"sender_title": "Manager", "date": "2024-08-19", "subject": "Meeting Request", "sender_name": "Alice Smith"}
+```

@@ -1,0 +1,70 @@
+I see you've provided a large amount of repeated text. I'll help you with the task, but I'll need to extract the relevant information from the text.
+
+Here is the extracted data in a JSON format:
+
+```json
+[
+  {
+    "name": "Chair",
+    "category": "furniture",
+    "price_range": "medium",
+    "portable": true
+  },
+  {
+    "name": "Stapler",
+    "category": "stationery",
+    "price_range": "low",
+    "portable": true
+  },
+  {
+    "name": "Microwave",
+    "category": "appliances",
+    "price_range": "medium",
+    "portable": true
+  },
+  {
+    "name": "Pen",
+    "category": "stationery",
+    "price_range": "low",
+    "portable": true
+  },
+  {
+    "name": "Notebook",
+    "category": "stationery",
+    "price_range": "low",
+    "portable": true
+  },
+  {
+    "name": "Refrigerator",
+    "category": "appliances",
+    "price_range": "high",
+    "portable": false
+  },
+  {
+    "name": "Smartphone",
+    "category": "electronics",
+    "price_range": "high",
+    "portable": true
+  },
+  {
+    "name": "Headphones",
+    "category": "electronics",
+    "price_range": "medium",
+    "portable": true
+  },
+  {
+    "name": "Laptop",
+    "category": "electronics",
+    "price_range": "high",
+    "portable": true
+  },
+  {
+    "name": "Desk",
+    "category": "furniture",
+    "price_range": "medium",
+    "portable": false
+  }
+]
+```
+
+Now, I can help you with the task. Which items would you like to select?

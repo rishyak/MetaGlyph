@@ -1,0 +1,31 @@
+### Step 1: Identify the animals that are not reptiles
+We need to find the animals that are not classified as reptiles.
+
+### Step 2: Review the list of animals
+- Dog: type: mammal, domestic: True, size: medium
+- Whale: type: mammal, domestic: False, size: large
+- Salmon: type: fish, domestic: False, size: medium
+- Eagle: type: bird, domestic: False, size: medium
+- Shark: type: fish, domestic: False, size: large
+- Elephant: type: mammal, domestic: False, size: large
+- Cat: type: mammal, domestic: True, size: small
+- Penguin: type: bird, domestic: False, size: medium
+- Parrot: type: bird, domestic: True, size: small
+- Turtle: type: reptile, domestic: True, size: small
+
+### Step 3: Select the animals that are not reptiles
+The animals that are not reptiles are:
+- Dog
+- Whale
+- Salmon
+- Eagle
+- Shark
+- Elephant
+- Cat
+- Penguin
+- Parrot
+
+### Step 4: Format the output as a JSON array
+The output should be in the format of a JSON array, with each item enclosed in double quotes.
+
+The final answer is: $\boxed["Dog","Whale","Salmon","Eagle","Shark","Elephant","Cat","Penguin","Parrot"]$

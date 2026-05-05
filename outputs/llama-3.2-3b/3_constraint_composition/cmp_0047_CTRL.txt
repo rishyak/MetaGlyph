@@ -1,0 +1,19 @@
+SELECT 
+  x.id, 
+  x.priority, 
+  x.status, 
+  CASE 
+    WHEN x.priority IN ('high') AND x.status NOT IN ('inactive') THEN 
+      x.id 
+    ELSE NULL 
+  END AS selected_ids, 
+  COUNT(CASE 
+    WHEN x.priority IN ('high') AND x.status NOT IN ('inactive') THEN 1 
+    ELSE NULL 
+  END) AS count 
+FROM 
+  item x 
+GROUP BY 
+  x.id, 
+  x.priority, 
+  x.status

@@ -1,0 +1,8 @@
+[
+  "Notebook",
+  "Pen",
+  "Refrigerator",
+  "Bookshelf",
+  "Desk",
+  "Chair"
+]

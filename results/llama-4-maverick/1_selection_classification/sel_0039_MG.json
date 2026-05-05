@@ -1,0 +1,51 @@
+{
+  "prompt_id": "sel_0039_MG",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this problem, we need to follow the given instruction and apply it to the provided input data.",
+    "This can be broken down into:",
+    "Select items (`x`) where `x.size` is `small` and `x.domestic` is `True`.",
+    "Return the names (`x.name`) of the selected items.",
+    "Let's analyze the given data:",
+    "Crocodile: type: reptile, domestic: False, size: large",
+    "Shark: type: fish, domestic: False, size: large",
+    "Cat: type: mammal, domestic: True, size: small",
+    "Lion: type: mammal, domestic: False, size: large",
+    "Elephant: type: mammal, domestic: False, size: large",
+    "Whale: type: mammal, domestic: False, size: large",
+    "Penguin: type: bird, domestic: False, size: medium",
+    "Snake: type: reptile, domestic: False, size: medium",
+    "Hamster: type: mammal, domestic: True, size: small",
+    "Eagle: type: bird, domestic: False, size: medium",
+    "Applying the conditions:",
+    "x.size ∈ {small}` means we are looking for animals with size `small`. From the data, `Cat` and `Hamster` are small.",
+    "x.domestic ∈ {True}` means we are looking for animals that are domestic (`True`). From the data, `Cat` and `Hamster` are domestic.",
+    "Both `Cat` and `Hamster` satisfy both conditions (`size` is `small` and `domestic` is `True`).",
+    "Therefore, we need to return their names as a JSON array of strings.",
+    "Cat",
+    "Hamster",
+    "So, the output in JSON format is: `[\"Cat\", \"Hamster\"]"
+  ],
+  "gold_output": [
+    "cat",
+    "hamster"
+  ],
+  "exact_match": false,
+  "accuracy": 0.08695652173913043,
+  "f1_score": 0.16,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "missing=2, extra=23"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.09",
+  "semantic_equivalence_pass": false
+}

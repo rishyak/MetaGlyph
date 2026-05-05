@@ -1,0 +1,1 @@
+SELECT x.id | x.value >= 50 § x.category ¤ {A} ↯ {selected_ids: [...], count: n} FROM item WHERE value >= 50 GROUP BY category

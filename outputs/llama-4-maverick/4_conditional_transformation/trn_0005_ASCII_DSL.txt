@@ -1,0 +1,134 @@
+To solve this problem, we need to apply the given transformation rules to each record in the input data. The transformation rules are defined as follows:
+
+1. If the record type is "premium", then multiply the amount by 1.1.
+2. After step 1, if the record region is "EU", then multiply the amount by 1.2.
+3. After step 2, if the record is not active (active == false), then set the status to "archived".
+
+Let's apply these rules to each record:
+
+### Record Transformations
+
+1. **rec_000**:
+   - type: standard, region: US, amount: 398, active: True
+   - Rule 1: amount remains 398 (since type is not "premium")
+   - Rule 2: amount remains 398 (since region is not "EU")
+   - Rule 3: status is not set to "archived" (since active is True)
+   - Transformed: {type: "standard", region: "US", amount: 398, active: True}
+
+2. **rec_001**:
+   - type: premium, region: EU, amount: 958, active: False
+   - Rule 1: amount = 958 * 1.1 = 1053.8
+   - Rule 2: amount = 1053.8 * 1.2 = 1264.56
+   - Rule 3: status -> "archived" (since active is False)
+   - Transformed: {type: "premium", region: "EU", amount: 1264.56, active: False, status: "archived"}
+
+3. **rec_002**:
+   - type: premium, region: EU, amount: 723, active: False
+   - Rule 1: amount = 723 * 1.1 = 795.3
+   - Rule 2: amount = 795.3 * 1.2 = 954.36
+   - Rule 3: status -> "archived" (since active is False)
+   - Transformed: {type: "premium", region: "EU", amount: 954.36, active: False, status: "archived"}
+
+4. **rec_003**:
+   - type: standard, region: US, amount: 313, active: True
+   - Rule 1: amount remains 313
+   - Rule 2: amount remains 313
+   - Rule 3: status is not set (since active is True)
+   - Transformed: {type: "standard", region: "US", amount: 313, active: True}
+
+5. **rec_004**:
+   - type: standard, region: APAC, amount: 763, active: True
+   - Rule 1: amount remains 763
+   - Rule 2: amount remains 763
+   - Rule 3: status is not set (since active is True)
+   - Transformed: {type: "standard", region: "APAC", amount: 763, active: True}
+
+6. **rec_005**:
+   - type: trial, region: EU, amount: 68, active: True
+   - Rule 1: amount remains 68
+   - Rule 2: amount = 68 * 1.2 = 81.6
+   - Rule 3: status is not set (since active is True)
+   - Transformed: {type: "trial", region: "EU", amount: 81.6, active: True}
+
+7. **rec_006**:
+   - type: trial, region: EU, amount: 524, active: True
+   - Rule 1: amount remains 524
+   - Rule 2: amount = 524 * 1.2 = 628.8
+   - Rule 3: status is not set (since active is True)
+   - Transformed: {type: "trial", region: "EU", amount: 628.8, active: True}
+
+8. **rec_007**:
+   - type: standard, region: APAC, amount: 92, active: True
+   - Rule 1: amount remains 92
+   - Rule 2: amount remains 92
+   - Rule 3: status is not set (since active is True)
+   - Transformed: {type: "standard", region: "APAC", amount: 92, active: True}
+
+9. **rec_008**:
+   - type: standard, region: APAC, amount: 79, active: True
+   - Rule 1: amount remains 79
+   - Rule 2: amount remains 79
+   - Rule 3: status is not set (since active is True)
+   - Transformed: {type: "standard", region: "APAC", amount: 79, active: True}
+
+10. **rec_009**:
+    - type: premium, region: US, amount: 974, active: True
+    - Rule 1: amount = 974 * 1.1 = 1071.4
+    - Rule 2: amount remains 1071.4
+    - Rule 3: status is not set (since active is True)
+    - Transformed: {type: "premium", region: "US", amount: 1071.4, active: True}
+
+11. **rec_010**:
+    - type: trial, region: APAC, amount: 50, active: True
+    - Rule 1: amount remains 50
+    - Rule 2: amount remains 50
+    - Rule 3: status is not set (since active is True)
+    - Transformed: {type: "trial", region: "APAC", amount: 50, active: True}
+
+12. **rec_011**:
+    - type: premium, region: APAC, amount: 607, active: False
+    - Rule 1: amount = 607 * 1.1 = 667.7
+    - Rule 2: amount remains 667.7
+    - Rule 3: status -> "archived" (since active is False)
+    - Transformed: {type: "premium", region: "APAC", amount: 667.7, active: False, status: "archived"}
+
+13. **rec_012**:
+    - type: premium, region: US, amount: 695, active: False
+    - Rule 1: amount = 695 * 1.1 = 764.5
+    - Rule 2: amount remains 764.5
+    - Rule 3: status -> "archived" (since active is False)
+    - Transformed: {type: "premium", region: "US", amount: 764.5, active: False, status: "archived"}
+
+14. **rec_013**:
+    - type: standard, region: EU, amount: 415, active: True
+    - Rule 1: amount remains 415
+    - Rule 2: amount = 415 * 1.2 = 498
+    - Rule 3: status is not set (since active is True)
+    - Transformed: {type: "standard", region: "EU", amount: 498, active: True}
+
+15. **rec_014**:
+    - type: trial, region: APAC, amount: 317, active: False
+    - Rule 1: amount remains 317
+    - Rule 2: amount remains 317
+    - Rule 3: status -> "archived" (since active is False)
+    - Transformed: {type: "trial", region: "APAC", amount: 317, active: False, status: "archived"}
+
+### JSON Output
+
+```json
+[
+  {"type": "standard", "region": "US", "amount": 398, "active": true},
+  {"type": "premium", "region": "EU", "amount": 1264.56, "active": false, "status": "archived"},
+  {"type": "premium", "region": "EU", "amount": 954.36, "active": false, "status": "archived"},
+  {"type": "standard", "region": "US", "amount": 313, "active": true},
+  {"type": "standard", "region": "APAC", "amount": 763, "active": true},
+  {"type": "trial", "region": "EU", "amount": 81.6, "active": true},
+  {"type": "trial", "region": "EU", "amount": 628.8, "active": true},
+  {"type": "standard", "region": "APAC", "amount": 92, "active": true},
+  {"type": "standard", "region": "APAC", "amount": 79, "active": true},
+  {"type": "premium", "region": "US", "amount": 1071.4, "active": true},
+  {"type": "trial", "region": "APAC", "amount": 50, "active": true},
+  {"type": "premium", "region": "APAC", "amount": 667.7, "active": false, "status": "archived"},
+  {"type": "premium", "region": "US", "amount": 764.5, "active": false, "status": "archived"},
+  {"type": "standard", "region": "EU", "amount": 498, "active": true},
+  {"type": "trial",

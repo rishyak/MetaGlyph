@@ -5,8 +5,13 @@
   "condition": "CTRL",
   "parse_success": true,
   "parsed_output": [
-    "Cat",
-    "Parrot"
+    "Eagle",
+    "Lion",
+    "Whale",
+    "Penguin",
+    "Elephant",
+    "Shark",
+    "Snake"
   ],
   "gold_output": [
     "cat",
@@ -14,18 +19,18 @@
     "parrot"
   ],
   "exact_match": false,
-  "accuracy": 0.6666666666666666,
-  "f1_score": 0.8,
+  "accuracy": 0.0,
+  "f1_score": 0,
   "operator_fidelity": [
     {
       "operator": "∉",
       "checked": true,
-      "passed": true,
-      "details": "Exclusion constraint satisfied"
+      "passed": false,
+      "details": "missing=3, extra=7"
     }
   ],
   "overall_pass": false,
-  "error_type": "incomplete",
-  "error_details": "Accuracy: 0.67",
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
   "semantic_equivalence_pass": false
 }

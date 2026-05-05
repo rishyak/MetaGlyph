@@ -1,0 +1,43 @@
+To solve this problem, we need to analyze the given data and filter it based on the conditions provided: `domestic` equals `False` and `type` equals `mammal`.
+
+First, let's list out the given data in a structured format:
+
+1. Eagle: type: bird, domestic: False, size: medium
+2. Elephant: type: mammal, domestic: False, size: large
+3. Lion: type: mammal, domestic: False, size: large
+4. Turtle: type: reptile, domestic: True, size: small
+5. Cat: type: mammal, domestic: True, size: small
+6. Goldfish: type: fish, domestic: True, size: small
+7. Crocodile: type: reptile, domestic: False, size: large
+8. Parrot: type: bird, domestic: True, size: small
+9. Snake: type: reptile, domestic: False, size: medium
+10. Shark: type: fish, domestic: False, size: large
+
+Now, let's apply the given conditions to this data:
+
+- `domestic` equals `False`
+- `type` equals `mammal`
+
+Let's examine each entry:
+
+1. Eagle: `domestic` = False, `type` = bird (does not match `type` = mammal)
+2. Elephant: `domestic` = False, `type` = mammal (matches both conditions)
+3. Lion: `domestic` = False, `type` = mammal (matches both conditions)
+4. Turtle: `domestic` = True (does not match `domestic` = False)
+5. Cat: `domestic` = True (does not match `domestic` = False)
+6. Goldfish: `domestic` = True (does not match `domestic` = False)
+7. Crocodile: `domestic` = False, `type` = reptile (does not match `type` = mammal)
+8. Parrot: `domestic` = True (does not match `domestic` = False)
+9. Snake: `domestic` = False, `type` = reptile (does not match `type` = mammal)
+10. Shark: `domestic` = False, `type` = fish (does not match `type` = mammal)
+
+From the given data, the items that match both conditions (`domestic` = False and `type` = mammal) are:
+
+- Elephant
+- Lion
+
+Therefore, the output in the required JSON format is:
+
+```json
+["Elephant", "Lion"]
+```

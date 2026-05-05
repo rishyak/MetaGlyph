@@ -1,0 +1,10 @@
+### Step 1: Identify the type of animals that are classified as mammals.
+The animals that are classified as mammals are: Salmon is not a mammal, Penguin is not a mammal, Turtle is not a mammal, Parrot is not a mammal, Goldfish is not a mammal, Snake is not a mammal, Cat is a mammal, Eagle is not a mammal, Whale is a mammal, and Elephant is a mammal.
+
+### Step 2: Filter the list to include only the mammals.
+The list of mammals is: Cat, Whale, Elephant.
+
+### Step 3: Format the list as a JSON array of strings.
+The JSON array of strings is: ["Cat", "Whale", "Elephant"].
+
+The final answer is: $\boxed["Cat", "Whale", "Elephant"]$

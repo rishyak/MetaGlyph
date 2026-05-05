@@ -1,0 +1,25 @@
+### Step 1: Identify the items that are not birds
+We need to review the list of animals and identify the ones that are not birds. This means we will exclude any entries with "bird" in their type.
+
+### Step 2: Exclude bird entries
+From the given list, the entries that are birds are:
+- Penguin: type: bird, domestic: False, size: medium
+- Parrot: type: bird, domestic: True, size: small
+- Eagle: type: bird, domestic: False, size: medium
+
+We will exclude these entries from the list.
+
+### Step 3: Create the output list
+The remaining entries that are not birds are:
+- Crocodile: type: reptile, domestic: False, size: large
+- Whale: type: mammal, domestic: False, size: large
+- Elephant: type: mammal, domestic: False, size: large
+- Dog: type: mammal, domestic: True, size: medium
+- Snake: type: reptile, domestic: False, size: medium
+- Shark: type: fish, domestic: False, size: large
+- Cat: type: mammal, domestic: True, size: small
+
+### Step 4: Format the output as a JSON array
+The output will be a JSON array of the item names that are not birds.
+
+The final answer is: $\boxed [{"Crocodile","Whale","Elephant","Dog","Snake","Shark","Cat"}]$

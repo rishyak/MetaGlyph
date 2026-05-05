@@ -1,0 +1,62 @@
+{
+  "prompt_id": "sel_0006_MG",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this problem, we need to follow the given instruction and apply it to the provided input data.",
+    "This can be broken down into:",
+    "Select items where `domestic` is `False`.",
+    "Select items where `size` is `large`.",
+    "Find the intersection of the results from steps 1 and 2 (i.e., items that satisfy both conditions).",
+    "Return the `name` of the items that satisfy both conditions.",
+    "Let's analyze the given data:",
+    "Eagle: type: bird, domestic: False, size: medium",
+    "Shark: type: fish, domestic: False, size: large",
+    "Dog: type: mammal, domestic: True, size: medium",
+    "Snake: type: reptile, domestic: False, size: medium",
+    "Hamster: type: mammal, domestic: True, size: small",
+    "Salmon: type: fish, domestic: False, size: medium",
+    "Cat: type: mammal, domestic: True, size: small",
+    "Crocodile: type: reptile, domestic: False, size: large",
+    "Goldfish: type: fish, domestic: True, size: small",
+    "Whale: type: mammal, domestic: False, size: large",
+    "Eagle: domestic: False",
+    "Shark: domestic: False",
+    "Snake: domestic: False",
+    "Salmon: domestic: False",
+    "Crocodile: domestic: False",
+    "Whale: domestic: False",
+    "Shark: size: large",
+    "Crocodile: size: large",
+    "Whale: size: large",
+    "Items that are both `domestic: False` and `size: large`:",
+    "Shark: domestic: False, size: large",
+    "Crocodile: domestic: False, size: large",
+    "Whale: domestic: False, size: large",
+    "Shark",
+    "Crocodile",
+    "Whale"
+  ],
+  "gold_output": [
+    "crocodile",
+    "shark",
+    "whale"
+  ],
+  "exact_match": false,
+  "accuracy": 0.09090909090909091,
+  "f1_score": 0.16666666666666669,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "missing=3, extra=33"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.09",
+  "semantic_equivalence_pass": false
+}

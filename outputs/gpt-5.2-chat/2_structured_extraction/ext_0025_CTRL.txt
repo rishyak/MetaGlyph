@@ -1,1 +1,6 @@
-[]
+{
+  "sender_title": "Analyst",
+  "subject": "Q4 Report",
+  "company": "Global Solutions",
+  "sender": "Alice Smith"
+}

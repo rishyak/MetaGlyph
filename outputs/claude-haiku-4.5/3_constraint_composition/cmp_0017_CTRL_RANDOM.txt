@@ -1,0 +1,44 @@
+```json
+{
+  "selected_ids": [
+    "item_000",
+    "item_003",
+    "item_005",
+    "item_008",
+    "item_010",
+    "item_017"
+  ],
+  "count": 6
+}
+```
+
+**Explanation:**
+The query filters for items where:
+- Priority = "high" (¤ {high})
+- AND Status = "inactive" (※ {inactive})
+
+Items matching both conditions:
+- item_008: Priority high, Status inactive ✓
+
+However, re-reading the instruction with the OR operator (↯), the selection includes items with Priority "high" OR Status "inactive":
+
+**Corrected output for Priority = high OR Status = inactive:**
+
+```json
+{
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_003",
+    "item_005",
+    "item_006",
+    "item_008",
+    "item_010",
+    "item_011",
+    "item_012",
+    "item_017",
+    "item_019"
+  ],
+  "count": 11
+}
+```

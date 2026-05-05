@@ -1,0 +1,117 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 264,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 748,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 520,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 570.9,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 527,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 527,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 607,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 298,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 698,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 18,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 913,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 792,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 420,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 209,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 85,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 871.2,
+        "active": false
+    }
+]
+```
+
+Explanation:
+- For `rec_000`, the type is not "premium", so no changes.
+- For `rec_001`, the type is "premium" but the region is "APAC", so no changes.
+- For `rec_002`, the type is "standard", so no changes.
+- For `rec_003`, the type is "premium" and the region is "EU", so the amount is increased by 10% and then by 20%, resulting in an amount of 570.9.
+- For `rec_004`, the type is "standard" and the region is "EU", so no changes.
+- For `rec_005`, the type is "standard" and the region is "EU", so no changes.
+- For `rec_006`, the type is "standard" and the region is "US", so no changes.
+- For `rec_007`, the type is "trial", so no changes.
+- For `rec_008`, the type is "premium" but the region is "APAC", so no changes.
+- For `rec_009`, the type is "premium" and the region is "US", so no changes.
+- For `rec_010`, the type is "trial" but the region is "EU", so no changes.
+- For `rec_011`, the type is "premium" and the region is "US", so no changes.
+- For `rec_012`, the type is "trial" but the region is "APAC", so no changes.
+- For `rec_013`, the type is "trial" but the region is "EU", so no changes.
+- For `rec_014`, the type is "trial" but the region is "EU", so the status is changed to "archived".

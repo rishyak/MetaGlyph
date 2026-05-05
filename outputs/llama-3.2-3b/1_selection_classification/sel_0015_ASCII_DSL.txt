@@ -1,0 +1,9 @@
+Given the repetitive nature of the input, I'll provide a concise solution that extracts the items from the "appliances" category and their names.
+
+```sql
+SELECT name
+FROM products
+WHERE category = 'appliances';
+```
+
+This query will return a list of appliance names from the provided products.

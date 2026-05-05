@@ -1,0 +1,107 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 930,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 569,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 977 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 664,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 477,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 883 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 400,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 726,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 415,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 895,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 518,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 831,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 204,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 795,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 935,
+        "active": true
+    }
+]
+```
+
+Note that for `rec_009` and `rec_13`, no transformations were needed since `active` was `True`. Also, for `rec_002`, `rec_003`, `rec_004`, `rec_007`, and `rec_013`, both the `premium` and `EU` rules applied, but the priority was given to the most specific rule (i.e., `EU` rule). The `amount` was first multiplied by 1.1 because it's a `trial` type, and then by 1.2 because the region is `EU`. Therefore, the final `amount` for these records is `977 * 1.2 * 1.1` and `883 * 1.2 * 1.1`, respectively.

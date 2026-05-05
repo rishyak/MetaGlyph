@@ -1,0 +1,103 @@
+Let's break down the transformation rules step-by-step:
+
+1. **First Rule:** `x.type != "premium" ⇒ x.amount → x.amount × 1.1`
+   - If `type` is not "premium", then multiply the `amount` by 1.1.
+
+2. **Second Rule:** `x.region != "EU" ⇒ x.amount → x.amount × 1.2`
+   - If `region` is not "EU", then multiply the `amount` by 1.2.
+
+3. **Third Rule:** `x.active != false ⇒ x.status → "archived"`
+   - If `active` is not false, then set the `status` to "archived".
+
+Now let's apply these rules to each record:
+
+- **rec_000**: `type: premium`, `region: EU`, `amount: 583`, `active: False`
+  - No transformation needed as all conditions (`type = "premium"`, `region = "EU"`, `active = False`) are not met for the first two rules.
+  - `status` remains unchanged.
+
+- **rec_001**: `type: premium`, `region: US`, `amount: 597`, `active: False`
+  - No transformation needed as `type` is "premium".
+  - `status` remains unchanged.
+
+- **rec_002**: `type: premium`, `region: EU`, `amount: 987`, `active: True`
+  - `amount` will be multiplied by 1.1 due to `active = True`.
+  - New `amount`: `987 * 1.1 = 1085.7`
+  - `status` will be set to "archived".
+
+- **rec_003**: `type: premium`, `region: US`, `amount: 304`, `active: True`
+  - `amount` will be multiplied by 1.1 due to `active = True`.
+  - New `amount`: `304 * 1.1 = 334.4`
+  - `status` will be set to "archived".
+
+- **rec_004**: `type: premium`, `region: EU`, `amount: 681`, `active: False`
+  - No transformation needed as all conditions (`type = "premium"`, `region = "EU"`, `active = False`) are not met for the first two rules.
+  - `status` remains unchanged.
+
+- **rec_005**: `type: trial`, `region: EU`, `amount: 229`, `active: True`
+  - `amount` will be multiplied by 1.1 due to `active = True`.
+  - New `amount`: `229 * 1.1 = 251.9`
+  - No change in `status`.
+
+- **rec_006**: `type: trial`, `region: EU`, `amount: 965`, `active: False`
+  - No transformation needed as `type` is "trial".
+  - `status` remains unchanged.
+
+- **rec_007**: `type: standard`, `region: US`, `amount: 640`, `active: True`
+  - `amount` will be multiplied by 1.1 due to `active = True`.
+  - New `amount`: `640 * 1.1 = 704`
+  - `status` will be set to "archived".
+
+- **rec_008**: `type: standard`, `region: US`, `amount: 695`, `active: True`
+  - `amount` will be multiplied by 1.1 due to `active = True`.
+  - New `amount`: `695 * 1.1 = 764.5`
+  - `status` will be set to "archived".
+
+- **rec_009**: `type: trial`, `region: US`, `amount: 63`, `active: True`
+  - `amount` will be multiplied by 1.1 due to `active = True`.
+  - New `amount`: `63 * 1.1 = 69.3`
+  - No change in `status`.
+
+- **rec_010**: `type: premium`, `region: EU`, `amount: 744`, `active: False`
+  - No transformation needed as all conditions (`type = "premium"`, `region = "EU"`, `active = False`) are not met for the first two rules.
+  - `status` remains unchanged.
+
+- **rec_011**: `type: standard`, `region: APAC`, `amount: 799`, `active: True`
+  - `amount` will be multiplied by 1.1 due to `active = True`.
+  - New `amount`: `799 * 1.1 = 878.9`
+  - `status` will be set to "archived".
+
+- **rec_012**: `type: standard`, `region: APAC`, `amount: 961`, `active: True`
+  - `amount` will be multiplied by 1.1 due to `active = True`.
+  - New `amount`: `961 * 1.1 = 1057.1`
+  - `status` will be set to "archived".
+
+- **rec_013**: `type: premium`, `region: APAC`, `amount: 967`, `active: False`
+  - No transformation needed as `type` is "premium".
+  - `status` remains unchanged.
+
+- **rec_014**: `type: premium`, `region: APAC`, `amount: 214`, `active: False`
+  - No transformation needed as `type` is "premium".
+  - `status` remains unchanged.
+
+Now we can compile the transformed records into a JSON array:
+
+```json
+[
+    {"type": "premium", "region": "EU", "amount": 583, "status": "archived"},
+    {"type": "premium", "region": "US", "amount": 597, "status": "archived"},
+    {"type": "premium", "region": "EU", "amount": 1085.7, "status": "archived"},
+    {"type": "premium", "region": "US", "amount": 334.4, "status": "archived"},
+    {"type": "premium", "region": "EU", "amount": 681, "status": "archived"},
+    {"type": "trial", "region": "EU", "amount": 251.9, "status": "archived"},
+    {"type": "standard", "region": "US", "amount": 704, "status": "archived"},
+    {"type": "standard", "region": "US", "amount": 764.5, "status": "archived"},
+    {"type": "trial", "region": "US", "amount": 69.3, "status": "archived"},
+    {"type": "premium", "region": "EU", "amount": 744, "status": "archived"},
+    {"type": "standard", "region": "APAC", "amount": 878.9, "status": "archived"},
+    {"type": "standard", "region": "APAC", "amount": 1057.1, "status": "archived"},
+    {"type": "premium", "region": "APAC", "amount": 967, "status": "archived"},
+    {"type": "premium", "region": "APAC", "amount": 214, "status": "archived"}
+]
+```
+
+This JSON array contains the transformed records based on the given rules.

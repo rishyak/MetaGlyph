@@ -1,0 +1,13 @@
+```json
+{
+  "selected_ids": ["item_004", "item_013"],
+  "count": 2
+}
+```
+
+**Explanation:**
+- **item_004**: Category A, Value 60 (≥ 50) ✓
+- **item_013**: Category A, Value 83 (≥ 50) ✓
+- **item_011**: Category A, Value 2 (< 50) ✗
+- **item_014**: Category A, Value 38 (< 50) ✗
+- **item_019**: Category A, Value 44 (< 50) ✗

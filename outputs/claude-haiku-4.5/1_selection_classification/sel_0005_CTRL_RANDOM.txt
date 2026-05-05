@@ -1,0 +1,28 @@
+I need to parse this query and apply the filters to the animal list.
+
+The query appears to be: `SELECT x | (x.domestic ¤ {True}) § (x.type ¤ {bird}) ↯ [x.name]`
+
+Interpreting the operators:
+- `¤` appears to mean "equals" or "is in"
+- `§` appears to mean "AND"
+- `↯` appears to mean "return/output"
+- `|` means "where"
+
+So the query translates to: **Select animals where domestic = True AND type = bird, return their names**
+
+Let me check each animal:
+
+1. **Turtle**: domestic: True, type: reptile ❌ (not bird)
+2. **Salmon**: domestic: False, type: fish ❌ (not domestic)
+3. **Whale**: domestic: False, type: mammal ❌ (not domestic)
+4. **Crocodile**: domestic: False, type: reptile ❌ (not domestic)
+5. **Parrot**: domestic: True, type: bird ✅ (matches both conditions)
+6. **Cat**: domestic: True, type: mammal ❌ (not bird)
+7. **Elephant**: domestic: False, type: mammal ❌ (not domestic)
+8. **Eagle**: domestic: False, type: bird ❌ (not domestic)
+9. **Goldfish**: domestic: True, type: fish ❌ (not bird)
+10. **Lion**: domestic: False, type: mammal ❌ (not domestic)
+
+```json
+["Parrot"]
+```

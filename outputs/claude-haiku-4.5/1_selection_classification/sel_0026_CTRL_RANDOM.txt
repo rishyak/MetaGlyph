@@ -1,0 +1,19 @@
+Looking at the query: `SELECT x | x.domestic ¤ {False} ↯ [x.name]`
+
+This appears to be a custom query language where:
+- `SELECT x` - select items
+- `x.domestic ¤ {False}` - where domestic attribute equals False
+- `↯ [x.name]` - return the name field
+
+I need to find all animals where `domestic: False`:
+
+1. Snake: domestic: False ✓
+2. Elephant: domestic: False ✓
+3. Salmon: domestic: False ✓
+4. Whale: domestic: False ✓
+5. Lion: domestic: False ✓
+6. Shark: domestic: False ✓
+
+```json
+["Snake", "Elephant", "Salmon", "Whale", "Lion", "Shark"]
+```

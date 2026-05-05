@@ -1,0 +1,12 @@
+To address the instruction, we need to select names of items where the `portable` attribute is not `False`. Given the data provided, the items that satisfy this condition are:
+
+- Smartphone
+- Laptop
+- Tablet
+- Pen
+
+Here is the output formatted as a JSON array of strings:
+
+```json
+["Smartphone", "Laptop", "Tablet", "Pen"]
+```

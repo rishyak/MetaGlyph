@@ -3,10 +3,27 @@
   "selected_ids": [
     "item_002",
     "item_003",
+    "item_005",
     "item_006",
     "item_013",
     "item_017"
   ],
-  "count": 5
+  "count": 6
 }
 ```
+
+**Explanation:**
+The query selects items where:
+- `priority ∈ {high}` (priority is "high") AND
+- `status ∉ {inactive}` (status is NOT "inactive")
+
+Matching items:
+- item_002: priority=high, status=active ✓
+- item_003: priority=high, status=active ✓
+- item_005: priority=high, status=pending ✓
+- item_006: priority=high, status=active ✓
+- item_013: priority=high, status=active ✓
+- item_017: priority=high, status=active ✓
+
+Excluded:
+- item_015: priority=high, but status=inactive ✗

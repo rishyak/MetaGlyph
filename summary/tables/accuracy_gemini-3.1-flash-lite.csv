@@ -1,0 +1,25 @@
+Family,Condition,N,Accuracy (Mean),Accuracy (Std),F1 (Mean),Exact Match Rate,Parse Rate,Pass Rate,Semantic Equiv Rate
+1_selection_classification,ASCII_DSL,50,1.000,0.000,0.960,1.000,1.000,1.000,0.000
+1_selection_classification,CTRL,50,0.085,0.192,0.117,0.020,1.000,0.020,0.000
+1_selection_classification,CTRL_RANDOM,50,0.723,0.449,0.686,0.720,1.000,0.720,0.000
+1_selection_classification,MG,50,1.000,0.000,0.960,1.000,1.000,1.000,0.980
+1_selection_classification,NL,50,1.000,0.000,0.960,1.000,1.000,1.000,0.980
+1_selection_classification,NL_SHORT,50,1.000,0.000,0.960,1.000,1.000,1.000,0.000
+2_structured_extraction,ASCII_DSL,50,0.925,0.136,0.925,0.520,1.000,0.520,0.000
+2_structured_extraction,CTRL,50,0.900,0.143,0.900,0.540,1.000,0.540,0.000
+2_structured_extraction,CTRL_RANDOM,50,0.930,0.124,0.930,0.540,1.000,0.540,0.000
+2_structured_extraction,MG,50,0.930,0.124,0.930,0.540,1.000,0.540,0.040
+2_structured_extraction,NL,50,0.905,0.133,0.905,0.600,1.000,0.600,0.040
+2_structured_extraction,NL_SHORT,50,0.920,0.138,0.920,0.600,1.000,0.600,0.000
+3_constraint_composition,ASCII_DSL,50,0.996,0.028,0.978,0.980,1.000,0.980,0.000
+3_constraint_composition,CTRL,50,0.249,0.113,0.386,0.000,1.000,0.000,0.000
+3_constraint_composition,CTRL_RANDOM,50,0.697,0.415,0.712,0.640,1.000,0.640,0.000
+3_constraint_composition,MG,50,1.000,0.000,0.980,1.000,1.000,1.000,1.000
+3_constraint_composition,NL,50,1.000,0.000,0.980,1.000,1.000,1.000,1.000
+3_constraint_composition,NL_SHORT,50,1.000,0.000,0.980,1.000,1.000,1.000,0.000
+4_conditional_transformation,ASCII_DSL,50,0.497,0.503,0.497,0.480,1.000,0.480,0.000
+4_conditional_transformation,CTRL,50,0.000,0.000,0.000,0.000,1.000,0.000,0.000
+4_conditional_transformation,CTRL_RANDOM,50,0.000,0.000,0.000,0.000,1.000,0.000,0.000
+4_conditional_transformation,MG,50,0.237,0.427,0.237,0.220,1.000,0.220,0.200
+4_conditional_transformation,NL,50,0.999,0.009,0.999,0.980,1.000,0.980,0.200
+4_conditional_transformation,NL_SHORT,50,0.997,0.013,0.997,0.960,1.000,0.960,0.000

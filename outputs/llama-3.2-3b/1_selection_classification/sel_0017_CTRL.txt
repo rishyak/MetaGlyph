@@ -1,0 +1,10 @@
+### Step 1: Identify the type of animals that are classified as "fish"
+The animals that are classified as "fish" are Shark and Goldfish.
+
+### Step 2: Identify the names of the fish
+The names of the fish are Shark and Goldfish.
+
+### Step 3: Format the output as a JSON array
+The output should be in the format of a JSON array, with the names of the fish enclosed in double quotes.
+
+The final answer is: $\boxed [{"Shark","Goldfish"}]$

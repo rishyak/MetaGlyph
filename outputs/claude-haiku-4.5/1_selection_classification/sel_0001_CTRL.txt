@@ -1,3 +1,22 @@
+# Analysis
+
+The instruction asks me to select all animals where the size is **NOT** in the set {large}.
+
+This means I need to find all animals with size = "small" OR size = "medium".
+
+Let me review each animal:
+
+- Eagle: size = medium ✓ (not large)
+- Penguin: size = medium ✓ (not large)
+- Goldfish: size = small ✓ (not large)
+- Dog: size = medium ✓ (not large)
+- Shark: size = large ✗ (is large)
+- Crocodile: size = large ✗ (is large)
+- Turtle: size = small ✓ (not large)
+- Hamster: size = small ✓ (not large)
+- Cat: size = small ✓ (not large)
+- Parrot: size = small ✓ (not large)
+
 ```json
-["Cat", "Dog", "Hamster"]
+["Eagle", "Penguin", "Goldfish", "Dog", "Turtle", "Hamster", "Cat", "Parrot"]
 ```

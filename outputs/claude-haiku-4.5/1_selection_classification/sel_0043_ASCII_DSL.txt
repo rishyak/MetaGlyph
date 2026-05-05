@@ -1,0 +1,16 @@
+Looking at the instruction: `SELECT x | x.domestic NOT IN {True} -> [x.name]`
+
+This means: Select all items where `domestic` is NOT `True` (i.e., where `domestic` is `False`), and return their names.
+
+Filtering the animals with `domestic: False`:
+
+1. Snake: domestic: False ✓
+2. Salmon: domestic: False ✓
+3. Whale: domestic: False ✓
+4. Penguin: domestic: False ✓
+5. Eagle: domestic: False ✓
+6. Lion: domestic: False ✓
+
+```json
+["Snake", "Salmon", "Whale", "Penguin", "Eagle", "Lion"]
+```

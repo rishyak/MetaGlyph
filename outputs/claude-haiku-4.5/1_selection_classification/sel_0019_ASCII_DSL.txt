@@ -1,0 +1,18 @@
+Looking at the instruction `SELECT x | x.domestic IN {False} -> [x.name]`, I need to:
+
+1. Filter all animals where `domestic` equals `False`
+2. Return only their names
+
+Reviewing the list for animals with `domestic: False`:
+
+- Salmon: domestic: False ✓
+- Eagle: domestic: False ✓
+- Penguin: domestic: False ✓
+- Snake: domestic: False ✓
+- Whale: domestic: False ✓
+- Lion: domestic: False ✓
+- Crocodile: domestic: False ✓
+
+```json
+["Salmon", "Eagle", "Penguin", "Snake", "Whale", "Lion", "Crocodile"]
+```

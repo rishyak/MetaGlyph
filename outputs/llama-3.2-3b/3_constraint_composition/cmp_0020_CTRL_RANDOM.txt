@@ -1,0 +1,1 @@
+SELECT x.id, x.value, x.category FROM items x WHERE x.value >= 50 AND x.category = 'A'

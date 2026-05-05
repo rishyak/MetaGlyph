@@ -1,0 +1,13 @@
+```json
+{
+  "selected_ids": ["item_011", "item_015", "item_018"],
+  "count": 3
+}
+```
+
+**Explanation:**
+- **item_011**: Category B ✓, Status active ✓
+- **item_015**: Category A ✓, Status active ✓
+- **item_018**: Category B ✓, Status active ✓
+
+These are the only records where category is in ['A', 'B'] AND status is 'active'.

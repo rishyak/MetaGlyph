@@ -1,0 +1,35 @@
+To solve this task, we need to carefully review the list of animals provided and identify those with the 'domestic' attribute set to 'True'. The list includes various animals with their respective attributes such as type, domestic status, and size.
+
+1. **Review the list**: The given list of animals is as follows:
+   - Snake: type: reptile, domestic: False, size: medium
+   - Parrot: type: bird, domestic: True, size: small
+   - Elephant: type: mammal, domestic: False, size: large
+   - Penguin: type: bird, domestic: False, size: medium
+   - Whale: type: mammal, domestic: False, size: large
+   - Dog: type: mammal, domestic: True, size: medium
+   - Crocodile: type: reptile, domestic: False, size: large
+   - Lion: type: mammal, domestic: False, size: large
+   - Goldfish: type: fish, domestic: True, size: small
+   - Hamster: type: mammal, domestic: True, size: small
+
+2. **Identify 'domestic' animals**: We will go through each entry to find animals where 'domestic' is 'True'.
+   - Snake: domestic is False
+   - Parrot: domestic is True
+   - Elephant: domestic is False
+   - Penguin: domestic is False
+   - Whale: domestic is False
+   - Dog: domestic is True
+   - Crocodile: domestic is False
+   - Lion: domestic is False
+   - Goldfish: domestic is True
+   - Hamster: domestic is True
+
+3. **List the names of 'domestic' animals**: The animals with 'domestic' set to 'True' are Parrot, Dog, Goldfish, and Hamster.
+
+4. **Format the answer as a JSON array**: The names of the animals that are domestic should be returned as a JSON array of strings.
+
+The final list of domestic animals is: ["Parrot", "Dog", "Goldfish", "Hamster"]
+
+```json
+["Parrot", "Dog", "Goldfish", "Hamster"]
+```

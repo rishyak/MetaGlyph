@@ -1,0 +1,5 @@
+Family,Model,NL Accuracy,MG Accuracy,CTRL Accuracy,MG-NL Diff,MG-CTRL Diff,Significant
+3_constraint_composition,olmo-3.1-32b-instruct,0.649,0.716,0.421,+0.067,+0.295,No
+1_selection_classification,olmo-3.1-32b-instruct,0.926,0.870,0.104,-0.056,+0.765,Yes
+2_structured_extraction,olmo-3.1-32b-instruct,0.950,0.955,0.920,+0.005,+0.035,No
+4_conditional_transformation,olmo-3.1-32b-instruct,0.000,0.000,0.000,+0.000,+0.000,No

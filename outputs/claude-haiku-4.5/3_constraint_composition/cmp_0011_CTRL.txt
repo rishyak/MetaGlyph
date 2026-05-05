@@ -1,17 +1,60 @@
 ```json
 {
   "selected_ids": [
-    "item_001",
-    "item_002",
+    "item_000",
     "item_003",
+    "item_004",
     "item_005",
-    "item_008",
-    "item_009",
-    "item_010",
-    "item_014",
+    "item_007",
     "item_015",
-    "item_016"
+    "item_016",
+    "item_019"
   ],
-  "count": 10
+  "count": 8
+}
+```
+
+**Explanation:**
+
+The query selects items where: `x.value >= 50` **OR** `x.category ∈ {A}`
+
+**Items matching `x.value >= 50`:**
+- item_003 (value: 53)
+- item_004 (value: 89)
+- item_005 (value: 63)
+- item_015 (value: 62)
+- item_016 (value: 98)
+- item_019 (value: 91)
+
+**Items matching `x.category ∈ {A}`:**
+- item_000 (Category: A)
+- item_003 (Category: A) - already counted
+- item_007 (Category: A)
+- item_015 (Category: A) - already counted
+- item_018 (Category: A)
+- item_019 (Category: A) - already counted
+
+**Union of both conditions:**
+item_000, item_003, item_004, item_005, item_007, item_015, item_016, item_018, item_019
+
+Wait, let me recount - item_018 has value 47 (< 50) but category A, so it should be included.
+
+**Corrected result:**
+- item_000, item_003, item_004, item_005, item_007, item_015, item_016, item_018, item_019
+
+```json
+{
+  "selected_ids": [
+    "item_000",
+    "item_003",
+    "item_004",
+    "item_005",
+    "item_007",
+    "item_015",
+    "item_016",
+    "item_018",
+    "item_019"
+  ],
+  "count": 9
 }
 ```

@@ -5,8 +5,15 @@
   "condition": "CTRL",
   "parse_success": true,
   "parsed_output": [
+    "Crocodile",
+    "Dog",
+    "Snake",
     "Cat",
-    "Dog"
+    "Penguin",
+    "Eagle",
+    "Lion",
+    "Whale",
+    "Turtle"
   ],
   "gold_output": [
     "salmon"
@@ -19,7 +26,7 @@
       "operator": "∈",
       "checked": true,
       "passed": false,
-      "details": "Extra items: 2"
+      "details": "missing=1, extra=9"
     }
   ],
   "overall_pass": false,

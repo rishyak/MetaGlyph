@@ -1,0 +1,92 @@
+[
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 370 * 1.2, // 444.0 (region != EU ⇒ ×1.2)
+    "status": "archived" // active is False ⇒ status → "archived"
+  },
+  {
+    "type": "trial",
+    "region": "US",
+    "amount": 860 * 1.2, // 1032.0 (region != EU ⇒ ×1.2)
+    "status": "archived" // active is False ⇒ status → "archived"
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 656, // region == EU ⇒ no ×1.2
+    "status": "active" // active is True ⇒ status unchanged
+  },
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 743 * 1.2, // 891.6 (region != EU ⇒ ×1.2)
+    "status": "archived" // active is False ⇒ status → "archived"
+  },
+  {
+    "type": "standard",
+    "region": "EU",
+    "amount": 216 * 1.1, // 237.6 (type != premium ⇒ ×1.1)
+    "status": "active" // active is True ⇒ status unchanged
+  },
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 333 * 1.2 * 1.1, // 435.6 (region != EU ⇒ ×1.2, type != premium ⇒ ×1.1)
+    "status": "archived" // active is False ⇒ status → "archived"
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 844, // region == EU ⇒ no ×1.2, type != premium ⇒ ×1.1
+    "status": "archived" // active is False ⇒ status → "archived"
+  },
+  {
+    "type": "premium",
+    "region": "US",
+    "amount": 781, // type == premium ⇒ no ×1.1
+    "status": "active" // active is True ⇒ status unchanged
+  },
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 892, // type == premium ⇒ no ×1.1, region == EU ⇒ no ×1.2
+    "status": "active" // active is True ⇒ status unchanged
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 289 * 1.1, // type != premium ⇒ ×1.1
+    "status": "active" // active is True ⇒ status unchanged
+  },
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 920, // type == premium ⇒ no ×1.1, region == EU ⇒ no ×1.2
+    "status": "archived" // active is False ⇒ status → "archived"
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 926 * 1.1, // type != premium ⇒ ×1.1
+    "status": "archived" // active is False ⇒ status → "archived"
+  },
+  {
+    "type": "premium",
+    "region": "US",
+    "amount": 518, // type == premium ⇒ no ×1.1
+    "status": "archived" // active is False ⇒ status → "archived"
+  },
+  {
+    "type": "premium",
+    "region": "APAC",
+    "amount": 283, // type == premium ⇒ no ×1.1
+    "status": "active" // active is True ⇒ status unchanged
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 90 * 1.1, // type != premium ⇒ ×1.1
+    "status": "archived" // active is False ⇒ status → "archived"
+  }
+]

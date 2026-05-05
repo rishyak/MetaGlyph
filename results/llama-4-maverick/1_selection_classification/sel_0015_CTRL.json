@@ -1,0 +1,39 @@
+{
+  "prompt_id": "sel_0015_CTRL",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": [
+    "Refrigerator: appliances",
+    "Chair: furniture",
+    "Smartphone: electronics",
+    "Bookshelf: furniture",
+    "Stapler: stationery",
+    "Desk: furniture",
+    "Tablet: electronics",
+    "Pen: stationery",
+    "Notebook: stationery",
+    "Microwave: appliances",
+    "Products that are not in the 'appliances' category are: Chair, Smartphone, Bookshelf, Stapler, Desk, Tablet, Pen, Notebook."
+  ],
+  "gold_output": [
+    "microwave",
+    "refrigerator"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=2, extra=11"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

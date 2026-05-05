@@ -1,0 +1,133 @@
+To solve this problem, we will apply the given transformation rules to each record in the dataset.
+
+1. **Rule 1:** If `type` == `premium`, then multiply `amount` by 1.1.
+2. **Rule 2:** If `region` == `EU`, then multiply `amount` by 1.2.
+3. **Rule 3:** If `active` == `False`, then set `status` to `'archived'`.
+
+First, let's list the records:
+
+1. rec_000: `type: trial`, `region: APAC`, `amount: 633`, `active: False`
+2. rec_001: `type: standard`, `region: EU`, `amount: 253`, `active: False`
+3. rec_002: `type: standard`, `region: US`, `amount: 254`, `active: False`
+4. rec_003: `type: trial`, `region: APAC`, `amount: 478`, `active: True`
+5. rec_004: `type: standard`, `region: EU`, `amount: 621`, `active: True`
+6. rec_005: `type: trial`, `region: APAC`, `amount: 598`, `active: True`
+7. rec_006: `type: trial`, `region: US`, `amount: 308`, `active: False`
+8. rec_007: `type: standard`, `region: APAC`, `amount: 371`, `active: True`
+9. rec_008: `type: trial`, `region: EU`, `amount: 201`, `active: True`
+10. rec_009: `type: trial`, `region: EU`, `amount: 79`, `active: True`
+11. rec_010: `type: premium`, `region: EU`, `amount: 54`, `active: False`
+12. rec_011: `type: premium`, `region: EU`, `amount: 775`, `active: True`
+13. rec_012: `type: premium`, `region: US`, `amount: 363`, `active: True`
+14. rec_013: `type: trial`, `region: APAC`, `amount: 653`, `active: True`
+15. rec_014: `type: trial`, `region: APAC`, `amount: 784`, `active: False`
+
+Let's apply the rules to each record:
+
+1. rec_000: 
+   - Rule 1: Doesn't apply.
+   - Rule 2: Doesn't apply.
+   - Rule 3: Applies, `status` = `'archived'`.
+   - Result: `type: trial`, `region: APAC`, `amount: 633`, `active: False`, `status: 'archived'`
+
+2. rec_001: 
+   - Rule 1: Doesn't apply.
+   - Rule 2: Applies, `amount` = `253 * 1.2` = `303.6`.
+   - Rule 3: Applies, `status` = `'archived'`.
+   - Result: `type: standard`, `region: EU`, `amount: 303.6`, `active: False`, `status: 'archived'`
+
+3. rec_002: 
+   - Rule 1: Doesn't apply.
+   - Rule 2: Doesn't apply.
+   - Rule 3: Applies, `status` = `'archived'`.
+   - Result: `type: standard`, `region: US`, `amount: 254`, `active: False`, `status: 'archived'`
+
+4. rec_003: 
+   - Rule 1: Doesn't apply.
+   - Rule 2: Doesn't apply.
+   - Rule 3: Doesn't apply.
+   - Result: `type: trial`, `region: APAC`, `amount: 478`, `active: True`
+
+5. rec_004: 
+   - Rule 1: Doesn't apply.
+   - Rule 2: Applies, `amount` = `621 * 1.2` = `745.2`.
+   - Rule 3: Doesn't apply.
+   - Result: `type: standard`, `region: EU`, `amount: 745.2`, `active: True`
+
+6. rec_005: 
+   - Rule 1: Doesn't apply.
+   - Rule 2: Doesn't apply.
+   - Rule 3: Doesn't apply.
+   - Result: `type: trial`, `region: APAC`, `amount: 598`, `active: True`
+
+7. rec_006: 
+   - Rule 1: Doesn't apply.
+   - Rule 2: Doesn't apply.
+   - Rule 3: Applies, `status` = `'archived'`.
+   - Result: `type: trial`, `region: US`, `amount: 308`, `active: False`, `status: 'archived'`
+
+8. rec_007: 
+   - Rule 1: Doesn't apply.
+   - Rule 2: Doesn't apply.
+   - Rule 3: Doesn't apply.
+   - Result: `type: standard`, `region: APAC`, `amount: 371`, `active: True`
+
+9. rec_008: 
+   - Rule 1: Doesn't apply.
+   - Rule 2: Applies, `amount` = `201 * 1.2` = `241.2`.
+   - Rule 3: Doesn't apply.
+   - Result: `type: trial`, `region: EU`, `amount: 241.2`, `active: True`
+
+10. rec_009: 
+    - Rule 1: Doesn't apply.
+    - Rule 2: Applies, `amount` = `79 * 1.2` = `94.8`.
+    - Rule 3: Doesn't apply.
+    - Result: `type: trial`, `region: EU`, `amount: 94.8`, `active: True`
+
+11. rec_010: 
+    - Rule 1: Applies, `amount` = `54 * 1.1` = `59.4`.
+    - Rule 2: Applies, `amount` = `59.4 * 1.2` = `71.28`.
+    - Rule 3: Applies, `status` = `'archived'`.
+    - Result: `type: premium`, `region: EU`, `amount: 71.28`, `active: False`, `status: 'archived'`
+
+12. rec_011: 
+    - Rule 1: Applies, `amount` = `775 * 1.1` = `852.5`.
+    - Rule 2: Applies, `amount` = `852.5 * 1.2` = `1023`.
+    - Rule 3: Doesn't apply.
+    - Result: `type: premium`, `region: EU`, `amount: 1023`, `active: True`
+
+13. rec_012: 
+    - Rule 1: Applies, `amount` = `363 * 1.1` = `399.3`.
+    - Rule 2: Doesn't apply.
+    - Rule 3: Doesn't apply.
+    - Result: `type: premium`, `region: US`, `amount: 399.3`, `active: True`
+
+14. rec_013: 
+    - Rule 1: Doesn't apply.
+    - Rule 2: Doesn't apply.
+    - Rule 3: Doesn't apply.
+    - Result: `type: trial`, `region: APAC`, `amount: 653`, `active: True`
+
+15. rec_014: 
+    - Rule 1: Doesn't apply.
+    - Rule 2: Doesn't apply.
+    - Rule 3: Applies, `status` = `'archived'`.
+    - Result: `type: trial`, `region: APAC`, `amount: 784`, `active: False`, `status: 'archived'`
+
+Now, let's format the results as a JSON array:
+
+```json
+[
+  {"type": "trial", "region": "APAC", "amount": 633, "active": false, "status": "archived"},
+  {"type": "standard", "region": "EU", "amount": 303.6, "active": false, "status": "archived"},
+  {"type": "standard", "region": "US", "amount": 254, "active": false, "status": "archived"},
+  {"type": "trial", "region": "APAC", "amount": 478, "active": true},
+  {"type": "standard", "region": "EU", "amount": 745.2, "active": true},
+  {"type": "trial", "region": "APAC", "amount": 598, "active": true},
+  {"type": "trial", "region": "US", "amount": 308, "active": false, "status": "archived"},
+  {"type": "standard", "region": "APAC", "amount": 371, "active": true},
+  {"type": "trial", "region": "EU", "amount": 241.2, "active": true},
+  {"type": "trial", "region": "EU", "amount": 94.8, "active": true},
+  {"type": "premium", "region": "EU", "amount": 71.28, "active": false, "status": "archived"},
+  {"type": "premium", "region": "EU", "amount": 1023, "active": true},
+  {"type": "premium", "region": "US", "amount":

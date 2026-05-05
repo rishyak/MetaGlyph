@@ -1,15 +1,19 @@
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": ["item_003", "item_015", "item_019"],
+  "count": 3
 }
 ```
 
-The dataset provided contains only basic attributes (ID, Category, Status, Priority, Value) and does not include the required attributes referenced in the query:
-- `security` (not present in dataset)
-- `high_priority` (not present in dataset)
-- `performance` (not present in dataset)
-- `deprecated` (not present in dataset)
-- `experimental` (not present in dataset)
+**Explanation:**
+The query filters for items where:
+- `x.value >= 50` AND
+- `x.category ∈ {A}`
 
-Therefore, no items can be evaluated against the filter criteria, resulting in an empty selection.
+Checking all Category A items:
+- item_000: value 44 < 50 ❌
+- item_003: value 53 >= 50 ✓
+- item_007: value 32 < 50 ❌
+- item_015: value 62 >= 50 ✓
+- item_018: value 47 < 50 ❌
+- item_019: value 91 >= 50 ✓

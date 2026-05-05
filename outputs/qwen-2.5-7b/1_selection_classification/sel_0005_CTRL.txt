@@ -1,0 +1,43 @@
+Let's break down the instruction and input to understand what needs to be selected.
+
+The instruction provided is in a logical expression format, which translates to:
+- Select `x` where either `x.domestic` is `True` or `x.type` is `fish`.
+
+We need to filter the given list based on this condition and return the names of the filtered animals.
+
+Given list of animals:
+
+1. Turtle: type: reptile, domestic: True, size: small
+2. Salmon: type: fish, domestic: False, size: medium
+3. Whale: type: mammal, domestic: False, size: large
+4. Crocodile: type: reptile, domestic: False, size: large
+5. Parrot: type: bird, domestic: True, size: small
+6. Cat: type: mammal, domestic: True, size: small
+7. Elephant: type: mammal, domestic: False, size: large
+8. Eagle: type: bird, domestic: False, size: medium
+9. Goldfish: type: fish, domestic: True, size: small
+10. Lion: type: mammal, domestic: False, size: large
+
+Now let's apply the condition to each animal:
+- Turtle: `domestic` is True, so it matches.
+- Salmon: `type` is fish but `domestic` is False, so it does not match.
+- Whale: `domestic` is False, so it does not match.
+- Crocodile: `domestic` is False, so it does not match.
+- Parrot: `domestic` is True, so it matches.
+- Cat: `domestic` is True, so it matches.
+- Elephant: `domestic` is False, so it does not match.
+- Eagle: `domestic` is False, so it does not match.
+- Goldfish: `domestic` is True and `type` is fish, so it matches.
+- Lion: `domestic` is False, so it does not match.
+
+The animals that match the condition are:
+- Turtle
+- Parrot
+- Cat
+- Goldfish
+
+So the output in JSON format will be:
+
+```json
+["Turtle", "Parrot", "Cat", "Goldfish"]
+```

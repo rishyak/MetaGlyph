@@ -1,6 +1,26 @@
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_000",
+    "item_008",
+    "item_011",
+    "item_013"
+  ],
+  "count": 4
 }
 ```
+
+**Explanation:**
+I filtered all items where:
+1. Value >= 50 AND
+2. Category = A
+
+Results:
+- **item_000**: Category A, Value 100 ✓
+- **item_001**: Category A, Value 36 ✗ (value < 50)
+- **item_002**: Category A, Value 33 ✗ (value < 50)
+- **item_003**: Category A, Value 4 ✗ (value < 50)
+- **item_004**: Category A, Value 31 ✗ (value < 50)
+- **item_008**: Category A, Value 100 ✓
+- **item_011**: Category A, Value 67 ✓
+- **item_013**: Category A, Value 55 ✓

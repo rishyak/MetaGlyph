@@ -1,0 +1,126 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 635,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 413,
+        "active": false,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 971,
+        "active": false,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 626,
+        "active": false,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 56,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 351,
+        "active": false,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 162,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 336,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 767,
+        "active": false,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 529,
+        "active": false,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 316,
+        "active": false,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 349,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 325,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 281,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 607,
+        "active": false,
+        "status": null
+    }
+]
+```
+
+Explanation:
+- For `rec_000`, the type is `trial` and it's not `premium`, so the amount is not multiplied by 1.1. Since the region is `APAC`, the amount is not multiplied by 1.2 either. The `active` field is `True`, so the status is set to `"archived"`.
+- For `rec_001`, the type is `standard` and it's not `premium`, so the amount is not multiplied by 1.1. Since the region is `US`, the amount is not multiplied by 1.2 either. The `active` field is `False`, so no status change.
+- For `rec_002`, the type is `premium` and it's not `trial`, so the amount is not multiplied by 1.1. Since the region is `APAC`, the amount is not multiplied by 1.2 either. The `active` field is `False`, so no status change.
+- For `rec_003`, the type is `standard` and it's not `premium`, so the amount is not multiplied by 1.1. Since the region is `US`, the amount is not multiplied by 1.2 either. The `active` field is `False`, so no status change.
+- For `rec_004`, the type is `trial` and it's not `premium`, so the amount is not multiplied by 1.1. Since the region is `US`, the amount is not multiplied by 1.2 either. The `active` field is `True`, so the status is set to `"archived"`.
+- For `rec_005`, the type is `standard` and it's not `premium`, so the amount is not multiplied by 1.1. Since the region is `APAC`, the amount is not multiplied by 1.2 either. The `active` field is `False`, so no status change.
+- For `rec_006`, the type is `trial` and it's not `premium`, so the amount is not multiplied by 1.1. Since the region is `EU`, the amount is multiplied by 1.2, resulting in `194.4`. The `active` field is `True`, so the status is set to `"archived"`.
+- For `rec_007`, the type is `premium` and it's not `trial`, so the amount is not multiplied by 1.1. Since the region is `APAC`, the amount is not multiplied by 1.2 either. The `active` field is `True`, so the status is set to `"archived"`.
+- For `rec_008`, the type is `premium` and it's not `trial`, so the amount is not multiplied by 1.1. Since the region is `APAC`, the amount is not multiplied by 1.2 either. The `active` field is `False`, so no status change.
+- For `rec_009`, the type is `trial` and it's not `premium`, so the amount is not multiplied by 1.1. Since the region is `EU`, the amount is multiplied by 1.2, resulting in `634.8`. The `active` field is `False`, so no status change.
+- For `rec_010`, the type is `trial` and it's not `premium`, so the amount is not multiplied by 1.1. Since the region is `APAC`, the amount is not multiplied by 1.2 either. The `active` field is `False`, so no status change.
+- For `rec_011`, the type is `standard` and it's not `premium`, so the amount is not multiplied by 1.1. Since the region is `EU`, the amount is multiplied by 1.2, resulting in `418.8`. The `active` field is `True`, so the status is set to `"archived"`.
+- For `rec_012`, the type is `premium` and it's not `trial`, so the amount is not multiplied by 1.1. Since the region is `APAC`, the amount is not multiplied by 1.2 either. The `active` field is `True`, so the status is set to `"archived"`.
+- For `rec_013`, the type is `trial` and it's not `premium`, so the amount is not multiplied by 1.1. Since the region is `EU`, the amount is multiplied by 1.2, resulting in `337.2`. The `active` field is `True`, so the status is set to `"archived"`.
+- For `rec_014`, the type is `trial` and it's not `premium`, so the amount is not multiplied by 1.1. Since the region is `US`, the amount is not multiplied by 1.2 either. The `active` field is `False`, so no status change.

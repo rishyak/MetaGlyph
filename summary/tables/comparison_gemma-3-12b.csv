@@ -1,5 +1,5 @@
 Family,Model,NL Accuracy,MG Accuracy,CTRL Accuracy,MG-NL Diff,MG-CTRL Diff,Significant
-1_selection_classification,gemma-3-12b,0.000,0.000,0.000,+0.000,+0.000,No
-2_structured_extraction,gemma-3-12b,0.000,0.000,0.000,+0.000,+0.000,No
-3_constraint_composition,gemma-3-12b,0.000,0.000,0.000,+0.000,+0.000,No
+3_constraint_composition,gemma-3-12b,0.387,0.334,0.192,-0.053,+0.142,Yes
+1_selection_classification,gemma-3-12b,0.489,0.454,0.137,-0.035,+0.317,Yes
+2_structured_extraction,gemma-3-12b,0.463,0.465,0.450,+0.003,+0.015,No
 4_conditional_transformation,gemma-3-12b,0.000,0.000,0.000,+0.000,+0.000,No

@@ -1,0 +1,5 @@
+```json
+["Hamster", "Dog", "Cat", "Shark"]
+```
+
+Explanation: The instruction `SELECT x | x.type ∉ {bird} → [x.name]` means to select the names of animals whose type is not a bird. From the provided list, the animals that fit this criteria are Hamster, Dog, Cat, and Shark.

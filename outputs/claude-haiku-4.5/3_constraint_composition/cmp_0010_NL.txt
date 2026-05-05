@@ -2,10 +2,48 @@
 {
   "selected_ids": [
     "item_000",
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_004",
+    "item_005",
+    "item_006",
+    "item_007",
     "item_009",
+    "item_011",
+    "item_012",
     "item_013",
-    "item_015"
+    "item_014",
+    "item_015",
+    "item_016",
+    "item_017",
+    "item_018"
   ],
-  "count": 4
+  "count": 17
 }
 ```
+
+**Explanation:**
+The condition is: priority = "high" OR status ≠ "inactive"
+
+Selected items:
+- **item_000**: priority=high ✓
+- **item_001**: status=active (not inactive) ✓
+- **item_002**: status=pending (not inactive) ✓
+- **item_003**: status=pending (not inactive) ✓
+- **item_004**: status=active (not inactive) ✓
+- **item_005**: status=pending (not inactive) ✓
+- **item_006**: priority=high ✓
+- **item_007**: status=pending (not inactive) ✓
+- **item_009**: priority=high ✓
+- **item_011**: priority=high ✓
+- **item_012**: status=active (not inactive) ✓
+- **item_013**: priority=high ✓
+- **item_014**: status=pending (not inactive) ✓
+- **item_015**: priority=high ✓
+- **item_016**: status=active (not inactive) ✓
+- **item_017**: status=active (not inactive) ✓
+- **item_018**: status=pending (not inactive) ✓
+
+Excluded items (status=inactive AND priority≠high):
+- item_008, item_010, item_019

@@ -1,3 +1,22 @@
+I need to find all items where:
+1. category = 'appliances' AND
+2. portable = 'False'
+
+Let me review each product:
+
+- Tablet: category: electronics, portable: True ❌
+- Pen: category: stationery, portable: True ❌
+- Smartphone: category: electronics, portable: True ❌
+- Notebook: category: stationery, portable: True ❌
+- Refrigerator: category: appliances, portable: False ✅
+- Bookshelf: category: furniture, portable: False ❌
+- Chair: category: furniture, portable: True ❌
+- Laptop: category: electronics, portable: True ❌
+- Desk: category: furniture, portable: False ❌
+- Stapler: category: stationery, portable: True ❌
+
+Only the Refrigerator meets both criteria (category is 'appliances' AND portable is 'False').
+
 ```json
-[]
+["Refrigerator"]
 ```

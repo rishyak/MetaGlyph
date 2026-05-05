@@ -1,3 +1,8 @@
 ```json
-[]
+{
+  "sender": "Alice Smith",
+  "company": "Innovation Labs",
+  "sender_title": "Manager, Digital Systems",
+  "recipient": "bob.johnson@example.com"
+}
 ```

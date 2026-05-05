@@ -1,0 +1,5 @@
+Given the provided list of products, the items that satisfy both conditions (category: 'appliances' and portable: False) are:
+
+- Refrigerator
+- Bookshelf
+- Desk

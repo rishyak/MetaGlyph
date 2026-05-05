@@ -1,0 +1,116 @@
+```json
+[
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 641.3,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 597,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 1104.84,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 304,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 759.12,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 229,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 965,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 640,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 695,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 63,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 818.52,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 799,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 961,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 1100.44,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 237.88,
+        "active": false,
+        "status": "archived"
+    }
+]
+```
+
+Explanation:
+- For each record where `type` is "premium":
+  - If `region` is "EU", the `amount` is increased by 20%.
+  - The `amount` is then increased by another 10% due to the "premium" type.
+  - If `active` is `false`, the `status` is set to "archived".
+- For all records, if `active` is `false`, the `status` is set to "archived".

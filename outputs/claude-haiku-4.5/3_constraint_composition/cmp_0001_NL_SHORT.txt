@@ -1,0 +1,17 @@
+```json
+{
+  "selected_ids": ["item_008", "item_016"],
+  "count": 2
+}
+```
+
+**Explanation:**
+Filtering for records where:
+- Category is 'A' AND
+- Value >= 50
+
+Results:
+- item_008: Category A, Value 92 ✓
+- item_016: Category A, Value 88 ✓
+
+All other Category A items (item_000, item_003, item_004, item_007) have values below 50.

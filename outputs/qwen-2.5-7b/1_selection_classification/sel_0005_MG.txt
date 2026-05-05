@@ -1,0 +1,13 @@
+Based on the given instruction and the provided list of animals, the query is asking for the names of animals that are both domestic and of the type "fish". 
+
+From the list:
+- Salmon: type: fish, domestic: False
+- Goldfish: type: fish, domestic: True
+
+Only the Goldfish meets the criteria of being domestic and of the type "fish".
+
+Here is the output in the requested JSON format:
+
+```json
+["Goldfish"]
+```

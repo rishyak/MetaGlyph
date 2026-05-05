@@ -1,0 +1,151 @@
+To solve this problem, we need to apply the transformation rules in sequence to each record. The rules are applied as follows:
+
+1. If `x.type` is not "premium", then `x.amount` should be increased by 10% (`x.amount → x.amount × 1.1`).
+2. If `x.region` is not "EU", then `x.amount` should be increased by 20% (`x.amount → x.amount × 1.2`).
+3. If `x.active` is not `false`, then `x.status` should be set to "archived".
+
+Let's apply these rules step-by-step to each record:
+
+- **rec_000**: type: trial (not "premium"), region: EU (not "APAC" or "US"), active: False (not `true`). Therefore, only rule 3 applies.
+  - Status → "archived"
+
+- **rec_001**: type: trial (not "premium"), region: EU (not "APAC" or "US"), active: True (`true`). Therefore, both rules 1 and 3 apply.
+  - Amount → 577 * 1.1 = 634.7
+  - Status → "archived"
+
+- **rec_002**: type: standard (not "premium"), region: EU (not "APAC" or "US"), active: False (not `true`). Therefore, only rule 1 applies.
+  - Amount → 690 * 1.1 = 759
+
+- **rec_003**: type: trial (not "premium"), region: APAC ("APAC"), active: True (`true`). Therefore, only rule 3 applies.
+  - Status → "archived"
+
+- **rec_004**: type: trial (not "premium"), region: APAC ("APAC"), active: False (not `true`). Therefore, only rule 2 applies.
+  - Amount → 934 * 1.2 = 1120.8
+  - Status → "archived"
+
+- **rec_005**: type: trial (not "premium"), region: US ("US"), active: False (not `true`). Therefore, no rules apply.
+  - No changes
+
+- **rec_006**: type: standard (not "premium"), region: EU (not "APAC" or "US"), active: False (not `true`). Therefore, only rule 1 applies.
+  - Amount → 814 * 1.1 = 895.4
+  - Status → "archived"
+
+- **rec_007**: type: premium ("premium"), region: EU (not "APAC" or "US"), active: True (`true`). Therefore, only rule 3 applies.
+  - Status → "archived"
+
+- **rec_008**: type: trial (not "premium"), region: EU (not "APAC" or "US"), active: True (`true`). Therefore, both rules 1 and 3 apply.
+  - Amount → 822 * 1.1 = 904.2
+  - Status → "archived"
+
+- **rec_009**: type: trial (not "premium"), region: US ("US"), active: False (not `true`). Therefore, no rules apply.
+  - No changes
+
+- **rec_010**: type: standard (not "premium"), region: US ("US"), active: False (not `true`). Therefore, only rule 1 applies.
+  - Amount → 698 * 1.1 = 767.8
+  - Status → "archived"
+
+- **rec_011**: type: standard (not "premium"), region: US ("US"), active: True (`true`). Therefore, no rules apply.
+  - No changes
+
+- **rec_012**: type: standard (not "premium"), region: US ("US"), active: True (`true`). Therefore, no rules apply.
+  - No changes
+
+- **rec_013**: type: premium ("premium"), region: EU (not "APAC" or "US"), active: True (`true`). Therefore, only rule 3 applies.
+  - Status → "archived"
+
+- **rec_014**: type: trial (not "premium"), region: APAC ("APAC"), active: False (not `true`). Therefore, only rule 2 applies.
+  - Amount → 403 * 1.2 = 483.6
+  - Status → "archived"
+
+Now, let's summarize the transformed records as a JSON array:
+
+```json
+[
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 344,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 634.7,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 759,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 934,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 934,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 895.4,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 462,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 904.2,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 483.6,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 698,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 300,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 160,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 496,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 462,
+        "status": "archived"
+    }
+]
+```
+
+Note that for records where multiple conditions are met (like `rec_001`, `rec_008`, and `rec_014`), we apply all applicable transformations.

@@ -1,0 +1,53 @@
+I need to find all items where `priority IN {high} OR status NOT IN {inactive}`.
+
+Let me break down the condition:
+- `priority IN {high}` OR
+- `status NOT IN {inactive}` (meaning status is NOT inactive, so status is one of: pending, active)
+
+Let me evaluate each item:
+
+- item_000: priority=high ✓ → **SELECTED**
+- item_001: priority=high ✓ → **SELECTED**
+- item_002: priority=low, status=active ✓ → **SELECTED**
+- item_003: priority=low, status=active ✓ → **SELECTED**
+- item_004: priority=medium, status=pending ✓ → **SELECTED**
+- item_005: priority=low, status=inactive ✗ → not selected
+- item_006: priority=high ✓ → **SELECTED**
+- item_007: priority=medium, status=active ✓ → **SELECTED**
+- item_008: priority=high ✓ → **SELECTED**
+- item_009: priority=medium, status=active ✓ → **SELECTED**
+- item_010: priority=medium, status=pending ✓ → **SELECTED**
+- item_011: priority=high ✓ → **SELECTED**
+- item_012: priority=medium, status=inactive ✗ → not selected
+- item_013: priority=low, status=pending ✓ → **SELECTED**
+- item_014: priority=low, status=active ✓ → **SELECTED**
+- item_015: priority=medium, status=inactive ✗ → not selected
+- item_016: priority=medium, status=pending ✓ → **SELECTED**
+- item_017: priority=low, status=pending ✓ → **SELECTED**
+- item_018: priority=low, status=active ✓ → **SELECTED**
+- item_019: priority=medium, status=pending ✓ → **SELECTED**
+
+```json
+{
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_004",
+    "item_006",
+    "item_007",
+    "item_008",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_013",
+    "item_014",
+    "item_016",
+    "item_017",
+    "item_018",
+    "item_019"
+  ],
+  "count": 17
+}
+```

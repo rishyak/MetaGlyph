@@ -1,0 +1,10 @@
+```json
+["Notebook", "Stapler", "Desk", "Chair"]
+```
+
+Explanation:
+The instruction filters out items that belong to the "appliances" category. From the given list, the items that do not fall under "appliances" are:
+- Notebook: category: stationery
+- Stapler: category: stationery
+- Desk: category: furniture
+- Chair: category: furniture

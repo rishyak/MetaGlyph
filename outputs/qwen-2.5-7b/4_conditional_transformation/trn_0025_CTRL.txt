@@ -1,0 +1,138 @@
+Let's break down the transformation rules and apply them to each record:
+
+1. **Rule 1:** \( \forall x: (x.type \neq "premium" \Rightarrow x.amount \rightarrow x.amount \times 1.1) \)
+   - If the record type is not "premium", then multiply the amount by 1.1.
+   
+2. **Rule 2:** \( \forall x: (x.region \neq "EU" \Rightarrow x.amount \rightarrow x.amount \times 1.2) \)
+   - If the record region is not "EU", then multiply the amount by 1.2.
+   
+3. **Rule 3:** \( \forall x: (x.active \neq false \Rightarrow x.status \rightarrow "archived") \)
+   - If the record is active (i.e., `active` is `True`), then set the status to "archived".
+
+Now let's transform each record based on these rules:
+
+- **Record rec_000:**
+  - Type: `premium`
+  - Region: `APAC`
+  - Active: `True`
+  - Since `type = "premium"` and `region = "APAC"`, no transformation is needed. 
+  - Status remains unchanged.
+
+- **Record rec_001:**
+  - Type: `standard`
+  - Region: `EU`
+  - Active: `False`
+  - Since `type \neq "premium"`, multiply `amount` by 1.1: \( 877 \times 1.1 = 964.7 \).
+  - Status remains unchanged.
+
+- **Record rec_002:**
+  - Type: `premium`
+  - Region: `APAC`
+  - Active: `False`
+  - Since `active = False`, no transformation is needed.
+  - Status remains unchanged.
+
+- **Record rec_003:**
+  - Type: `trial`
+  - Region: `EU`
+  - Active: `True`
+  - Since `type \neq "premium"`, multiply `amount` by 1.1: \( 85 \times 1.1 = 93.5 \).
+  - Status is set to "archived".
+
+- **Record rec_004:**
+  - Type: `premium`
+  - Region: `APAC`
+  - Active: `True`
+  - Since `active = True`, set `status` to "archived".
+  - Amount remains unchanged.
+
+- **Record rec_005:**
+  - Type: `standard`
+  - Region: `EU`
+  - Active: `False`
+  - Since `type \neq "premium"`, multiply `amount` by 1.1: \( 649 \times 1.1 = 713.9 \).
+  - Status remains unchanged.
+
+- **Record rec_006:**
+  - Type: `premium`
+  - Region: `APAC`
+  - Active: `False`
+  - Since `active = False`, no transformation is needed.
+  - Status remains unchanged.
+
+- **Record rec_007:**
+  - Type: `premium`
+  - Region: `APAC`
+  - Active: `False`
+  - Since `active = False`, no transformation is needed.
+  - Status remains unchanged.
+
+- **Record rec_008:**
+  - Type: `standard`
+  - Region: `APAC`
+  - Active: `True`
+  - Since `type \neq "premium"`, multiply `amount` by 1.1: \( 127 \times 1.1 = 139.7 \).
+  - Status is set to "archived".
+
+- **Record rec_009:**
+  - Type: `premium`
+  - Region: `EU`
+  - Active: `True`
+  - Since `active = True`, set `status` to "archived".
+  - Amount remains unchanged.
+
+- **Record rec_010:**
+  - Type: `premium`
+  - Region: `EU`
+  - Active: `False`
+  - Since `active = False`, no transformation is needed.
+  - Status remains unchanged.
+
+- **Record rec_011:**
+  - Type: `premium`
+  - Region: `EU`
+  - Active: `True`
+  - Since `active = True`, set `status` to "archived".
+  - Amount remains unchanged.
+
+- **Record rec_012:**
+  - Type: `premium`
+  - Region: `EU`
+  - Active: `False`
+  - Since `active = False`, no transformation is needed.
+  - Status remains unchanged.
+
+- **Record rec_013:**
+  - Type: `premium`
+  - Region: `US`
+  - Active: `False`
+  - No transformations needed since `type = "premium"` and `region = "US"`.
+  - Status remains unchanged.
+
+- **Record rec_014:**
+  - Type: `standard`
+  - Region: `US`
+  - Active: `True`
+  - Since `type \neq "premium"`, multiply `amount` by 1.1: \( 861 \times 1.1 = 947.1 \).
+  - Status is set to "archived".
+
+Based on these rules, the transformed records would look like this in JSON format:
+
+```json
+[
+    {"type": "premium", "region": "APAC", "amount": 997, "active": true, "status": null},
+    {"type": "standard", "region": "EU", "amount": 964.7, "active": false, "status": null},
+    {"type": "premium", "region": "APAC", "amount": 120, "active": false, "status": null},
+    {"type": "trial", "region": "EU", "amount": 93.5, "active": true, "status": "archived"},
+    {"type": "premium", "region": "APAC", "amount": 919, "active": false, "status": null},
+    {"type": "standard", "region": "EU", "amount": 713.9, "active": false, "status": null},
+    {"type": "premium", "region": "APAC", "amount": 553, "active": false, "status": null},
+    {"type": "premium", "region": "APAC", "amount": 629, "active": false, "status": null},
+    {"type": "standard", "region": "APAC", "amount": 139.7, "active": true, "status": "archived"},
+    {"type": "premium", "region": "EU", "amount": 919, "active": true, "status": "archived"},
+    {"type": "premium", "region": "EU", "amount": 857, "active": false, "status": null},
+    {"type": "premium", "region": "EU", "amount": 757, "active": true, "status": "archived"},
+    {"type": "premium", "region": "US", "amount": 713, "active": false, "status": null},
+    {"type": "standard", "region": "US", "amount": 947.1, "active": true, "status": "archived"}
+]
+```

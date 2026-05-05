@@ -1,0 +1,41 @@
+To solve this problem, we need to understand the given instruction and apply it to the provided input.
+
+The instruction is: `SELECT x | x.domestic ※ {True} ↯ [x.name]`
+
+Breaking down the instruction:
+1. `SELECT x`: This implies we are selecting or filtering items from a dataset.
+2. `x.domestic ※ {True}`: This means we are filtering the items where the `domestic` attribute is `True`. The `※` symbol is being used to denote a condition or filter.
+3. `↯ [x.name]`: After filtering, we are interested in the `name` attribute of the selected items. The `↯` symbol suggests a transformation or mapping to the specified attribute.
+
+Given the input dataset:
+- Snake: type: reptile, domestic: False, size: medium
+- Salmon: type: fish, domestic: False, size: medium
+- Parrot: type: bird, domestic: True, size: small
+- Hamster: type: mammal, domestic: True, size: small
+- Whale: type: mammal, domestic: False, size: large
+- Penguin: type: bird, domestic: False, size: medium
+- Goldfish: type: fish, domestic: True, size: small
+- Eagle: type: bird, domestic: False, size: medium
+- Lion: type: mammal, domestic: False, size: large
+- Cat: type: mammal, domestic: True, size: small
+
+We need to filter the animals where `domestic` is `True` and then select their names.
+
+1. Filter animals where `domestic` is `True`:
+   - Parrot: domestic: True
+   - Hamster: domestic: True
+   - Goldfish: domestic: True
+   - Cat: domestic: True
+
+2. Select the names of these animals:
+   - Parrot
+   - Hamster
+   - Goldfish
+   - Cat
+
+Therefore, the names of the domestic animals are: `["Parrot", "Hamster", "Goldfish", "Cat"]`.
+
+The final answer is:
+```json
+["Parrot", "Hamster", "Goldfish", "Cat"]
+```

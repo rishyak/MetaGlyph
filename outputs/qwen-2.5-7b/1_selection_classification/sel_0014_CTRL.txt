@@ -1,0 +1,25 @@
+Based on the given instruction and input data, the task is to select names of animals whose type is not 'bird'. Let's interpret the provided data:
+
+- Crocodile: type: reptile, domestic: False, size: large
+- Dog: type: mammal, domestic: True, size: medium
+- Snake: type: reptile, domestic: False, size: medium
+- Cat: type: mammal, domestic: True, size: small
+- Penguin: type: bird, domestic: False, size: medium
+- Eagle: type: bird, domestic: False, size: medium
+- Salmon: type: fish, domestic: False, size: medium
+- Lion: type: mammal, domestic: False, size: large
+- Whale: type: mammal, domestic: False, size: large
+- Turtle: type: reptile, domestic: True, size: small
+
+From the list, the types that are not 'bird' are:
+- Reptile: Crocodile, Snake, Turtle
+- Mammal: Dog, Cat, Lion, Whale
+- Fish: Salmon
+
+So, the names of the animals that are not birds are:
+["Crocodile", "Dog", "Snake", "Cat", "Lion", "Whale", "Turtle", "Salmon"]
+
+Here is the output in the requested format:
+```json
+["Crocodile", "Dog", "Snake", "Cat", "Lion", "Whale", "Turtle", "Salmon"]
+```

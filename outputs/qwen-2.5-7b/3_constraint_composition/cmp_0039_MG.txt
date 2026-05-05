@@ -1,0 +1,142 @@
+To solve the given query, we need to filter the dataset based on the conditions:
+- The `Value` attribute must be greater than or equal to 50.
+- The `Category` attribute must be in the set `{A}`.
+
+Let's go through the dataset and apply these filters:
+
+1. **item_000**: 
+   - Category: B (Does not match)
+   - Status: active
+   - Priority: high
+   - Value: 29 (Does not match)
+
+2. **item_001**: 
+   - Category: C (Does not match)
+   - Status: active
+   - Priority: low
+   - Value: 34 (Does not match)
+
+3. **item_002**: 
+   - Category: C (Does not match)
+   - Status: pending
+   - Priority: high
+   - Value: 93 (Does not match due to Category)
+
+4. **item_003**: 
+   - Category: B (Does not match)
+   - Status: inactive
+   - Priority: low
+   - Value: 26 (Does not match)
+
+5. **item_004**: 
+   - Category: B (Does not match)
+   - Status: active
+   - Priority: medium
+   - Value: 73 (Does not match due to Category)
+
+6. **item_005**: 
+   - Category: A (Matches)
+   - Status: inactive
+   - Priority: high
+   - Value: 84 (Matches)
+
+7. **item_006**: 
+   - Category: C (Does not match)
+   - Status: inactive
+   - Priority: medium
+   - Value: 98 (Does not match due to Category)
+
+8. **item_007**: 
+   - Category: B (Does not match)
+   - Status: pending
+   - Priority: high
+   - Value: 95 (Does not match due to Category)
+
+9. **item_008**: 
+   - Category: B (Does not match)
+   - Status: inactive
+   - Priority: low
+   - Value: 93 (Does not match due to Category)
+
+10. **item_009**: 
+    - Category: B (Does not match)
+    - Status: active
+    - Priority: low
+    - Value: 93 (Does not match due to Category)
+
+11. **item_010**: 
+    - Category: C (Does not match)
+    - Status: inactive
+    - Priority: low
+    - Value: 70 (Does not match due to Category)
+
+12. **item_011**: 
+    - Category: C (Does not match)
+    - Status: active
+    - Priority: high
+    - Value: 5 (Does not match due to Value)
+
+13. **item_012**: 
+    - Category: A (Matches)
+    - Status: pending
+    - Priority: low
+    - Value: 98 (Matches)
+
+14. **item_013**: 
+    - Category: A (Matches)
+    - Status: inactive
+    - Priority: low
+    - Value: 81 (Matches)
+
+15. **item_014**: 
+    - Category: A (Matches)
+    - Status: pending
+    - Priority: low
+    - Value: 20 (Does not match due to Value)
+
+16. **item_015**: 
+    - Category: A (Matches)
+    - Status: active
+    - Priority: high
+    - Value: 59 (Matches)
+
+17. **item_016**: 
+    - Category: B (Does not match)
+    - Status: active
+    - Priority: high
+    - Value: 82 (Does not match due to Category)
+
+18. **item_017**: 
+    - Category: C (Does not match)
+    - Status: pending
+    - Priority: medium
+    - Value: 85 (Does not match due to Category)
+
+19. **item_018**: 
+    - Category: B (Does not match)
+    - Status: active
+    - Priority: low
+    - Value: 69 (Does not match due to Category)
+
+20. **item_019**: 
+    - Category: C (Does not match)
+    - Status: inactive
+    - Priority: low
+    - Value: 3 (Does not match due to Value and Category)
+
+After applying the filters, the IDs that match both conditions are:
+- `item_005`
+- `item_012`
+- `item_013`
+- `item_015`
+
+The count of selected items is 4.
+
+Therefore, the output will be:
+
+```json
+{
+  "selected_ids": ["item_005", "item_012", "item_013", "item_015"],
+  "count": 4
+}
+```

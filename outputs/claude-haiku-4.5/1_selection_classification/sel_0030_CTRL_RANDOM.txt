@@ -1,0 +1,14 @@
+Looking at the query: `SELECT x | x.category ※ {furniture} ↯ [x.name]`
+
+This appears to be a custom query syntax where:
+- `SELECT x` - select items
+- `x.category ※ {furniture}` - filter where category matches "furniture"
+- `↯ [x.name]` - return/project the name attribute
+
+From the product list, items with `category: furniture` are:
+1. Chair
+2. Desk
+
+```json
+["Chair", "Desk"]
+```

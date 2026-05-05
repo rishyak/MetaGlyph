@@ -1,0 +1,57 @@
+To solve this problem, we need to follow the given instruction and apply it to the provided dataset.
+
+The instruction is: `SELECT x.id | x.category ¤ {A, B} § x.status ¤ {active} ↯ {selected_ids: [...], count: n}`
+
+Let's break down the instruction:
+
+1. `SELECT x.id`: We are selecting the `id` attribute from the dataset.
+2. `| x.category ¤ {A, B}`: This is a filter operation. It means we are filtering the dataset to include only items where the `category` is either `A` or `B`.
+3. `§ x.status ¤ {active}`: This is another filter operation. It further filters the dataset to include only items where the `status` is `active`.
+4. `↯ {selected_ids: [...], count: n}`: This indicates the output format. We need to return a JSON object with two properties: `selected_ids` (an array of the selected `id`s) and `count` (the number of selected items).
+
+Now, let's apply these steps to the dataset:
+
+### Step 1: Filter by Category {A, B}
+
+First, we filter the dataset to include only items where the `category` is either `A` or `B`.
+
+- ID: item_000, Category: B, Status: pending
+- ID: item_005, Category: A, Status: pending
+- ID: item_009, Category: B, Status: inactive
+- ID: item_010, Category: B, Status: inactive
+- ID: item_012, Category: B, Status: inactive
+- ID: item_013, Category: B, Status: pending
+- ID: item_015, Category: B, Status: active
+- ID: item_017, Category: B, Status: active
+- ID: item_018, Category: A, Status: active
+
+### Step 2: Filter by Status {active}
+
+Next, we filter the result to include only items where the `status` is `active`.
+
+- ID: item_015, Category: B, Status: active
+- ID: item_017, Category: B, Status: active
+- ID: item_018, Category: A, Status: active
+
+### Step 3: Prepare the Output
+
+Now, we prepare the output as per the given format.
+
+- `selected_ids`: [item_015, item_017, item_018]
+- `count`: 3
+
+The output in JSON format is:
+```json
+{
+  "selected_ids": ["item_015", "item_017", "item_018"],
+  "count": 3
+}
+```
+
+The final answer is: 
+```json
+{
+  "selected_ids": ["item_015", "item_017", "item_018"],
+  "count": 3
+}
+```

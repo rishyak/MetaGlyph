@@ -1,0 +1,30 @@
+To extract the required fields from the given invoice document, we will go through the document and identify the values for 'due_date', 'invoice_num', 'date', and 'customer_name'.
+
+1. **due_date**: The document contains the line "Due Date: 2024-02-03". Thus, the 'due_date' is "2024-02-03".
+
+2. **invoice_num**: The invoice number is mentioned as "INVOICE #8508". So, the 'invoice_num' is "8508".
+
+3. **date**: The date is given as "Date: 2024-10-19". Hence, the 'date' is "2024-10-19".
+
+4. **customer_name**: The customer is billed as "Bill To: Bob Johnson". Therefore, the 'customer_name' is "Bob Johnson".
+
+Now, let's compile these extracted values into a JSON object as per the required output format.
+
+```json
+{
+  "due_date": "2024-02-03",
+  "invoice_num": "8508",
+  "date": "2024-10-19",
+  "customer_name": "Bob Johnson"
+}
+```
+
+The final answer is: 
+```json
+{
+  "due_date": "2024-02-03",
+  "invoice_num": "8508",
+  "date": "2024-10-19",
+  "customer_name": "Bob Johnson"
+}
+```

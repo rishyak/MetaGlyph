@@ -5,24 +5,31 @@
   "condition": "CTRL",
   "parse_success": true,
   "parsed_output": [
-    "Cat",
-    "Dog",
-    "Hamster"
+    "Eagle",
+    "Shark",
+    "Snake",
+    "Salmon",
+    "Crocodile",
+    "Whale"
   ],
-  "gold_output": [],
+  "gold_output": [
+    "crocodile",
+    "shark",
+    "whale"
+  ],
   "exact_match": false,
-  "accuracy": 0.0,
-  "f1_score": 0,
+  "accuracy": 0.5,
+  "f1_score": 0.6666666666666666,
   "operator_fidelity": [
     {
       "operator": "∩",
       "checked": true,
       "passed": false,
-      "details": "Extra items in intersection"
+      "details": "missing=3, extra=6"
     }
   ],
   "overall_pass": false,
   "error_type": "scope",
-  "error_details": "Accuracy: 0.00",
+  "error_details": "Accuracy: 0.50",
   "semantic_equivalence_pass": false
 }

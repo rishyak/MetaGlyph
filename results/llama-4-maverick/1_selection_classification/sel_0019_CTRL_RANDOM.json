@@ -1,0 +1,49 @@
+{
+  "prompt_id": "sel_0019_CTRL_RANDOM",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "def process_data(data):",
+    "animals = [",
+    "{\"name\": \"Salmon\", \"type\": \"fish\", \"domestic\": False, \"size\": \"medium\"}",
+    "{\"name\": \"Eagle\", \"type\": \"bird\", \"domestic\": False, \"size\": \"medium\"}",
+    "{\"name\": \"Dog\", \"type\": \"mammal\", \"domestic\": True, \"size\": \"medium\"}",
+    "{\"name\": \"Goldfish\", \"type\": \"fish\", \"domestic\": True, \"size\": \"small\"}",
+    "{\"name\": \"Penguin\", \"type\": \"bird\", \"domestic\": False, \"size\": \"medium\"}",
+    "{\"name\": \"Parrot\", \"type\": \"bird\", \"domestic\": True, \"size\": \"small\"}",
+    "{\"name\": \"Snake\", \"type\": \"reptile\", \"domestic\": False, \"size\": \"medium\"}",
+    "{\"name\": \"Whale\", \"type\": \"mammal\", \"domestic\": False, \"size\": \"large\"}",
+    "{\"name\": \"Lion\", \"type\": \"mammal\", \"domestic\": False, \"size\": \"large\"}",
+    "{\"name\": \"Crocodile\", \"type\": \"reptile\", \"domestic\": False, \"size\": \"large\"}",
+    "filtered_animals = [x[\"name\"] for x in animals if not x[\"domestic\"]]",
+    "return filtered_animals",
+    "import json",
+    "print(json.dumps(result))"
+  ],
+  "gold_output": [
+    "crocodile",
+    "eagle",
+    "lion",
+    "penguin",
+    "salmon",
+    "snake",
+    "whale"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=7, extra=16"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

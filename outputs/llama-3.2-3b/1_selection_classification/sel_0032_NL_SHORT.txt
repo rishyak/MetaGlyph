@@ -1,0 +1,13 @@
+### Step 1: Identify the items that are classified as birds
+We need to find the items in the list that have a type equal to "bird".
+
+### Step 2: Filter the list to include only birds
+From the given list, the items that are classified as birds are:
+- Parrot: type: bird, domestic: True, size: small
+- Penguin: type: bird, domestic: False, size: medium
+- Eagle: type: bird, domestic: False, size: medium
+
+### Step 3: Return the list of bird names
+The list of bird names is ["Parrot", "Penguin", "Eagle"].
+
+The final answer is: $\boxed["Parrot", "Penguin", "Eagle"]$

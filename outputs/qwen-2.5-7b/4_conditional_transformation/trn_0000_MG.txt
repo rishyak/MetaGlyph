@@ -1,0 +1,118 @@
+Here's the transformed data according to the given rules:
+
+```json
+[
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 35,
+        "active": False,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 152,
+        "active": True,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 923,
+        "active": True,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 42,
+        "active": True,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 248,
+        "active": True,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 743,
+        "active": False,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 613 * 1.2,
+        "active": False,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 724,
+        "active": False,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 169 * 1.1 * 1.2,
+        "active": True,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 104,
+        "active": False,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 877 * 1.2,
+        "active": False,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 836,
+        "active": True,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 559,
+        "active": True,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 575 * 1.1,
+        "active": False,
+        "status": "archived"
+    }
+]
+```
+
+Explanation:
+- `rec_000` and `rec_005` have `active` set to `False`, so their status is changed to "archived".
+- `rec_001`, `rec_002`, `rec_006`, `rec_007`, `rec_009`, `rec_010`, `rec_011`, `rec_012`, and `rec_013` do not have `type` set to "premium" or `region` set to "EU", so no transformations are applied.
+- `rec_003` and `rec_008` have `region` set to "EU". The transformation rule for "EU" region applies, multiplying the `amount` by 1.2.
+- `rec_004` and `rec_006` have both `active` set to `False` and `region` set to "EU". Thus, the `amount` is first multiplied by 1.2 and then the status is changed to "archived".
+- `rec_007`, `rec_008`, and `rec_013` have `active` set to `False`. Their status is changed to "archived".
+- `rec_008` has `type` set to "premium" and `region` set to "EU". First, the `amount` is multiplied by 1.1 and then by 1.2.
+- `rec_010` has both `type` set to "premium" and `region` set to "US". Thus, the `amount` remains unchanged but the status is changed to "archived".
+- `rec_012` and `rec_014` have `active` set to `True`. No changes are made to their `amount` or `status`.
+- `rec_013` has `type` set to "premium" and `region` set to "US". Thus, the `amount` is multiplied by 1.1 but the status remains unchanged.
+- `rec_006` has `region` set to "EU" and `active` set to `False`. So, the `amount` is multiplied by 1.2 and the status is changed to "archived".
+
+The transformed records are shown above.

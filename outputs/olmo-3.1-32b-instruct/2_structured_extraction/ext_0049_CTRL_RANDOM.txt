@@ -1,0 +1,1 @@
+{"subject": "Q4 Report", "sender_name": "David Brown", "sender_title": "Analyst", "company": "Global Solutions"}

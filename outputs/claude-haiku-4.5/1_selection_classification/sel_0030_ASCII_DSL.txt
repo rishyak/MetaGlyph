@@ -1,0 +1,21 @@
+Looking at the instruction: `SELECT x | x.category NOT IN {furniture} -> [x.name]`
+
+This means: Select all items where the category is NOT "furniture", and return their names.
+
+From the product list, the items with category "furniture" are:
+- Chair
+- Desk
+
+All other items have categories that are NOT furniture:
+- Stapler (stationery)
+- Microwave (appliances)
+- Pen (stationery)
+- Notebook (stationery)
+- Refrigerator (appliances)
+- Smartphone (electronics)
+- Headphones (electronics)
+- Laptop (electronics)
+
+```json
+["Stapler", "Microwave", "Pen", "Notebook", "Refrigerator", "Smartphone", "Headphones", "Laptop"]
+```

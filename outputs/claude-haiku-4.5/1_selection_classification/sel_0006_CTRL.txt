@@ -1,3 +1,56 @@
+I need to parse the query: `SELECT x | (x.domestic ∈ {False}) ∪ (x.size ∈ {large}) → [x.name]`
+
+This means: Select all items x where (x.domestic is False) OR (x.size is large), and return their names.
+
+Let me evaluate each animal:
+
+1. **Eagle**: domestic: False, size: medium
+   - domestic ∈ {False}? ✓ YES
+   - Included
+
+2. **Shark**: domestic: False, size: large
+   - domestic ∈ {False}? ✓ YES
+   - size ∈ {large}? ✓ YES
+   - Included
+
+3. **Dog**: domestic: True, size: medium
+   - domestic ∈ {False}? ✗ NO
+   - size ∈ {large}? ✗ NO
+   - Not included
+
+4. **Snake**: domestic: False, size: medium
+   - domestic ∈ {False}? ✓ YES
+   - Included
+
+5. **Hamster**: domestic: True, size: small
+   - domestic ∈ {False}? ✗ NO
+   - size ∈ {large}? ✗ NO
+   - Not included
+
+6. **Salmon**: domestic: False, size: medium
+   - domestic ∈ {False}? ✓ YES
+   - Included
+
+7. **Cat**: domestic: True, size: small
+   - domestic ∈ {False}? ✗ NO
+   - size ∈ {large}? ✗ NO
+   - Not included
+
+8. **Crocodile**: domestic: False, size: large
+   - domestic ∈ {False}? ✓ YES
+   - size ∈ {large}? ✓ YES
+   - Included
+
+9. **Goldfish**: domestic: True, size: small
+   - domestic ∈ {False}? ✗ NO
+   - size ∈ {large}? ✗ NO
+   - Not included
+
+10. **Whale**: domestic: False, size: large
+    - domestic ∈ {False}? ✓ YES
+    - size ∈ {large}? ✓ YES
+    - Included
+
 ```json
-["Cat", "Dog", "Hamster"]
+["Eagle", "Shark", "Snake", "Salmon", "Crocodile", "Whale"]
 ```

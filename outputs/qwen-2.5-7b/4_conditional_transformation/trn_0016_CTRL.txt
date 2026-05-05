@@ -1,0 +1,146 @@
+Let's break down the transformation rules and apply them to each record accordingly:
+
+1. **Rule 1**: `x.type != "premium" ⇒ x.amount → x.amount × 1.1`
+   - This rule applies if the record type is not "premium". The amount will be multiplied by 1.1.
+
+2. **Rule 2**: `x.region != "EU" ⇒ x.amount → x.amount × 1.2`
+   - This rule applies if the region is not "EU". The amount will be multiplied by 1.2.
+
+3. **Rule 3**: `x.active != false ⇒ x.status → "archived"`
+   - This rule applies if the record is active (i.e., `active` is `True`). The status will be set to "archived".
+
+Now we'll transform each record based on these rules:
+
+- **rec_000**:
+  - Type: trial (not "premium")
+  - Region: APAC (not "EU")
+  - Amount: 71
+  - Active: True (will set status to "archived")
+  - Transformed: \[{"type": "trial", "region": "APAC", "amount": 71 * 1.1 = 78.1, "status": "archived"}\]
+
+- **rec_001**:
+  - Type: standard (not "premium")
+  - Region: APAC (not "EU")
+  - Amount: 226
+  - Active: False
+  - Transformed: \[{"type": "standard", "region": "APAC", "amount": 226, "status": "active"}\]
+
+- **rec_002**:
+  - Type: trial (not "premium")
+  - Region: US (not "EU")
+  - Amount: 170
+  - Active: True (will set status to "archived")
+  - Transformed: \[{"type": "trial", "region": "US", "amount": 170 * 1.1 = 187, "status": "archived"}\]
+
+- **rec_003**:
+  - Type: standard (not "premium")
+  - Region: APAC (not "EU")
+  - Amount: 86
+  - Active: True (will set status to "archived")
+  - Transformed: \[{"type": "standard", "region": "APAC", "amount": 86 * 1.1 = 94.6, "status": "archived"}\]
+
+- **rec_004**:
+  - Type: standard (not "premium")
+  - Region: EU (is "EU")
+  - Amount: 471
+  - Active: False
+  - No transformation needed.
+  - Transformed: \[{"type": "standard", "region": "EU", "amount": 471, "status": "active"}\]
+
+- **rec_005**:
+  - Type: premium (is "premium")
+  - Region: US (not "EU")
+  - Amount: 247
+  - Active: False
+  - No transformation needed.
+  - Transformed: \[{"type": "premium", "region": "US", "amount": 247, "status": "active"}\]
+
+- **rec_006**:
+  - Type: trial (not "premium")
+  - Region: EU (is "EU")
+  - Amount: 729
+  - Active: True (will set status to "archived")
+  - Transformed: \[{"type": "trial", "region": "EU", "amount": 729 * 1.1 = 801.9, "status": "archived"}\]
+
+- **rec_007**:
+  - Type: standard (not "premium")
+  - Region: APAC (not "EU")
+  - Amount: 249
+  - Active: False
+  - No transformation needed.
+  - Transformed: \[{"type": "standard", "region": "APAC", "amount": 249, "status": "active"}\]
+
+- **rec_008**:
+  - Type: trial (not "premium")
+  - Region: APAC (not "EU")
+  - Amount: 687
+  - Active: True (will set status to "archived")
+  - Transformed: \[{"type": "trial", "region": "APAC", "amount": 687 * 1.1 = 755.7, "status": "archived"}\]
+
+- **rec_009**:
+  - Type: premium (is "premium")
+  - Region: US (not "EU")
+  - Amount: 567
+  - Active: True (will set status to "archived")
+  - Transformed: \[{"type": "premium", "region": "US", "amount": 567 * 1.1 = 623.7, "status": "archived"}\]
+
+- **rec_010**:
+  - Type: trial (not "premium")
+  - Region: US (not "EU")
+  - Amount: 940
+  - Active: False
+  - No transformation needed.
+  - Transformed: \[{"type": "trial", "region": "US", "amount": 940, "status": "active"}\]
+
+- **rec_011**:
+  - Type: standard (not "premium")
+  - Region: US (not "EU")
+  - Amount: 71
+  - Active: True (will set status to "archived")
+  - Transformed: \[{"type": "standard", "region": "US", "amount": 71 * 1.1 = 78.1, "status": "archived"}\]
+
+- **rec_012**:
+  - Type: premium (is "premium")
+  - Region: APAC (not "EU")
+  - Amount: 776
+  - Active: False
+  - No transformation needed.
+  - Transformed: \[{"type": "premium", "region": "APAC", "amount": 776, "status": "active"}\]
+
+- **rec_013**:
+  - Type: premium (is "premium")
+  - Region: US (not "EU")
+  - Amount: 489
+  - Active: False
+  - No transformation needed.
+  - Transformed: \[{"type": "premium", "region": "US", "amount": 489, "status": "active"}\]
+
+- **rec_014**:
+  - Type: trial (not "premium")
+  - Region: EU (is "EU")
+  - Amount: 975
+  - Active: True (will set status to "archived")
+  - Transformed: \[{"type": "trial", "region": "EU", "amount": 975 * 1.1 = 1072.5, "status": "archived"}\]
+
+So, the transformed records in JSON format are:
+
+```json
+[
+    {"type": "trial", "region": "APAC", "amount": 78.1, "status": "archived"},
+    {"type": "standard", "region": "APAC", "amount": 226, "status": "active"},
+    {"type": "trial", "region": "US", "amount": 187, "status": "archived"},
+    {"type": "standard", "region": "APAC", "amount": 94.6, "status": "archived"},
+    {"type": "standard", "region": "EU", "amount": 471, "status": "active"},
+    {"type": "premium", "region": "US", "amount": 247, "status": "active"},
+    {"type": "trial", "region": "EU", "amount": 801.9, "status": "archived"},
+    {"type": "standard", "region": "APAC", "amount": 249, "status": "active"},
+    {"type": "trial", "region": "APAC", "amount": 755.7, "status": "archived"},
+    {"type": "premium", "region": "US", "amount": 623.7, "status": "archived"},
+    {"type": "trial", "region": "US", "amount": 940, "status": "active"},
+    {"type": "standard", "region": "US", "amount": 78.1, "status": "archived"},
+    {"type": "premium", "region": "APAC", "amount": 776, "status": "active"},
+    {"type": "premium", "region": "US", "amount": 489, "status": "active"}
+]
+```
+
+This JSON array represents the transformed records according to the given rules.

@@ -1,0 +1,7 @@
+Given the provided list of products, the items that satisfy both conditions are:
+
+- Pen: category: stationery, price_range: low, portable: True
+- Notebook: category: stationery, price_range: low, portable: True
+- Stapler: category: stationery, price_range: low, portable: True
+
+These items meet both criteria of having a 'portable' attribute with the value 'False' and a 'price_range' attribute with the value 'low'.

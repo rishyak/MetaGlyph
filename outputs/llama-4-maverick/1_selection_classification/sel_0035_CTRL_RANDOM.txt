@@ -1,0 +1,31 @@
+```python
+def query_animals(data):
+    # Filter the data based on the given conditions
+    filtered_data = [x for x in data if x['size'] == 'medium' and not x['domestic']]
+    
+    # Extract the names of the animals
+    names = [x['name'] for x in filtered_data]
+    
+    return names
+
+# Input data
+animals = [
+    {"name": "Salmon", "type": "fish", "domestic": False, "size": "medium"},
+    {"name": "Crocodile", "type": "reptile", "domestic": False, "size": "large"},
+    {"name": "Eagle", "type": "bird", "domestic": False, "size": "medium"},
+    {"name": "Hamster", "type": "mammal", "domestic": True, "size": "small"},
+    {"name": "Goldfish", "type": "fish", "domestic": True, "size": "small"},
+    {"name": "Turtle", "type": "reptile", "domestic": True, "size": "small"},
+    {"name": "Snake", "type": "reptile", "domestic": False, "size": "medium"},
+    {"name": "Lion", "type": "mammal", "domestic": False, "size": "large"},
+    {"name": "Parrot", "type": "bird", "domestic": True, "size": "small"},
+    {"name": "Whale", "type": "mammal", "domestic": False, "size": "large"}
+]
+
+# Execute the query
+result = query_animals(animals)
+
+# Print the result in JSON format
+import json
+print(json.dumps(result))
+```

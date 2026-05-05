@@ -1,0 +1,33 @@
+{
+  "prompt_id": "sel_0047_CTRL_RANDOM",
+  "model": "olmo-3.1-32b-instruct",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "Eagle",
+    "Elephant",
+    "Lion",
+    "Snake",
+    "Shark"
+  ],
+  "gold_output": [
+    "elephant",
+    "lion"
+  ],
+  "exact_match": false,
+  "accuracy": 0.4,
+  "f1_score": 0.5714285714285715,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "missing=2, extra=5"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.40",
+  "semantic_equivalence_pass": false
+}

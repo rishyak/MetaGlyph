@@ -1,0 +1,10 @@
+```json
+{
+  "customer_name": "David Brown",
+  "payment_terms": "Net 30",
+  "invoice_num": "2684",
+  "date": "2024-06-25"
+}
+```
+
+The other details provided in the document were not included in the extraction request.

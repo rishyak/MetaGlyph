@@ -1,0 +1,18 @@
+Looking at the list, I need to identify all items where `domestic: False`.
+
+Filtering through the entries:
+
+- Snake: domestic: **False** ✓
+- Salmon: domestic: **False** ✓
+- Parrot: domestic: True ✗
+- Hamster: domestic: True ✗
+- Whale: domestic: **False** ✓
+- Penguin: domestic: **False** ✓
+- Goldfish: domestic: True ✗
+- Eagle: domestic: **False** ✓
+- Lion: domestic: **False** ✓
+- Cat: domestic: True ✗
+
+```json
+["Snake", "Salmon", "Whale", "Penguin", "Eagle", "Lion"]
+```

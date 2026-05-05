@@ -1,0 +1,14 @@
+Looking at the query: `SELECT x | x.type ¤ {mammal} ↯ [x.name]`
+
+This appears to be a query asking to:
+- SELECT items x
+- WHERE x.type equals mammal
+- RETURN x.name
+
+From the provided animal list, the mammals are:
+- Cat: type: mammal
+- Hamster: type: mammal
+
+```json
+["Cat", "Hamster"]
+```

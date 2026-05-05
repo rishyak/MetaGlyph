@@ -1,0 +1,10 @@
+### Step 1: Identify the animals that are both reptiles and small in size.
+From the given list, we can see that the Turtle is the only animal that meets these criteria.
+
+### Step 2: Identify the animals that are mammals and small in size.
+From the given list, we can see that the Cat and the Hamster are the only animals that meet these criteria.
+
+### Step 3: Combine the results from steps 1 and 2 into a single list.
+The combined list of animals that are either reptiles and small in size or mammals and small in size is ["Turtle", "Cat", "Hamster"].
+
+The final answer is: $\boxed["Turtle", "Cat", "Hamster"]$

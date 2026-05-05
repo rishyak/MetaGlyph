@@ -1,0 +1,130 @@
+To solve this problem, we need to filter the given dataset based on the conditions provided in the instruction: `x.category IN {A, B} AND x.status IN {active}`. This means we are looking for items where the category is either 'A' or 'B' and the status is 'active'.
+
+Let's go through the dataset and apply these conditions:
+
+1. ID: item_000
+   - Category: B
+   - Status: inactive
+   - Does not match because status is not 'active'.
+
+2. ID: item_001
+   - Category: C
+   - Status: active
+   - Does not match because category is not 'A' or 'B'.
+
+3. ID: item_002
+   - Category: B
+   - Status: active
+   - Matches.
+
+4. ID: item_003
+   - Category: C
+   - Status: pending
+   - Does not match.
+
+5. ID: item_004
+   - Category: B
+   - Status: pending
+   - Does not match.
+
+6. ID: item_005
+   - Category: A
+   - Status: inactive
+   - Does not match.
+
+7. ID: item_006
+   - Category: C
+   - Status: active
+   - Does not match.
+
+8. ID: item_007
+   - Category: C
+   - Status: pending
+   - Does not match.
+
+9. ID: item_008
+   - Category: A
+   - Status: pending
+   - Does not match.
+
+10. ID: item_009
+    - Category: B
+    - Status: pending
+    - Does not match.
+
+11. ID: item_010
+    - Category: B
+    - Status: active
+    - Matches.
+
+12. ID: item_011
+    - Category: C
+    - Status: pending
+    - Does not match.
+
+13. ID: item_012
+    - Category: C
+    - Status: pending
+    - Does not match.
+
+14. ID: item_013
+    - Category: B
+    - Status: active
+    - Matches.
+
+15. ID: item_014
+    - Category: A
+    - Status: active
+    - Matches.
+
+16. ID: item_015
+    - Category: B
+    - Status: active
+    - Matches.
+
+17. ID: item_016
+    - Category: A
+    - Status: active
+    - Matches.
+
+18. ID: item_017
+    - Category: C
+    - Status: pending
+    - Does not match.
+
+19. ID: item_018
+    - Category: A
+    - Status: pending
+    - Does not match.
+
+20. ID: item_019
+    - Category: C
+    - Status: active
+    - Does not match.
+
+The IDs that match the given conditions are:
+- item_002
+- item_010
+- item_013
+- item_014
+- item_015
+- item_016
+
+So, `selected_ids = [item_002, item_010, item_013, item_014, item_015, item_016]` and `count = 6`.
+
+To represent this in the required JSON format:
+
+```json
+{
+  "selected_ids": ["item_002", "item_010", "item_013", "item_014", "item_015", "item_016"],
+  "count": 6
+}
+```
+
+The final answer is: 
+```json
+{
+  "selected_ids": ["item_002", "item_010", "item_013", "item_014", "item_015", "item_016"],
+  "count": 6
+}
+```

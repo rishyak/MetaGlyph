@@ -1,0 +1,7 @@
+[
+  "Chair",
+  "Headphones",
+  "Microwave",
+  "Desk",
+  "Bookshelf"
+]

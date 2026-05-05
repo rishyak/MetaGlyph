@@ -1,0 +1,104 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 515,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 50,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 753.6,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 244,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 753.6,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 650.32,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 670.9,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 123.6,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 391.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 888,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 864,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 1174.7,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 475,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 377.2,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 939.4,
+        "active": true
+    }
+]
+```

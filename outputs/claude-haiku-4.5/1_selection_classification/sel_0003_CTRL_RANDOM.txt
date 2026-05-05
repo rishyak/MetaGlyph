@@ -1,0 +1,12 @@
+Looking at the instruction `SELECT x | x.category ¤ {appliances} ↯ [x.name]`, I need to:
+
+1. Filter for items where `category` equals `appliances`
+2. Return the `name` attribute of matching items
+
+From the product list, items with `category: appliances` are:
+- Microwave
+- Refrigerator
+
+```json
+["Microwave", "Refrigerator"]
+```

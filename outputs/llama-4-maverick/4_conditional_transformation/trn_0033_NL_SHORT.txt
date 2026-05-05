@@ -1,0 +1,200 @@
+To solve this problem, we will apply the given rules to each record and then return the transformed records in JSON format.
+
+### Step 1: Define the Input Records
+
+First, let's define the input records as given in the problem statement.
+
+```json
+[
+  {
+    "id": "rec_000",
+    "type": "trial",
+    "region": "APAC",
+    "amount": 633,
+    "active": false
+  },
+  {
+    "id": "rec_001",
+    "type": "standard",
+    "region": "EU",
+    "amount": 253,
+    "active": false
+  },
+  {
+    "id": "rec_002",
+    "type": "standard",
+    "region": "US",
+    "amount": 254,
+    "active": false
+  },
+  {
+    "id": "rec_003",
+    "type": "trial",
+    "region": "APAC",
+    "amount": 478,
+    "active": true
+  },
+  {
+    "id": "rec_004",
+    "type": "standard",
+    "region": "EU",
+    "amount": 621,
+    "active": true
+  },
+  {
+    "id": "rec_005",
+    "type": "trial",
+    "region": "APAC",
+    "amount": 598,
+    "active": true
+  },
+  {
+    "id": "rec_006",
+    "type": "trial",
+    "region": "US",
+    "amount": 308,
+    "active": false
+  },
+  {
+    "id": "rec_007",
+    "type": "standard",
+    "region": "APAC",
+    "amount": 371,
+    "active": true
+  },
+  {
+    "id": "rec_008",
+    "type": "trial",
+    "region": "EU",
+    "amount": 201,
+    "active": true
+  },
+  {
+    "id": "rec_009",
+    "type": "trial",
+    "region": "EU",
+    "amount": 79,
+    "active": true
+  },
+  {
+    "id": "rec_010",
+    "type": "premium",
+    "region": "EU",
+    "amount": 54,
+    "active": false
+  },
+  {
+    "id": "rec_011",
+    "type": "premium",
+    "region": "EU",
+    "amount": 775,
+    "active": true
+  },
+  {
+    "id": "rec_012",
+    "type": "premium",
+    "region": "US",
+    "amount": 363,
+    "active": true
+  },
+  {
+    "id": "rec_013",
+    "type": "trial",
+    "region": "APAC",
+    "amount": 653,
+    "active": true
+  },
+  {
+    "id": "rec_014",
+    "type": "trial",
+    "region": "APAC",
+    "amount": 784,
+    "active": false
+  }
+]
+```
+
+### Step 2: Apply the Transformation Rules
+
+The rules to apply are:
+1. If `type` == "premium", multiply `amount` by 1.1.
+2. If `region` == "EU", multiply `amount` by 1.2.
+3. If `active` == `false`, set `status` to "archived".
+
+Let's apply these rules to each record.
+
+### Step 3: Transform the Records
+
+We'll iterate through each record and apply the rules.
+
+1. For `rec_000`:
+   - `type` != "premium", so `amount` remains 633.
+   - `region` != "EU", so `amount` remains 633.
+   - `active` == `false`, so `status` = "archived".
+   - Transformed record: `{ "id": "rec_000", "type": "trial", "region": "APAC", "amount": 633, "active": false, "status": "archived" }`
+
+2. For `rec_001`:
+   - `type` != "premium", so `amount` remains 253.
+   - `region` == "EU", so `amount` = 253 * 1.2 = 303.6.
+   - `active` == `false`, so `status` = "archived".
+   - Transformed record: `{ "id": "rec_001", "type": "standard", "region": "EU", "amount": 303.6, "active": false, "status": "archived" }`
+
+3. For `rec_002`:
+   - `type` != "premium", so `amount` remains 254.
+   - `region` != "EU", so `amount` remains 254.
+   - `active` == `false`, so `status` = "archived".
+   - Transformed record: `{ "id": "rec_002", "type": "standard", "region": "US", "amount": 254, "active": false, "status": "archived" }`
+
+4. For `rec_003`:
+   - `type` != "premium", so `amount` remains 478.
+   - `region` != "EU", so `amount` remains 478.
+   - `active` == `true`, so no `status` change.
+   - Transformed record: `{ "id": "rec_003", "type": "trial", "region": "APAC", "amount": 478, "active": true }`
+
+5. For `rec_004`:
+   - `type` != "premium", so `amount` remains 621.
+   - `region` == "EU", so `amount` = 621 * 1.2 = 745.2.
+   - `active` == `true`, so no `status` change.
+   - Transformed record: `{ "id": "rec_004", "type": "standard", "region": "EU", "amount": 745.2, "active": true }`
+
+6. For `rec_005`:
+   - `type` != "premium", so `amount` remains 598.
+   - `region` != "EU", so `amount` remains 598.
+   - `active` == `true`, so no `status` change.
+   - Transformed record: `{ "id": "rec_005", "type": "trial", "region": "APAC", "amount": 598, "active": true }`
+
+7. For `rec_006`:
+   - `type` != "premium", so `amount` remains 308.
+   - `region` != "EU", so `amount` remains 308.
+   - `active` == `false`, so `status` = "archived".
+   - Transformed record: `{ "id": "rec_006", "type": "trial", "region": "US", "amount": 308, "active": false, "status": "archived" }`
+
+8. For `rec_007`:
+   - `type` != "premium", so `amount` remains 371.
+   - `region` != "EU", so `amount` remains 371.
+   - `active` == `true`, so no `status` change.
+   - Transformed record: `{ "id": "rec_007", "type": "standard", "region": "APAC", "amount": 371, "active": true }`
+
+9. For `rec_008`:
+   - `type` != "premium", so `amount` remains 201.
+   - `region` == "EU", so `amount` = 201 * 1.2 = 241.2.
+   - `active` == `true`, so no `status` change.
+   - Transformed record: `{ "id": "rec_008", "type": "trial", "region": "EU", "amount": 241.2, "active": true }`
+
+10. For `rec_009`:
+    - `type` != "premium", so `amount` remains 79.
+    - `region` == "EU", so `amount` = 79 * 1.2 = 94.8.
+    - `active` == `true`, so no `status` change.
+    - Transformed record: `{ "id": "rec_009", "type": "trial", "region": "EU", "amount": 94.8, "active": true }`
+
+11. For `rec_010`:
+    - `type` == "premium", so `amount` = 54 * 1.1 = 59.4.
+    - `region` == "EU", so `amount` = 59.4 * 1.2 = 71.28.
+    - `active` == `false`, so `status` = "archived".
+    - Transformed record: `{ "id": "rec_010", "type": "premium", "region": "EU", "amount": 71.28, "active": false, "status": "archived" }`
+
+12. For `rec_011`:
+    - `type` == "premium", so `amount` = 775 * 1.1 = 852.5.
+    - `region` == "EU", so `amount` = 852.5 * 1.2 = 1023.
+    - `active` == `true`, so no `status` change.
+    -

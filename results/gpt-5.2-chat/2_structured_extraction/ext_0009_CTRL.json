@@ -5,9 +5,10 @@
   "condition": "CTRL",
   "parse_success": true,
   "parsed_output": {
-    "risk_name": "Invoice data inconsistency",
-    "affected_component": "Billing and calculation system",
-    "severity": "High"
+    "date": "2024-01-24",
+    "total": "$7728.61",
+    "invoice_num": "8433",
+    "due_date": "2024-12-09"
   },
   "gold_output": {
     "due_date": "2024-12-09",
@@ -16,18 +17,18 @@
     "invoice_num": "8433"
   },
   "exact_match": false,
-  "accuracy": 0.0,
-  "f1_score": 0.0,
+  "accuracy": 0.75,
+  "f1_score": 0.75,
   "operator_fidelity": [
     {
       "operator": "→",
       "checked": true,
       "passed": false,
-      "details": "Missing fields: {'total', 'due_date', 'invoice_num', 'date'}"
+      "details": "Wrong values: ['total']"
     }
   ],
   "overall_pass": false,
   "error_type": "logic",
-  "error_details": "Accuracy: 0.00",
+  "error_details": "Accuracy: 0.75",
   "semantic_equivalence_pass": false
 }

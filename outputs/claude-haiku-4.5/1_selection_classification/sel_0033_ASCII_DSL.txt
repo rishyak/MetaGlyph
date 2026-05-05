@@ -1,0 +1,15 @@
+Looking at the instruction, I need to find all items where:
+- category IN {stationery} AND
+- portable IN {True}
+
+Let me check each product:
+
+- **Pen**: category: stationery ✓, portable: True ✓
+- **Stapler**: category: stationery ✓, portable: True ✓
+- **Notebook**: category: stationery ✓, portable: True ✓
+
+All other items either don't have the stationery category or aren't portable (or both).
+
+```json
+["Pen", "Stapler", "Notebook"]
+```

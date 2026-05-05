@@ -2,10 +2,18 @@
 {
   "selected_ids": [
     "item_000",
-    "item_001",
     "item_009",
-    "item_010"
+    "item_010",
+    "item_018"
   ],
   "count": 4
 }
 ```
+
+**Explanation:**
+- **item_000**: Category A, Status active ✓
+- **item_009**: Category A, Status active ✓
+- **item_010**: Category B, Status active ✓
+- **item_018**: Category A, Status active ✓
+
+All other items either have a category outside of A or B, or have a status other than active.

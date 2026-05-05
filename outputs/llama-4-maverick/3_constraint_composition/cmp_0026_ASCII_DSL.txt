@@ -1,0 +1,68 @@
+To solve this problem, we need to filter the given dataset based on the conditions provided: `x.category IN {A, B}` and `x.status IN {active}`. Then, we will extract the IDs of the filtered items and count them.
+
+### Step 1: Filter the Dataset
+
+First, let's filter the dataset based on the given conditions.
+
+1. `x.category IN {A, B}` means the category should be either A or B.
+2. `x.status IN {active}` means the status should be active.
+
+Let's apply these filters to the dataset:
+
+| ID        | Category | Status   | Priority | Value |
+|-----------|----------|----------|----------|-------|
+| item_000  | A        | inactive | medium   | 90    |
+| item_001  | A        | pending  | medium   | 58    |
+| item_002  | C        | active   | low      | 3     |
+| item_003  | B        | active   | low      | 71    |
+| item_004  | C        | pending  | high     | 55    |
+| item_005  | A        | inactive | low      | 39    |
+| item_006  | A        | active   | low      | 54    |
+| item_007  | C        | pending  | medium   | 9     |
+| item_008  | A        | inactive | high     | 69    |
+| item_009  | A        | pending  | high     | 74    |
+| item_010  | A        | pending  | low      | 38    |
+| item_011  | B        | active   | high     | 46    |
+| item_012  | A        | pending  | medium   | 24    |
+| item_013  | C        | pending  | low      | 68    |
+| item_014  | B        | active   | high     | 70    |
+| item_015  | C        | pending  | high     | 3     |
+| item_016  | B        | inactive | low      | 82    |
+| item_017  | B        | inactive | medium   | 96    |
+| item_018  | A        | inactive | low      | 45    |
+| item_019  | A        | pending  | high     | 81    |
+
+After applying the filters:
+
+- Category is A or B: `item_000`, `item_001`, `item_003`, `item_005`, `item_006`, `item_008`, `item_009`, `item_010`, `item_011`, `item_012`, `item_014`, `item_016`, `item_017`, `item_018`, `item_019`
+- Status is active: `item_003`, `item_006`, `item_011`, `item_014`
+
+Combining both conditions, the items that satisfy both are:
+- `item_003`, `item_006`, `item_011`, `item_014`
+
+### Step 2: Extract IDs and Count
+
+Now, let's extract the IDs of these items and count them.
+
+IDs: `item_003`, `item_006`, `item_011`, `item_014`
+
+Count: 4
+
+### Step 3: Format the Output
+
+The output should be in JSON format with 'selected_ids' as an array and 'count' as an integer.
+
+```json
+{
+  "selected_ids": ["item_003", "item_006", "item_011", "item_014"],
+  "count": 4
+}
+```
+
+The final answer is: 
+```json
+{
+  "selected_ids": ["item_003", "item_006", "item_011", "item_014"],
+  "count": 4
+}
+```

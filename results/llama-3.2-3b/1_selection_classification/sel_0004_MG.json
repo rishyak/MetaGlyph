@@ -1,0 +1,55 @@
+{
+  "prompt_id": "sel_0004_MG",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this problem, we need to identify the animals that are not birds. We can do this by looking at the \"type\" attribute of each animal and checking if it is not equal to \"bird\".",
+    "We will filter the animals that are not birds and include their names in the output.",
+    "We will create an array of strings containing the names of the animals that are not birds.",
+    "We will return the output array as a JSON array.",
+    "import json",
+    "animals = [",
+    "{\"name\": \"Parrot\", \"type\": \"bird\", \"domestic\": True, \"size\": \"small\"}",
+    "{\"name\": \"Salmon\", \"type\": \"fish\", \"domestic\": False, \"size\": \"medium\"}",
+    "{\"name\": \"Cat\", \"type\": \"mammal\", \"domestic\": True, \"size\": \"small\"}",
+    "{\"name\": \"Eagle\", \"type\": \"bird\", \"domestic\": False, \"size\": \"medium\"}",
+    "{\"name\": \"Crocodile\", \"type\": \"reptile\", \"domestic\": False, \"size\": \"large\"}",
+    "{\"name\": \"Hamster\", \"type\": \"mammal\", \"domestic\": True, \"size\": \"small\"}",
+    "{\"name\": \"Shark\", \"type\": \"fish\", \"domestic\": False, \"size\": \"large\"}",
+    "{\"name\": \"Lion\", \"type\": \"mammal\", \"domestic\": False, \"size\": \"large\"}",
+    "{\"name\": \"Snake\", \"type\": \"reptile\", \"domestic\": False, \"size\": \"medium\"}",
+    "{\"name\": \"Elephant\", \"type\": \"mammal\", \"domestic\": False, \"size\": \"large\"}",
+    "non_birds = [animal[\"name\"] for animal in animals if animal[\"type\"] != \"bird\"]",
+    "print(output_json)",
+    "When we run the code, it will output the following:",
+    "[\"Salmon\", \"Cat\", \"Crocodile\", \"Hamster\", \"Shark\", \"Lion\", \"Snake\", \"Elephant\"]",
+    "This is the final answer in the required format."
+  ],
+  "gold_output": [
+    "cat",
+    "crocodile",
+    "elephant",
+    "hamster",
+    "lion",
+    "salmon",
+    "shark",
+    "snake"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=8, extra=21"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

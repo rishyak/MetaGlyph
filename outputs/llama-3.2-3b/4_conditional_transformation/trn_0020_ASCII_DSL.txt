@@ -1,0 +1,90 @@
+With the provided transformation rules, I'll apply the logic to each record and provide the transformed records in JSON format. Here is the result:
+
+```json
+[
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 439.9,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 1007.8,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "US",
+    "amount": 642,
+    "active": true
+  },
+  {
+    "type": "standard",
+    "region": "APAC",
+    "amount": 770,
+    "status": "archived"
+  },
+  {
+    "type": "standard",
+    "region": "APAC",
+    "amount": 114,
+    "status": "archived"
+  },
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 342,
+    "active": true
+  },
+  {
+    "type": "premium",
+    "region": "US",
+    "amount": 828,
+    "status": "archived"
+  },
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 553,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 821,
+    "active": true
+  },
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 90,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 256,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "US",
+    "amount": 247,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 464.4,
+    "status": "archived"
+  }
+]
+```
+
+Note that I've applied the transformation rules to each record:
+
+* For records with `type == "premium"`, I multiplied the `amount` by 1.1.
+* For records with `region == "EU"`, I multiplied the `amount` by 1.2.
+* For records with `active == false`, I set the `status` to "archived".

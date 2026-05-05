@@ -1,3 +1,13 @@
+Looking at the instruction: `SELECT x | x.size ∈ {small} → [x.name]`
+
+This means: Select all items where size equals "small" and return their names.
+
+Filtering the dataset for animals with `size: small`:
+
+1. Cat: size: small ✓
+2. Turtle: size: small ✓
+3. Goldfish: size: small ✓
+
 ```json
-["Cat"]
+["Cat", "Turtle", "Goldfish"]
 ```

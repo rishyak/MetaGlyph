@@ -1,0 +1,36 @@
+To solve this task, we need to carefully review the given list of animals and their attributes to identify those whose domestic status equals True.
+
+1. **Review the Input Data**: The input data is a list of animals with their attributes, including type, domestic status, and size.
+
+2. **Identify Relevant Information**: We are only interested in the "domestic" attribute for this task.
+
+3. **Extract Domestic Animals**: We will go through each entry and check if the domestic attribute is True.
+
+   - Whale: domestic: False
+   - Shark: domestic: False
+   - Lion: domestic: False
+   - Parrot: domestic: True
+   - Salmon: domestic: False
+   - Eagle: domestic: False
+   - Turtle: domestic: True
+   - Crocodile: domestic: False
+   - Snake: domestic: False
+   - Cat: domestic: True
+
+4. **List Animals with Domestic True**: 
+   - Parrot
+   - Turtle
+   - Cat
+
+5. **Format the Output**: The task requires the output to be in a JSON array of strings.
+
+The animals that are domestic (domestic: True) are Parrot, Turtle, and Cat. Thus, the output in the required JSON format is:
+
+```json
+["Parrot", "Turtle", "Cat"]
+```
+
+Therefore, the response is: 
+```json
+["Parrot", "Turtle", "Cat"]
+```

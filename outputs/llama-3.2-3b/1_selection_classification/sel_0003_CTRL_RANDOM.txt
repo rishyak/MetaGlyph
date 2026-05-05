@@ -1,0 +1,1 @@
+I can help you with that. However, I don't see any input data provided. Please provide the list of products with their attributes, and I'll be happy to assist you in selecting items based on the given criteria and formatting the output as a JSON array of strings.

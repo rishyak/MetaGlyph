@@ -1,0 +1,37 @@
+To solve this task, we need to extract the required fields from the given email document and return them as a JSON object. The fields to be extracted are: company, sender_title, subject, and sender.
+
+1. **Extracting the Subject**: The subject of the email is directly mentioned in the document as "Subject: Project Update". So, the subject is "Project Update".
+
+2. **Extracting the Sender**: The sender's email address is given as "From: david.brown@digitalsystems.com". Thus, the sender's email address is "david.brown@digitalsystems.com". The sender's name is mentioned at the end of the email as "David Brown". Therefore, the sender is "David Brown".
+
+3. **Extracting the Sender's Title**: The sender's title is mentioned below their name at the end of the email as "Manager". Hence, the sender_title is "Manager".
+
+4. **Extracting the Company**: The company name is not directly mentioned in the email except in the sender's email address and their signature. The email address "david.brown@digitalsystems.com" suggests the company could be related to "Digital Systems". Additionally, the signature includes "Innovation Labs", which could be a department or a subsidiary. For the purpose of this extraction, we will consider "Innovation Labs" as the company or the relevant entity, as it's more specific to the sender's context.
+
+Now, compiling these extracted fields into a JSON object:
+
+- company: "Innovation Labs"
+- sender_title: "Manager"
+- subject: "Project Update"
+- sender: "David Brown"
+
+The JSON object with the extracted fields is:
+
+```json
+{
+  "company": "Innovation Labs",
+  "sender_title": "Manager",
+  "subject": "Project Update",
+  "sender": "David Brown"
+}
+```
+
+The final answer is: 
+```json
+{
+  "company": "Innovation Labs",
+  "sender_title": "Manager",
+  "subject": "Project Update",
+  "sender": "David Brown"
+}
+```

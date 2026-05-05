@@ -1,0 +1,16 @@
+```json
+{
+  "selected_ids": ["item_001", "item_002", "item_006", "item_010"],
+  "count": 4
+}
+```
+
+Explanation:
+- The query filters for items where the priority is `high` and the status is not `inactive`.
+- From the given dataset, the following items meet these criteria:
+  - `item_001`: Status is `active`, Priority is `high`
+  - `item_002`: Status is `pending`, Priority is `high`
+  - `item_006`: Status is `pending`, Priority is `high`
+  - `item_010`: Status is `active`, Priority is `high`
+
+Thus, the selected IDs are `["item_001", "item_002", "item_006", "item_010"]` and the count is 4.

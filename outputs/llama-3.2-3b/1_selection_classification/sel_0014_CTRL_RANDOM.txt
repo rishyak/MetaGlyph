@@ -1,0 +1,20 @@
+### Step 1: Review the given dataset to identify the fish.
+The dataset contains the following entries:
+- Crocodile: type: reptile, domestic: False, size: large
+- Dog: type: mammal, domestic: True, size: medium
+- Snake: type: reptile, domestic: False, size: medium
+- Cat: type: mammal, domestic: True, size: small
+- Penguin: type: bird, domestic: False, size: medium
+- Eagle: type: bird, domestic: False, size: medium
+- Salmon: type: fish, domestic: False, size: medium
+- Lion: type: mammal, domestic: False, size: large
+- Whale: type: mammal, domestic: False, size: large
+- Turtle: type: reptile, domestic: True, size: small
+
+### Step 2: Identify the fish from the dataset.
+The fish in the dataset is Salmon.
+
+### Step 3: Format the output as a JSON array.
+The output should be in the format: ["Salmon"].
+
+The final answer is: $\boxed{["Salmon"]}$

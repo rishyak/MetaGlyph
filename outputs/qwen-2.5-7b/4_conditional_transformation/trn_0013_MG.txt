@@ -1,0 +1,124 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 834,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 365,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 80,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 852,
+        "active": false,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 993,
+        "active": false,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 734,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 734 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 803,
+        "active": false,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 761,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 855 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 259 * 1.1 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 694,
+        "active": false,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 516,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 296 * 1.1 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 227,
+        "active": false,
+        "status": null
+    }
+]
+```
+
+Explanation:
+- `rec_000` remains unchanged as it is a trial plan and not in the EU.
+- `rec_001` is archived due to being in the US and inactive.
+- `rec_002` is archived due to being in the EU and inactive.
+- `rec_003`, `rec_004`, and `rec_013` remain unchanged as they are standard plans and inactive.
+- `rec_005` remains unchanged as it is a trial plan and not in the EU.
+- `rec_006` is archived due to being in the US and inactive.
+- `rec_007` remains unchanged as it is a trial plan and not in the EU.
+- `rec_008` is transformed by increasing its amount by 10% since it is a premium plan and then by 20% because it is in the EU and inactive.
+- `rec_009` is transformed by increasing its amount by 20% because it is in the EU and inactive.
+- `rec_010` is transformed by increasing its amount by 10% since it is a premium plan and then by 20% because it is in the EU and inactive.
+- `rec_011` remains unchanged as it is a trial plan and not in the EU.
+- `rec_012` is transformed by increasing its amount by 20% because it is in the EU and inactive.
+- `rec_014` is transformed by increasing its amount by 10% since it is a premium plan and then by 20% because it is in the EU and inactive.

@@ -1,5 +1,20 @@
-```json
-[]
-```
+I need to find items where BOTH conditions are met:
+1. price_range = 'medium'
+2. portable = False
 
-The provided list contains only electronics, stationery, appliances, and furniture items. None of these are mammals, and therefore none satisfy the first condition of being in the mammal category and commonly kept as pets.
+Let me review each product:
+
+- Smartphone: price_range: high, portable: True ❌
+- Notebook: price_range: low, portable: True ❌
+- Pen: price_range: low, portable: True ❌
+- Headphones: price_range: medium, portable: True ❌ (medium but portable is True)
+- Refrigerator: price_range: high, portable: False ❌ (portable is False but price_range is high)
+- Bookshelf: price_range: medium, portable: False ✅ (both conditions met)
+- Tablet: price_range: high, portable: True ❌
+- Desk: price_range: medium, portable: False ✅ (both conditions met)
+- Laptop: price_range: high, portable: True ❌
+- Chair: price_range: medium, portable: True ❌ (medium but portable is True)
+
+```json
+["Bookshelf", "Desk"]
+```

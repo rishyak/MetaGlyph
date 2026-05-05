@@ -1,0 +1,20 @@
+Given the repetitive and unnecessary information in the input, I will provide a concise solution that extracts the required information.
+
+Here is the extracted data in JSON format:
+
+```json
+[
+  "Desk",
+  "Microwave",
+  "Stapler",
+  "Laptop",
+  "Notebook",
+  "Chair",
+  "Bookshelf",
+  "Smartphone",
+  "Refrigerator",
+  "Tablet"
+]
+```
+
+This JSON array contains the names of the items that match the specified format.

@@ -1,0 +1,10 @@
+### Solution
+```json
+[
+  "Refrigerator",
+  "Microwave"
+]
+```
+
+### Explanation
+The solution involves filtering the list of items to only include those with a category of "appliances". This is achieved by iterating over the list of items and checking the "category" attribute of each item. If the category matches "appliances", the item is added to the result array.

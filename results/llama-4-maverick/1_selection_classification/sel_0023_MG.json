@@ -1,0 +1,44 @@
+{
+  "prompt_id": "sel_0023_MG",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": [
+    "Penguin: size = medium",
+    "Salmon: size = medium",
+    "Elephant: size = large",
+    "Snake: size = medium",
+    "Cat: size = small",
+    "Eagle: size = medium",
+    "Whale: size = large",
+    "Shark: size = large",
+    "Turtle: size = small",
+    "Goldfish: size = small",
+    "This means we need to select animals where the size is not 'small'. So, we exclude Cat, Turtle, and Goldfish because their size is 'small'."
+  ],
+  "gold_output": [
+    "eagle",
+    "elephant",
+    "penguin",
+    "salmon",
+    "shark",
+    "snake",
+    "whale"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=7, extra=11"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

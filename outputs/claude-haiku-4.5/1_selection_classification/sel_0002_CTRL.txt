@@ -1,3 +1,13 @@
+Looking at the instruction `SELECT x | x.type ∈ {bird} → [x.name]`, I need to:
+
+1. Filter all items where `type` is "bird"
+2. Return their names
+
+Reviewing the input data for animals with `type: bird`:
+
+- **Eagle**: type: bird, domestic: False, size: medium ✓
+- **Parrot**: type: bird, domestic: True, size: small ✓
+
 ```json
-["Cat", "Dog", "Hamster"]
+["Eagle", "Parrot"]
 ```

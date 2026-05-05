@@ -1,0 +1,11 @@
+Looking at the input data, I need to find items where:
+- type = "fish" AND
+- domestic = False
+
+Reviewing the list:
+- Goldfish: type: fish, domestic: True ❌ (domestic is True)
+- Salmon: type: fish, domestic: False ✅ (matches both conditions)
+
+```json
+["Salmon"]
+```

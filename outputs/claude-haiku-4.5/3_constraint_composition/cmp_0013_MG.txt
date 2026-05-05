@@ -1,8 +1,34 @@
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_001",
+    "item_002",
+    "item_006",
+    "item_008",
+    "item_009",
+    "item_010",
+    "item_013",
+    "item_014",
+    "item_015"
+  ],
+  "count": 9
 }
 ```
 
-**Explanation:** The query requires items that match the "projects" category with attributes including "security", "high_priority", "performance", and must not be "deprecated" or "experimental". The provided dataset contains items with Category (A, B, C), Status, Priority, and Value attributes, but lacks the required "security", "high_priority", "performance", "deprecated", and "experimental" attributes specified in the query. Therefore, no items match the selection criteria.
+### Explanation
+The query selects items where: **priority ∈ {high} ∪ status ∉ {inactive}**
+
+This means: **(priority is high) OR (status is NOT inactive)**
+
+**Selected items:**
+- item_001: priority=high ✓
+- item_002: priority=high ✓
+- item_006: priority=high ✓
+- item_008: priority=high ✓
+- item_009: priority=high ✓
+- item_010: priority=high ✓
+- item_013: priority=high ✓
+- item_014: priority=high ✓
+- item_015: priority=high ✓
+
+All 9 selected items have priority=high, which satisfies the condition.

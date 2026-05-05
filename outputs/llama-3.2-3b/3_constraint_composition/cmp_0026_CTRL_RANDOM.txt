@@ -1,0 +1,24 @@
+SELECT 
+  x.id, 
+  x.category, 
+  x.status, 
+  x.selected_ids, 
+  COUNT(*) as count 
+FROM 
+  (SELECT 
+     id, 
+     category, 
+     status, 
+     CASE 
+       WHEN status = 'active' THEN 'active'
+       WHEN status = 'pending' THEN 'pending'
+       ELSE 'inactive'
+     END as status 
+   FROM 
+     items) x 
+GROUP BY 
+  x.id, 
+  x.category, 
+  x.status 
+HAVING 
+  x.status IN ('active', 'pending')

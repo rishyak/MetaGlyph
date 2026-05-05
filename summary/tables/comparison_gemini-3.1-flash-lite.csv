@@ -1,0 +1,5 @@
+Family,Model,NL Accuracy,MG Accuracy,CTRL Accuracy,MG-NL Diff,MG-CTRL Diff,Significant
+3_constraint_composition,gemini-3.1-flash-lite,1.000,1.000,0.249,+0.000,+0.751,No
+1_selection_classification,gemini-3.1-flash-lite,1.000,1.000,0.085,+0.000,+0.915,No
+2_structured_extraction,gemini-3.1-flash-lite,0.905,0.930,0.900,+0.025,+0.030,No
+4_conditional_transformation,gemini-3.1-flash-lite,0.999,0.237,0.000,-0.761,+0.237,Yes

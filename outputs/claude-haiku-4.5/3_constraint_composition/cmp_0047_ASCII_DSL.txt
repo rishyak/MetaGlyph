@@ -1,0 +1,47 @@
+I need to select items where: `priority IN {high} OR status NOT IN {inactive}`
+
+This means: `priority = high` OR `status ≠ inactive`
+
+Let me evaluate each item:
+
+- item_000: priority=high ✓ → **SELECT**
+- item_001: priority=low, status=active (not inactive) ✓ → **SELECT**
+- item_002: priority=low, status=inactive ✗ → skip
+- item_003: priority=medium, status=inactive ✗ → skip
+- item_004: priority=medium, status=pending (not inactive) ✓ → **SELECT**
+- item_005: priority=medium, status=inactive ✗ → skip
+- item_006: priority=medium, status=active (not inactive) ✓ → **SELECT**
+- item_007: priority=high ✓ → **SELECT**
+- item_008: priority=medium, status=inactive ✗ → skip
+- item_009: priority=low, status=pending (not inactive) ✓ → **SELECT**
+- item_010: priority=high ✓ → **SELECT**
+- item_011: priority=high ✓ → **SELECT**
+- item_012: priority=low, status=inactive ✗ → skip
+- item_013: priority=medium, status=inactive ✗ → skip
+- item_014: priority=low, status=pending (not inactive) ✓ → **SELECT**
+- item_015: priority=high ✓ → **SELECT**
+- item_016: priority=low, status=active (not inactive) ✓ → **SELECT**
+- item_017: priority=low, status=active (not inactive) ✓ → **SELECT**
+- item_018: priority=low, status=inactive ✗ → skip
+- item_019: priority=low, status=pending (not inactive) ✓ → **SELECT**
+
+```json
+{
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_004",
+    "item_006",
+    "item_007",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_014",
+    "item_015",
+    "item_016",
+    "item_017",
+    "item_019"
+  ],
+  "count": 13
+}
+```

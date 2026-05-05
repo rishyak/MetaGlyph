@@ -1,0 +1,13 @@
+### Step 1: Identify the items that are not domestic and are large in size.
+To solve this problem, we need to identify the items that are not domestic (i.e., False in the "domestic" column) and are large in size (i.e., > 100kg).
+
+### Step 2: Filter the items based on the conditions.
+From the given data, we can see that the items that meet the conditions are:
+- Shark: type: fish, domestic: False, size: large
+- Crocodile: type: reptile, domestic: False, size: large
+- Whale: type: mammal, domestic: False, size: large
+
+### Step 3: Return the filtered items as a JSON array.
+We will return the names of these items as a JSON array.
+
+The final answer is: $\boxed [{"Shark","Crocodile","Whale"}]$

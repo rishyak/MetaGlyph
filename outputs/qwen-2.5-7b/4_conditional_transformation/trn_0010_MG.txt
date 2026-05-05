@@ -1,0 +1,137 @@
+Based on the provided instruction and input records, we will apply the transformations in the following order:
+
+1. If `x.type` is `premium`, then multiply `x.amount` by `1.1`.
+2. If `x.region` is `EU`, then multiply `x.amount` by `1.2`.
+3. If `x.active` is `False`, then set `x.status` to `"archived"`.
+
+Let's transform each record one by one:
+
+- **Rec_000**: 
+  - Type: `premium`
+  - Region: `US`
+  - Amount: `161`
+  - Active: `True`
+  - No changes needed.
+  
+- **Rec_001**: 
+  - Type: `standard`
+  - Region: `EU`
+  - Amount: `234`
+  - Active: `True`
+  - No changes needed.
+  
+- **Rec_002**: 
+  - Type: `trial`
+  - Region: `APAC`
+  - Amount: `485`
+  - Active: `True`
+  - No changes needed.
+  
+- **Rec_003**: 
+  - Type: `trial`
+  - Region: `US`
+  - Amount: `949`
+  - Active: `True`
+  - No changes needed.
+  
+- **Rec_004**: 
+  - Type: `premium`
+  - Region: `US`
+  - Amount: `830`
+  - Active: `False`
+  - Multiply `amount` by `1.1`: `830 * 1.1 = 913`
+  - Set `status` to `"archived"`: `{"type": "premium", "region": "US", "amount": 913, "active": False, "status": "archived"}`
+  
+- **Rec_005**: 
+  - Type: `trial`
+  - Region: `APAC`
+  - Amount: `582`
+  - Active: `False`
+  - Set `status` to `"archived"`: `{"type": "trial", "region": "APAC", "amount": 582, "active": False, "status": "archived"}`
+  
+- **Rec_006**: 
+  - Type: `premium`
+  - Region: `APAC`
+  - Amount: `844`
+  - Active: `False`
+  - Multiply `amount` by `1.1`: `844 * 1.1 = 928.4`
+  - Set `status` to `"archived"`: `{"type": "premium", "region": "APAC", "amount": 928.4, "active": False, "status": "archived"}`
+  
+- **Rec_007**: 
+  - Type: `trial`
+  - Region: `EU`
+  - Amount: `928`
+  - Active: `True`
+  - No changes needed.
+  
+- **Rec_008**: 
+  - Type: `trial`
+  - Region: `EU`
+  - Amount: `470`
+  - Active: `False`
+  - Set `status` to `"archived"`: `{"type": "trial", "region": "EU", "amount": 470, "active": False, "status": "archived"}`
+  
+- **Rec_009**: 
+  - Type: `standard`
+  - Region: `APAC`
+  - Amount: `293`
+  - Active: `False`
+  - No changes needed.
+  
+- **Rec_010**: 
+  - Type: `trial`
+  - Region: `US`
+  - Amount: `291`
+  - Active: `False`
+  - Set `status` to `"archived"`: `{"type": "trial", "region": "US", "amount": 291, "active": False, "status": "archived"}`
+  
+- **Rec_011**: 
+  - Type: `standard`
+  - Region: `US`
+  - Amount: `246`
+  - Active: `False`
+  - No changes needed.
+  
+- **Rec_012**: 
+  - Type: `premium`
+  - Region: `EU`
+  - Amount: `337`
+  - Active: `True`
+  - Multiply `amount` by `1.2`: `337 * 1.2 = 404.4`
+  - No additional changes needed: `{"type": "premium", "region": "EU", "amount": 404.4, "active": True}`
+  
+- **Rec_013**: 
+  - Type: `standard`
+  - Region: `US`
+  - Amount: `246`
+  - Active: `False`
+  - No changes needed.
+  
+- **Rec_014**: 
+  - Type: `trial`
+  - Region: `US`
+  - Amount: `733`
+  - Active: `True`
+  - No changes needed.
+
+So the final transformed records are:
+
+```json
+[
+    {"type": "premium", "region": "US", "amount": 161, "active": true},
+    {"type": "standard", "region": "EU", "amount": 234, "active": true},
+    {"type": "trial", "region": "APAC", "amount": 485, "active": true},
+    {"type": "trial", "region": "US", "amount": 949, "active": true},
+    {"type": "premium", "region": "US", "amount": 913, "active": false, "status": "archived"},
+    {"type": "trial", "region": "APAC", "amount": 582, "active": false, "status": "archived"},
+    {"type": "premium", "region": "APAC", "amount": 928.4, "active": false, "status": "archived"},
+    {"type": "trial", "region": "EU", "amount": 928, "active": true},
+    {"type": "trial", "region": "EU", "amount": 470, "active": false, "status": "archived"},
+    {"type": "standard", "region": "APAC", "amount": 293, "active": false},
+    {"type": "standard", "region": "US", "amount": 246, "active": false},
+    {"type": "premium", "region": "EU", "amount": 404.4, "active": true},
+    {"type": "trial", "region": "US", "amount": 733, "active": true}
+]
+```
+
+This JSON array contains the transformed records according to the given rules.

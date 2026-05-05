@@ -5,30 +5,36 @@
   "condition": "NL",
   "parse_success": true,
   "parsed_output": [
-    "Cat"
+    "Penguin",
+    "Salmon",
+    "Elephant",
+    "Snake",
+    "Eagle",
+    "Whale",
+    "Shark"
   ],
   "gold_output": [
-    "cat",
     "eagle",
-    "goldfish",
+    "elephant",
     "penguin",
     "salmon",
+    "shark",
     "snake",
-    "turtle"
+    "whale"
   ],
-  "exact_match": false,
-  "accuracy": 0.14285714285714285,
-  "f1_score": 0.25,
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
   "operator_fidelity": [
     {
       "operator": "∉",
       "checked": true,
-      "passed": true,
-      "details": "Exclusion constraint satisfied"
+      "passed": false,
+      "details": "missing=7, extra=7"
     }
   ],
-  "overall_pass": false,
-  "error_type": "incomplete",
-  "error_details": "Accuracy: 0.14",
-  "semantic_equivalence_pass": false
+  "overall_pass": true,
+  "error_type": "logic",
+  "error_details": "Accuracy: 1.00",
+  "semantic_equivalence_pass": true
 }

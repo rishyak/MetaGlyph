@@ -1,0 +1,41 @@
+To solve this task, we need to carefully review the given list of animals and their attributes, and then identify the items that match the specified criteria: `domestic` equals `True` and `type` equals `bird`.
+
+Let's examine the provided list:
+
+1. Turtle: type: reptile, domestic: True, size: small
+   - Does not match because type is not `bird`.
+
+2. Salmon: type: fish, domestic: False, size: medium
+   - Does not match because `domestic` is `False` and type is not `bird`.
+
+3. Whale: type: mammal, domestic: False, size: large
+   - Does not match because `domestic` is `False` and type is not `bird`.
+
+4. Crocodile: type: reptile, domestic: False, size: large
+   - Does not match because `domestic` is `False` and type is not `bird`.
+
+5. Parrot: type: bird, domestic: True, size: small
+   - Matches because `type` is `bird` and `domestic` is `True`.
+
+6. Cat: type: mammal, domestic: True, size: small
+   - Does not match because type is not `bird`.
+
+7. Elephant: type: mammal, domestic: False, size: large
+   - Does not match because `domestic` is `False` and type is not `bird`.
+
+8. Eagle: type: bird, domestic: False, size: medium
+   - Does not match because `domestic` is `False`.
+
+9. Goldfish: type: fish, domestic: True, size: small
+   - Does not match because type is not `bird`.
+
+10. Lion: type: mammal, domestic: False, size: large
+    - Does not match because `domestic` is `False` and type is not `bird`.
+
+From the given list, only "Parrot" satisfies both conditions: it is of type `bird` and is `domestic` (`True`).
+
+Therefore, the answer in the required JSON format is:
+
+```json
+["Parrot"]
+```

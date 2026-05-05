@@ -1,0 +1,24 @@
+### Step 1: Identify the 'type' attribute for each animal
+Review the list of animals to identify the 'type' attribute for each item.
+
+### Step 2: Select animals with 'type' attribute 'mammal'
+From the list, select the items where the 'type' attribute is 'mammal'.
+
+- Crocodile: type: reptile, domestic: False, size: large
+- Snake: type: reptile, domestic: False, size: medium
+- Eagle: type: bird, domestic: False, size: medium
+- Turtle: type: reptile, domestic: True, size: small
+- Parrot: type: bird, domestic: True, size: small
+- Cat: type: mammal, domestic: True, size: small
+- Shark: type: fish, domestic: False, size: large
+- Hamster: type: mammal, domestic: True, size: small
+- Salmon: type: fish, domestic: False, size: medium
+- Penguin: type: bird, domestic: False, size: medium
+
+### Step 3: Filter the list to include only 'mammal' type animals
+The animals that match the 'type' attribute 'mammal' are:
+- Cat: type: mammal, domestic: True, size: small
+- Hamster: type: mammal, domestic: True, size: small
+
+### Step 4: Format the output as a JSON array of strings
+The final answer is: $\boxed["Cat", "Hamster"]$

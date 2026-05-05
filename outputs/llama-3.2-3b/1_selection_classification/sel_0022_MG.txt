@@ -1,0 +1,9 @@
+### Solution
+```json
+[
+  "Desk",
+  "Refrigerator"
+]
+```
+### Explanation
+The instruction asks to select items where `x.portable` is `False`. From the given list, only "Desk" and "Refrigerator" have `x.portable` as `False`.

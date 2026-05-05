@@ -1,3 +1,28 @@
+# Analysis
+
+The instruction asks me to select all items where the type is NOT "bird" and return their names.
+
+**Query breakdown:**
+- `SELECT x` - select items
+- `x.type ∉ {bird}` - where type is not in the set {bird}
+- `→ [x.name]` - return the name
+
+**Filtering the list:**
+
+Animals with type = "bird":
+- Parrot ❌
+- Eagle ❌
+
+Animals with type ≠ "bird":
+- Salmon ✓ (fish)
+- Cat ✓ (mammal)
+- Crocodile ✓ (reptile)
+- Hamster ✓ (mammal)
+- Shark ✓ (fish)
+- Lion ✓ (mammal)
+- Snake ✓ (reptile)
+- Elephant ✓ (mammal)
+
 ```json
-["Cat", "Hamster"]
+["Salmon", "Cat", "Crocodile", "Hamster", "Shark", "Lion", "Snake", "Elephant"]
 ```

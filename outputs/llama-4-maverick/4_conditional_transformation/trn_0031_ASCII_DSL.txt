@@ -1,0 +1,114 @@
+To solve this problem, we need to apply the given transformation rules to each record in the input data. The rules are applied in a specific order.
+
+1. **First Rule**: If the record type is "premium", then multiply the amount by 1.1.
+2. **Second Rule**: If the record region is "EU", then multiply the amount by 1.2.
+3. **Third Rule**: If the record is not active (active == false), then change the status to "archived". Note that the initial records do not have a "status" field, so this field will be introduced in the transformation process.
+
+Let's apply these rules step by step to each record.
+
+### Initial Records
+
+1. rec_000: type = standard, region = EU, amount = 326, active = True
+2. rec_001: type = standard, region = EU, amount = 980, active = False
+3. rec_002: type = standard, region = US, amount = 150, active = True
+4. rec_003: type = standard, region = EU, amount = 874, active = True
+5. rec_004: type = trial, region = APAC, amount = 865, active = True
+6. rec_005: type = trial, region = EU, amount = 907, active = True
+7. rec_006: type = trial, region = EU, amount = 167, active = True
+8. rec_007: type = standard, region = APAC, amount = 799, active = True
+9. rec_008: type = trial, region = EU, amount = 54, active = False
+10. rec_009: type = premium, region = APAC, amount = 746, active = True
+11. rec_010: type = premium, region = APAC, amount = 301, active = False
+12. rec_011: type = standard, region = APAC, amount = 254, active = False
+13. rec_012: type = premium, region = US, amount = 386, active = False
+14. rec_013: type = premium, region = EU, amount = 806, active = False
+15. rec_014: type = trial, region = APAC, amount = 438, active = True
+
+### Applying the First Rule
+
+1. rec_000: amount = 326 (no change)
+2. rec_001: amount = 980 (no change)
+3. rec_002: amount = 150 (no change)
+4. rec_003: amount = 874 (no change)
+5. rec_004: amount = 865 (no change)
+6. rec_005: amount = 907 (no change)
+7. rec_006: amount = 167 (no change)
+8. rec_007: amount = 799 (no change)
+9. rec_008: amount = 54 (no change)
+10. rec_009: amount = 746 × 1.1 = 820.6
+11. rec_010: amount = 301 × 1.1 = 331.1
+12. rec_011: amount = 254 (no change)
+13. rec_012: amount = 386 × 1.1 = 424.6
+14. rec_013: amount = 806 × 1.1 = 886.6
+15. rec_014: amount = 438 (no change)
+
+### Applying the Second Rule
+
+1. rec_000: amount = 326 × 1.2 = 391.2 (region = EU)
+2. rec_001: amount = 980 × 1.2 = 1176 (region = EU)
+3. rec_002: amount = 150 (no change)
+4. rec_003: amount = 874 × 1.2 = 1048.8 (region = EU)
+5. rec_004: amount = 865 (no change)
+6. rec_005: amount = 907 × 1.2 = 1088.4 (region = EU)
+7. rec_006: amount = 167 × 1.2 = 200.4 (region = EU)
+8. rec_007: amount = 799 (no change)
+9. rec_008: amount = 54 × 1.2 = 64.8 (region = EU)
+10. rec_009: amount = 820.6 (no change)
+11. rec_010: amount = 331.1 (no change)
+12. rec_011: amount = 254 (no change)
+13. rec_012: amount = 424.6 (no change)
+14. rec_013: amount = 886.6 × 1.2 = 1063.92 (region = EU)
+15. rec_014: amount = 438 (no change)
+
+### Applying the Third Rule
+
+1. rec_000: status = (no change, active = True)
+2. rec_001: status = "archived" (active = False)
+3. rec_002: status = (no change, active = True)
+4. rec_003: status = (no change, active = True)
+5. rec_004: status = (no change, active = True)
+6. rec_005: status = (no change, active = True)
+7. rec_006: status = (no change, active = True)
+8. rec_007: status = (no change, active = True)
+9. rec_008: status = "archived" (active = False)
+10. rec_009: status = (no change, active = True)
+11. rec_010: status = "archived" (active = False)
+12. rec_011: status = "archived" (active = False)
+13. rec_012: status = "archived" (active = False)
+14. rec_013: status = "archived" (active = False)
+15. rec_014: status = (no change, active = True)
+
+### Transformed Records
+
+1. rec_000: type = standard, region = EU, amount = 391.2, active = True
+2. rec_001: type = standard, region = EU, amount = 1176, active = False, status = "archived"
+3. rec_002: type = standard, region = US, amount = 150, active = True
+4. rec_003: type = standard, region = EU, amount = 1048.8, active = True
+5. rec_004: type = trial, region = APAC, amount = 865, active = True
+6. rec_005: type = trial, region = EU, amount = 1088.4, active = True
+7. rec_006: type = trial, region = EU, amount = 200.4, active = True
+8. rec_007: type = standard, region = APAC, amount = 799, active = True
+9. rec_008: type = trial, region = EU, amount = 64.8, active = False, status = "archived"
+10. rec_009: type = premium, region = APAC, amount = 820.6, active = True
+11. rec_010: type = premium, region = APAC, amount = 331.1, active = False, status = "archived"
+12. rec_011: type = standard, region = APAC, amount = 254, active = False, status = "archived"
+13. rec_012: type = premium, region = US, amount = 424.6, active = False, status = "archived"
+14. rec_013: type = premium, region = EU, amount = 1063.92, active = False, status = "archived"
+15. rec_014: type = trial, region = APAC, amount = 438, active = True
+
+For records that were not modified by the third rule (i.e., active = True), we still need to include a "status" field in the output, even if it's not explicitly set by the rules. Since the problem doesn't specify what the initial status should be for active records, we'll assume it remains undefined or null for those that weren't set to "archived".
+
+### JSON Output
+
+```json
+[
+  {"type": "standard", "region": "EU", "amount": 391.2, "active": true},
+  {"type": "standard", "region": "EU", "amount": 1176, "active": false, "status": "archived"},
+  {"type": "standard", "region": "US", "amount": 150, "active": true},
+  {"type": "standard", "region": "EU", "amount": 1048.8, "active": true},
+  {"type": "trial", "region": "APAC", "amount": 865, "active": true},
+  {"type": "trial", "region": "EU", "amount": 1088.4, "active": true},
+  {"type": "trial", "region": "EU", "amount": 200.4, "active": true},
+  {"type": "standard", "region": "APAC", "amount": 799, "active": true},
+  {"type": "trial", "region": "EU", "amount": 64.8, "active": false, "status": "archived"},
+  {"type": "premium", "region": "APAC

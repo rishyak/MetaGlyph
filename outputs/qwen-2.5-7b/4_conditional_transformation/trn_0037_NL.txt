@@ -1,0 +1,104 @@
+```json
+[
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 142,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 417 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 797 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 138,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 470,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 362,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 611,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 524 * 1.2,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 166,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 340,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 926 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 211 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 320,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 182,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 649,
+        "active": false,
+        "status": "archived"
+    }
+]
+```
+
+Note: The amounts have been updated according to the transformation rules. For records that meet multiple conditions, the transformations are applied sequentially.

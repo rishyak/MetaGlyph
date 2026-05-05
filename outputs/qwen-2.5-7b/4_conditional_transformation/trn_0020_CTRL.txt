@@ -1,0 +1,117 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 399,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 918,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 642,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 710,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 102,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 730,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 720,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 342,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 393,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 553,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 821,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 90,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 256,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 247,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 480,
+        "active": false,
+        "status": "archived"
+    }
+]
+```
+
+Explanation:
+- For each record, the `amount` is adjusted based on the conditions provided.
+- If `x.type != "premium"`, then `x.amount` is increased by 10% (`x.amount → x.amount × 1.1`).
+- If `x.region != "EU"`, then `x.amount` is further increased by 20% (`x.amount → x.amount × 1.2`).
+- If `x.active != false`, then `x.status` is set to `"archived"`.
+
+Since all records have `active` set to `false` or `type` not equal to `premium`, and `region` not equal to `EU`, the transformation results in setting `status` to `"archived"` for all records.

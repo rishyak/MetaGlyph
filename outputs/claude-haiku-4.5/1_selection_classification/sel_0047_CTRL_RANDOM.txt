@@ -1,0 +1,31 @@
+I need to parse this query and apply the filters to the animal dataset.
+
+The query appears to use a custom syntax. Let me interpret it:
+- `SELECT x | (x.domestic ¤ {False}) § (x.type ¤ {mammal}) ↯ [x.name]`
+
+Breaking this down:
+- `SELECT x` - select items
+- `(x.domestic ¤ {False})` - where domestic equals False
+- `§` - AND operator
+- `(x.type ¤ {mammal})` - AND where type equals mammal
+- `↯ [x.name]` - return the name field
+
+So I need to find all animals where:
+1. `domestic = False` AND
+2. `type = mammal`
+
+Checking each animal:
+- Eagle: type: bird, domestic: False ❌ (not mammal)
+- Elephant: type: mammal, domestic: False ✅
+- Lion: type: mammal, domestic: False ✅
+- Turtle: type: reptile, domestic: True ❌
+- Cat: type: mammal, domestic: True ❌ (domestic is True)
+- Goldfish: type: fish, domestic: True ❌
+- Crocodile: type: reptile, domestic: False ❌ (not mammal)
+- Parrot: type: bird, domestic: True ❌
+- Snake: type: reptile, domestic: False ❌ (not mammal)
+- Shark: type: fish, domestic: False ❌ (not mammal)
+
+```json
+["Elephant", "Lion"]
+```

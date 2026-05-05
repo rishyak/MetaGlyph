@@ -1,0 +1,22 @@
+Looking at the instruction, I need to find all animals where:
+- `domestic` is `True` AND
+- `type` is `bird`
+
+Then return their names.
+
+Let me check each animal:
+
+- Turtle: domestic: True, type: reptile ❌ (not a bird)
+- Salmon: domestic: False ❌ (not domestic)
+- Whale: domestic: False ❌ (not domestic)
+- Crocodile: domestic: False ❌ (not domestic)
+- **Parrot: domestic: True, type: bird** ✅
+- Cat: domestic: True, type: mammal ❌ (not a bird)
+- Elephant: domestic: False ❌ (not domestic)
+- Eagle: domestic: False ❌ (not domestic)
+- Goldfish: domestic: True, type: fish ❌ (not a bird)
+- Lion: domestic: False ❌ (not domestic)
+
+```json
+["Parrot"]
+```

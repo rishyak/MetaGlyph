@@ -1,0 +1,19 @@
+Looking at the instruction: `SELECT x | x.domestic ¤ {False} ↯ [x.name]`
+
+This query asks me to:
+1. Select all items `x` where `x.domestic` equals `False`
+2. Return the `name` attribute of each matching item
+
+Filtering the dataset for animals with `domestic: False`:
+
+- Salmon: domestic: False ✓
+- Eagle: domestic: False ✓
+- Penguin: domestic: False ✓
+- Snake: domestic: False ✓
+- Whale: domestic: False ✓
+- Lion: domestic: False ✓
+- Crocodile: domestic: False ✓
+
+```json
+["Salmon", "Eagle", "Penguin", "Snake", "Whale", "Lion", "Crocodile"]
+```

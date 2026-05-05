@@ -1,0 +1,59 @@
+### Solution
+```json
+[
+  "Notebook",
+  "Headphones",
+  "Pen",
+  "Stapler",
+  "Smartphone",
+  "Chair"
+]
+```
+
+### Explanation
+To solve this problem, we need to find all items that are not portable and return their names. We can do this by iterating over the given list of products and checking the `portable` attribute of each item. If an item is not portable, we add its name to the output list.
+
+Here is the step-by-step solution in Python:
+
+1. Initialize an empty list to store the names of non-portable items.
+2. Iterate over each product in the given list.
+3. Check if the `portable` attribute of the current product is `False`.
+4. If the product is not portable, add its name to the output list.
+5. Return the list of names of non-portable items.
+
+Here is the Python code that implements this solution:
+```python
+def find_non_portable_items(products):
+    non_portable_items = []
+    for product in products:
+        if not product['portable']:
+            non_portable_items.append(product['name'])
+    return non_portable_items
+
+# Define the list of products
+products = [
+    {'name': 'Refrigerator', 'category': 'appliances', 'price_range': 'high', 'portable': False},
+    {'name': 'Notebook', 'category': 'stationery', 'price_range': 'low', 'portable': True},
+    {'name': 'Headphones', 'category': 'electronics', 'price_range': 'medium', 'portable': True},
+    {'name': 'Desk', 'category': 'furniture', 'price_range': 'medium', 'portable': False},
+    {'name': 'Chair', 'category': 'furniture', 'price_range': 'medium', 'portable': True},
+    {'name': 'Microwave', 'category': 'appliances', 'price_range': 'medium', 'portable': True},
+    {'name': 'Pen', 'category': 'stationery', 'price_range': 'low', 'portable': True},
+    {'name': 'Stapler', 'category': 'stationery', 'price_range': 'low', 'portable': True},
+    {'name': 'Smartphone', 'category': 'electronics', 'price_range': 'high', 'portable': True},
+    {'name': 'Bookshelf', 'category': 'furniture', 'price_range': 'medium', 'portable': False}
+]
+
+# Call the function and print the result
+non_portable_items = find_non_portable_items(products)
+print(non_portable_items)
+```
+
+### Output
+```json
+[
+  "Refrigerator",
+  "Desk",
+  "Bookshelf"
+]
+```

@@ -1,0 +1,25 @@
+```json
+{
+  "selected_ids": ["item_001", "item_002", "item_006", "item_010", "item_011", "item_012", "item_013", "item_014", "item_015", "item_016", "item_017"],
+  "count": 11
+}
+```
+
+Explanation:
+- The condition `x.id | x.priority ∈ {high}` means we select items where the priority is `high`.
+- The condition `∪ x.status ∉ {inactive}` means we also select items where the status is not `inactive`.
+
+Looking at the dataset, the items that satisfy both conditions are:
+1. `item_001` (status `active`, priority `high`)
+2. `item_002` (status `pending`, priority `high`)
+3. `item_006` (status `pending`, priority `high`)
+4. `item_010` (status `active`, priority `high`)
+5. `item_011` (status `pending`, priority `medium`)
+6. `item_012` (status `active`, priority `low`)
+7. `item_013` (status `pending`, priority `high`)
+8. `item_014` (status `inactive`, but priority is `high`)
+9. `item_015` (status `inactive`, but priority is `high`)
+10. `item_016` (status `inactive`, but priority is `low`)
+11. `item_017` (status `pending`, priority `medium`)
+
+So there are 11 selected items in total.

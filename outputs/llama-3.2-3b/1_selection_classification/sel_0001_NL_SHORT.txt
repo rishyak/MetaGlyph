@@ -1,0 +1,24 @@
+### Step 1: Identify the items with size equal to large
+To solve this problem, we need to identify the items in the list that have a size equal to large. According to the size categories, large is defined as greater than 100kg.
+
+### Step 2: Review the list of animals
+We will review the list of animals to find the ones that meet the size criteria.
+
+- Eagle: type: bird, domestic: False, size: medium
+- Penguin: type: bird, domestic: False, size: medium
+- Goldfish: type: fish, domestic: True, size: small
+- Dog: type: mammal, domestic: True, size: medium
+- Shark: type: fish, domestic: False, size: large
+- Crocodile: type: reptile, domestic: False, size: large
+- Turtle: type: reptile, domestic: True, size: small
+- Hamster: type: mammal, domestic: True, size: small
+- Cat: type: mammal, domestic: True, size: small
+- Parrot: type: bird, domestic: True, size: small
+
+### Step 3: Select the items with size equal to large
+Based on the size criteria, the items with size equal to large are Shark and Crocodile.
+
+### Step 4: Format the output as a JSON array
+The final step is to format the output as a JSON array of strings.
+
+The final answer is: $\boxed [{"Shark","Crocodile"}]$

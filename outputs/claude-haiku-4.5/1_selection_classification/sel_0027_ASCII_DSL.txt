@@ -1,0 +1,25 @@
+# Analysis
+
+The query asks for: `SELECT x | x.type NOT IN {bird} -> [x.name]`
+
+This means: Select all animals where the type is NOT "bird", and return their names.
+
+**Animals that ARE birds (to exclude):**
+- Penguin
+- Parrot
+- Eagle
+
+**Animals that are NOT birds (to include):**
+- Crocodile (reptile)
+- Whale (mammal)
+- Elephant (mammal)
+- Dog (mammal)
+- Snake (reptile)
+- Shark (fish)
+- Cat (mammal)
+
+### Output
+
+```json
+["Crocodile", "Whale", "Elephant", "Dog", "Snake", "Shark", "Cat"]
+```

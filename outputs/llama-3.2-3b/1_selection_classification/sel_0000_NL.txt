@@ -1,0 +1,10 @@
+### Step 1: Identify the 'type' attribute for each animal
+Review the list of animals to identify the 'type' attribute for each entry.
+
+### Step 2: Select animals with 'type' attribute 'reptile'
+From the list, select the animals where the 'type' attribute is 'reptile'.
+
+### Step 3: Compile the list of selected animals
+Compile the names of the selected animals into a JSON array of strings.
+
+The final answer is: $\boxed{"Turtle"}$

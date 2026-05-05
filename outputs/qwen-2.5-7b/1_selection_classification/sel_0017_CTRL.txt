@@ -1,0 +1,5 @@
+Based on the instruction and the provided dataset, we need to select names of animals whose type is bird. From the given data, the animals that fit this criteria are:
+
+```json
+["Penguin", "Parrot"]
+```

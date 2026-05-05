@@ -1,0 +1,29 @@
+### Solution
+```json
+[
+  "Cat",
+  "Dog",
+  "Parrot"
+]
+```
+
+### Explanation
+To solve this problem, we need to identify the animals that are not of medium size and are commonly kept as pets. We can do this by filtering the input data based on the given conditions.
+
+- We exclude animals of size medium (`size: medium`) from the result.
+- We include only animals that are commonly kept as pets (`domestic: True`).
+
+After filtering the data, we get the following result:
+
+- Cat: type: mammal, domestic: True, size: small
+- Dog: type: mammal, domestic: True, size: medium
+- Parrot: type: bird, domestic: True, size: small
+
+Since we need to exclude animals of size medium, we remove Dog from the result. The final result is:
+
+```json
+[
+  "Cat",
+  "Parrot"
+]
+```

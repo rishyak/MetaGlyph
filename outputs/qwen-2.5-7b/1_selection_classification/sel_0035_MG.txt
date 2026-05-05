@@ -1,0 +1,28 @@
+Based on the given query and the provided list of animals, we need to find animals that are:
+
+- Not domestic (i.e., `domestic` is `False`)
+- Large in size (i.e., `size` is `large`)
+
+Let's go through the list and filter based on these criteria:
+
+1. **Salmon**: `domestic: False`, `size: medium` → **Not** large
+2. **Crocodile**: `domestic: False`, `size: large` → **Meets** criteria
+3. **Eagle**: `domestic: False`, `size: medium` → **Not** large
+4. **Hamster**: `domestic: True`, `size: small` → **Not** large and **Not** domestic
+5. **Goldfish**: `domestic: True`, `size: small` → **Not** large and **Not** domestic
+6. **Turtle**: `domestic: True`, `size: small` → **Not** large and **Not** domestic
+7. **Snake**: `domestic: False`, `size: medium` → **Not** large
+8. **Lion**: `domestic: False`, `size: large` → **Meets** criteria
+9. **Parrot**: `domestic: True`, `size: small` → **Not** large and **Not** domestic
+10. **Whale**: `domestic: False`, `size: large` → **Meets** criteria
+
+The animals that meet the criteria are:
+- **Crocodile**
+- **Lion**
+- **Whale**
+
+So, the JSON array of strings is:
+
+```json
+["Crocodile", "Lion", "Whale"]
+```

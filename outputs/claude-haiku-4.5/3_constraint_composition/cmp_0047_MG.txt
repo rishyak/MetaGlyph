@@ -1,13 +1,47 @@
+I need to select items where: **priority ∈ {high} ∪ status ∉ {inactive}**
+
+This means: **(priority is high) OR (status is not inactive)**
+
+Let me evaluate each item:
+
+- item_000: priority=high ✓ → **SELECT**
+- item_001: priority=low, status=active (not inactive) ✓ → **SELECT**
+- item_002: priority=low, status=inactive ✗ → skip
+- item_003: priority=medium, status=inactive ✗ → skip
+- item_004: priority=medium, status=pending (not inactive) ✓ → **SELECT**
+- item_005: priority=medium, status=inactive ✗ → skip
+- item_006: priority=medium, status=active (not inactive) ✓ → **SELECT**
+- item_007: priority=high ✓ → **SELECT**
+- item_008: priority=medium, status=inactive ✗ → skip
+- item_009: priority=low, status=pending (not inactive) ✓ → **SELECT**
+- item_010: priority=high ✓ → **SELECT**
+- item_011: priority=high ✓ → **SELECT**
+- item_012: priority=low, status=inactive ✗ → skip
+- item_013: priority=medium, status=inactive ✗ → skip
+- item_014: priority=low, status=pending (not inactive) ✓ → **SELECT**
+- item_015: priority=high ✓ → **SELECT**
+- item_016: priority=low, status=active (not inactive) ✓ → **SELECT**
+- item_017: priority=low, status=active (not inactive) ✓ → **SELECT**
+- item_018: priority=low, status=inactive ✗ → skip
+- item_019: priority=low, status=pending (not inactive) ✓ → **SELECT**
+
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_004",
+    "item_006",
+    "item_007",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_014",
+    "item_015",
+    "item_016",
+    "item_017",
+    "item_019"
+  ],
+  "count": 13
 }
 ```
-
-The query requires items that match:
-- `∈(security) ∩ ∈(high_priority) ∪ ∈(performance)` - must have "security" attribute AND "high_priority" attribute, OR have "performance" attribute
-- `¬(deprecated)` - must not be deprecated
-- `¬(experimental)` - must not be experimental
-
-The provided dataset contains only: ID, Category, Status, Priority, and Value attributes. There are no "security", "high_priority", "performance", "deprecated", or "experimental" attributes in any items, so no items match the filter criteria.

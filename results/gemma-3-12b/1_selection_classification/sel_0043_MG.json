@@ -1,0 +1,38 @@
+{
+  "prompt_id": "sel_0043_MG",
+  "model": "gemma-3-12b",
+  "family": "1_selection_classification",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": [
+    "Snake",
+    "Salmon",
+    "Whale",
+    "Penguin",
+    "Eagle",
+    "Lion"
+  ],
+  "gold_output": [
+    "eagle",
+    "lion",
+    "penguin",
+    "salmon",
+    "snake",
+    "whale"
+  ],
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=6, extra=6"
+    }
+  ],
+  "overall_pass": true,
+  "error_type": "logic",
+  "error_details": "Accuracy: 1.00",
+  "semantic_equivalence_pass": true
+}

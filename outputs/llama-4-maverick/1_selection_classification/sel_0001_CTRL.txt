@@ -1,0 +1,38 @@
+To solve this problem, we need to follow the given instruction: `SELECT x | x.size ∉ {large} → [x.name]`. This means we need to select the names of animals where the size is not 'large'.
+
+First, let's list the given animals with their sizes:
+- Eagle: size: medium
+- Penguin: size: medium
+- Goldfish: size: small
+- Dog: size: medium
+- Shark: size: large
+- Crocodile: size: large
+- Turtle: size: small
+- Hamster: size: small
+- Cat: size: small
+- Parrot: size: small
+
+Now, we will filter out the animals that are 'large'. The animals that are 'large' are:
+- Shark
+- Crocodile
+
+So, the animals that are not 'large' are:
+- Eagle
+- Penguin
+- Goldfish
+- Dog
+- Turtle
+- Hamster
+- Cat
+- Parrot
+
+Now, we will create a JSON array of the names of these animals.
+
+```json
+["Eagle", "Penguin", "Goldfish", "Dog", "Turtle", "Hamster", "Cat", "Parrot"]
+```
+
+The final answer is: 
+```json
+["Eagle", "Penguin", "Goldfish", "Dog", "Turtle", "Hamster", "Cat", "Parrot"]
+```

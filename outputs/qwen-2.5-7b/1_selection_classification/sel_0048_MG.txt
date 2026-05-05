@@ -1,0 +1,11 @@
+Based on the given instruction and input data, we need to select items where `portable` is `False`. From the provided list, the items that meet this criterion are:
+
+- Bookshelf: portable: False
+- Refrigerator: portable: False
+- Desk: portable: False
+
+So, the output in the requested JSON format would be:
+
+```json
+["Bookshelf", "Refrigerator", "Desk"]
+```

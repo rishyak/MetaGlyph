@@ -1,0 +1,46 @@
+{
+  "prompt_id": "cmp_0001_NL",
+  "model": "llama-3.2-3b",
+  "family": "3_constraint_composition",
+  "condition": "NL",
+  "parse_success": true,
+  "parsed_output": {
+    "selected_ids": [
+      "item_001",
+      "item_002",
+      "item_003",
+      "item_008",
+      "item_013",
+      "item_017"
+    ],
+    "count": 6
+  },
+  "gold_output": {
+    "selected_ids": [
+      "item_008",
+      "item_016"
+    ],
+    "count": 2
+  },
+  "exact_match": false,
+  "accuracy": 0.14285714285714285,
+  "f1_score": 0.25,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    },
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.14",
+  "semantic_equivalence_pass": false
+}

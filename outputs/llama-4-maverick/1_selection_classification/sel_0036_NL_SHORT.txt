@@ -1,0 +1,31 @@
+To solve this task, we need to carefully review the given list of animals and their attributes, and then identify the items whose type equals "mammal".
+
+1. **Review the list of animals**: The list provided contains detailed information about various animals, including their type, domestic status, and size.
+
+2. **Identify the relevant attribute**: We are interested in the "type" attribute of each animal.
+
+3. **Filter animals based on type**: We need to go through the list and select animals where the type is "mammal".
+
+Let's examine the list:
+
+- Salmon: type: fish
+- Penguin: type: bird
+- Turtle: type: reptile
+- Parrot: type: bird
+- Goldfish: type: fish
+- Snake: type: reptile
+- Cat: type: mammal
+- Eagle: type: bird
+- Whale: type: mammal
+- Elephant: type: mammal
+
+From the given list, the animals that are classified as "mammal" are:
+- Cat
+- Whale
+- Elephant
+
+4. **Format the output**: The task requires the output to be in a JSON array of strings. So, we need to format the names of the mammals identified into a JSON array.
+
+The names of the mammals are "Cat", "Whale", and "Elephant". In JSON array format, this is represented as `["Cat", "Whale", "Elephant"]`.
+
+The final answer is: $\boxed{["Cat", "Whale", "Elephant"]}$

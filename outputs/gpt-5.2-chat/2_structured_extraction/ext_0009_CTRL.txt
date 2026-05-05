@@ -1,7 +1,8 @@
-[
-  {
-    "risk_name": "Invoice data inconsistency",
-    "affected_component": "Billing and calculation system",
-    "severity": "High"
-  }
-]
+```json
+{
+  "date": "2024-01-24",
+  "total": "$7728.61",
+  "invoice_num": "8433",
+  "due_date": "2024-12-09"
+}
+```

@@ -1,17 +1,6 @@
-[
-  {
-    "risk_name": "Inconsistent invoice and due dates",
-    "affected_component": "Billing and accounts receivable system",
-    "severity": "High"
-  },
-  {
-    "risk_name": "Incorrect subtotal calculation",
-    "affected_component": "Invoice line item calculation logic",
-    "severity": "High"
-  },
-  {
-    "risk_name": "Conflicting payment terms and due date",
-    "affected_component": "Payment terms configuration",
-    "severity": "Medium"
-  }
-]
+{
+  "payment_terms": "Net 60",
+  "total": "$1319.31",
+  "due_date": "2024-09-06",
+  "date": "2024-11-16"
+}

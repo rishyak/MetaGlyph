@@ -5,4 +5,12 @@
 }
 ```
 
-The query filters for projects that match specific criteria (security, high_priority, performance attributes and absence of deprecated/experimental flags), but the provided dataset contains items with only Category, Status, Priority, and Value attributes. None of the items have the required "security", "high_priority", "performance", "deprecated", or "experimental" attributes specified in the filter expression, so no items match the criteria.
+**Explanation:**
+
+The query requires items where:
+- Category ∈ {A, B} **AND**
+- Status ∈ {active}
+
+Scanning through the dataset, there are **no items with status "active"**. All items have either "inactive" or "pending" status.
+
+Therefore, the intersection of these conditions yields no matching items.

@@ -1,0 +1,132 @@
+To solve the given problem, we need to apply the specified transformations to each record based on their attributes. Here are the transformations step-by-step:
+
+1. If `x.type` is "premium", then increase `x.amount` by 10%.
+2. If `x.region` is "EU", then increase `x.amount` by 20%.
+3. If `x.active` is `False`, then set `x.status` to "archived".
+
+Let's go through each record and apply these transformations:
+
+- **rec_000**: 
+  - Type: standard (no transformation needed)
+  - Region: APAC (no transformation needed)
+  - Active: False (set status to archived)
+  - Transformed amount: 654
+  - Result: {"type": "standard", "region": "APAC", "amount": 654, "active": False, "status": "archived"}
+
+- **rec_001**: 
+  - Type: standard (no transformation needed)
+  - Region: APAC (no transformation needed)
+  - Active: True (no transformation needed)
+  - Transformed amount: 258
+  - Result: {"type": "standard", "region": "APAC", "amount": 258, "active": True}
+
+- **rec_002**: 
+  - Type: trial (no transformation needed)
+  - Region: APAC (no transformation needed)
+  - Active: True (no transformation needed)
+  - Transformed amount: 122
+  - Result: {"type": "trial", "region": "APAC", "amount": 122, "active": True}
+
+- **rec_003**: 
+  - Type: standard (no transformation needed)
+  - Region: EU (increase amount by 20%)
+  - Active: False (set status to archived)
+  - Transformed amount: 331 * 1.2 = 397.2
+  - Result: {"type": "standard", "region": "EU", "amount": 397.2, "active": False, "status": "archived"}
+
+- **rec_004**: 
+  - Type: standard (no transformation needed)
+  - Region: EU (increase amount by 20%)
+  - Active: True (no transformation needed)
+  - Transformed amount: 717 * 1.2 = 860.4
+  - Result: {"type": "standard", "region": "EU", "amount": 860.4, "active": True}
+
+- **rec_005**: 
+  - Type: premium (increase amount by 10%)
+  - Region: APAC (no transformation needed)
+  - Active: False (set status to archived)
+  - Transformed amount: 803 * 1.1 = 883.3
+  - Result: {"type": "premium", "region": "APAC", "amount": 883.3, "active": False, "status": "archived"}
+
+- **rec_006**: 
+  - Type: trial (no transformation needed)
+  - Region: APAC (no transformation needed)
+  - Active: True (no transformation needed)
+  - Transformed amount: 73
+  - Result: {"type": "trial", "region": "APAC", "amount": 73, "active": True}
+
+- **rec_007**: 
+  - Type: trial (no transformation needed)
+  - Region: US (no transformation needed)
+  - Active: False (set status to archived)
+  - Transformed amount: 584
+  - Result: {"type": "trial", "region": "US", "amount": 584, "active": False, "status": "archived"}
+
+- **rec_008**: 
+  - Type: trial (no transformation needed)
+  - Region: EU (increase amount by 20%)
+  - Active: False (set status to archived)
+  - Transformed amount: 548 * 1.2 = 657.6
+  - Result: {"type": "trial", "region": "EU", "amount": 657.6, "active": False, "status": "archived"}
+
+- **rec_009**: 
+  - Type: trial (no transformation needed)
+  - Region: US (no transformation needed)
+  - Active: False (set status to archived)
+  - Transformed amount: 480
+  - Result: {"type": "trial", "region": "US", "amount": 480, "active": False, "status": "archived"}
+
+- **rec_010**: 
+  - Type: trial (no transformation needed)
+  - Region: EU (increase amount by 20%)
+  - Active: False (set status to archived)
+  - Transformed amount: 702 * 1.2 = 842.4
+  - Result: {"type": "trial", "region": "EU", "amount": 842.4, "active": False, "status": "archived"}
+
+- **rec_011**: 
+  - Type: trial (no transformation needed)
+  - Region: EU (increase amount by 20%)
+  - Active: True (no transformation needed)
+  - Transformed amount: 206 * 1.2 = 247.2
+  - Result: {"type": "trial", "region": "EU", "amount": 247.2, "active": True}
+
+- **rec_012**: 
+  - Type: premium (increase amount by 10%)
+  - Region: APAC (no transformation needed)
+  - Active: False (set status to archived)
+  - Transformed amount: 315 * 1.1 = 346.5
+  - Result: {"type": "premium", "region": "APAC", "amount": 346.5, "active": False, "status": "archived"}
+
+- **rec_013**: 
+  - Type: premium (increase amount by 10%)
+  - Region: EU (increase amount by 20%)
+  - Active: True (no transformation needed)
+  - Transformed amount: 731 * 1.1 * 1.2 = 818.32
+  - Result: {"type": "premium", "region": "EU", "amount": 818.32, "active": True}
+
+- **rec_014**: 
+  - Type: premium (increase amount by 10%)
+  - Region: APAC (no transformation needed)
+  - Active: True (no transformation needed)
+  - Transformed amount: 731 * 1.1 = 804.1
+  - Result: {"type": "premium", "region": "APAC", "amount": 804.1, "active": True}
+
+Now, let's compile all the results into a JSON array:
+
+```json
+[
+    {"type": "standard", "region": "APAC", "amount": 654, "active": False, "status": "archived"},
+    {"type": "standard", "region": "APAC", "amount": 258, "active": True},
+    {"type": "trial", "region": "APAC", "amount": 122, "active": True},
+    {"type": "standard", "region": "EU", "amount": 397.2, "active": False, "status": "archived"},
+    {"type": "standard", "region": "EU", "amount": 860.4, "active": True},
+    {"type": "premium", "region": "APAC", "amount": 883.3, "active": False, "status": "archived"},
+    {"type": "trial", "region": "APAC", "amount": 73, "active": True},
+    {"type": "trial", "region": "US", "amount": 584, "active": False, "status": "archived"},
+    {"type": "trial", "region": "EU", "amount": 657.6, "active": False, "status": "archived"},
+    {"type": "trial", "region": "US", "amount": 480, "active": False, "status": "archived"},
+    {"type": "trial", "region": "EU", "amount": 842.4, "active": True},
+    {"type": "premium", "region": "APAC", "amount": 346.5, "active": False, "status": "archived"},
+    {"type": "premium", "region": "EU", "amount": 818.32, "active": True}
+]
+```

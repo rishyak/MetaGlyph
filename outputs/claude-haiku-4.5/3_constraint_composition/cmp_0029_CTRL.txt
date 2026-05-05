@@ -2,11 +2,34 @@
 {
   "selected_ids": [
     "item_002",
-    "item_007",
-    "item_012",
+    "item_003",
+    "item_004",
+    "item_006",
+    "item_008",
+    "item_009",
+    "item_011",
     "item_013",
-    "item_015"
+    "item_014",
+    "item_017"
   ],
-  "count": 5
+  "count": 10
 }
 ```
+
+**Explanation:**
+
+The query selects items where: `(value >= 50) OR (category = A)`
+
+**Items with value >= 50:**
+- item_002 (value: 90) ✓
+- item_003 (value: 66) ✓
+- item_006 (value: 60) ✓
+- item_008 (value: 92) ✓
+- item_009 (value: 53) ✓
+- item_011 (value: 58) ✓
+- item_013 (value: 76) ✓
+- item_014 (value: 65) ✓
+- item_017 (value: 67) ✓
+
+**Items with category = A (not already counted):**
+- item_004 (category: A, value: 18) ✓

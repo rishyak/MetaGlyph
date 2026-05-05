@@ -1,11 +1,20 @@
+I need to find all items where either:
+- category is "stationery" OR
+- portable is True
+
+Let me evaluate each item:
+
+1. **Laptop**: category: electronics, portable: True → ✓ (portable is True)
+2. **Headphones**: category: electronics, portable: True → ✓ (portable is True)
+3. **Tablet**: category: electronics, portable: True → ✓ (portable is True)
+4. **Chair**: category: furniture, portable: True → ✓ (portable is True)
+5. **Pen**: category: stationery, portable: True → ✓ (category is stationery AND portable is True)
+6. **Bookshelf**: category: furniture, portable: False → ✗ (neither condition met)
+7. **Stapler**: category: stationery, portable: True → ✓ (category is stationery AND portable is True)
+8. **Desk**: category: furniture, portable: False → ✗ (neither condition met)
+9. **Notebook**: category: stationery, portable: True → ✓ (category is stationery AND portable is True)
+10. **Refrigerator**: category: appliances, portable: False → ✗ (neither condition met)
+
 ```json
-[]
+["Laptop", "Headphones", "Tablet", "Chair", "Pen", "Stapler", "Notebook"]
 ```
-
-The query filters for items that are:
-- ⊙(mammal) - must have mammal attribute
-- ⊗ ⊙(pet) - must NOT have pet attribute
-- ⊗ ⊖(bird) - must NOT lack bird attribute (i.e., must have bird)
-- ⊗ ⊖(farm_animal) - must NOT lack farm_animal attribute (i.e., must have farm_animal)
-
-None of the items in the provided inventory have any of these biological/animal attributes. All items are inanimate objects (electronics, furniture, stationery, appliances).

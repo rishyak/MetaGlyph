@@ -1,0 +1,13 @@
+### Step 1: Identify the animals that are domesticated
+We need to find the animals that are commonly kept as pets, which are indicated by the "domestic" attribute being True.
+
+### Step 2: Filter the list of animals based on the "domestic" attribute
+We will filter the list to include only the animals that have a "domestic" attribute of True.
+
+### Step 3: Extract the names of the domesticated animals
+We will extract the names of the domesticated animals from the filtered list.
+
+### Step 4: Return the list of domesticated animal names as a JSON array
+We will return the list of domesticated animal names as a JSON array.
+
+The final answer is: $\boxed [{"Parrot","Turtle","Cat"}]$

@@ -1,0 +1,38 @@
+{
+  "prompt_id": "sel_0038_CTRL",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": [
+    "Elephant",
+    "Whale",
+    "Crocodile",
+    "Dog",
+    "Cat",
+    "Hamster",
+    "Eagle",
+    "Goldfish",
+    "Snake"
+  ],
+  "gold_output": [
+    "crocodile",
+    "elephant",
+    "whale"
+  ],
+  "exact_match": false,
+  "accuracy": 0.3333333333333333,
+  "f1_score": 0.5,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=3, extra=9"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.33",
+  "semantic_equivalence_pass": false
+}

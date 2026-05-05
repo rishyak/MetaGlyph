@@ -1,0 +1,35 @@
+To solve this problem, we need to understand the given instruction and apply it to the provided input.
+
+The instruction is: `SELECT x | x.size ¤ {large} ↯ [x.name]`
+
+Breaking down the instruction:
+1. `SELECT x`: This implies we are selecting or filtering items from a dataset.
+2. `| x.size ¤ {large}`: This means we are filtering the items where `x.size` is equal to `large`. The symbol `¤` is being used to denote a condition or filter, likely equivalent to "is in" or "equals" in this context, and `{large}` is the set or value we are comparing against.
+3. `↯ [x.name]`: This indicates that after filtering, we are projecting or selecting the `name` attribute of the filtered items. The symbol `↯` likely denotes a projection or mapping operation.
+
+Given the input dataset:
+- Elephant: type: mammal, domestic: False, size: large
+- Turtle: type: reptile, domestic: True, size: small
+- Whale: type: mammal, domestic: False, size: large
+- Dog: type: mammal, domestic: True, size: medium
+- Cat: type: mammal, domestic: True, size: small
+- Hamster: type: mammal, domestic: True, size: small
+- Eagle: type: bird, domestic: False, size: medium
+- Crocodile: type: reptile, domestic: False, size: large
+- Goldfish: type: fish, domestic: True, size: small
+- Snake: type: reptile, domestic: False, size: medium
+
+Applying the instruction:
+1. Filter the animals where `size` is `large`.
+   - Elephant: size is large
+   - Whale: size is large
+   - Crocodile: size is large
+
+2. Project the `name` of the filtered animals.
+   - Elephant
+   - Whale
+   - Crocodile
+
+Therefore, the output should be a JSON array of the names of animals that are large.
+
+The final answer is: ["Elephant", "Whale", "Crocodile"]

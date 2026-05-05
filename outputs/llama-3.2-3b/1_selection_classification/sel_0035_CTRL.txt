@@ -1,0 +1,14 @@
+### Step 1: Filter the animals based on the given conditions
+We need to select the animals that are either of medium size or not domestic.
+
+### Step 2: Identify the animals that meet the conditions
+- Salmon: meets the size condition (medium) and is not domestic.
+- Eagle: meets the size condition (medium) and is not domestic.
+- Snake: meets the size condition (medium) and is not domestic.
+- Parrot: meets the size condition (small) and is domestic, so it does not meet the condition.
+- Whale: does not meet the size condition (large) and is not domestic, so it does not meet the condition.
+
+### Step 3: Create the output list
+The list of animals that meet the conditions is ["Salmon", "Eagle", "Snake"].
+
+The final answer is: $\boxed["Salmon", "Eagle", "Snake"]$

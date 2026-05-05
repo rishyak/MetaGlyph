@@ -1,0 +1,13 @@
+### Step 1: Identify the animals that are domestic
+We need to find the animals that are commonly kept as pets, which are domestic. From the given list, the domestic animals are Dog, Parrot, Turtle, and Goldfish.
+
+### Step 2: Filter the list based on the domestic status
+We will filter the list to include only the animals that are domestic.
+
+### Step 3: Extract the names of the domestic animals
+We will extract the names of the domestic animals from the filtered list.
+
+### Step 4: Return the list of domestic animal names as a JSON array
+We will return the list of domestic animal names as a JSON array.
+
+The final answer is: $\boxed [{"name": "Dog"}, {"name": "Parrot"}, {"name": "Turtle"}, {"name": "Goldfish"}]$

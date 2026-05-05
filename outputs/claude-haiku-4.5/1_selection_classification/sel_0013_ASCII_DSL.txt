@@ -1,0 +1,14 @@
+Looking at the instruction `SELECT x | x.size IN {medium} -> [x.name]`, I need to:
+
+1. Filter all animals where `size` equals `medium`
+2. Return their names
+
+From the dataset, animals with `size: medium` are:
+- Snake
+- Dog
+- Penguin
+- Eagle
+
+```json
+["Snake", "Dog", "Penguin", "Eagle"]
+```

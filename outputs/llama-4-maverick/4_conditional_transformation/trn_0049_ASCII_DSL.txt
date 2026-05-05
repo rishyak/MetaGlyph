@@ -1,0 +1,114 @@
+To solve this problem, we need to apply the given transformation rules to each record and then output the transformed records in JSON format.
+
+The transformation rules are given as:
+1. `x.type == "premium" => x.amount -> x.amount × 1.1`
+2. `x.region == "EU" => x.amount -> x.amount × 1.2`
+3. `x.active == false => x.status -> "archived"`
+
+Let's apply these rules step by step to each record.
+
+### Step 1: Apply the first rule (`x.type == "premium" => x.amount -> x.amount × 1.1`)
+
+- rec_000: `type == "premium"`, so `amount = 210 × 1.1 = 231`
+- rec_001: Not "premium", so no change.
+- rec_002: `type == "premium"`, so `amount = 680 × 1.1 = 748`
+- rec_003: `type == "premium"`, so `amount = 999 × 1.1 = 1098.9`
+- rec_004: `type == "premium"`, so `amount = 760 × 1.1 = 836`
+- rec_005: Not "premium", so no change.
+- rec_006: Not "premium", so no change.
+- rec_007: Not "premium", so no change.
+- rec_008: Not "premium", so no change.
+- rec_009: `type == "premium"`, so `amount = 872 × 1.1 = 959.2`
+- rec_010: Not "premium", so no change.
+- rec_011: Not "premium", so no change.
+- rec_012: Not "premium", so no change.
+- rec_013: Not "premium", so no change.
+- rec_014: Not "premium", so no change.
+
+### Step 2: Apply the second rule (`x.region == "EU" => x.amount -> x.amount × 1.2`)
+
+- rec_000: Not "EU", so no change. `amount = 231`
+- rec_001: `region == "EU"`, so `amount = 593 × 1.2 = 711.6`
+- rec_002: Not "EU", so no change. `amount = 748`
+- rec_003: `region == "EU"`, so `amount = 1098.9 × 1.2 = 1318.68`
+- rec_004: Not "EU", so no change. `amount = 836`
+- rec_005: Not "EU", so no change. `amount = 747`
+- rec_006: Not "EU", so no change. `amount = 667`
+- rec_007: Not "EU", so no change. `amount = 869`
+- rec_008: Not "EU", so no change. `amount = 792`
+- rec_009: Not "EU", so no change. `amount = 959.2`
+- rec_010: Not "EU", so no change. `amount = 164`
+- rec_011: Not "EU", so no change. `amount = 476`
+- rec_012: Not "EU", so no change. `amount = 663`
+- rec_013: `region == "EU"`, so `amount = 26 × 1.2 = 31.2`
+- rec_014: Not "EU", so no change. `amount = 431`
+
+### Step 3: Apply the third rule (`x.active == false => x.status -> "archived"`)
+
+- rec_000: `active == False`, so `status = "archived"`
+- rec_001: `active == True`, so no change.
+- rec_002: `active == False`, so `status = "archived"`
+- rec_003: `active == False`, so `status = "archived"`
+- rec_004: `active == False`, so `status = "archived"`
+- rec_005: `active == False`, so `status = "archived"`
+- rec_006: `active == True`, so no change.
+- rec_007: `active == True`, so no change.
+- rec_008: `active == True`, so no change.
+- rec_009: `active == True`, so no change.
+- rec_010: `active == True`, so no change.
+- rec_011: `active == False`, so `status = "archived"`
+- rec_012: `active == False`, so `status = "archived"`
+- rec_013: `active == True`, so no change.
+- rec_014: `active == True`, so no change.
+
+### Compiling the Results
+
+Let's compile the transformed records:
+
+1. rec_000: `type: premium, region: US, amount: 231, active: False, status: "archived"`
+2. rec_001: `type: standard, region: EU, amount: 711.6, active: True`
+3. rec_002: `type: premium, region: APAC, amount: 748, active: False, status: "archived"`
+4. rec_003: `type: premium, region: EU, amount: 1318.68, active: False, status: "archived"`
+5. rec_004: `type: premium, region: US, amount: 836, active: False, status: "archived"`
+6. rec_005: `type: standard, region: US, amount: 747, active: False, status: "archived"`
+7. rec_006: `type: standard, region: APAC, amount: 667, active: True`
+8. rec_007: `type: trial, region: US, amount: 869, active: True`
+9. rec_008: `type: trial, region: US, amount: 792, active: True`
+10. rec_009: `type: premium, region: US, amount: 959.2, active: True`
+11. rec_010: `type: standard, region: APAC, amount: 164, active: True`
+12. rec_011: `type: standard, region: APAC, amount: 476, active: False, status: "archived"`
+13. rec_012: `type: standard, region: APAC, amount: 663, active: False, status: "archived"`
+14. rec_013: `type: trial, region: EU, amount: 31.2, active: True`
+15. rec_014: `type: trial, region: APAC, amount: 431, active: True`
+
+### Output in JSON Format
+
+```json
+[
+  {"type": "premium", "region": "US", "amount": 231, "active": false, "status": "archived"},
+  {"type": "standard", "region": "EU", "amount": 711.6, "active": true},
+  {"type": "premium", "region": "APAC", "amount": 748, "active": false, "status": "archived"},
+  {"type": "premium", "region": "EU", "amount": 1318.68, "active": false, "status": "archived"},
+  {"type": "premium", "region": "US", "amount": 836, "active": false, "status": "archived"},
+  {"type": "standard", "region": "US", "amount": 747, "active": false, "status": "archived"},
+  {"type": "standard", "region": "APAC", "amount": 667, "active": true},
+  {"type": "trial", "region": "US", "amount": 869, "active": true},
+  {"type": "trial", "region": "US", "amount": 792, "active": true},
+  {"type": "premium", "region": "US", "amount": 959.2, "active": true},
+  {"type": "standard", "region": "APAC", "amount": 164, "active": true},
+  {"type": "standard", "region": "APAC", "amount": 476, "active": false, "status": "archived"},
+  {"type": "standard", "region": "APAC", "amount": 663, "active": false, "status": "archived"},
+  {"type": "trial", "region": "EU", "amount": 31.2, "active": true},
+  {"type": "trial", "region": "APAC", "amount": 431, "active": true}
+]
+```
+
+The final answer is: 
+```json
+[
+  {"type": "premium", "region": "US", "amount": 231, "active": false, "status": "archived"},
+  {"type": "standard", "region": "EU", "amount": 711.6, "active": true},
+  {"type": "premium", "region": "APAC", "amount": 748, "active": false, "status": "archived"},
+  {"type": "premium", "region": "EU", "amount": 1318.68, "active": false, "status": "archived"},
+  {"type": "premium", "region": "US", "amount": 836, "active": false, "status": "archived"},
+  {"type": "standard", "region":

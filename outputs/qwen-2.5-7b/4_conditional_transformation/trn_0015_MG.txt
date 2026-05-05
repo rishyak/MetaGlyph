@@ -1,0 +1,100 @@
+```json
+[
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 313,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 350.9,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 139,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 576,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 663,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 597,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 517.2,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 268,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 420,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 654,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 840,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 131,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 819,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 471,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 449,
+        "active": false
+    }
+]
+```
+
+Explanation of transformations:
+- For `rec_001`, the type is `premium` and it's in the `US` region, so its amount is increased by 10%.
+- For `rec_006`, the type is `premium` and it's in the `EU` region, so its amount is increased by 20%.
+- For `rec_002`, `rec_003`, `rec_005`, `rec_007`, `rec_008`, `rec_010`, `rec_011`, `rec_014`, and `rec_013`, the `active` field is set to `"archived"` since their `active` status is `false`.
+- The rest of the records remain unchanged as they do not meet any of the specified conditions.

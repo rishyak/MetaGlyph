@@ -1,0 +1,13 @@
+### Step 1: Identify the relevant information
+The task requires selecting animals that are classified as birds and are commonly kept as pets. The relevant information is the "type" and "domestic" attributes.
+
+### Step 2: Filter the data
+Filter the data to include only birds and animals that are commonly kept as pets.
+
+### Step 3: Extract the names of the selected animals
+Extract the names of the selected animals.
+
+### Step 4: Format the output
+Format the output as a JSON array of strings.
+
+The final answer is: $\boxed [{"name": "Parrot"}, {"name": "Hamster"}]$

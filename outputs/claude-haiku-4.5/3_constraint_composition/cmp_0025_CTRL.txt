@@ -3,9 +3,28 @@
   "selected_ids": [
     "item_000",
     "item_001",
+    "item_003",
+    "item_005",
     "item_009",
-    "item_010"
+    "item_010",
+    "item_012",
+    "item_018"
   ],
-  "count": 4
+  "count": 8
 }
 ```
+
+**Explanation:**
+
+The query selects items where:
+- `x.category ∈ {A, B}` **OR** `x.status ∈ {active}`
+
+**Selected items:**
+- **item_000**: Category A ✓
+- **item_001**: Status active ✓
+- **item_003**: Status active ✓
+- **item_005**: Status active ✓
+- **item_009**: Category A ✓
+- **item_010**: Category B ✓ AND Status active ✓
+- **item_012**: Status active ✓
+- **item_018**: Category A ✓ AND Status active ✓

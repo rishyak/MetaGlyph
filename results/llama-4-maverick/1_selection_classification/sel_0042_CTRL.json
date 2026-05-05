@@ -1,0 +1,43 @@
+{
+  "prompt_id": "sel_0042_CTRL",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": [
+    "x.portable ∈ {False} means the product is not portable.",
+    "x.price_range ∈ {low} means the product has a low price range.",
+    "Refrigerator: not portable, high price range",
+    "Pen: portable, low price range",
+    "Headphones: portable, medium price range",
+    "Microwave: portable, medium price range",
+    "Stapler: portable, low price range",
+    "Laptop: portable, high price range",
+    "Smartphone: portable, high price range",
+    "Chair: portable, medium price range",
+    "Notebook: portable, low price range",
+    "Desk: not portable, medium price range",
+    "Not portable products: Refrigerator, Desk",
+    "Products with low price range: Pen, Stapler, Notebook",
+    "Products that are either not portable or have a low price range:",
+    "Not portable: Refrigerator, Desk",
+    "Low price range: Pen, Stapler, Notebook",
+    "Combining these: Refrigerator, Desk, Pen, Stapler, Notebook"
+  ],
+  "gold_output": [],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "extra=18"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

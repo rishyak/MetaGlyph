@@ -1,11 +1,15 @@
+Looking at the instruction, I need to select items where:
+- category ∈ {stationery} AND
+- portable ∈ {True}
+
+Let me check each product:
+
+1. **Pen**: category: stationery ✓, portable: True ✓
+2. **Stapler**: category: stationery ✓, portable: True ✓
+3. **Notebook**: category: stationery ✓, portable: True ✓
+
+All other items either don't have the stationery category or aren't portable (or both).
+
 ```json
-[]
+["Pen", "Stapler", "Notebook"]
 ```
-
-The query requests items that are simultaneously:
-- ∈(mammal) - members of the mammal category
-- ∈(pet) - members of the pet category
-- ¬(bird) - not birds
-- ¬(farm_animal) - not farm animals
-
-None of the items in the provided inventory (Laptop, Headphones, Tablet, Chair, Pen, Bookshelf, Stapler, Desk, Notebook, Refrigerator) are mammals or pets. The inventory contains only electronics, furniture, stationery, and appliances. Therefore, no items match the selection criteria.

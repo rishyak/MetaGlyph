@@ -1,0 +1,10 @@
+SELECT 
+  x.id, 
+  x.value >= 50, 
+  x.category, 
+  x.id IN (SELECT id FROM items WHERE status = 'active') AS selected_ids, 
+  COUNT(x.id) AS count 
+FROM 
+  items x 
+GROUP BY 
+  x.id

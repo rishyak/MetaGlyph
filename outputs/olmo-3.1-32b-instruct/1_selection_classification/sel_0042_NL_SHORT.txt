@@ -1,0 +1,5 @@
+I reviewed the provided inventory and identified items where "portable" is False and "price_range" is "low". However, none of the items in the inventory meet both criteria. All items with "portable": False are either in the "medium" or "high" price range. Therefore, the result is an empty list.
+
+```json
+[]
+```

@@ -1,0 +1,6 @@
+```json
+[
+  "Microwave",
+  "Refrigerator"
+]
+```

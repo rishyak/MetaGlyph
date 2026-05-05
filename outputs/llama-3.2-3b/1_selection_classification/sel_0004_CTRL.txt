@@ -1,0 +1,10 @@
+### Step 1: Identify the animals that are classified as birds
+The animals that are classified as birds are Parrot and Eagle.
+
+### Step 2: Filter the list to include only the bird type
+We will select the birds from the list.
+
+### Step 3: Format the output as a JSON array
+The output will be a JSON array of the names of the birds.
+
+The final answer is: $\boxed [{"Parrot"},{"Eagle"}]$

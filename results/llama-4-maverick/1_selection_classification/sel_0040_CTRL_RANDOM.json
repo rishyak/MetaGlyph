@@ -1,0 +1,55 @@
+{
+  "prompt_id": "sel_0040_CTRL_RANDOM",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this problem, we need to understand the given instruction and apply it to the provided input.",
+    "Breaking down the instruction:",
+    "SELECT x`: This indicates we are selecting or filtering items from a dataset.",
+    "| x.domestic ¤ {True}`: This is a filter condition. `¤` denotes a membership test, so `x.domestic ¤ {True}` means `x.domestic` should be `True`. In other words, we are filtering for animals where `domestic` is `True`.",
+    "↯ [x.name]`: `↯` denotes a projection or mapping operation. So, after filtering, we are interested in the `name` of the selected items.",
+    "Given the input dataset:",
+    "Whale: type: mammal, domestic: False, size: large",
+    "Shark: type: fish, domestic: False, size: large",
+    "Lion: type: mammal, domestic: False, size: large",
+    "Parrot: type: bird, domestic: True, size: small",
+    "Salmon: type: fish, domestic: False, size: medium",
+    "Eagle: type: bird, domestic: False, size: medium",
+    "Turtle: type: reptile, domestic: True, size: small",
+    "Crocodile: type: reptile, domestic: False, size: large",
+    "Snake: type: reptile, domestic: False, size: medium",
+    "Cat: type: mammal, domestic: True, size: small",
+    "We need to filter the animals where `domestic` is `True` and then select their names.",
+    "Filter for `domestic == True`:",
+    "Parrot: domestic: True",
+    "Turtle: domestic: True",
+    "Cat: domestic: True",
+    "Select their names:",
+    "Parrot",
+    "Turtle",
+    "Cat",
+    "Therefore, the output should be a JSON array containing the names of the domestic animals."
+  ],
+  "gold_output": [
+    "cat",
+    "parrot",
+    "turtle"
+  ],
+  "exact_match": false,
+  "accuracy": 0.11538461538461539,
+  "f1_score": 0.20689655172413793,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=3, extra=26"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.12",
+  "semantic_equivalence_pass": false
+}

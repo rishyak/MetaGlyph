@@ -1,0 +1,29 @@
+To solve this task, we need to carefully review the given list of animals and their attributes, and then identify the animals that match the specified criteria: size equals medium and domestic equals False.
+
+1. **Review the list of animals and their attributes:**
+   - Salmon: type: fish, domestic: False, size: medium
+   - Crocodile: type: reptile, domestic: False, size: large
+   - Eagle: type: bird, domestic: False, size: medium
+   - Hamster: type: mammal, domestic: True, size: small
+   - Goldfish: type: fish, domestic: True, size: small
+   - Turtle: type: reptile, domestic: True, size: small
+   - Snake: type: reptile, domestic: False, size: medium
+   - Lion: type: mammal, domestic: False, size: large
+   - Parrot: type: bird, domestic: True, size: small
+   - Whale: type: mammal, domestic: False, size: large
+
+2. **Identify animals where size equals medium and domestic equals False:**
+   - Salmon: size = medium, domestic = False
+   - Eagle: size = medium, domestic = False
+   - Snake: size = medium, domestic = False
+
+3. **Compile the list of animal names that match the criteria:**
+   - The animals that are both medium in size and not domestic are: Salmon, Eagle, Snake.
+
+4. **Format the answer as a JSON array of strings:**
+   - The JSON array should contain the names of the animals identified.
+
+The final answer is:
+```json
+["Salmon", "Eagle", "Snake"]
+```

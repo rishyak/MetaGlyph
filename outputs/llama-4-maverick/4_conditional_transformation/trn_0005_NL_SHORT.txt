@@ -1,0 +1,212 @@
+To solve this problem, we will apply the given rules to each record and then return the transformed records in JSON format.
+
+### Step 1: Define the Input Records
+
+First, let's define the input records as given in the problem statement.
+
+```json
+[
+  {
+    "id": "rec_000",
+    "type": "standard",
+    "region": "US",
+    "amount": 398,
+    "active": true
+  },
+  {
+    "id": "rec_001",
+    "type": "premium",
+    "region": "EU",
+    "amount": 958,
+    "active": false
+  },
+  {
+    "id": "rec_002",
+    "type": "premium",
+    "region": "EU",
+    "amount": 723,
+    "active": false
+  },
+  {
+    "id": "rec_003",
+    "type": "standard",
+    "region": "US",
+    "amount": 313,
+    "active": true
+  },
+  {
+    "id": "rec_004",
+    "type": "standard",
+    "region": "APAC",
+    "amount": 763,
+    "active": true
+  },
+  {
+    "id": "rec_005",
+    "type": "trial",
+    "region": "EU",
+    "amount": 68,
+    "active": true
+  },
+  {
+    "id": "rec_006",
+    "type": "trial",
+    "region": "EU",
+    "amount": 524,
+    "active": true
+  },
+  {
+    "id": "rec_007",
+    "type": "standard",
+    "region": "APAC",
+    "amount": 92,
+    "active": true
+  },
+  {
+    "id": "rec_008",
+    "type": "standard",
+    "region": "APAC",
+    "amount": 79,
+    "active": true
+  },
+  {
+    "id": "rec_009",
+    "type": "premium",
+    "region": "US",
+    "amount": 974,
+    "active": true
+  },
+  {
+    "id": "rec_010",
+    "type": "trial",
+    "region": "APAC",
+    "amount": 50,
+    "active": true
+  },
+  {
+    "id": "rec_011",
+    "type": "premium",
+    "region": "APAC",
+    "amount": 607,
+    "active": false
+  },
+  {
+    "id": "rec_012",
+    "type": "premium",
+    "region": "US",
+    "amount": 695,
+    "active": false
+  },
+  {
+    "id": "rec_013",
+    "type": "standard",
+    "region": "EU",
+    "amount": 415,
+    "active": true
+  },
+  {
+    "id": "rec_014",
+    "type": "trial",
+    "region": "APAC",
+    "amount": 317,
+    "active": false
+  }
+]
+```
+
+### Step 2: Apply the Transformation Rules
+
+The rules to apply are:
+1. If `type` == "premium", multiply `amount` by 1.1.
+2. If `region` == "EU", multiply `amount` by 1.2.
+3. If `active` == `false`, set `status` to "archived".
+
+Let's apply these rules to each record.
+
+### Step 3: Transform the Records
+
+We'll iterate through each record and apply the rules.
+
+1. For "rec_000": `type` is "standard", `region` is "US", `amount` is 398, and `active` is `true`. No changes to `amount`, no "archived" status.
+   - Transformed: `amount` = 398, `active` = `true`
+
+2. For "rec_001": `type` is "premium", `region` is "EU", `amount` is 958, and `active` is `false`. 
+   - `amount` = 958 * 1.1 = 1053.8, then `amount` = 1053.8 * 1.2 = 1264.56
+   - `status` = "archived" because `active` is `false`.
+   - Transformed: `amount` = 1264.56, `status` = "archived"
+
+3. For "rec_002": `type` is "premium", `region` is "EU", `amount` is 723, and `active` is `false`.
+   - `amount` = 723 * 1.1 = 795.3, then `amount` = 795.3 * 1.2 = 954.36
+   - `status` = "archived"
+   - Transformed: `amount` = 954.36, `status` = "archived"
+
+4. For "rec_003": `type` is "standard", `region` is "US", `amount` is 313, and `active` is `true`. No changes.
+   - Transformed: `amount` = 313, `active` = `true`
+
+5. For "rec_004": `type` is "standard", `region` is "APAC", `amount` is 763, and `active` is `true`. No changes.
+   - Transformed: `amount` = 763, `active` = `true`
+
+6. For "rec_005": `type` is "trial", `region` is "EU", `amount` is 68, and `active` is `true`.
+   - `amount` = 68 * 1.2 = 81.6
+   - Transformed: `amount` = 81.6, `active` = `true`
+
+7. For "rec_006": `type` is "trial", `region` is "EU", `amount` is 524, and `active` is `true`.
+   - `amount` = 524 * 1.2 = 628.8
+   - Transformed: `amount` = 628.8, `active` = `true`
+
+8. For "rec_007": `type` is "standard", `region` is "APAC", `amount` is 92, and `active` is `true`. No changes.
+   - Transformed: `amount` = 92, `active` = `true`
+
+9. For "rec_008": `type` is "standard", `region` is "APAC", `amount` is 79, and `active` is `true`. No changes.
+   - Transformed: `amount` = 79, `active` = `true`
+
+10. For "rec_009": `type` is "premium", `region` is "US", `amount` is 974, and `active` is `true`.
+    - `amount` = 974 * 1.1 = 1071.4
+    - Transformed: `amount` = 1071.4, `active` = `true`
+
+11. For "rec_010": `type` is "trial", `region` is "APAC", `amount` is 50, and `active` is `true`. No changes.
+    - Transformed: `amount` = 50, `active` = `true`
+
+12. For "rec_011": `type` is "premium", `region` is "APAC", `amount` is 607, and `active` is `false`.
+    - `amount` = 607 * 1.1 = 667.7
+    - `status` = "archived"
+    - Transformed: `amount` = 667.7, `status` = "archived"
+
+13. For "rec_012": `type` is "premium", `region` is "US", `amount` is 695, and `active` is `false`.
+    - `amount` = 695 * 1.1 = 764.5
+    - `status` = "archived"
+    - Transformed: `amount` = 764.5, `status` = "archived"
+
+14. For "rec_013": `type` is "standard", `region` is "EU", `amount` is 415, and `active` is `true`.
+    - `amount` = 415 * 1.2 = 498
+    - Transformed: `amount` = 498, `active` = `true`
+
+15. For "rec_014": `type` is "trial", `region` is "APAC", `amount` is 317, and `active` is `false`.
+    - `status` = "archived"
+    - Transformed: `amount` = 317, `status` = "archived"
+
+### Step 4: Output the Transformed Records
+
+After applying the rules, the transformed records are:
+
+```json
+[
+  {
+    "id": "rec_000",
+    "type": "standard",
+    "region": "US",
+    "amount": 398,
+    "active": true
+  },
+  {
+    "id": "rec_001",
+    "type": "premium",
+    "region": "EU",
+    "amount": 1264.56,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "id": "rec_002",
+    "type": "premium",
+    "region":

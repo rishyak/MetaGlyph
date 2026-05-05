@@ -1,0 +1,5 @@
+```json
+["Shark", "Cat", "Lion", "Crocodile", "Dog", "Whale", "Goldfish", "Turtle"]
+```
+
+Explanation: The query `SELECT x | x.type ∉ {bird} → [x.name]` means to select the names of all animals whose type is not "bird". From the given list, the animals that are not birds are: Shark, Cat, Lion, Crocodile, Dog, Whale, Goldfish, and Turtle.

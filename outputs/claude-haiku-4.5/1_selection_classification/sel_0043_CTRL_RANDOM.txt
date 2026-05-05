@@ -1,0 +1,14 @@
+Looking at the query: `SELECT x | x.domestic ※ {True} ↯ [x.name]`
+
+This appears to be asking for all items where `domestic` equals `True`, returning their names.
+
+Filtering the animals list for those with `domestic: True`:
+
+1. Parrot: domestic: True ✓
+2. Hamster: domestic: True ✓
+3. Goldfish: domestic: True ✓
+4. Cat: domestic: True ✓
+
+```json
+["Parrot", "Hamster", "Goldfish", "Cat"]
+```

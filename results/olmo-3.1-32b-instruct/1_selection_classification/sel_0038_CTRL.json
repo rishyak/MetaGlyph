@@ -1,0 +1,37 @@
+{
+  "prompt_id": "sel_0038_CTRL",
+  "model": "olmo-3.1-32b-instruct",
+  "family": "1_selection_classification",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": [
+    "Elephant",
+    "Turtle",
+    "Dog",
+    "Cat",
+    "Hamster",
+    "Eagle",
+    "Goldfish",
+    "Snake"
+  ],
+  "gold_output": [
+    "crocodile",
+    "elephant",
+    "whale"
+  ],
+  "exact_match": false,
+  "accuracy": 0.1,
+  "f1_score": 0.18181818181818182,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=3, extra=8"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.10",
+  "semantic_equivalence_pass": false
+}

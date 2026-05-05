@@ -1,0 +1,44 @@
+### Step 1: Identify the animals that are not fish
+We need to find the animals that are not classified as fish.
+
+### Step 2: Review the list of animals
+We will review the list of animals to identify which ones are not fish.
+
+- Crocodile: type: reptile, domestic: False, size: large
+- Dog: type: mammal, domestic: True, size: medium
+- Snake: type: reptile, domestic: False, size: medium
+- Cat: type: mammal, domestic: True, size: small
+- Penguin: type: bird, domestic: False, size: medium
+- Eagle: type: bird, domestic: False, size: medium
+- Salmon: type: fish, domestic: False, size: medium
+- Lion: type: mammal, domestic: False, size: large
+- Whale: type: mammal, domestic: False, size: large
+- Turtle: type: reptile, domestic: True, size: small
+
+### Step 3: Exclude fish from the list
+We will exclude the animals that are classified as fish from the list.
+
+- Dog: type: mammal, domestic: True, size: medium
+- Snake: type: reptile, domestic: False, size: medium
+- Cat: type: mammal, domestic: True, size: small
+- Penguin: type: bird, domestic: False, size: medium
+- Eagle: type: bird, domestic: False, size: medium
+- Lion: type: mammal, domestic: False, size: large
+- Whale: type: mammal, domestic: False, size: large
+- Turtle: type: reptile, domestic: True, size: small
+
+### Step 4: Format the output as a JSON array
+We will format the output as a JSON array of strings.
+
+```
+[
+  "Dog",
+  "Snake",
+  "Cat",
+  "Penguin",
+  "Eagle",
+  "Lion",
+  "Whale",
+  "Turtle"
+]
+```

@@ -1,0 +1,5 @@
+[
+  "Tablet",
+  "Headphones",
+  "Smartphone"
+]

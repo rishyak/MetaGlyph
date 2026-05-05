@@ -1,0 +1,27 @@
+### Solution
+```json
+[
+  "Turtle",
+  "Goldfish"
+]
+```
+
+### Explanation
+To solve this problem, we need to identify the animals that are not classified as "small" and are not domesticated. We can do this by filtering the list of animals based on the given conditions.
+
+The conditions are:
+- The animal is not a "small" animal (i.e., its size is not less than 10kg).
+- The animal is not domesticated (i.e., its "domestic" attribute is False).
+
+Based on the given data, we can see that the animals that meet these conditions are:
+- Turtle (size: small, but domesticated is True, so it doesn't meet the condition)
+- Goldfish (size: small, but domesticated is True, so it doesn't meet the condition)
+- Penguin (size: medium, domestic is False)
+- Salmon (size: medium, domestic is False)
+- Elephant (size: large, domestic is False)
+- Snake (size: medium, domestic is False)
+- Eagle (size: medium, domestic is False)
+- Whale (size: large, domestic is False)
+- Shark (size: large, domestic is False)
+
+Therefore, the output will be a list of these animals.

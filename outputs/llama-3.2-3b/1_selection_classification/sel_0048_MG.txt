@@ -1,0 +1,11 @@
+Given the provided instruction and the extensive repetition of the same data, I will provide the solution in the required format focusing on the unique items that match the condition `x.portable ∈ {False}`.
+
+```json
+[
+  "Bookshelf",
+  "Refrigerator",
+  "Desk"
+]
+```
+
+These are the items that do not have the `portable` attribute set to `True`.

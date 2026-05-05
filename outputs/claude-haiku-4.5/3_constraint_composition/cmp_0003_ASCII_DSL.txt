@@ -1,0 +1,32 @@
+```json
+{
+  "selected_ids": [
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_005",
+    "item_006",
+    "item_007",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_012",
+    "item_013",
+    "item_015",
+    "item_016",
+    "item_017",
+    "item_018"
+  ],
+  "count": 15
+}
+```
+
+**Explanation:**
+The query selects items where: `priority IN {high} OR status NOT IN {inactive}`
+
+This means: **priority is "high" OR status is NOT "inactive"**
+
+- **Priority = high**: item_001, item_005
+- **Status ≠ inactive** (i.e., status is "pending" or "active"): item_000, item_001, item_002, item_003, item_005, item_006, item_007, item_009, item_010, item_011, item_012, item_013, item_015, item_016, item_017, item_018
+
+Combined (removing duplicates): 15 items match the criteria. Items excluded are those with status "inactive" AND priority not "high": item_004, item_008, item_014, item_019.

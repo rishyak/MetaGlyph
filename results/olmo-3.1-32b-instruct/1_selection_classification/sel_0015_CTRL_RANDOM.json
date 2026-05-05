@@ -1,0 +1,30 @@
+{
+  "prompt_id": "sel_0015_CTRL_RANDOM",
+  "model": "olmo-3.1-32b-instruct",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "Refrigerator",
+    "Microwave"
+  ],
+  "gold_output": [
+    "microwave",
+    "refrigerator"
+  ],
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=2, extra=2"
+    }
+  ],
+  "overall_pass": true,
+  "error_type": "logic",
+  "error_details": "Accuracy: 1.00",
+  "semantic_equivalence_pass": false
+}

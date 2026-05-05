@@ -1,0 +1,47 @@
+To solve this task, we need to review the given list of animals and their attributes, and then identify the animals where the 'size' attribute is not 'small'.
+
+The given list of animals is as follows:
+- Penguin: type: bird, domestic: False, size: medium
+- Salmon: type: fish, domestic: False, size: medium
+- Elephant: type: mammal, domestic: False, size: large
+- Snake: type: reptile, domestic: False, size: medium
+- Cat: type: mammal, domestic: True, size: small
+- Eagle: type: bird, domestic: False, size: medium
+- Whale: type: mammal, domestic: False, size: large
+- Shark: type: fish, domestic: False, size: large
+- Turtle: type: reptile, domestic: True, size: small
+- Goldfish: type: fish, domestic: True, size: small
+
+Let's examine the 'size' attribute for each animal:
+- Penguin: size = medium
+- Salmon: size = medium
+- Elephant: size = large
+- Snake: size = medium
+- Cat: size = small
+- Eagle: size = medium
+- Whale: size = large
+- Shark: size = large
+- Turtle: size = small
+- Goldfish: size = small
+
+We need to exclude the animals with 'size' = 'small'. The animals with 'size' = 'small' are Cat, Turtle, and Goldfish. So, we will exclude these.
+
+The remaining animals are:
+- Penguin
+- Salmon
+- Elephant
+- Snake
+- Eagle
+- Whale
+- Shark
+
+Now, let's format these names into a JSON array of strings as required.
+
+```json
+["Penguin", "Salmon", "Elephant", "Snake", "Eagle", "Whale", "Shark"]
+```
+
+The final answer is: 
+```json
+["Penguin", "Salmon", "Elephant", "Snake", "Eagle", "Whale", "Shark"]
+```

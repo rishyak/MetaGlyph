@@ -1,0 +1,41 @@
+{
+  "prompt_id": "sel_0037_MG",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": [
+    "Dog: x.domestic = True, so it's not selected.",
+    "Eagle: x.domestic = False, so it's selected.",
+    "Lion: x.domestic = False, so it's selected.",
+    "Goldfish: x.domestic = True, so it's not selected.",
+    "Cat: x.domestic = True, so it's not selected.",
+    "Parrot: x.domestic = True, so it's not selected.",
+    "Hamster: x.domestic = True, so it's not selected.",
+    "Shark: x.domestic = False, so it's selected.",
+    "Snake: x.domestic = False, so it's selected.",
+    "Penguin: x.domestic = False, so it's selected."
+  ],
+  "gold_output": [
+    "eagle",
+    "lion",
+    "penguin",
+    "shark",
+    "snake"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=5, extra=10"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

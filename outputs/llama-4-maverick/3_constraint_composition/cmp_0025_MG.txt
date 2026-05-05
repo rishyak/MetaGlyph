@@ -1,0 +1,59 @@
+To solve this problem, we need to filter the given dataset based on two conditions: the category should be either 'A' or 'B', and the status should be 'active'. We then need to collect the IDs of the items that satisfy these conditions and count how many such items exist.
+
+### Step 1: Filter the Dataset
+
+First, let's go through the dataset and identify items that match the given conditions.
+
+1. ID: item_000, Category: A, Status: active
+2. ID: item_001, Category: C, Status: active (Does not match because Category is not A or B)
+3. ID: item_002, Category: A, Status: inactive (Does not match because Status is not active)
+4. ID: item_003, Category: C, Status: active (Does not match because Category is not A or B)
+5. ID: item_004, Category: B, Status: pending (Does not match because Status is not active)
+6. ID: item_005, Category: C, Status: active (Does not match because Category is not A or B)
+7. ID: item_006, Category: A, Status: inactive (Does not match because Status is not active)
+8. ID: item_007, Category: B, Status: inactive (Does not match because Status is not active)
+9. ID: item_008, Category: B, Status: pending (Does not match because Status is not active)
+10. ID: item_009, Category: A, Status: active
+11. ID: item_010, Category: B, Status: active
+12. ID: item_011, Category: B, Status: pending (Does not match because Status is not active)
+13. ID: item_012, Category: C, Status: active (Does not match because Category is not A or B)
+14. ID: item_013, Category: A, Status: inactive (Does not match because Status is not active)
+15. ID: item_014, Category: A, Status: inactive (Does not match because Status is not active)
+16. ID: item_015, Category: B, Status: inactive (Does not match because Status is not active)
+17. ID: item_016, Category: A, Status: inactive (Does not match because Status is not active)
+18. ID: item_017, Category: A, Status: inactive (Does not match because Status is not active)
+19. ID: item_018, Category: A, Status: active
+20. ID: item_019, Category: C, Status: pending (Does not match because Category is not A or B and Status is not active)
+
+### Step 2: Identify Matching Items
+
+From the dataset, the items that match the conditions (Category ∈ {A, B} and Status = active) are:
+- item_000 (ID: item_000, Category: A, Status: active)
+- item_009 (ID: item_009, Category: A, Status: active)
+- item_010 (ID: item_010, Category: B, Status: active)
+- item_018 (ID: item_018, Category: A, Status: active)
+
+### Step 3: Collect IDs and Count
+
+The IDs of the matching items are: item_000, item_009, item_010, item_018.
+
+There are 4 items in total that satisfy the given conditions.
+
+### Step 4: Format the Output
+
+To format the output as required, we create a JSON object with 'selected_ids' as an array containing the IDs of the matching items and 'count' as the number of such items.
+
+```json
+{
+  "selected_ids": ["item_000", "item_009", "item_010", "item_018"],
+  "count": 4
+}
+```
+
+The final answer is: 
+```json
+{
+  "selected_ids": ["item_000", "item_009", "item_010", "item_018"],
+  "count": 4
+}
+```

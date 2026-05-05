@@ -1,0 +1,13 @@
+### Step 1: Identify the condition for selection
+The condition for selection is that the animal must be domestic and its type must be fish.
+
+### Step 2: Review the list of animals
+Review the list of animals to find those that meet the condition.
+
+### Step 3: Select the animals that meet the condition
+The only animal that meets the condition is the Goldfish.
+
+### Step 4: Format the output
+Format the output as a JSON array of strings.
+
+The final answer is: $\boxed [{"Goldfish"}]$

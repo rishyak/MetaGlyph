@@ -1,0 +1,25 @@
+### Step 1: Identify the criteria for selection
+The criteria for selection are:
+- The animal is not a mammal (x.type ¤ {mammal})
+- The animal is not domestic (x.domestic ¤ {False})
+- The animal is a bird (x.type ¤ {bird})
+
+### Step 2: Review the list of animals
+Review the list of animals to identify which ones meet the criteria.
+
+- Eagle: type = bird, domestic = False, size = medium (meets criteria)
+- Parrot: type = bird, domestic = True, size = small (does not meet criteria)
+- Turtle: type = reptile, domestic = True, size = small (does not meet criteria)
+- Cat: type = mammal, domestic = True, size = small (does not meet criteria)
+- Goldfish: type = fish, domestic = True, size = small (does not meet criteria)
+- Crocodile: type = reptile, domestic = False, size = large (does not meet criteria)
+- Snake: type = reptile, domestic = False, size = medium (does not meet criteria)
+- Shark: type = fish, domestic = False, size = large (does not meet criteria)
+
+### Step 3: Select the animals that meet the criteria
+Only the Eagle meets the criteria.
+
+### Step 4: Format the output as a JSON array
+The output should be a JSON array containing the name of the selected animal.
+
+The final answer is: $\boxed{["Eagle"]}$

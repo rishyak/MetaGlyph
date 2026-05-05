@@ -1,0 +1,34 @@
+To solve this task, we need to follow the given instruction, which is to select the names of animals where the type is 'fish'. The instruction is given in a formal query-like syntax: `SELECT x | x.type ∈ {fish} → [x.name]`. This means we need to filter the input data to include only those entries where the animal's type is 'fish' and then extract their names.
+
+1. **Review the Input Data**: The input provides a list of animals with their attributes. Each animal is described with its type, domestic status, and size.
+
+2. **Identify Animals of Type 'fish'**: We need to go through the list and identify animals that are classified as 'fish'.
+
+   - Crocodile: type: reptile
+   - Hamster: type: mammal
+   - Dog: type: mammal
+   - Elephant: type: mammal
+   - Snake: type: reptile
+   - Shark: type: fish
+   - Eagle: type: bird
+   - Salmon: type: fish
+   - Cat: type: mammal
+   - Turtle: type: reptile
+
+   From the given list, the animals that are of type 'fish' are:
+   - Shark
+   - Salmon
+
+3. **Extract Names**: Now, we extract the names of these animals.
+   - Shark
+   - Salmon
+
+4. **Format the Output**: The output needs to be in JSON array format, containing the names of the animals that are 'fish'.
+
+   The names are "Shark" and "Salmon". In JSON array format, this is represented as `["Shark", "Salmon"]`.
+
+Therefore, the response to the given instruction, based on the provided input data, is:
+
+```json
+["Shark", "Salmon"]
+```

@@ -1,1 +1,1 @@
-["Dog"]
+["Snake", "Elephant", "Salmon", "Whale", "Lion", "Shark"]

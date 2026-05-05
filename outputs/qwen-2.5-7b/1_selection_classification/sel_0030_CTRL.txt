@@ -1,0 +1,5 @@
+```json
+["Chair", "Desk"]
+```
+
+These items belong to the category "furniture" based on the provided list.

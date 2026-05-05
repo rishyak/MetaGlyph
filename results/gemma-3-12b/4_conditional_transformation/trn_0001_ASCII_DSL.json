@@ -1,0 +1,233 @@
+{
+  "prompt_id": "trn_0001_ASCII_DSL",
+  "model": "gemma-3-12b",
+  "family": "4_conditional_transformation",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": [
+    {
+      "type": "trial",
+      "region": "US",
+      "amount": 731,
+      "active": true
+    },
+    {
+      "type": "standard",
+      "region": "APAC",
+      "amount": 243,
+      "active": false
+    },
+    {
+      "type": "standard",
+      "region": "US",
+      "amount": 897,
+      "active": true
+    },
+    {
+      "type": "premium",
+      "region": "EU",
+      "amount": 521.4,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "type": "standard",
+      "region": "EU",
+      "amount": 373,
+      "active": true
+    },
+    {
+      "type": "trial",
+      "region": "EU",
+      "amount": 728,
+      "active": true
+    },
+    {
+      "type": "trial",
+      "region": "APAC",
+      "amount": 185,
+      "active": true
+    },
+    {
+      "type": "standard",
+      "region": "EU",
+      "amount": 398,
+      "active": false
+    },
+    {
+      "type": "trial",
+      "region": "APAC",
+      "amount": 580,
+      "active": true
+    },
+    {
+      "type": "trial",
+      "region": "EU",
+      "amount": 873,
+      "active": true
+    },
+    {
+      "type": "standard",
+      "region": "US",
+      "amount": 834,
+      "active": false
+    },
+    {
+      "type": "premium",
+      "region": "EU",
+      "amount": 84.6,
+      "active": true
+    },
+    {
+      "type": "trial",
+      "region": "APAC",
+      "amount": 332,
+      "active": true
+    },
+    {
+      "type": "trial",
+      "region": "EU",
+      "amount": 415,
+      "active": false
+    },
+    {
+      "type": "standard",
+      "region": "EU",
+      "amount": 152,
+      "active": true
+    }
+  ],
+  "gold_output": [
+    {
+      "id": "rec_000",
+      "type": "trial",
+      "region": "US",
+      "amount": 731,
+      "active": true
+    },
+    {
+      "id": "rec_001",
+      "type": "standard",
+      "region": "APAC",
+      "amount": 243,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_002",
+      "type": "standard",
+      "region": "US",
+      "amount": 897,
+      "active": true
+    },
+    {
+      "id": "rec_003",
+      "type": "premium",
+      "region": "EU",
+      "amount": 625.68,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_004",
+      "type": "standard",
+      "region": "EU",
+      "amount": 447.6,
+      "active": true
+    },
+    {
+      "id": "rec_005",
+      "type": "trial",
+      "region": "EU",
+      "amount": 873.6,
+      "active": true
+    },
+    {
+      "id": "rec_006",
+      "type": "trial",
+      "region": "APAC",
+      "amount": 185,
+      "active": true
+    },
+    {
+      "id": "rec_007",
+      "type": "standard",
+      "region": "EU",
+      "amount": 477.6,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_008",
+      "type": "trial",
+      "region": "APAC",
+      "amount": 580,
+      "active": true
+    },
+    {
+      "id": "rec_009",
+      "type": "trial",
+      "region": "EU",
+      "amount": 1047.6,
+      "active": true
+    },
+    {
+      "id": "rec_010",
+      "type": "standard",
+      "region": "US",
+      "amount": 834,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_011",
+      "type": "premium",
+      "region": "EU",
+      "amount": 101.64,
+      "active": true
+    },
+    {
+      "id": "rec_012",
+      "type": "trial",
+      "region": "APAC",
+      "amount": 332,
+      "active": true
+    },
+    {
+      "id": "rec_013",
+      "type": "trial",
+      "region": "EU",
+      "amount": 498.0,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_014",
+      "type": "standard",
+      "region": "EU",
+      "amount": 182.4,
+      "active": true
+    }
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0.0,
+  "operator_fidelity": [
+    {
+      "operator": "∘",
+      "checked": true,
+      "passed": false,
+      "details": "Composition order may be incorrect"
+    },
+    {
+      "operator": "⇒",
+      "checked": true,
+      "passed": false,
+      "details": "15 records with wrong transformations"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "logic",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

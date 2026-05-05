@@ -1,0 +1,1 @@
+SELECT x.id, x.priority, x.status, x.selected_ids, COUNT(*) as count FROM items x WHERE x.status IN ('inactive', 'active') GROUP BY x.id

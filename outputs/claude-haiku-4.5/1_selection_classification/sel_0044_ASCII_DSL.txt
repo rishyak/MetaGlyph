@@ -1,0 +1,22 @@
+I need to find all animals where:
+1. type is "fish" AND
+2. domestic is "False"
+
+Let me check each animal:
+
+- Hamster: type = mammal ❌
+- Snake: type = reptile ❌
+- Turtle: type = reptile ❌
+- Parrot: type = bird ❌
+- Crocodile: type = reptile ❌
+- Elephant: type = mammal ❌
+- Lion: type = mammal ❌
+- Goldfish: type = fish ✓, domestic = True ❌
+- Salmon: type = fish ✓, domestic = False ✓
+- Whale: type = mammal ❌
+
+Only **Salmon** matches both conditions (type is fish AND domestic is False).
+
+```json
+["Salmon"]
+```

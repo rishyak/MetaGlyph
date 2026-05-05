@@ -1,12 +1,26 @@
 ```json
 {
   "selected_ids": [
-    "item_001",
-    "item_007",
-    "item_011",
-    "item_017",
-    "item_019"
+    "item_002",
+    "item_010",
+    "item_013",
+    "item_014",
+    "item_015",
+    "item_016"
   ],
-  "count": 5
+  "count": 6
 }
 ```
+
+**Explanation:**
+I filtered the dataset for items where:
+- Category is A OR B (AND condition between the two criteria)
+- Status is active
+
+**Selected items:**
+- item_002: Category B, Status active ✓
+- item_010: Category B, Status active ✓
+- item_013: Category B, Status active ✓
+- item_014: Category A, Status active ✓
+- item_015: Category B, Status active ✓
+- item_016: Category A, Status active ✓

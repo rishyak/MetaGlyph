@@ -1,0 +1,19 @@
+```json
+{
+  "tool_name": "query_dataset",
+  "parameters": {
+    "conditions": [
+      {
+        "attribute": "priority",
+        "operator": "==",
+        "value": "high"
+      },
+      {
+        "attribute": "status",
+        "operator": "==",
+        "value": "inactive"
+      }
+    ]
+  }
+}
+```

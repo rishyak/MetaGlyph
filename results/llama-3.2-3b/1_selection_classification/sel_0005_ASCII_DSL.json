@@ -1,0 +1,33 @@
+{
+  "prompt_id": "sel_0005_ASCII_DSL",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": [
+    "We will use the given SQL query to filter the dataset: `SELECT x | (x.domestic IN {True}) AND (x.type IN {bird}) -> [x.name]",
+    "From the given dataset, the birds that are domestic are:",
+    "Parrot",
+    "Cat (note: Cat is a mammal, not a bird, so it should be excluded from the result)",
+    "Goldfish (note: Goldfish is a fish, not a bird, so it should be excluded from the result)",
+    "Parrot"
+  ],
+  "gold_output": [
+    "parrot"
+  ],
+  "exact_match": false,
+  "accuracy": 0.2,
+  "f1_score": 0.33333333333333337,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "missing=1, extra=5"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.20",
+  "semantic_equivalence_pass": false
+}

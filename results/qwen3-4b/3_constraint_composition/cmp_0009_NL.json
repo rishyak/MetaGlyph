@@ -1,0 +1,34 @@
+{
+  "prompt_id": "cmp_0009_NL",
+  "model": "qwen3-4b",
+  "family": "3_constraint_composition",
+  "condition": "NL",
+  "parse_success": false,
+  "parsed_output": null,
+  "gold_output": {
+    "selected_ids": [
+      "item_001",
+      "item_002",
+      "item_004",
+      "item_005",
+      "item_006",
+      "item_007",
+      "item_008",
+      "item_014",
+      "item_015",
+      "item_016",
+      "item_017",
+      "item_018",
+      "item_019"
+    ],
+    "count": 13
+  },
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0.0,
+  "operator_fidelity": [],
+  "overall_pass": false,
+  "error_type": "parse",
+  "error_details": "Could not extract key-value pairs",
+  "semantic_equivalence_pass": false
+}

@@ -1,0 +1,37 @@
+To extract the required fields from the given email document, let's analyze the content step by step.
+
+1. **Subject**: The subject of the email is directly mentioned in the header of the email document. It is "Project Update".
+
+2. **Sender**: The sender's email address is provided in the "From" field of the email header, which is "david.brown@digitalsystems.com". The name of the sender is mentioned at the end of the email body, which is "David Brown".
+
+3. **Sender_title**: The sender's title is also mentioned at the end of the email body, below the sender's name. It is "Manager".
+
+4. **Company**: The company name is not directly mentioned in the email header or the body. However, the sender's email address domain is "digitalsystems.com", and the sender mentions "Innovation Labs" at the end of the email. This could be considered as part of the company or department name. Since "Innovation Labs" is the most specific information available related to a company or department, we can consider it as the company.
+
+Given the information extracted:
+
+- **subject**: "Project Update"
+- **sender**: "David Brown" or "david.brown@digitalsystems.com" (we can use the name as it's more specific to the 'sender' field, but ideally, it should be an email address or both. For simplicity, we'll stick with the name as per common interpretation)
+- **sender_title**: "Manager"
+- **company**: "Innovation Labs"
+
+Let's format this information into a JSON object as requested:
+
+```json
+{
+  "company": "Innovation Labs",
+  "sender_title": "Manager",
+  "subject": "Project Update",
+  "sender": "David Brown"
+}
+```
+
+The final answer is: 
+```json
+{
+  "company": "Innovation Labs",
+  "sender_title": "Manager",
+  "subject": "Project Update",
+  "sender": "David Brown"
+}
+```

@@ -1,0 +1,5 @@
+[
+  "Refrigerator",
+  "Bookshelf",
+  "Desk"
+]

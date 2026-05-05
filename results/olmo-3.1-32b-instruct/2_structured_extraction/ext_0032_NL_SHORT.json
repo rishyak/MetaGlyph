@@ -1,0 +1,34 @@
+{
+  "prompt_id": "ext_0032_NL_SHORT",
+  "model": "olmo-3.1-32b-instruct",
+  "family": "2_structured_extraction",
+  "condition": "NL_SHORT",
+  "parse_success": true,
+  "parsed_output": {
+    "payment_terms": "Net 60",
+    "date": "2024-05-07",
+    "customer_name": "Carol Williams",
+    "due_date": "2024-07-26"
+  },
+  "gold_output": {
+    "payment_terms": "Net 60",
+    "date": "2024-05-07",
+    "customer_name": "Carol Williams",
+    "due_date": "2024-07-26"
+  },
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
+  "operator_fidelity": [
+    {
+      "operator": "→",
+      "checked": true,
+      "passed": true,
+      "details": "Transformation values exactly match gold"
+    }
+  ],
+  "overall_pass": true,
+  "error_type": "none",
+  "error_details": null,
+  "semantic_equivalence_pass": false
+}

@@ -1,0 +1,148 @@
+{
+  "prompt_id": "trn_0018_NL",
+  "model": "olmo-3.1-32b-instruct",
+  "family": "4_conditional_transformation",
+  "condition": "NL",
+  "parse_success": true,
+  "parsed_output": {
+    "type": "standard",
+    "region": "EU",
+    "status": "archived"
+  },
+  "gold_output": [
+    {
+      "id": "rec_000",
+      "type": "trial",
+      "region": "APAC",
+      "amount": 483,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_001",
+      "type": "standard",
+      "region": "US",
+      "amount": 540,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_002",
+      "type": "trial",
+      "region": "EU",
+      "amount": 780.0,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_003",
+      "type": "standard",
+      "region": "US",
+      "amount": 283,
+      "active": true
+    },
+    {
+      "id": "rec_004",
+      "type": "premium",
+      "region": "EU",
+      "amount": 1202.52,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_005",
+      "type": "standard",
+      "region": "US",
+      "amount": 655,
+      "active": true
+    },
+    {
+      "id": "rec_006",
+      "type": "trial",
+      "region": "US",
+      "amount": 328,
+      "active": true
+    },
+    {
+      "id": "rec_007",
+      "type": "trial",
+      "region": "EU",
+      "amount": 126.0,
+      "active": true
+    },
+    {
+      "id": "rec_008",
+      "type": "standard",
+      "region": "EU",
+      "amount": 1174.8,
+      "active": true
+    },
+    {
+      "id": "rec_009",
+      "type": "trial",
+      "region": "US",
+      "amount": 520,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_010",
+      "type": "trial",
+      "region": "APAC",
+      "amount": 289,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_011",
+      "type": "premium",
+      "region": "EU",
+      "amount": 341.88,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_012",
+      "type": "trial",
+      "region": "US",
+      "amount": 402,
+      "active": true
+    },
+    {
+      "id": "rec_013",
+      "type": "trial",
+      "region": "APAC",
+      "amount": 774,
+      "active": true
+    },
+    {
+      "id": "rec_014",
+      "type": "standard",
+      "region": "EU",
+      "amount": 961.2,
+      "active": false,
+      "status": "archived"
+    }
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0.0,
+  "operator_fidelity": [
+    {
+      "operator": "∘",
+      "checked": true,
+      "passed": false,
+      "details": "Composition order may be incorrect"
+    },
+    {
+      "operator": "⇒",
+      "checked": true,
+      "passed": false,
+      "details": "Invalid output format for rules"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "logic",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

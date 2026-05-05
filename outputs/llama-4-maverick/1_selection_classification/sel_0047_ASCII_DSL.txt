@@ -1,0 +1,59 @@
+To solve this problem, we need to follow the given instruction and filter the animals based on the conditions provided.
+
+The instruction is: `SELECT x | (x.domestic IN {False}) AND (x.type IN {mammal}) -> [x.name]`
+
+This means we need to select animals (`x`) that are:
+1. Not domestic (`x.domestic IN {False}`), i.e., their `domestic` status is `False`.
+2. Mammals (`x.type IN {mammal}`), i.e., their `type` is `mammal`.
+
+Let's examine the given list of animals:
+
+1. Eagle: type: bird, domestic: False, size: medium
+   - Not domestic: True
+   - Type mammal: False
+
+2. Elephant: type: mammal, domestic: False, size: large
+   - Not domestic: True
+   - Type mammal: True
+
+3. Lion: type: mammal, domestic: False, size: large
+   - Not domestic: True
+   - Type mammal: True
+
+4. Turtle: type: reptile, domestic: True, size: small
+   - Not domestic: False
+   - Type mammal: False
+
+5. Cat: type: mammal, domestic: True, size: small
+   - Not domestic: False
+   - Type mammal: True
+
+6. Goldfish: type: fish, domestic: True, size: small
+   - Not domestic: False
+   - Type mammal: False
+
+7. Crocodile: type: reptile, domestic: False, size: large
+   - Not domestic: True
+   - Type mammal: False
+
+8. Parrot: type: bird, domestic: True, size: small
+   - Not domestic: False
+   - Type mammal: False
+
+9. Snake: type: reptile, domestic: False, size: medium
+   - Not domestic: True
+   - Type mammal: False
+
+10. Shark: type: fish, domestic: False, size: large
+    - Not domestic: True
+    - Type mammal: False
+
+From the given list, only "Elephant" and "Lion" satisfy both conditions:
+- They are not domestic (`domestic: False`).
+- They are mammals (`type: mammal`).
+
+Therefore, the names of the animals that satisfy the given conditions are "Elephant" and "Lion".
+
+The output should be a JSON array of strings representing the names of these animals.
+
+The final answer is: ["Elephant", "Lion"]

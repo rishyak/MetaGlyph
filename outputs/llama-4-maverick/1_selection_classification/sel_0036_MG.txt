@@ -1,0 +1,31 @@
+To solve this task, we need to follow the given instruction: `SELECT x | x.type ∈ {mammal} → [x.name]`. This means we have to select the names of animals from the given list where the type is 'mammal'.
+
+First, let's review the given list of animals and their attributes:
+
+1. Salmon: type: fish, domestic: False, size: medium
+2. Penguin: type: bird, domestic: False, size: medium
+3. Turtle: type: reptile, domestic: True, size: small
+4. Parrot: type: bird, domestic: True, size: small
+5. Goldfish: type: fish, domestic: True, size: small
+6. Snake: type: reptile, domestic: False, size: medium
+7. Cat: type: mammal, domestic: True, size: small
+8. Eagle: type: bird, domestic: False, size: medium
+9. Whale: type: mammal, domestic: False, size: large
+10. Elephant: type: mammal, domestic: False, size: large
+
+Now, let's filter the animals based on the condition `x.type ∈ {mammal}`:
+
+- Cat: type: mammal
+- Whale: type: mammal
+- Elephant: type: mammal
+
+These are the animals whose type is 'mammal'. Now, we need to project their names as per the instruction `→ [x.name]`.
+
+The names of the mammals are:
+- Cat
+- Whale
+- Elephant
+
+Therefore, the output should be a JSON array of these names.
+
+The final answer is: ["Cat", "Whale", "Elephant"]

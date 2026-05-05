@@ -1,3 +1,28 @@
+# Analysis
+
+The query `SELECT x | x.domestic ∉ {True} → [x.name]` means:
+- Select all items `x` where `x.domestic` is NOT in the set `{True}`
+- In other words, select all animals where `domestic` is `False`
+- Return their names
+
+## Filtering the animals:
+
+**domestic = False:**
+- Whale ✓
+- Shark ✓
+- Lion ✓
+- Salmon ✓
+- Eagle ✓
+- Crocodile ✓
+- Snake ✓
+
+**domestic = True (excluded):**
+- Parrot ✗
+- Turtle ✗
+- Cat ✗
+
+## Answer
+
 ```json
-["Cat"]
+["Whale", "Shark", "Lion", "Salmon", "Eagle", "Crocodile", "Snake"]
 ```

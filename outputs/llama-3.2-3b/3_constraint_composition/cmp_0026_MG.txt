@@ -1,0 +1,10 @@
+SELECT 
+  x.id, 
+  x.category, 
+  x.status, 
+  CASE 
+    WHEN x.category IN ('A') AND x.status = 'active' THEN 1
+    ELSE 0
+  END AS selected
+FROM 
+  items x

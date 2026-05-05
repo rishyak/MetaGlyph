@@ -4,7 +4,12 @@
   "family": "2_structured_extraction",
   "condition": "CTRL",
   "parse_success": true,
-  "parsed_output": [],
+  "parsed_output": {
+    "sender_name": "David Brown",
+    "date": "2024-06-25",
+    "company": "Innovation Labs",
+    "sender_title": "VP, Global Solutions"
+  },
   "gold_output": {
     "sender_title": "VP",
     "date": "2024-06-25",
@@ -12,18 +17,18 @@
     "company": "Global Solutions"
   },
   "exact_match": false,
-  "accuracy": 0.0,
-  "f1_score": 0.0,
+  "accuracy": 0.5,
+  "f1_score": 0.5,
   "operator_fidelity": [
     {
       "operator": "→",
       "checked": true,
       "passed": false,
-      "details": "Transformation check"
+      "details": "Wrong values: ['sender_title', 'company']"
     }
   ],
   "overall_pass": false,
-  "error_type": "format",
-  "error_details": "Accuracy: 0.00",
+  "error_type": "logic",
+  "error_details": "Accuracy: 0.50",
   "semantic_equivalence_pass": false
 }

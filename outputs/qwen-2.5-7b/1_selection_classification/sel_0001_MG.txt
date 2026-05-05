@@ -1,0 +1,19 @@
+Based on the provided criteria and the dataset, we need to select items where the size is medium. From the given data:
+
+- Eagle: size: medium
+- Penguin: size: medium
+- Dog: size: medium
+- Shark: size: large
+- Crocodile: size: large
+- Turtle: size: small
+- Hamster: size: small
+- Cat: size: small
+- Parrot: size: small
+
+The animals that have a medium size are: Eagle, Penguin, and Dog.
+
+Here is the output in the requested JSON format:
+
+```json
+["Eagle", "Penguin", "Dog"]
+```

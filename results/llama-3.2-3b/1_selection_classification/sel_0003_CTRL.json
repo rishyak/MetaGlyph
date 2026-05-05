@@ -1,0 +1,32 @@
+{
+  "prompt_id": "sel_0003_CTRL",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": [
+    "We need to find the items that have a category other than \"appliances\".",
+    "We will filter the items that do not belong to the \"appliances\" category.",
+    "We will extract the names of the items that meet the condition.",
+    "We will return the names of the filtered items as a JSON array."
+  ],
+  "gold_output": [
+    "microwave",
+    "refrigerator"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=2, extra=4"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

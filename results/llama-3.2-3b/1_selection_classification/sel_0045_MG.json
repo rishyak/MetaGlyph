@@ -1,0 +1,39 @@
+{
+  "prompt_id": "sel_0045_MG",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": [
+    "Microwave",
+    "Laptop",
+    "Chair",
+    "Smartphone",
+    "Tablet"
+  ],
+  "gold_output": [
+    "bookshelf",
+    "chair",
+    "desk",
+    "laptop",
+    "microwave",
+    "refrigerator",
+    "smartphone",
+    "tablet"
+  ],
+  "exact_match": false,
+  "accuracy": 0.625,
+  "f1_score": 0.7692307692307693,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=8, extra=5"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "incomplete",
+  "error_details": "Accuracy: 0.62",
+  "semantic_equivalence_pass": false
+}

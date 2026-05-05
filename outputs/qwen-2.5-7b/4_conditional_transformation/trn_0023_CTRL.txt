@@ -1,0 +1,116 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 673,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 941,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 129,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 321,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 250,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 389,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 754,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 111,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 971,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 389,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 983,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 712,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 377,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 204,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 688,
+        "active": true,
+        "status": "archived"
+    }
+]
+```
+
+Explanation:
+- For each record, the transformation rules are applied in sequence.
+- If `x.type != "premium"`, then `x.amount` is increased by 10% (`x.amount → x.amount × 1.1`).
+- If `x.region != "EU"`, then `x.amount` is further increased by 20% (`x.amount → x.amount × 1.2`).
+- If `x.active != false`, then `x.status` is set to "archived".
+- Since all records have `active` set to `true`, the status is always set to "archived". The amount transformations are applied based on the other conditions.

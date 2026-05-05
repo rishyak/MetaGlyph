@@ -1,0 +1,138 @@
+To solve this problem, we need to apply the given transformation rules to each record in the input data. The transformation rules are defined as follows:
+
+1. If the record type is "premium", then multiply the amount by 1.1.
+2. After step 1, if the record region is "EU", then multiply the amount by 1.2.
+3. After step 2, if the record is not active (active == false), then set the status to "archived".
+
+Let's apply these rules to each record:
+
+### Record Transformations
+
+#### rec_000
+- type: trial, region: APAC, amount: 633, active: False
+- Step 1: No change because type is not "premium".
+- Step 2: No change because region is not "EU".
+- Step 3: Set status to "archived" because active is False.
+- Result: type: trial, region: APAC, amount: 633, active: False, status: "archived"
+
+#### rec_001
+- type: standard, region: EU, amount: 253, active: False
+- Step 1: No change because type is not "premium".
+- Step 2: amount = 253 * 1.2 = 303.6 because region is "EU".
+- Step 3: Set status to "archived" because active is False.
+- Result: type: standard, region: EU, amount: 303.6, active: False, status: "archived"
+
+#### rec_002
+- type: standard, region: US, amount: 254, active: False
+- Step 1: No change because type is not "premium".
+- Step 2: No change because region is not "EU".
+- Step 3: Set status to "archived" because active is False.
+- Result: type: standard, region: US, amount: 254, active: False, status: "archived"
+
+#### rec_003
+- type: trial, region: APAC, amount: 478, active: True
+- Step 1: No change because type is not "premium".
+- Step 2: No change because region is not "EU".
+- Step 3: No change because active is True.
+- Result: type: trial, region: APAC, amount: 478, active: True
+
+#### rec_004
+- type: standard, region: EU, amount: 621, active: True
+- Step 1: No change because type is not "premium".
+- Step 2: amount = 621 * 1.2 = 745.2 because region is "EU".
+- Step 3: No change because active is True.
+- Result: type: standard, region: EU, amount: 745.2, active: True
+
+#### rec_005
+- type: trial, region: APAC, amount: 598, active: True
+- Step 1: No change because type is not "premium".
+- Step 2: No change because region is not "EU".
+- Step 3: No change because active is True.
+- Result: type: trial, region: APAC, amount: 598, active: True
+
+#### rec_006
+- type: trial, region: US, amount: 308, active: False
+- Step 1: No change because type is not "premium".
+- Step 2: No change because region is not "EU".
+- Step 3: Set status to "archived" because active is False.
+- Result: type: trial, region: US, amount: 308, active: False, status: "archived"
+
+#### rec_007
+- type: standard, region: APAC, amount: 371, active: True
+- Step 1: No change because type is not "premium".
+- Step 2: No change because region is not "EU".
+- Step 3: No change because active is True.
+- Result: type: standard, region: APAC, amount: 371, active: True
+
+#### rec_008
+- type: trial, region: EU, amount: 201, active: True
+- Step 1: No change because type is not "premium".
+- Step 2: amount = 201 * 1.2 = 241.2 because region is "EU".
+- Step 3: No change because active is True.
+- Result: type: trial, region: EU, amount: 241.2, active: True
+
+#### rec_009
+- type: trial, region: EU, amount: 79, active: True
+- Step 1: No change because type is not "premium".
+- Step 2: amount = 79 * 1.2 = 94.8 because region is "EU".
+- Step 3: No change because active is True.
+- Result: type: trial, region: EU, amount: 94.8, active: True
+
+#### rec_010
+- type: premium, region: EU, amount: 54, active: False
+- Step 1: amount = 54 * 1.1 = 59.4 because type is "premium".
+- Step 2: amount = 59.4 * 1.2 = 71.28 because region is "EU".
+- Step 3: Set status to "archived" because active is False.
+- Result: type: premium, region: EU, amount: 71.28, active: False, status: "archived"
+
+#### rec_011
+- type: premium, region: EU, amount: 775, active: True
+- Step 1: amount = 775 * 1.1 = 852.5 because type is "premium".
+- Step 2: amount = 852.5 * 1.2 = 1023 because region is "EU".
+- Step 3: No change because active is True.
+- Result: type: premium, region: EU, amount: 1023, active: True
+
+#### rec_012
+- type: premium, region: US, amount: 363, active: True
+- Step 1: amount = 363 * 1.1 = 399.3 because type is "premium".
+- Step 2: No change because region is not "EU".
+- Step 3: No change because active is True.
+- Result: type: premium, region: US, amount: 399.3, active: True
+
+#### rec_013
+- type: trial, region: APAC, amount: 653, active: True
+- Step 1: No change because type is not "premium".
+- Step 2: No change because region is not "EU".
+- Step 3: No change because active is True.
+- Result: type: trial, region: APAC, amount: 653, active: True
+
+#### rec_014
+- type: trial, region: APAC, amount: 784, active: False
+- Step 1: No change because type is not "premium".
+- Step 2: No change because region is not "EU".
+- Step 3: Set status to "archived" because active is False.
+- Result: type: trial, region: APAC, amount: 784, active: False, status: "archived"
+
+### JSON Output
+
+```json
+[
+  {"type": "trial", "region": "APAC", "amount": 633, "active": false, "status": "archived"},
+  {"type": "standard", "region": "EU", "amount": 303.6, "active": false, "status": "archived"},
+  {"type": "standard", "region": "US", "amount": 254, "active": false, "status": "archived"},
+  {"type": "trial", "region": "APAC", "amount": 478, "active": true},
+  {"type": "standard", "region": "EU", "amount": 745.2, "active": true},
+  {"type": "trial", "region": "APAC", "amount": 598, "active": true},
+  {"type": "trial", "region": "US", "amount": 308, "active": false, "status": "archived"},
+  {"type": "standard", "region": "APAC", "amount": 371, "active": true},
+  {"type": "trial", "region": "EU", "amount": 241.2, "active": true},
+  {"type": "trial", "region": "EU", "amount": 94.8, "active": true},
+  {"type": "premium", "region": "EU", "amount": 71.28, "active": false, "status": "archived"},
+  {"type": "premium", "region": "EU", "amount": 1023, "active": true},
+  {"type": "premium", "region": "US", "amount": 399.3, "active": true},
+  {"type": "trial", "region": "APAC", "amount": 653, "active": true},
+  {"type": "trial", "region": "APAC", "amount": 784, "active": false, "status": "archived"}
+]
+```
+
+This JSON output represents the transformed records according to the given rules. Note that the `active` field is represented as `false` or `true` (lowercase) as per standard JSON boolean values.

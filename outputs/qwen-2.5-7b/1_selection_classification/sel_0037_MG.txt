@@ -1,0 +1,28 @@
+To solve the given instruction, we need to filter out animals that are not domesticated (i.e., `domestic` is not `True`). The query can be interpreted as selecting the names of animals where the `domestic` attribute is not `True`.
+
+Given the input data:
+
+- Dog: type: mammal, domestic: True, size: medium
+- Eagle: type: bird, domestic: False, size: medium
+- Lion: type: mammal, domestic: False, size: large
+- Goldfish: type: fish, domestic: True, size: small
+- Cat: type: mammal, domestic: True, size: small
+- Parrot: type: bird, domestic: True, size: small
+- Hamster: type: mammal, domestic: True, size: small
+- Shark: type: fish, domestic: False, size: large
+- Snake: type: reptile, domestic: False, size: medium
+- Penguin: type: bird, domestic: False, size: medium
+
+We need to select the names of animals where `domestic` is `False`. These animals are:
+
+- Eagle
+- Lion
+- Shark
+- Snake
+- Penguin
+
+Thus, the output in the required JSON format is:
+
+```json
+["Eagle", "Lion", "Shark", "Snake", "Penguin"]
+```

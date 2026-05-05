@@ -1,0 +1,146 @@
+### Step-by-step analysis of the problem:
+1. **Understanding the Transformation Rule**: The given transformation rule is ∀x: TRANSFORM x | (x.type == "premium" ⇒ x.amount → x.amount × 1.1) ∘ (x.region == "EU" ⇒ x.amount → x.amount × 1.2) ∘ (x.active == false ⇒ x.status → "archived") → [x]. This means for every record x, apply the transformations in sequence: 
+   - If x is of type "premium", multiply its amount by 1.1.
+   - If x is from the "EU" region, multiply its amount by 1.2.
+   - If x is not active, set its status to "archived".
+
+2. **Breaking Down the Transformation**:
+   - The first transformation checks if the record type is "premium". If so, it updates the amount by multiplying it by 1.1.
+   - The second transformation checks if the record region is "EU". If so, it further updates the amount by multiplying it by 1.2. This means records that are both "premium" and from "EU" will have their amount multiplied by 1.1 * 1.2 = 1.32.
+   - The third transformation checks if the record is not active. If so, it sets the status to "archived". Note that the status field is not present in the original records, so it will be added during transformation.
+
+3. **Applying the Transformation to the Input Records**:
+   - We will iterate through each record and apply the transformations as per the rules.
+
+### Transformation of Input Records:
+
+Let's apply the transformation to each record:
+
+1. **rec_000**: type = "premium", region = "APAC", amount = 142, active = True
+   - Amount = 142 * 1.1 = 156.2 (because it's premium)
+   - Result: type = "premium", region = "APAC", amount = 156.2, active = True
+
+2. **rec_001**: type = "standard", region = "EU", amount = 417, active = False
+   - Amount = 417 * 1.2 = 500.4 (because it's from EU)
+   - Status = "archived" (because it's not active)
+   - Result: type = "standard", region = "EU", amount = 500.4, active = False, status = "archived"
+
+3. **rec_002**: type = "trial", region = "EU", amount = 797, active = False
+   - Amount = 797 * 1.2 = 956.4 (because it's from EU)
+   - Status = "archived" (because it's not active)
+   - Result: type = "trial", region = "EU", amount = 956.4, active = False, status = "archived"
+
+4. **rec_003**: type = "trial", region = "US", amount = 138, active = False
+   - Status = "archived" (because it's not active)
+   - Result: type = "trial", region = "US", amount = 138, active = False, status = "archived"
+
+5. **rec_004**: type = "trial", region = "US", amount = 470, active = False
+   - Status = "archived" (because it's not active)
+   - Result: type = "trial", region = "US", amount = 470, active = False, status = "archived"
+
+6. **rec_005**: type = "trial", region = "APAC", amount = 362, active = True
+   - Result: type = "trial", region = "APAC", amount = 362, active = True
+
+7. **rec_006**: type = "trial", region = "APAC", amount = 611, active = True
+   - Result: type = "trial", region = "APAC", amount = 611, active = True
+
+8. **rec_007**: type = "standard", region = "EU", amount = 524, active = True
+   - Amount = 524 * 1.2 = 628.8 (because it's from EU)
+   - Result: type = "standard", region = "EU", amount = 628.8, active = True
+
+9. **rec_008**: type = "standard", region = "APAC", amount = 166, active = False
+   - Status = "archived" (because it's not active)
+   - Result: type = "standard", region = "APAC", amount = 166, active = False, status = "archived"
+
+10. **rec_009**: type = "standard", region = "US", amount = 340, active = True
+    - Result: type = "standard", region = "US", amount = 340, active = True
+
+11. **rec_010**: type = "premium", region = "APAC", amount = 926, active = False
+    - Amount = 926 * 1.1 = 1018.6 (because it's premium)
+    - Status = "archived" (because it's not active)
+    - Result: type = "premium", region = "APAC", amount = 1018.6, active = False, status = "archived"
+
+12. **rec_011**: type = "standard", region = "EU", amount = 211, active = False
+    - Amount = 211 * 1.2 = 253.2 (because it's from EU)
+    - Status = "archived" (because it's not active)
+    - Result: type = "standard", region = "EU", amount = 253.2, active = False, status = "archived"
+
+13. **rec_012**: type = "standard", region = "APAC", amount = 320, active = True
+    - Result: type = "standard", region = "APAC", amount = 320, active = True
+
+14. **rec_013**: type = "trial", region = "APAC", amount = 182, active = True
+    - Result: type = "trial", region = "APAC", amount = 182, active = True
+
+15. **rec_014**: type = "standard", region = "APAC", amount = 649, active = False
+    - Status = "archived" (because it's not active)
+    - Result: type = "standard", region = "APAC", amount = 649, active = False, status = "archived"
+
+### Applying the transformation in code:
+
+```python
+def transform_records(records):
+    transformed_records = []
+    for record in records:
+        new_record = record.copy()  # Create a copy to avoid modifying the original record
+        
+        # Apply transformations
+        if new_record['type'] == 'premium':
+            new_record['amount'] *= 1.1
+        
+        if new_record['region'] == 'EU':
+            new_record['amount'] *= 1.2
+        
+        if not new_record['active']:
+            new_record['status'] = 'archived'
+        
+        transformed_records.append(new_record)
+    
+    return transformed_records
+
+# Input records
+records = [
+    {"type": "premium", "region": "APAC", "amount": 142, "active": True},
+    {"type": "standard", "region": "EU", "amount": 417, "active": False},
+    {"type": "trial", "region": "EU", "amount": 797, "active": False},
+    {"type": "trial", "region": "US", "amount": 138, "active": False},
+    {"type": "trial", "region": "US", "amount": 470, "active": False},
+    {"type": "trial", "region": "APAC", "amount": 362, "active": True},
+    {"type": "trial", "region": "APAC", "amount": 611, "active": True},
+    {"type": "standard", "region": "EU", "amount": 524, "active": True},
+    {"type": "standard", "region": "APAC", "amount": 166, "active": False},
+    {"type": "standard", "region": "US", "amount": 340, "active": True},
+    {"type": "premium", "region": "APAC", "amount": 926, "active": False},
+    {"type": "standard", "region": "EU", "amount": 211, "active": False},
+    {"type": "standard", "region": "APAC", "amount": 320, "active": True},
+    {"type": "trial", "region": "APAC", "amount": 182, "active": True},
+    {"type": "standard", "region": "APAC", "amount": 649, "active": False}
+]
+
+transformed_records = transform_records(records)
+
+import json
+print(json.dumps(transformed_records, indent=4))
+```
+
+### Output:
+```json
+[
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 156.2,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 500.4,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 956.4,
+        "active": false,
+        "status

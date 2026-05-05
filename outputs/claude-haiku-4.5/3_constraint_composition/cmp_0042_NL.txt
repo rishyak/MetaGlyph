@@ -1,8 +1,33 @@
+I need to select items where:
+- Priority is "high" OR
+- Status is NOT "inactive"
+
+Let me go through each item:
+
+- item_000: Priority=high ✓ (matches first condition)
+- item_001: Status=pending (not inactive) ✓
+- item_002: Priority=medium, Status=inactive ✗
+- item_003: Priority=high ✓
+- item_004: Status=pending (not inactive) ✓
+- item_005: Status=active (not inactive) ✓
+- item_006: Priority=medium, Status=inactive ✗
+- item_007: Status=active (not inactive) ✓
+- item_008: Priority=medium, Status=inactive ✗
+- item_009: Priority=low, Status=inactive ✗
+- item_010: Priority=high ✓
+- item_011: Priority=low, Status=inactive ✗
+- item_012: Status=active (not inactive) ✓
+- item_013: Priority=medium, Status=inactive ✗
+- item_014: Priority=high ✓
+- item_015: Priority=medium, Status=inactive ✗
+- item_016: Status=active (not inactive) ✓
+- item_017: Priority=medium, Status=inactive ✗
+- item_018: Priority=high ✓
+- item_019: Status=active (not inactive) ✓
+
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": ["item_000", "item_001", "item_003", "item_004", "item_005", "item_007", "item_010", "item_012", "item_014", "item_016", "item_018", "item_019"],
+  "count": 12
 }
 ```
-
-**Explanation:** The instructions reference criteria for "security" and "performance" categories, but the dataset uses categories A, B, and C with no mapping provided to these criteria. Additionally, the instructions mention excluding "deprecated" or "experimental" status, but the dataset only contains statuses: inactive, pending, and active. Without clear definitions of how the dataset categories/statuses map to the selection criteria, no items can be definitively selected.

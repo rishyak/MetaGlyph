@@ -1,0 +1,17 @@
+### Step 1: Identify the items that match the given conditions
+To solve this problem, we need to find the items that have a price range of "high" and are not portable.
+
+### Step 2: Filter the items based on the conditions
+From the given list, we can see that the following items match the conditions:
+- Refrigerator: category: appliances, price_range: high, portable: False
+- Desk: category: furniture, price_range: medium, portable: False
+- Bookshelf: category: furniture, price_range: medium, portable: False
+- Stapler: category: stationery, price_range: low, portable: True
+- Pen: category: stationery, price_range: low, portable: True
+
+However, the Stapler and Pen do not match the price range condition. Only the Refrigerator, Desk, and Bookshelf match both conditions.
+
+### Step 3: Format the output as a JSON array
+The final step is to format the output as a JSON array of strings.
+
+The final answer is: $\boxed [{"Refrigerator","Desk","Bookshelf"}]$

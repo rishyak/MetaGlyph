@@ -1,0 +1,61 @@
+To solve this problem, we need to filter the given dataset based on two conditions: the category should be either 'A' or 'B', and the status should be 'active'. We then need to collect the IDs of the items that satisfy these conditions and count how many such items exist.
+
+### Step 1: Filter the Dataset
+
+First, let's go through the dataset and identify items that match the given conditions.
+
+1. **Category ∈ {A, B}**: This means the category should be either 'A' or 'B'.
+2. **Status ∈ {active}**: This means the status should be 'active'.
+
+Let's examine the dataset:
+
+- item_000: Category = A, Status = pending (Does not match)
+- item_001: Category = B, Status = pending (Does not match)
+- item_002: Category = B, Status = pending (Does not match)
+- item_003: Category = C, Status = active (Does not match because Category is not A or B)
+- item_004: Category = B, Status = active (Matches)
+- item_005: Category = A, Status = active (Matches)
+- item_006: Category = C, Status = pending (Does not match)
+- item_007: Category = B, Status = active (Matches)
+- item_008: Category = B, Status = inactive (Does not match)
+- item_009: Category = C, Status = inactive (Does not match)
+- item_010: Category = C, Status = pending (Does not match)
+- item_011: Category = A, Status = pending (Does not match)
+- item_012: Category = C, Status = active (Does not match because Category is not A or B)
+- item_013: Category = A, Status = inactive (Does not match)
+- item_014: Category = A, Status = pending (Does not match)
+- item_015: Category = B, Status = active (Matches)
+- item_016: Category = B, Status = inactive (Does not match)
+- item_017: Category = B, Status = active (Matches)
+- item_018: Category = A, Status = inactive (Does not match)
+- item_019: Category = C, Status = pending (Does not match)
+
+### Step 2: Identify Matching Items
+
+From the dataset, the items that match both conditions are:
+- item_004: ID = item_004
+- item_005: ID = item_005
+- item_007: ID = item_007
+- item_015: ID = item_015
+- item_017: ID = item_017
+
+### Step 3: Prepare the Output
+
+The IDs of the matching items are: item_004, item_005, item_007, item_015, item_017.
+
+### Step 4: Count the Matching Items
+
+There are 5 items that match the given conditions.
+
+### Output
+
+To present the output in the required JSON format:
+
+```json
+{
+  "selected_ids": ["item_004", "item_005", "item_007", "item_015", "item_017"],
+  "count": 5
+}
+```
+
+This output includes the IDs of the items that satisfy the given conditions and the total count of such items.

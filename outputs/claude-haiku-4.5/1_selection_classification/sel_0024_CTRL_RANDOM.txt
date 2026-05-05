@@ -1,0 +1,13 @@
+Looking at the query `SELECT x | x.size ¤ {small} ↯ [x.name]`, I need to:
+
+1. Filter for all animals where `size` equals `small`
+2. Return their names
+
+From the dataset, animals with `size: small` are:
+- Turtle
+- Cat
+- Hamster
+
+```json
+["Turtle", "Cat", "Hamster"]
+```

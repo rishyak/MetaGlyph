@@ -1,0 +1,5 @@
+```json
+["Desk", "Microwave", "Chair", "Bookshelf", "Laptop", "Smartphone", "Refrigerator", "Tablet"]
+```
+
+These items have a price_range that is either "medium" or "high", which are not "low".

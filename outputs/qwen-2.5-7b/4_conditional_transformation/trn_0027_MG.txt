@@ -1,0 +1,121 @@
+Here is the transformed list of records based on the given instructions:
+
+```json
+[
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 553,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 521.4,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 329,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 96,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 782,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 288,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 507,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 253,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 135.3,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 617,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 325,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 685.3,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 379.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 336.66,
+        "active": false,
+        "status": "archived"
+    }
+]
+```
+
+Explanation of transformations:
+- `rec_000`: No conditions apply, so it remains unchanged.
+- `rec_001`: Conditions for "premium" and "EU" apply, resulting in the amount being increased by 1.1 and then by 1.2.
+- `rec_002`: Conditions for "EU" and "inactive" apply, resulting in the status being changed to "archived".
+- `rec_003`: No conditions apply, so it remains unchanged.
+- `rec_004`: No conditions apply, so it remains unchanged.
+- `rec_005`: Conditions for "EU" and "inactive" apply, resulting in the status being changed to "archived".
+- `rec_006`: Conditions for "EU" and "inactive" apply, resulting in the status being changed to "archived".
+- `rec_007`: Condition for "premium" applies, resulting in the amount being increased by 1.1.
+- `rec_008`: Conditions for "premium", "EU", and "inactive" apply, resulting in the amount being increased by 1.1 and then by 1.2, and the status being changed to "archived".
+- `rec_009`: Conditions for "EU" and "inactive" apply, resulting in the status being changed to "archived".
+- `rec_010`: No conditions apply, so it remains unchanged.
+- `rec_011`: Condition for "EU" applies, resulting in the amount being increased by 1.2.
+- `rec_012`: No conditions apply, so it remains unchanged.
+- `rec_013`: Conditions for "EU" and "inactive" apply, resulting in the status being changed to "archived".
+- `rec_014`: No conditions apply, so it remains unchanged.

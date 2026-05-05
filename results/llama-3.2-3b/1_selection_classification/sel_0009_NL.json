@@ -1,0 +1,31 @@
+{
+  "prompt_id": "sel_0009_NL",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "NL",
+  "parse_success": true,
+  "parsed_output": [
+    "Given the provided list of products, the items that satisfy both conditions (category: 'appliances' and portable: False) are:",
+    "Refrigerator",
+    "Bookshelf",
+    "Desk"
+  ],
+  "gold_output": [
+    "refrigerator"
+  ],
+  "exact_match": false,
+  "accuracy": 0.25,
+  "f1_score": 0.4,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "missing=1, extra=4"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.25",
+  "semantic_equivalence_pass": false
+}

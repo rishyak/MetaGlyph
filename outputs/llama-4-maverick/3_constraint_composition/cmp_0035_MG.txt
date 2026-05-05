@@ -1,0 +1,62 @@
+To solve this problem, we need to filter the given dataset based on two conditions: the category should be either 'A' or 'B', and the status should be 'active'. We then need to collect the IDs of the items that satisfy these conditions and count how many such items exist.
+
+### Step 1: Filter the Dataset
+
+First, let's go through the dataset and identify items that match the given conditions.
+
+1. ID: item_000, Category: B, Status: active
+2. ID: item_001, Category: A, Status: active
+3. ID: item_002, Category: B, Status: active
+4. ID: item_003, Category: B, Status: active
+5. ID: item_004, Category: B, Status: inactive (does not match)
+6. ID: item_005, Category: C, Status: pending (does not match)
+7. ID: item_006, Category: C, Status: inactive (does not match)
+8. ID: item_007, Category: A, Status: pending (does not match)
+9. ID: item_008, Category: B, Status: active
+10. ID: item_009, Category: C, Status: pending (does not match)
+11. ID: item_010, Category: A, Status: pending (does not match)
+12. ID: item_011, Category: C, Status: active (does not match)
+13. ID: item_012, Category: B, Status: active
+14. ID: item_013, Category: C, Status: inactive (does not match)
+15. ID: item_014, Category: C, Status: inactive (does not match)
+16. ID: item_015, Category: A, Status: active
+17. ID: item_016, Category: C, Status: active (does not match)
+18. ID: item_017, Category: C, Status: pending (does not match)
+19. ID: item_018, Category: C, Status: active (does not match)
+20. ID: item_019, Category: C, Status: active (does not match)
+
+Matching items:
+- item_000
+- item_001
+- item_002
+- item_003
+- item_008
+- item_012
+- item_015
+
+### Step 2: Collect IDs and Count
+
+Now, let's collect the IDs of these matching items and count them.
+
+IDs: [item_000, item_001, item_002, item_003, item_008, item_012, item_015]
+
+Count: 7
+
+### Step 3: Format the Output
+
+The IDs need to be formatted as an array under the key 'selected_ids', and the count should be provided as an integer under the key 'count' in a JSON object.
+
+```json
+{
+  "selected_ids": ["item_000", "item_001", "item_002", "item_003", "item_008", "item_012", "item_015"],
+  "count": 7
+}
+```
+
+The final answer is: 
+```json
+{
+  "selected_ids": ["item_000", "item_001", "item_002", "item_003", "item_008", "item_012", "item_015"],
+  "count": 7
+}
+```

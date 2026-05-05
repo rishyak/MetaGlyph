@@ -1,0 +1,24 @@
+To solve this task, we need to carefully review the given list of animals and their attributes, and then identify the animals whose size equals "large".
+
+1. **Review the list of animals and their attributes:**
+   - Eagle: type: bird, domestic: False, size: medium
+   - Penguin: type: bird, domestic: False, size: medium
+   - Goldfish: type: fish, domestic: True, size: small
+   - Dog: type: mammal, domestic: True, size: medium
+   - Shark: type: fish, domestic: False, size: large
+   - Crocodile: type: reptile, domestic: False, size: large
+   - Turtle: type: reptile, domestic: True, size: small
+   - Hamster: type: mammal, domestic: True, size: small
+   - Cat: type: mammal, domestic: True, size: small
+   - Parrot: type: bird, domestic: True, size: small
+
+2. **Identify animals with size equals "large":**
+   - From the given list, we can see that "Shark" and "Crocodile" are the animals with size equals "large".
+
+3. **Format the answer as a JSON array of strings:**
+   - The animals that match the criteria are "Shark" and "Crocodile". Thus, the output should be a JSON array containing these two item names.
+
+The final answer is:
+```json
+["Shark", "Crocodile"]
+```

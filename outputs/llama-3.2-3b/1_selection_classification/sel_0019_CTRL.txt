@@ -1,0 +1,20 @@
+### Step 1: Filter the dataset to include only animals that are not fish and are not domestic.
+We will create a new list that includes only the animals that meet these criteria.
+
+### Step 2: Identify the animals that are not fish and are not domestic.
+From the given dataset, the animals that are not fish and are not domestic are:
+- Dog: type: mammal, domestic: True, size: medium
+- Eagle: type: bird, domestic: False, size: medium
+- Penguin: type: bird, domestic: False, size: medium
+- Snake: type: reptile, domestic: False, size: medium
+- Whale: type: mammal, domestic: False, size: large
+- Lion: type: mammal, domestic: False, size: large
+- Crocodile: type: reptile, domestic: False, size: large
+
+### Step 3: Extract the names of the selected animals.
+We will create a list of the names of the selected animals.
+
+### Step 4: Format the output as a JSON array.
+The output will be a JSON array of the names of the selected animals.
+
+The final answer is: $\boxed [{"Dog","Eagle","Penguin","Snake","Whale","Lion","Crocodile"}]$

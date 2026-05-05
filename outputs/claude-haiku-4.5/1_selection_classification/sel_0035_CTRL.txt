@@ -1,3 +1,20 @@
+I need to find all animals where either:
+- size is "medium" OR
+- domestic is "False"
+
+Let me evaluate each animal:
+
+1. **Salmon**: size = medium ✓, domestic = False ✓ → **Include**
+2. **Crocodile**: size = large ✗, domestic = False ✓ → **Include**
+3. **Eagle**: size = medium ✓, domestic = False ✓ → **Include**
+4. **Hamster**: size = small ✗, domestic = True ✗ → Exclude
+5. **Goldfish**: size = small ✗, domestic = True ✗ → Exclude
+6. **Turtle**: size = small ✗, domestic = True ✗ → Exclude
+7. **Snake**: size = medium ✓, domestic = False ✓ → **Include**
+8. **Lion**: size = large ✗, domestic = False ✓ → **Include**
+9. **Parrot**: size = small ✗, domestic = True ✗ → Exclude
+10. **Whale**: size = large ✗, domestic = False ✓ → **Include**
+
 ```json
-["Hamster", "Parrot"]
+["Salmon", "Crocodile", "Eagle", "Snake", "Lion", "Whale"]
 ```

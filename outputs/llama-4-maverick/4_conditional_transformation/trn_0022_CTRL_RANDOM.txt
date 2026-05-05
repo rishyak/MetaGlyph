@@ -1,0 +1,320 @@
+To solve this problem, we need to apply the given transformation rules to each record and then output the transformed records in JSON format.
+
+The transformation rules are given as:
+- If the record type is "premium", then multiply the amount by 1.1.
+- If the record region is "EU", then multiply the amount by 1.2.
+- If the record is not active (active == false), then change the status to "archived".
+
+Let's apply these rules to each record:
+
+1. **Record rec_000:**
+   - type: premium
+   - region: EU
+   - amount: 44
+   - active: False
+
+   Transformation:
+   - Since type is "premium", amount = 44 * 1.1 = 48.4
+   - Since region is "EU", amount = 48.4 * 1.2 = 58.08
+   - Since active is False, status = "archived"
+
+   Transformed Record:
+   - type: premium
+   - region: EU
+   - amount: 58.08
+   - active: False
+   - status: "archived"
+
+2. **Record rec_001:**
+   - type: trial
+   - region: US
+   - amount: 102
+   - active: False
+
+   Transformation:
+   - No change due to type.
+   - No change due to region.
+   - Since active is False, status = "archived"
+
+   Transformed Record:
+   - type: trial
+   - region: US
+   - amount: 102
+   - active: False
+   - status: "archived"
+
+3. **Record rec_002:**
+   - type: premium
+   - region: APAC
+   - amount: 435
+   - active: True
+
+   Transformation:
+   - Since type is "premium", amount = 435 * 1.1 = 478.5
+   - No change due to region.
+   - No change due to active.
+
+   Transformed Record:
+   - type: premium
+   - region: APAC
+   - amount: 478.5
+   - active: True
+
+4. **Record rec_003:**
+   - type: standard
+   - region: US
+   - amount: 815
+   - active: False
+
+   Transformation:
+   - No change due to type.
+   - No change due to region.
+   - Since active is False, status = "archived"
+
+   Transformed Record:
+   - type: standard
+   - region: US
+   - amount: 815
+   - active: False
+   - status: "archived"
+
+5. **Record rec_004:**
+   - type: trial
+   - region: APAC
+   - amount: 945
+   - active: False
+
+   Transformation:
+   - No change due to type.
+   - No change due to region.
+   - Since active is False, status = "archived"
+
+   Transformed Record:
+   - type: trial
+   - region: APAC
+   - amount: 945
+   - active: False
+   - status: "archived"
+
+6. **Record rec_005:**
+   - type: standard
+   - region: EU
+   - amount: 945
+   - active: False
+
+   Transformation:
+   - No change due to type.
+   - Since region is "EU", amount = 945 * 1.2 = 1134
+   - Since active is False, status = "archived"
+
+   Transformed Record:
+   - type: standard
+   - region: EU
+   - amount: 1134
+   - active: False
+   - status: "archived"
+
+7. **Record rec_006:**
+   - type: premium
+   - region: APAC
+   - amount: 901
+   - active: False
+
+   Transformation:
+   - Since type is "premium", amount = 901 * 1.1 = 991.1
+   - No change due to region.
+   - Since active is False, status = "archived"
+
+   Transformed Record:
+   - type: premium
+   - region: APAC
+   - amount: 991.1
+   - active: False
+   - status: "archived"
+
+8. **Record rec_007:**
+   - type: standard
+   - region: EU
+   - amount: 996
+   - active: True
+
+   Transformation:
+   - No change due to type.
+   - Since region is "EU", amount = 996 * 1.2 = 1195.2
+   - No change due to active.
+
+   Transformed Record:
+   - type: standard
+   - region: EU
+   - amount: 1195.2
+   - active: True
+
+9. **Record rec_008:**
+   - type: standard
+   - region: US
+   - amount: 890
+   - active: False
+
+   Transformation:
+   - No change due to type.
+   - No change due to region.
+   - Since active is False, status = "archived"
+
+   Transformed Record:
+   - type: standard
+   - region: US
+   - amount: 890
+   - active: False
+   - status: "archived"
+
+10. **Record rec_009:**
+    - type: trial
+    - region: EU
+    - amount: 102
+    - active: False
+
+    Transformation:
+    - No change due to type.
+    - Since region is "EU", amount = 102 * 1.2 = 122.4
+    - Since active is False, status = "archived"
+
+    Transformed Record:
+    - type: trial
+    - region: EU
+    - amount: 122.4
+    - active: False
+    - status: "archived"
+
+11. **Record rec_010:**
+    - type: standard
+    - region: EU
+    - amount: 559
+    - active: True
+
+    Transformation:
+    - No change due to type.
+    - Since region is "EU", amount = 559 * 1.2 = 670.8
+    - No change due to active.
+
+    Transformed Record:
+    - type: standard
+    - region: EU
+    - amount: 670.8
+    - active: True
+
+12. **Record rec_011:**
+    - type: premium
+    - region: EU
+    - amount: 698
+    - active: False
+
+    Transformation:
+    - Since type is "premium", amount = 698 * 1.1 = 767.8
+    - Since region is "EU", amount = 767.8 * 1.2 = 921.36
+    - Since active is False, status = "archived"
+
+    Transformed Record:
+    - type: premium
+    - region: EU
+    - amount: 921.36
+    - active: False
+    - status: "archived"
+
+13. **Record rec_012:**
+    - type: trial
+    - region: EU
+    - amount: 852
+    - active: False
+
+    Transformation:
+    - No change due to type.
+    - Since region is "EU", amount = 852 * 1.2 = 1022.4
+    - Since active is False, status = "archived"
+
+    Transformed Record:
+    - type: trial
+    - region: EU
+    - amount: 1022.4
+    - active: False
+    - status: "archived"
+
+14. **Record rec_013:**
+    - type: standard
+    - region: APAC
+    - amount: 249
+    - active: False
+
+    Transformation:
+    - No change due to type.
+    - No change due to region.
+    - Since active is False, status = "archived"
+
+    Transformed Record:
+    - type: standard
+    - region: APAC
+    - amount: 249
+    - active: False
+    - status: "archived"
+
+15. **Record rec_014:**
+    - type: standard
+    - region: APAC
+    - amount: 915
+    - active: False
+
+    Transformation:
+    - No change due to type.
+    - No change due to region.
+    - Since active is False, status = "archived"
+
+    Transformed Record:
+    - type: standard
+    - region: APAC
+    - amount: 915
+    - active: False
+    - status: "archived"
+
+Now, let's format these transformed records into a JSON array:
+
+```json
+[
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 58.08,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "US",
+    "amount": 102,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "type": "premium",
+    "region": "APAC",
+    "amount": 478.5,
+    "active": true
+  },
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 815,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 945,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "type": "standard",
+    "region": "EU",
+    "amount": 1134,
+    "active": false,
+    "status":

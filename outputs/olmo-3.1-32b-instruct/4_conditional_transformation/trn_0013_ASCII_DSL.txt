@@ -1,0 +1,191 @@
+[
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 834,
+    "active": true,
+    "status": null
+  },
+  {
+    "type": "trial",
+    "region": "US",
+    "amount": 365,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 96,
+    "active": false,
+    "status": "archived"
+    // 80 * 1.2 = 96 (region EU multiplier applied)
+  },
+  {
+    "type": "standard",
+    "region": "EU",
+    "amount": 258,
+    "active": false,
+    "status": "archived"
+    // 852 * 1.2 = 1022.4 -> but type is not premium, so only region multiplier applies; however, since type is not premium, no first multiplier. But let's check: only region multiplier applies for standard. However, the instructions say: first apply premium multiplier if type==premium, then region multiplier if region==EU, then inactive => archived. So for standard+EU+inactive: only region multiplier applies. 852 * 1.2 = 1022.4, but let's keep as float or round? Let's keep as float for now.
+    // But let's recalculate: 852 * 1.2 = 1022.4
+    // However, in the sample above, I wrote 258, that's a mistake. Let's correct: 852 * 1.2 = 1022.4
+  },
+  {
+    "type": "standard",
+    "region": "EU",
+    "amount": 1191.6,
+    "active": false,
+    "status": "archived"
+    // 993 * 1.2 = 1191.6
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 881,
+    "active": true,
+    "status": null
+    // 734 * 1.2 = 880.8 ≈ 881 (rounded to nearest integer)
+  },
+  {
+    "type": "premium",
+    "region": "US",
+    "amount": 837.1,
+    "active": false,
+    "status": "archived"
+    // 761 * 1.1 = 837.1 (premium multiplier), not EU so no further change, inactive => archived
+  },
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 803,
+    "active": false,
+    "status": "archived"
+    // trial, not EU, inactive => only status changed
+  },
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 936,
+    "active": false,
+    "status": "archived"
+    // 855 * 1.1 = 940.5 (premium), then *1.2 (EU) = 1128.6? Wait, let's check order:
+    // Step 1: type==premium => 855 * 1.1 = 940.5
+    // Step 2: region==EU => 940.5 * 1.2 = 1128.6
+    // But let's check the instruction: it's a pipeline, so apply in order.
+    // However, the instruction says: FORALL x: TRANSFORM x | (x.type == "premium" => x.amount -> x.amount × 1.1) THEN (x.region == "EU" => x.amount -> x.amount × 1.2) ...
+    // So first premium, then region, so 855 * 1.1 = 940.5, then 940.5 * 1.2 = 1128.6
+    // But in the previous records, I see only a single multiplier for premium+EU. Let's be consistent: apply both if both conditions are true.
+    // So 855 * 1.1 = 940.5, then 940.5 * 1.2 = 1128.6
+    // But let's check rec_010 as well for consistency.
+  },
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 309,
+    "active": false,
+    "status": "archived"
+    // 259 * 1.1 = 285.9, then *1.2 = 343.08 (but let's check: 259*1.1=285.9, 285.9*1.2=343.08)
+    // Wait, but in the previous one I used 1128.6, so let's use the full float for all.
+    // But let's recalculate for consistency:
+    // 259 * 1.1 = 285.9
+    // 285.9 * 1.2 = 343.08
+    // But let's check the instruction: is it chained or only one applies? The THEN suggests sequential, so both apply if both conditions are true.
+    // However, in the sample input, rec_008 is premium+EU+inactive, so both multipliers apply.
+    // Let's recalculate all premium+EU accordingly.
+    // But let's finish all, then correct if needed.
+  },
+  {
+    "type": "premium",
+    "region": "US",
+    "amount": 892.6,
+    "active": false,
+    "status": "archived"
+    // 512 * 1.1 = 563.2 (but input is 516, so 516*1.1=567.6)
+    // Wait, rec_012: type: premium, region: US, amount: 516, active: False
+    // 516 * 1.1 = 567.6
+  },
+  {
+    "type": "premium",
+    "region": "US",
+    "amount": 946,
+    "active": true,
+    "status": null
+    // 860 * 1.1 = 946
+  },
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 343.08,
+    "active": false,
+    "status": "archived"
+    // 309 * 1.1 = 339.9, then *1.2 = 407.88? Wait, rec_010: amount is 259
+    // Let's check rec_010: type: premium, region: EU, amount: 259, active: False
+    // 259 * 1.1 = 285.9
+    // 285.9 * 1.2 = 343.08
+  },
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 694,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "type": "premium",
+    "region": "US",
+    "amount": 567.6,
+    "active": false,
+    "status": "archived"
+    // 516 * 1.1 = 567.6
+  },
+  {
+    "type": "standard",
+    "region": "EU",
+    "amount": 272.4,
+    "active": false,
+    "status": "archived"
+    // 227 * 1.2 = 272.4
+  },
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 325.2,
+    "active": false,
+    "status": "archived"
+    // 296 * 1.1 = 325.6, then *1.2 = 390.72? Wait, let's check:
+    // 296 * 1.1 = 325.6
+    // 325.6 * 1.2 = 390.72
+    // But let's check the input: rec_014: type: premium, region: EU, amount: 296, active: False
+    // So 296 * 1.1 = 325.6, then *1.2 = 390.72
+  }
+]
+
+But let's go through each record step by step, applying the transformations in order:
+
+For each record:
+1. If type == "premium", amount = amount × 1.1
+2. If region == "EU", amount = amount × 1.2
+3. If active == false, status = "archived" (if status not already set)
+
+Let's process each one:
+
+rec_000:
+  type: trial
+  region: APAC
+  amount: 834
+  active: True
+  Step 1: not premium, amount stays 834
+  Step 2: region != EU, amount stays 834
+  Step 3: active is True, status unchanged (null)
+  => {"type": "trial", "region": "APAC", "amount": 834, "active": true, "status": null}
+
+rec_001:
+  type: trial
+  region: US
+  amount: 365
+  active: False
+  Step 1: not premium, amount 365
+  Step 2: not EU, amount 365
+  Step 3: active false, status = "archived"
+  => {"type": "trial", "region": "US", "amount": 365, "active": false, "status

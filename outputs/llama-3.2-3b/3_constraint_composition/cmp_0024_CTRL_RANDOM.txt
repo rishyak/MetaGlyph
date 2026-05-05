@@ -1,0 +1,1 @@
+SELECT x.id, x.category, x.status, COUNT(*) as n FROM items x WHERE x.status = 'active' GROUP BY x.category

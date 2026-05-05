@@ -1,0 +1,109 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 834,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 365,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 96,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 1022.4,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 1191.6,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 803,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 837.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 803,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 976.5,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 860,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 310.88,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 803,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 567.6,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 272.4,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 325.68,
+        "active": false,
+        "status": "archived"
+    }
+]
+```

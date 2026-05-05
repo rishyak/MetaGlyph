@@ -1,0 +1,24 @@
+{
+  "prompt_id": "sel_0007_ASCII_DSL",
+  "model": "gemini-3.1-flash-lite",
+  "family": "1_selection_classification",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": [],
+  "gold_output": [],
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": true,
+      "details": "Intersection scope correct"
+    }
+  ],
+  "overall_pass": true,
+  "error_type": "none",
+  "error_details": null,
+  "semantic_equivalence_pass": false
+}

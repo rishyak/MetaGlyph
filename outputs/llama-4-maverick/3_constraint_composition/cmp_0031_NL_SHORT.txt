@@ -1,0 +1,97 @@
+To solve this problem, we need to filter the given dataset based on the conditions provided: the priority is 'high' or the status is not 'inactive'. We will then return the IDs of the items that satisfy these conditions along with the count of such items.
+
+### Step 1: Filter the Dataset
+
+First, let's list out the items and their attributes:
+
+1. item_000: Category=A, Status=inactive, Priority=high, Value=93
+2. item_001: Category=B, Status=active, Priority=low, Value=64
+3. item_002: Category=C, Status=inactive, Priority=medium, Value=40
+4. item_003: Category=B, Status=active, Priority=low, Value=51
+5. item_004: Category=C, Status=inactive, Priority=low, Value=28
+6. item_005: Category=C, Status=inactive, Priority=low, Value=7
+7. item_006: Category=B, Status=inactive, Priority=high, Value=84
+8. item_007: Category=C, Status=inactive, Priority=medium, Value=69
+9. item_008: Category=A, Status=active, Priority=medium, Value=18
+10. item_009: Category=B, Status=pending, Priority=medium, Value=98
+11. item_010: Category=B, Status=inactive, Priority=low, Value=52
+12. item_011: Category=A, Status=pending, Priority=high, Value=25
+13. item_012: Category=B, Status=pending, Priority=medium, Value=10
+14. item_013: Category=B, Status=pending, Priority=medium, Value=98
+15. item_014: Category=C, Status=inactive, Priority=high, Value=88
+16. item_015: Category=C, Status=active, Priority=low, Value=13
+17. item_016: Category=B, Status=inactive, Priority=medium, Value=72
+18. item_017: Category=B, Status=active, Priority=low, Value=78
+19. item_018: Category=C, Status=inactive, Priority=high, Value=6
+20. item_019: Category=A, Status=active, Priority=low, Value=92
+
+### Step 2: Apply the Filter Conditions
+
+We need to select items where:
+1. Priority is 'high'
+OR
+2. Status is not 'inactive'
+
+Let's apply these conditions:
+
+1. item_000: Priority=high (Select)
+2. item_001: Status=active (Select)
+3. item_002: 
+4. item_003: Status=active (Select)
+5. item_004: 
+6. item_005: 
+7. item_006: Priority=high (Select)
+8. item_007: 
+9. item_008: Status=active (Select)
+10. item_009: Status=pending (Select)
+11. item_010: 
+12. item_011: Priority=high (Select)
+13. item_012: Status=pending (Select)
+14. item_013: Status=pending (Select)
+15. item_014: Priority=high (Select)
+16. item_015: Status=active (Select)
+17. item_016: 
+18. item_017: Status=active (Select)
+19. item_018: Priority=high (Select)
+20. item_019: Status=active (Select)
+
+Selected items:
+- item_000
+- item_001
+- item_003
+- item_006
+- item_008
+- item_009
+- item_011
+- item_012
+- item_013
+- item_014
+- item_015
+- item_017
+- item_018
+- item_019
+
+### Step 3: Count the Selected Items and List Their IDs
+
+Count = 14
+
+Selected IDs = ['item_000', 'item_001', 'item_003', 'item_006', 'item_008', 'item_009', 'item_011', 'item_012', 'item_013', 'item_014', 'item_015', 'item_017', 'item_018', 'item_019']
+
+### Step 4: Format the Output as JSON
+
+Now, we format our findings into the required JSON output:
+
+```json
+{
+  "selected_ids": ['item_000', 'item_001', 'item_003', 'item_006', 'item_008', 'item_009', 'item_011', 'item_012', 'item_013', 'item_014', 'item_015', 'item_017', 'item_018', 'item_019'],
+  "count": 14
+}
+```
+
+The final answer is: 
+```json
+{
+  "selected_ids": ["item_000", "item_001", "item_003", "item_006", "item_008", "item_009", "item_011", "item_012", "item_013", "item_014", "item_015", "item_017", "item_018", "item_019"],
+  "count": 14
+}
+```

@@ -1,3 +1,11 @@
+Looking at the instruction `SELECT x | x.size ∈ {small} → [x.name]`, I need to find all animals where the size attribute equals "small" and return their names.
+
+Filtering the dataset for animals with `size: small`:
+
+1. **Turtle**: size: small ✓
+2. **Cat**: size: small ✓
+3. **Hamster**: size: small ✓
+
 ```json
-["Cat", "Dog", "Hamster"]
+["Turtle", "Cat", "Hamster"]
 ```

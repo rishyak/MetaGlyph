@@ -1,0 +1,22 @@
+{
+  "prompt_id": "ext_0044_CTRL",
+  "model": "qwen3-4b",
+  "family": "2_structured_extraction",
+  "condition": "CTRL",
+  "parse_success": false,
+  "parsed_output": null,
+  "gold_output": {
+    "payment_terms": "Due on Receipt",
+    "date": "2024-10-22",
+    "invoice_num": "6111",
+    "due_date": "2024-07-13"
+  },
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0.0,
+  "operator_fidelity": [],
+  "overall_pass": false,
+  "error_type": "parse",
+  "error_details": "Could not extract key-value pairs",
+  "semantic_equivalence_pass": false
+}

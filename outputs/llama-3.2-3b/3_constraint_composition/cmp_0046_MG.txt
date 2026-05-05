@@ -1,0 +1,8 @@
+SELECT 
+  id, 
+  CASE 
+    WHEN priority IN ('high') AND status != 'inactive' THEN 1
+    ELSE 0
+  END AS selected
+FROM 
+  item

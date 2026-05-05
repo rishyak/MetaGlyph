@@ -8,3 +8,17 @@
   "count": 3
 }
 ```
+
+**Explanation:**
+
+The query filters for items where:
+- `priority ∈ {high}` (priority is high) **AND**
+- `status ∉ {inactive}` (status is NOT inactive)
+
+Checking all items with `priority: high`:
+- item_003: priority=high, status=pending ✓ (pending ≠ inactive)
+- item_007: priority=high, status=inactive ✗ (inactive excluded)
+- item_010: priority=high, status=active ✓ (active ≠ inactive)
+- item_014: priority=high, status=inactive ✗ (inactive excluded)
+- item_016: priority=high, status=active ✓ (active ≠ inactive)
+- item_018: priority=high, status=inactive ✗ (inactive excluded)

@@ -1,0 +1,203 @@
+To solve this problem, we will process each record according to the given transformation rules and then output the transformed records as a JSON array.
+
+### Step 1: List the Input Records
+
+First, let's list the input records in a more readable format:
+
+1. Record rec_000:
+   - type: standard
+   - region: EU
+   - amount: 427
+   - active: False
+
+2. Record rec_001:
+   - type: trial
+   - region: EU
+   - amount: 435
+   - active: True
+
+3. Record rec_002:
+   - type: standard
+   - region: EU
+   - amount: 408
+   - active: True
+
+4. Record rec_003:
+   - type: trial
+   - region: EU
+   - amount: 498
+   - active: True
+
+5. Record rec_004:
+   - type: premium
+   - region: EU
+   - amount: 781
+   - active: False
+
+6. Record rec_005:
+   - type: premium
+   - region: APAC
+   - amount: 775
+   - active: True
+
+7. Record rec_006:
+   - type: premium
+   - region: US
+   - amount: 289
+   - active: False
+
+8. Record rec_007:
+   - type: premium
+   - region: US
+   - amount: 408
+   - active: False
+
+9. Record rec_008:
+   - type: trial
+   - region: APAC
+   - amount: 827
+   - active: False
+
+10. Record rec_009:
+    - type: trial
+    - region: US
+    - amount: 870
+    - active: False
+
+11. Record rec_010:
+    - type: standard
+    - region: APAC
+    - amount: 556
+    - active: True
+
+12. Record rec_011:
+    - type: premium
+    - region: APAC
+    - amount: 587
+    - active: True
+
+13. Record rec_012:
+    - type: standard
+    - region: APAC
+    - amount: 448
+    - active: True
+
+14. Record rec_013:
+    - type: premium
+    - region: US
+    - amount: 61
+    - active: False
+
+15. Record rec_014:
+    - type: premium
+    - region: EU
+    - amount: 226
+    - active: False
+
+### Step 2: Apply Transformation Rules
+
+Now, let's apply the transformation rules to each record:
+
+1. **Rule 1:** If type == premium, then multiply amount by 1.1.
+2. **Rule 2:** If region == EU, then multiply amount by 1.2.
+3. **Rule 3:** If active == False, then set status to 'archived'.
+
+Let's process each record:
+
+1. Record rec_000:
+   - type: standard, amount: 427 (Rule 1: No)
+   - region: EU, amount: 427 * 1.2 = 512.4 (Rule 2: Yes)
+   - active: False, status: 'archived' (Rule 3: Yes)
+   - Transformed: {type: "standard", region: "EU", amount: 512.4, active: False, status: "archived"}
+
+2. Record rec_001:
+   - type: trial, amount: 435 (Rule 1: No)
+   - region: EU, amount: 435 * 1.2 = 522 (Rule 2: Yes)
+   - active: True (Rule 3: No)
+   - Transformed: {type: "trial", region: "EU", amount: 522, active: True}
+
+3. Record rec_002:
+   - type: standard, amount: 408 (Rule 1: No)
+   - region: EU, amount: 408 * 1.2 = 489.6 (Rule 2: Yes)
+   - active: True (Rule 3: No)
+   - Transformed: {type: "standard", region: "EU", amount: 489.6, active: True}
+
+4. Record rec_003:
+   - type: trial, amount: 498 (Rule 1: No)
+   - region: EU, amount: 498 * 1.2 = 597.6 (Rule 2: Yes)
+   - active: True (Rule 3: No)
+   - Transformed: {type: "trial", region: "EU", amount: 597.6, active: True}
+
+5. Record rec_004:
+   - type: premium, amount: 781 * 1.1 = 859.1 (Rule 1: Yes)
+   - region: EU, amount: 859.1 * 1.2 = 1030.92 (Rule 2: Yes)
+   - active: False, status: 'archived' (Rule 3: Yes)
+   - Transformed: {type: "premium", region: "EU", amount: 1030.92, active: False, status: "archived"}
+
+6. Record rec_005:
+   - type: premium, amount: 775 * 1.1 = 852.5 (Rule 1: Yes)
+   - region: APAC (Rule 2: No)
+   - active: True (Rule 3: No)
+   - Transformed: {type: "premium", region: "APAC", amount: 852.5, active: True}
+
+7. Record rec_006:
+   - type: premium, amount: 289 * 1.1 = 317.9 (Rule 1: Yes)
+   - region: US (Rule 2: No)
+   - active: False, status: 'archived' (Rule 3: Yes)
+   - Transformed: {type: "premium", region: "US", amount: 317.9, active: False, status: "archived"}
+
+8. Record rec_007:
+   - type: premium, amount: 408 * 1.1 = 448.8 (Rule 1: Yes)
+   - region: US (Rule 2: No)
+   - active: False, status: 'archived' (Rule 3: Yes)
+   - Transformed: {type: "premium", region: "US", amount: 448.8, active: False, status: "archived"}
+
+9. Record rec_008:
+   - type: trial, amount: 827 (Rule 1: No)
+   - region: APAC (Rule 2: No)
+   - active: False, status: 'archived' (Rule 3: Yes)
+   - Transformed: {type: "trial", region: "APAC", amount: 827, active: False, status: "archived"}
+
+10. Record rec_009:
+    - type: trial, amount: 870 (Rule 1: No)
+    - region: US (Rule 2: No)
+    - active: False, status: 'archived' (Rule 3: Yes)
+    - Transformed: {type: "trial", region: "US", amount: 870, active: False, status: "archived"}
+
+11. Record rec_010:
+    - type: standard, amount: 556 (Rule 1: No)
+    - region: APAC (Rule 2: No)
+    - active: True (Rule 3: No)
+    - Transformed: {type: "standard", region: "APAC", amount: 556, active: True}
+
+12. Record rec_011:
+    - type: premium, amount: 587 * 1.1 = 645.7 (Rule 1: Yes)
+    - region: APAC (Rule 2: No)
+    - active: True (Rule 3: No)
+    - Transformed: {type: "premium", region: "APAC", amount: 645.7, active: True}
+
+13. Record rec_012:
+    - type: standard, amount: 448 (Rule 1: No)
+    - region: APAC (Rule 2: No)
+    - active: True (Rule 3: No)
+    - Transformed: {type: "standard", region: "APAC", amount: 448, active: True}
+
+14. Record rec_013:
+    - type: premium, amount: 61 * 1.1 = 67.1 (Rule 1: Yes)
+    - region: US (Rule 2: No)
+    - active: False, status: 'archived' (Rule 3: Yes)
+    - Transformed: {type: "premium", region: "US", amount: 67.1, active: False, status: "archived"}
+
+15. Record rec_014:
+    - type: premium, amount: 226 * 1.1 = 248.6 (Rule 1: Yes)
+    - region: EU, amount: 248.6 * 1.2 = 298.32 (Rule 2: Yes)
+    - active: False, status: 'archived' (Rule 3: Yes)
+    - Transformed: {type: "premium", region: "EU", amount: 298.32, active: False, status: "archived"}
+
+### Step 3: Output the Transformed Records as a JSON Array
+
+Now, let's format the transformed records into a JSON array:
+
+```json
+[
+  {"

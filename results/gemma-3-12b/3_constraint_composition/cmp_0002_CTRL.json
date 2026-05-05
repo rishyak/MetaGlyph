@@ -1,0 +1,47 @@
+{
+  "prompt_id": "cmp_0002_CTRL",
+  "model": "gemma-3-12b",
+  "family": "3_constraint_composition",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": {
+    "selected_ids": [
+      "item_000",
+      "item_002",
+      "item_005",
+      "item_012",
+      "item_016",
+      "item_017",
+      "item_019"
+    ],
+    "count": 7
+  },
+  "gold_output": {
+    "selected_ids": [
+      "item_000",
+      "item_019"
+    ],
+    "count": 2
+  },
+  "exact_match": false,
+  "accuracy": 0.2857142857142857,
+  "f1_score": 0.4444444444444445,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    },
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.29",
+  "semantic_equivalence_pass": false
+}

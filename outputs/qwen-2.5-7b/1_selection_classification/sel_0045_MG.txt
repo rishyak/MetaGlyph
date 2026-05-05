@@ -1,0 +1,20 @@
+Based on the given instruction `SELECT x | x.price_range ∉ {low} → [x.name]`, we need to select the names of products whose price range is not 'low'.
+
+Let's go through the list:
+
+- Desk: price_range: medium → Select
+- Microwave: price_range: medium → Select
+- Stapler: price_range: low → Not Select
+- Laptop: price_range: high → Select
+- Notebook: price_range: low → Not Select
+- Chair: price_range: medium → Select
+- Bookshelf: price_range: medium → Select
+- Smartphone: price_range: high → Select
+- Refrigerator: price_range: high → Select
+- Tablet: price_range: high → Select
+
+Now, let's compile the names of the selected items:
+
+```json
+["Desk", "Microwave", "Laptop", "Chair", "Bookshelf", "Smartphone", "Refrigerator", "Tablet"]
+```

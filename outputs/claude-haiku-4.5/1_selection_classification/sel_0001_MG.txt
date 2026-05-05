@@ -1,3 +1,13 @@
+Looking at the instruction `SELECT x | x.size ∈ {large} → [x.name]`, I need to:
+
+1. Filter all animals where `size` equals `large`
+2. Return their names
+
+Reviewing the dataset for animals with `size: large`:
+
+- **Shark**: type: fish, domestic: False, **size: large** ✓
+- **Crocodile**: type: reptile, domestic: False, **size: large** ✓
+
 ```json
-["Cat", "Dog", "Hamster"]
+["Shark", "Crocodile"]
 ```

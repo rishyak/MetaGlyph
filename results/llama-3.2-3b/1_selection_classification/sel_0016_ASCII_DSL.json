@@ -1,0 +1,45 @@
+{
+  "prompt_id": "sel_0016_ASCII_DSL",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": [
+    "### Step 1: Identify the category \"stationery\" and the items that belong to it.\nThe items that belong to the category \"stationery\" are Stapler",
+    "Pen",
+    "and Notebook.\n\n### Step 2: Filter out the items that do not belong to the category \"stationery\".\nThe item that does not belong to the category \"stationery\" is Smartphone",
+    "Chair",
+    "Headphones",
+    "Microwave",
+    "Refrigerator",
+    "and Tablet.\n\n### Step 3: Filter out the items that are not portable.\nThe item that is not portable is Bookshelf.\n\n### Step 4: Filter out the items that do not meet the price range criteria.\nThe item that does not meet the price range criteria is Refrigerator.\n\n### Step 5: Combine the filtered items into a single list.\nThe filtered list of items that meet all the criteria is Stapler",
+    "Pen",
+    "Notebook.\n\n### Step 6: Format the output as a JSON array of strings.\nThe final output is: \"Stapler",
+    "Pen",
+    "Notebook"
+  ],
+  "gold_output": [
+    "bookshelf",
+    "chair",
+    "headphones",
+    "microwave",
+    "refrigerator",
+    "smartphone",
+    "tablet"
+  ],
+  "exact_match": false,
+  "accuracy": 0.3076923076923077,
+  "f1_score": 0.47058823529411764,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=7, extra=10"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.31",
+  "semantic_equivalence_pass": false
+}

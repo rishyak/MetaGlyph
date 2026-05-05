@@ -1,0 +1,12 @@
+Based on the given instruction and input data, the task is to select animals that do not belong to the "mammal" category. From the provided list, we can see that:
+
+- Cat: type: mammal, so it should not be selected.
+- Hamster: type: mammal, so it should not be selected.
+
+All other animals belong to different categories and should be included in the output according to the instruction.
+
+Here is the output in the requested JSON format:
+
+```json
+["Crocodile", "Snake", "Eagle", "Turtle", "Parrot", "Shark", "Salmon", "Penguin"]
+```

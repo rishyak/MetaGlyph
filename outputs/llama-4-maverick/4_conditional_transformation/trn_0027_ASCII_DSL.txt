@@ -1,0 +1,138 @@
+To solve this problem, we need to apply the given transformation rules to each record in the input data. The transformation rules are specified in a specific order and are conditional based on the attributes of each record.
+
+1. **First Rule**: If the record's type is "premium", then multiply its amount by 1.1.
+2. **Second Rule**: If the record's region is "EU", then multiply its amount by 1.2. This rule is applied after the first rule, so it will operate on the amount that has already been adjusted by the first rule if applicable.
+3. **Third Rule**: If the record is not active (active == false), then change its status to "archived". Initially, none of the records have a status attribute, so this will add a new attribute "status" with the value "archived" to the records that are not active.
+
+Let's apply these rules to each record:
+
+### Record Transformations
+
+1. **rec_000**:
+   - type: standard, region: APAC, amount: 553, active: True
+   - Rule 1: No change (type != "premium")
+   - Rule 2: No change (region != "EU")
+   - Rule 3: No change (active == True)
+   - Result: {type: "standard", region: "APAC", amount: 553, active: True}
+
+2. **rec_001**:
+   - type: premium, region: EU, amount: 474, active: False
+   - Rule 1: amount = 474 * 1.1 = 521.4
+   - Rule 2: amount = 521.4 * 1.2 = 625.68
+   - Rule 3: status = "archived" (because active == False)
+   - Result: {type: "premium", region: "EU", amount: 625.68, active: False, status: "archived"}
+
+3. **rec_002**:
+   - type: standard, region: EU, amount: 329, active: False
+   - Rule 1: No change
+   - Rule 2: amount = 329 * 1.2 = 394.8
+   - Rule 3: status = "archived"
+   - Result: {type: "standard", region: "EU", amount: 394.8, active: False, status: "archived"}
+
+4. **rec_003**:
+   - type: trial, region: APAC, amount: 96, active: True
+   - Rule 1: No change
+   - Rule 2: No change
+   - Rule 3: No change
+   - Result: {type: "trial", region: "APAC", amount: 96, active: True}
+
+5. **rec_004**:
+   - type: standard, region: US, amount: 782, active: True
+   - Rule 1: No change
+   - Rule 2: No change
+   - Rule 3: No change
+   - Result: {type: "standard", region: "US", amount: 782, active: True}
+
+6. **rec_005**:
+   - type: trial, region: US, amount: 288, active: False
+   - Rule 1: No change
+   - Rule 2: No change
+   - Rule 3: status = "archived"
+   - Result: {type: "trial", region: "US", amount: 288, active: False, status: "archived"}
+
+7. **rec_006**:
+   - type: trial, region: EU, amount: 507, active: False
+   - Rule 1: No change
+   - Rule 2: amount = 507 * 1.2 = 608.4
+   - Rule 3: status = "archived"
+   - Result: {type: "trial", region: "EU", amount: 608.4, active: False, status: "archived"}
+
+8. **rec_007**:
+   - type: premium, region: EU, amount: 230, active: True
+   - Rule 1: amount = 230 * 1.1 = 253
+   - Rule 2: amount = 253 * 1.2 = 303.6
+   - Rule 3: No change
+   - Result: {type: "premium", region: "EU", amount: 303.6, active: True}
+
+9. **rec_008**:
+   - type: premium, region: EU, amount: 123, active: False
+   - Rule 1: amount = 123 * 1.1 = 135.3
+   - Rule 2: amount = 135.3 * 1.2 = 162.36
+   - Rule 3: status = "archived"
+   - Result: {type: "premium", region: "EU", amount: 162.36, active: False, status: "archived"}
+
+10. **rec_009**:
+    - type: trial, region: APAC, amount: 617, active: False
+    - Rule 1: No change
+    - Rule 2: No change
+    - Rule 3: status = "archived"
+    - Result: {type: "trial", region: "APAC", amount: 617, active: False, status: "archived"}
+
+11. **rec_010**:
+    - type: trial, region: APAC, amount: 325, active: True
+    - Rule 1: No change
+    - Rule 2: No change
+    - Rule 3: No change
+    - Result: {type: "trial", region: "APAC", amount: 325, active: True}
+
+12. **rec_011**:
+    - type: standard, region: EU, amount: 623, active: True
+    - Rule 1: No change
+    - Rule 2: amount = 623 * 1.2 = 747.6
+    - Rule 3: No change
+    - Result: {type: "standard", region: "EU", amount: 747.6, active: True}
+
+13. **rec_012**:
+    - type: standard, region: US, amount: 318, active: True
+    - Rule 1: No change
+    - Rule 2: No change
+    - Rule 3: No change
+    - Result: {type: "standard", region: "US", amount: 318, active: True}
+
+14. **rec_013**:
+    - type: standard, region: EU, amount: 306, active: False
+    - Rule 1: No change
+    - Rule 2: amount = 306 * 1.2 = 367.2
+    - Rule 3: status = "archived"
+    - Result: {type: "standard", region: "EU", amount: 367.2, active: False, status: "archived"}
+
+15. **rec_014**:
+    - type: standard, region: US, amount: 519, active: False
+    - Rule 1: No change
+    - Rule 2: No change
+    - Rule 3: status = "archived"
+    - Result: {type: "standard", region: "US", amount: 519, active: False, status: "archived"}
+
+### JSON Output
+
+```json
+[
+  {"type": "standard", "region": "APAC", "amount": 553, "active": true},
+  {"type": "premium", "region": "EU", "amount": 625.68, "active": false, "status": "archived"},
+  {"type": "standard", "region": "EU", "amount": 394.8, "active": false, "status": "archived"},
+  {"type": "trial", "region": "APAC", "amount": 96, "active": true},
+  {"type": "standard", "region": "US", "amount": 782, "active": true},
+  {"type": "trial", "region": "US", "amount": 288, "active": false, "status": "archived"},
+  {"type": "trial", "region": "EU", "amount": 608.4, "active": false, "status": "archived"},
+  {"type": "premium", "region": "EU", "amount": 303.6, "active": true},
+  {"type": "premium", "region": "EU", "amount": 162.36, "active": false, "status": "archived"},
+  {"type": "trial", "region": "APAC", "amount": 617, "active": false, "status": "archived"},
+  {"type": "trial", "region": "APAC", "amount": 325, "active": true},
+  {"type": "standard", "region": "EU", "amount": 747.6, "active": true},
+  {"type": "standard", "region": "US", "amount": 318, "active": true},
+  {"type": "standard", "region": "EU", "amount": 367.2, "active": false, "status": "archived"},
+  {"type": "standard", "region": "US", "amount": 519, "active": false, "status": "archived"}
+]
+```
+
+Note that in the JSON output, `True` and `False` are represented as `true`

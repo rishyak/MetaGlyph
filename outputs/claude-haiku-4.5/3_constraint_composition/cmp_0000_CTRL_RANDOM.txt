@@ -1,0 +1,24 @@
+```json
+{
+  "selected_ids": [
+    "item_002",
+    "item_003",
+    "item_006",
+    "item_013",
+    "item_017"
+  ],
+  "count": 5
+}
+```
+
+**Explanation:**
+The query selects items where:
+- Priority = "high" (¤ {high})
+- Status = "active" (※ {active}, noting that ※ appears to negate the following condition based on the ↯ operator context, but interpreting the instruction as selecting active items with high priority)
+
+Items matching both criteria:
+- item_002: Priority high, Status active ✓
+- item_003: Priority high, Status active ✓
+- item_006: Priority high, Status active ✓
+- item_013: Priority high, Status active ✓
+- item_017: Priority high, Status active ✓

@@ -1,0 +1,12 @@
+### Step 1: Review the list of animals to identify the 'type' attribute with the value 'fish'.
+The list of animals is provided, and we need to carefully examine each entry to find the ones where the 'type' attribute is 'fish'.
+
+### Step 2: Identify the animals that match the 'type' attribute 'fish'.
+After reviewing the list, we find the following animals that match the 'type' attribute 'fish':
+- Shark: type: fish, domestic: False, size: large
+- Salmon: type: fish, domestic: False, size: medium
+
+### Step 3: Return the names of the matching items as a JSON array of strings.
+The names of the matching items are "Shark" and "Salmon". We will return these as a JSON array.
+
+The final answer is: $\boxed["Shark", "Salmon"]$

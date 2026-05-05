@@ -1,0 +1,13 @@
+### Step 1: Identify the mammal category
+The mammal category includes the following animals: Cat, Hamster.
+
+### Step 2: Filter the list to include only mammals
+The list of mammals is: 
+- Cat: type: mammal, domestic: True, size: small
+- Hamster: type: mammal, domestic: True, size: small
+
+### Step 3: Extract the names of the mammals
+The names of the mammals are: Cat, Hamster
+
+### Step 4: Format the output as a JSON array
+The output is: ["Cat", "Hamster"]

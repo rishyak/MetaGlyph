@@ -1,0 +1,14 @@
+### Step 1: Identify the animals that are domesticated
+We need to find the animals that are commonly kept as pets, which means they have a domestic status of True.
+
+### Step 2: Filter the animals based on domestic status
+From the given list, we can see that the domesticated animals are:
+- Dog
+- Parrot
+- Turtle
+- Goldfish
+
+### Step 3: Format the output as a JSON array
+We will format the output as a JSON array of strings, where each string represents the name of a domesticated animal.
+
+The final answer is: $\boxed [{"Dog","Parrot","Turtle","Goldfish"}]$

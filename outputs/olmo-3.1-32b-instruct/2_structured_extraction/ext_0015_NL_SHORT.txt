@@ -1,0 +1,6 @@
+{
+  "date": "2024-04-07",
+  "recipient": "carol.williams@example.com",
+  "subject": "Q4 Report",
+  "company": null
+}

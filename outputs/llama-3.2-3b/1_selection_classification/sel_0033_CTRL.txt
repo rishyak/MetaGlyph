@@ -1,0 +1,19 @@
+### Solution
+```sql
+SELECT 
+  x.name 
+FROM 
+  products x 
+WHERE 
+  x.category IN ('stationery') OR x.portable = True;
+```
+
+### Explanation
+This SQL query selects the names of products that match the specified conditions. Here's a step-by-step breakdown:
+
+1. `SELECT x.name`: Selects the `name` column from the `products` table and assigns it the alias `x`.
+2. `FROM products x`: Specifies the `products` table as the source of data and assigns it the alias `x`.
+3. `WHERE x.category IN ('stationery') OR x.portable = True`: Filters the data to include only rows where the `category` is either `'stationery'` or the `portable` column is `True`.
+
+### Example Use Case
+This query can be used to generate a list of products that are either stationery or portable, which can be useful for a department store's inventory management or customer-facing applications.

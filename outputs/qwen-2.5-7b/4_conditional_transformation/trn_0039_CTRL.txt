@@ -1,0 +1,164 @@
+Let's break down the transformation logic step-by-step according to the given conditions:
+
+1. **Condition:** \( \forall x : (x.type \neq "premium" \Rightarrow x.amount \rightarrow x.amount \times 1.1) \)
+   - If the `type` is not "premium", then multiply the `amount` by 1.1.
+   
+2. **Condition:** \( \forall x : (x.region \neq "EU" \Rightarrow x.amount \rightarrow x.amount \times 1.2) \)
+   - If the `region` is not "EU", then multiply the `amount` by 1.2.
+   
+3. **Condition:** \( \forall x : (x.active \neq false \Rightarrow x.status \rightarrow "archived") \)
+   - If `active` is not `false`, then set the `status` to "archived".
+
+Now let's apply these transformations to each record in the input list.
+
+Here's the input records list:
+```json
+[
+    {"type": "trial", "region": "EU", "amount": 264, "active": True},
+    {"type": "premium", "region": "APAC", "amount": 748, "active": False},
+    {"type": "standard", "region": "US", "amount": 520, "active": False},
+    {"type": "premium", "region": "EU", "amount": 519, "active": True},
+    {"type": "standard", "region": "EU", "amount": 527, "active": False},
+    {"type": "standard", "region": "US", "amount": 607, "active": False},
+    {"type": "standard", "region": "US", "amount": 298, "active": False},
+    {"type": "trial", "region": "APAC", "amount": 698, "active": False},
+    {"type": "premium", "region": "APAC", "amount": 18, "active": True},
+    {"type": "standard", "region": "EU", "amount": 913, "active": False},
+    {"type": "premium", "region": "US", "amount": 420, "active": True},
+    {"type": "trial", "region": "EU", "amount": 792, "active": False},
+    {"type": "trial", "region": "EU", "amount": 85, "active": False},
+    {"type": "trial", "region": "EU", "amount": 792, "active": False}
+]
+```
+
+### Transformation Process
+
+#### Record `rec_000`
+- `type`: trial (not "premium"), so multiply `amount` by 1.1.
+- `region`: EU (so no change to `amount`).
+- `active`: True, so set `status` to "archived".
+- **Transformed:** 
+  ```json
+  {"type": "trial", "region": "EU", "amount": 290.4, "active": True, "status": "archived"}
+  ```
+
+#### Record `rec_001`
+- `type`: premium (so no change to `amount`).
+- `region`: APAC (so no change to `amount`).
+- `active`: False (so no change to `status`).
+- **Transformed:** 
+  ```json
+  {"type": "premium", "region": "APAC", "amount": 748, "active": False, "status": ""}
+  ```
+
+#### Record `rec_002`
+- `type`: standard (not "premium"), so multiply `amount` by 1.1.
+- `region`: US (so no change to `amount`).
+- `active`: False (so no change to `status`).
+- **Transformed:** 
+  ```json
+  {"type": "standard", "region": "US", "amount": 572.7, "active": False, "status": ""}
+  ```
+
+#### Record `rec_003`
+- `type`: premium (so no change to `amount`).
+- `region`: EU (so no change to `amount`).
+- `active`: True, so set `status` to "archived".
+- **Transformed:** 
+  ```json
+  {"type": "premium", "region": "EU", "amount": 748, "active": True, "status": "archived"}
+  ```
+
+#### Record `rec_004`
+- `type`: standard (not "premium"), so multiply `amount` by 1.1.
+- `region`: EU (so no change to `amount`).
+- `active`: False (so no change to `status`).
+- **Transformed:** 
+  ```json
+  {"type": "standard", "region": "EU", "amount": 579.7, "active": False, "status": ""}
+  ```
+
+#### Record `rec_005`
+- `type`: standard (not "premium"), so multiply `amount` by 1.1.
+- `region`: US (so no change to `amount`).
+- `active`: False (so no change to `status`).
+- **Transformed:** 
+  ```json
+  {"type": "standard", "region": "US", "amount": 667.7, "active": False, "status": ""}
+  ```
+
+#### Record `rec_006`
+- `type`: standard (not "premium"), so multiply `amount` by 1.1.
+- `region`: US (so no change to `amount`).
+- `active`: False (so no change to `status`).
+- **Transformed:** 
+  ```json
+  {"type": "standard", "region": "US", "amount": 327.8, "active": False, "status": ""}
+  ```
+
+#### Record `rec_007`
+- `type`: trial (not "premium"), so multiply `amount` by 1.1.
+- `region`: APAC (so no change to `amount`).
+- `active`: False (so no change to `status`).
+- **Transformed:** 
+  ```json
+  {"type": "trial", "region": "APAC", "amount": 767.8, "active": False, "status": ""}
+  ```
+
+#### Record `rec_008`
+- `type`: premium (so no change to `amount`).
+- `region`: APAC (so no change to `amount`).
+- `active`: True, so set `status` to "archived".
+- **Transformed:** 
+  ```json
+  {"type": "premium", "region": "APAC", "amount": 18, "active": True, "status": "archived"}
+  ```
+
+#### Record `rec_009`
+- `type`: premium (so no change to `amount`).
+- `region`: US (so no change to `amount`).
+- `active`: False (so no change to `status`).
+- **Transformed:** 
+  ```json
+  {"type": "premium", "region": "US", "amount": 913, "active": False, "status": ""}
+  ```
+
+#### Record `rec_010`
+- `type`: trial (not "premium"), so multiply `amount` by 1.1.
+- `region`: EU (so no change to `amount`).
+- `active`: False (so no change to `status`).
+- **Transformed:** 
+  ```json
+  {"type": "trial", "region": "EU", "amount": 871.2, "active": False, "status": ""}
+  ```
+
+#### Record `rec_011`
+- `type`: premium (so no change to `amount`).
+- `region`: US (so no change to `amount`).
+- `active`: True, so set `status` to "archived".
+- **Transformed:** 
+  ```json
+  {"type": "premium", "region": "US", "amount": 420, "active": True, "status": "archived"}
+  ```
+
+#### Record `rec_012`
+- `type`: trial (not "premium"), so multiply `amount` by 1.1.
+- `region`: APAC (so no change to `amount`).
+- `active`: False (so no change to `status`).
+- **Transformed:** 
+  ```json
+  {"type": "trial", "region": "APAC", "amount": 230.9, "active": False, "status": ""}
+  ```
+
+#### Record `rec_013`
+- `type`: trial (not "premium"), so multiply `amount` by 1.1.
+- `region`: EU (so no change to `amount`).
+- `active`: False (so no change to `status`).
+- **Transformed:** 
+  ```json
+  {"type": "trial", "region": "EU", "amount": 93.5, "active": False, "status": ""}
+  ```
+
+#### Record `rec_014`
+- `type`: trial (not "premium"), so multiply `amount` by 1.1.
+- `region`: EU (so no change

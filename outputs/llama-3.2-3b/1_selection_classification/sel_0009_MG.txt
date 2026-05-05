@@ -1,0 +1,35 @@
+### Solution
+```json
+[
+  "Refrigerator",
+  "Bookshelf",
+  "Desk"
+]
+```
+
+### Explanation
+To solve this problem, we need to find the items that are in the "appliances" category and are not portable. We can use a SQL-like query to achieve this.
+
+The query is: `SELECT x.name FROM products x WHERE x.category = 'appliances' AND x.portable = False`
+
+We can then run this query on the provided data to get the desired output.
+
+### Step-by-Step Solution
+
+1.  Filter the products by category: `x.category = 'appliances'`
+2.  Filter the products by portability: `x.portable = False`
+3.  Select the name of each product: `x.name`
+
+### Code
+```sql
+SELECT x.name FROM products x WHERE x.category = 'appliances' AND x.portable = False
+```
+
+### Output
+```json
+[
+  "Refrigerator",
+  "Bookshelf",
+  "Desk"
+]
+```

@@ -1,0 +1,8 @@
+```json
+{
+  "sender_name": "David Brown",
+  "sender_title": "Analyst, Digital Systems",
+  "subject": "Meeting Request",
+  "date": "2024-07-06"
+}
+```

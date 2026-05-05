@@ -1,0 +1,28 @@
+To solve this task, we need to follow the given instruction: `SELECT x | x.size ∈ {large} → [x.name]`. This means we have to select the names of animals that are classified as 'large' in size from the given dataset.
+
+First, let's review the dataset provided:
+
+1. Eagle: type: bird, domestic: False, size: medium
+2. Penguin: type: bird, domestic: False, size: medium
+3. Goldfish: type: fish, domestic: True, size: small
+4. Dog: type: mammal, domestic: True, size: medium
+5. Shark: type: fish, domestic: False, size: large
+6. Crocodile: type: reptile, domestic: False, size: large
+7. Turtle: type: reptile, domestic: True, size: small
+8. Hamster: type: mammal, domestic: True, size: small
+9. Cat: type: mammal, domestic: True, size: small
+10. Parrot: type: bird, domestic: True, size: small
+
+The instruction specifies that we should consider animals with `size: large`. From the dataset, we can identify two animals that fit this criterion:
+
+1. Shark: type: fish, domestic: False, size: large
+2. Crocodile: type: reptile, domestic: False, size: large
+
+The task requires us to return the names of these animals. Therefore, we need to extract the names 'Shark' and 'Crocodile'.
+
+The output should be in the format of a JSON array of strings. So, we will format our answer as `["Shark", "Crocodile"]`.
+
+The final answer is:
+```json
+["Shark", "Crocodile"]
+```

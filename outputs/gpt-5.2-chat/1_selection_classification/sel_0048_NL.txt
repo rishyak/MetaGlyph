@@ -1,1 +1,1 @@
-[]
+["Bookshelf", "Refrigerator", "Desk"]

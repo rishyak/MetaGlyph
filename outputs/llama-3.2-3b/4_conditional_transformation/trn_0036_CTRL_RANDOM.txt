@@ -1,0 +1,34 @@
+```json
+[
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 675.0,
+    "active": false
+  },
+  {
+    "type": "premium",
+    "region": "APAC",
+    "amount": 406.0,
+    "active": true
+  },
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 730.0,
+    "active": false
+  },
+  {
+    "type": "premium",
+    "region": "US",
+    "amount": 930.0,
+    "active": false
+  },
+  {
+    "type": "premium",
+    "region": "APAC",
+    "amount": 239.0,
+    "active": true
+  }
+]
+```

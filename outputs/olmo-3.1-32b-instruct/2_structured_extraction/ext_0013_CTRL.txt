@@ -1,0 +1,6 @@
+{
+  "date": "2024-02-02",
+  "sender_title": "Manager, Global Solutions",
+  "recipient": "alice.smith@example.com",
+  "subject": "Meeting Request"
+}

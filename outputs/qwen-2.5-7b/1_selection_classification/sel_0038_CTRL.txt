@@ -1,0 +1,26 @@
+To solve this problem, we need to filter out the animals based on the condition provided in the instruction: `SELECT x | x.size ∉ {small} → [x.name]`. This means we need to select the names of animals whose size is not "small".
+
+Let's go through the list and apply the condition:
+
+- Elephant: size = large → Include
+- Turtle: size = small → Exclude
+- Whale: size = large → Include
+- Dog: size = medium → Include
+- Cat: size = small → Exclude
+- Hamster: size = small → Exclude
+- Eagle: size = medium → Include
+- Crocodile: size = large → Include
+- Goldfish: size = small → Exclude
+- Snake: size = medium → Include
+
+Now, let's compile the names of the animals that meet the condition:
+
+```json
+["Elephant", "Whale", "Dog", "Eagle", "Crocodile", "Snake"]
+```
+
+So, the final output is:
+
+```json
+["Elephant", "Whale", "Dog", "Eagle", "Crocodile", "Snake"]
+```

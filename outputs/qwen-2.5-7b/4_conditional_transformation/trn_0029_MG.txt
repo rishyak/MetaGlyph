@@ -1,0 +1,121 @@
+```json
+[
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 159,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 626,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 191,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 866.8,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 668,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 192.48,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 554.4,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 75.77,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 327,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 74.8,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 737,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 529,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 634.7,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 742.7,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 546.7,
+        "active": true
+    }
+]
+```
+
+Explanation:
+- For `rec_000`, the type is not "premium", and it's inactive, so it gets archived.
+- For `rec_001`, the type is not "premium", and it's active, so no changes.
+- For `rec_002`, the type is not "premium", and it's inactive, so it gets archived.
+- For `rec_003`, the type is "premium", so its amount is increased by 10%, and it gets archived.
+- For `rec_004`, the type is not "premium", and it's inactive, so it gets archived.
+- For `rec_005`, the type is not "premium", and it's inactive, so it gets archived.
+- For `rec_006`, the type is not "premium", and it's inactive, so it gets archived.
+- For `rec_007`, the type is "premium", so its amount is increased by 10% and then by 20% because it's in the EU, and it gets archived.
+- For `rec_008`, the type is not "premium", and it's inactive, so it gets archived.
+- For `rec_009`, the type is "premium", so its amount is increased by 10% and then by 20% because it's in the EU, and it gets archived.
+- For `rec_010`, the type is "premium", so its amount is increased by 10% and then by 20% because it's in the EU, but it remains active.
+- For `rec_011`, the type is not "premium", and it's inactive, so it gets archived.
+- For `rec_012`, the type is "premium", so its amount is increased by 10% and then by 20% because it's in the EU, and it remains active.
+- For `rec_013`, the type is "premium", so its amount is increased by 10% and then by 20% because it's in the EU, and it remains active.
+- For `rec_014`, the type is "premium", so its amount is increased by 10% and then by 20% because it's in the EU, and it remains active.

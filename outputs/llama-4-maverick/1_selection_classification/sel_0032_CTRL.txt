@@ -1,0 +1,38 @@
+To solve this task, we need to follow the given instruction: `SELECT x | x.type ∉ {bird} → [x.name]`. This means we have to select the names of animals where the type is not 'bird'.
+
+First, let's list the given animals with their types:
+1. Goldfish - type: fish
+2. Hamster - type: mammal
+3. Snake - type: reptile
+4. Whale - type: mammal
+5. Parrot - type: bird
+6. Shark - type: fish
+7. Penguin - type: bird
+8. Cat - type: mammal
+9. Eagle - type: bird
+10. Salmon - type: fish
+
+Now, we filter out the animals that are not of type 'bird':
+- Goldfish (fish)
+- Hamster (mammal)
+- Snake (reptile)
+- Whale (mammal)
+- Shark (fish)
+- Cat (mammal)
+- Salmon (fish)
+
+The names of these animals are:
+- Goldfish
+- Hamster
+- Snake
+- Whale
+- Shark
+- Cat
+- Salmon
+
+To present this in the required JSON array format, we list the names as strings in an array: `["Goldfish", "Hamster", "Snake", "Whale", "Shark", "Cat", "Salmon"]`.
+
+The final answer is:
+```json
+["Goldfish", "Hamster", "Snake", "Whale", "Shark", "Cat", "Salmon"]
+```

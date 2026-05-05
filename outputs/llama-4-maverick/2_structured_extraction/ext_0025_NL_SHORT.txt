@@ -1,0 +1,31 @@
+To extract the requested fields from the given email document and return them as a JSON object, we need to identify the fields "sender", "subject", "sender_title", and "company" within the document.
+
+1. **Sender**: The sender's email address is provided in the "From" field of the email header. The email address is "alice.smith@techcorpinc.com". The name of the sender is "Alice Smith", which is found in the signature.
+
+2. **Subject**: The subject of the email is directly stated in the "Subject" field of the email header, which is "Q4 Report".
+
+3. **Sender_title**: The sender's title is mentioned in the signature as "Analyst".
+
+4. **Company**: The company name is not directly mentioned in the email header but is found in the signature as "Global Solutions". This could be considered as part of the company or department name.
+
+Given this information, we can construct the JSON object. For the "sender" field, we will use the sender's email address as it is a more specific identifier than the name.
+
+```json
+{
+  "sender": "alice.smith@techcorpinc.com",
+  "subject": "Q4 Report",
+  "sender_title": "Analyst",
+  "company": "Global Solutions"
+}
+```
+
+This JSON object includes the extracted fields as per the instruction. Note that while "Global Solutions" is more likely to be a department rather than the company name, based on the context provided, it is the closest match for the "company" field. The actual company name appears to be "TechCorp Inc." as inferred from the sender's email domain "techcorpinc.com", but it is not directly stated in the provided text. If we were to infer the company from the email domain, the JSON could be adjusted accordingly. However, sticking strictly to the information directly available in the document:
+
+```json
+{
+  "sender": "alice.smith@techcorpinc.com",
+  "subject": "Q4 Report",
+  "sender_title": "Analyst",
+  "company": "Global Solutions"
+}
+```

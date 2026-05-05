@@ -1,0 +1,109 @@
+```json
+[
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 930.0,
+        "active": true,
+        "status": ""
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 685.0,
+        "active": true,
+        "status": ""
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 353.8,
+        "active": true,
+        "status": ""
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 763.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 349.0,
+        "active": true,
+        "status": ""
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 230.4,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 620.0,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 815.0,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 533.0,
+        "active": true,
+        "status": ""
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 204.0,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 456.0,
+        "active": true,
+        "status": ""
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 713.0,
+        "active": true,
+        "status": ""
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 89.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 689.0,
+        "active": true,
+        "status": ""
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 529.0,
+        "active": false,
+        "status": "archived"
+    }
+]
+```

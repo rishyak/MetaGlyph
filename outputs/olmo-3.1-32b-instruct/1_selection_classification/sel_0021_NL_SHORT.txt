@@ -1,0 +1,6 @@
+[
+  "Hamster",
+  "Turtle",
+  "Goldfish",
+  "Parrot"
+]

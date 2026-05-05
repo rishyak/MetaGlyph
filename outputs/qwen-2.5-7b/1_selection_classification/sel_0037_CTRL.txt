@@ -1,0 +1,5 @@
+```json
+["Dog", "Goldfish", "Cat", "Parrot", "Hamster"]
+```
+
+This output includes the names of animals that are marked as `domestic: True` in the provided list.

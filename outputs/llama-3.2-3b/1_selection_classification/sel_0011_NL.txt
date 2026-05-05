@@ -1,0 +1,16 @@
+### Step 1: Identify the attribute 'domestic' and its values
+The 'domestic' attribute has the following values: False, True.
+
+### Step 2: Select items where 'domestic' is not False
+We need to select items where 'domestic' is True.
+
+### Step 3: List the items where 'domestic' is True
+The items where 'domestic' is True are:
+- Goldfish: type: fish, domestic: True, size: small
+- Cat: type: mammal, domestic: True, size: small
+- Parrot: type: bird, domestic: True, size: small
+
+### Step 4: Format the output as a JSON array of strings
+The output will be a JSON array of the selected items.
+
+The final answer is: $\boxed["Goldfish", "Cat", "Parrot"]$

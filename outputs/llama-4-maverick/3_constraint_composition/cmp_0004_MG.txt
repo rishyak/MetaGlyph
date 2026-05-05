@@ -1,0 +1,78 @@
+To solve this problem, we need to filter the given dataset based on the condition `x.priority ∈ {high} ∪ x.status ∉ {inactive}`. This means we need to select items where either the priority is 'high' or the status is not 'inactive'.
+
+Let's analyze the condition:
+
+1. `x.priority ∈ {high}` means the priority should be 'high'.
+2. `x.status ∉ {inactive}` means the status should not be 'inactive'.
+
+The union of these two conditions (`∪`) means an item is selected if either of these conditions is true.
+
+Now, let's filter the dataset:
+
+1. ID: item_000 - Status: inactive, Priority: medium (Does not satisfy either condition)
+2. ID: item_001 - Status: pending, Priority: high (Satisfies the first condition)
+3. ID: item_002 - Status: active, Priority: low (Satisfies the second condition)
+4. ID: item_003 - Status: active, Priority: high (Satisfies both conditions)
+5. ID: item_004 - Status: active, Priority: high (Satisfies the first condition)
+6. ID: item_005 - Status: active, Priority: high (Satisfies the first condition)
+7. ID: item_006 - Status: pending, Priority: low (Satisfies the second condition)
+8. ID: item_007 - Status: active, Priority: low (Satisfies the second condition)
+9. ID: item_008 - Status: active, Priority: high (Satisfies the first condition)
+10. ID: item_009 - Status: active, Priority: high (Satisfies the first condition)
+11. ID: item_010 - Status: pending, Priority: low (Satisfies the second condition)
+12. ID: item_011 - Status: inactive, Priority: high (Satisfies the first condition)
+13. ID: item_012 - Status: pending, Priority: medium (Satisfies the second condition)
+14. ID: item_013 - Status: pending, Priority: high (Satisfies the first condition)
+15. ID: item_014 - Status: inactive, Priority: medium (Does not satisfy either condition)
+16. ID: item_015 - Status: pending, Priority: medium (Satisfies the second condition)
+17. ID: item_016 - Status: active, Priority: low (Satisfies the second condition)
+18. ID: item_017 - Status: pending, Priority: low (Satisfies the second condition)
+19. ID: item_018 - Status: active, Priority: high (Satisfies the first condition)
+20. ID: item_019 - Status: inactive, Priority: low (Does not satisfy either condition)
+
+Selected IDs are:
+- item_001
+- item_002
+- item_003
+- item_004
+- item_005
+- item_006
+- item_007
+- item_008
+- item_009
+- item_010
+- item_011
+- item_012
+- item_013
+- item_015
+- item_016
+- item_017
+- item_018
+
+There are 17 items that satisfy the given condition.
+
+The output in JSON format is:
+```json
+{
+  "selected_ids": [
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_004",
+    "item_005",
+    "item_006",
+    "item_007",
+    "item_008",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_012",
+    "item_013",
+    "item_015",
+    "item_016",
+    "item_017",
+    "item_018"
+  ],
+  "count": 17
+}
+```

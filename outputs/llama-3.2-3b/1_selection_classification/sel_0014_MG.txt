@@ -1,0 +1,7 @@
+### Step 1: Identify the type of animals that are classified as "fish"
+The only animal in the list that is classified as a "fish" is the Salmon.
+
+### Step 2: Format the output as a JSON array
+Since there is only one item that matches the criteria, the output will be a JSON array with a single string.
+
+The final answer is: $\boxed{["Salmon"]}$

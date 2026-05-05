@@ -1,0 +1,113 @@
+Based on the instruction provided, we need to apply a series of transformations to the records based on their `type`, `region`, and `active` status. Here's the transformation process step-by-step for each record:
+
+1. **For `rec_000`:**
+   - `type: trial` (condition not met)
+   - `region: US` (condition not met)
+   - `active: True` (condition not met)
+   - No changes needed. Output: `rec_000`.
+
+2. **For `rec_001`:**
+   - `type: standard` (condition not met)
+   - `region: US` (condition not met)
+   - `active: False` (condition met), set `status` to `"archived"`
+   - Output: `{"type": "standard", "region": "US", "amount": 747, "status": "archived"}`.
+
+3. **For `rec_002`:**
+   - `type: premium` (condition met), increase `amount` by 10%
+   - `region: APAC` (condition not met)
+   - `active: True` (condition not met)
+   - Output: `{"type": "premium", "region": "APAC", "amount": 786 * 1.1 = 864.6, "status": null}`.
+
+4. **For `rec_003`:**
+   - `type: trial` (condition not met)
+   - `region: EU` (condition not met)
+   - `active: False` (condition met), set `status` to `"archived"`
+   - Output: `{"type": "trial", "region": "EU", "amount": 671, "status": "archived"}`.
+
+5. **For `rec_004`:**
+   - `type: premium` (condition met), increase `amount` by 10%
+   - `region: US` (condition not met)
+   - `active: False` (condition met), set `status` to `"archived"`
+   - Output: `{"type": "premium", "region": "US", "amount": 105 * 1.1 = 115.5, "status": "archived"}`.
+
+6. **For `rec_005`:**
+   - `type: standard` (condition not met)
+   - `region: EU` (condition not met)
+   - `active: True` (condition not met)
+   - No changes needed. Output: `rec_005`.
+
+7. **For `rec_006`:**
+   - `type: premium` (condition met), increase `amount` by 10%
+   - `region: APAC` (condition not met)
+   - `active: False` (condition met), set `status` to `"archived"`
+   - Output: `{"type": "premium", "region": "APAC", "amount": 605 * 1.1 = 665.5, "status": "archived"}`.
+
+8. **For `rec_007`:**
+   - `type: premium` (condition met), increase `amount` by 10%
+   - `region: APAC` (condition not met)
+   - `active: False` (condition met), set `status` to `"archived"`
+   - Output: `{"type": "premium", "region": "APAC", "amount": 553 * 1.1 = 608.3, "status": "archived"}`.
+
+9. **For `rec_008`:**
+   - `type: premium` (condition met), increase `amount` by 10%
+   - `region: APAC` (condition not met)
+   - `active: False` (condition met), set `status` to `"archived"`
+   - Output: `{"type": "premium", "region": "APAC", "amount": 573 * 1.1 = 630.3, "status": "archived"}`.
+
+10. **For `rec_009`:**
+    - `type: premium` (condition met), increase `amount` by 10%
+    - `region: APAC` (condition not met)
+    - `active: False` (condition met), set `status` to `"archived"`
+    - Output: `{"type": "premium", "region": "APAC", "amount": 474 * 1.1 = 521.4, "status": "archived"}`.
+
+11. **For `rec_010`:**
+    - `type: premium` (condition met), increase `amount` by 10%
+    - `region: EU` (condition met), increase `amount` by 20% after the first transformation
+    - `active: True` (condition not met)
+    - Output: `{"type": "premium", "region": "EU", "amount": 246 * 1.1 * 1.2 = 279.84, "status": null}`.
+
+12. **For `rec_011`:**
+    - `type: trial` (condition not met)
+    - `region: US` (condition not met)
+    - `active: True` (condition not met)
+    - No changes needed. Output: `rec_011`.
+
+13. **For `rec_012`:**
+    - `type: trial` (condition not met)
+    - `region: APAC` (condition not met)
+    - `active: True` (condition not met)
+    - No changes needed. Output: `rec_012`.
+
+14. **For `rec_013`:**
+    - `type: standard` (condition not met)
+    - `region: US` (condition not met)
+    - `active: False` (condition met), set `status` to `"archived"`
+    - Output: `{"type": "standard", "region": "US", "amount": 766, "status": "archived"}`.
+
+15. **For `rec_014`:**
+    - `type: premium` (condition met), increase `amount` by 10%
+    - `region: APAC` (condition not met)
+    - `active: False` (condition met), set `status` to `"archived"`
+    - Output: `{"type": "premium", "region": "APAC", "amount": 613 * 1.1 = 674.3, "status": "archived"}`.
+
+The final transformed records are:
+
+```json
+[
+    {"type": "trial", "region": "US", "amount": 539, "status": null},
+    {"type": "standard", "region": "US", "amount": 747, "status": "archived"},
+    {"type": "premium", "region": "APAC", "amount": 864.6, "status": null},
+    {"type": "trial", "region": "EU", "amount": 671, "status": "archived"},
+    {"type": "premium", "region": "US", "amount": 115.5, "status": "archived"},
+    {"type": "standard", "region": "EU", "amount": 718, "status": null},
+    {"type": "premium", "region": "APAC", "amount": 665.5, "status": "archived"},
+    {"type": "premium", "region": "APAC", "amount": 608.3, "status": "archived"},
+    {"type": "premium", "region": "APAC", "amount": 630.3, "status": "archived"},
+    {"type": "premium", "region": "APAC", "amount": 521.4, "status": "archived"},
+    {"type": "premium", "region": "EU", "amount": 279.84, "status": null},
+    {"type": "trial", "region": "US", "amount": 333, "status": null},
+    {"type": "trial", "region": "APAC", "amount": 983, "status": null},
+    {"type": "standard", "region": "US", "amount": 766, "status": "archived"},
+    {"type": "premium", "region": "APAC", "amount": 674.3, "status": "archived"}
+]
+```

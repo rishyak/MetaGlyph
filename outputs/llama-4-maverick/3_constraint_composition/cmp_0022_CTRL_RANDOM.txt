@@ -1,0 +1,111 @@
+To solve this problem, we need to follow the given instruction and apply it to the provided dataset.
+
+The instruction is: `SELECT x.id | x.category ¤ {A, B} § x.status ¤ {active} ↯ {selected_ids: [...], count: n}`
+
+Let's break down the instruction:
+
+1. `SELECT x.id`: We are selecting the `id` attribute from the dataset.
+2. `| x.category ¤ {A, B}`: This is a filter operation. It means we are filtering the dataset to include only items where the `category` is either `A` or `B`. The `¤` symbol indicates a "contains" or "in" operation.
+3. `§ x.status ¤ {active}`: This is another filter operation. It further filters the dataset to include only items where the `status` is `active`. Again, `¤` indicates a "contains" or "in" operation.
+4. `↯ {selected_ids: [...], count: n}`: This indicates the output format. We need to return a JSON object with two properties: `selected_ids` (an array of the selected `id`s) and `count` (the number of selected items).
+
+Now, let's apply these steps to the dataset:
+
+### Step 1: Filter by Category (A or B)
+
+First, we filter the dataset to include only items with `category` `A` or `B`.
+
+- item_000: Category: B (include)
+- item_001: Category: A (include)
+- item_002: Category: A (include)
+- item_003: Category: C (exclude)
+- item_004: Category: C (exclude)
+- item_005: Category: C (exclude)
+- item_006: Category: B (include)
+- item_007: Category: B (include)
+- item_008: Category: C (exclude)
+- item_009: Category: B (include)
+- item_010: Category: C (exclude)
+- item_011: Category: A (include)
+- item_012: Category: B (include)
+- item_013: Category: A (include)
+- item_014: Category: B (include)
+- item_015: Category: A (include)
+- item_016: Category: A (include)
+- item_017: Category: B (include)
+- item_018: Category: A (include)
+- item_019: Category: B (include)
+
+Items with Category A or B:
+- item_000
+- item_001
+- item_002
+- item_006
+- item_007
+- item_009
+- item_011
+- item_012
+- item_013
+- item_014
+- item_015
+- item_016
+- item_017
+- item_018
+- item_019
+
+### Step 2: Filter by Status (active)
+
+Next, we filter these items further to include only those with `status` `active`.
+
+- item_000: Status: inactive (exclude)
+- item_001: Status: inactive (exclude)
+- item_002: Status: active (include)
+- item_006: Status: active (include)
+- item_007: Status: pending (exclude)
+- item_009: Status: active (include)
+- item_011: Status: inactive (exclude)
+- item_012: Status: pending (exclude)
+- item_013: Status: inactive (exclude)
+- item_014: Status: active (include)
+- item_015: Status: active (include)
+- item_016: Status: pending (exclude)
+- item_017: Status: inactive (exclude)
+- item_018: Status: active (include)
+- item_019: Status: active (include)
+
+Items with Category A or B and Status active:
+- item_002
+- item_006
+- item_009
+- item_014
+- item_015
+- item_018
+- item_019
+
+### Step 3: Collect IDs and Count
+
+Now, we collect the `id`s of these items and count them.
+
+Selected IDs:
+- item_002: item_002
+- item_006: item_006
+- item_009: item_009
+- item_014: item_014
+- item_015: item_015
+- item_018: item_018
+- item_019: item_019
+
+The `id`s are: `["item_002", "item_006", "item_009", "item_014", "item_015", "item_018", "item_019"]`
+
+Count: 7
+
+### Output
+
+The output in the required JSON format is:
+
+```json
+{
+  "selected_ids": ["item_002", "item_006", "item_009", "item_014", "item_015", "item_018", "item_019"],
+  "count": 7
+}
+```

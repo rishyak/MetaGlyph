@@ -1,0 +1,35 @@
+```json
+{
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_004",
+    "item_005",
+    "item_006",
+    "item_007",
+    "item_008",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_013",
+    "item_014",
+    "item_015",
+    "item_016",
+    "item_017",
+    "item_018"
+  ],
+  "count": 18
+}
+```
+
+**Explanation:**
+The filter selects records where:
+- Priority is 'high' **OR** Status is not 'inactive'
+
+Excluded items:
+- item_012: Status is 'inactive' AND Priority is not 'high'
+- item_019: Status is 'inactive' AND Priority is not 'high'
+
+All other 18 items meet at least one of the criteria.

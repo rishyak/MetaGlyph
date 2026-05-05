@@ -1,0 +1,27 @@
+To solve this task, we need to follow the given instruction: `SELECT x | x.size ∈ {medium} → [x.name]`. This means we have to select the names of animals that have a medium size.
+
+First, let's review the given data:
+
+1. Cat: type: mammal, domestic: True, size: small
+2. Snake: type: reptile, domestic: False, size: medium
+3. Dog: type: mammal, domestic: True, size: medium
+4. Goldfish: type: fish, domestic: True, size: small
+5. Penguin: type: bird, domestic: False, size: medium
+6. Eagle: type: bird, domestic: False, size: medium
+7. Whale: type: mammal, domestic: False, size: large
+8. Parrot: type: bird, domestic: True, size: small
+9. Lion: type: mammal, domestic: False, size: large
+10. Shark: type: fish, domestic: False, size: large
+
+Now, let's filter the animals based on their size being 'medium':
+
+- Snake: size: medium
+- Dog: size: medium
+- Penguin: size: medium
+- Eagle: size: medium
+
+The names of these animals are: Snake, Dog, Penguin, Eagle.
+
+To present the answer in the required JSON format, we need to create an array of these names.
+
+The final answer is: ["Snake", "Dog", "Penguin", "Eagle"]

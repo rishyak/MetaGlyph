@@ -1,0 +1,13 @@
+Looking at the instruction `SELECT x | x.type IN {fish} -> [x.name]`, I need to:
+
+1. Filter all animals where `type` equals `fish`
+2. Return their names
+
+Reviewing the input data:
+- **Salmon**: type: **fish** ✓
+
+This is the only animal in the dataset with type "fish".
+
+```json
+["Salmon"]
+```

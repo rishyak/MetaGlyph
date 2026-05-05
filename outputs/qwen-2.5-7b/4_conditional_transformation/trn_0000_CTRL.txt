@@ -1,0 +1,221 @@
+To solve the problem, we need to apply the given transformations to each record based on the conditions provided:
+
+1. \( \forall x : TRANSFORM \; x \; | \; (x.type \neq "premium" \Rightarrow x.amount \rightarrow x.amount \times 1.1) \circ (x.region \neq "EU" \Rightarrow x.amount \rightarrow x.amount \times 1.2) \circ (x.active \neq false \Rightarrow x.status \rightarrow "archived") \rightarrow [x] \)
+
+Let's break down the transformations step-by-step:
+
+- If `x.type` is not "premium", then multiply `x.amount` by 1.1.
+- If `x.region` is not "EU", then multiply `x.amount` by 1.2.
+- If `x.active` is not `false`, then change `x.status` to "archived".
+
+We will apply these transformations to each record and return the transformed records in JSON format.
+
+```json
+[
+  {
+    "type": "trial",
+    "region": "US",
+    "amount": 35,
+    "active": false,
+    "status": null
+  },
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 152 * 1.1,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 923,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 42,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 248 * 1.1,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "US",
+    "amount": 743 * 1.1,
+    "active": false,
+    "status": null
+  },
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 724 * 1.1,
+    "active": false,
+    "status": null
+  },
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 169,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "type": "premium",
+    "region": "US",
+    "amount": 104,
+    "active": false,
+    "status": null
+  },
+  {
+    "type": "standard",
+    "region": "EU",
+    "amount": 613 * 1.1,
+    "active": false,
+    "status": null
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 836 * 1.1,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 559 * 1.1,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "type": "premium",
+    "region": "US",
+    "amount": 575,
+    "active": false,
+    "status": null
+  }
+]
+```
+
+Now let's calculate the specific amounts:
+
+- For `rec_000`: \(35\)
+- For `rec_001`: \(152 \times 1.1 = 167.2\)
+- For `rec_002`: \(923\)
+- For `rec_003`: \(42 \times 1.1 = 46.2\)
+- For `rec_004`: \(248 \times 1.1 = 272.8\)
+- For `rec_005`: \(743 \times 1.1 = 817.3\)
+- For `rec_006`: \(724 \times 1.1 = 806.4\)
+- For `rec_007`: \(169\)
+- For `rec_008`: \(104\)
+- For `rec_009`: \(613 \times 1.1 = 674.3\)
+- For `rec_010`: \(836 \times 1.1 = 919.6\)
+- For `rec_011`: \(559 \times 1.1 = 614.9\)
+- For `rec_012`: \(575\)
+
+So, the final JSON output is:
+
+```json
+[
+  {
+    "type": "trial",
+    "region": "US",
+    "amount": 35,
+    "active": false,
+    "status": null
+  },
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 167.2,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 923,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 46.2,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 272.8,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "US",
+    "amount": 817.3,
+    "active": false,
+    "status": null
+  },
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 806.4,
+    "active": false,
+    "status": null
+  },
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 169,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "type": "premium",
+    "region": "US",
+    "amount": 104,
+    "active": false,
+    "status": null
+  },
+  {
+    "type": "standard",
+    "region": "EU",
+    "amount": 674.3,
+    "active": false,
+    "status": null
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 919.6,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 614.9,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "type": "premium",
+    "region": "US",
+    "amount": 575,
+    "active": false,
+    "status": null
+  }
+]
+```

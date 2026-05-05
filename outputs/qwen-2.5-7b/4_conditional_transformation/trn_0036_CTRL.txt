@@ -1,0 +1,118 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 552,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 675,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 36,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 406,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 730,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 302,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 148,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 930,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 1000,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 736,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 307,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 736,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 239,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 252,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 577,
+        "active": false
+    }
+]
+```
+
+Explanation:
+- For `rec_000`, the `type` is not "premium", so the `amount` is increased by 10% (`552 * 1.1 = 607.2`), and since `active` is `False`, no further changes are made.
+- For `rec_001`, the `type` is "premium", so no changes are made.
+- For `rec_002`, the `type` is not "premium" and `region` is "US", so the `amount` is increased by 10% (`36 * 1.1 = 39.6`) and then by 20% (`39.6 * 1.2 = 47.52`), and since `active` is `True`, the `status` is set to "archived".
+- For `rec_003`, the `type` is "premium" and `region` is "APAC", so the `amount` is increased by 10% (`406 * 1.1 = 446.6`), and since `active` is `True`, the `status` is set to "archived".
+- For `rec_004`, the `type` is "premium" and `region` is "EU", so no changes are made.
+- For `rec_005`, the `type` is "standard" and `region` is "APAC", so the `amount` is increased by 10% (`302 * 1.1 = 332.2`), and since `active` is `False`, no further changes are made.
+- For `rec_006`, the `type` is "standard" and `region` is "US", so the `amount` is increased by 10% (`148 * 1.1 = 162.8`) and then by 20% (`162.8 * 1.2 = 195.36`), and since `active` is `True`, the `status` is set to "archived".
+- For `rec_007`, the `type` is "premium" and `region` is "US", so the `amount` is increased by 10% (`930 * 1.1 = 1023`), and since `active` is `False`, no further changes are made.
+- For `rec_008`, the `type` is "standard" and `region` is "APAC", so the `amount` is increased by 10% (`1000 * 1.1 = 1100`), and since `active` is `False`, no further changes are made.
+- For `rec_009`, the `type` is "trial" and `region` is "EU", so the `amount` is increased by 10% (`736 * 1.1 = 809.6`), and since `active` is `True`, the `status` is set to "archived".
+- For `rec_010`, the `type` is "trial" and `region` is "APAC", so the `amount` is increased by 10% (`307 * 1.1 = 337.7`), and since `active` is `False`, no further changes are made.
+- For `rec_011`, the `type` is "standard" and `region` is "APAC", so the `amount` is increased by 10% (`736 * 1.1 = 809.6`), and since `active` is `True`, the `status` is set to "archived".
+- For `rec_012`, the `type` is "premium" and `region` is "APAC", so the `amount` is increased by 10% (`239 * 1.1 = 262.9`), and since `active` is `True`, the `status` is set to "archived".
+- For `rec_013`, the `type` is "standard" and `region` is "US", so the `amount` is increased by 10% (`252 * 1.1 = 277.2`), and since `active` is `False`, no further changes are made.
+- For `rec_014`, the `type` is "standard" and `region` is "EU", so the `amount` is increased by 10% (`577 * 1.1 = 634.7`), and since `active` is `False`, no further changes are made.

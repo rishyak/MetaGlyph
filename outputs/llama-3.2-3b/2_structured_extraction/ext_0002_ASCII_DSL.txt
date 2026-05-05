@@ -1,0 +1,7 @@
+```json
+{
+  "company": "Innovation Labs",
+  "sender": "bob.johnson@innovationlabs.com",
+  "date": "2024-07-04"
+}
+```

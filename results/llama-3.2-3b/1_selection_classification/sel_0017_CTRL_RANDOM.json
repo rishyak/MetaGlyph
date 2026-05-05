@@ -1,0 +1,39 @@
+{
+  "prompt_id": "sel_0017_CTRL_RANDOM",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "Shark",
+    "Cat",
+    "Dog",
+    "Parrot",
+    "Turtle"
+  ],
+  "gold_output": [
+    "cat",
+    "crocodile",
+    "dog",
+    "lion",
+    "parrot",
+    "penguin",
+    "turtle",
+    "whale"
+  ],
+  "exact_match": false,
+  "accuracy": 0.4444444444444444,
+  "f1_score": 0.6153846153846154,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=8, extra=5"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "incomplete",
+  "error_details": "Accuracy: 0.44",
+  "semantic_equivalence_pass": false
+}

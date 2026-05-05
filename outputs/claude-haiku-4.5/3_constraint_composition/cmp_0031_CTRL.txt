@@ -1,15 +1,23 @@
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_011"
+  ],
+  "count": 1
 }
 ```
 
-The query requires items that simultaneously have:
-- security attribute (⊙(security)) - NOT PRESENT in dataset
-- high_priority attribute (⊙(high_priority)) - NOT PRESENT in dataset
-- performance attribute (⊙(performance)) - NOT PRESENT in dataset
-- NOT deprecated (⊖(deprecated)) - NOT PRESENT in dataset
-- NOT experimental (⊖(experimental)) - NOT PRESENT in dataset
+**Explanation:**
 
-Since the dataset contains only Category, Status, Priority, and Value attributes, and none of the required attributes (security, high_priority, performance, deprecated, experimental) exist in the data, no items match the filter criteria.
+The query requires:
+- `x.priority ∈ {high}` (Priority must be "high")
+- `x.status ∉ {inactive}` (Status must NOT be "inactive")
+
+Checking all items with priority "high":
+- **item_000**: priority=high, status=inactive ❌ (status is inactive)
+- **item_006**: priority=high, status=inactive ❌ (status is inactive)
+- **item_011**: priority=high, status=pending ✅ (meets both conditions)
+- **item_014**: priority=high, status=inactive ❌ (status is inactive)
+- **item_018**: priority=high, status=inactive ❌ (status is inactive)
+
+Only **item_011** satisfies both conditions.

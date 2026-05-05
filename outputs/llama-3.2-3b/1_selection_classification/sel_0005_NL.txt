@@ -1,0 +1,23 @@
+### Step 1: Identify the attributes of interest
+The problem requires identifying animals that are both domestic and birds.
+
+### Step 2: List the attributes of each animal
+- Turtle: type: reptile, domestic: True, size: small
+- Salmon: type: fish, domestic: False, size: medium
+- Whale: type: mammal, domestic: False, size: large
+- Crocodile: type: reptile, domestic: False, size: large
+- Parrot: type: bird, domestic: True, size: small
+- Cat: type: mammal, domestic: True, size: small
+- Elephant: type: mammal, domestic: False, size: large
+- Eagle: type: bird, domestic: False, size: medium
+- Goldfish: type: fish, domestic: True, size: small
+- Lion: type: mammal, domestic: False, size: large
+
+### Step 3: Filter the list to include only animals that are both domestic and birds
+Based on the given conditions, the animals that meet both criteria are:
+- Parrot: type: bird, domestic: True, size: small
+- Cat: type: mammal, domestic: True, size: small
+- Goldfish: type: fish, domestic: True, size: small
+
+### Step 4: Format the output as a JSON array of strings
+The final answer is: $\boxed["Parrot", "Cat", "Goldfish"]$

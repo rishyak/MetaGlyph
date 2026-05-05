@@ -1,3 +1,22 @@
+# Analysis
+
+The instruction asks me to select all items where the type is NOT "bird" and return their names.
+
+**Filtering for x.type ∉ {bird}:**
+
+- Goldfish: type = fish ✓ (not bird)
+- Hamster: type = mammal ✓ (not bird)
+- Snake: type = reptile ✓ (not bird)
+- Whale: type = mammal ✓ (not bird)
+- Parrot: type = bird ✗ (is bird)
+- Shark: type = fish ✓ (not bird)
+- Penguin: type = bird ✗ (is bird)
+- Cat: type = mammal ✓ (not bird)
+- Eagle: type = bird ✗ (is bird)
+- Salmon: type = fish ✓ (not bird)
+
+### Output
+
 ```json
-["Cat", "Hamster"]
+["Goldfish", "Hamster", "Snake", "Whale", "Shark", "Cat", "Salmon"]
 ```

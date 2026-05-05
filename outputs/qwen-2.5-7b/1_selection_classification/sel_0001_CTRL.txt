@@ -1,0 +1,37 @@
+To solve this query, we need to filter out animals that do not have a "medium" size. The query `SELECT x | x.size ∉ {medium} → [x.name]` means we want to select the names of animals whose size is not "medium".
+
+Given the list of animals and their sizes:
+
+- Eagle: medium
+- Penguin: medium
+- Goldfish: small
+- Dog: medium
+- Shark: large
+- Crocodile: large
+- Turtle: small
+- Hamster: small
+- Cat: small
+- Parrot: small
+
+We can see that the animals with a size other than "medium" are:
+
+- Goldfish: small
+- Dog: medium (but we exclude it)
+- Shark: large
+- Crocodile: large
+- Turtle: small
+- Hamster: small
+- Cat: small
+- Parrot: small
+
+So, the names of the animals that do not have a "medium" size are:
+
+```json
+["Goldfish", "Shark", "Crocodile", "Turtle", "Hamster", "Cat", "Parrot"]
+```
+
+Thus, the output in the required format is:
+
+```json
+["Goldfish", "Shark", "Crocodile", "Turtle", "Hamster", "Cat", "Parrot"]
+```

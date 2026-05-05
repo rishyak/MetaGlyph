@@ -1,0 +1,28 @@
+### Step 1: Identify the category of each item
+Review the provided list to identify the category of each item.
+
+- Notebook: stationery
+- Smartphone: electronics
+- Microwave: appliances
+- Laptop: electronics
+- Headphones: electronics
+- Desk: furniture
+- Tablet: electronics
+- Bookshelf: furniture
+- Stapler: stationery
+- Chair: furniture
+
+### Step 2: Filter items by category
+Filter the list to include only items with a category of "electronics".
+
+- Smartphone: electronics
+- Laptop: electronics
+- Headphones: electronics
+- Tablet: electronics
+
+### Step 3: Format the output as a JSON array
+Format the filtered list as a JSON array of strings.
+
+```json
+["Smartphone", "Laptop", "Headphones", "Tablet"]
+```

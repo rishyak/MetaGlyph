@@ -1,0 +1,104 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 344,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 577,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 690,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 934,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 318,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 321,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 814,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 462 * 1.1 * 1.2,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 822,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 300,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 698,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 160,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 496,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 917 * 1.2,
+        "active": true
+    }
+]
+```
+
+Explanation:
+- For `rec_000`, `rec_002`, and `rec_009` to `rec_012`, the `active` field is `false`, so their status is set to "archived".
+- For `rec_001`, `rec_003`, `rec_005`, `rec_007`, `rec_008`, `rec_010`, `rec_011`, and `rec_014`, the `active` field is `true`, so no changes are made.
+- For `rec_004` and `rec_006`, the `active` field is `false`, but they do not have the `type` of "premium", so no changes are made.
+- For `rec_007` and `rec_013`, the `type` is "premium" and the `region` is "EU". Therefore, their amounts are increased by 10% and then 20%, respectively.
+- The final amounts for `rec_007` and `rec_013` are calculated as follows:
+  - `rec_007`: \(462 \times 1.1 \times 1.2 = 545.28\)
+  - `rec_013`: \(917 \times 1.2 = 1100.4\)

@@ -1,0 +1,58 @@
+{
+  "prompt_id": "sel_0010_CTRL_RANDOM",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this task, we need to understand the given instruction and apply it to the provided input.",
+    "Breaking down the instruction:",
+    "SELECT x`: This indicates we are selecting or filtering items from a dataset.",
+    "x.domestic ¤ {True}`: This means we are filtering the items where the `domestic` attribute is `True`. The `¤` symbol is used here to denote a condition or filter.",
+    "↯ [x.name]`: After filtering, we are projecting or extracting the `name` attribute of the selected items. The `↯` symbol indicates this projection.",
+    "Given the input dataset:",
+    "Snake: type: reptile, domestic: False, size: medium",
+    "Parrot: type: bird, domestic: True, size: small",
+    "Elephant: type: mammal, domestic: False, size: large",
+    "Penguin: type: bird, domestic: False, size: medium",
+    "Whale: type: mammal, domestic: False, size: large",
+    "Dog: type: mammal, domestic: True, size: medium",
+    "Crocodile: type: reptile, domestic: False, size: large",
+    "Lion: type: mammal, domestic: False, size: large",
+    "Goldfish: type: fish, domestic: True, size: small",
+    "Hamster: type: mammal, domestic: True, size: small",
+    "We need to filter the animals where `domestic` is `True` and then extract their names.",
+    "Filter animals where `domestic` is `True`:",
+    "Parrot: domestic: True",
+    "Dog: domestic: True",
+    "Goldfish: domestic: True",
+    "Hamster: domestic: True",
+    "Extract the names of these animals:",
+    "Parrot",
+    "Dog",
+    "Goldfish",
+    "Hamster",
+    "Therefore, the names of the domestic animals are: `[\"Parrot\", \"Dog\", \"Goldfish\", \"Hamster\"]`."
+  ],
+  "gold_output": [
+    "dog",
+    "goldfish",
+    "hamster",
+    "parrot"
+  ],
+  "exact_match": false,
+  "accuracy": 0.14285714285714285,
+  "f1_score": 0.25,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=4, extra=28"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.14",
+  "semantic_equivalence_pass": false
+}

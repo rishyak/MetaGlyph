@@ -5,7 +5,12 @@
   "condition": "CTRL",
   "parse_success": true,
   "parsed_output": [
-    "Hamster"
+    "Penguin",
+    "Snake",
+    "Salmon",
+    "Eagle",
+    "Whale",
+    "Crocodile"
   ],
   "gold_output": [
     "goldfish",
@@ -14,18 +19,18 @@
     "turtle"
   ],
   "exact_match": false,
-  "accuracy": 0.25,
-  "f1_score": 0.4,
+  "accuracy": 0.0,
+  "f1_score": 0,
   "operator_fidelity": [
     {
       "operator": "∉",
       "checked": true,
-      "passed": true,
-      "details": "Exclusion constraint satisfied"
+      "passed": false,
+      "details": "missing=4, extra=6"
     }
   ],
   "overall_pass": false,
-  "error_type": "incomplete",
-  "error_details": "Accuracy: 0.25",
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
   "semantic_equivalence_pass": false
 }

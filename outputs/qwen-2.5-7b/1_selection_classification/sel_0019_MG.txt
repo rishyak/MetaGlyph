@@ -1,0 +1,5 @@
+```json
+["Salmon", "Eagle", "Penguin", "Snake"]
+```
+
+These animals are not commonly kept as pets (`domestic: False`).

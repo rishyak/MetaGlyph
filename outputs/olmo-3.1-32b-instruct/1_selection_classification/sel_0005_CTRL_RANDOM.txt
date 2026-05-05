@@ -1,0 +1,8 @@
+[
+  "Turtle",
+  "Salmon",
+  "Whale",
+  "Crocodile",
+  "Eagle",
+  "Lion"
+]

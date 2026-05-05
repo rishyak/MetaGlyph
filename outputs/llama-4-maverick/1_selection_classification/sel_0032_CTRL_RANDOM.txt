@@ -1,0 +1,20 @@
+To solve this problem, we need to understand the given instruction and apply it to the provided input.
+
+The instruction is: `SELECT x | x.type ¤ {bird} ↯ [x.name]`
+
+1. **Understanding the Instruction**:
+   - `SELECT x` indicates we are selecting certain elements `x` from a dataset.
+   - `x.type ¤ {bird}` means we are filtering the elements to include only those where the `type` is `bird`. The symbol `¤` is interpreted as "is in" or "contains," so `x.type ¤ {bird}` means `x.type` equals `bird`.
+   - `↯ [x.name]` indicates that from the filtered elements, we are projecting or selecting the `name` attribute.
+
+2. **Applying the Instruction to the Input**:
+   - The input is a list of animals with their attributes. We need to filter this list to include only those animals where `type` equals `bird`.
+   - The animals of type `bird` from the input are: `Parrot`, `Penguin`, and `Eagle`.
+   - We then select the `name` of these animals. Since the names are already given as `Parrot`, `Penguin`, and `Eagle`, these are the values we are interested in.
+
+3. **Formatting the Output**:
+   - The output should be a JSON array of strings, where each string is the name of a bird.
+
+Given the animals of type `bird` are `Parrot`, `Penguin`, and `Eagle`, the names are already directly available.
+
+The final answer is: `["Parrot", "Penguin", "Eagle"]`

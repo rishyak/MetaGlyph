@@ -4,7 +4,108 @@
   "family": "4_conditional_transformation",
   "condition": "CTRL",
   "parse_success": true,
-  "parsed_output": [],
+  "parsed_output": [
+    {
+      "type": "standard",
+      "region": "US",
+      "amount": 526.56,
+      "active": true,
+      "status": "archived"
+    },
+    {
+      "type": "premium",
+      "region": "EU",
+      "amount": 958,
+      "active": false
+    },
+    {
+      "type": "premium",
+      "region": "EU",
+      "amount": 723,
+      "active": false
+    },
+    {
+      "type": "standard",
+      "region": "US",
+      "amount": 414.36,
+      "active": true,
+      "status": "archived"
+    },
+    {
+      "type": "standard",
+      "region": "APAC",
+      "amount": 1007.76,
+      "active": true,
+      "status": "archived"
+    },
+    {
+      "type": "trial",
+      "region": "EU",
+      "amount": 68,
+      "active": true,
+      "status": "archived"
+    },
+    {
+      "type": "trial",
+      "region": "EU",
+      "amount": 524,
+      "active": true,
+      "status": "archived"
+    },
+    {
+      "type": "standard",
+      "region": "APAC",
+      "amount": 121.44,
+      "active": true,
+      "status": "archived"
+    },
+    {
+      "type": "standard",
+      "region": "APAC",
+      "amount": 104.28,
+      "active": true,
+      "status": "archived"
+    },
+    {
+      "type": "premium",
+      "region": "US",
+      "amount": 974,
+      "active": true,
+      "status": "archived"
+    },
+    {
+      "type": "trial",
+      "region": "APAC",
+      "amount": 66,
+      "active": true,
+      "status": "archived"
+    },
+    {
+      "type": "premium",
+      "region": "APAC",
+      "amount": 607,
+      "active": false
+    },
+    {
+      "type": "premium",
+      "region": "US",
+      "amount": 695,
+      "active": false
+    },
+    {
+      "type": "standard",
+      "region": "EU",
+      "amount": 415,
+      "active": true,
+      "status": "archived"
+    },
+    {
+      "type": "trial",
+      "region": "APAC",
+      "amount": 50,
+      "active": false
+    }
+  ],
   "gold_output": [
     {
       "id": "rec_000",
@@ -122,16 +223,16 @@
   "f1_score": 0.0,
   "operator_fidelity": [
     {
-      "operator": "⇒",
-      "checked": true,
-      "passed": false,
-      "details": "Wrong number of records"
-    },
-    {
       "operator": "∘",
       "checked": true,
       "passed": false,
       "details": "Composition order may be incorrect"
+    },
+    {
+      "operator": "⇒",
+      "checked": true,
+      "passed": false,
+      "details": "15 records with wrong transformations"
     }
   ],
   "overall_pass": false,

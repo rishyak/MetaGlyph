@@ -1,0 +1,1 @@
+{"sender_name": "Bob Johnson", "date": "2024-02-15", "sender_title": "Analyst", "company": "Innovation Labs"}

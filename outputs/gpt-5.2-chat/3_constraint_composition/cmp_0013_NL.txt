@@ -1,4 +1,21 @@
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_002",
+    "item_004",
+    "item_005",
+    "item_006",
+    "item_008",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_012",
+    "item_013",
+    "item_014",
+    "item_015",
+    "item_017",
+    "item_019"
+  ],
+  "count": 16
 }

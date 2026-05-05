@@ -1,0 +1,16 @@
+Looking at the query syntax:
+- `SELECT x |` - select items where
+- `(x.size ¤ {small})` - size is small
+- `§ (x.domestic ¤ {True})` - AND domestic is True
+- `↯ [x.name]` - return the name
+
+I need to find animals that are **both** small **AND** domestic.
+
+Checking each animal:
+- **Cat**: size: small ✓, domestic: True ✓ → **MATCH**
+- **Hamster**: size: small ✓, domestic: True ✓ → **MATCH**
+- All others: either not small or not domestic → no match
+
+```json
+["Cat", "Hamster"]
+```

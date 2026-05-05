@@ -1,3 +1,21 @@
+# Analysis
+
+The instruction asks me to select all animals where the type is NOT fish, and return their names.
+
+**Filtering logic:** `x.type ∉ {fish}` means "type is not in the set containing fish"
+
+**Reviewing each animal:**
+- Crocodile: type = reptile ✓ (not fish)
+- Dog: type = mammal ✓ (not fish)
+- Snake: type = reptile ✓ (not fish)
+- Cat: type = mammal ✓ (not fish)
+- Penguin: type = bird ✓ (not fish)
+- Eagle: type = bird ✓ (not fish)
+- Salmon: type = fish ✗ (is fish, exclude)
+- Lion: type = mammal ✓ (not fish)
+- Whale: type = mammal ✓ (not fish)
+- Turtle: type = reptile ✓ (not fish)
+
 ```json
-["Cat", "Dog"]
+["Crocodile", "Dog", "Snake", "Cat", "Penguin", "Eagle", "Lion", "Whale", "Turtle"]
 ```

@@ -1,0 +1,237 @@
+{
+  "prompt_id": "trn_0005_CTRL_RANDOM",
+  "model": "llama-4-maverick",
+  "family": "4_conditional_transformation",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    {
+      "type": "standard",
+      "region": "US",
+      "amount": 398,
+      "active": true
+    },
+    {
+      "type": "premium",
+      "region": "EU",
+      "amount": 1264.56,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "type": "premium",
+      "region": "EU",
+      "amount": 954.36,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "type": "standard",
+      "region": "US",
+      "amount": 313,
+      "active": true
+    },
+    {
+      "type": "standard",
+      "region": "APAC",
+      "amount": 763,
+      "active": true
+    },
+    {
+      "type": "trial",
+      "region": "EU",
+      "amount": 81.6,
+      "active": true
+    },
+    {
+      "type": "trial",
+      "region": "EU",
+      "amount": 628.8,
+      "active": true
+    },
+    {
+      "type": "standard",
+      "region": "APAC",
+      "amount": 92,
+      "active": true
+    },
+    {
+      "type": "standard",
+      "region": "APAC",
+      "amount": 79,
+      "active": true
+    },
+    {
+      "type": "premium",
+      "region": "US",
+      "amount": 1071.4,
+      "active": true
+    },
+    {
+      "type": "trial",
+      "region": "APAC",
+      "amount": 50,
+      "active": true
+    },
+    {
+      "type": "premium",
+      "region": "APAC",
+      "amount": 667.7,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "type": "premium",
+      "region": "US",
+      "amount": 764.5,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "type": "standard",
+      "region": "EU",
+      "amount": 498,
+      "active": true
+    },
+    {
+      "type": "trial",
+      "region": "APAC",
+      "amount": 317,
+      "active": false,
+      "status": "archived"
+    }
+  ],
+  "gold_output": [
+    {
+      "id": "rec_000",
+      "type": "standard",
+      "region": "US",
+      "amount": 398,
+      "active": true
+    },
+    {
+      "id": "rec_001",
+      "type": "premium",
+      "region": "EU",
+      "amount": 1264.56,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_002",
+      "type": "premium",
+      "region": "EU",
+      "amount": 954.36,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_003",
+      "type": "standard",
+      "region": "US",
+      "amount": 313,
+      "active": true
+    },
+    {
+      "id": "rec_004",
+      "type": "standard",
+      "region": "APAC",
+      "amount": 763,
+      "active": true
+    },
+    {
+      "id": "rec_005",
+      "type": "trial",
+      "region": "EU",
+      "amount": 81.6,
+      "active": true
+    },
+    {
+      "id": "rec_006",
+      "type": "trial",
+      "region": "EU",
+      "amount": 628.8,
+      "active": true
+    },
+    {
+      "id": "rec_007",
+      "type": "standard",
+      "region": "APAC",
+      "amount": 92,
+      "active": true
+    },
+    {
+      "id": "rec_008",
+      "type": "standard",
+      "region": "APAC",
+      "amount": 79,
+      "active": true
+    },
+    {
+      "id": "rec_009",
+      "type": "premium",
+      "region": "US",
+      "amount": 1071.4,
+      "active": true
+    },
+    {
+      "id": "rec_010",
+      "type": "trial",
+      "region": "APAC",
+      "amount": 50,
+      "active": true
+    },
+    {
+      "id": "rec_011",
+      "type": "premium",
+      "region": "APAC",
+      "amount": 667.7,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_012",
+      "type": "premium",
+      "region": "US",
+      "amount": 764.5,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_013",
+      "type": "standard",
+      "region": "EU",
+      "amount": 498.0,
+      "active": true
+    },
+    {
+      "id": "rec_014",
+      "type": "trial",
+      "region": "APAC",
+      "amount": 317,
+      "active": false,
+      "status": "archived"
+    }
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0.0,
+  "operator_fidelity": [
+    {
+      "operator": "∘",
+      "checked": true,
+      "passed": false,
+      "details": "Composition order may be incorrect"
+    },
+    {
+      "operator": "⇒",
+      "checked": true,
+      "passed": false,
+      "details": "15 records with wrong transformations"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "logic",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

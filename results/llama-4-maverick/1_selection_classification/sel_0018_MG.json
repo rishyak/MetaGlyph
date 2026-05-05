@@ -1,0 +1,49 @@
+{
+  "prompt_id": "sel_0018_MG",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this problem, we need to follow the given instruction and filter the products based on the conditions provided.",
+    "This means we need to select products where:",
+    "The `price_range` is `high`.",
+    "The product is not `portable` (i.e., `portable` is `False`).",
+    "Let's analyze the given products:",
+    "Chair: `price_range`: medium, `portable`: True",
+    "Refrigerator: `price_range`: high, `portable`: False",
+    "Laptop: `price_range`: high, `portable`: True",
+    "Desk: `price_range`: medium, `portable`: False",
+    "Tablet: `price_range`: high, `portable`: True",
+    "Bookshelf: `price_range`: medium, `portable`: False",
+    "Stapler: `price_range`: low, `portable`: True",
+    "Headphones: `price_range`: medium, `portable`: True",
+    "Pen: `price_range`: low, `portable`: True",
+    "Smartphone: `price_range`: high, `portable`: True",
+    "Now, let's apply the conditions:",
+    "price_range` is `high`: This filters out products 1, 4, 6, 7, 8, 9.",
+    "portable` is `False`: This filters out products 3, 5, 7, 8, 9, 10.",
+    "Combining both conditions, only product 2 (Refrigerator) satisfies both:",
+    "Its `price_range` is `high`.",
+    "It is not `portable` (`portable` is `False`).",
+    "Therefore, the product that matches the given conditions is \"Refrigerator\"."
+  ],
+  "gold_output": [
+    "refrigerator"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "missing=1, extra=22"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

@@ -1,0 +1,27 @@
+### Step 1: Identify the items that are not domestic
+We need to find the items whose domestic status is False.
+
+### Step 2: Review the list of items
+- Salmon: type: fish, domestic: False, size: medium
+- Eagle: type: bird, domestic: False, size: medium
+- Dog: type: mammal, domestic: True, size: medium
+- Goldfish: type: fish, domestic: True, size: small
+- Penguin: type: bird, domestic: False, size: medium
+- Parrot: type: bird, domestic: True, size: small
+- Snake: type: reptile, domestic: False, size: medium
+- Whale: type: mammal, domestic: False, size: large
+- Lion: type: mammal, domestic: False, size: large
+- Crocodile: type: reptile, domestic: False, size: large
+
+### Step 3: Select the items with domestic status False
+The items whose domestic status is False are:
+- Salmon
+- Eagle
+- Penguin
+- Snake
+- Whale
+- Lion
+- Crocodile
+
+### Step 4: Format the output as a JSON array
+The final answer is: $\boxed["Salmon", "Eagle", "Penguin", "Snake", "Whale", "Lion", "Crocodile"]$

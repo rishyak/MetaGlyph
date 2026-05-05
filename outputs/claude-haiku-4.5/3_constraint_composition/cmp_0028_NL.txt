@@ -2,11 +2,29 @@
 {
   "selected_ids": [
     "item_001",
+    "item_002",
+    "item_003",
     "item_004",
     "item_005",
+    "item_006",
+    "item_007",
+    "item_008",
+    "item_009",
+    "item_011",
+    "item_012",
     "item_013",
-    "item_016"
+    "item_014",
+    "item_016",
+    "item_018"
   ],
-  "count": 5
+  "count": 15
 }
 ```
+
+**Explanation:**
+The selection criteria is: Priority = 'high' OR Status ≠ 'inactive'
+
+- **Selected items with Priority = 'high'**: item_001, item_004, item_005, item_013, item_016
+- **Selected items with Status ≠ 'inactive'**: item_002, item_003, item_004, item_005, item_006, item_007, item_008, item_009, item_011, item_012, item_013, item_014, item_016, item_018
+
+Combined (removing duplicates): 15 items total

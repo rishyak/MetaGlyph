@@ -1,8 +1,28 @@
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_008",
+    "item_012",
+    "item_015"
+  ],
+  "count": 7
 }
 ```
 
-The query filters for projects that match specific security, priority, and performance criteria while excluding deprecated and experimental items. The provided dataset contains items with Category, Status, Priority, and Value attributes, but lacks the required attributes (security, high_priority, performance, deprecated, experimental) specified in the query logic. Therefore, no items match the filter criteria.
+**Explanation:**
+The query selects items where:
+- Category ∈ {A, B} AND
+- Status ∈ {active}
+
+Matching items:
+- item_000: Category B, Status active ✓
+- item_001: Category A, Status active ✓
+- item_002: Category B, Status active ✓
+- item_003: Category B, Status active ✓
+- item_008: Category B, Status active ✓
+- item_012: Category B, Status active ✓
+- item_015: Category A, Status active ✓

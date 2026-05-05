@@ -1,0 +1,35 @@
+```json
+{
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_004",
+    "item_005",
+    "item_006",
+    "item_007",
+    "item_009",
+    "item_011",
+    "item_012",
+    "item_013",
+    "item_014",
+    "item_015",
+    "item_016",
+    "item_017",
+    "item_018"
+  ],
+  "count": 17
+}
+```
+
+**Explanation:**
+Records are selected where:
+- Priority is 'high' **OR** Status is not 'inactive'
+
+Excluded items (priority is not 'high' AND status is 'inactive'):
+- item_008: Priority=high (included - matches first condition)
+- item_010: Priority=medium, Status=inactive (excluded)
+- item_019: Priority=medium, Status=inactive (excluded)
+
+All other items either have priority='high' or have a status other than 'inactive'.

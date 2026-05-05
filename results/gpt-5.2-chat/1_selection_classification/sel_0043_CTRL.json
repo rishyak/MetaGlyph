@@ -5,8 +5,10 @@
   "condition": "CTRL",
   "parse_success": true,
   "parsed_output": [
-    "Cat",
-    "Hamster"
+    "Parrot",
+    "Hamster",
+    "Goldfish",
+    "Cat"
   ],
   "gold_output": [
     "eagle",
@@ -23,8 +25,8 @@
     {
       "operator": "∉",
       "checked": true,
-      "passed": true,
-      "details": "Exclusion constraint satisfied"
+      "passed": false,
+      "details": "missing=6, extra=4"
     }
   ],
   "overall_pass": false,

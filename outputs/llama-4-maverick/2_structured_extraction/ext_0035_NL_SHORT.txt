@@ -1,0 +1,30 @@
+To extract the required fields from the given email document and return them as a JSON object, we need to identify the fields "company", "date", "sender_name", and "sender_title" within the document.
+
+1. **Date**: The date is directly mentioned in the email header as "Date: 2024-02-15". So, the date is "2024-02-15".
+
+2. **Sender_name**: The sender's name is found in the signature of the email, which is "Bob Johnson".
+
+3. **Sender_title**: The sender's title is also found in the signature, listed as "Analyst".
+
+4. **Company**: The company name is mentioned in the signature as "Innovation Labs".
+
+Now, let's compile these into a JSON object with the required fields.
+
+```json
+{
+  "company": "Innovation Labs",
+  "date": "2024-02-15",
+  "sender_name": "Bob Johnson",
+  "sender_title": "Analyst"
+}
+```
+
+The final answer is: 
+```json
+{
+  "company": "Innovation Labs",
+  "date": "2024-02-15",
+  "sender_name": "Bob Johnson",
+  "sender_title": "Analyst"
+}
+```

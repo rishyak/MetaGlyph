@@ -1,5 +1,5 @@
 Family,Model,NL Accuracy,MG Accuracy,CTRL Accuracy,MG-NL Diff,MG-CTRL Diff,Significant
-1_selection_classification,gpt-5.2-chat,0.784,0.779,0.784,-0.005,-0.005,No
-2_structured_extraction,gpt-5.2-chat,0.000,0.000,0.000,+0.000,+0.000,No
-3_constraint_composition,gpt-5.2-chat,0.000,0.000,0.000,+0.000,+0.000,No
-4_conditional_transformation,gpt-5.2-chat,0.000,0.000,0.000,+0.000,+0.000,No
+3_constraint_composition,gpt-5.2-chat,0.250,0.250,0.062,+0.000,+0.188,No
+1_selection_classification,gpt-5.2-chat,1.000,1.000,0.766,+0.000,+0.234,No
+2_structured_extraction,gpt-5.2-chat,0.225,0.228,0.224,+0.003,+0.004,No
+4_conditional_transformation,gpt-5.2-chat,0.250,0.230,0.000,-0.020,+0.230,Yes

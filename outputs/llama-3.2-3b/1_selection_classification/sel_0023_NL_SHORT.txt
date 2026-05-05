@@ -1,0 +1,38 @@
+### Solution
+```json
+[
+  "Elephant",
+  "Salmon",
+  "Eagle",
+  "Whale",
+  "Shark",
+  "Penguin",
+  "Snake",
+  "Turtle",
+  "Goldfish"
+]
+```
+
+### Explanation
+To solve this problem, we need to iterate through the list of animals and check if the size of each animal is not small. We can do this by checking if the size is greater than 10kg. If it is, we add the animal's name to our output array. 
+
+Here is the code in Python:
+```python
+animals = [
+  {"name": "Penguin", "type": "bird", "domestic": False, "size": "medium"},
+  {"name": "Salmon", "type": "fish", "domestic": False, "size": "medium"},
+  {"name": "Elephant", "type": "mammal", "domestic": False, "size": "large"},
+  {"name": "Snake", "type": "reptile", "domestic": False, "size": "medium"},
+  {"name": "Cat", "type": "mammal", "domestic": True, "size": "small"},
+  {"name": "Eagle", "type": "bird", "domestic": False, "size": "medium"},
+  {"name": "Whale", "type": "mammal", "domestic": False, "size": "large"},
+  {"name": "Shark", "type": "fish", "domestic": False, "size": "large"},
+  {"name": "Turtle", "type": "reptile", "domestic": True, "size": "small"},
+  {"name": "Goldfish", "type": "fish", "domestic": True, "size": "small"}
+]
+
+result = [animal["name"] for animal in animals if animal["size"] != "small"]
+print(result)
+```
+
+This code creates a list of dictionaries where each dictionary represents an animal with its attributes. It then uses a list comprehension to create a new list that includes only the names of the animals whose size is not small. The result is a list of strings representing the names of the animals that are not small.

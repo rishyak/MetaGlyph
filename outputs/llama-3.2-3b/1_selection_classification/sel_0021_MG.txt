@@ -1,0 +1,20 @@
+### Step 1: Filter the dataset to include only animals that are not domestic.
+We will create a new list that includes only the animals that are not domestic.
+
+### Step 2: Extract the names of the filtered animals.
+We will extract the names of the animals from the filtered list.
+
+### Step 3: Return the list of names as a JSON array.
+We will return the list of names as a JSON array.
+
+
+```json
+[
+  "Penguin",
+  "Snake",
+  "Salmon",
+  "Eagle",
+  "Whale",
+  "Crocodile"
+]
+```

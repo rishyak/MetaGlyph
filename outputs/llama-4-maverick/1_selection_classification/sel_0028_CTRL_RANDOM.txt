@@ -1,0 +1,33 @@
+To solve this problem, we need to follow the given instruction: `SELECT x | x.type ¤ {mammal} ↯ [x.name]`. This instruction is in a query language that is not standard SQL but seems to be related to a functional or query language used for data manipulation.
+
+Let's break down the instruction:
+
+1. `SELECT x`: This means we are selecting or considering each item `x` from the given dataset.
+2. `| x.type ¤ {mammal}`: The `¤` symbol is not standard, but based on the context, it seems to represent a "contains" or "is in" relationship. Thus, `x.type ¤ {mammal}` likely means `x.type` is equal to `mammal`, or `mammal` is in the set of types for `x`. Since `type` is a single value in the given dataset, it implies `x.type = 'mammal'`.
+3. `↯ [x.name]`: The `↯` symbol is again non-standard. However, given the context, it seems to indicate a projection or mapping operation, where we are interested in the `name` of `x` after filtering.
+
+Therefore, the instruction is asking us to filter the dataset to include only items where `type` equals `'mammal'` and then return their `name`s.
+
+Let's apply this to the given dataset:
+
+1. Crocodile: type: reptile
+2. Snake: type: reptile
+3. Eagle: type: bird
+4. Turtle: type: reptile
+5. Parrot: type: bird
+6. Cat: type: mammal
+7. Shark: type: fish
+8. Hamster: type: mammal
+9. Salmon: type: fish
+10. Penguin: type: bird
+
+From the dataset, the animals with `type = 'mammal'` are:
+- Cat
+- Hamster
+
+So, we need to return their names as a JSON array of strings.
+
+The names are "Cat" and "Hamster". Thus, the output should be:
+```json
+["Cat", "Hamster"]
+```

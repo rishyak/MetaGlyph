@@ -1,14 +1,27 @@
 ```json
 {
   "selected_ids": [
-    "item_000",
+    "item_002",
     "item_003",
+    "item_005",
+    "item_007",
     "item_009",
     "item_010",
+    "item_012",
+    "item_013",
     "item_015",
     "item_017",
+    "item_018",
     "item_019"
   ],
-  "count": 7
+  "count": 12
 }
 ```
+
+**Explanation:**
+The query selects items where: `(category ∈ {A, B}) OR (status ∈ {active})`
+
+- **Category A or B**: item_002, item_003, item_005, item_007, item_009, item_010, item_012, item_015, item_017, item_018
+- **Status active** (including those already selected): item_005, item_010, item_013, item_015, item_018, item_019
+
+Combined (removing duplicates): 12 items total

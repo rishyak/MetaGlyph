@@ -1,0 +1,22 @@
+{
+  "prompt_id": "ext_0006_MG",
+  "model": "qwen3-4b",
+  "family": "2_structured_extraction",
+  "condition": "MG",
+  "parse_success": false,
+  "parsed_output": null,
+  "gold_output": {
+    "date": "2024-04-21",
+    "total": 1266.88,
+    "due_date": "2024-08-13",
+    "customer_name": "David Brown"
+  },
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0.0,
+  "operator_fidelity": [],
+  "overall_pass": false,
+  "error_type": "parse",
+  "error_details": "Could not extract key-value pairs",
+  "semantic_equivalence_pass": false
+}

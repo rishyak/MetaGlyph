@@ -1,0 +1,45 @@
+{
+  "prompt_id": "sel_0036_ASCII_DSL",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": [
+    "### Step 1: Identify the type of animals that are classified as mammals.\nThe animals that are classified as mammals are: Salmon is not a mammal",
+    "Penguin is not a mammal",
+    "Turtle is not a mammal",
+    "Parrot is not a mammal",
+    "Goldfish is not a mammal",
+    "Snake is not a mammal",
+    "Cat is a mammal",
+    "Eagle is not a mammal",
+    "Whale is a mammal",
+    "and Elephant is a mammal.\n\n### Step 2: Filter the list to include only the mammals.\nThe list of mammals is: Cat",
+    "Whale",
+    "Elephant.\n\n### Step 3: Format the list as a JSON array of strings.\nThe JSON array of strings is: \"Cat",
+    "Whale",
+    "Elephant\".\n\nThe final answer is: $\\boxed\"Cat",
+    "Whale",
+    "Elephant\"$"
+  ],
+  "gold_output": [
+    "cat",
+    "elephant",
+    "whale"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0625,
+  "f1_score": 0.11764705882352941,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=3, extra=14"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.06",
+  "semantic_equivalence_pass": false
+}

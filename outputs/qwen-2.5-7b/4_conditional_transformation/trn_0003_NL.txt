@@ -1,0 +1,127 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 950,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 510 * 1.2,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 909 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 256,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 507,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 141,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 281,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 783,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 418 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 472 * 1.1,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 75,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 577,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 17,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 70,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 890 * 1.2,
+        "active": false,
+        "status": "archived"
+    }
+]
+```
+
+In the output, I have applied the transformation rules to each record. Here's a breakdown of what was done:
+
+- **rec_000**: No transformations needed.
+- **rec_001**: Since it falls under the EU region, we multiplied the amount by 1.2.
+- **rec_002**: Since `active` is `False`, we set the status to 'archived'.
+- **rec_003**: No transformations needed.
+- **rec_004**: No transformations needed.
+- **rec_005**: No transformations needed.
+- **rec_006**: Since `active` is `False`, we set the status to 'archived'.
+- **rec_007**: No transformations needed.
+- **rec_008**: Since it falls under the EU region, we multiplied the amount by 1.2 and since `active` is `False`, we set the status to 'archived'.
+- **rec_009**: Since the type is `premium`, we multiplied the amount by 1.1.
+- **rec_010**: Since `active` is `False`, we set the status to 'archived'.
+- **rec_011**: No transformations needed.
+- **rec_012**: No transformations needed.
+- **rec_013**: No transformations needed.
+- **rec_014**: Since `active` is `False`, we set the status to 'archived' and since it falls under the US region, we multiplied the amount by 1.2.

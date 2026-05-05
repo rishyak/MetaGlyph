@@ -1,0 +1,23 @@
+```json
+{
+  "selected_ids": ["item_009"],
+  "count": 1
+}
+```
+
+### Explanation
+
+To solve this problem, we need to review each item in the given dataset and check if it meets two conditions:
+1. The 'category' is either A or B.
+2. The 'status' is 'active'.
+
+Upon reviewing the dataset, we find that only one item meets both conditions:
+- `item_009` has a 'category' of A and a 'status' of 'active'.
+
+Therefore, the ID of the selected item is `item_009`.
+
+To generate the output in the required JSON format:
+- 'selected_ids' will be an array containing the ID(s) of the item(s) that meet the conditions. In this case, it will be `["item_009"]`.
+- 'count' will be the number of items in 'selected_ids', which is 1.
+
+Thus, the output is a JSON object with 'selected_ids' as `["item_009"]` and 'count' as `1`.

@@ -1,12 +1,29 @@
 ```json
 {
   "selected_ids": [
-    "item_000",
-    "item_011",
-    "item_014",
+    "item_002",
+    "item_004",
+    "item_005",
+    "item_006",
+    "item_007",
+    "item_008",
+    "item_009",
+    "item_010",
+    "item_012",
+    "item_013",
     "item_015",
-    "item_016"
+    "item_016",
+    "item_017",
+    "item_018"
   ],
-  "count": 5
+  "count": 14
 }
 ```
+
+**Explanation:**
+The query selects items where **either** `value >= 50` **OR** `category ∈ {A}`:
+
+- **Category A items** (regardless of value): item_005, item_012, item_013, item_014, item_015
+- **Items with value >= 50** (any category): item_002 (93), item_004 (73), item_006 (98), item_007 (95), item_008 (94), item_009 (93), item_010 (70), item_016 (82), item_017 (85), item_018 (69)
+
+Combined (removing duplicates): 14 items total

@@ -5,16 +5,18 @@
   "condition": "CTRL",
   "parse_success": true,
   "parsed_output": [
-    "Cat",
-    "Dog"
+    "Shark",
+    "Goldfish"
   ],
   "gold_output": [
+    "cat",
     "crocodile",
-    "goldfish",
+    "dog",
+    "lion",
     "parrot",
     "penguin",
-    "shark",
-    "turtle"
+    "turtle",
+    "whale"
   ],
   "exact_match": false,
   "accuracy": 0.0,
@@ -23,8 +25,8 @@
     {
       "operator": "∉",
       "checked": true,
-      "passed": true,
-      "details": "Exclusion constraint satisfied"
+      "passed": false,
+      "details": "missing=8, extra=2"
     }
   ],
   "overall_pass": false,

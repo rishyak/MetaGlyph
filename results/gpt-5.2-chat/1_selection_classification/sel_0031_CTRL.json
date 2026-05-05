@@ -4,23 +4,30 @@
   "family": "1_selection_classification",
   "condition": "CTRL",
   "parse_success": true,
-  "parsed_output": [],
+  "parsed_output": [
+    "Headphones",
+    "Refrigerator",
+    "Bookshelf",
+    "Desk",
+    "Chair"
+  ],
   "gold_output": [
-    "refrigerator"
+    "bookshelf",
+    "desk"
   ],
   "exact_match": false,
-  "accuracy": 0.0,
-  "f1_score": 0,
+  "accuracy": 0.4,
+  "f1_score": 0.5714285714285715,
   "operator_fidelity": [
     {
       "operator": "∩",
       "checked": true,
       "passed": false,
-      "details": "Missing items in intersection"
+      "details": "missing=2, extra=5"
     }
   ],
   "overall_pass": false,
   "error_type": "scope",
-  "error_details": "Accuracy: 0.00",
+  "error_details": "Accuracy: 0.40",
   "semantic_equivalence_pass": false
 }

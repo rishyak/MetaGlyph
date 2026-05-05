@@ -1,0 +1,10 @@
+Here is the JSON object with the extracted fields:
+
+```
+{
+  "customer_name": "Bob Johnson",
+  "payment_terms": "Net 60",
+  "invoice_num": "5892",
+  "date": "2024-07-28"
+}
+```

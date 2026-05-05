@@ -1,0 +1,94 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 635,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 413,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 1068.1,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 626,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 56,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 351,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 162,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 369.6,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 1083.2,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 634.8,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 316,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 349,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 357.5,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 337.1,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 607,
+        "active": false
+    }
+]
+```

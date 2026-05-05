@@ -1,0 +1,66 @@
+To solve this problem, we need to break down the given instruction and apply it to the provided dataset.
+
+The instruction is: `SELECT x.id | x.priority ¤ {high} ¶ x.status ※ {inactive} ↯ {selected_ids: [...], count: n}`
+
+Let's decode the instruction step by step:
+
+1. `SELECT x.id`: This indicates we are selecting the `id` attribute from the dataset.
+2. `| x.priority ¤ {high}`: The `|` symbol typically denotes a filtering operation. `¤ {high}` suggests filtering where `x.priority` equals `high`. So, this step filters the dataset to include only items where the priority is `high`.
+3. `¶ x.status ※ {inactive}`: `¶` could imply a further filtering operation. `※ {inactive}` suggests filtering where `x.status` is not equal to `inactive` (since `※` might imply negation or a different condition). Thus, this step further filters the dataset to exclude items where the status is `inactive`.
+4. `↯ {selected_ids: [...], count: n}`: This indicates the output format. `↯` suggests the final operation or output. We need to output a JSON object with two keys: `selected_ids` (an array of the selected `id`s) and `count` (the number of selected `id`s).
+
+Now, let's apply these steps to the dataset:
+
+### Step 1: Filter by `x.priority = high`
+
+First, filter the dataset to include only items with `Priority: high`.
+
+- item_001: ID = item_001, Priority = high, Status = pending
+- item_003: ID = item_003, Priority = high, Status = active
+- item_004: ID = item_004, Priority = high, Status = active
+- item_005: ID = item_005, Priority = high, Status = active
+- item_008: ID = item_008, Priority = high, Status = active
+- item_009: ID = item_009, Priority = high, Status = active
+- item_011: ID = item_011, Priority = high, Status = inactive
+- item_013: ID = item_013, Priority = high, Status = pending
+- item_018: ID = item_018, Priority = high, Status = active
+
+### Step 2: Filter by `x.status != inactive`
+
+Next, exclude items where `Status` is `inactive`.
+
+- item_001: ID = item_001, Status = pending
+- item_003: ID = item_003, Status = active
+- item_004: ID = item_004, Status = active
+- item_005: ID = item_005, Status = active
+- item_008: ID = item_008, Status = active
+- item_009: ID = item_009, Status = active
+- item_013: ID = item_013, Status = pending
+- item_018: ID = item_018, Status = active
+
+### Step 3: Select `x.id` and Output
+
+Now, select the `id`s from the filtered dataset:
+
+- item_001
+- item_003
+- item_004
+- item_005
+- item_008
+- item_009
+- item_013
+- item_018
+
+### Step 4: Prepare the Output
+
+`selected_ids` = [`item_001`, `item_003`, `item_004`, `item_005`, `item_008`, `item_009`, `item_013`, `item_018`]
+
+`count` = 8 (since there are 8 items in `selected_ids`)
+
+The output JSON object is:
+```json
+{
+  "selected_ids": ["item_001", "item_003", "item_004", "item_005", "item_008", "item_009", "item_013", "item_018"],
+  "count": 8
+}
+```

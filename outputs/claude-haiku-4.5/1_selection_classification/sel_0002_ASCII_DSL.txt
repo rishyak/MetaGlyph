@@ -1,0 +1,20 @@
+Looking at the instruction: `SELECT x | x.type NOT IN {bird} -> [x.name]`
+
+This means: Select all items where the type is NOT "bird", and return their names.
+
+Let me identify all animals that are NOT birds:
+
+- Whale: type: mammal ✓
+- Hamster: type: mammal ✓
+- Snake: type: reptile ✓
+- Salmon: type: fish ✓
+- Elephant: type: mammal ✓
+- Eagle: type: bird ✗
+- Parrot: type: bird ✗
+- Cat: type: mammal ✓
+- Dog: type: mammal ✓
+- Goldfish: type: fish ✓
+
+```json
+["Whale", "Hamster", "Snake", "Salmon", "Elephant", "Cat", "Dog", "Goldfish"]
+```

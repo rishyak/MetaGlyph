@@ -1,0 +1,6 @@
+{
+  "sender_name": "alice.smith@globalsolutions.com",
+  "date": "2024-10-07",
+  "subject": "Project Update",
+  "sender": "alice.smith@globalsolutions.com"
+}

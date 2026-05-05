@@ -1,0 +1,47 @@
+To solve this problem, we need to understand the given instruction and apply it to the provided dataset.
+
+The instruction is: `SELECT x.id | x.priority ¤ {high} ¶ x.status ※ {inactive} ↯ {selected_ids: [...], count: n}`
+
+Let's break down the instruction:
+
+1. `SELECT x.id`: This indicates we are selecting the `id` attribute from the dataset.
+2. `| x.priority ¤ {high}`: The `|` symbol typically denotes a filtering operation. `¤ {high}` suggests filtering where `x.priority` equals `high`. So, this part filters the dataset to include only items with a `priority` of `high`.
+3. `¶ x.status ※ {inactive}`: `¶` is another filtering operator. `※ {inactive}` indicates filtering where `x.status` equals `inactive`. Thus, this further filters the dataset to include only items with a `status` of `inactive`.
+4. `↯ {selected_ids: [...], count: n}`: This indicates the output format. `↯` suggests a transformation or output operation. We need to output a JSON object with two properties: `selected_ids` (an array of the selected `id`s) and `count` (the number of selected items).
+
+Applying the instruction to the dataset:
+
+1. Filter by `priority = high`: 
+   - ID: item_000, Priority: high
+   - ID: item_003, Priority: high
+   - ID: item_010, Priority: high
+   - ID: item_014, Priority: high
+   - ID: item_018, Priority: high
+
+2. Filter by `status = inactive`:
+   - From the previous step, filter further:
+     - ID: item_000, Status: inactive
+     - ID: item_010, Status: inactive
+     - ID: item_014, Status: inactive
+
+So, the selected IDs are `item_000`, `item_010`, and `item_014`.
+
+Now, let's prepare the output:
+- `selected_ids`: [`item_000`, `item_010`, `item_014`]
+- `count`: 3 (since there are 3 items selected)
+
+The output in JSON format is:
+```json
+{
+  "selected_ids": ["item_000", "item_010", "item_014"],
+  "count": 3
+}
+```
+
+The final answer is:
+```json
+{
+  "selected_ids": ["item_000", "item_010", "item_014"],
+  "count": 3
+}
+```

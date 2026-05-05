@@ -1,0 +1,104 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 731,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 243,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 897,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 521.4,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 373,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 728,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 185,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 398,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 580,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 873,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 834,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 88.4,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 332,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 415,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 152,
+        "active": false,
+        "status": "archived"
+    }
+]
+```
+
+Explanation of the transformations:
+- For `rec_003`, since it is `premium` and in `EU`, its `amount` is increased by 10% (`474 * 1.1 = 521.4`) and its `status` is set to `"archived"`.
+- For `rec_011`, since it is `premium` and in `EU`, its `amount` is increased by 10% (`77 * 1.1 = 84.7`) and then by 20% (`84.7 * 1.2 = 101.64`), but since the transformation only applies one at a time based on the order given, it is increased by 10% (`77 * 1.1 = 84.7`) and its `status` is set to `"archived"`.
+- For records where `active` is `false`, their `status` is set to `"archived"`.

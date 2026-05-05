@@ -1,0 +1,17 @@
+Looking at the input data, I need to identify all items where `size: large`.
+
+Reviewing each entry:
+- Elephant: size: large ✓
+- Turtle: size: small
+- Whale: size: large ✓
+- Dog: size: medium
+- Cat: size: small
+- Hamster: size: small
+- Eagle: size: medium
+- Crocodile: size: large ✓
+- Goldfish: size: small
+- Snake: size: medium
+
+```json
+["Elephant", "Whale", "Crocodile"]
+```

@@ -1,0 +1,152 @@
+Let's break down the transformation rules provided in the instruction and apply them to each record:
+
+1. \( \forall x: (x.type \neq "premium" \Rightarrow x.amount \rightarrow x.amount \times 1.1) \)
+   - If `type` is not "premium", then multiply `amount` by 1.1.
+   
+2. \( \forall x: (x.region \neq "EU" \Rightarrow x.amount \rightarrow x.amount \times 1.2) \)
+   - If `region` is not "EU", then multiply `amount` by 1.2.
+   
+3. \( \forall x: (x.active \neq false \Rightarrow x.status \rightarrow "archived") \)
+   - If `active` is not `False`, then set `status` to "archived".
+
+Now, let's apply these transformations to each record:
+
+- **rec_000**: 
+  - type: standard
+  - amount: 398 (multiply by 1.1) -> 437.8
+  - region: US (multiply by 1.2) -> 525.36
+  - active: True (set status to "archived")
+  - Final amount: 525.36
+  - Final status: "archived"
+
+- **rec_001**: 
+  - type: premium
+  - region: EU
+  - amount: 958 (no changes)
+  - active: False (no changes)
+  - Final amount: 958
+  - Final status: "registered" (default status)
+
+- **rec_002**: 
+  - type: premium
+  - region: EU
+  - amount: 723 (no changes)
+  - active: False (no changes)
+  - Final amount: 723
+  - Final status: "registered" (default status)
+
+- **rec_003**: 
+  - type: standard
+  - amount: 313 (multiply by 1.1) -> 344.3
+  - region: US (multiply by 1.2) -> 413.16
+  - active: True (set status to "archived")
+  - Final amount: 413.16
+  - Final status: "archived"
+
+- **rec_004**: 
+  - type: standard
+  - amount: 763 (multiply by 1.1) -> 839.3
+  - region: APAC (multiply by 1.2) -> 1007.16
+  - active: True (set status to "archived")
+  - Final amount: 1007.16
+  - Final status: "archived"
+
+- **rec_005**: 
+  - type: trial
+  - amount: 68 (no changes)
+  - region: EU (multiply by 1.2) -> 81.6
+  - active: True (set status to "archived")
+  - Final amount: 81.6
+  - Final status: "archived"
+
+- **rec_006**: 
+  - type: trial
+  - amount: 524 (no changes)
+  - region: EU (multiply by 1.2) -> 628.8
+  - active: True (set status to "archived")
+  - Final amount: 628.8
+  - Final status: "archived"
+
+- **rec_007**: 
+  - type: standard
+  - amount: 92 (multiply by 1.1) -> 101.2
+  - region: APAC (multiply by 1.2) -> 121.44
+  - active: True (set status to "archived")
+  - Final amount: 121.44
+  - Final status: "archived"
+
+- **rec_008**: 
+  - type: standard
+  - amount: 79 (multiply by 1.1) -> 86.9
+  - region: APAC (multiply by 1.2) -> 104.28
+  - active: True (set status to "archived")
+  - Final amount: 104.28
+  - Final status: "archived"
+
+- **rec_009**: 
+  - type: premium
+  - amount: 974 (no changes)
+  - region: US (multiply by 1.2) -> 1168.8
+  - active: True (set status to "archived")
+  - Final amount: 1168.8
+  - Final status: "archived"
+
+- **rec_010**: 
+  - type: trial
+  - amount: 50 (no changes)
+  - region: APAC (multiply by 1.2) -> 60
+  - active: True (set status to "archived")
+  - Final amount: 60
+  - Final status: "archived"
+
+- **rec_011**: 
+  - type: premium
+  - region: APAC (multiply by 1.2) -> 728.4
+  - active: False (no changes)
+  - Final amount: 728.4
+  - Final status: "registered" (default status)
+
+- **rec_012**: 
+  - type: premium
+  - region: US (no changes)
+  - active: False (no changes)
+  - Final amount: 695
+  - Final status: "registered" (default status)
+
+- **rec_013**: 
+  - type: standard
+  - amount: 415 (multiply by 1.1) -> 456.5
+  - region: EU (multiply by 1.2) -> 547.8
+  - active: True (set status to "archived")
+  - Final amount: 547.8
+  - Final status: "archived"
+
+- **rec_014**: 
+  - type: trial
+  - region: APAC (multiply by 1.2) -> 380.4
+  - active: False (no changes)
+  - Final amount: 380.4
+  - Final status: "registered" (default status)
+
+Now, we can compile the transformed records:
+
+```json
+[
+    {"id": "rec_000", "type": "standard", "region": "APAC", "amount": 525.36, "status": "archived"},
+    {"id": "rec_001", "type": "premium", "region": "EU", "amount": 958, "status": "registered"},
+    {"id": "rec_002", "type": "premium", "region": "EU", "amount": 723, "status": "registered"},
+    {"id": "rec_003", "type": "standard", "region": "APAC", "amount": 121.44, "status": "archived"},
+    {"id": "rec_004", "type": "standard", "region": "APAC", "amount": 104.28, "status": "archived"},
+    {"id": "rec_005", "type": "trial", "region": "EU", "amount": 81.6, "status": "archived"},
+    {"id": "rec_006", "type": "trial", "region": "EU", "amount": 628.8, "status": "archived"},
+    {"id": "rec_007", "type": "standard", "region": "APAC", "amount": 121.44, "status": "archived"},
+    {"id": "rec_008", "type": "standard", "region": "APAC", "amount": 104.28, "status": "archived"},
+    {"id": "rec_009", "type": "premium", "region": "US", "amount": 1168.8, "status": "archived"},
+    {"id": "rec_010", "type": "trial", "region": "APAC", "amount": 60, "status": "archived"},
+    {"id": "rec_011", "type": "premium", "region": "APAC", "amount": 728.4, "status": "registered"},
+    {"id": "rec_012", "type": "premium", "region": "US", "amount": 695, "status": "registered"},
+    {"id": "rec_013", "type": "standard", "region": "EU", "amount": 547.8, "status": "archived"}
+]
+```
+
+Note that the transformation rules were applied to each field independently based on the condition given, and the `id` field was retained as it uniquely identifies each record.

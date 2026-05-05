@@ -1,0 +1,15 @@
+Looking at the instruction `SELECT x | x.price_range ¤ {medium} ↯ [x.name]`, I need to:
+
+1. Filter all items where `price_range` equals "medium"
+2. Return their names
+
+**Items with price_range = medium:**
+- Chair
+- Headphones
+- Microwave
+- Desk
+- Bookshelf
+
+```json
+["Chair", "Headphones", "Microwave", "Desk", "Bookshelf"]
+```

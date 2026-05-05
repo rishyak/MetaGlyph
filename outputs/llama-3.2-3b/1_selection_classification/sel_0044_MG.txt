@@ -1,0 +1,21 @@
+### Step 1: Identify the conditions given in the problem
+The problem requires selecting animals that are fish, not domestic, and then returning their names.
+
+### Step 2: Filter the animals based on the conditions
+- Fish: type = "fish"
+- Not domestic: domestic = False
+
+### Step 3: List the animals that match the conditions
+- Goldfish: type = "fish", domestic = True, so exclude
+- Salmon: type = "fish", domestic = False, so include
+- Whale: type = "mammal", so exclude
+- Snake: type = "reptile", so exclude
+- Turtle: type = "reptile", so exclude
+- Parrot: type = "bird", so exclude
+- Hamster: type = "mammal", so exclude
+- Lion: type = "mammal", so exclude
+
+### Step 4: Format the output as a JSON array
+Since there's only one animal that matches the conditions, the output will be a simple array with one element.
+
+The final answer is: $\boxed{["Salmon"]]$

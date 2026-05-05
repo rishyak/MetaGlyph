@@ -1,0 +1,183 @@
+To apply the given transformation rules to each record, we need to evaluate the conditions in sequence. Here's a step-by-step breakdown of the transformations:
+
+1. **Transformation Rule**: 
+   - \( \forall x: \text{TRANSFORM } x | (x.type \neq \text{"premium"} \Rightarrow x.amount \rightarrow x.amount \times 1.1) \circ (x.region \neq \text{"EU"} \Rightarrow x.amount \rightarrow x.amount \times 1.2) \circ (x.active \neq \text{False} \Rightarrow x.status \rightarrow \text{"archived"}) \rightarrow [x] \)
+
+2. **Evaluation**:
+   - For each record, check if it satisfies any of the conditions in the rule.
+   - If it satisfies one condition, apply the corresponding transformation.
+   - If no condition is satisfied or multiple conditions are satisfied, only the last transformation (if any) will be applied due to the sequential nature of the composition (`∘`).
+
+Let's transform each record based on the rule:
+
+- **Record rec_000**: 
+  - `type: premium` (Condition not met)
+  - `region: EU` (Condition not met)
+  - `active: False` (Condition not met)
+  - No transformation applies.
+
+- **Record rec_001**: 
+  - `type: trial` (`x.type != "premium"` is true, so transform `amount`)
+  - `region: US` (Condition not met)
+  - `active: False` (Condition not met)
+  - New record: `{type: "trial", region: "US", amount: 102 * 1.1 = 112.2, active: False}`
+
+- **Record rec_002**: 
+  - `type: premium` (Condition not met)
+  - `region: APAC` (Condition not met)
+  - `active: True` (`x.active != False` is true, so set `status` to "archived")
+  - New record: `{type: "premium", region: "APAC", amount: 435, active: False, status: "archived"}`
+
+- **Record rec_003**: 
+  - `type: standard` (`x.type != "premium"` is true, so transform `amount`)
+  - `region: US` (Condition not met)
+  - `active: False` (Condition not met)
+  - New record: `{type: "standard", region: "US", amount: 815 * 1.1 = 896.5, active: False}`
+
+- **Record rec_004**: 
+  - `type: trial` (`x.type != "premium"` is true, so transform `amount`)
+  - `region: APAC` (Condition not met)
+  - `active: False` (Condition not met)
+  - New record: `{type: "trial", region: "APAC", amount: 945 * 1.1 = 1039.5, active: False}`
+
+- **Record rec_005**: 
+  - `type: standard` (`x.type != "premium"` is true, so transform `amount`)
+  - `region: EU` (Condition not met)
+  - `active: False` (Condition not met)
+  - New record: `{type: "standard", region: "EU", amount: 945 * 1.1 * 1.2 = 1039.8, active: False}`
+
+- **Record rec_006**: 
+  - `type: premium` (Condition not met)
+  - `region: APAC` (Condition not met)
+  - `active: False` (Condition not met)
+  - No transformation applies.
+
+- **Record rec_007**: 
+  - `type: standard` (`x.type != "premium"` is true, so transform `amount`)
+  - `region: EU` (Condition not met)
+  - `active: True` (`x.active != False` is true, so set `status` to "archived")
+  - New record: `{type: "standard", region: "EU", amount: 996 * 1.1 = 1095.6, active: False, status: "archived"}`
+
+- **Record rec_008**: 
+  - `type: standard` (`x.type != "premium"` is true, so transform `amount`)
+  - `region: US` (Condition not met)
+  - `active: False` (Condition not met)
+  - New record: `{type: "standard", region: "US", amount: 890 * 1.1 = 979, active: False}`
+
+- **Record rec_009**: 
+  - `type: trial` (`x.type != "premium"` is true, so transform `amount`)
+  - `region: EU` (Condition not met)
+  - `active: False` (Condition not met)
+  - New record: `{type: "trial", region: "EU", amount: 102 * 1.1 = 112.2, active: False}`
+
+- **Record rec_010**: 
+  - `type: standard` (`x.type != "premium"` is true, so transform `amount`)
+  - `region: EU` (Condition not met)
+  - `active: True` (`x.active != False` is true, so set `status` to "archived")
+  - New record: `{type: "standard", region: "EU", amount: 559 * 1.1 = 614.9, active: False, status: "archived"}`
+
+- **Record rec_011**: 
+  - `type: premium` (Condition not met)
+  - `region: EU` (Condition not met)
+  - `active: False` (Condition not met)
+  - No transformation applies.
+
+- **Record rec_012**: 
+  - `type: trial` (`x.type != "premium"` is true, so transform `amount`)
+  - `region: EU` (Condition not met)
+  - `active: False` (Condition not met)
+  - New record: `{type: "trial", region: "EU", amount: 852 * 1.1 = 937.2, active: False}`
+
+- **Record rec_013**: 
+  - `type: standard` (`x.type != "premium"` is true, so transform `amount`)
+  - `region: APAC` (Condition not met)
+  - `active: False` (Condition not met)
+  - New record: `{type: "standard", region: "APAC", amount: 249 * 1.1 = 273.9, active: False}`
+
+- **Record rec_014**: 
+  - `type: standard` (`x.type != "premium"` is true, so transform `amount`)
+  - `region: APAC` (Condition not met)
+  - `active: False` (Condition not met)
+  - New record: `{type: "standard", region: "APAC", amount: 915 * 1.1 = 1006.5, active: False}`
+
+Now, let's format these records into a JSON array:
+
+```json
+[
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 44,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 112.2,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 435,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 896.5,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 1039.5,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 1039.8,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 901,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 1095.6,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 979,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 112.2,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 614.9,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 937.2,
+        "active": false
+    },
+    {
+        "type

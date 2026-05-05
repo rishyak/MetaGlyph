@@ -1,0 +1,66 @@
+To solve this problem, we need to filter the given dataset based on the conditions provided: the priority is 'high' or the status is not 'inactive'. We will then return the IDs of the filtered records along with the count of these records.
+
+### Step 1: Filter the Dataset
+
+First, let's list out the given dataset:
+
+1. ID: item_000, Status: inactive, Priority: medium
+2. ID: item_001, Status: pending, Priority: high
+3. ID: item_002, Status: active, Priority: medium
+4. ID: item_003, Status: inactive, Priority: medium
+5. ID: item_004, Status: inactive, Priority: high
+6. ID: item_005, Status: pending, Priority: low
+7. ID: item_006, Status: pending, Priority: high
+8. ID: item_007, Status: pending, Priority: high
+9. ID: item_008, Status: active, Priority: high
+10. ID: item_009, Status: inactive, Priority: low
+11. ID: item_010, Status: inactive, Priority: medium
+12. ID: item_011, Status: inactive, Priority: medium
+13. ID: item_012, Status: inactive, Priority: medium
+14. ID: item_013, Status: inactive, Priority: low
+15. ID: item_014, Status: active, Priority: medium
+16. ID: item_015, Status: active, Priority: high
+17. ID: item_016, Status: active, Priority: low
+18. ID: item_017, Status: active, Priority: low
+19. ID: item_018, Status: pending, Priority: low
+20. ID: item_019, Status: inactive, Priority: high
+
+Now, let's apply the filter:
+- Priority is 'high': item_001, item_004, item_006, item_007, item_008, item_015, item_019
+- Status is not 'inactive': item_001, item_002, item_005, item_006, item_007, item_008, item_014, item_015, item_016, item_017, item_018
+
+Combining these with the condition that it's either 'high' priority or not 'inactive' status, we get:
+- item_001 (high, pending)
+- item_002 (medium, active)
+- item_004 (high, inactive)
+- item_005 (low, pending)
+- item_006 (high, pending)
+- item_007 (high, pending)
+- item_008 (high, active)
+- item_014 (medium, active)
+- item_015 (high, active)
+- item_016 (low, active)
+- item_017 (low, active)
+- item_018 (low, pending)
+- item_019 (high, inactive)
+
+So, the IDs that match the condition are: item_001, item_002, item_004, item_005, item_006, item_007, item_008, item_014, item_015, item_016, item_017, item_018, item_019.
+
+### Step 2: Count the Filtered Records
+
+There are 13 records that match the given conditions.
+
+### Step 3: Prepare the Output
+
+The selected IDs are: ["item_001", "item_002", "item_004", "item_005", "item_006", "item_007", "item_008", "item_014", "item_015", "item_016", "item_017", "item_018", "item_019"].
+
+The count is: 13.
+
+### Output
+
+```json
+{
+  "selected_ids": ["item_001", "item_002", "item_004", "item_005", "item_006", "item_007", "item_008", "item_014", "item_015", "item_016", "item_017", "item_018", "item_019"],
+  "count": 13
+}
+```

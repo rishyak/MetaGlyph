@@ -1,0 +1,38 @@
+To solve this problem, we need to understand the given instruction and apply it to the provided input data.
+
+The instruction is given in a formal query language and can be translated into a more understandable form as follows:
+
+SELECT x.name IF (x.domestic == False) AND (x.type == 'mammal')
+
+This means we need to select the names of animals that are both non-domestic (wild) and mammals.
+
+Let's analyze the given data:
+
+1. Eagle: type: bird, domestic: False, size: medium
+2. Elephant: type: mammal, domestic: False, size: large
+3. Lion: type: mammal, domestic: False, size: large
+4. Turtle: type: reptile, domestic: True, size: small
+5. Cat: type: mammal, domestic: True, size: small
+6. Goldfish: type: fish, domestic: True, size: small
+7. Crocodile: type: reptile, domestic: False, size: large
+8. Parrot: type: bird, domestic: True, size: small
+9. Snake: type: reptile, domestic: False, size: medium
+10. Shark: type: fish, domestic: False, size: large
+
+Applying the conditions to the data:
+- The animal must be non-domestic (domestic: False).
+- The animal must be a mammal (type: mammal).
+
+From the given data:
+- Elephant is a mammal and non-domestic.
+- Lion is a mammal and non-domestic.
+- Cat is a mammal but domestic, so it doesn't fit the criteria.
+
+Therefore, the animals that satisfy both conditions are Elephant and Lion.
+
+The output should be a JSON array of the names of these animals.
+
+The final answer is:
+```json
+["Elephant", "Lion"]
+```

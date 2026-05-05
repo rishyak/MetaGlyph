@@ -1,0 +1,18 @@
+### Step 1: Filter the data to include only animals that are fish and not domestic.
+We will use the given SQL query to filter the data: `SELECT x | (x.type IN {fish}) AND (x.domestic IN {False}) -> [x.name]`
+
+### Step 2: Identify the fish that are not domestic.
+From the given data, the fish that are not domestic are:
+- Salmon: type: fish, domestic: False, size: medium
+- Goldfish: type: fish, domestic: True, size: small
+- Whale: type: mammal, domestic: False, size: large
+
+However, Whale is a mammal, not a fish. So, the fish that are not domestic are:
+- Salmon: type: fish, domestic: False, size: medium
+- Goldfish: type: fish, domestic: True, size: small
+
+### Step 3: Return the names of the fish that are not domestic.
+The names of the fish that are not domestic are:
+["Salmon", "Goldfish"]
+
+The final answer is: $\boxed=["Salmon", "Goldfish"]}$

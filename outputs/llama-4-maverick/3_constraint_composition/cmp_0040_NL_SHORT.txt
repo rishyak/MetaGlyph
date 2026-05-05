@@ -1,0 +1,122 @@
+To solve this problem, we need to filter the given dataset based on the conditions provided: the priority is 'high' or the status is not 'inactive'. We will then count the number of records that satisfy these conditions and list their IDs.
+
+### Step 1: Filter the Dataset
+
+First, let's examine the dataset and apply the filter.
+
+| ID        | Category | Status   | Priority | Value |
+|-----------|----------|----------|----------|-------|
+| item_000  | C        | inactive | high     | 37    |
+| item_001  | A        | pending  | high     | 87    |
+| item_002  | B        | active   | low      | 13    |
+| item_003  | C        | active   | low      | 25    |
+| item_004  | C        | pending  | medium   | 46    |
+| item_005  | B        | inactive | low      | 48    |
+| item_006  | B        | inactive | high     | 32    |
+| item_007  | C        | active   | medium   | 88    |
+| item_008  | A        | pending  | high     | 98    |
+| item_009  | A        | active   | medium   | 49    |
+| item_010  | B        | pending  | medium   | 8     |
+| item_011  | C        | active   | high     | 22    |
+| item_012  | A        | inactive | medium   | 83    |
+| item_013  | B        | pending  | low      | 68    |
+| item_014  | A        | active   | low      | 89    |
+| item_015  | C        | inactive | medium   | 6     |
+| item_016  | A        | pending  | medium   | 70    |
+| item_017  | C        | pending  | low      | 23    |
+| item_018  | B        | active   | low      | 76    |
+| item_019  | A        | pending  | medium   | 10    |
+
+### Step 2: Apply the Conditions
+
+We need to select records where:
+1. Priority is 'high'
+OR
+2. Status is not 'inactive'
+
+Let's apply these conditions:
+
+1. Records with Priority 'high': item_000, item_001, item_006, item_008, item_011
+2. Records with Status not 'inactive': item_001, item_002, item_003, item_004, item_007, item_008, item_009, item_010, item_011, item_013, item_014, item_016, item_017, item_018, item_019
+
+Combining these with OR condition, we get the selected IDs:
+- item_000 (high)
+- item_001 (both conditions)
+- item_002 (not inactive)
+- item_003 (not inactive)
+- item_004 (not inactive)
+- item_006 (high)
+- item_007 (not inactive)
+- item_008 (both conditions)
+- item_009 (not inactive)
+- item_010 (not inactive)
+- item_011 (both conditions)
+- item_013 (not inactive)
+- item_014 (not inactive)
+- item_016 (not inactive)
+- item_017 (not inactive)
+- item_018 (not inactive)
+- item_019 (not inactive)
+
+### Step 3: Count the Selected Records
+
+Count = 17
+
+### Step 4: List the Selected IDs
+
+Selected IDs = [item_000, item_001, item_002, item_003, item_004, item_006, item_007, item_008, item_009, item_010, item_011, item_013, item_014, item_016, item_017, item_018, item_019]
+
+### Step 5: Format the Output
+
+Now, let's format the output as per the required JSON format.
+
+```json
+{
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_004",
+    "item_006",
+    "item_007",
+    "item_008",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_013",
+    "item_014",
+    "item_016",
+    "item_017",
+    "item_018",
+    "item_019"
+  ],
+  "count": 17
+}
+```
+
+The final answer is: 
+```json
+{
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_004",
+    "item_006",
+    "item_007",
+    "item_008",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_013",
+    "item_014",
+    "item_016",
+    "item_017",
+    "item_018",
+    "item_019"
+  ],
+  "count": 17
+}
+```

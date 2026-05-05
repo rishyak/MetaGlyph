@@ -1,0 +1,22 @@
+I need to find all products where:
+1. price_range IN {high} (price_range is "high")
+2. AND portable IN {False} (portable is False)
+
+Let me check each product:
+
+- Chair: price_range: medium, portable: True ❌
+- Refrigerator: price_range: high, portable: False ✅
+- Laptop: price_range: high, portable: True ❌
+- Desk: price_range: medium, portable: False ❌
+- Tablet: price_range: high, portable: True ❌
+- Bookshelf: price_range: medium, portable: False ❌
+- Stapler: price_range: low, portable: True ❌
+- Headphones: price_range: medium, portable: True ❌
+- Pen: price_range: low, portable: True ❌
+- Smartphone: price_range: high, portable: True ❌
+
+Only the Refrigerator meets both conditions (high price_range AND not portable).
+
+```json
+["Refrigerator"]
+```

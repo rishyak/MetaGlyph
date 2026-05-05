@@ -1,0 +1,45 @@
+To solve the given query, we need to filter the dataset based on the specified conditions and then return the IDs of the filtered items along with their count.
+
+The conditions are:
+1. `x.category` must be in the set `{A, B}`
+2. `x.status` must be in the set `{active}`
+
+Let's go through the dataset and apply these conditions:
+
+- **item_000**: Category is `A`, Status is `inactive` -> Not selected.
+- **item_001**: Category is `B`, Status is `inactive` -> Not selected.
+- **item_002**: Category is `C`, Status is `pending` -> Not selected.
+- **item_003**: Category is `B`, Status is `pending` -> Not selected.
+- **item_004**: Category is `C`, Status is `active` -> Not selected.
+- **item_005**: Category is `A`, Status is `pending` -> Not selected.
+- **item_006**: Category is `A`, Status is `inactive` -> Not selected.
+- **item_007**: Category is `C`, Status is `active` -> Not selected.
+- **item_008**: Category is `B`, Status is `active` -> Selected.
+- **item_009**: Category is `B`, Status is `active` -> Selected.
+- **item_010**: Category is `A`, Status is `inactive` -> Not selected.
+- **item_011**: Category is `B`, Status is `active` -> Selected.
+- **item_012**: Category is `A`, Status is `inactive` -> Not selected.
+- **item_013**: Category is `A`, Status is `inactive` -> Not selected.
+- **item_014**: Category is `C`, Status is `active` -> Not selected.
+- **item_015**: Category is `C`, Status is `active` -> Not selected.
+- **item_016**: Category is `A`, Status is `inactive` -> Not selected.
+- **item_017**: Category is `A`, Status is `pending` -> Not selected.
+- **item_018**: Category is `B`, Status is `pending` -> Not selected.
+- **item_019**: Category is `A`, Status is `active` -> Selected.
+
+The selected items are:
+- **item_008**
+- **item_009**
+- **item_011**
+- **item_019**
+
+So, the `selected_ids` array contains `["item_008", "item_009", "item_011", "item_019"]`, and the count is `4`.
+
+Here is the output in JSON format:
+
+```json
+{
+  "selected_ids": ["item_008", "item_009", "item_011", "item_019"],
+  "count": 4
+}
+```

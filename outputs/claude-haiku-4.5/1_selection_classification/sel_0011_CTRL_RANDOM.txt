@@ -1,0 +1,20 @@
+Looking at the query: `SELECT x | x.domestic ※ {False} ↯ [x.name]`
+
+This appears to be a custom query syntax requesting:
+- Select items `x` 
+- Where `x.domestic` matches `{False}` (domestic status is False)
+- Return `[x.name]` (the names)
+
+Filtering the dataset for animals where `domestic: False`:
+
+1. Eagle - domestic: False ✓
+2. Lion - domestic: False ✓
+3. Whale - domestic: False ✓
+4. Penguin - domestic: False ✓
+5. Elephant - domestic: False ✓
+6. Shark - domestic: False ✓
+7. Snake - domestic: False ✓
+
+```json
+["Eagle", "Lion", "Whale", "Penguin", "Elephant", "Shark", "Snake"]
+```

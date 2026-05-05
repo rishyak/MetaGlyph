@@ -4,13 +4,18 @@
   "family": "1_selection_classification",
   "condition": "CTRL",
   "parse_success": true,
-  "parsed_output": [],
+  "parsed_output": [
+    "Stapler",
+    "Notebook"
+  ],
   "gold_output": [
+    "bookshelf",
+    "chair",
+    "desk",
     "laptop",
-    "notebook",
+    "microwave",
     "refrigerator",
     "smartphone",
-    "stapler",
     "tablet"
   ],
   "exact_match": false,
@@ -20,8 +25,8 @@
     {
       "operator": "∉",
       "checked": true,
-      "passed": true,
-      "details": "Exclusion constraint satisfied"
+      "passed": false,
+      "details": "missing=8, extra=2"
     }
   ],
   "overall_pass": false,

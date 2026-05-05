@@ -1,0 +1,5 @@
+```json
+["Desk", "Refrigerator"]
+```
+
+Explanation: The query `SELECT x | x.portable ∈ {False} → [x.name]` is asking for the names of items that are not portable. From the given list, only the Desk and Refrigerator have `portable: False`.

@@ -5,11 +5,18 @@
   "condition": "CTRL",
   "parse_success": true,
   "parsed_output": [
+    "Goldfish",
+    "Hamster",
+    "Snake",
+    "Whale",
+    "Shark",
     "Cat",
-    "Hamster"
+    "Salmon"
   ],
   "gold_output": [
-    "snake"
+    "eagle",
+    "parrot",
+    "penguin"
   ],
   "exact_match": false,
   "accuracy": 0.0,
@@ -19,7 +26,7 @@
       "operator": "∈",
       "checked": true,
       "passed": false,
-      "details": "Extra items: 2"
+      "details": "missing=3, extra=7"
     }
   ],
   "overall_pass": false,

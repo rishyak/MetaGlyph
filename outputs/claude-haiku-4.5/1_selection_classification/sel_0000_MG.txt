@@ -1,3 +1,19 @@
+Looking at the instruction: `SELECT x | x.type ∈ {reptile} → [x.name]`
+
+This asks me to select all items where the type is "reptile" and return their names.
+
+Reviewing the animal list:
+- Dog: mammal
+- Whale: mammal
+- Salmon: fish
+- Eagle: bird
+- Shark: fish
+- Elephant: mammal
+- Cat: mammal
+- Penguin: bird
+- Parrot: bird
+- **Turtle: reptile** ✓
+
 ```json
-["Cat", "Dog"]
+["Turtle"]
 ```

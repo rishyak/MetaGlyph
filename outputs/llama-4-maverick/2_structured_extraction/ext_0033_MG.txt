@@ -1,0 +1,34 @@
+To extract the requested fields from the given email document, we need to identify the "recipient", "sender", "sender_title", and "company" based on the content provided.
+
+1. **Recipient**: The recipient's email address is given in the "To:" field. So, the recipient is `carol.williams@example.com`.
+2. **Sender**: The sender's email address is provided in the "From:" field. Thus, the sender is `alice.smith@innovationlabs.com`.
+3. **Sender Title**: The sender's title is mentioned after their name in the signature. Here, it is "Director".
+4. **Company**: The company name is not directly mentioned in the email content but can be inferred from the sender's email address or the context. However, the signature provides "Global Solutions", which could be considered as part of the company name or department.
+
+Based on the information given and the signature details:
+
+- Recipient: `carol.williams@example.com`
+- Sender: `alice.smith@innovationlabs.com`
+- Sender Title: `Director`
+- Company: `Global Solutions` (This could be a department or company name. Given the context, it's the most likely candidate for "company".)
+
+Therefore, the JSON object with the extracted fields is:
+
+```json
+{
+  "recipient": "carol.williams@example.com",
+  "sender": "alice.smith@innovationlabs.com",
+  "sender_title": "Director",
+  "company": "Global Solutions"
+}
+```
+
+The final answer is: 
+```json
+{
+  "recipient": "carol.williams@example.com",
+  "sender": "alice.smith@innovationlabs.com",
+  "sender_title": "Director",
+  "company": "Global Solutions"
+}
+```

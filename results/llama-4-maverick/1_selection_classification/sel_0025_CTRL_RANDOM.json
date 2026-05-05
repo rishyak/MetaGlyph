@@ -1,0 +1,58 @@
+{
+  "prompt_id": "sel_0025_CTRL_RANDOM",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this problem, we need to break down the given instruction and apply it to the provided input.",
+    "Let's decode this instruction step by step:",
+    "SELECT x`: This means we are selecting items from a collection.",
+    "| (x.category ¤ {appliances})`: This is a filter condition. `¤` denotes \"is not in\" or exclusion. So, it means `x.category` is not in the set `{appliances}`. Thus, we are excluding items whose category is `appliances`.",
+    "§ (x.portable ¤ {True})`: `§` denotes intersection or \"and\". So, this means we are also filtering for items where `x.portable` is not in `{True}`, implying `x.portable` is not `True`. Thus, we are looking for items that are not portable.",
+    "↯ [x.name]`: `↯` denotes a projection or mapping to a specific attribute. Here, it means we are interested in the `name` of the items that satisfy the previous conditions.",
+    "Combining these steps, we are looking for items that are not in the `appliances` category and are not portable, and we want to retrieve their names.",
+    "Let's analyze the given input:",
+    "Notebook: category: stationery, price_range: low, portable: True",
+    "Bookshelf: category: furniture, price_range: medium, portable: False",
+    "Chair: category: furniture, price_range: medium, portable: True",
+    "Pen: category: stationery, price_range: low, portable: True",
+    "Tablet: category: electronics, price_range: high, portable: True",
+    "Headphones: category: electronics, price_range: medium, portable: True",
+    "Refrigerator: category: appliances, price_range: high, portable: False",
+    "Desk: category: furniture, price_range: medium, portable: False",
+    "Microwave: category: appliances, price_range: medium, portable: True",
+    "Smartphone: category: electronics, price_range: high, portable: True",
+    "First, exclude items whose category is `appliances`:",
+    "Excluded: Refrigerator, Microwave",
+    "Remaining: Notebook, Bookshelf, Chair, Pen, Tablet, Headphones, Desk, Smartphone",
+    "Then, filter for items that are not portable (`portable` is not `True`):",
+    "Not portable: Bookshelf, Desk",
+    "Other items are portable.",
+    "So, items that satisfy both conditions (not in `appliances` category and not portable) are:",
+    "Bookshelf",
+    "Desk",
+    "Finally, we project these items to their `name`:",
+    "Bookshelf",
+    "Desk",
+    "Thus, the output in the required JSON format is: `[\"Bookshelf\", \"Desk\"]"
+  ],
+  "gold_output": [
+    "microwave"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "missing=1, extra=29"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

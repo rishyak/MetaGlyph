@@ -1,0 +1,51 @@
+{
+  "prompt_id": "sel_0038_MG",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this task, we need to follow the given instruction: `SELECT x | x.size ∈ {large} → [x.name]`. This means we have to select the names of animals that are classified as 'large' in size from the given dataset.",
+    "First, let's review the dataset provided:",
+    "Elephant: type: mammal, domestic: False, size: large",
+    "Turtle: type: reptile, domestic: True, size: small",
+    "Whale: type: mammal, domestic: False, size: large",
+    "Dog: type: mammal, domestic: True, size: medium",
+    "Cat: type: mammal, domestic: True, size: small",
+    "Hamster: type: mammal, domestic: True, size: small",
+    "Eagle: type: bird, domestic: False, size: medium",
+    "Crocodile: type: reptile, domestic: False, size: large",
+    "Goldfish: type: fish, domestic: True, size: small",
+    "Snake: type: reptile, domestic: False, size: medium",
+    "Now, let's identify the animals that are 'large' in size:",
+    "Elephant: size: large",
+    "Whale: size: large",
+    "Crocodile: size: large",
+    "These are the animals that satisfy the condition `x.size ∈ {large}`. Now, we need to extract their names as per the instruction `→ [x.name]`.",
+    "Elephant",
+    "Whale",
+    "Crocodile",
+    "To present the answer in the required JSON array format, we will list these names as strings within square brackets.",
+    "[\"Elephant\", \"Whale\", \"Crocodile\"]"
+  ],
+  "gold_output": [
+    "crocodile",
+    "elephant",
+    "whale"
+  ],
+  "exact_match": false,
+  "accuracy": 0.13636363636363635,
+  "f1_score": 0.24000000000000002,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=3, extra=22"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.14",
+  "semantic_equivalence_pass": false
+}

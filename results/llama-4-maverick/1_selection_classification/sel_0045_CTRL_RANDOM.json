@@ -1,0 +1,57 @@
+{
+  "prompt_id": "sel_0045_CTRL_RANDOM",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this problem, we need to understand the given instruction and apply it to the provided input.",
+    "Breaking down the instruction:",
+    "SELECT x`: This implies we are selecting or filtering items from a collection based on certain criteria.",
+    "x.price_range ※ {low}`: This means we are filtering items where `x.price_range` is equal to `{low}`. So, we are looking for items with a `price_range` of \"low\".",
+    "↯ [x.name]`: This indicates that after filtering, we need to extract or project the `name` of the items.",
+    "Given the input, we have a list of products with their attributes:",
+    "Desk: category: furniture, price_range: medium, portable: False",
+    "Microwave: category: appliances, price_range: medium, portable: True",
+    "Stapler: category: stationery, price_range: low, portable: True",
+    "Laptop: category: electronics, price_range: high, portable: True",
+    "Notebook: category: stationery, price_range: low, portable: True",
+    "Chair: category: furniture, price_range: medium, portable: True",
+    "Bookshelf: category: furniture, price_range: medium, portable: False",
+    "Smartphone: category: electronics, price_range: high, portable: True",
+    "Refrigerator: category: appliances, price_range: high, portable: False",
+    "Tablet: category: electronics, price_range: high, portable: True",
+    "First, we filter the items based on their `price_range` being \"low\":",
+    "Stapler: price_range: low",
+    "Notebook: price_range: low",
+    "Then, we extract the `name` of these items:",
+    "Stapler",
+    "Notebook",
+    "Therefore, the output should be a JSON array of the names of the items with a `price_range` of \"low\"."
+  ],
+  "gold_output": [
+    "bookshelf",
+    "chair",
+    "desk",
+    "laptop",
+    "microwave",
+    "refrigerator",
+    "smartphone",
+    "tablet"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=8, extra=23"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

@@ -1,12 +1,33 @@
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_004",
+    "item_005",
+    "item_007",
+    "item_012",
+    "item_015",
+    "item_017"
+  ],
+  "count": 10
 }
 ```
 
-**Explanation:** The query requires items that simultaneously satisfy:
-- Must have: security AND high_priority AND performance (all three required)
-- Must not have: deprecated OR experimental
+**Explanation:**
+The query selects items where:
+- `x.category ∈ {A, B}` **OR** `x.status ∈ {active}`
 
-The provided dataset contains only basic attributes (Category, Status, Priority, Value) and lacks the required attributes (security, high_priority, performance, deprecated, experimental). Therefore, no items match the filter criteria.
+**Selected items:**
+- **item_000**: Category A ✓
+- **item_001**: Category B ✓
+- **item_002**: Category B ✓
+- **item_003**: Status active ✓
+- **item_004**: Category B AND Status active ✓
+- **item_005**: Category A AND Status active ✓
+- **item_007**: Category B AND Status active ✓
+- **item_012**: Status active ✓
+- **item_015**: Category B AND Status active ✓
+- **item_017**: Category B AND Status active ✓

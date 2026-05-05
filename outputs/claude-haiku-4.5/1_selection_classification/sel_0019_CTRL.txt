@@ -1,3 +1,20 @@
+I need to interpret the query: `SELECT x | x.domestic ∉ {False} → [x.name]`
+
+This means: Select all items where `domestic` is NOT in the set {False}, which is equivalent to selecting items where `domestic` is NOT False, i.e., where `domestic` is True.
+
+Let me go through the list:
+
+- Salmon: domestic: False ❌
+- Eagle: domestic: False ❌
+- Dog: domestic: True ✓
+- Goldfish: domestic: True ✓
+- Penguin: domestic: False ❌
+- Parrot: domestic: True ✓
+- Snake: domestic: False ❌
+- Whale: domestic: False ❌
+- Lion: domestic: False ❌
+- Crocodile: domestic: False ❌
+
 ```json
-["Dog", "Parrot"]
+["Dog", "Goldfish", "Parrot"]
 ```

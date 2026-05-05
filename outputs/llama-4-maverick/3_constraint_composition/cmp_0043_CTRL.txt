@@ -1,0 +1,52 @@
+To solve this problem, we need to filter the given dataset based on the conditions specified in the instruction: `x.priority ∈ {high} ∩ x.status ∉ {inactive}`. This means we are looking for items where the priority is 'high' and the status is not 'inactive'.
+
+Let's go through the dataset and apply these conditions:
+
+1. **ID: item_000** - Priority: low, Status: inactive (Does not match)
+2. **ID: item_001** - Priority: high, Status: pending (Matches)
+3. **ID: item_002** - Priority: low, Status: pending (Does not match)
+4. **ID: item_003** - Priority: low, Status: pending (Does not match)
+5. **ID: item_004** - Priority: low, Status: pending (Does not match)
+6. **ID: item_005** - Priority: low, Status: inactive (Does not match)
+7. **ID: item_006** - Priority: medium, Status: active (Does not match)
+8. **ID: item_007** - Priority: medium, Status: pending (Does not match)
+9. **ID: item_008** - Priority: high, Status: inactive (Does not match because status is inactive)
+10. **ID: item_009** - Priority: high, Status: inactive (Does not match because status is inactive)
+11. **ID: item_010** - Priority: high, Status: inactive (Does not match because status is inactive)
+12. **ID: item_011** - Priority: high, Status: pending (Matches)
+13. **ID: item_012** - Priority: low, Status: active (Does not match)
+14. **ID: item_013** - Priority: high, Status: pending (Matches)
+15. **ID: item_014** - Priority: high, Status: pending (Matches)
+16. **ID: item_015** - Priority: high, Status: pending (Matches)
+17. **ID: item_016** - Priority: medium, Status: inactive (Does not match)
+18. **ID: item_017** - Priority: medium, Status: active (Does not match)
+19. **ID: item_018** - Priority: high, Status: pending (Matches)
+20. **ID: item_019** - Priority: high, Status: pending (Matches)
+
+The IDs that match the given conditions are:
+- item_001
+- item_011
+- item_013
+- item_014
+- item_015
+- item_018
+- item_019
+
+There are 7 items in total that match the conditions.
+
+Now, let's format the output as per the required JSON format:
+
+```json
+{
+  "selected_ids": ["item_001", "item_011", "item_013", "item_014", "item_015", "item_018", "item_019"],
+  "count": 7
+}
+```
+
+The final answer is: 
+```json
+{
+  "selected_ids": ["item_001", "item_011", "item_013", "item_014", "item_015", "item_018", "item_019"],
+  "count": 7
+}
+```

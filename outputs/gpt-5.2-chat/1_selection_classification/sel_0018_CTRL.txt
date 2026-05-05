@@ -1,1 +1,1 @@
-[]
+["Refrigerator", "Laptop", "Desk", "Tablet", "Bookshelf", "Smartphone"]

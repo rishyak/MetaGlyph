@@ -1,0 +1,119 @@
+To transform the records according to the given rules, we will apply each rule in sequence and update the records accordingly:
+
+1. If `x.type == "premium"` then `x.amount → x.amount × 1.1`
+2. If `x.region == "EU"` then `x.amount → x.amount × 1.2`
+3. If `x.active == false` then `x.status → "archived"`
+
+Let's go through each record and apply these transformations step-by-step.
+
+```json
+[
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 399,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 863,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 892 * 1.2 = 1070.4,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 480 * 1.1 = 528,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 449 * 1.1 = 493.9,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 437,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 31 * 1.2 = 37.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 481,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 874 * 1.2 = 1048.8,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 613 * 1.2 = 735.6,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 415,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 236,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 532,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 208,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 991 * 1.1 = 1090.1,
+        "active": true,
+        "status": null
+    }
+]
+```
+
+Here is the transformed list of records in JSON format. Note that the `status` field is updated to `"archived"` only when `active` is `false`. For the other fields, no changes are made if they do not match the conditions specified.

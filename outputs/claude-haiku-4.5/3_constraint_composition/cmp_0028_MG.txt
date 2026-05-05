@@ -1,15 +1,49 @@
+I need to select items where: **priority ∈ {high} ∪ status ∉ {inactive}**
+
+This means: **(priority is high) OR (status is not inactive)**
+
+Let me evaluate each item:
+
+- item_000: priority=medium, status=inactive → ✗ (not high AND is inactive)
+- item_001: priority=high, status=inactive → ✓ (high priority)
+- item_002: priority=low, status=pending → ✓ (not inactive)
+- item_003: priority=medium, status=pending → ✓ (not inactive)
+- item_004: priority=high, status=pending → ✓ (high priority)
+- item_005: priority=high, status=active → ✓ (high priority)
+- item_006: priority=low, status=active → ✓ (not inactive)
+- item_007: priority=medium, status=pending → ✓ (not inactive)
+- item_008: priority=low, status=pending → ✓ (not inactive)
+- item_009: priority=medium, status=pending → ✓ (not inactive)
+- item_010: priority=low, status=inactive → ✗ (not high AND is inactive)
+- item_011: priority=medium, status=pending → ✓ (not inactive)
+- item_012: priority=medium, status=pending → ✓ (not inactive)
+- item_013: priority=high, status=active → ✓ (high priority)
+- item_014: priority=medium, status=pending → ✓ (not inactive)
+- item_015: priority=medium, status=inactive → ✗ (not high AND is inactive)
+- item_016: priority=high, status=active → ✓ (high priority)
+- item_017: priority=low, status=inactive → ✗ (not high AND is inactive)
+- item_018: priority=medium, status=active → ✓ (not inactive)
+- item_019: priority=low, status=inactive → ✗ (not high AND is inactive)
+
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_004",
+    "item_005",
+    "item_006",
+    "item_007",
+    "item_008",
+    "item_009",
+    "item_011",
+    "item_012",
+    "item_013",
+    "item_014",
+    "item_016",
+    "item_018"
+  ],
+  "count": 15
 }
 ```
-
-The query filters for projects that match specific security and priority criteria with exclusions for deprecated and experimental status. However, the provided dataset contains items with only Category, Status, Priority, and Value attributes. There are no attributes mapping to:
-- `security` 
-- `high_priority`
-- `performance`
-- `deprecated`
-- `experimental`
-
-Therefore, no items can be evaluated against the specified conditions, resulting in an empty selection.

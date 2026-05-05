@@ -1,0 +1,17 @@
+### Step 1: Identify the category "stationery" and the items that belong to it.
+The items that belong to the category "stationery" are Stapler, Pen, and Notebook.
+
+### Step 2: Filter out the items that do not belong to the category "stationery".
+The item that does not belong to the category "stationery" is Smartphone, Chair, Headphones, Microwave, Refrigerator, and Tablet.
+
+### Step 3: Filter out the items that are not portable.
+The item that is not portable is Bookshelf.
+
+### Step 4: Filter out the items that do not meet the price range criteria.
+The item that does not meet the price range criteria is Refrigerator.
+
+### Step 5: Combine the filtered items into a single list.
+The filtered list of items that meet all the criteria is [Stapler, Pen, Notebook].
+
+### Step 6: Format the output as a JSON array of strings.
+The final output is: ["Stapler", "Pen", "Notebook"]

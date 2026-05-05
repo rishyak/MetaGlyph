@@ -1,3 +1,22 @@
+# Analysis
+
+The instruction asks me to select all animals where the size is **NOT** in the set {small}.
+
+Let me evaluate each animal:
+
+- **Turtle**: size = small → ✗ (excluded)
+- **Shark**: size = large → ✓ (included)
+- **Penguin**: size = medium → ✓ (included)
+- **Salmon**: size = medium → ✓ (included)
+- **Crocodile**: size = large → ✓ (included)
+- **Cat**: size = small → ✗ (excluded)
+- **Elephant**: size = large → ✓ (included)
+- **Whale**: size = large → ✓ (included)
+- **Dog**: size = medium → ✓ (included)
+- **Hamster**: size = small → ✗ (excluded)
+
+### Output
+
 ```json
-["Cat", "Dog", "Hamster"]
+["Shark", "Penguin", "Salmon", "Crocodile", "Elephant", "Whale", "Dog"]
 ```

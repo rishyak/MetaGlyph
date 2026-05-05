@@ -1,0 +1,124 @@
+To solve the given instruction, we need to filter the dataset based on the conditions provided and return the IDs of the selected items along with their count.
+
+The conditions are:
+- `x.id | x.priority ∈ {high}`
+- `x.status ∉ {inactive}`
+
+This means that we need to select items where the priority is "high" or the status is not "inactive".
+
+Let's go through the dataset and apply these conditions:
+
+1. **item_000**:
+   - Priority: high
+   - Status: pending
+   - Selected (meets both conditions)
+
+2. **item_001**:
+   - Priority: low
+   - Status: active
+   - Not Selected (does not meet the first condition)
+
+3. **item_002**:
+   - Priority: low
+   - Status: pending
+   - Not Selected (does not meet the first condition)
+
+4. **item_003**:
+   - Priority: medium
+   - Status: pending
+   - Not Selected (does not meet the first condition)
+
+5. **item_004**:
+   - Priority: low
+   - Status: active
+   - Not Selected (does not meet the first condition)
+
+6. **item_005**:
+   - Priority: high
+   - Status: inactive
+   - Not Selected (does not meet the second condition)
+
+7. **item_006**:
+   - Priority: high
+   - Status: inactive
+   - Not Selected (does not meet the second condition)
+
+8. **item_007**:
+   - Priority: low
+   - Status: pending
+   - Not Selected (does not meet the first condition)
+
+9. **item_008**:
+   - Priority: high
+   - Status: inactive
+   - Not Selected (does not meet the second condition)
+
+10. **item_009**:
+    - Priority: high
+    - Status: pending
+    - Selected (meets both conditions)
+
+11. **item_010**:
+    - Priority: medium
+    - Status: inactive
+    - Not Selected (does not meet the first condition)
+
+12. **item_011**:
+    - Priority: high
+    - Status: inactive
+    - Not Selected (does not meet the second condition)
+
+13. **item_012**:
+    - Priority: medium
+    - Status: active
+    - Not Selected (does not meet the first condition)
+
+14. **item_013**:
+    - Priority: high
+    - Status: pending
+    - Selected (meets both conditions)
+
+15. **item_014**:
+    - Priority: medium
+    - Status: active
+    - Not Selected (does not meet the first condition)
+
+16. **item_015**:
+    - Priority: high
+    - Status: pending
+    - Selected (meets both conditions)
+
+17. **item_016**:
+    - Priority: low
+    - Status: active
+    - Not Selected (does not meet the first condition)
+
+18. **item_017**:
+    - Priority: medium
+    - Status: active
+    - Not Selected (does not meet the first condition)
+
+19. **item_018**:
+    - Priority: medium
+    - Status: pending
+    - Not Selected (does not meet the first condition)
+
+20. **item_019**:
+    - Priority: medium
+    - Status: inactive
+    - Not Selected (does not meet the second condition)
+
+The selected items are:
+- **item_000**
+- **item_009**
+- **item_013**
+- **item_015**
+
+So, the output in JSON format will be:
+
+```json
+{
+  "selected_ids": ["item_000", "item_009", "item_013", "item_015"],
+  "count": 4
+}
+```

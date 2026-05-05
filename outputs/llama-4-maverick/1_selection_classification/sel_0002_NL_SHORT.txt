@@ -1,0 +1,66 @@
+To solve this task, we need to analyze the given list of animals and their attributes, and then identify the animals whose type is not 'bird'.
+
+1. **List of Animals and Their Attributes:**
+   - Whale: type: mammal, domestic: False, size: large
+   - Hamster: type: mammal, domestic: True, size: small
+   - Snake: type: reptile, domestic: False, size: medium
+   - Salmon: type: fish, domestic: False, size: medium
+   - Elephant: type: mammal, domestic: False, size: large
+   - Eagle: type: bird, domestic: False, size: medium
+   - Parrot: type: bird, domestic: True, size: small
+   - Cat: type: mammal, domestic: True, size: small
+   - Dog: type: mammal, domestic: True, size: medium
+   - Goldfish: type: fish, domestic: True, size: small
+
+2. **Identifying Animals That Are Not 'bird':**
+   - We will go through each animal and check its type.
+   - If the type is not 'bird', we will include it in our output list.
+
+3. **Analysis:**
+   - Whale: type is 'mammal', so include.
+   - Hamster: type is 'mammal', so include.
+   - Snake: type is 'reptile', so include.
+   - Salmon: type is 'fish', so include.
+   - Elephant: type is 'mammal', so include.
+   - Eagle: type is 'bird', so exclude.
+   - Parrot: type is 'bird', so exclude.
+   - Cat: type is 'mammal', so include.
+   - Dog: type is 'mammal', so include.
+   - Goldfish: type is 'fish', so include.
+
+4. **Output:**
+   - The animals that are not 'bird' are: Whale, Hamster, Snake, Salmon, Elephant, Cat, Dog, Goldfish.
+
+5. **Formatting the Output as a JSON Array of Strings:**
+   - The output should be in the format: `["Whale", "Hamster", "Snake", "Salmon", "Elephant", "Cat", "Dog", "Goldfish"]`.
+
+Here is the Python code to achieve this:
+
+```python
+import json
+
+def get_non_birds(animals):
+    non_birds = [animal for animal, details in animals.items() if details['type'] != 'bird']
+    return json.dumps(non_birds)
+
+# Input data
+animals = {
+    "Whale": {"type": "mammal", "domestic": False, "size": "large"},
+    "Hamster": {"type": "mammal", "domestic": True, "size": "small"},
+    "Snake": {"type": "reptile", "domestic": False, "size": "medium"},
+    "Salmon": {"type": "fish", "domestic": False, "size": "medium"},
+    "Elephant": {"type": "mammal", "domestic": False, "size": "large"},
+    "Eagle": {"type": "bird", "domestic": False, "size": "medium"},
+    "Parrot": {"type": "bird", "domestic": True, "size": "small"},
+    "Cat": {"type": "mammal", "domestic": True, "size": "small"},
+    "Dog": {"type": "mammal", "domestic": True, "size": "medium"},
+    "Goldfish": {"type": "fish", "domestic": True, "size": "small"}
+}
+
+print(get_non_birds(animals))
+```
+
+**Output:**
+```json
+["Whale", "Hamster", "Snake", "Salmon", "Elephant", "Cat", "Dog", "Goldfish"]
+```

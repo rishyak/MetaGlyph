@@ -5,30 +5,32 @@
   "condition": "CTRL",
   "parse_success": true,
   "parsed_output": [
-    "Cat"
+    "Cat",
+    "Turtle",
+    "Goldfish"
   ],
   "gold_output": [
-    "cat",
     "eagle",
-    "goldfish",
+    "elephant",
     "penguin",
     "salmon",
+    "shark",
     "snake",
-    "turtle"
+    "whale"
   ],
   "exact_match": false,
-  "accuracy": 0.14285714285714285,
-  "f1_score": 0.25,
+  "accuracy": 0.0,
+  "f1_score": 0,
   "operator_fidelity": [
     {
       "operator": "∉",
       "checked": true,
-      "passed": true,
-      "details": "Exclusion constraint satisfied"
+      "passed": false,
+      "details": "missing=7, extra=3"
     }
   ],
   "overall_pass": false,
   "error_type": "incomplete",
-  "error_details": "Accuracy: 0.14",
+  "error_details": "Accuracy: 0.00",
   "semantic_equivalence_pass": false
 }

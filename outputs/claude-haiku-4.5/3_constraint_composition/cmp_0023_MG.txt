@@ -1,13 +1,48 @@
+I need to apply the filter: `x.priority ∈ {high} ∪ x.status ∉ {inactive}`
+
+This means: SELECT items where (priority is high) OR (status is NOT inactive)
+
+Let me evaluate each item:
+
+- item_000: priority=low, status=active → status ≠ inactive ✓
+- item_001: priority=medium, status=inactive → neither condition ✗
+- item_002: priority=medium, status=pending → status ≠ inactive ✓
+- item_003: priority=high, status=pending → priority=high ✓
+- item_004: priority=medium, status=pending → status ≠ inactive ✓
+- item_005: priority=medium, status=active → status ≠ inactive ✓
+- item_006: priority=medium, status=inactive → neither condition ✗
+- item_007: priority=high, status=inactive → priority=high ✓
+- item_008: priority=medium, status=inactive → neither condition ✗
+- item_009: priority=medium, status=inactive → neither condition ✗
+- item_010: priority=high, status=active → priority=high ✓
+- item_011: priority=medium, status=inactive → neither condition ✗
+- item_012: priority=low, status=pending → status ≠ inactive ✓
+- item_013: priority=low, status=pending → status ≠ inactive ✓
+- item_014: priority=high, status=inactive → priority=high ✓
+- item_015: priority=low, status=inactive → neither condition ✗
+- item_016: priority=high, status=active → priority=high ✓
+- item_017: priority=low, status=active → status ≠ inactive ✓
+- item_018: priority=high, status=inactive → priority=high ✓
+- item_019: priority=medium, status=active → status ≠ inactive ✓
+
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_000",
+    "item_002",
+    "item_003",
+    "item_004",
+    "item_005",
+    "item_007",
+    "item_010",
+    "item_012",
+    "item_013",
+    "item_014",
+    "item_016",
+    "item_017",
+    "item_018",
+    "item_019"
+  ],
+  "count": 14
 }
 ```
-
-The query requires items that match:
-- `∈(security) ∩ ∈(high_priority) ∪ ∈(performance)` - must have "security" AND "high_priority" attributes OR "performance" attribute
-- `¬(deprecated)` - must not be deprecated
-- `¬(experimental)` - must not be experimental
-
-The provided dataset contains only: ID, Category, Status, Priority, and Value attributes. There are no "security", "high_priority", "performance", "deprecated", or "experimental" attributes present in any items, so no items match the filter criteria.

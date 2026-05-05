@@ -1,0 +1,151 @@
+To apply the given transformation rules to the records, we need to follow the logical implications step-by-step. The transformation can be broken down into three parts:
+
+1. If `x.type` is not "premium", then multiply `x.amount` by 1.1.
+2. If `x.region` is not "EU", then multiply `x.amount` by 1.2.
+3. If `x.active` is not false, then set `x.status` to "archived".
+
+Let's apply these rules to each record in the input:
+
+- **Record rec_000:**
+  - type: premium
+  - region: EU
+  - amount: 850
+  - active: True
+  - Since `type` is "premium", no changes needed for the first rule.
+  - Since `region` is "EU", no changes needed for the second rule.
+  - Since `active` is True, `x.status` will be set to "archived".
+  - Transformed record: `{"type": "premium", "region": "EU", "amount": 850, "status": "archived"}`
+
+- **Record rec_001:**
+  - type: standard
+  - region: US
+  - amount: 685
+  - active: True
+  - Since `type` is not "premium", `x.amount` will be multiplied by 1.1.
+  - Since `region` is "US", no changes needed for the second rule.
+  - Since `active` is True, `x.status` will be set to "archived".
+  - Transformed record: `{"type": "standard", "region": "US", "amount": 685 * 1.1 = 753.5, "status": "archived"}`
+
+- **Record rec_002:**
+  - type: premium
+  - region: EU
+  - amount: 295
+  - active: True
+  - Since `type` is "premium", no changes needed for the first rule.
+  - Since `region` is "EU", no changes needed for the second rule.
+  - Since `active` is True, `x.status` will be set to "archived".
+  - Transformed record: `{"type": "premium", "region": "EU", "amount": 295, "status": "archived"}`
+
+- **Record rec_003:**
+  - type: premium
+  - region: EU
+  - amount: 666
+  - active: False
+  - Since `type` is "premium", no changes needed for the first rule.
+  - Since `region` is "EU", no changes needed for the second rule.
+  - Since `active` is False, no changes needed for the third rule.
+  - Transformed record: `{"type": "premium", "region": "EU", "amount": 666, "status": "not archived"}`
+
+- **Record rec_004:**
+  - type: trial
+  - region: APAC
+  - amount: 349
+  - active: True
+  - Since `type` is not "premium", `x.amount` will be multiplied by 1.1.
+  - Since `region` is "APAC", no changes needed for the second rule.
+  - Since `active` is True, `x.status` will be set to "archived".
+  - Transformed record: `{"type": "trial", "region": "APAC", "amount": 349 * 1.1 = 383.9, "status": "archived"}`
+
+- **Record rec_005:**
+  - type: standard
+  - region: EU
+  - amount: 192
+  - active: False
+  - Since `type` is not "premium", no changes needed for the first rule.
+  - Since `region` is "EU", no changes needed for the second rule.
+  - Since `active` is False, no changes needed for the third rule.
+  - Transformed record: `{"type": "standard", "region": "EU", "amount": 192, "status": "not archived"}`
+
+- **Record rec_006:**
+  - type: standard
+  - region: US
+  - amount: 620
+  - active: False
+  - Since `type` is not "premium", no changes needed for the first rule.
+  - Since `region` is "US", no changes needed for the second rule.
+  - Since `active` is False, no changes needed for the third rule.
+  - Transformed record: `{"type": "standard", "region": "US", "amount": 620, "status": "not archived"}`
+
+- **Record rec_007:**
+  - type: premium
+  - region: APAC
+  - amount: 815
+  - active: False
+  - Since `type` is "premium", no changes needed for the first rule.
+  - Since `region` is not "EU", `x.amount` will be multiplied by 1.2.
+  - Since `active` is False, no changes needed for the third rule.
+  - Transformed record: `{"type": "premium", "region": "APAC", "amount": 815 * 1.2 = 978, "status": "not archived"}`
+
+- **Record rec_008:**
+  - type: premium
+  - region: APAC
+  - amount: 533
+  - active: True
+  - Since `type` is "premium", no changes needed for the first rule.
+  - Since `region` is not "EU", `x.amount` will be multiplied by 1.2.
+  - Since `active` is True, `x.status` will be set to "archived".
+  - Transformed record: `{"type": "premium", "region": "APAC", "amount": 533 * 1.2 = 639.6, "status": "archived"}`
+
+- **Record rec_009:**
+  - type: premium
+  - region: APAC
+  - amount: 204
+  - active: False
+  - Since `type` is "premium", no changes needed for the first rule.
+  - Since `region` is not "EU", `x.amount` will be multiplied by 1.2.
+  - Since `active` is False, no changes needed for the third rule.
+  - Transformed record: `{"type": "premium", "region": "APAC", "amount": 204 * 1.2 = 244.8, "status": "not archived"}`
+
+- **Record rec_010:**
+  - type: standard
+  - region: APAC
+  - amount: 456
+  - active: True
+  - Since `type` is not "premium", `x.amount` will be multiplied by 1.1.
+  - Since `region` is "APAC", no changes needed for the second rule.
+  - Since `active` is True, `x.status` will be set to "archived".
+  - Transformed record: `{"type": "standard", "region": "APAC", "amount": 456 * 1.1 = 501.6, "status": "archived"}`
+
+- **Record rec_011:**
+  - type: trial
+  - region: EU
+  - amount: 713
+  - active: True
+  - Since `type` is not "premium", no changes needed for the first rule.
+  - Since `region` is "EU", no changes needed for the second rule.
+  - Since `active` is True, `x.status` will be set to "archived".
+  - Transformed record: `{"type": "trial", "region": "EU", "amount": 713, "status": "archived"}`
+
+- **Record rec_012:**
+  - type: premium
+  - region: EU
+  - amount: 81
+  - active: False
+  - Since `type` is "premium", no changes needed for the first rule.
+  - Since `region` is "EU", no changes needed for the second rule.
+  - Since `active` is False, no changes needed for the third rule.
+  - Transformed record: `{"type": "premium", "region": "EU", "amount": 81, "status": "not archived"}`
+
+- **Record rec_013:**
+  - type: trial
+  - region: EU
+  - amount: 689
+  - active: True
+  - Since `type` is not "premium", no changes needed for the first rule.
+  - Since `region` is "EU", no changes needed for the second rule.
+  - Since `active` is True, `x.status` will be set to "archived".
+  - Transformed record: `{"type": "trial", "region": "EU", "amount": 689, "status": "archived"}`
+
+- **Record rec_014:**
+  - type: trial
+  - region

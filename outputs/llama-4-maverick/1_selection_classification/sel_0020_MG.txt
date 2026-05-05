@@ -1,0 +1,34 @@
+To solve this task, we need to follow the given instruction: `SELECT x | x.size ∈ {small} → [x.name]`. This means we have to select the names of animals from the given dataset where the size of the animal is 'small'.
+
+First, let's list the animals with their sizes from the given dataset:
+- Shark: size: large
+- Elephant: size: large
+- Cat: size: small
+- Goldfish: size: small
+- Parrot: size: small
+- Eagle: size: medium
+- Hamster: size: small
+- Turtle: size: small
+- Salmon: size: medium
+- Lion: size: large
+
+Now, we filter the animals based on their size being 'small':
+- Cat: size: small
+- Goldfish: size: small
+- Parrot: size: small
+- Hamster: size: small
+- Turtle: size: small
+
+The instruction asks us to project the results to the `name` attribute, so we extract the names of these animals:
+- Cat
+- Goldfish
+- Parrot
+- Hamster
+- Turtle
+
+To present the answer in the required format, we need to put these names into a JSON array of strings.
+
+The final answer is: 
+```json
+["Cat", "Goldfish", "Parrot", "Hamster", "Turtle"]
+```

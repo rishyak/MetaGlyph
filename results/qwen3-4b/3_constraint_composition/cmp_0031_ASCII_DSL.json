@@ -1,0 +1,35 @@
+{
+  "prompt_id": "cmp_0031_ASCII_DSL",
+  "model": "qwen3-4b",
+  "family": "3_constraint_composition",
+  "condition": "ASCII_DSL",
+  "parse_success": false,
+  "parsed_output": null,
+  "gold_output": {
+    "selected_ids": [
+      "item_000",
+      "item_001",
+      "item_003",
+      "item_006",
+      "item_008",
+      "item_009",
+      "item_011",
+      "item_012",
+      "item_013",
+      "item_014",
+      "item_015",
+      "item_017",
+      "item_018",
+      "item_019"
+    ],
+    "count": 14
+  },
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0.0,
+  "operator_fidelity": [],
+  "overall_pass": false,
+  "error_type": "parse",
+  "error_details": "Could not extract key-value pairs",
+  "semantic_equivalence_pass": false
+}

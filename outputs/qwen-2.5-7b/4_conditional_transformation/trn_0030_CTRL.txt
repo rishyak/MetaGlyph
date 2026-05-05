@@ -1,0 +1,110 @@
+To transform the records according to the provided logical expressions, we need to apply each condition in sequence and update the fields accordingly. Let's break down the transformation steps based on the given logical expressions:
+
+1. If `x.type` is not "premium", then multiply `x.amount` by 1.1.
+2. If `x.region` is not "EU", then multiply `x.amount` by 1.2.
+3. If `x.active` is not `false`, then set `x.status` to "archived".
+
+Now let's apply these transformations to each record:
+
+- **rec_000:**
+  - `type: standard` (condition 1 is true)
+  - `region: EU` (condition 2 is false, so no change to amount)
+  - `active: False` (condition 3 is false, so no change to status)
+  - **Transformed:** `{"type": "standard", "region": "EU", "amount": 115, "status": "archived"}`
+
+- **rec_001:**
+  - `type: trial` (condition 1 is true)
+  - `region: US` (condition 2 is true, so multiply by 1.2)
+  - `active: True` (condition 3 is true, so multiply by 1.1)
+  - **Transformed:** `{"type": "trial", "region": "US", "amount": 526 * 1.2 * 1.1 = 610.56, "status": "archived"}`
+
+- **rec_002:**
+  - `type: standard` (condition 1 is true)
+  - `region: US` (condition 2 is true, so multiply by 1.2)
+  - `active: False` (condition 3 is false, so no change to status)
+  - **Transformed:** `{"type": "standard", "region": "US", "amount": 734 * 1.2 = 880.8, "status": "archived"}`
+
+- **rec_003:**
+  - `type: premium` (condition 1 is false, no change to amount)
+  - `region: APAC` (condition 2 is true, so multiply by 1.2)
+  - `active: True` (condition 3 is true, so multiply by 1.1)
+  - **Transformed:** `{"type": "premium", "region": "APAC", "amount": 545 * 1.2 * 1.1 = 645.9, "status": "archived"}`
+
+- **rec_004:**
+  - `type: premium` (condition 1 is false, no change to amount)
+  - `region: EU` (condition 2 is false, so no change to amount)
+  - `active: False` (condition 3 is false, so no change to status)
+  - **Transformed:** `{"type": "premium", "region": "EU", "amount": 949, "status": "archived"}`
+
+- **rec_005:**
+  - `type: premium` (condition 1 is false, no change to amount)
+  - `region: EU` (condition 2 is false, so no change to amount)
+  - `active: False` (condition 3 is false, so no change to status)
+  - **Transformed:** `{"type": "premium", "region": "EU", "amount": 803, "status": "archived"}`
+
+- **rec_006:**
+  - `type: trial` (condition 1 is true)
+  - `region: APAC` (condition 2 is true, so multiply by 1.2)
+  - `active: False` (condition 3 is false, so no change to status)
+  - **Transformed:** `{"type": "trial", "region": "APAC", "amount": 63 * 1.2 = 75.6, "status": "archived"}`
+
+- **rec_007:**
+  - `type: standard` (condition 1 is true)
+  - `region: EU` (condition 2 is false, so no change to amount)
+  - `active: False` (condition 3 is false, so no change to status)
+  - **Transformed:** `{"type": "standard", "region": "EU", "amount": 106, "status": "archived"}`
+
+- **rec_008:**
+  - `type: premium` (condition 1 is false, no change to amount)
+  - `region: EU` (condition 2 is false, so no change to amount)
+  - `active: True` (condition 3 is true, so multiply by 1.1)
+  - **Transformed:** `{"type": "premium", "region": "EU", "amount": 751 * 1.1 = 826.1, "status": "archived"}`
+
+- **rec_009:**
+  - `type: premium` (condition 1 is false, no change to amount)
+  - `region: US` (condition 2 is true, so multiply by 1.2)
+  - `active: True` (condition 3 is true, so multiply by 1.1)
+  - **Transformed:** `{"type": "premium", "region": "US", "amount": 606 * 1.2 * 1.1 = 733.04, "status": "archived"}`
+
+- **rec_010:**
+  - `type: premium` (condition 1 is false, no change to amount)
+  - `region: EU` (condition 2 is false, so no change to amount)
+  - `active: False` (condition 3 is false, so no change to status)
+  - **Transformed:** `{"type": "premium", "region": "EU", "amount": 1000, "status": "archived"}`
+
+- **rec_011:**
+  - `type: standard` (condition 1 is true)
+  - `region: APAC` (condition 2 is true, so multiply by 1.2)
+  - `active: True` (condition 3 is true, so multiply by 1.1)
+  - **Transformed:** `{"type": "standard", "region": "APAC", "amount": 735 * 1.2 * 1.1 = 859.38, "status": "archived"}`
+
+- **rec_012:**
+  - `type: premium` (condition 1 is false, no change to amount)
+  - `region: APAC` (condition 2 is true, so multiply by 1.2)
+  - `active: False` (condition 3 is false, so no change to status)
+  - **Transformed:** `{"type": "premium", "region": "APAC", "amount": 395 * 1.2 = 474, "status": "archived"}`
+
+- **rec_013:**
+  - `type: standard` (condition 1 is true)
+  - `region: APAC` (condition 2 is true, so multiply by 1.2)
+  - `active: True` (condition 3 is true, so multiply by 1.1)
+  - **Transformed:** `{"type": "standard", "region": "APAC", "amount": 729 * 1.2 * 1.1 = 849.48, "status": "archived"}`
+
+- **rec_014:**
+  - `type: trial` (condition 1 is true)
+  - `region: APAC` (condition 2 is true, so multiply by 1.2)
+  - `active: False` (condition 3 is false, so no change to status)
+  - **Transformed:** `{"type": "trial", "region": "APAC", "amount": 443 * 1.2 = 531.6, "status": "archived"}`
+
+The final transformed records will be:
+
+```json
+[
+    {"type": "standard", "region": "EU", "amount": 115, "status": "archived"},
+    {"type": "trial", "region": "US", "amount": 610.56, "status": "archived"},
+    {"type": "standard", "region": "US", "amount": 880.8, "status": "archived"},
+    {"type": "premium", "region": "APAC", "amount": 645.9, "status": "archived"},
+    {"type": "premium", "region": "EU", "amount": 949, "status": "archived"},
+    {"type": "premium", "region": "EU", "amount": 803, "status": "archived"},
+    {"type": "trial", "region": "APAC", "amount": 75.6, "status": "archived"},
+    {"type

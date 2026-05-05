@@ -1,3 +1,17 @@
 ```json
-["Hamster"]
+["Hamster", "Turtle", "Goldfish", "Parrot"]
 ```
+
+**Explanation:**
+I identified all animals where the 'domestic' attribute does NOT have the value 'False' (meaning domestic = True):
+
+- Hamster: domestic: True ✓
+- Turtle: domestic: True ✓
+- Goldfish: domestic: True ✓
+- Parrot: domestic: True ✓
+- Penguin: domestic: False ✗
+- Snake: domestic: False ✗
+- Salmon: domestic: False ✗
+- Eagle: domestic: False ✗
+- Whale: domestic: False ✗
+- Crocodile: domestic: False ✗

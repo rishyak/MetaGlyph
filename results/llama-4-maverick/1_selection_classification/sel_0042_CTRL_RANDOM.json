@@ -1,0 +1,51 @@
+{
+  "prompt_id": "sel_0042_CTRL_RANDOM",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this problem, we need to break down the given instruction and apply it to the provided input.",
+    "Let's decode this instruction step by step:",
+    "SELECT x`: This indicates we are selecting or filtering items from a collection based on certain conditions.",
+    "|` : This symbol typically denotes a condition or filter that needs to be applied to `x`.",
+    "(x.portable ¤ {False})`: This condition checks if the `portable` attribute of `x` is `False`. The `¤` symbol is used here to denote a check for membership or equality with a set or value. So, this condition is true if the item is not portable.",
+    "§`: This symbol is used to denote a logical AND operation between the conditions on its left and right.",
+    "(x.price_range ¤ {low})`: This checks if the `price_range` of `x` is `low`. So, this condition is true if the item's price range is low.",
+    "↯ [x.name]`: This indicates that after applying the filter, we need to project or extract the `name` of the items that satisfy the conditions.",
+    "Combining these steps, the instruction is asking us to:",
+    "Filter items that are not portable (`portable` is `False`) AND have a `price_range` of `low`.",
+    "Extract the names of these items.",
+    "Let's examine the input data:",
+    "Refrigerator: `portable`: False, `price_range`: high",
+    "Pen: `portable`: True, `price_range`: low",
+    "Headphones: `portable`: True, `price_range`: medium",
+    "Microwave: `portable`: True, `price_range`: medium",
+    "Stapler: `portable`: True, `price_range`: low",
+    "Laptop: `portable`: True, `price_range`: high",
+    "Smartphone: `portable`: True, `price_range`: high",
+    "Chair: `portable`: True, `price_range`: medium",
+    "Notebook: `portable`: True, `price_range`: low",
+    "Desk: `portable`: False, `price_range`: medium",
+    "To satisfy the given conditions:",
+    "portable` is `False`: Only \"Refrigerator\" and \"Desk\" satisfy this.",
+    "price_range` is `low`: None of the items that are not portable have a `low` price range. \"Refrigerator\" has a `high` price range, and \"Desk\" has a `medium` price range.",
+    "Therefore, there are no items that satisfy both conditions (`portable` is `False` AND `price_range` is `low`)."
+  ],
+  "gold_output": [],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "extra=26"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

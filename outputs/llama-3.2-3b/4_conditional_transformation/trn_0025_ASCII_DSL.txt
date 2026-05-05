@@ -1,0 +1,80 @@
+With the provided transformation rules, I'll apply the logic to each record and provide the transformed records in JSON format. Here is the result:
+
+```json
+[
+  {
+    "type": "premium",
+    "region": "APAC",
+    "amount": 1098.9,
+    "status": "archived"
+  },
+  {
+    "type": "standard",
+    "region": "EU",
+    "amount": 1044,
+    "status": "archived"
+  },
+  {
+    "type": "premium",
+    "region": "APAC",
+    "amount": 132,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 102.6,
+    "status": "archived"
+  },
+  {
+    "type": "premium",
+    "region": "APAC",
+    "amount": 177.1,
+    "status": "archived"
+  },
+  {
+    "type": "standard",
+    "region": "APAC",
+    "amount": 127,
+    "status": "archived"
+  },
+  {
+    "type": "premium",
+    "region": "APAC",
+    "amount": 698.2,
+    "status": "archived"
+  },
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 1003.8,
+    "status": "archived"
+  },
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 959.1,
+    "status": "archived"
+  },
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 848.9,
+    "status": "archived"
+  },
+  {
+    "type": "premium",
+    "region": "US",
+    "amount": 713,
+    "status": "archived"
+  },
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 972,
+    "status": "archived"
+  }
+]
+```
+
+Note that I've applied the transformation rules to each record, and the `status` field has been updated according to the rules. The `amount` field has been multiplied by 1.1 for premium records in APAC and 1.2 for premium records in EU.

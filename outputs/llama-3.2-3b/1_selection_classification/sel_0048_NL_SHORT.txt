@@ -1,0 +1,13 @@
+### Step 1: Identify the items with portable equals False
+To solve this problem, we need to identify the items in the inventory where the "portable" attribute is set to False.
+
+### Step 2: Extract the items with portable equals False
+From the given inventory, the items with portable equals False are:
+- Bookshelf
+- Refrigerator
+- Desk
+
+### Step 3: Return the items as a JSON array
+We will return the identified items as a JSON array.
+
+The final answer is: $\boxed [{"Bookshelf","Refrigerator","Desk"}]$

@@ -1,0 +1,40 @@
+To solve this task, we need to follow the given instruction: `SELECT x | x.type NOT IN {bird} -> [x.name]`. This means we have to select the names of animals from the given list where the type is not 'bird'.
+
+First, let's list the animals with their types as given in the input:
+
+1. Whale: type: mammal
+2. Hamster: type: mammal
+3. Snake: type: reptile
+4. Salmon: type: fish
+5. Elephant: type: mammal
+6. Eagle: type: bird
+7. Parrot: type: bird
+8. Cat: type: mammal
+9. Dog: type: mammal
+10. Goldfish: type: fish
+
+Now, we filter out the animals that are of type 'bird':
+
+- Eagle: type: bird
+- Parrot: type: bird
+
+The remaining animals are not of type 'bird', so we select their names:
+
+1. Whale
+2. Hamster
+3. Snake
+4. Salmon
+5. Elephant
+6. Cat
+7. Dog
+8. Goldfish
+
+Thus, the names of the animals that are not 'bird' are: Whale, Hamster, Snake, Salmon, Elephant, Cat, Dog, Goldfish.
+
+To present this in the required JSON array format, we have:
+
+```json
+["Whale", "Hamster", "Snake", "Salmon", "Elephant", "Cat", "Dog", "Goldfish"]
+```
+
+The final answer is: $\boxed{["Whale", "Hamster", "Snake", "Salmon", "Elephant", "Cat", "Dog", "Goldfish"]}$

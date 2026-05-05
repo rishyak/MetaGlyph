@@ -1,0 +1,11 @@
+```json
+["Parrot", "Dog", "Goldfish", "Hamster"]
+```
+
+Explanation:
+- The query `SELECT x | x.domestic ∈ {True} → [x.name]` means we need to select the names of animals that have a `domestic` attribute set to `True`.
+- From the provided list, the animals that meet this criterion are:
+  - Parrot
+  - Dog
+  - Goldfish
+  - Hamster

@@ -1,0 +1,6 @@
+{
+  "recipient": "alice.smith@example.com",
+  "date": "2024-11-18",
+  "sender_name": "Alice Smith",
+  "sender_title": "Manager, Global Solutions"
+}

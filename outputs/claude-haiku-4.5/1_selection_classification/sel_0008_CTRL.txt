@@ -1,3 +1,20 @@
+I need to find all animals where either:
+- `domestic` is `True` OR
+- `type` is `reptile`
+
+Let me evaluate each animal:
+
+1. **Shark**: domestic: False, type: fish → ❌ (neither condition met)
+2. **Cat**: domestic: True, type: mammal → ✅ (domestic is True)
+3. **Elephant**: domestic: False, type: mammal → ❌ (neither condition met)
+4. **Turtle**: domestic: True, type: reptile → ✅ (both conditions met)
+5. **Parrot**: domestic: True, type: bird → ✅ (domestic is True)
+6. **Hamster**: domestic: True, type: mammal → ✅ (domestic is True)
+7. **Crocodile**: domestic: False, type: reptile → ✅ (type is reptile)
+8. **Goldfish**: domestic: True, type: fish → ✅ (domestic is True)
+9. **Eagle**: domestic: False, type: bird → ❌ (neither condition met)
+10. **Salmon**: domestic: False, type: fish → ❌ (neither condition met)
+
 ```json
-["Cat", "Hamster"]
+["Cat", "Turtle", "Parrot", "Hamster", "Crocodile", "Goldfish"]
 ```

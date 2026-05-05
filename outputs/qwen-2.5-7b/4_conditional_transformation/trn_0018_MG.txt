@@ -1,0 +1,117 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 483,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 540,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 650 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 283,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 911 * 1.1 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 655,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 328,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 105 * 1.2,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 979,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 520,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 289,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 259 * 1.1 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 402,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 774,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 801,
+        "active": false,
+        "status": "archived"
+    }
+]
+```
+
+Explanation:
+- For `rec_000`, it is a trial record in the APAC region and not active, so its status is set to "archived".
+- For `rec_001`, it is a standard record in the US region and not active, so its status is set to "archived".
+- For `rec_002`, it is a trial record in the EU region and not active, so its status is set to "archived". Its amount is also multiplied by 1.2.
+- For `rec_003`, it is a standard record in the US region and active, so its status remains "active".
+- For `rec_004`, it is a premium record in the EU region and not active, so its status is set to "archived". Its amount is first multiplied by 1.1 and then by 1.2.
+- The rest of the records follow similar logic based on their conditions.

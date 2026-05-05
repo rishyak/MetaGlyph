@@ -1,0 +1,6 @@
+[
+  "Refrigerator",
+  "Pen",
+  "Stapler",
+  "Notebook"
+]

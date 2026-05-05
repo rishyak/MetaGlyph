@@ -1,0 +1,14 @@
+```json
+{
+  "sender": "alice.smith@innovationlabs.com",
+  "company": "Innovation Labs",
+  "sender_title": "Manager, Digital Systems",
+  "recipient": "bob.johnson@example.com"
+}
+```
+
+**Explanation of extraction:**
+- **sender**: Extracted from the "From" field: `alice.smith@innovationlabs.com`. The company name "Innovation Labs" is inferred from the email domain.
+- **company**: Derived from the sender's email domain (`innovationlabs.com` → "Innovation Labs").
+- **sender_title**: From the signature at the end: "Alice Smith, Manager, Digital Systems".
+- **recipient**: Extracted from the "To" field: `bob.johnson@example.com`.

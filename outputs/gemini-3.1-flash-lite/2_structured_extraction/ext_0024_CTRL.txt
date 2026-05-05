@@ -1,0 +1,8 @@
+```json
+{
+  "sender_name": "David Brown",
+  "date": "2024-06-25",
+  "company": "Global Solutions",
+  "sender_title": "VP"
+}
+```

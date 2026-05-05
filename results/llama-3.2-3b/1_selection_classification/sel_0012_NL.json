@@ -1,0 +1,41 @@
+{
+  "prompt_id": "sel_0012_NL",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "NL",
+  "parse_success": true,
+  "parsed_output": [
+    "Chair: category: furniture, price_range: medium, portable: True",
+    "Headphones: category: electronics, price_range: medium, portable: True",
+    "Microwave: category: appliances, price_range: medium, portable: True",
+    "Desk: category: furniture, price_range: medium, portable: False",
+    "Bookshelf: category: furniture, price_range: medium, portable: False",
+    "Chair",
+    "Headphones",
+    "Microwave",
+    "Desk",
+    "Bookshelf"
+  ],
+  "gold_output": [
+    "bookshelf",
+    "chair",
+    "desk",
+    "headphones",
+    "microwave"
+  ],
+  "exact_match": false,
+  "accuracy": 0.5,
+  "f1_score": 0.6666666666666666,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=5, extra=10"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.50",
+  "semantic_equivalence_pass": false
+}

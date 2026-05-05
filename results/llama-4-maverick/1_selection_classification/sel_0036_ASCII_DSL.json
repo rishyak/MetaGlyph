@@ -1,0 +1,38 @@
+{
+  "prompt_id": "sel_0036_ASCII_DSL",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this task, we need to follow the given instruction, which is to select the names of animals where the type is 'mammal'.",
+    "**Understanding the Instruction**: The instruction is given in a query-like format: `SELECT x | x.type IN {mammal} -> [x.name]`. This means we need to select the names (`x.name`) of animals (`x`) where the animal's type (`x.type`) is 'mammal'.",
+    "**Reviewing the Input Data**: The input data is a list of animals with their attributes. We need to review this list to identify animals that are classified as 'mammal'.",
+    "**Identifying Mammals**: From the given list, the animals classified as 'mammal' are:",
+    "Cat: type: mammal, domestic: True, size: small",
+    "Whale: type: mammal, domestic: False, size: large",
+    "Elephant: type: mammal, domestic: False, size: large",
+    "**Extracting Names**: We need to extract the names of these mammals, which are 'Cat', 'Whale', and 'Elephant'.",
+    "**Formatting the Output**: The output should be a JSON array of strings containing the names of the mammals. So, we format our result as `[\"Cat\", \"Whale\", \"Elephant\"]`."
+  ],
+  "gold_output": [
+    "cat",
+    "elephant",
+    "whale"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=3, extra=9"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

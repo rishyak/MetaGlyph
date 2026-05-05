@@ -1,14 +1,6 @@
-```json
-[
-  {
-    "risk_name": "Invoice date inconsistency",
-    "affected_component": "Billing data validation",
-    "severity": "medium"
-  },
-  {
-    "risk_name": "Incorrect subtotal calculation",
-    "affected_component": "Invoicing calculation logic",
-    "severity": "high"
-  }
-]
-```
+{
+  "date": "2024-06-12",
+  "total": "8280.8",
+  "due_date": "2024-04-22",
+  "invoice_num": "3664"
+}

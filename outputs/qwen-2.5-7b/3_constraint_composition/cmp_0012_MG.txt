@@ -1,0 +1,15 @@
+```json
+{
+  "selected_ids": ["item_009", "item_016"],
+  "count": 2
+}
+```
+
+Explanation:
+- The query filters items where the category is either A or B (`x.category ∈ {A, B}`).
+- Additionally, it checks if the status is active (`x.status ∈ {active}`).
+- From the dataset, only `item_009` and `item_016` meet both criteria:
+  - `item_009`: Category A, Status active
+  - `item_016`: Category A, Status active
+
+Thus, the selected IDs are `["item_009", "item_016"]` and the count is 2.

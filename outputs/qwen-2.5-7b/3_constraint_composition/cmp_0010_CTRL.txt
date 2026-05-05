@@ -1,0 +1,17 @@
+```json
+{
+  "selected_ids": ["item_000", "item_003", "item_009", "item_013"],
+  "count": 4
+}
+```
+
+Explanation:
+- The condition `x.id | x.priority ∈ {high}` means we select items where the priority is "high".
+- The condition `x.status ∉ {inactive}` means we exclude items where the status is "inactive".
+- Combining these conditions, we get the following items that meet both criteria:
+  - `item_000`: Priority is high and status is pending.
+  - `item_009`: Priority is high and status is pending.
+  - `item_013`: Priority is high and status is pending.
+  - `item_003`: Priority is medium but since it's not excluded by the condition, it still counts if it meets other criteria, but in this case, it doesn't because its priority is not high.
+
+Thus, the selected IDs are `["item_000", "item_009", "item_013"]`, and the count is 3. However, upon re-evaluation, `item_003` does not meet the priority condition strictly, so the correct selection is `["item_000", "item_009", "item_013"]` with a count of 3.

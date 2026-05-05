@@ -1,0 +1,56 @@
+{
+  "prompt_id": "sel_0047_CTRL_RANDOM",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this problem, we need to break down the given instruction and apply it to the provided input data.",
+    "Let's break it down:",
+    "SELECT x`: This means we are selecting or considering each item `x` from the given dataset.",
+    "(x.domestic ¤ {False})`: This condition filters items where `x.domestic` is `False`, meaning the animal is not domestic.",
+    "§`: This symbol indicates a logical AND operation between the conditions on its left and right.",
+    "(x.type ¤ {mammal})`: This condition filters items where `x.type` is `mammal`.",
+    "↯ [x.name]`: This means we are projecting or selecting the `name` of the items that satisfy the conditions.",
+    "So, the instruction is asking us to select the names of animals that are not domestic (`domestic = False`) and are of type `mammal`.",
+    "Let's examine the input data:",
+    "Eagle: type: bird, domestic: False, size: medium",
+    "Elephant: type: mammal, domestic: False, size: large",
+    "Lion: type: mammal, domestic: False, size: large",
+    "Turtle: type: reptile, domestic: True, size: small",
+    "Cat: type: mammal, domestic: True, size: small",
+    "Goldfish: type: fish, domestic: True, size: small",
+    "Crocodile: type: reptile, domestic: False, size: large",
+    "Parrot: type: bird, domestic: True, size: small",
+    "Snake: type: reptile, domestic: False, size: medium",
+    "Shark: type: fish, domestic: False, size: large",
+    "Applying the conditions:",
+    "x.domestic = False`: Eagle, Elephant, Lion, Crocodile, Snake, Shark",
+    "x.type = mammal`: Elephant, Lion, Cat",
+    "Combining both conditions with AND (`§`):",
+    "Elephant and Lion satisfy both `domestic = False` and `type = mammal`.",
+    "Now, projecting their names (`x.name`):",
+    "Elephant",
+    "Lion",
+    "Therefore, the output in the required JSON format is: `[\"Elephant\", \"Lion\"]"
+  ],
+  "gold_output": [
+    "elephant",
+    "lion"
+  ],
+  "exact_match": false,
+  "accuracy": 0.07142857142857142,
+  "f1_score": 0.13333333333333333,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "missing=2, extra=28"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.07",
+  "semantic_equivalence_pass": false
+}

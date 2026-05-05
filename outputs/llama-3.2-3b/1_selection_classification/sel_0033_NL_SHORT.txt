@@ -1,0 +1,28 @@
+### Solution
+```json
+[
+  "Pen",
+  "Stapler",
+  "Notebook"
+]
+```
+### Explanation
+We need to find the item names where the category equals "stationery" and portable equals True. We can achieve this by iterating through the list of items and checking their attributes. Here's a step-by-step breakdown:
+
+1. Initialize an empty array to store the matching item names.
+2. Iterate through each item in the list.
+3. Check if the item's category equals "stationery" and portable equals True.
+4. If the condition is met, add the item's name to the array.
+5. Return the array of matching item names.
+
+### Code
+```javascript
+const items = [
+  // ... (all the items listed in the problem statement)
+];
+
+const result = items.filter(item => item.category === 'stationery' && item.portable).map(item => item.name);
+
+console.log(result);
+```
+Note that we use the `filter()` method to create a new array with only the items that meet the condition, and then use the `map()` method to extract the item names from the filtered array.

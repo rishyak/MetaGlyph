@@ -1,0 +1,102 @@
+To solve this problem, we will apply the given rules to each record and then return the transformed records in JSON format.
+
+### Rules to Apply:
+1. If `type` == `premium`, multiply `amount` by 1.1.
+2. If `region` == `EU`, multiply `amount` by 1.2.
+3. If `active` == `False`, set `status` to `archived`.
+
+### Step-by-Step Transformation:
+
+1. **Record rec_000:**
+   - `type`: trial, `region`: APAC, `amount`: 483, `active`: False
+   - Apply rules: Since `active` == `False`, set `status` to `archived`. 
+   - Transformed: `{ "type": "trial", "region": "APAC", "amount": 483, "active": false, "status": "archived" }`
+
+2. **Record rec_001:**
+   - `type`: standard, `region`: US, `amount`: 540, `active`: False
+   - Apply rules: Since `active` == `False`, set `status` to `archived`.
+   - Transformed: `{ "type": "standard", "region": "US", "amount": 540, "active": false, "status": "archived" }`
+
+3. **Record rec_002:**
+   - `type`: trial, `region`: EU, `amount`: 650, `active`: False
+   - Apply rules: Multiply `amount` by 1.2 because `region` == `EU`, so `amount` = 650 * 1.2 = 780. Since `active` == `False`, set `status` to `archived`.
+   - Transformed: `{ "type": "trial", "region": "EU", "amount": 780, "active": false, "status": "archived" }`
+
+4. **Record rec_003:**
+   - `type`: standard, `region`: US, `amount`: 283, `active`: True
+   - No rules apply.
+   - Transformed: `{ "type": "standard", "region": "US", "amount": 283, "active": true }`
+
+5. **Record rec_004:**
+   - `type`: premium, `region`: EU, `amount`: 911, `active`: False
+   - Apply rules: Multiply `amount` by 1.1 because `type` == `premium`, so `amount` = 911 * 1.1 = 1002.1. Then, multiply by 1.2 because `region` == `EU`, so `amount` = 1002.1 * 1.2 = 1202.52. Since `active` == `False`, set `status` to `archived`.
+   - Transformed: `{ "type": "premium", "region": "EU", "amount": 1202.52, "active": false, "status": "archived" }`
+
+6. **Record rec_005:**
+   - `type`: standard, `region`: US, `amount`: 655, `active`: True
+   - No rules apply.
+   - Transformed: `{ "type": "standard", "region": "US", "amount": 655, "active": true }`
+
+7. **Record rec_006:**
+   - `type`: trial, `region`: US, `amount`: 328, `active`: True
+   - No rules apply.
+   - Transformed: `{ "type": "trial", "region": "US", "amount": 328, "active": true }`
+
+8. **Record rec_007:**
+   - `type`: trial, `region`: EU, `amount`: 105, `active`: True
+   - Apply rules: Multiply `amount` by 1.2 because `region` == `EU`, so `amount` = 105 * 1.2 = 126.
+   - Transformed: `{ "type": "trial", "region": "EU", "amount": 126, "active": true }`
+
+9. **Record rec_008:**
+   - `type`: standard, `region`: EU, `amount`: 979, `active`: True
+   - Apply rules: Multiply `amount` by 1.2 because `region` == `EU`, so `amount` = 979 * 1.2 = 1174.8.
+   - Transformed: `{ "type": "standard", "region": "EU", "amount": 1174.8, "active": true }`
+
+10. **Record rec_009:**
+    - `type`: trial, `region`: US, `amount`: 520, `active`: False
+    - Apply rules: Since `active` == `False`, set `status` to `archived`.
+    - Transformed: `{ "type": "trial", "region": "US", "amount": 520, "active": false, "status": "archived" }`
+
+11. **Record rec_010:**
+    - `type`: trial, `region`: APAC, `amount`: 289, `active`: False
+    - Apply rules: Since `active` == `False`, set `status` to `archived`.
+    - Transformed: `{ "type": "trial", "region": "APAC", "amount": 289, "active": false, "status": "archived" }`
+
+12. **Record rec_011:**
+    - `type`: premium, `region`: EU, `amount`: 259, `active`: False
+    - Apply rules: Multiply `amount` by 1.1 because `type` == `premium`, so `amount` = 259 * 1.1 = 284.9. Then, multiply by 1.2 because `region` == `EU`, so `amount` = 284.9 * 1.2 = 341.88. Since `active` == `False`, set `status` to `archived`.
+    - Transformed: `{ "type": "premium", "region": "EU", "amount": 341.88, "active": false, "status": "archived" }`
+
+13. **Record rec_012:**
+    - `type`: trial, `region`: US, `amount`: 402, `active`: True
+    - No rules apply.
+    - Transformed: `{ "type": "trial", "region": "US", "amount": 402, "active": true }`
+
+14. **Record rec_013:**
+    - `type`: trial, `region`: APAC, `amount`: 774, `active`: True
+    - No rules apply.
+    - Transformed: `{ "type": "trial", "region": "APAC", "amount": 774, "active": true }`
+
+15. **Record rec_014:**
+    - `type`: standard, `region`: EU, `amount`: 801, `active`: False
+    - Apply rules: Multiply `amount` by 1.2 because `region` == `EU`, so `amount` = 801 * 1.2 = 961.2. Since `active` == `False`, set `status` to `archived`.
+    - Transformed: `{ "type": "standard", "region": "EU", "amount": 961.2, "active": false, "status": "archived" }`
+
+### JSON Output:
+```json
+[
+  { "type": "trial", "region": "APAC", "amount": 483, "active": false, "status": "archived" },
+  { "type": "standard", "region": "US", "amount": 540, "active": false, "status": "archived" },
+  { "type": "trial", "region": "EU", "amount": 780, "active": false, "status": "archived" },
+  { "type": "standard", "region": "US", "amount": 283, "active": true },
+  { "type": "premium", "region": "EU", "amount": 1202.52, "active": false, "status": "archived" },
+  { "type": "standard", "region": "US", "amount": 655, "active": true },
+  { "type": "trial", "region": "US", "amount": 328, "active": true },
+  { "type": "trial", "region": "EU", "amount": 126, "active": true },
+  { "type": "standard", "region": "EU", "amount": 1174.8, "active": true },
+  { "type": "trial", "region": "US", "amount": 520, "active": false, "status": "archived" },
+  { "type": "trial", "region": "APAC", "amount": 289, "active": false, "status": "archived" },
+  { "type": "premium", "region": "EU", "amount": 341.88, "active": false, "status": "archived" },
+  { "type": "trial", "region": "US", "amount": 402, "active": true },
+  { "type": "trial", "region": "APAC", "amount": 774, "active": true },
+  { "type": "standard", "region": "EU", "amount": 961.2, "active": false, "status": "archived" }

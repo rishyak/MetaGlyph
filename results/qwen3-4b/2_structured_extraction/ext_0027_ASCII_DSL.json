@@ -1,0 +1,22 @@
+{
+  "prompt_id": "ext_0027_ASCII_DSL",
+  "model": "qwen3-4b",
+  "family": "2_structured_extraction",
+  "condition": "ASCII_DSL",
+  "parse_success": false,
+  "parsed_output": null,
+  "gold_output": {
+    "company": "TechCorp Inc.",
+    "date": "2024-03-26",
+    "recipient": "bob.johnson@example.com",
+    "sender_name": "Carol Williams"
+  },
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0.0,
+  "operator_fidelity": [],
+  "overall_pass": false,
+  "error_type": "parse",
+  "error_details": "Could not extract key-value pairs",
+  "semantic_equivalence_pass": false
+}

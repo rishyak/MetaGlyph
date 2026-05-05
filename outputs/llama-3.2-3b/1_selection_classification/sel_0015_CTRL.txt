@@ -1,0 +1,8 @@
+```json
+[
+  "Stapler",
+  "Pen",
+  "Notebook",
+  "Microwave"
+]
+```

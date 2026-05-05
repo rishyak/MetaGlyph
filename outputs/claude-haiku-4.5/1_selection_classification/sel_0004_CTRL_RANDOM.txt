@@ -1,0 +1,14 @@
+Looking at the query `SELECT x | x.type ※ {bird} ↯ [x.name]`:
+
+This appears to be a custom query syntax that means:
+- Select items `x`
+- Where `x.type` matches `{bird}` (filter condition)
+- Return `[x.name]` (the name field)
+
+From the animal list, the entries with `type: bird` are:
+1. **Parrot** - type: bird
+2. **Eagle** - type: bird
+
+```json
+["Parrot", "Eagle"]
+```

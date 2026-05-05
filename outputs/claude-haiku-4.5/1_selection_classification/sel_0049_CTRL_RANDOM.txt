@@ -1,0 +1,19 @@
+Looking at the instruction: `SELECT x | x.portable ¤ {True} ↯ [x.name]`
+
+This query asks me to:
+1. Select all items (x) where portable equals True
+2. Return their names
+
+Filtering the product list for items with `portable: True`:
+
+- Tablet: portable: True ✓
+- Smartphone: portable: True ✓
+- Laptop: portable: True ✓
+- Pen: portable: True ✓
+- Notebook: portable: True ✓
+- Chair: portable: True ✓
+- Headphones: portable: True ✓
+
+```json
+["Tablet", "Smartphone", "Laptop", "Pen", "Notebook", "Chair", "Headphones"]
+```

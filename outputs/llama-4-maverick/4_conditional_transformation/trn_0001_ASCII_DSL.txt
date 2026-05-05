@@ -1,0 +1,177 @@
+To solve this problem, we need to apply the given transformation rules to each record in the input data. The transformation rules are specified in a specific order and are conditional based on the attributes of each record.
+
+1. **First Rule**: If the record's type is "premium", then multiply its amount by 1.1.
+2. **Second Rule**: If the record's region is "EU", then multiply its amount by 1.2.
+3. **Third Rule**: If the record is not active (active == false), then change its status to "archived".
+
+Let's apply these rules step by step to each record.
+
+### Step 1: Apply the First Rule
+
+- For `rec_000` to `rec_014`, check if `type` is "premium". Only `rec_003` and `rec_011` are "premium".
+  - `rec_003`: amount = 474 * 1.1 = 521.4
+  - `rec_011`: amount = 77 * 1.1 = 84.7
+
+### Step 2: Apply the Second Rule
+
+- For all records, check if `region` is "EU". `rec_003`, `rec_004`, `rec_005`, `rec_007`, `rec_009`, `rec_011`, `rec_013`, and `rec_014` are in "EU".
+  - `rec_003`: amount = 521.4 * 1.2 = 625.68
+  - `rec_004`: amount = 373 * 1.2 = 447.6
+  - `rec_005`: amount = 728 * 1.2 = 873.6
+  - `rec_007`: amount = 398 * 1.2 = 477.6
+  - `rec_009`: amount = 873 * 1.2 = 1047.6
+  - `rec_011`: amount = 84.7 * 1.2 = 101.64
+  - `rec_013`: amount = 415 * 1.2 = 498
+  - `rec_014`: amount = 152 * 1.2 = 182.4
+
+### Step 3: Apply the Third Rule
+
+- For all records, check if `active` is False. `rec_001`, `rec_003`, `rec_007`, `rec_010`, and `rec_013` are not active.
+  - `rec_001`: status = "archived"
+  - `rec_003`: status = "archived"
+  - `rec_007`: status = "archived"
+  - `rec_010`: status = "archived"
+  - `rec_013`: status = "archived"
+
+### Transformation Results
+
+Let's summarize the transformations:
+
+1. `rec_000`: No changes.
+2. `rec_001`: status = "archived"
+3. `rec_002`: No changes.
+4. `rec_003`: amount = 625.68, status = "archived"
+5. `rec_004`: amount = 447.6
+6. `rec_005`: amount = 873.6
+7. `rec_006`: No changes.
+8. `rec_007`: amount = 477.6, status = "archived"
+9. `rec_008`: No changes.
+10. `rec_009`: amount = 1047.6
+11. `rec_010`: status = "archived"
+12. `rec_011`: amount = 101.64
+13. `rec_012`: No changes.
+14. `rec_013`: amount = 498, status = "archived"
+15. `rec_014`: amount = 182.4
+
+### JSON Output
+
+```json
+[
+  {
+    "type": "trial",
+    "region": "US",
+    "amount": 731,
+    "active": true
+  },
+  {
+    "type": "standard",
+    "region": "APAC",
+    "amount": 243,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 897,
+    "active": true
+  },
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 625.68,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "type": "standard",
+    "region": "EU",
+    "amount": 447.6,
+    "active": true
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 873.6,
+    "active": true
+  },
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 185,
+    "active": true
+  },
+  {
+    "type": "standard",
+    "region": "EU",
+    "amount": 477.6,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 580,
+    "active": true
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 1047.6,
+    "active": true
+  },
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 834,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 101.64,
+    "active": true
+  },
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 332,
+    "active": true
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 498,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "type": "standard",
+    "region": "EU",
+    "amount": 182.4,
+    "active": true
+  }
+]
+```
+
+The final answer is: 
+```json
+[
+  {"type": "trial", "region": "US", "amount": 731, "active": true},
+  {"type": "standard", "region": "APAC", "amount": 243, "active": false, "status": "archived"},
+  {"type": "standard", "region": "US", "amount": 897, "active": true},
+  {"type": "premium", "region": "EU", "amount": 625.68, "active": false, "status": "archived"},
+  {"type": "standard", "region": "EU", "amount": 447.6, "active": true},
+  {"type": "trial", "region": "EU", "amount": 873.6, "active": true},
+  {"type": "trial", "region": "APAC", "amount": 185, "active": true},
+  {"type": "standard", "region": "EU", "amount": 477.6, "active": false, "status": "archived"},
+  {"type": "trial", "region": "APAC", "amount": 580, "active": true},
+  {"type": "trial", "region": "EU", "amount": 1047.6, "active": true},
+  {"type": "standard", "region": "US", "amount": 834, "active": false, "status": "archived"},
+  {"type": "premium", "region": "EU", "amount": 101.64, "active": true},
+  {"type": "trial", "region": "APAC", "amount": 332, "active": true},
+  {"type": "trial", "region": "EU", "amount": 498, "active": false, "status": "archived"},
+  {"type": "standard", "region": "EU", "amount": 182.4, "active": true}
+]
+```

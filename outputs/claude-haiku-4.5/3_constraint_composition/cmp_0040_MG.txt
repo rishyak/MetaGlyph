@@ -1,13 +1,51 @@
+I need to select items where: **priority ∈ {high} ∪ status ∉ {inactive}**
+
+This means: **(priority is high) OR (status is not inactive)**
+
+Let me evaluate each item:
+
+- item_000: priority=high ✓ → **SELECT**
+- item_001: priority=high ✓ → **SELECT**
+- item_002: priority=low, status=active (not inactive) ✓ → **SELECT**
+- item_003: priority=low, status=active (not inactive) ✓ → **SELECT**
+- item_004: priority=medium, status=pending (not inactive) ✓ → **SELECT**
+- item_005: priority=low, status=inactive ✗ → reject
+- item_006: priority=high ✓ → **SELECT**
+- item_007: priority=medium, status=active (not inactive) ✓ → **SELECT**
+- item_008: priority=high ✓ → **SELECT**
+- item_009: priority=medium, status=active (not inactive) ✓ → **SELECT**
+- item_010: priority=medium, status=pending (not inactive) ✓ → **SELECT**
+- item_011: priority=high ✓ → **SELECT**
+- item_012: priority=medium, status=inactive ✗ → reject
+- item_013: priority=low, status=pending (not inactive) ✓ → **SELECT**
+- item_014: priority=low, status=active (not inactive) ✓ → **SELECT**
+- item_015: priority=medium, status=inactive ✗ → reject
+- item_016: priority=medium, status=pending (not inactive) ✓ → **SELECT**
+- item_017: priority=low, status=pending (not inactive) ✓ → **SELECT**
+- item_018: priority=low, status=active (not inactive) ✓ → **SELECT**
+- item_019: priority=medium, status=pending (not inactive) ✓ → **SELECT**
+
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_004",
+    "item_006",
+    "item_007",
+    "item_008",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_013",
+    "item_014",
+    "item_016",
+    "item_017",
+    "item_018",
+    "item_019"
+  ],
+  "count": 17
 }
 ```
-
-The query requires items that match:
-- `(security ∩ high_priority) ∪ performance` - None of the items have "security", "high_priority", or "performance" attributes
-- `¬deprecated` - Not applicable
-- `¬experimental` - Not applicable
-
-The dataset only contains Category, Status, Priority, and Value attributes. There are no items with the required "security", "high_priority", or "performance" attributes to satisfy the filter conditions.

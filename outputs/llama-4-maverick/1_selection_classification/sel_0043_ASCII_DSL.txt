@@ -1,0 +1,48 @@
+To solve this task, we need to follow the given instruction: `SELECT x | x.domestic NOT IN {True} -> [x.name]`. This means we have to select the names of animals that are not domestic.
+
+First, let's analyze the given data:
+
+1. Snake: type: reptile, domestic: False, size: medium
+2. Salmon: type: fish, domestic: False, size: medium
+3. Parrot: type: bird, domestic: True, size: small
+4. Hamster: type: mammal, domestic: True, size: small
+5. Whale: type: mammal, domestic: False, size: large
+6. Penguin: type: bird, domestic: False, size: medium
+7. Goldfish: type: fish, domestic: True, size: small
+8. Eagle: type: bird, domestic: False, size: medium
+9. Lion: type: mammal, domestic: False, size: large
+10. Cat: type: mammal, domestic: True, size: small
+
+The condition `x.domestic NOT IN {True}` translates to selecting animals where `domestic` is not `True`, meaning `domestic` is `False`.
+
+Let's filter the animals based on this condition:
+
+- Snake: domestic: False
+- Salmon: domestic: False
+- Parrot: domestic: True (excluded)
+- Hamster: domestic: True (excluded)
+- Whale: domestic: False
+- Penguin: domestic: False
+- Goldfish: domestic: True (excluded)
+- Eagle: domestic: False
+- Lion: domestic: False
+- Cat: domestic: True (excluded)
+
+The animals that are not domestic (`domestic: False`) are:
+- Snake
+- Salmon
+- Whale
+- Penguin
+- Eagle
+- Lion
+
+Now, we need to return their names as a JSON array of strings.
+
+The names are: Snake, Salmon, Whale, Penguin, Eagle, Lion.
+
+So, the output in JSON format is: `["Snake", "Salmon", "Whale", "Penguin", "Eagle", "Lion"]`.
+
+The final answer is:
+```json
+["Snake", "Salmon", "Whale", "Penguin", "Eagle", "Lion"]
+```

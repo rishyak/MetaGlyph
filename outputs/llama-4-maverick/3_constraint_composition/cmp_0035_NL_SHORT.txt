@@ -1,0 +1,63 @@
+To solve this problem, we need to filter the given dataset based on the conditions provided: the category should be either 'A' or 'B', and the status should be 'active'. We will then collect the IDs of the items that satisfy these conditions and count them.
+
+### Step 1: Filter the Dataset
+
+First, let's go through the dataset and identify the items that match the given criteria.
+
+1. ID: item_000 - Category: B, Status: active (Matches)
+2. ID: item_001 - Category: A, Status: active (Matches)
+3. ID: item_002 - Category: B, Status: active (Matches)
+4. ID: item_003 - Category: B, Status: active (Matches)
+5. ID: item_004 - Category: B, Status: inactive (Does not match)
+6. ID: item_005 - Category: C, Status: pending (Does not match)
+7. ID: item_006 - Category: C, Status: inactive (Does not match)
+8. ID: item_007 - Category: A, Status: pending (Does not match)
+9. ID: item_008 - Category: B, Status: active (Matches)
+10. ID: item_009 - Category: C, Status: pending (Does not match)
+11. ID: item_010 - Category: A, Status: pending (Does not match)
+12. ID: item_011 - Category: C, Status: active (Does not match)
+13. ID: item_012 - Category: B, Status: active (Matches)
+14. ID: item_013 - Category: C, Status: inactive (Does not match)
+15. ID: item_014 - Category: C, Status: inactive (Does not match)
+16. ID: item_015 - Category: A, Status: active (Matches)
+17. ID: item_016 - Category: C, Status: active (Does not match)
+18. ID: item_017 - Category: C, Status: pending (Does not match)
+19. ID: item_018 - Category: C, Status: active (Does not match)
+20. ID: item_019 - Category: C, Status: active (Does not match)
+
+### Step 2: Collect IDs and Count
+
+Now, let's collect the IDs of the items that matched the criteria and count them.
+
+- item_000
+- item_001
+- item_002
+- item_003
+- item_008
+- item_012
+- item_015
+
+There are 7 items in total that match the given conditions.
+
+### Step 3: Format the Output
+
+The IDs that match the criteria are: ['item_000', 'item_001', 'item_002', 'item_003', 'item_008', 'item_012', 'item_015'].
+
+The count of such items is: 7.
+
+Thus, the output in the required JSON format is:
+
+```json
+{
+  "selected_ids": ["item_000", "item_001", "item_002", "item_003", "item_008", "item_012", "item_015"],
+  "count": 7
+}
+```
+
+The final answer is: 
+```json
+{
+  "selected_ids": ["item_000", "item_001", "item_002", "item_003", "item_008", "item_012", "item_015"],
+  "count": 7
+}
+```

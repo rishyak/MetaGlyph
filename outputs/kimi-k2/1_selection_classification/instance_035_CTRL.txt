@@ -1,3 +1,0 @@
-```json
-["Cat","Chinchilla","Dog","Ferret","Goldfish","Guinea pig","Hamster","Hedgehog","Mouse","Parrot","Rabbit","Rat","Turtle"]
-```

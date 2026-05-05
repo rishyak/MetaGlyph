@@ -1,0 +1,24 @@
+The given instruction is a query in a formal language that can be translated into natural language as: "Select the names of animals that are domestic and of type 'bird'."
+
+Let's analyze the given data:
+
+1. Turtle: type: reptile, domestic: True, size: small
+2. Salmon: type: fish, domestic: False, size: medium
+3. Whale: type: mammal, domestic: False, size: large
+4. Crocodile: type: reptile, domestic: False, size: large
+5. Parrot: type: bird, domestic: True, size: small
+6. Cat: type: mammal, domestic: True, size: small
+7. Elephant: type: mammal, domestic: False, size: large
+8. Eagle: type: bird, domestic: False, size: medium
+9. Goldfish: type: fish, domestic: True, size: small
+10. Lion: type: mammal, domestic: False, size: large
+
+To solve this, we need to filter the animals based on two conditions:
+1. The animal is domestic (domestic: True).
+2. The animal is of type 'bird' (type: bird).
+
+From the given data, only "Parrot" satisfies both conditions: it is domestic and is a bird.
+
+Therefore, the output should be a JSON array containing the name "Parrot".
+
+The final answer is: ["Parrot"]

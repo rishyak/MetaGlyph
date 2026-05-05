@@ -1,0 +1,118 @@
+```json
+[
+  {
+    "id": "rec_000",
+    "type": "trial",
+    "region": "US",
+    "amount": 888.36,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_001",
+    "type": "trial",
+    "region": "EU",
+    "amount": 1035.1,
+    "active": false
+  },
+  {
+    "id": "rec_002",
+    "type": "trial",
+    "region": "EU",
+    "amount": 141.9,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_003",
+    "type": "standard",
+    "region": "US",
+    "amount": 423.72,
+    "active": false
+  },
+  {
+    "id": "rec_004",
+    "type": "standard",
+    "region": "US",
+    "amount": 330,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_005",
+    "type": "premium",
+    "region": "EU",
+    "amount": 389,
+    "active": false
+  },
+  {
+    "id": "rec_006",
+    "type": "trial",
+    "region": "APAC",
+    "amount": 995.28,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_007",
+    "type": "premium",
+    "region": "APAC",
+    "amount": 133.2,
+    "active": false
+  },
+  {
+    "id": "rec_008",
+    "type": "trial",
+    "region": "EU",
+    "amount": 1068.1,
+    "active": false
+  },
+  {
+    "id": "rec_009",
+    "type": "standard",
+    "region": "APAC",
+    "amount": 513.48,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_010",
+    "type": "premium",
+    "region": "EU",
+    "amount": 983,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_011",
+    "type": "premium",
+    "region": "US",
+    "amount": 854.4,
+    "active": false
+  },
+  {
+    "id": "rec_012",
+    "type": "trial",
+    "region": "APAC",
+    "amount": 497.64,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_013",
+    "type": "premium",
+    "region": "EU",
+    "amount": 204,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_014",
+    "type": "premium",
+    "region": "US",
+    "amount": 825.6,
+    "active": true,
+    "status": "archived"
+  }
+]
+```

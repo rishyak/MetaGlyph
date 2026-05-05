@@ -1,0 +1,42 @@
+```json
+{
+  "selected_ids": [
+    "item_001",
+    "item_002",
+    "item_004",
+    "item_005",
+    "item_006",
+    "item_007",
+    "item_008",
+    "item_014",
+    "item_015",
+    "item_016",
+    "item_017",
+    "item_018",
+    "item_019"
+  ],
+  "count": 13
+}
+```
+
+**Explanation:**
+The condition is: `x.priority IN {high} OR x.status NOT IN {inactive}`
+
+This selects items where:
+- Priority is "high" **OR**
+- Status is NOT "inactive" (i.e., status is "pending" or "active")
+
+**Selected items:**
+- item_001: priority=high ✓
+- item_002: status=active ✓
+- item_004: priority=high ✓
+- item_005: status=pending ✓
+- item_006: priority=high ✓
+- item_007: priority=high ✓
+- item_008: priority=high ✓
+- item_014: status=active ✓
+- item_015: priority=high ✓
+- item_016: status=active ✓
+- item_017: status=active ✓
+- item_018: status=pending ✓
+- item_019: priority=high ✓

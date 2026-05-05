@@ -1,0 +1,12 @@
+### Step 1: Filter the dataset to include only animals that are both domestic and birds.
+We will use the given SQL query to filter the dataset: `SELECT x.name FROM animals AS x WHERE x.domestic = True AND x.type = 'bird'`.
+
+### Step 2: Execute the query on the provided dataset.
+Based on the provided dataset, the animals that meet the criteria are:
+- Parrot
+- Cat
+
+### Step 3: Return the result as a JSON array.
+The result of the query is: `["Parrot", "Cat"]`
+
+The final answer is: $\boxed["Parrot", "Cat"]$

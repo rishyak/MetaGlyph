@@ -1,1 +1,8 @@
-[]
+```json
+{
+  "date": "2024-07-04",
+  "sender": "Bob Johnson",
+  "sender_title": "VP",
+  "company": "Innovation Labs"
+}
+```

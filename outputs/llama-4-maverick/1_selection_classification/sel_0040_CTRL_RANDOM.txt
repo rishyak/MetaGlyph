@@ -1,0 +1,36 @@
+To solve this problem, we need to understand the given instruction and apply it to the provided input.
+
+The instruction is: `SELECT x | x.domestic ¤ {True} ↯ [x.name]`
+
+Breaking down the instruction:
+1. `SELECT x`: This indicates we are selecting or filtering items from a dataset.
+2. `| x.domestic ¤ {True}`: This is a filter condition. `¤` denotes a membership test, so `x.domestic ¤ {True}` means `x.domestic` should be `True`. In other words, we are filtering for animals where `domestic` is `True`.
+3. `↯ [x.name]`: `↯` denotes a projection or mapping operation. So, after filtering, we are interested in the `name` of the selected items.
+
+Given the input dataset:
+- Whale: type: mammal, domestic: False, size: large
+- Shark: type: fish, domestic: False, size: large
+- Lion: type: mammal, domestic: False, size: large
+- Parrot: type: bird, domestic: True, size: small
+- Salmon: type: fish, domestic: False, size: medium
+- Eagle: type: bird, domestic: False, size: medium
+- Turtle: type: reptile, domestic: True, size: small
+- Crocodile: type: reptile, domestic: False, size: large
+- Snake: type: reptile, domestic: False, size: medium
+- Cat: type: mammal, domestic: True, size: small
+
+We need to filter the animals where `domestic` is `True` and then select their names.
+
+1. Filter for `domestic == True`:
+   - Parrot: domestic: True
+   - Turtle: domestic: True
+   - Cat: domestic: True
+
+2. Select their names:
+   - Parrot
+   - Turtle
+   - Cat
+
+Therefore, the output should be a JSON array containing the names of the domestic animals.
+
+The final answer is: `["Parrot", "Turtle", "Cat"]`

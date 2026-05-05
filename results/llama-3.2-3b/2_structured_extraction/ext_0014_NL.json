@@ -1,0 +1,34 @@
+{
+  "prompt_id": "ext_0014_NL",
+  "model": "llama-3.2-3b",
+  "family": "2_structured_extraction",
+  "condition": "NL",
+  "parse_success": true,
+  "parsed_output": {
+    "date": "2024-04-04",
+    "company": "null",
+    "sender_title": "Analyst",
+    "sender": "david.brown@globalsolutions.com"
+  },
+  "gold_output": {
+    "date": "2024-04-04",
+    "company": "Innovation Labs",
+    "sender_title": "Analyst",
+    "sender": "david.brown@globalsolutions.com"
+  },
+  "exact_match": false,
+  "accuracy": 0.75,
+  "f1_score": 0.75,
+  "operator_fidelity": [
+    {
+      "operator": "→",
+      "checked": true,
+      "passed": false,
+      "details": "Wrong values: ['company']"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "logic",
+  "error_details": "Accuracy: 0.75",
+  "semantic_equivalence_pass": false
+}

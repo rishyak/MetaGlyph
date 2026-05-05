@@ -1,0 +1,27 @@
+To solve this task, we need to extract the required fields ("date", "recipient", "subject", "company") from the given email document.
+
+1. **Date**: The date is directly mentioned in the email header as "Date: 2024-04-07". So, the value for "date" is "2024-04-07".
+
+2. **Recipient**: The recipient's email address is given in the "To" field as "carol.williams@example.com". The name is not directly available, but the email address is. So, we can consider "carol.williams@example.com" as the value for "recipient".
+
+3. **Subject**: The subject of the email is "Q4 Report" as mentioned in the "Subject" field. So, the value for "subject" is "Q4 Report".
+
+4. **Company**: The company name is not directly mentioned in the email. However, the sender's company can be inferred from their email address or signature. The sender's email address is "alice.smith@digitalsystems.com", suggesting "Digital Systems" could be the company. Additionally, the sender's signature includes "Global Solutions", which could also be considered a company or department name. Since "company" is not directly specified in the email headers or body, and there's no clear indication of the recipient's company, we might infer "Global Solutions" or "Digital Systems" as a potential company. However, without a clear indication, this is an assumption. For the purpose of this task, let's consider "Global Solutions" as it appears in the signature.
+
+Now, compiling the extracted information into the required JSON format:
+
+```json
+{
+  "date": "2024-04-07",
+  "recipient": "carol.williams@example.com",
+  "subject": "Q4 Report",
+  "company": "Global Solutions"
+}
+```
+
+This JSON object contains the extracted fields as per the instruction. 
+
+The final answer is: 
+```json
+{"date": "2024-04-07", "recipient": "carol.williams@example.com", "subject": "Q4 Report", "company": "Global Solutions"}
+```

@@ -1,0 +1,24 @@
+To solve this task, we need to follow the given instruction: `SELECT x | x.type ∈ {bird} → [x.name]`. This means we have to select the names of animals from the given list where the type is 'bird'.
+
+First, let's analyze the given data:
+
+1. Whale: type: mammal, domestic: False, size: large
+2. Hamster: type: mammal, domestic: True, size: small
+3. Snake: type: reptile, domestic: False, size: medium
+4. Salmon: type: fish, domestic: False, size: medium
+5. Elephant: type: mammal, domestic: False, size: large
+6. Eagle: type: bird, domestic: False, size: medium
+7. Parrot: type: bird, domestic: True, size: small
+8. Cat: type: mammal, domestic: True, size: small
+9. Dog: type: mammal, domestic: True, size: medium
+10. Goldfish: type: fish, domestic: True, size: small
+
+We need to filter the animals based on their type being 'bird'. From the given list, the animals that are birds are:
+- Eagle: type: bird
+- Parrot: type: bird
+
+The instruction asks us to return the names of these animals. So, we need to extract the names 'Eagle' and 'Parrot'.
+
+Therefore, the output should be a JSON array containing the names of the birds.
+
+The final answer is: ["Eagle", "Parrot"]

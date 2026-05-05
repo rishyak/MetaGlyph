@@ -1,11 +1,20 @@
+I need to find all items where either:
+- price_range is "high" OR
+- portable is "False"
+
+Let me evaluate each item:
+
+1. **Chair**: price_range: medium, portable: True → Neither condition met ✗
+2. **Refrigerator**: price_range: high, portable: False → Both conditions met ✓
+3. **Laptop**: price_range: high, portable: True → First condition met ✓
+4. **Desk**: price_range: medium, portable: False → Second condition met ✓
+5. **Tablet**: price_range: high, portable: True → First condition met ✓
+6. **Bookshelf**: price_range: medium, portable: False → Second condition met ✓
+7. **Stapler**: price_range: low, portable: True → Neither condition met ✗
+8. **Headphones**: price_range: medium, portable: True → Neither condition met ✗
+9. **Pen**: price_range: low, portable: True → Neither condition met ✗
+10. **Smartphone**: price_range: high, portable: True → First condition met ✓
+
 ```json
-[]
+["Refrigerator", "Laptop", "Desk", "Tablet", "Bookshelf", "Smartphone"]
 ```
-
-The query requests items that are:
-- ⊙(mammal) - must be a mammal
-- ⊗ ⊙(pet) - AND must be a pet
-- ⊗ ⊖(bird) - AND must NOT be a bird
-- ⊗ ⊖(farm_animal) - AND must NOT be a farm animal
-
-None of the items in the provided list have attributes for mammal, pet, bird, or farm_animal. All items are furniture, appliances, electronics, or stationery. Therefore, no items match the selection criteria.

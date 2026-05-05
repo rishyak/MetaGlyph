@@ -1,0 +1,2 @@
+### Solution
+SELECT x.name FROM products AS x WHERE x.category = 'appliances' AND x.portable = False

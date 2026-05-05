@@ -1,0 +1,21 @@
+```json
+{
+  "selected_ids": ["item_000", "item_001", "item_002", "item_003", "item_008", "item_012", "item_015"],
+  "count": 7
+}
+```
+
+Explanation:
+- The condition `x.id | x.category ∈ {A, B} ∪ x.status ∈ {active}` is used to filter the dataset.
+- Items that meet either of these conditions are selected:
+  - `x.category` is either 'A' or 'B'.
+  - `x.status` is 'active'.
+- From the given dataset, the following IDs meet the criteria:
+  - "item_000" (Category: B, Status: active)
+  - "item_001" (Category: A, Status: active)
+  - "item_002" (Category: B, Status: active)
+  - "item_003" (Category: B, Status: active)
+  - "item_008" (Category: B, Status: active)
+  - "item_012" (Category: B, Status: active)
+  - "item_015" (Category: A, Status: active)
+- Therefore, the count of selected items is 7.

@@ -1,0 +1,17 @@
+### Solution
+```json
+[
+  "Shark",
+  "Crocodile",
+  "Parrot"
+]
+```
+
+### Explanation
+To solve this problem, we need to identify the animals that are classified as "large" and "domestic" based on the provided attributes. 
+
+- Shark is classified as "large" and "domestic" is False.
+- Crocodile is classified as "large" and "domestic" is False.
+- Parrot is classified as "small" but "domestic" is True.
+
+Therefore, the only animal that meets the criteria is Shark and Crocodile.

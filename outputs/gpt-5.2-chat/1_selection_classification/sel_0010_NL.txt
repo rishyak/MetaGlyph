@@ -1,1 +1,1 @@
-["Dog", "Hamster"]
+["Parrot", "Dog", "Goldfish", "Hamster"]

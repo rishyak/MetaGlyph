@@ -1,0 +1,51 @@
+{
+  "prompt_id": "cmp_0022_CTRL_RANDOM",
+  "model": "gemma-3-12b",
+  "family": "3_constraint_composition",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": {
+    "selected_ids": [
+      "item_002",
+      "item_006",
+      "item_009",
+      "item_014",
+      "item_015",
+      "item_018"
+    ],
+    "count": 6
+  },
+  "gold_output": {
+    "selected_ids": [
+      "item_002",
+      "item_006",
+      "item_009",
+      "item_014",
+      "item_015",
+      "item_018",
+      "item_019"
+    ],
+    "count": 7
+  },
+  "exact_match": false,
+  "accuracy": 0.8571428571428571,
+  "f1_score": 0.923076923076923,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    },
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.86",
+  "semantic_equivalence_pass": false
+}

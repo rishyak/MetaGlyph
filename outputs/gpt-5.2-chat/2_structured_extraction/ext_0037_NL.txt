@@ -1,1 +1,8 @@
-[]
+```json
+{
+  "recipient": "carol.williams@example.com",
+  "date": "2024-06-18",
+  "company": "Global Solutions",
+  "sender_name": "Carol Williams"
+}
+```

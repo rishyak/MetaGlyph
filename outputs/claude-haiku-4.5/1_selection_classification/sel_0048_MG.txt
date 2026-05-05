@@ -1,11 +1,14 @@
+Looking at the instruction `SELECT x | x.portable ∈ {False} → [x.name]`, I need to:
+
+1. Filter for all items where `portable = False`
+2. Return their names
+
+Reviewing the product list for items with `portable: False`:
+
+- **Bookshelf**: portable: False ✓
+- **Refrigerator**: portable: False ✓
+- **Desk**: portable: False ✓
+
 ```json
-[]
+["Bookshelf", "Refrigerator", "Desk"]
 ```
-
-The query requests items that are:
-- ∈(mammal) - members of the mammal category
-- ∩ ∈(pet) - AND members of the pet category
-- ∩ ¬(bird) - AND NOT birds
-- ∩ ¬(farm_animal) - AND NOT farm animals
-
-None of the items in the provided inventory have attributes related to mammals, pets, birds, or farm animals. The inventory consists entirely of electronics, furniture, stationery, and appliances. Therefore, no items match the selection criteria.

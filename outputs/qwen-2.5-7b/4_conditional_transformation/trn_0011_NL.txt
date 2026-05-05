@@ -1,0 +1,90 @@
+```json
+[
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 427,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 435,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 408,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 498,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 781 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 775,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 289 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 408 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 827,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 870,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 556,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 587 * 1.1,
+        "active": true
+    }
+]
+```
+
+Note that I applied the transformations as follows:
+- For `rec_000`, since `type` was `standard`, no multiplication was done.
+- For `rec_004`, `rec_006`, `rec_007`, `rec_009`, `rec_010`, and `rec_014`, the `status` was set to 'archived' because `active` was `false`.
+- For `rec_000`, `rec_002`, and `rec_003`, since they are not `type: premium`, no multiplication was done.
+- For `rec_004`, `rec_006`, `rec_007`, `rec_009`, `rec_010`, and `rec_014`, the amount was multiplied by 1.1 and the status changed to 'archived'.
+- For `rec_004` and `rec_014`, since `region` was `EU`, the amount was also multiplied by 1.2.
+- For `rec_000` and `rec_004`, the `type` was `premium` and `region` was `EU`, so the amount was multiplied by both 1.1 and 1.2.
+- For `rec_001`, `rec_003`, and `rec_005` to `rec_008`, no transformation was necessary as they did not meet the conditions specified.
+- For `rec_005`, `rec_007`, and `rec_008`, the `region` was `EU` and the `type` was `premium`, so the amount was multiplied by 1.1 and 1.2 respectively.

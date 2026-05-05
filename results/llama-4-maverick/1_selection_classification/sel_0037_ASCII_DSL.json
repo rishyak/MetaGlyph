@@ -1,0 +1,50 @@
+{
+  "prompt_id": "sel_0037_ASCII_DSL",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this task, we need to follow the given instruction: `SELECT x | x.domestic NOT IN {True} -> [x.name]`. This means we are looking for animals that are not domestic, i.e., their `domestic` attribute is `False`, and we need to return a list of their names.",
+    "Let's analyze the given input data:",
+    "Dog: domestic: True",
+    "Eagle: domestic: False",
+    "Lion: domestic: False",
+    "Goldfish: domestic: True",
+    "Cat: domestic: True",
+    "Parrot: domestic: True",
+    "Hamster: domestic: True",
+    "Shark: domestic: False",
+    "Snake: domestic: False",
+    "Penguin: domestic: False",
+    "We will filter the animals based on their `domestic` status.",
+    "We look at each animal's `domestic` attribute and identify those that are `False`.",
+    "Eagle: domestic: False, so its name is included.",
+    "Lion: domestic: False, so its name is included.",
+    "Shark: domestic: False, so its name is included.",
+    "Snake: domestic: False, so its name is included.",
+    "Penguin: domestic: False, so its name is included."
+  ],
+  "gold_output": [
+    "eagle",
+    "lion",
+    "penguin",
+    "shark",
+    "snake"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=5, extra=19"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

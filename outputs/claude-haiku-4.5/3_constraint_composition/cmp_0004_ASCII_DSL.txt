@@ -1,0 +1,50 @@
+```json
+{
+  "selected_ids": [
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_004",
+    "item_005",
+    "item_006",
+    "item_007",
+    "item_008",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_012",
+    "item_013",
+    "item_015",
+    "item_016",
+    "item_017",
+    "item_018"
+  ],
+  "count": 17
+}
+```
+
+**Explanation:**
+The query selects items where: `priority IN {high} OR status NOT IN {inactive}`
+
+This means: **(priority = high) OR (status ≠ inactive)**
+
+- **item_000**: priority=medium, status=inactive → ✗ (not high AND is inactive)
+- **item_001**: priority=high → ✓
+- **item_002**: priority=low, status=active → ✓ (status not inactive)
+- **item_003**: priority=high → ✓
+- **item_004**: priority=high → ✓
+- **item_005**: priority=high → ✓
+- **item_006**: priority=low, status=pending → ✓ (status not inactive)
+- **item_007**: priority=low, status=active → ✓ (status not inactive)
+- **item_008**: priority=high → ✓
+- **item_009**: priority=high → ✓
+- **item_010**: priority=low, status=pending → ✓ (status not inactive)
+- **item_011**: priority=high → ✓
+- **item_012**: priority=medium, status=pending → ✓ (status not inactive)
+- **item_013**: priority=high → ✓
+- **item_014**: priority=medium, status=inactive → ✗ (not high AND is inactive)
+- **item_015**: priority=medium, status=pending → ✓ (status not inactive)
+- **item_016**: priority=low, status=active → ✓ (status not inactive)
+- **item_017**: priority=low, status=pending → ✓ (status not inactive)
+- **item_018**: priority=high → ✓
+- **item_019**: priority=low, status=inactive → ✗ (not high AND is inactive)

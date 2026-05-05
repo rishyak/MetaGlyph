@@ -1,0 +1,92 @@
+To solve this problem, we need to filter the given dataset based on the conditions provided in the instruction: `x.value >= 50` and `x.category IN {A}`.
+
+First, let's filter the dataset based on the category being 'A' and the value being greater than or equal to 50.
+
+The dataset with category 'A' and their respective values are:
+- item_000: Value = 98
+- item_002: Value = 4
+- item_003: Value = 38
+- item_005: Value = 73
+- item_007: Value = 80
+- item_009: Value = 82
+- item_011: Value = 87
+- item_016: Value = 74
+
+Now, filtering these items based on `value >= 50`:
+- item_000: Value = 98 (matches)
+- item_005: Value = 73 (matches)
+- item_007: Value = 80 (matches)
+- item_009: Value = 82 (matches)
+- item_011: Value = 87 (matches)
+- item_016: Value = 74 (matches)
+
+The IDs of the items that match the condition are:
+- item_000
+- item_005
+- item_007
+- item_009
+- item_011
+- item_016
+
+There are 6 items in total that match the given conditions.
+
+To format this into the required JSON output:
+```json
+{
+  "selected_ids": ["item_000", "item_005", "item_007", "item_009", "item_011", "item_016"],
+  "count": 6
+}
+```
+
+To achieve this, we can use a simple Python script that filters the data and then formats it into the required output.
+
+```python
+import json
+
+# Sample dataset
+data = {
+    "item_000": {"Category": "A", "Status": "inactive", "Priority": "low", "Value": 98},
+    "item_001": {"Category": "C", "Status": "pending", "Priority": "low", "Value": 57},
+    "item_002": {"Category": "A", "Status": "pending", "Priority": "medium", "Value": 4},
+    "item_003": {"Category": "A", "Status": "inactive", "Priority": "low", "Value": 38},
+    "item_004": {"Category": "B", "Status": "inactive", "Priority": "medium", "Value": 19},
+    "item_005": {"Category": "A", "Status": "pending", "Priority": "medium", "Value": 73},
+    "item_006": {"Category": "C", "Status": "active", "Priority": "low", "Value": 23},
+    "item_007": {"Category": "A", "Status": "pending", "Priority": "medium", "Value": 80},
+    "item_008": {"Category": "C", "Status": "active", "Priority": "medium", "Value": 75},
+    "item_009": {"Category": "A", "Status": "active", "Priority": "medium", "Value": 82},
+    "item_010": {"Category": "B", "Status": "inactive", "Priority": "medium", "Value": 86},
+    "item_011": {"Category": "A", "Status": "inactive", "Priority": "medium", "Value": 87},
+    "item_012": {"Category": "C", "Status": "active", "Priority": "low", "Value": 57},
+    "item_013": {"Category": "B", "Status": "pending", "Priority": "medium", "Value": 82},
+    "item_014": {"Category": "B", "Status": "pending", "Priority": "medium", "Value": 59},
+    "item_015": {"Category": "B", "Status": "active", "Priority": "medium", "Value": 62},
+    "item_016": {"Category": "A", "Status": "active", "Priority": "medium", "Value": 74},
+    "item_017": {"Category": "B", "Status": "pending", "Priority": "medium", "Value": 90},
+    "item_018": {"Category": "B", "Status": "active", "Priority": "high", "Value": 51},
+    "item_019": {"Category": "B", "Status": "active", "Priority": "high", "Value": 88},
+}
+
+def filter_data(data):
+    selected_ids = [id for id, item in data.items() if item['Category'] == 'A' and item['Value'] >= 50]
+    count = len(selected_ids)
+    return {"selected_ids": selected_ids, "count": count}
+
+result = filter_data(data)
+print(json.dumps(result, indent=2))
+```
+
+This will output:
+```json
+{
+  "selected_ids": [
+    "item_000",
+    "item_005",
+    "item_007",
+    "item_009",
+    "item_011",
+    "item_016"
+  ],
+  "count": 6
+}
+```

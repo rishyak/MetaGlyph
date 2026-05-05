@@ -1,0 +1,10 @@
+Based on the given instruction, we need to select items that belong to the "appliances" category and are not portable. From the provided list of products, only one item meets these criteria:
+
+- Refrigerator: category: appliances, price_range: high, portable: False
+- Desk: category: furniture, price_range: medium, portable: False (Does not belong to the appliances category)
+
+So, the correct output is:
+
+```json
+["Refrigerator"]
+```

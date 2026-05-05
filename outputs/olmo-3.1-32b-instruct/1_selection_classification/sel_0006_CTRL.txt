@@ -1,0 +1,9 @@
+[
+  "Shark",
+  "Crocodile",
+  "Whale",
+  "Dog",
+  "Hamster",
+  "Cat",
+  "Goldfish"
+]

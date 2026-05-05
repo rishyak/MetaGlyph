@@ -1,0 +1,95 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 35,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 152,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 923,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 42,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 248,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 743,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 613 * 1.2,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 724,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 169 * 1.1 * 1.2,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 104,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 877 * 1.2,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 836,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 559,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 575,
+        "active": false,
+        "status": "archived"
+    }
+]
+```
+
+Note: The amounts for records that have multiple transformations applied have been updated accordingly. For example, `rec_006` has both the EU region multiplier and the inactive status change applied.

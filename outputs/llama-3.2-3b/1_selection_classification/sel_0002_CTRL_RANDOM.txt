@@ -1,0 +1,15 @@
+Given the provided list of animals with their attributes, we can identify the birds and their corresponding names. The birds in the list are:
+
+- Whale: type: mammal, domestic: False, size: large
+- Eagle: type: bird, domestic: False, size: medium
+- Parrot: type: bird, domestic: True, size: small
+- Cat: type: mammal, domestic: True, size: small
+
+However, since the task requires classification by biological taxonomy and the question asks for birds, we should only consider the birds in the list. Therefore, the output should be:
+
+```
+[
+  "Eagle",
+  "Parrot"
+]
+```

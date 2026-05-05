@@ -1,13 +1,6 @@
-```json
-[
-  {
-    "risk_name": "Invoice and Due Date Inconsistency",
-    "affected_component": "Invoice Date Fields",
-    "severity": "High"
-  },
-  {
-    "risk_name": "Line Item and Subtotal Mismatch",
-    "affected_component": "Billing Calculation Logic",
-    "severity": "High"
-  }
-]
+{
+  "invoice_num": "6111",
+  "date": "2024-10-22",
+  "due_date": "2024-07-13",
+  "payment_terms": "Due on Receipt"
+}

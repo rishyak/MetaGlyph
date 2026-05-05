@@ -1,0 +1,17 @@
+Looking at the query `SELECT x | x.portable ※ {True} ↯ [x.name]`, I need to:
+
+1. Filter for items where `portable = True`
+2. Return the `name` attribute of matching items
+
+**Items with portable = True:**
+- Notebook
+- Headphones
+- Chair
+- Microwave
+- Pen
+- Stapler
+- Smartphone
+
+```json
+["Notebook", "Headphones", "Chair", "Microwave", "Pen", "Stapler", "Smartphone"]
+```

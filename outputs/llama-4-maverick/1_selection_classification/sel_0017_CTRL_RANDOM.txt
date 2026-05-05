@@ -1,0 +1,32 @@
+To solve this problem, we need to follow the given instruction: `SELECT x | x.type ※ {fish} ↯ [x.name]`. Let's break it down:
+
+1. **Understanding the Instruction**:
+   - `SELECT x`: This implies we are selecting or filtering items from a given dataset.
+   - `x.type ※ {fish}`: This means we are filtering the items where `x.type` is equal to `fish`. The symbol `※` is being used here to denote a kind of "is in" or equality check with a set or a specific value. Given the context, it seems to imply that we are looking for items where `type` equals `fish`.
+   - `↯ [x.name]`: This indicates that after filtering, we are projecting or selecting the `name` attribute of the filtered items. The symbol `↯` suggests a transformation or mapping to the attribute `name`.
+
+2. **Applying the Instruction to the Input**:
+   - The dataset provided contains a list of animals with their attributes.
+   - We need to filter this list to include only those animals where `type` equals `fish`.
+   - Then, we need to extract the `name` of these animals.
+
+3. **Filtering Animals by Type**:
+   - From the given dataset, the animals with `type: fish` are:
+     - Shark: type: fish, domestic: False, size: large
+     - Goldfish: type: fish, domestic: True, size: small
+
+4. **Extracting Names**:
+   - The names of the animals that are of type `fish` are `Shark` and `Goldfish`.
+
+5. **Formatting the Output**:
+   - The output needs to be in a JSON array of strings format.
+
+Putting it all together:
+
+### Solution
+
+```json
+["Shark", "Goldfish"]
+```
+
+This solution directly results from applying the given instruction to the provided dataset, filtering for animals of type `fish`, and then extracting their names.

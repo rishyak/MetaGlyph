@@ -1,0 +1,13 @@
+Looking at the product list, I need to find items where:
+- category = "appliances" AND
+- portable = False
+
+Reviewing all entries:
+
+- **Refrigerator**: category: appliances, portable: False ✓
+
+This is the only item that matches both criteria.
+
+```json
+["Refrigerator"]
+```

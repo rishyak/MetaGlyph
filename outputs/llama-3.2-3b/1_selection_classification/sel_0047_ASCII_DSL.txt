@@ -1,0 +1,43 @@
+### Step 1: Filter the dataset to include only non-domestic mammals
+We need to filter the dataset to include only animals that are not domestic and are classified as mammals.
+
+### Step 2: Identify the filtered dataset
+The filtered dataset includes the following animals:
+- Eagle: type: bird, domestic: False, size: medium
+- Elephant: type: mammal, domestic: False, size: large
+- Lion: type: mammal, domestic: False, size: large
+- Cat: type: mammal, domestic: True, size: small
+- Parrot: type: bird, domestic: True, size: small
+- Snake: type: reptile, domestic: False, size: medium
+- Shark: type: fish, domestic: False, size: large
+
+However, we need to exclude domesticated animals, so we remove the following:
+- Cat: type: mammal, domestic: True, size: small
+- Parrot: type: bird, domestic: True, size: small
+
+The filtered dataset includes the following animals:
+- Eagle: type: bird, domestic: False, size: medium
+- Elephant: type: mammal, domestic: False, size: large
+- Lion: type: mammal, domestic: False, size: large
+- Snake: type: reptile, domestic: False, size: medium
+- Shark: type: fish, domestic: False, size: large
+
+### Step 3: Filter the dataset to include only mammals
+We need to filter the dataset to include only animals that are classified as mammals.
+
+### Step 4: Identify the filtered dataset
+The filtered dataset includes the following animals:
+- Elephant: type: mammal, domestic: False, size: large
+- Lion: type: mammal, domestic: False, size: large
+- Snake is not a mammal, so it is removed from the dataset.
+
+The filtered dataset includes the following animals:
+- Elephant: type: mammal, domestic: False, size: large
+- Lion: type: mammal, domestic: False, size: large
+
+### Step 5: Return the filtered dataset as a JSON array
+The final answer is:
+[
+  "Elephant",
+  "Lion"
+]

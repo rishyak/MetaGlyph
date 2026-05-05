@@ -1,0 +1,14 @@
+Looking at the query `SELECT x | x.type ※ {bird} ↯ [x.name]`:
+
+This appears to be asking me to:
+1. Filter for all items where `x.type` equals "bird"
+2. Return their names
+
+From the animal list, the birds are:
+- Penguin: type: bird
+- Parrot: type: bird
+- Eagle: type: bird
+
+```json
+["Penguin", "Parrot", "Eagle"]
+```

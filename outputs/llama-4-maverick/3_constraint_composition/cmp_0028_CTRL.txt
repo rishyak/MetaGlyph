@@ -1,0 +1,67 @@
+To solve this problem, we need to filter the given dataset based on the conditions provided in the instruction: `x.priority ∈ {high} ∩ x.status ∉ {inactive}`. This means we are looking for items where the priority is 'high' and the status is not 'inactive'.
+
+Let's first list out the dataset:
+
+1. ID: item_000, Category: B, Status: inactive, Priority: medium, Value: 6
+2. ID: item_001, Category: C, Status: inactive, Priority: high, Value: 56
+3. ID: item_002, Category: B, Status: pending, Priority: low, Value: 10
+4. ID: item_003, Category: C, Status: pending, Priority: medium, Value: 47
+5. ID: item_004, Category: C, Status: pending, Priority: high, Value: 21
+6. ID: item_005, Category: A, Status: active, Priority: high, Value: 87
+7. ID: item_006, Category: B, Status: active, Priority: low, Value: 9
+8. ID: item_007, Category: A, Status: pending, Priority: medium, Value: 47
+9. ID: item_008, Category: B, Status: pending, Priority: low, Value: 78
+10. ID: item_009, Category: A, Status: pending, Priority: medium, Value: 48
+11. ID: item_010, Category: B, Status: inactive, Priority: low, Value: 74
+12. ID: item_011, Category: A, Status: pending, Priority: medium, Value: 51
+13. ID: item_012, Category: B, Status: pending, Priority: medium, Value: 32
+14. ID: item_013, Category: A, Status: active, Priority: high, Value: 24
+15. ID: item_014, Category: B, Status: pending, Priority: medium, Value: 72
+16. ID: item_015, Category: A, Status: inactive, Priority: medium, Value: 91
+17. ID: item_016, Category: B, Status: active, Priority: high, Value: 37
+18. ID: item_017, Category: C, Status: inactive, Priority: low, Value: 16
+19. ID: item_018, Category: A, Status: active, Priority: medium, Value: 23
+20. ID: item_019, Category: C, Status: inactive, Priority: low, Value: 88
+
+Now, let's apply the filter:
+
+1. `x.priority ∈ {high}`: We are looking for items with 'high' priority.
+   - item_001: Priority is 'high'.
+   - item_004: Priority is 'high'.
+   - item_005: Priority is 'high'.
+   - item_013: Priority is 'high'.
+   - item_016: Priority is 'high'.
+
+2. `x.status ∉ {inactive}`: We are looking for items where the status is not 'inactive'.
+   - item_004: Status is 'pending', not 'inactive'.
+   - item_005: Status is 'active', not 'inactive'.
+   - item_013: Status is 'active', not 'inactive'.
+   - item_016: Status is 'active', not 'inactive'.
+
+Combining both conditions, the items that satisfy both are:
+- item_004
+- item_005
+- item_013
+- item_016
+
+The IDs of these items are: `["item_004", "item_005", "item_013", "item_016"]`.
+
+The count of these items is: `4`.
+
+Therefore, the output in JSON format is:
+
+```json
+{
+  "selected_ids": ["item_004", "item_005", "item_013", "item_016"],
+  "count": 4
+}
+```
+
+To directly provide the response as per the required format:
+
+```json
+{
+  "selected_ids": ["item_004", "item_005", "item_013", "item_016"],
+  "count": 4
+}
+```

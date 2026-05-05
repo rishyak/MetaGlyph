@@ -1,0 +1,39 @@
+To solve this task, we need to carefully review the list of animals provided and identify the items that satisfy both conditions: (1) the 'domestic' attribute is 'True', and (2) the 'type' attribute is 'bird'.
+
+Let's examine each entry in the list:
+
+1. Turtle: type: reptile, domestic: True, size: small
+   - Does not satisfy condition (2) because it's not a bird.
+
+2. Salmon: type: fish, domestic: False, size: medium
+   - Does not satisfy either condition.
+
+3. Whale: type: mammal, domestic: False, size: large
+   - Does not satisfy either condition.
+
+4. Crocodile: type: reptile, domestic: False, size: large
+   - Does not satisfy either condition.
+
+5. Parrot: type: bird, domestic: True, size: small
+   - Satisfies both conditions: it's a bird and domestic.
+
+6. Cat: type: mammal, domestic: True, size: small
+   - Does not satisfy condition (2) because it's not a bird.
+
+7. Elephant: type: mammal, domestic: False, size: large
+   - Does not satisfy either condition.
+
+8. Eagle: type: bird, domestic: False, size: medium
+   - Does not satisfy condition (1) because it's not domestic.
+
+9. Goldfish: type: fish, domestic: True, size: small
+   - Does not satisfy condition (2) because it's not a bird.
+
+10. Lion: type: mammal, domestic: False, size: large
+    - Does not satisfy either condition.
+
+From the given list, only "Parrot" meets both criteria: it is a bird and is domestic.
+
+Therefore, the JSON array of strings containing the names of all matching items is:
+
+["Parrot"]

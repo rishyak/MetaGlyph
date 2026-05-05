@@ -1,1 +1,3 @@
-[]
+```json
+["Smartphone", "Chair", "Headphones", "Bookshelf", "Microwave", "Refrigerator", "Tablet"]
+```

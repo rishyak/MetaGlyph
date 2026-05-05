@@ -1,0 +1,9 @@
+Based on the provided instruction and input data, you are asking for the names of items that fall into the "low" price range. 
+
+Here is the query result in the requested JSON format:
+
+```json
+["Stapler", "Notebook", "Bookshelf"]
+```
+
+These items are categorized under "stationery" or "furniture" and have a price range of "low".

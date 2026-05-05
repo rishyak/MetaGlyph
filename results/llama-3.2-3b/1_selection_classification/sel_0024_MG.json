@@ -1,0 +1,31 @@
+{
+  "prompt_id": "sel_0024_MG",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": [
+    "From the given dataset, we can see that the Turtle is the only animal that fits this criteria.",
+    "From the given dataset, we can see that the Cat and the Hamster are the only animals that fit this criteria."
+  ],
+  "gold_output": [
+    "cat",
+    "hamster",
+    "turtle"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=3, extra=2"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "incomplete",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

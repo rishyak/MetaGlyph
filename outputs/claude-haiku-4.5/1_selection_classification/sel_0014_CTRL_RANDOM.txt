@@ -1,0 +1,13 @@
+Looking at the query: `SELECT x | x.type ¤ {fish} ↯ [x.name]`
+
+This appears to be a query asking to select all items where the type equals "fish" and return their names.
+
+Examining the input data for animals with `type: fish`:
+
+- **Salmon**: type: fish, domestic: False, size: medium
+
+**Output:**
+
+```json
+["Salmon"]
+```

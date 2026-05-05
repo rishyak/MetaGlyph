@@ -1,0 +1,119 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 71,
+        "active": true,
+        "status": "original"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 226,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 170,
+        "active": true,
+        "status": "original"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 86,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 471,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 247 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 729 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 249,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 687,
+        "active": true,
+        "status": "original"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 567,
+        "active": true,
+        "status": "original"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 940,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 71,
+        "active": true,
+        "status": "original"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 776 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 489,
+        "active": false,
+        "status": "archived"
+    }
+]
+```
+
+### Explanation
+- **Record `rec_000`:** No transformations needed.
+- **Record `rec_001`:** Set `status` to 'archived' because `active` is False.
+- **Record `rec_002`:** No transformations needed.
+- **Record `rec_003`:** No transformations needed.
+- **Record `rec_004`:** Set `status` to 'archived' because `active` is False and multiply `amount` by 1.2 since `region` is EU.
+- **Record `rec_005`:** Multiply `amount` by 1.1 since `type` is premium and set `status` to 'archived' because `active` is False.
+- **Record `rec_006`:** Set `status` to 'archived' because `active` is False and multiply `amount` by 1.2 since `region` is EU.
+- **Record `rec_007`:** No transformations needed.
+- **Record `rec_008`:** No transformations needed.
+- **Record `rec_009`:** No transformations needed.
+- **Record `rec_010`:** Set `status` to 'archived' because `active` is False.
+- **Record `rec_011`:** No transformations needed.
+- **Record `rec_012`:** Multiply `amount` by 1.1 since `type` is premium and set `status` to 'archived' because `active` is False.
+- **Record `rec_013`:** Set `status` to 'archived' because `active` is False and multiply `amount` by 1.1 since `type` is premium.
+- **Record `rec_014`:** Multiply `amount` by 1.2 since `region` is EU and set `status` to 'archived' because `active` is False.

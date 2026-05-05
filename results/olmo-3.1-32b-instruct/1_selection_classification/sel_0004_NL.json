@@ -1,0 +1,41 @@
+{
+  "prompt_id": "sel_0004_NL",
+  "model": "olmo-3.1-32b-instruct",
+  "family": "1_selection_classification",
+  "condition": "NL",
+  "parse_success": true,
+  "parsed_output": [
+    "Salmon",
+    "Cat",
+    "Crocodile",
+    "Shark",
+    "Lion",
+    "Snake",
+    "Elephant"
+  ],
+  "gold_output": [
+    "cat",
+    "crocodile",
+    "elephant",
+    "hamster",
+    "lion",
+    "salmon",
+    "shark",
+    "snake"
+  ],
+  "exact_match": false,
+  "accuracy": 0.875,
+  "f1_score": 0.9333333333333333,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=8, extra=7"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "incomplete",
+  "error_details": "Accuracy: 0.88",
+  "semantic_equivalence_pass": false
+}

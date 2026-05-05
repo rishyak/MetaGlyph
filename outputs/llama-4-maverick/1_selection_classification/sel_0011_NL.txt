@@ -1,0 +1,28 @@
+To solve this task, we need to review the given list of animals and their attributes, and then identify the animals where the 'domestic' attribute is not 'False'. This means we are looking for animals with 'domestic' status as 'True'.
+
+Let's examine the list:
+
+1. Eagle: type: bird, domestic: False, size: medium
+2. Goldfish: type: fish, domestic: True, size: small
+3. Cat: type: mammal, domestic: True, size: small
+4. Parrot: type: bird, domestic: True, size: small
+5. Lion: type: mammal, domestic: False, size: large
+6. Whale: type: mammal, domestic: False, size: large
+7. Penguin: type: bird, domestic: False, size: medium
+8. Elephant: type: mammal, domestic: False, size: large
+9. Shark: type: fish, domestic: False, size: large
+10. Snake: type: reptile, domestic: False, size: medium
+
+From the given list, the animals with 'domestic' attribute as 'True' are:
+- Goldfish
+- Cat
+- Parrot
+
+These are the animals that do not have 'domestic' as 'False'. Now, let's format the names of these animals as a JSON array of strings.
+
+The JSON array will be: ["Goldfish", "Cat", "Parrot"]
+
+So, the response is:
+```json
+["Goldfish", "Cat", "Parrot"]
+```

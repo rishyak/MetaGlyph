@@ -1,0 +1,18 @@
+SELECT 
+  x.id, 
+  x.value >= 50, 
+  x.category, 
+  CASE 
+    WHEN x.value >= 50 THEN 'true' 
+    ELSE 'false' 
+  END AS selected, 
+  CASE 
+    WHEN x.value >= 50 THEN 'true' 
+    ELSE 'false' 
+  END AS selected_ids, 
+  COUNT(*) AS count 
+FROM 
+  (SELECT id, value FROM item WHERE value >= 50) x 
+GROUP BY 
+  x.id, 
+  x.category

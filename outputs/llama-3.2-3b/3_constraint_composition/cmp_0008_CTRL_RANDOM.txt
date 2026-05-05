@@ -1,0 +1,23 @@
+SELECT 
+  x.id, 
+  x.category, 
+  x.status, 
+  x.selected_ids, 
+  COUNT(*) as count 
+FROM 
+  (SELECT 
+     id, 
+     category, 
+     status, 
+     CASE 
+       WHEN status = 'active' THEN 'selected'
+       ELSE NULL 
+     END as selected_ids 
+   FROM 
+     items) x 
+GROUP BY 
+  x.id, 
+  x.category, 
+  x.status 
+HAVING 
+  x.selected_ids IS NOT NULL

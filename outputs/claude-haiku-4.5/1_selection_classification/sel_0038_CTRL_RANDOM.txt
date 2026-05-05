@@ -1,0 +1,13 @@
+Looking at the query: `SELECT x | x.size ¤ {large} ↯ [x.name]`
+
+This appears to be asking for all items where size equals "large", returning their names.
+
+From the animal list, the animals with `size: large` are:
+
+1. **Elephant** - size: large
+2. **Whale** - size: large
+3. **Crocodile** - size: large
+
+```json
+["Elephant", "Whale", "Crocodile"]
+```

@@ -1,0 +1,10 @@
+```json
+{
+  "company": "Global Solutions",
+  "date": "2024-06-18",
+  "sender_name": "Carol Williams",
+  "recipient": "alice"
+}
+```
+
+Note: The recipient's name is not explicitly stated in the email, but it is inferred from the `To:` field which mentions `carol.williams@example.com`. Since we cannot determine the name directly from the email address provided, I have used "alice" as a placeholder for the recipient's name based on the context (assuming it is a common first name). If you need more specific information or if there is additional context available, please let me know.

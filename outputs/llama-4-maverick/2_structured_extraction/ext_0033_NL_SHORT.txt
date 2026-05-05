@@ -1,0 +1,37 @@
+To solve this task, we need to extract the required fields from the given email document and return them as a JSON object. The fields we need to extract are: recipient, sender, sender_title, and company.
+
+1. **Extracting the recipient**: The recipient's email address is found in the "To:" field of the email header. In the given document, "To: carol.williams@example.com" indicates that the recipient is "carol.williams@example.com". We will use this email address to identify the recipient.
+
+2. **Extracting the sender**: The sender's email address is found in the "From:" field of the email header. The document shows "From: alice.smith@innovationlabs.com", so the sender is "alice.smith@innovationlabs.com".
+
+3. **Extracting the sender_title**: The sender's title is usually found in the signature of the email. The document provides a signature that includes "Alice Smith", "Director", and "Global Solutions". Here, "Director" is the title of the sender.
+
+4. **Extracting the company**: The company name is not directly mentioned in the email header or the body but can sometimes be inferred from the email address or the signature. In this case, "Global Solutions" is part of the signature and could be considered as related to the company or department. However, without more context, it's not entirely clear if "Global Solutions" is the company name or a department within the company. For the purpose of this task, we will consider "Global Solutions" as the company, given the information available.
+
+Now, let's compile the extracted information into a JSON object:
+
+- Recipient: carol.williams@example.com
+- Sender: alice.smith@innovationlabs.com
+- Sender_title: Director
+- Company: Global Solutions
+
+The JSON object with the extracted fields will be:
+
+```json
+{
+  "recipient": "carol.williams@example.com",
+  "sender": "alice.smith@innovationlabs.com",
+  "sender_title": "Director",
+  "company": "Global Solutions"
+}
+```
+
+The final answer is: 
+```json
+{
+  "recipient": "carol.williams@example.com",
+  "sender": "alice.smith@innovationlabs.com",
+  "sender_title": "Director",
+  "company": "Global Solutions"
+}
+```

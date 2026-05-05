@@ -1,0 +1,14 @@
+Looking at the query: `SELECT x | x.type ¤ {bird} ↯ [x.name]`
+
+This appears to be asking me to:
+1. Select all items (x) where the type is "bird"
+2. Return their names
+
+From the input data, the animals with `type: bird` are:
+- Parrot
+- Penguin
+- Eagle
+
+```json
+["Parrot", "Penguin", "Eagle"]
+```

@@ -1,3 +1,8 @@
 ```json
-[]
+{
+  "due_date": "2024-07-22",
+  "invoice_num": "1672",
+  "customer_name": "Carol Williams",
+  "date": "2024-06-18"
+}
 ```

@@ -1,0 +1,8 @@
+```json
+{
+  "subject": "Q4 Report",
+  "recipient": "Bob",
+  "company": "Global Solutions",
+  "date": "2024-04-07"
+}
+```

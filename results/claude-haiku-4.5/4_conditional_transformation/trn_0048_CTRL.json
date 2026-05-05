@@ -4,7 +4,104 @@
   "family": "4_conditional_transformation",
   "condition": "CTRL",
   "parse_success": true,
-  "parsed_output": [],
+  "parsed_output": [
+    {
+      "type": "premium",
+      "region": "US",
+      "amount": 558,
+      "active": true,
+      "status": "archived"
+    },
+    {
+      "type": "standard",
+      "region": "EU",
+      "amount": 435.6,
+      "active": true,
+      "status": "archived"
+    },
+    {
+      "type": "standard",
+      "region": "US",
+      "amount": 999.6,
+      "active": true,
+      "status": "archived"
+    },
+    {
+      "type": "premium",
+      "region": "US",
+      "amount": 900,
+      "active": false
+    },
+    {
+      "type": "premium",
+      "region": "US",
+      "amount": 226,
+      "active": true,
+      "status": "archived"
+    },
+    {
+      "type": "trial",
+      "region": "US",
+      "amount": 928.8,
+      "active": false
+    },
+    {
+      "type": "standard",
+      "region": "APAC",
+      "amount": 753.6,
+      "active": true,
+      "status": "archived"
+    },
+    {
+      "type": "premium",
+      "region": "US",
+      "amount": 575,
+      "active": false
+    },
+    {
+      "type": "premium",
+      "region": "EU",
+      "amount": 487,
+      "active": false
+    },
+    {
+      "type": "premium",
+      "region": "EU",
+      "amount": 378,
+      "active": false
+    },
+    {
+      "type": "premium",
+      "region": "US",
+      "amount": 832,
+      "active": false
+    },
+    {
+      "type": "premium",
+      "region": "US",
+      "amount": 389,
+      "active": false
+    },
+    {
+      "type": "premium",
+      "region": "US",
+      "amount": 586,
+      "active": true,
+      "status": "archived"
+    },
+    {
+      "type": "trial",
+      "region": "US",
+      "amount": 31.2,
+      "active": false
+    },
+    {
+      "type": "trial",
+      "region": "APAC",
+      "amount": 723.6,
+      "active": false
+    }
+  ],
   "gold_output": [
     {
       "id": "rec_000",
@@ -126,16 +223,16 @@
   "f1_score": 0.0,
   "operator_fidelity": [
     {
-      "operator": "⇒",
-      "checked": true,
-      "passed": false,
-      "details": "Wrong number of records"
-    },
-    {
       "operator": "∘",
       "checked": true,
       "passed": false,
       "details": "Composition order may be incorrect"
+    },
+    {
+      "operator": "⇒",
+      "checked": true,
+      "passed": false,
+      "details": "15 records with wrong transformations"
     }
   ],
   "overall_pass": false,

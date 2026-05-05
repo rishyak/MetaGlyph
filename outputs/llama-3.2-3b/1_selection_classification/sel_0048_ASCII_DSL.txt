@@ -1,0 +1,44 @@
+### Solution
+```json
+[
+  "Smartphone",
+  "Laptop",
+  "Notebook",
+  "Pen",
+  "Stapler",
+  "Tablet",
+  "Chair"
+]
+```
+
+### Explanation
+To solve this problem, we need to filter the list of products to include only those that are portable and have a price range of "low". We can do this by selecting the `name` attribute of each product that meets these conditions.
+
+Here is the Python code to achieve this:
+```python
+import json
+
+# Define the list of products
+products = [
+  {"name": "Smartphone", "category": "electronics", "price_range": "high", "portable": True},
+  {"name": "Bookshelf", "category": "furniture", "price_range": "medium", "portable": False},
+  {"name": "Laptop", "category": "electronics", "price_range": "high", "portable": True},
+  {"name": "Notebook", "category": "stationery", "price_range": "low", "portable": True},
+  {"name": "Refrigerator", "category": "appliances", "price_range": "high", "portable": False},
+  {"name": "Chair", "category": "furniture", "price_range": "medium", "portable": True},
+  {"name": "Pen", "category": "stationery", "price_range": "low", "portable": True},
+  {"name": "Stapler", "category": "stationery", "price_range": "low", "portable": True},
+  {"name": "Tablet", "category": "electronics", "price_range": "high", "portable": True},
+  {"name": "Desk", "category": "furniture", "price_range": "medium", "portable": False}
+]
+
+# Filter the list of products to include only those that are portable and have a price range of "low"
+filtered_products = [product["name"] for product in products if product["portable"] and product["price_range"] == "low"]
+
+# Convert the list to a JSON array
+output = json.dumps(filtered_products)
+
+print(output)
+```
+
+This code defines the list of products, filters the list to include only those that are portable and have a price range of "low", and then converts the list to a JSON array. The output is a JSON array of strings representing the names of the filtered products.

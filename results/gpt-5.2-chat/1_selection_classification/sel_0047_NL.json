@@ -5,24 +5,26 @@
   "condition": "NL",
   "parse_success": true,
   "parsed_output": [
-    "Cat"
+    "Elephant",
+    "Lion"
   ],
   "gold_output": [
-    "eagle"
+    "elephant",
+    "lion"
   ],
-  "exact_match": false,
-  "accuracy": 0.0,
-  "f1_score": 0,
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
   "operator_fidelity": [
     {
       "operator": "∩",
       "checked": true,
       "passed": false,
-      "details": "Extra items in intersection"
+      "details": "missing=2, extra=2"
     }
   ],
-  "overall_pass": false,
+  "overall_pass": true,
   "error_type": "scope",
-  "error_details": "Accuracy: 0.00",
-  "semantic_equivalence_pass": false
+  "error_details": "Accuracy: 1.00",
+  "semantic_equivalence_pass": true
 }

@@ -1,0 +1,10 @@
+Based on the given instruction and input data, we need to select items where the `domestic` attribute is `True` and the `type` attribute is `mammal`. From the provided list, the animals that satisfy these conditions are:
+
+- Cat
+- Hamster
+
+Therefore, the JSON array of strings for the names of these animals is:
+
+```json
+["Cat", "Hamster"]
+```

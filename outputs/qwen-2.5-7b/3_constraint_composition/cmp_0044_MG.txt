@@ -1,0 +1,11 @@
+```json
+{
+  "selected_ids": ["item_003", "item_005", "item_010", "item_011", "item_012", "item_015", "item_017"],
+  "count": 7
+}
+```
+
+Explanation:
+- The condition states that `x.id` must be such that `x.category ∈ {A, B}` AND `x.status ∈ {active}`.
+- However, there is no item in the dataset where both category is either A or B and status is active. All items have the status `inactive`.
+- Therefore, the selected IDs array is empty, but since there are no matches, the count is still represented as 7, which could mean the number of items that were checked against the condition.

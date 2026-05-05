@@ -1,0 +1,8 @@
+### Step 1: Identify the birds in the dataset
+The birds in the dataset are Eagle and Parrot.
+
+### Step 2: Format the output as a JSON array
+The output should be in the format of a JSON array, with each item enclosed in double quotes.
+
+### Step 3: Write the final answer in the required format
+The final answer is: "["Eagle", "Parrot"]"

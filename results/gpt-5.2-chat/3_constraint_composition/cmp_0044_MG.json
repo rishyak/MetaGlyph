@@ -17,13 +17,13 @@
   "f1_score": 0,
   "operator_fidelity": [
     {
-      "operator": "∈",
+      "operator": "∩",
       "checked": true,
       "passed": false,
       "details": "Output is not a list"
     },
     {
-      "operator": "∩",
+      "operator": "∈",
       "checked": true,
       "passed": false,
       "details": "Output is not a list"
@@ -32,5 +32,5 @@
   "overall_pass": true,
   "error_type": "none",
   "error_details": null,
-  "semantic_equivalence_pass": false
+  "semantic_equivalence_pass": true
 }

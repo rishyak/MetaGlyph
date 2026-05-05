@@ -1,0 +1,149 @@
+```json
+{
+  "tool_name": "process_dataset",
+  "parameters": {
+    "dataset": [
+      {
+        "ID": "item_000",
+        "Category": "C",
+        "Status": "inactive",
+        "Priority": "low",
+        "Value": 29
+      },
+      {
+        "ID": "item_001",
+        "Category": "B",
+        "Status": "pending",
+        "Priority": "low",
+        "Value": 60
+      },
+      {
+        "ID": "item_002",
+        "Category": "A",
+        "Status": "pending",
+        "Priority": "medium",
+        "Value": 54
+      },
+      {
+        "ID": "item_003",
+        "Category": "C",
+        "Status": "pending",
+        "Priority": "low",
+        "Value": 50
+      },
+      {
+        "ID": "item_004",
+        "Category": "A",
+        "Status": "inactive",
+        "Priority": "low",
+        "Value": 43
+      },
+      {
+        "ID": "item_005",
+        "Category": "C",
+        "Status": "active",
+        "Priority": "medium",
+        "Value": 48
+      },
+      {
+        "ID": "item_006",
+        "Category": "A",
+        "Status": "pending",
+        "Priority": "high",
+        "Value": 25
+      },
+      {
+        "ID": "item_007",
+        "Category": "A",
+        "Status": "inactive",
+        "Priority": "medium",
+        "Value": 87
+      },
+      {
+        "ID": "item_008",
+        "Category": "C",
+        "Status": "pending",
+        "Priority": "low",
+        "Value": 10
+      },
+      {
+        "ID": "item_009",
+        "Category": "A",
+        "Status": "pending",
+        "Priority": "high",
+        "Value": 86
+      },
+      {
+        "ID": "item_010",
+        "Category": "C",
+        "Status": "active",
+        "Priority": "medium",
+        "Value": 27
+      },
+      {
+        "ID": "item_011",
+        "Category": "B",
+        "Status": "inactive",
+        "Priority": "low",
+        "Value": 28
+      },
+      {
+        "ID": "item_012",
+        "Category": "A",
+        "Status": "pending",
+        "Priority": "low",
+        "Value": 96
+      },
+      {
+        "ID": "item_013",
+        "Category": "B",
+        "Status": "active",
+        "Priority": "high",
+        "Value": 78
+      },
+      {
+        "ID": "item_014",
+        "Category": "C",
+        "Status": "active",
+        "Priority": "medium",
+        "Value": 31
+      },
+      {
+        "ID": "item_015",
+        "Category": "C",
+        "Status": "inactive",
+        "Priority": "medium",
+        "Value": 49
+      },
+      {
+        "ID": "item_016",
+        "Category": "B",
+        "Status": "pending",
+        "Priority": "high",
+        "Value": 46
+      },
+      {
+        "ID": "item_017",
+        "Category": "B",
+        "Status": "inactive",
+        "Priority": "medium",
+        "Value": 66
+      },
+      {
+        "ID": "item_018",
+        "Category": "B",
+        "Status": "inactive",
+        "Priority": "low",
+        "Value": 93
+      },
+      {
+        "ID": "item_019",
+        "Category": "B",
+        "Status": "inactive",
+        "Priority": "low",
+        "Value": 48
+      }
+    ]
+  }
+}
+```

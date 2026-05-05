@@ -1,0 +1,47 @@
+{
+  "prompt_id": "sel_0028_ASCII_DSL",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this task, we need to follow the given instruction: `SELECT x | x.type IN {mammal} -> [x.name]`. This means we have to select the names of animals from the given list where the type is 'mammal'.",
+    "First, let's review the given list of animals and their attributes:",
+    "Crocodile: type: reptile, domestic: False, size: large",
+    "Snake: type: reptile, domestic: False, size: medium",
+    "Eagle: type: bird, domestic: False, size: medium",
+    "Turtle: type: reptile, domestic: True, size: small",
+    "Parrot: type: bird, domestic: True, size: small",
+    "Cat: type: mammal, domestic: True, size: small",
+    "Shark: type: fish, domestic: False, size: large",
+    "Hamster: type: mammal, domestic: True, size: small",
+    "Salmon: type: fish, domestic: False, size: medium",
+    "Penguin: type: bird, domestic: False, size: medium",
+    "Now, let's filter the animals based on the condition `x.type IN {mammal}`:",
+    "Cat: type: mammal",
+    "Hamster: type: mammal",
+    "These are the only two animals in the list that are of type 'mammal'. Now, we need to extract their names as per the instruction `-> [x.name]`.",
+    "Cat",
+    "Hamster",
+    "Therefore, the output should be a JSON array of these names."
+  ],
+  "gold_output": [
+    "cat",
+    "hamster"
+  ],
+  "exact_match": false,
+  "accuracy": 0.10526315789473684,
+  "f1_score": 0.1904761904761905,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=2, extra=19"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.11",
+  "semantic_equivalence_pass": false
+}

@@ -1,0 +1,162 @@
+To solve this problem, we need to apply the given transformation rules to each record in the input data. The transformation rules are specified in a specific order and are conditional based on the attributes of each record.
+
+1. **First Rule**: If the record's type is "premium", then multiply its amount by 1.1.
+2. **Second Rule**: If the record's region is "EU", then multiply its amount by 1.2.
+3. **Third Rule**: If the record is not active (active == false), then change its status to "archived".
+
+Let's apply these rules step by step to each record.
+
+### Step 1: Apply the First Rule
+
+- For records where `type == "premium"`, multiply `amount` by 1.1.
+  - rec_008: amount = 169 * 1.1 = 185.9
+  - rec_009: amount = 104 * 1.1 = 114.4
+  - rec_013: amount = 575 * 1.1 = 632.5
+
+### Step 2: Apply the Second Rule
+
+- For records where `region == "EU"`, multiply `amount` by 1.2.
+  - rec_003: amount = 42 * 1.2 = 50.4
+  - rec_006: amount = 613 * 1.2 = 735.6
+  - rec_008: amount = 185.9 * 1.2 = 223.08
+  - rec_010: amount = 877 * 1.2 = 1052.4
+  - rec_011: amount = 836 * 1.2 = 1003.2
+  - rec_012: amount = 559 * 1.2 = 670.8
+
+### Step 3: Apply the Third Rule
+
+- For records where `active == false`, set `status` to "archived".
+  - rec_000: status = "archived"
+  - rec_005: status = "archived"
+  - rec_006: status = "archived"
+  - rec_007: status = "archived"
+  - rec_009: status = "archived"
+  - rec_010: status = "archived"
+  - rec_013: status = "archived"
+  - rec_014: status = "archived"
+
+### Transformation Results
+
+Let's list the transformed records:
+
+1. rec_000:
+   - type: trial
+   - region: US
+   - amount: 35
+   - active: False
+   - status: "archived"
+
+2. rec_001:
+   - type: standard
+   - region: US
+   - amount: 152
+   - active: True
+
+3. rec_002:
+   - type: trial
+   - region: APAC
+   - amount: 923
+   - active: True
+
+4. rec_003:
+   - type: trial
+   - region: EU
+   - amount: 50.4
+   - active: True
+
+5. rec_004:
+   - type: standard
+   - region: US
+   - amount: 248
+   - active: True
+
+6. rec_005:
+   - type: trial
+   - region: US
+   - amount: 743
+   - active: False
+   - status: "archived"
+
+7. rec_006:
+   - type: standard
+   - region: EU
+   - amount: 735.6
+   - active: False
+   - status: "archived"
+
+8. rec_007:
+   - type: standard
+   - region: US
+   - amount: 724
+   - active: False
+   - status: "archived"
+
+9. rec_008:
+   - type: premium
+   - region: EU
+   - amount: 223.08
+   - active: True
+
+10. rec_009:
+    - type: premium
+    - region: US
+    - amount: 114.4
+    - active: False
+    - status: "archived"
+
+11. rec_010:
+    - type: standard
+    - region: EU
+    - amount: 1052.4
+    - active: False
+    - status: "archived"
+
+12. rec_011:
+    - type: trial
+    - region: EU
+    - amount: 1003.2
+    - active: True
+
+13. rec_012:
+    - type: trial
+    - region: EU
+    - amount: 670.8
+    - active: True
+
+14. rec_013:
+    - type: premium
+    - region: US
+    - amount: 632.5
+    - active: False
+    - status: "archived"
+
+15. rec_014:
+    - type: trial
+    - region: APAC
+    - amount: 916
+    - active: False
+    - status: "archived"
+
+### JSON Output
+
+```json
+[
+  {"type": "trial", "region": "US", "amount": 35, "active": false, "status": "archived"},
+  {"type": "standard", "region": "US", "amount": 152, "active": true},
+  {"type": "trial", "region": "APAC", "amount": 923, "active": true},
+  {"type": "trial", "region": "EU", "amount": 50.4, "active": true},
+  {"type": "standard", "region": "US", "amount": 248, "active": true},
+  {"type": "trial", "region": "US", "amount": 743, "active": false, "status": "archived"},
+  {"type": "standard", "region": "EU", "amount": 735.6, "active": false, "status": "archived"},
+  {"type": "standard", "region": "US", "amount": 724, "active": false, "status": "archived"},
+  {"type": "premium", "region": "EU", "amount": 223.08, "active": true},
+  {"type": "premium", "region": "US", "amount": 114.4, "active": false, "status": "archived"},
+  {"type": "standard", "region": "EU", "amount": 1052.4, "active": false, "status": "archived"},
+  {"type": "trial", "region": "EU", "amount": 1003.2, "active": true},
+  {"type": "trial", "region": "EU", "amount": 670.8, "active": true},
+  {"type": "premium", "region": "US", "amount": 632.5, "active": false, "status": "archived"},
+  {"type": "trial", "region": "APAC", "amount": 916, "active": false, "status": "archived"}
+]
+```
+
+This JSON array represents the transformed records according to the given rules.

@@ -1,0 +1,13 @@
+SELECT 
+  x.id, 
+  x.value >= 50 AND x.category IN {A} AS condition, 
+  COUNT(DISTINCT x.id) AS count
+FROM 
+  item x
+WHERE 
+  x.category IN {A}
+GROUP BY 
+  x.id, 
+  x.value >= 50 AND x.category IN {A}
+HAVING 
+  COUNT(DISTINCT x.id) > 0

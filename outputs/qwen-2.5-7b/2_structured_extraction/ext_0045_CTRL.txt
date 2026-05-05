@@ -1,0 +1,10 @@
+```json
+{
+  "customer_name": "Carol Williams",
+  "invoice_num": "1672",
+  "date": "2024-06-18",
+  "due_date": "2024-07-22"
+}
+```
+
+This JSON object contains the extracted fields from the provided invoice document.

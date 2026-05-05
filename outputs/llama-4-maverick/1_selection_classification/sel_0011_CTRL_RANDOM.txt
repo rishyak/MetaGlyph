@@ -1,0 +1,35 @@
+To solve this problem, we need to break down the given instruction and apply it to the provided input.
+
+The instruction is: `SELECT x | x.domestic ※ {False} ↯ [x.name]`
+
+1. **Understanding the Instruction**:
+   - `SELECT x`: This implies we are selecting or filtering items from a dataset.
+   - `x.domestic ※ {False}`: This means we are filtering the items where `x.domestic` is `False`. The symbol `※` is being used to denote a condition or filter.
+   - `↯ [x.name]`: This indicates that after filtering, we are interested in the `name` of the items. The symbol `↯` suggests a transformation or projection of the data to the specified attribute, in this case, `name`.
+
+2. **Applying the Instruction to the Input**:
+   - The input is a list of animals with their attributes: `type`, `domestic`, and `size`.
+   - We need to filter the animals where `domestic` is `False`.
+   - Then, we need to extract the `name` of these animals.
+
+Let's go through the list:
+- Eagle: `domestic` is `False`
+- Goldfish: `domestic` is `True`
+- Cat: `domestic` is `True`
+- Parrot: `domestic` is `True`
+- Lion: `domestic` is `False`
+- Whale: `domestic` is `False`
+- Penguin: `domestic` is `False`
+- Elephant: `domestic` is `False`
+- Shark: `domestic` is `False`
+- Snake: `domestic` is `False`
+
+Animals with `domestic` as `False` are: Eagle, Lion, Whale, Penguin, Elephant, Shark, Snake.
+
+3. **Extracting Names**:
+   - The names of these animals are: Eagle, Lion, Whale, Penguin, Elephant, Shark, Snake.
+
+4. **Formatting the Output**:
+   - The output should be a JSON array of strings, containing the names of the animals that are not domestic.
+
+Therefore, the output will be: `["Eagle", "Lion", "Whale", "Penguin", "Elephant", "Shark", "Snake"]`.

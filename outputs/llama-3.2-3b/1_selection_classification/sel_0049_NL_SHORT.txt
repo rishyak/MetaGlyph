@@ -1,0 +1,38 @@
+### Solution
+```json
+[
+  "Tablet",
+  "Smartphone",
+  "Laptop",
+  "Pen",
+  "Notebook",
+  "Chair",
+  "Headphones"
+]
+```
+
+### Explanation
+To solve this problem, we need to iterate through the list of items and check if the `portable` attribute is `True` for each item. If it is, we add the item's name to the output array. 
+
+Here is the code in JavaScript:
+
+```javascript
+const items = [
+  { name: "Tablet", category: "electronics", price_range: "high", portable: true },
+  { name: "Bookshelf", category: "furniture", price_range: "medium", portable: false },
+  { name: "Smartphone", category: "electronics", price_range: "high", portable: true },
+  { name: "Laptop", category: "electronics", price_range: "high", portable: true },
+  { name: "Pen", category: "stationery", price_range: "low", portable: true },
+  { name: "Notebook", category: "stationery", price_range: "low", portable: true },
+  { name: "Chair", category: "furniture", price_range: "medium", portable: true },
+  { name: "Desk", category: "furniture", price_range: "medium", portable: false },
+  { name: "Headphones", category: "electronics", price_range: "medium", portable: true },
+  { name: "Refrigerator", category: "appliances", price_range: "high", portable: false }
+];
+
+const portableItems = items.filter(item => item.portable);
+
+console.log(portableItems.map(item => item.name));
+```
+
+This code uses the `filter()` method to create a new array that only includes items where `portable` is `true`. Then it uses the `map()` method to transform the array of objects into an array of strings, which is then logged to the console.

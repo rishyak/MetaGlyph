@@ -1,0 +1,21 @@
+Looking at the instruction `SELECT x | x.portable IN {False} -> [x.name]`, I need to:
+
+1. Filter for items where `portable` equals `False`
+2. Return their names
+
+Reviewing the product list:
+
+- **Desk**: portable: **False** ✓
+- Tablet: portable: True
+- Notebook: portable: True
+- Microwave: portable: True
+- Pen: portable: True
+- **Refrigerator**: portable: **False** ✓
+- Laptop: portable: True
+- Headphones: portable: True
+- Chair: portable: True
+- Stapler: portable: True
+
+```json
+["Desk", "Refrigerator"]
+```

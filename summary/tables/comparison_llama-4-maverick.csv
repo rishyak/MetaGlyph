@@ -1,0 +1,5 @@
+Family,Model,NL Accuracy,MG Accuracy,CTRL Accuracy,MG-NL Diff,MG-CTRL Diff,Significant
+3_constraint_composition,llama-4-maverick,0.942,0.975,0.252,+0.033,+0.723,No
+1_selection_classification,llama-4-maverick,0.980,0.635,0.054,-0.345,+0.581,Yes
+2_structured_extraction,llama-4-maverick,0.910,0.890,0.880,-0.020,+0.010,No
+4_conditional_transformation,llama-4-maverick,0.081,0.000,0.000,-0.081,+0.000,Yes

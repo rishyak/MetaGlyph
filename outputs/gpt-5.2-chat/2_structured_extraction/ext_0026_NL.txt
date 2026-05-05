@@ -1,1 +1,8 @@
-[]
+```json
+{
+  "date": "2024-06-25",
+  "payment_terms": "Net 30",
+  "customer_name": "David Brown",
+  "invoice_num": "2684"
+}
+```

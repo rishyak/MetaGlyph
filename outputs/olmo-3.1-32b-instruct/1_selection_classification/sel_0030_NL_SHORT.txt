@@ -1,0 +1,9 @@
+[
+  "Stapler",
+  "Microwave",
+  "Pen",
+  "Notebook",
+  "Smartphone",
+  "Headphones",
+  "Laptop"
+]

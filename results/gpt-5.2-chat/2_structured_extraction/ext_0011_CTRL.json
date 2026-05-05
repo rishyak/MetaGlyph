@@ -4,23 +4,12 @@
   "family": "2_structured_extraction",
   "condition": "CTRL",
   "parse_success": true,
-  "parsed_output": [
-    {
-      "risk_name": "Inconsistent invoice and due dates",
-      "affected_component": "Billing and accounts receivable system",
-      "severity": "High"
-    },
-    {
-      "risk_name": "Incorrect subtotal calculation",
-      "affected_component": "Invoice line item calculation logic",
-      "severity": "High"
-    },
-    {
-      "risk_name": "Conflicting payment terms and due date",
-      "affected_component": "Payment terms configuration",
-      "severity": "Medium"
-    }
-  ],
+  "parsed_output": {
+    "payment_terms": "Net 60",
+    "total": "$1319.31",
+    "due_date": "2024-09-06",
+    "date": "2024-11-16"
+  },
   "gold_output": {
     "date": "2024-11-16",
     "total": 1319.31,
@@ -28,18 +17,18 @@
     "due_date": "2024-09-06"
   },
   "exact_match": false,
-  "accuracy": 0.0,
-  "f1_score": 0.0,
+  "accuracy": 0.75,
+  "f1_score": 0.75,
   "operator_fidelity": [
     {
       "operator": "→",
       "checked": true,
       "passed": false,
-      "details": "Transformation check"
+      "details": "Wrong values: ['total']"
     }
   ],
   "overall_pass": false,
-  "error_type": "format",
-  "error_details": "Accuracy: 0.00",
+  "error_type": "logic",
+  "error_details": "Accuracy: 0.75",
   "semantic_equivalence_pass": false
 }

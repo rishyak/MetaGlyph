@@ -1,15 +1,28 @@
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_005",
+    "item_007",
+    "item_008",
+    "item_009",
+    "item_011",
+    "item_012",
+    "item_013",
+    "item_014",
+    "item_017"
+  ],
+  "count": 13
 }
 ```
 
-The query requires items matching ALL of these conditions:
-- ⊙(security) - has security attribute
-- ⊙(high_priority) - has high_priority attribute
-- ⊙(performance) - has performance attribute
-- ⊖(deprecated) - does NOT have deprecated attribute
-- ⊖(experimental) - does NOT have experimental attribute
+**Explanation:**
+The query selects items where `value >= 50` **OR** `category ∈ {A}`:
 
-The provided dataset contains only: ID, Category, Status, Priority, and Value attributes. None of the required attributes (security, high_priority, performance, deprecated, experimental) are present in any item, so no items match the filter criteria.
+- **Value >= 50**: item_000, item_001, item_002, item_003, item_005, item_007, item_008, item_011, item_013, item_014, item_017
+- **Category = A**: item_005, item_009, item_012, item_018
+
+Combined (union): item_000, item_001, item_002, item_003, item_005, item_007, item_008, item_009, item_011, item_012, item_013, item_014, item_017

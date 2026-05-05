@@ -1,0 +1,31 @@
+{
+  "prompt_id": "sel_0033_CTRL_RANDOM",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "To satisfy the OR condition, an item must either be in the 'stationery' category or be 'portable'. The items that are either 'stationery' or 'portable' include: Pen, Stapler, Notebook (stationery), and Laptop, Headphones, Tablet, Chair (portable). Notice that Pen, Stapler, and Notebook are both 'stationery' and 'portable', so they are included.",
+    "Combining the results from step 4, the items that satisfy the given condition are: Laptop, Headphones, Tablet, Chair, Pen, Stapler, Notebook. These are the items that are either 'stationery' or 'portable'."
+  ],
+  "gold_output": [
+    "notebook",
+    "pen",
+    "stapler"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "missing=3, extra=2"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

@@ -1,0 +1,111 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 539,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 747,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 786,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 671,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 105 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 718 * 1.2,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 605 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 553 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 573 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 474 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 246 * 1.2 * 1.1,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 333,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 983,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 766,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 613 * 1.1,
+        "active": false,
+        "status": "archived"
+    }
+]
+```
+
+Note: In the "amount" field of `rec_004`, `rec_006`, `rec_007`, `rec_008`, `rec_009`, and `rec_014`, I have applied both multiplication rules (Rule 1 and Rule 3), as they meet both conditions. For `rec_004` and `rec_014`, since they also meet Rule 2 (region == EU), the final transformation includes both multipliers.

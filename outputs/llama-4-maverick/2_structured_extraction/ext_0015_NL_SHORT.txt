@@ -1,0 +1,31 @@
+To solve this task, we need to extract the specified fields from the given email document and return them as a JSON object.
+
+1. **Identify the specified fields**: The fields we need to extract are `date`, `recipient`, `subject`, and `company`.
+
+2. **Extract the fields from the document**:
+   - **Date**: The date is given in the line "Date: 2024-04-07". So, `date` = "2024-04-07".
+   - **Recipient**: The recipient's email is given in the line "To: carol.williams@example.com". Thus, `recipient` = "carol.williams@example.com".
+   - **Subject**: The subject is mentioned in the line "Subject: Q4 Report". Hence, `subject` = "Q4 Report".
+   - **Company**: The company name is not directly mentioned in the email headers or body. However, we can infer it from the sender's email or the signature. The sender's email is "alice.smith@digitalsystems.com", and the company mentioned in the signature is "Global Solutions". Since "company" is not explicitly defined in the email headers, we will consider "Global Solutions" as the company based on the context provided by the signature.
+
+3. **Construct the JSON object**:
+   - Using the extracted fields, we construct a JSON object with the field names as keys.
+
+```json
+{
+  "date": "2024-04-07",
+  "recipient": "carol.williams@example.com",
+  "subject": "Q4 Report",
+  "company": "Global Solutions"
+}
+```
+
+The final answer is: 
+```json
+{
+  "date": "2024-04-07",
+  "recipient": "carol.williams@example.com",
+  "subject": "Q4 Report",
+  "company": "Global Solutions"
+}
+```

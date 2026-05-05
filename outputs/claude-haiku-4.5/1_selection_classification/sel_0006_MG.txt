@@ -1,3 +1,20 @@
+I need to find all animals where:
+- domestic = False AND
+- size = large
+
+Let me check each animal:
+
+1. **Eagle**: domestic: False, size: medium ❌ (size is not large)
+2. **Shark**: domestic: False, size: large ✅ (matches both conditions)
+3. **Dog**: domestic: True, size: medium ❌ (domestic is not False)
+4. **Snake**: domestic: False, size: medium ❌ (size is not large)
+5. **Hamster**: domestic: True, size: small ❌ (domestic is not False)
+6. **Salmon**: domestic: False, size: medium ❌ (size is not large)
+7. **Cat**: domestic: True, size: small ❌ (domestic is not False)
+8. **Crocodile**: domestic: False, size: large ✅ (matches both conditions)
+9. **Goldfish**: domestic: True, size: small ❌ (domestic is not False)
+10. **Whale**: domestic: False, size: large ✅ (matches both conditions)
+
 ```json
-["Cat", "Dog", "Hamster"]
+["Shark", "Crocodile", "Whale"]
 ```

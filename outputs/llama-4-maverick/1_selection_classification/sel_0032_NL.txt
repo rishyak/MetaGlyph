@@ -1,0 +1,36 @@
+To solve this task, we need to carefully review the list of animals provided and identify those with a 'type' attribute equal to 'bird'. The list includes various animals along with their attributes such as type, domestic status, and size.
+
+1. **Review the list**: The given list of animals is as follows:
+   - Goldfish: type: fish, domestic: True, size: small
+   - Hamster: type: mammal, domestic: True, size: small
+   - Snake: type: reptile, domestic: False, size: medium
+   - Whale: type: mammal, domestic: False, size: large
+   - Parrot: type: bird, domestic: True, size: small
+   - Shark: type: fish, domestic: False, size: large
+   - Penguin: type: bird, domestic: False, size: medium
+   - Cat: type: mammal, domestic: True, size: small
+   - Eagle: type: bird, domestic: False, size: medium
+   - Salmon: type: fish, domestic: False, size: medium
+
+2. **Identify 'bird' types**: We will go through each entry to find those with 'type: bird'.
+   - Goldfish: Not a bird.
+   - Hamster: Not a bird.
+   - Snake: Not a bird.
+   - Whale: Not a bird.
+   - Parrot: Is a bird.
+   - Shark: Not a bird.
+   - Penguin: Is a bird.
+   - Cat: Not a bird.
+   - Eagle: Is a bird.
+   - Salmon: Not a bird.
+
+3. **List the birds**: The animals that are classified as 'bird' are Parrot, Penguin, and Eagle.
+
+4. **Format the output**: The task requires the output to be in JSON format, specifically an array of strings representing the names of the animals that are birds.
+
+The names of the birds are "Parrot", "Penguin", and "Eagle". Thus, the JSON array of these names is ["Parrot", "Penguin", "Eagle"].
+
+The final answer is:
+```json
+["Parrot", "Penguin", "Eagle"]
+```

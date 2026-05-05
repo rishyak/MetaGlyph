@@ -1,0 +1,18 @@
+### Step 1: Identify the items that have a price range of "high" and are not portable.
+To solve this problem, we need to identify the items that have a price range of "high" and are not portable. This means we need to look for items in the inventory that have a price range of "high" and a value of "False" for the "portable" attribute.
+
+### Step 2: Filter the inventory based on the conditions.
+From the given inventory, we can see that the following items have a price range of "high" and are not portable:
+- Refrigerator: category: appliances, price_range: high, portable: False
+- Desk: category: furniture, price_range: medium, portable: False
+- Bookshelf: category: furniture, price_range: medium, portable: False
+
+However, we are only interested in items with a price range of "high", so we should exclude the Desk and Bookshelf.
+
+### Step 3: Return the names of the filtered items as a JSON array.
+The only item that meets the conditions is the Refrigerator.
+
+### Step 4: Format the output as a JSON array.
+The output should be a JSON array containing the name of the item.
+
+The final answer is: $\boxed{["Refrigerator"]}$

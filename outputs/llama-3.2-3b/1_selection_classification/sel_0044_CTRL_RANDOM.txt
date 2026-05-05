@@ -1,0 +1,20 @@
+Given the provided list of animals with their attributes, we can filter the results based on the given conditions:
+
+- **Type:** fish
+- **Domestic:** False
+- **Size:** small
+
+The animals that match these conditions are:
+
+- Snake: type: reptile, domestic: False, size: medium
+- Salmon: type: fish, domestic: False, size: medium
+- Crocodile: type: reptile, domestic: False, size: large
+- Elephant: type: mammal, domestic: False, size: large
+- Lion: type: mammal, domestic: False, size: large
+- Whale: type: mammal, domestic: False, size: large
+
+However, only the fish that match the conditions are of interest. Therefore, the filtered list of fish that match the conditions is:
+
+- Salmon: type: fish, domestic: False, size: medium
+
+The final answer is: `[ "Salmon" ]`

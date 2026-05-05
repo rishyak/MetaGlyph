@@ -1,0 +1,130 @@
+Let's break down the logic in the instruction and apply it to each record accordingly.
+
+The instruction can be interpreted as follows:
+- If `x.type` is not "premium", then increase `x.amount` by 10% (`x.amount → x.amount × 1.1`).
+- If `x.region` is not "EU", then increase `x.amount` by 20% (`x.amount → x.amount × 1.2`).
+- If `x.active` is true, then set `x.status` to "archived".
+
+We will apply these rules to each record:
+
+### Record rec_000:
+- `type: premium` (no change needed for the first rule)
+- `region: US` (increase by 20%)
+- `amount: 161`
+- `active: True` (set status to "archived")
+- **Transformed**: `{ "type": "premium", "region": "US", "amount": 161 * 1.2, "status": "archived" }`
+
+### Record rec_001:
+- `type: standard` (increase by 10%)
+- `region: EU` (no change needed for the second rule)
+- `amount: 234`
+- `active: True` (set status to "archived")
+- **Transformed**: `{ "type": "standard", "region": "EU", "amount": 234 * 1.1, "status": "archived" }`
+
+### Record rec_002:
+- `type: trial` (increase by 10%)
+- `region: APAC` (increase by 20%)
+- `amount: 485`
+- `active: True` (set status to "archived")
+- **Transformed**: `{ "type": "trial", "region": "APAC", "amount": 485 * 1.2 * 1.1, "status": "archived" }`
+
+### Record rec_003:
+- `type: trial` (increase by 10%)
+- `region: US` (no change needed for the second rule)
+- `amount: 949`
+- `active: True` (set status to "archived")
+- **Transformed**: `{ "type": "trial", "region": "US", "amount": 949 * 1.2 * 1.1, "status": "archived" }`
+
+### Record rec_004:
+- `type: premium` (no change needed for the first rule)
+- `region: US` (no change needed for the second rule)
+- `amount: 830`
+- `active: False` (no change needed for the third rule)
+- **Transformed**: `{ "type": "premium", "region": "US", "amount": 830, "status": "status unchanged" }`
+
+### Record rec_005:
+- `type: trial` (increase by 10%)
+- `region: APAC` (increase by 20%)
+- `amount: 582`
+- `active: False` (no change needed for the third rule)
+- **Transformed**: `{ "type": "trial", "region": "APAC", "amount": 582 * 1.2 * 1.1, "status": "status unchanged" }`
+
+### Record rec_006:
+- `type: premium` (no change needed for the first rule)
+- `region: APAC` (increase by 20%)
+- `amount: 844`
+- `active: False` (no change needed for the third rule)
+- **Transformed**: `{ "type": "premium", "region": "APAC", "amount": 844 * 1.2, "status": "status unchanged" }`
+
+### Record rec_007:
+- `type: trial` (increase by 10%)
+- `region: EU` (no change needed for the second rule)
+- `amount: 928`
+- `active: True` (set status to "archived")
+- **Transformed**: `{ "type": "trial", "region": "EU", "amount": 928 * 1.1, "status": "archived" }`
+
+### Record rec_008:
+- `type: trial` (increase by 10%)
+- `region: APAC` (increase by 20%)
+- `amount: 582`
+- `active: False` (no change needed for the third rule)
+- **Transformed**: `{ "type": "trial", "region": "APAC", "amount": 582 * 1.2 * 1.1, "status": "status unchanged" }`
+
+### Record rec_009:
+- `type: standard` (increase by 10%)
+- `region: APAC` (increase by 20%)
+- `amount: 293`
+- `active: False` (no change needed for the third rule)
+- **Transformed**: `{ "type": "standard", "region": "APAC", "amount": 293 * 1.2 * 1.1, "status": "status unchanged" }`
+
+### Record rec_010:
+- `type: trial` (increase by 10%)
+- `region: US` (no change needed for the second rule)
+- `amount: 291`
+- `active: False` (no change needed for the third rule)
+- **Transformed**: `{ "type": "trial", "region": "US", "amount": 291 * 1.1, "status": "status unchanged" }`
+
+### Record rec_011:
+- `type: standard` (increase by 10%)
+- `region: APAC` (increase by 20%)
+- `amount: 302`
+- `active: True` (set status to "archived")
+- **Transformed**: `{ "type": "standard", "region": "APAC", "amount": 302 * 1.2 * 1.1, "status": "archived" }`
+
+### Record rec_012:
+- `type: premium` (no change needed for the first rule)
+- `region: EU` (no change needed for the second rule)
+- `amount: 337`
+- `active: True` (set status to "archived")
+- **Transformed**: `{ "type": "premium", "region": "EU", "amount": 337 * 1.2, "status": "archived" }`
+
+### Record rec_013:
+- `type: standard` (increase by 10%)
+- `region: US` (no change needed for the second rule)
+- `amount: 246`
+- `active: False` (no change needed for the third rule)
+- **Transformed**: `{ "type": "standard", "region": "US", "amount": 246 * 1.1, "status": "status unchanged" }`
+
+### Record rec_014:
+- `type: trial` (increase by 10%)
+- `region: US` (no change needed for the second rule)
+- `amount: 733`
+- `active: True` (set status to "archived")
+- **Transformed**: `{ "type": "trial", "region": "US", "amount": 733 * 1.1, "status": "archived" }`
+
+Now let's calculate the transformed values:
+
+```json
+[
+    {"type": "premium", "region": "US", "amount": 193.2, "status": "archived"},
+    {"type": "standard", "region": "EU", "amount": 257.4, "status": "archived"},
+    {"type": "trial", "region": "APAC", "amount": 634.14, "status": "archived"},
+    {"type": "trial", "region": "US", "amount": 1022.38, "status": "archived"},
+    {"type": "premium", "region": "US", "amount": 830, "status": "status unchanged"},
+    {"type": "trial", "region": "APAC", "amount": 653.76, "status": "status unchanged"},
+    {"type": "premium", "region": "APAC", "amount": 1012.8, "status": "status unchanged"},
+    {"type": "trial", "region": "EU", "amount": 1020.8, "status": "archived"},
+    {"type": "trial", "region": "APAC", "amount": 653.76, "status": "status unchanged"},
+    {"type": "standard", "region": "APAC", "amount": 345.6, "status": "archived"},
+    {"type": "trial", "region": "US", "amount": 319.83, "status": "status unchanged"},
+    {"type": "premium", "region": "EU", "amount": 404.4, "status": "archived"},

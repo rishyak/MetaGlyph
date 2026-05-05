@@ -1,0 +1,103 @@
+```json
+[
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 19,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 112,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 528,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 912,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 301,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 730 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 551,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 316,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 128,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 169,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 225 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 659,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 267,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 443,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 351,
+        "active": true
+    }
+]
+```
+
+Note: The amounts for records `rec_005` and `rec_010` have been updated to reflect the 10% increase due to their "premium" type. Records with `active: false` have had their status set to "archived".

@@ -5,26 +5,28 @@
   "condition": "MG",
   "parse_success": true,
   "parsed_output": [
-    "Cat"
+    "Goldfish",
+    "Cat",
+    "Parrot"
   ],
   "gold_output": [
     "cat",
     "goldfish",
     "parrot"
   ],
-  "exact_match": false,
-  "accuracy": 0.3333333333333333,
-  "f1_score": 0.5,
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
   "operator_fidelity": [
     {
       "operator": "∉",
       "checked": true,
-      "passed": true,
-      "details": "Exclusion constraint satisfied"
+      "passed": false,
+      "details": "missing=3, extra=3"
     }
   ],
-  "overall_pass": false,
-  "error_type": "incomplete",
-  "error_details": "Accuracy: 0.33",
-  "semantic_equivalence_pass": false
+  "overall_pass": true,
+  "error_type": "logic",
+  "error_details": "Accuracy: 1.00",
+  "semantic_equivalence_pass": true
 }

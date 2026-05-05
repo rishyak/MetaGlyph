@@ -1,0 +1,37 @@
+To solve this problem, we need to follow the given instruction: `SELECT x | x.size ※ {small} ↯ [x.name]`. This instruction can be broken down into steps:
+
+1. **SELECT x**: This implies selecting or considering all the given animal entries.
+2. **x.size ※ {small}**: This step involves filtering the selected entries to only include those where the size is 'small'. The symbol `※` can be interpreted as a filter or condition operator.
+3. **↯ [x.name]**: After filtering, this step involves extracting or mapping the filtered entries to their names. The symbol `↯` can be seen as a mapping or projection operator.
+
+Given the dataset:
+
+- Penguin: type: bird, domestic: False, size: medium
+- Salmon: type: fish, domestic: False, size: medium
+- Elephant: type: mammal, domestic: False, size: large
+- Snake: type: reptile, domestic: False, size: medium
+- Cat: type: mammal, domestic: True, size: small
+- Eagle: type: bird, domestic: False, size: medium
+- Whale: type: mammal, domestic: False, size: large
+- Shark: type: fish, domestic: False, size: large
+- Turtle: type: reptile, domestic: True, size: small
+- Goldfish: type: fish, domestic: True, size: small
+
+Let's apply the steps:
+
+1. **SELECT x**: We consider all 10 animal entries.
+2. **x.size ※ {small}**: We filter the entries to include only those with 'small' size. The entries that match this condition are:
+   - Cat: type: mammal, domestic: True, size: small
+   - Turtle: type: reptile, domestic: True, size: small
+   - Goldfish: type: fish, domestic: True, size: small
+3. **↯ [x.name]**: We extract the names of the filtered entries:
+   - Cat
+   - Turtle
+   - Goldfish
+
+Therefore, the names of the animals that are 'small' in size are ["Cat", "Turtle", "Goldfish"].
+
+The final answer is:
+```json
+["Cat", "Turtle", "Goldfish"]
+```

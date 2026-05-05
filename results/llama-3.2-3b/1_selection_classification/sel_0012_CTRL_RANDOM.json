@@ -1,0 +1,42 @@
+{
+  "prompt_id": "sel_0012_CTRL_RANDOM",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "x: the item name",
+    "x.price_range: the price range of the item",
+    "x.medium: whether the item is medium priced",
+    "x.portable: whether the item is portable",
+    "We need to select items that are medium priced and portable.",
+    "We will create a JSON array of the names of the selected items.",
+    "Based on the given conditions, the selected items are:",
+    "Chair",
+    "Headphones",
+    "Microwave",
+    "Tablet"
+  ],
+  "gold_output": [
+    "bookshelf",
+    "chair",
+    "desk",
+    "headphones",
+    "microwave"
+  ],
+  "exact_match": false,
+  "accuracy": 0.23076923076923078,
+  "f1_score": 0.37499999999999994,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=5, extra=11"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.23",
+  "semantic_equivalence_pass": false
+}

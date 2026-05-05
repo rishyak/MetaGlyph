@@ -1,0 +1,34 @@
+{
+  "prompt_id": "ext_0006_NL_SHORT",
+  "model": "gpt-5.2-chat",
+  "family": "2_structured_extraction",
+  "condition": "NL_SHORT",
+  "parse_success": true,
+  "parsed_output": {
+    "date": "2024-04-21",
+    "due_date": "2024-08-13",
+    "total": "1266.88",
+    "customer_name": "David Brown"
+  },
+  "gold_output": {
+    "date": "2024-04-21",
+    "total": 1266.88,
+    "due_date": "2024-08-13",
+    "customer_name": "David Brown"
+  },
+  "exact_match": false,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
+  "operator_fidelity": [
+    {
+      "operator": "→",
+      "checked": true,
+      "passed": true,
+      "details": "Transformation values exactly match gold"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "logic",
+  "error_details": "Accuracy: 1.00",
+  "semantic_equivalence_pass": false
+}

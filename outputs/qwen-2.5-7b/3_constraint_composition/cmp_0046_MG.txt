@@ -1,0 +1,19 @@
+```json
+{
+  "selected_ids": ["item_004", "item_006", "item_012", "item_013", "item_015", "item_017", "item_016"],
+  "count": 7
+}
+```
+
+Explanation:
+- The condition `x.id | x.priority ∈ {high} ∪ x.status ∉ {inactive}` means that we select items where the priority is 'high' or the status is not 'inactive'.
+- From the dataset, the following IDs meet this condition:
+  - `item_004` (Priority: high)
+  - `item_006` (Priority: high)
+  - `item_012` (Status: pending, which is not inactive)
+  - `item_013` (Status: pending, which is not inactive)
+  - `item_015` (Priority: high)
+  - `item_017` (Priority: high)
+  - `item_016` (Priority: high)
+
+Thus, the selected IDs are `["item_004", "item_006", "item_012", "item_013", "item_015", "item_017", "item_016"]`, and the count is 7.

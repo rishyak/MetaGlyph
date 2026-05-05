@@ -1,0 +1,111 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 568,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 91,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 323 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 446,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 369 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 900,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 291 * 1.2,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 662,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 830,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 879,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 78,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 380 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 629,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 981 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 791 * 1.1 * 1.2,
+        "active": true
+    }
+]
+```
+
+Explanation:
+- For `rec_000`, `rec_001`, and `rec_002`, the `active` field is `false`, so their status is set to `"archived"`.
+- For `rec_003`, `rec_005`, `rec_007`, `rec_009`, `rec_010`, `rec_012`, and `rec_014`, the `active` field is `true`, so no changes are made.
+- For `rec_004`, `rec_006`, `rec_008`, `rec_011`, and `rec_013`, the `region` is `"EU"`, so their amounts are multiplied by `1.2`.
+- For `rec_008`, in addition to the region condition, the `type` is `"premium"`, so its amount is also multiplied by `1.1`.
+
+Note that the final amount for `rec_014` is calculated as `791 * 1.1 * 1.2`.

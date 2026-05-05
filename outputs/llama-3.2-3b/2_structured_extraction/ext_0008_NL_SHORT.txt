@@ -1,0 +1,7 @@
+```json
+{
+  "company": "digitalsystems.com",
+  "sender_title": "Manager",
+  "sender": "david.brown@digitalsystems.com"
+}
+```

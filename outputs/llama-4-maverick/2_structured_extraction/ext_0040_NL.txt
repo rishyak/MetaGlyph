@@ -1,0 +1,32 @@
+To extract the required fields from the given invoice document, we will go through the document and identify the values for 'invoice_num', 'payment_terms', 'customer_name', and 'total'.
+
+1. **invoice_num**: The invoice number is typically found at the beginning of the invoice. Upon examining the document, we find "INVOICE #8657" which indicates that the invoice number is 8657.
+
+2. **payment_terms**: The payment terms are usually specified towards the end of the invoice or in a dedicated section. The document states "Payment Terms: Due on Receipt", so the payment terms are "Due on Receipt".
+
+3. **customer_name**: The customer's name is usually found in the "Bill To" section. The document lists "David Brown" under "Bill To", so the customer name is "David Brown".
+
+4. **total**: The total amount due is typically found towards the end of the invoice, often in a summary section. The document shows "Total: $7194.68", indicating that the total amount due is $7194.68.
+
+Now, let's compile these values into a JSON object as requested:
+
+```json
+{
+  "invoice_num": "8657",
+  "payment_terms": "Due on Receipt",
+  "customer_name": "David Brown",
+  "total": "$7194.68"
+}
+```
+
+This JSON object contains the extracted fields as per the instruction. 
+
+The final answer is: 
+```json
+{
+  "invoice_num": "8657",
+  "payment_terms": "Due on Receipt",
+  "customer_name": "David Brown",
+  "total": "$7194.68"
+}
+```

@@ -1,0 +1,41 @@
+{
+  "prompt_id": "sel_0000_ASCII_DSL",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this task, we need to follow the given instruction: `SELECT x | x.type IN {reptile} -> [x.name]`. This means we have to select the names of animals from the given list where the type is 'reptile'.",
+    "First, let's review the given list of animals:",
+    "Dog: type: mammal, domestic: True, size: medium",
+    "Whale: type: mammal, domestic: False, size: large",
+    "Salmon: type: fish, domestic: False, size: medium",
+    "Eagle: type: bird, domestic: False, size: medium",
+    "Shark: type: fish, domestic: False, size: large",
+    "Elephant: type: mammal, domestic: False, size: large",
+    "Cat: type: mammal, domestic: True, size: small",
+    "Penguin: type: bird, domestic: False, size: medium",
+    "Parrot: type: bird, domestic: True, size: small",
+    "Turtle: type: reptile, domestic: True, size: small",
+    "We need to identify animals with `type: reptile`. From the given list, only \"Turtle\" is classified as a 'reptile'.",
+    "Therefore, the name of the animal that satisfies the condition is \"Turtle\"."
+  ],
+  "gold_output": [
+    "turtle"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=1, extra=14"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

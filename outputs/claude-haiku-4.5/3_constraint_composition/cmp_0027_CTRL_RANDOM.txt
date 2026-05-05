@@ -1,0 +1,23 @@
+```json
+{
+  "selected_ids": [
+    "item_004",
+    "item_011",
+    "item_013"
+  ],
+  "count": 3
+}
+```
+
+**Explanation:**
+The query filters for items where:
+- `x.value >= 50` (value is 50 or greater)
+- `x.category = {A}` (category is A)
+
+Checking all Category A items with value >= 50:
+- item_001: value 44 ❌ (< 50)
+- item_004: value 100 ✅
+- item_006: value 41 ❌ (< 50)
+- item_010: value 35 ❌ (< 50)
+- item_011: value 52 ✅
+- item_013: value 64 ✅

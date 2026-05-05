@@ -1,0 +1,50 @@
+{
+  "prompt_id": "sel_0004_CTRL",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this task, we need to follow the given instruction: `SELECT x | x.type ∈ {bird} → [x.name]`. This means we have to select the names of animals from the given list where the type is 'bird'.",
+    "First, let's analyze the given data:",
+    "Parrot: type: bird, domestic: True, size: small",
+    "Salmon: type: fish, domestic: False, size: medium",
+    "Cat: type: mammal, domestic: True, size: small",
+    "Eagle: type: bird, domestic: False, size: medium",
+    "Crocodile: type: reptile, domestic: False, size: large",
+    "Hamster: type: mammal, domestic: True, size: small",
+    "Shark: type: fish, domestic: False, size: large",
+    "Lion: type: mammal, domestic: False, size: large",
+    "Snake: type: reptile, domestic: False, size: medium",
+    "Elephant: type: mammal, domestic: False, size: large",
+    "We need to filter the animals based on their type being 'bird'. From the given list, the animals that are birds are:",
+    "Parrot",
+    "Eagle",
+    "Now, we need to extract their names. The names are already given as 'Parrot' and 'Eagle'."
+  ],
+  "gold_output": [
+    "cat",
+    "crocodile",
+    "elephant",
+    "hamster",
+    "lion",
+    "salmon",
+    "shark",
+    "snake"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=8, extra=16"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

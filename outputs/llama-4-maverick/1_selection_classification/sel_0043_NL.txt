@@ -1,0 +1,37 @@
+To solve this task, we need to carefully review the list of animals provided and identify the ones where the 'domestic' attribute is not 'True'. 
+
+First, let's list the animals with their 'domestic' status:
+1. Snake: domestic: False
+2. Salmon: domestic: False
+3. Parrot: domestic: True
+4. Hamster: domestic: True
+5. Whale: domestic: False
+6. Penguin: domestic: False
+7. Goldfish: domestic: True
+8. Eagle: domestic: False
+9. Lion: domestic: False
+10. Cat: domestic: True
+
+Now, let's filter out the animals where 'domestic' is 'True':
+- Parrot: domestic: True (exclude)
+- Hamster: domestic: True (exclude)
+- Goldfish: domestic: True (exclude)
+- Cat: domestic: True (exclude)
+
+The remaining animals have 'domestic' as 'False':
+1. Snake
+2. Salmon
+3. Whale
+4. Penguin
+5. Eagle
+6. Lion
+
+To return the names of these animals as a JSON array of strings, we format them as follows:
+```json
+["Snake", "Salmon", "Whale", "Penguin", "Eagle", "Lion"]
+```
+
+The final answer is:
+```json
+["Snake", "Salmon", "Whale", "Penguin", "Eagle", "Lion"]
+```

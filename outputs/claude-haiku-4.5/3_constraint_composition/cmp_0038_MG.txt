@@ -1,8 +1,44 @@
+I need to select items where: **priority is 'high' OR status is NOT 'inactive'**
+
+Let me evaluate each item:
+
+- item_000: priority=low, status=inactive → ✗ (not high AND is inactive)
+- item_001: priority=low, status=pending → ✓ (status not inactive)
+- item_002: priority=medium, status=pending → ✓ (status not inactive)
+- item_003: priority=low, status=pending → ✓ (status not inactive)
+- item_004: priority=low, status=inactive → ✗ (not high AND is inactive)
+- item_005: priority=medium, status=active → ✓ (status not inactive)
+- item_006: priority=high, status=pending → ✓ (priority is high)
+- item_007: priority=medium, status=inactive → ✗ (not high AND is inactive)
+- item_008: priority=low, status=pending → ✓ (status not inactive)
+- item_009: priority=high, status=pending → ✓ (priority is high)
+- item_010: priority=medium, status=active → ✓ (status not inactive)
+- item_011: priority=low, status=inactive → ✗ (not high AND is inactive)
+- item_012: priority=low, status=pending → ✓ (status not inactive)
+- item_013: priority=high, status=active → ✓ (priority is high)
+- item_014: priority=medium, status=active → ✓ (status not inactive)
+- item_015: priority=medium, status=inactive → ✗ (not high AND is inactive)
+- item_016: priority=high, status=pending → ✓ (priority is high)
+- item_017: priority=medium, status=inactive → ✗ (not high AND is inactive)
+- item_018: priority=low, status=inactive → ✗ (not high AND is inactive)
+- item_019: priority=low, status=inactive → ✗ (not high AND is inactive)
+
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_005",
+    "item_006",
+    "item_008",
+    "item_009",
+    "item_010",
+    "item_012",
+    "item_013",
+    "item_014",
+    "item_016"
+  ],
+  "count": 12
 }
 ```
-
-The query requires items that match the "projects" category with attributes including "security", "high_priority", "performance", "deprecated", and "experimental" status. The provided dataset contains items with only Category (A, B, C), Status (active, pending, inactive), Priority (low, medium, high), and Value attributes. None of the required attributes for filtering exist in the dataset, so no items can be selected.

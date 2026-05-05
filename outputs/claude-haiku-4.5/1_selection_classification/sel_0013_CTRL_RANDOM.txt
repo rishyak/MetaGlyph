@@ -1,0 +1,15 @@
+Looking at the query `SELECT x | x.size ¤ {medium} ↯ [x.name]`, I need to:
+
+1. Filter all animals where `size` equals `medium`
+2. Return their names
+
+**Animals with size: medium:**
+- Snake: size: medium ✓
+- Dog: size: medium ✓
+- Penguin: size: medium ✓
+- Eagle: size: medium ✓
+
+**Answer:**
+```json
+["Snake", "Dog", "Penguin", "Eagle"]
+```

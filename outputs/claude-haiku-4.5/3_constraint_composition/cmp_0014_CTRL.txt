@@ -1,15 +1,66 @@
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_003",
+    "item_004",
+    "item_005",
+    "item_006",
+    "item_008",
+    "item_010",
+    "item_013",
+    "item_015",
+    "item_016"
+  ],
+  "count": 9
 }
 ```
 
-The query requires items that match ALL of these conditions:
-- Have "security" attribute (⊙security)
-- Have "high_priority" attribute (⊙high_priority)
-- Have "performance" attribute (⊙performance)
-- Do NOT have "deprecated" attribute (⊖deprecated)
-- Do NOT have "experimental" attribute (⊖experimental)
+**Explanation:**
 
-The provided dataset contains only: ID, Category, Status, Priority, and Value attributes. None of the required attributes (security, high_priority, performance, deprecated, experimental) exist in the dataset, so no items match the filter criteria.
+The query selects items where **either** `value >= 50` **OR** `category ∈ {A}`:
+
+**Items with value >= 50:**
+- item_003 (B, 66)
+- item_004 (A, 60)
+- item_005 (B, 67)
+- item_006 (B, 81)
+- item_008 (C, 57)
+- item_010 (C, 91)
+- item_015 (C, 54)
+- item_016 (B, 59)
+
+**Items with category A (regardless of value):**
+- item_004 (A, 60) - already counted
+- item_011 (A, 2)
+- item_013 (A, 83)
+- item_014 (A, 38)
+- item_019 (A, 44)
+
+**Union result:** item_003, item_004, item_005, item_006, item_008, item_010, item_011, item_013, item_014, item_015, item_016, item_019
+
+Wait, let me recount - items with category A that don't meet value >= 50:
+- item_011 (value 2) ✓
+- item_014 (value 38) ✓
+- item_019 (value 44) ✓
+
+**Corrected selected_ids:**
+
+```json
+{
+  "selected_ids": [
+    "item_003",
+    "item_004",
+    "item_005",
+    "item_006",
+    "item_008",
+    "item_010",
+    "item_011",
+    "item_013",
+    "item_014",
+    "item_015",
+    "item_016",
+    "item_019"
+  ],
+  "count": 12
+}
+```

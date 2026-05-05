@@ -1,0 +1,30 @@
+I need to parse the query: `SELECT x | (x.price_range ¤ {high}) § (x.portable ¤ {False}) ↯ [x.name]`
+
+Let me interpret the operators:
+- `|` = SELECT
+- `¤` = equals/matches
+- `§` = AND
+- `↯` = return/output
+- `[x.name]` = the name field
+
+So the query translates to:
+**SELECT items WHERE price_range equals "high" AND portable equals False, return their names**
+
+Let me check each product:
+
+1. **Chair**: price_range: medium, portable: True → ❌
+2. **Refrigerator**: price_range: high, portable: False → ✅
+3. **Laptop**: price_range: high, portable: True → ❌
+4. **Desk**: price_range: medium, portable: False → ❌
+5. **Tablet**: price_range: high, portable: True → ❌
+6. **Bookshelf**: price_range: medium, portable: False → ❌
+7. **Stapler**: price_range: low, portable: True → ❌
+8. **Headphones**: price_range: medium, portable: True → ❌
+9. **Pen**: price_range: low, portable: True → ❌
+10. **Smartphone**: price_range: high, portable: True → ❌
+
+Only **Refrigerator** matches both conditions (high price_range AND portable = False).
+
+```json
+["Refrigerator"]
+```

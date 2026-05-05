@@ -1,0 +1,10 @@
+```json
+{
+  "selected_ids": [
+    "item_000",
+    "item_005",
+    "item_008"
+  ],
+  "count": 3
+}
+```

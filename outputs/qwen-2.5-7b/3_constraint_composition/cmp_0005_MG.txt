@@ -1,0 +1,13 @@
+```json
+{
+  "selected_ids": ["item_004", "item_010", "item_018", "item_019"],
+  "count": 4
+}
+```
+
+Explanation:
+- The condition `x.id | x.value >= 50` filters items where the value is greater than or equal to 50.
+- The condition `x.category ∈ {A}` further filters items where the category is 'A'.
+- Combining these conditions, we select items that meet both criteria.
+- The selected IDs are `item_004`, `item_010`, `item_018`, and `item_019`.
+- The count of such items is 4.

@@ -1,0 +1,6 @@
+{
+  "date": "2024-11-23",
+  "recipient": "carol.williams@example.com",
+  "subject": "Meeting Request",
+  "company": "Innovation Labs"
+}

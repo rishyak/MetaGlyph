@@ -1,13 +1,38 @@
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_003",
+    "item_004",
+    "item_005",
+    "item_007",
+    "item_010",
+    "item_012",
+    "item_014",
+    "item_016",
+    "item_018",
+    "item_019"
+  ],
+  "count": 12
 }
 ```
 
-The query requires items that match:
-- `∈(security) ∩ ∈(high_priority) ∪ ∈(performance)` - must have "security" OR "high_priority" OR "performance" attributes
-- `¬(deprecated)` - must not be deprecated
-- `¬(experimental)` - must not be experimental
+### Explanation
+The query selects items where: **priority ∈ {high} ∪ status ∉ {inactive}**
 
-The provided dataset contains only Category, Status, Priority, and Value attributes. There are no "security", "high_priority", "performance", "deprecated", or "experimental" attributes present in any items, so no items match the filter criteria.
+This means: **(priority is high) OR (status is NOT inactive)**
+
+**Selected items:**
+- **item_000**: priority=high ✓
+- **item_001**: status=pending (not inactive) ✓
+- **item_003**: priority=high ✓
+- **item_004**: status=pending (not inactive) ✓
+- **item_005**: status=active (not inactive) ✓
+- **item_007**: status=active (not inactive) ✓
+- **item_010**: priority=high ✓
+- **item_012**: status=active (not inactive) ✓
+- **item_014**: priority=high ✓
+- **item_016**: status=active (not inactive) ✓
+- **item_018**: priority=high ✓
+- **item_019**: status=active (not inactive) ✓

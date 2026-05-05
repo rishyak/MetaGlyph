@@ -1,0 +1,50 @@
+### Step 1: Filter the list to include only animals that are not birds and are not small in size.
+We will use the following SQL query to filter the list:
+```sql
+SELECT x.name
+FROM animals
+WHERE x.type != 'bird' AND x.size = 'medium';
+```
+### Step 2: Filter the list to include only animals that are not mammals and are not small in size.
+We will use the following SQL query to filter the list:
+```sql
+SELECT x.name
+FROM animals
+WHERE x.type != 'mammal' AND x.size = 'medium';
+```
+### Step 3: Combine the results from steps 1 and 2 into a single list.
+We will use the following SQL query to combine the results:
+```sql
+SELECT x.name
+FROM animals
+WHERE x.type != 'bird' AND x.size = 'medium'
+OR x.type != 'mammal' AND x.size = 'medium';
+```
+### Step 4: Filter the list to include only animals that are not domestic.
+We will use the following SQL query to filter the list:
+```sql
+SELECT x.name
+FROM animals
+WHERE x.type != 'bird' AND x.size = 'medium'
+OR x.type != 'mammal' AND x.size = 'medium'
+AND x.domestic = FALSE;
+```
+### Step 5: Execute the query and format the output as a JSON array.
+We will execute the query and format the output as a JSON array:
+```json
+[
+  "Salmon",
+  "Eagle",
+  "Snake",
+  "Shark",
+  "Whale"
+]
+```
+The final answer is: 
+[
+  "Salmon",
+  "Eagle",
+  "Snake",
+  "Shark",
+  "Whale"
+]

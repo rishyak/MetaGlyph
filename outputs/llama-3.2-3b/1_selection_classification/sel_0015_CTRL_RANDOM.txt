@@ -1,0 +1,12 @@
+I see you've provided a large amount of redundant data. I'll help you with the task, but I'll assume you want to select items from the provided list.
+
+To answer the question, I'll need to know which items you'd like to select. Please provide the names of the items you'd like to include in the output.
+
+If you want to select all items, you can simply list the categories and I'll provide the corresponding names. Here are the categories and their corresponding items:
+
+* appliances: Refrigerator, Microwave
+* furniture: Chair, Bookshelf, Desk
+* electronics: Smartphone, Tablet
+* stationery: Pen, Notebook, Stapler
+
+Please let me know which items you'd like to select, and I'll provide the output in the required format.

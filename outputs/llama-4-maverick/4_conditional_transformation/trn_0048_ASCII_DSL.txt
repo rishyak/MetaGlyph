@@ -1,0 +1,123 @@
+To solve this problem, we need to apply the given transformation rules to each record in the input data. The transformation rules are specified in a specific order and are conditional based on the attributes of each record.
+
+1. **First Rule**: If the record's type is "premium", then multiply its amount by 1.1.
+2. **Second Rule**: If the record's region is "EU", then multiply its amount by 1.2. This rule is applied after the first rule, so it can act on the result of the first rule.
+3. **Third Rule**: If the record is not active (active == false), then change its status to "archived". Note that the initial records do not have a "status" field, so this rule implies adding a "status" field to records that meet the condition.
+
+Let's apply these rules step by step to each record:
+
+### Record Transformations
+
+1. **rec_000**:
+   - Type is "premium", so amount = 558 * 1.1 = 613.8.
+   - Region is not "EU", so amount remains 613.8.
+   - Active is True, so no change to status.
+   - Transformed: {type: "premium", region: "US", amount: 613.8, active: True}
+
+2. **rec_001**:
+   - Type is not "premium", so amount remains 396.
+   - Region is "EU", so amount = 396 * 1.2 = 475.2.
+   - Active is True, so no change to status.
+   - Transformed: {type: "standard", region: "EU", amount: 475.2, active: True}
+
+3. **rec_002**:
+   - Type is not "premium", so amount remains 833.
+   - Region is not "EU", so amount remains 833.
+   - Active is True, so no change to status.
+   - Transformed: {type: "standard", region: "US", amount: 833, active: True}
+
+4. **rec_003**:
+   - Type is "premium", so amount = 900 * 1.1 = 990.
+   - Region is not "EU", so amount remains 990.
+   - Active is False, so status = "archived".
+   - Transformed: {type: "premium", region: "US", amount: 990, active: False, status: "archived"}
+
+5. **rec_004**:
+   - Type is "premium", so amount = 226 * 1.1 = 248.6.
+   - Region is not "EU", so amount remains 248.6.
+   - Active is True, so no change to status.
+   - Transformed: {type: "premium", region: "US", amount: 248.6, active: True}
+
+6. **rec_005**:
+   - Type is not "premium", so amount remains 774.
+   - Region is not "EU", so amount remains 774.
+   - Active is False, so status = "archived".
+   - Transformed: {type: "trial", region: "US", amount: 774, active: False, status: "archived"}
+
+7. **rec_006**:
+   - Type is not "premium", so amount remains 628.
+   - Region is not "EU", so amount remains 628.
+   - Active is True, so no change to status.
+   - Transformed: {type: "standard", region: "APAC", amount: 628, active: True}
+
+8. **rec_007**:
+   - Type is "premium", so amount = 575 * 1.1 = 632.5.
+   - Region is not "EU", so amount remains 632.5.
+   - Active is False, so status = "archived".
+   - Transformed: {type: "premium", region: "US", amount: 632.5, active: False, status: "archived"}
+
+9. **rec_008**:
+   - Type is "premium", so amount = 487 * 1.1 = 535.7.
+   - Region is "EU", so amount = 535.7 * 1.2 = 642.84.
+   - Active is False, so status = "archived".
+   - Transformed: {type: "premium", region: "EU", amount: 642.84, active: False, status: "archived"}
+
+10. **rec_009**:
+    - Type is "premium", so amount = 378 * 1.1 = 415.8.
+    - Region is "EU", so amount = 415.8 * 1.2 = 498.96.
+    - Active is False, so status = "archived".
+    - Transformed: {type: "premium", region: "EU", amount: 498.96, active: False, status: "archived"}
+
+11. **rec_010**:
+    - Type is "premium", so amount = 832 * 1.1 = 915.2.
+    - Region is not "EU", so amount remains 915.2.
+    - Active is False, so status = "archived".
+    - Transformed: {type: "premium", region: "US", amount: 915.2, active: False, status: "archived"}
+
+12. **rec_011**:
+    - Type is "premium", so amount = 389 * 1.1 = 427.9.
+    - Region is not "EU", so amount remains 427.9.
+    - Active is False, so status = "archived".
+    - Transformed: {type: "premium", region: "US", amount: 427.9, active: False, status: "archived"}
+
+13. **rec_012**:
+    - Type is "premium", so amount = 586 * 1.1 = 644.6.
+    - Region is not "EU", so amount remains 644.6.
+    - Active is True, so no change to status.
+    - Transformed: {type: "premium", region: "US", amount: 644.6, active: True}
+
+14. **rec_013**:
+    - Type is not "premium", so amount remains 26.
+    - Region is not "EU", so amount remains 26.
+    - Active is False, so status = "archived".
+    - Transformed: {type: "trial", region: "US", amount: 26, active: False, status: "archived"}
+
+15. **rec_014**:
+    - Type is not "premium", so amount remains 603.
+    - Region is not "EU", so amount remains 603.
+    - Active is False, so status = "archived".
+    - Transformed: {type: "trial", region: "APAC", amount: 603, active: False, status: "archived"}
+
+### JSON Output
+
+```json
+[
+  {"type": "premium", "region": "US", "amount": 613.8, "active": true},
+  {"type": "standard", "region": "EU", "amount": 475.2, "active": true},
+  {"type": "standard", "region": "US", "amount": 833, "active": true},
+  {"type": "premium", "region": "US", "amount": 990, "active": false, "status": "archived"},
+  {"type": "premium", "region": "US", "amount": 248.6, "active": true},
+  {"type": "trial", "region": "US", "amount": 774, "active": false, "status": "archived"},
+  {"type": "standard", "region": "APAC", "amount": 628, "active": true},
+  {"type": "premium", "region": "US", "amount": 632.5, "active": false, "status": "archived"},
+  {"type": "premium", "region": "EU", "amount": 642.84, "active": false, "status": "archived"},
+  {"type": "premium", "region": "EU", "amount": 498.96, "active": false, "status": "archived"},
+  {"type": "premium", "region": "US", "amount": 915.2, "active": false, "status": "archived"},
+  {"type": "premium", "region": "US", "amount": 427.9, "active": false, "status": "archived"},
+  {"type": "premium", "region": "US", "amount": 644.6, "active": true},
+  {"type": "trial", "region": "US", "amount": 26, "active": false, "status": "archived"},
+  {"type": "trial", "region": "APAC", "amount": 603, "active": false, "status": "archived"}
+]
+```
+
+Note that in the JSON output, `true` and `false` are used for boolean values as per JSON standards.

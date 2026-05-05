@@ -1,0 +1,35 @@
+{
+  "prompt_id": "sel_0012_CTRL_RANDOM",
+  "model": "olmo-3.1-32b-instruct",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "Chair",
+    "Headphones",
+    "Microwave",
+    "Tablet"
+  ],
+  "gold_output": [
+    "bookshelf",
+    "chair",
+    "desk",
+    "headphones",
+    "microwave"
+  ],
+  "exact_match": false,
+  "accuracy": 0.5,
+  "f1_score": 0.6666666666666665,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=5, extra=4"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "incomplete",
+  "error_details": "Accuracy: 0.50",
+  "semantic_equivalence_pass": false
+}

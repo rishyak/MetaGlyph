@@ -1,3 +1,14 @@
+Looking at the instruction `SELECT x | x.type ∈ {mammal} → [x.name]`, I need to:
+
+1. Filter all items where `type` equals `mammal`
+2. Return their names
+
+Reviewing the dataset for animals with `type: mammal`:
+
+- **Cat**: type: mammal, domestic: True, size: small ✓
+- **Whale**: type: mammal, domestic: False, size: large ✓
+- **Elephant**: type: mammal, domestic: False, size: large ✓
+
 ```json
-["Cat"]
+["Cat", "Whale", "Elephant"]
 ```

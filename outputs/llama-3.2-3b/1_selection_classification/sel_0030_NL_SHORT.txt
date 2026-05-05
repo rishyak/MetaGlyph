@@ -1,0 +1,30 @@
+### Step 1: Identify the categories that are not furniture
+The categories that are not furniture are stationery, appliances, electronics.
+
+### Step 2: Filter the items based on the categories that are not furniture
+We will filter the items based on the categories that are not furniture.
+
+### Step 3: Create a JSON array of the filtered items
+We will create a JSON array of the filtered items.
+
+```json
+[
+  "Stapler",
+  "Pen",
+  "Notebook",
+  "Smartphone",
+  "Headphones",
+  "Laptop",
+  "Microwave"
+]
+```
+
+The final answer is: $\boxed[
+  "Stapler",
+  "Pen",
+  "Notebook",
+  "Smartphone",
+  "Headphones",
+  "Laptop",
+  "Microwave"
+]}$

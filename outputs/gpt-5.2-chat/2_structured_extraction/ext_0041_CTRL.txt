@@ -1,17 +1,8 @@
-[
-  {
-    "risk_name": "Invoice calculation inconsistency",
-    "affected_component": "Billing calculation logic",
-    "severity": "High"
-  },
-  {
-    "risk_name": "Invalid due date earlier than invoice date",
-    "affected_component": "Date validation and payment scheduling",
-    "severity": "Medium"
-  },
-  {
-    "risk_name": "Itemized totals not matching subtotal",
-    "affected_component": "Line item aggregation",
-    "severity": "High"
-  }
-]
+```json
+{
+  "invoice_num": "5262",
+  "due_date": "2024-04-15",
+  "date": "2024-07-11",
+  "customer_name": "Carol Williams"
+}
+```

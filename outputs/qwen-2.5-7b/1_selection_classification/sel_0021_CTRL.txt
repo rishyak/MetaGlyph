@@ -1,0 +1,12 @@
+```json
+["Penguin", "Snake", "Salmon", "Eagle", "Whale", "Crocodile"]
+```
+
+Explanation: The instruction `SELECT x | x.domestic ∈ {False} → [x.name]` means to select the names of animals that have a domestic status of `False`. From the provided list, these animals are:
+
+- Penguin
+- Snake
+- Salmon
+- Eagle
+- Whale
+- Crocodile

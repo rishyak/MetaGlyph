@@ -1,3 +1,27 @@
+# Analysis
+
+The instruction asks me to select all animals where the size is **NOT** medium (x.size ∉ {medium}).
+
+Let me categorize each animal by size:
+
+**Small size:**
+- Cat
+- Goldfish
+- Parrot
+
+**Medium size:**
+- Snake
+- Dog
+- Penguin
+- Eagle
+
+**Large size:**
+- Whale
+- Lion
+- Shark
+
+Animals where size ∉ {medium} (i.e., NOT medium) are those with small or large sizes.
+
 ```json
-["Cat", "Dog"]
+["Cat", "Goldfish", "Parrot", "Whale", "Lion", "Shark"]
 ```

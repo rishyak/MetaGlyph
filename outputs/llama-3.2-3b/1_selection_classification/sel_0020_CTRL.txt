@@ -1,0 +1,58 @@
+### Solution
+```json
+[
+  "Cat",
+  "Goldfish",
+  "Parrot",
+  "Hamster",
+  "Turtle"
+]
+```
+
+### Explanation
+To solve this problem, we need to identify the animals that are not fish and are not small in size. We can do this by filtering the input data based on the given conditions.
+
+1.  We first filter out the fish from the input data. This includes Shark, Goldfish, Salmon.
+2.  Then, we filter out the small-sized animals. This includes Cat, Goldfish, Parrot, Hamster, Turtle.
+3.  Finally, we combine the two filtered lists to get the final result.
+
+### Code
+```python
+def filter_animals(animals):
+    # Filter out fish
+    fish = [animal for animal in animals if animal['type'] == 'fish']
+    animals = [animal for animal in animals if animal['type'] != 'fish']
+
+    # Filter out small-sized animals
+    small_animals = [animal for animal in animals if animal['size'] == 'small']
+    animals = [animal for animal in animals if animal['size'] != 'small']
+
+    return [animal['name'] for animal in animals]
+
+# Input data
+animals = [
+    {"name": "Shark", "type": "fish", "domestic": False, "size": "large"},
+    {"name": "Elephant", "type": "mammal", "domestic": False, "size": "large"},
+    {"name": "Cat", "type": "mammal", "domestic": True, "size": "small"},
+    {"name": "Goldfish", "type": "fish", "domestic": True, "size": "small"},
+    {"name": "Parrot", "type": "bird", "domestic": True, "size": "small"},
+    {"name": "Eagle", "type": "bird", "domestic": False, "size": "medium"},
+    {"name": "Hamster", "type": "mammal", "domestic": True, "size": "small"},
+    {"name": "Turtle", "type": "reptile", "domestic": True, "size": "small"},
+    {"name": "Salmon", "type": "fish", "domestic": False, "size": "medium"},
+    {"name": "Lion", "type": "mammal", "domestic": False, "size": "large"}
+]
+
+# Call the function
+result = filter_animals(animals)
+print(result)
+```
+
+### Output
+```json
+[
+  "Elephant",
+  "Eagle",
+  "Lion"
+]
+```

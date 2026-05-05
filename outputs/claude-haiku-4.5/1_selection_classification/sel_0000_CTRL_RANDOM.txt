@@ -1,0 +1,13 @@
+Looking at the query `SELECT x | x.type ¤ {reptile} ↯ [x.name]`:
+
+This appears to be asking me to:
+1. Select items (x) where the type matches "reptile"
+2. Return the names of those items
+
+Reviewing the animal list for entries with `type: reptile`:
+
+- **Turtle**: type: reptile, domestic: True, size: small
+
+```json
+["Turtle"]
+```

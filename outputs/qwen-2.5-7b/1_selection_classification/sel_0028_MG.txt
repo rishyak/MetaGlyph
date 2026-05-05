@@ -1,0 +1,9 @@
+Based on the instruction and the provided dataset, we need to select animals where the `type` attribute is `mammal` and return their names. From the data:
+
+- Cat: type: mammal, domestic: True, size: small
+
+The only mammal in the list that is commonly kept as a pet is the Cat. Therefore, the output will be:
+
+```json
+["Cat"]
+```

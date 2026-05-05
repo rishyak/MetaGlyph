@@ -1,11 +1,46 @@
+I need to select items where:
+- Priority is HIGH OR
+- Status is NOT inactive
+
+Let me go through each item:
+
+- item_000: Priority=low, Status=inactive → NO
+- item_001: Priority=low, Status=pending (not inactive) → YES
+- item_002: Priority=medium, Status=pending (not inactive) → YES
+- item_003: Priority=low, Status=pending (not inactive) → YES
+- item_004: Priority=low, Status=inactive → NO
+- item_005: Priority=medium, Status=active (not inactive) → YES
+- item_006: Priority=high → YES
+- item_007: Priority=medium, Status=inactive → NO
+- item_008: Priority=low, Status=pending (not inactive) → YES
+- item_009: Priority=high → YES
+- item_010: Priority=medium, Status=active (not inactive) → YES
+- item_011: Priority=low, Status=inactive → NO
+- item_012: Priority=low, Status=pending (not inactive) → YES
+- item_013: Priority=high → YES
+- item_014: Priority=medium, Status=active (not inactive) → YES
+- item_015: Priority=medium, Status=inactive → NO
+- item_016: Priority=high → YES
+- item_017: Priority=medium, Status=inactive → NO
+- item_018: Priority=low, Status=inactive → NO
+- item_019: Priority=low, Status=inactive → NO
+
 ```json
 {
   "selected_ids": [
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_005",
     "item_006",
+    "item_008",
     "item_009",
+    "item_010",
+    "item_012",
     "item_013",
+    "item_014",
     "item_016"
   ],
-  "count": 4
+  "count": 12
 }
 ```

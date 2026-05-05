@@ -1,0 +1,36 @@
+To extract the required fields from the given email document, we will go through the document and identify the values for 'recipient', 'sender', 'subject', and 'date'.
+
+1. **Recipient**: The 'To' field in the email document specifies the recipient. In the given document, "To: david.brown@example.com" indicates that the recipient is david.brown@example.com.
+
+2. **Sender**: The 'From' field indicates the sender of the email. The document shows "From: bob.johnson@digitalsystems.com", so the sender is bob.johnson@digitalsystems.com.
+
+3. **Subject**: The subject of the email is specified in the 'Subject' field. Here, it is "Subject: Project Update", meaning the subject is Project Update.
+
+4. **Date**: The date of the email is given in the 'Date' field. The document contains "Date: 2024-11-23", so the date is 2024-11-23.
+
+Now, we compile these values into a JSON object with the specified field names as keys.
+
+- recipient: david.brown@example.com
+- sender: bob.johnson@digitalsystems.com
+- subject: Project Update
+- date: 2024-11-23
+
+The JSON object will be:
+```json
+{
+  "recipient": "david.brown@example.com",
+  "sender": "bob.johnson@digitalsystems.com",
+  "subject": "Project Update",
+  "date": "2024-11-23"
+}
+```
+
+The final answer is: 
+```json
+{
+  "recipient": "david.brown@example.com",
+  "sender": "bob.johnson@digitalsystems.com",
+  "subject": "Project Update",
+  "date": "2024-11-23"
+}
+```

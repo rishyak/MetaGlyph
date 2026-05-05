@@ -1,0 +1,13 @@
+### Step 1: Filter the animals based on the given conditions
+We need to select animals that are not domestic and are of size large.
+
+### Step 2: Identify the animals that meet the conditions
+From the given list, the animals that are not domestic and are of size large are:
+- Shark: type: fish, domestic: False, size: large
+- Crocodile: type: reptile, domestic: False, size: large
+- Whale: type: mammal, domestic: False, size: large
+
+### Step 3: Format the output as a JSON array
+The output should be a JSON array of the names of the selected animals.
+
+The final answer is: $\boxed [{"Shark","Crocodile","Whale"}]$

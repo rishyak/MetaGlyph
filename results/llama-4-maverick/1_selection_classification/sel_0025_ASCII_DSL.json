@@ -1,0 +1,51 @@
+{
+  "prompt_id": "sel_0025_ASCII_DSL",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this problem, we need to follow the given instruction and filter the products based on the conditions provided.",
+    "This means we need to select products where:",
+    "The category is \"appliances\".",
+    "The product is portable (i.e., `portable` is `True`).",
+    "Let's examine the given list of products:",
+    "Notebook: category: stationery, price_range: low, portable: True",
+    "Bookshelf: category: furniture, price_range: medium, portable: False",
+    "Chair: category: furniture, price_range: medium, portable: True",
+    "Pen: category: stationery, price_range: low, portable: True",
+    "Tablet: category: electronics, price_range: high, portable: True",
+    "Headphones: category: electronics, price_range: medium, portable: True",
+    "Refrigerator: category: appliances, price_range: high, portable: False",
+    "Desk: category: furniture, price_range: medium, portable: False",
+    "Microwave: category: appliances, price_range: medium, portable: True",
+    "Smartphone: category: electronics, price_range: high, portable: True",
+    "We will filter these products based on the given conditions.",
+    "First, we filter the products to only include those in the \"appliances\" category.",
+    "Refrigerator: category: appliances, price_range: high, portable: False",
+    "Microwave: category: appliances, price_range: medium, portable: True",
+    "Next, we filter these \"appliances\" to only include those that are portable (`True`).",
+    "Microwave: category: appliances, price_range: medium, portable: True",
+    "Now, we extract the names of the products that satisfy both conditions.",
+    "Microwave",
+    "Therefore, the output will be: `[\"Microwave\"]"
+  ],
+  "gold_output": [
+    "microwave"
+  ],
+  "exact_match": false,
+  "accuracy": 0.047619047619047616,
+  "f1_score": 0.0909090909090909,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "missing=1, extra=21"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.05",
+  "semantic_equivalence_pass": false
+}

@@ -1,0 +1,58 @@
+{
+  "prompt_id": "sel_0002_MG",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": [
+    "We need to exclude the birds from the list, as the instruction specifies \"x.type ∉ {bird}\".",
+    "We need to exclude the domestic birds from the list, as the instruction specifies \"x.type ∉ {bird}\" and \"x.type ∉ {bird}\".",
+    "We need to exclude the domestic animals and birds from the list.",
+    "We need to exclude the domestic animals, birds, and fish from the list.",
+    "We need to exclude the domestic animals, birds, fish, and mammals from the list.",
+    "We need to exclude the domestic animals, birds, fish, mammals, and reptiles from the list.",
+    "We need to exclude the domestic animals, birds, fish, mammals, reptiles, and fish from the list.",
+    "We need to exclude the domestic animals, birds, fish, mammals, reptiles, fish, and mammals from the list.",
+    "We need to exclude the domestic animals, birds, fish, mammals, reptiles, fish, mammals, and fish from the list.",
+    "We need to exclude the domestic animals, birds, fish, mammals, reptiles, fish, mammals, fish, and mammals from the list.",
+    "We need to exclude the domestic animals, birds, fish, mammals, reptiles, fish, mammals, fish, mammals, and fish from the list.",
+    "We need to exclude the domestic animals, birds, fish, mammals, reptiles, fish, mammals, fish, mammals, fish, and mammals from the list.",
+    "We need to exclude the domestic animals, birds, fish, mammals, reptiles, fish, mammals, fish, mammals, fish, mammals, and fish from the list.",
+    "We need to exclude the domestic animals, birds, fish, mammals, reptiles, fish, mammals, fish, mammals, fish, mammals, fish, and mammals from the list.",
+    "We need to exclude the domestic animals, birds, fish, mammals, reptiles, fish, mammals, fish, mammals, fish, mammals, fish, mammals, and fish from the list.",
+    "We need to exclude the domestic animals, birds, fish, mammals, reptiles, fish, mammals, fish, mammals, fish, mammals, fish, mammals, and fish from the list.",
+    "We need to exclude the domestic animals, birds, fish, mammals, reptiles, fish, mammals, fish, mammals, fish, mammals, fish, mammals, and fish from the list.",
+    "We need to exclude the domestic animals, birds, fish, mammals, reptiles, fish, mammals, fish, mammals, fish, mammals, fish, mammals, and fish from the list.",
+    "We need to exclude the domestic animals, birds, fish, mammals, reptiles, fish, mammals, fish, mammals, fish, mammals, fish, mammals, and fish from the list.",
+    "We need to exclude the domestic animals, birds, fish, mammals, reptiles, fish, mammals, fish, mammals, fish, mammals, fish, mammals, and fish from the list.",
+    "We need to exclude the domestic animals, birds, fish, mammals, reptiles, fish, mammals, fish, mammals, fish, mammals, fish, mammals, and fish from the list.",
+    "We need to exclude the domestic animals, birds, fish, mammals, reptiles, fish, mammals, fish, mammals, fish, mammals, fish, mammals, and fish from the list.",
+    "We need to exclude the domestic animals, birds, fish, mammals, reptiles, fish, mammals, fish, mammals, fish, mammals, fish, mammals, and fish from the list.",
+    "We need to exclude the domestic animals, birds, fish, mammals, reptiles, fish, mammals, fish, mammals, fish, mammals, fish, mammals, and fish from the list"
+  ],
+  "gold_output": [
+    "cat",
+    "dog",
+    "elephant",
+    "goldfish",
+    "hamster",
+    "salmon",
+    "snake",
+    "whale"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=8, extra=16"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

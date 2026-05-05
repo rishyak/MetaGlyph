@@ -1,0 +1,190 @@
+To solve this problem, we need to apply the given transformation rules to each input record and then output the transformed records in JSON format.
+
+The transformation rules are given as:
+∀x: TRANSFORM x | (x.type != "premium" ⇒ x.amount → x.amount × 1.1) ∘ (x.region != "EU" ⇒ x.amount → x.amount × 1.2) ∘ (x.active != false ⇒ x.status → "archived") → [x]
+
+Let's break down the transformation rules:
+
+1. If the record type is not "premium", then multiply the amount by 1.1.
+2. If the record region is not "EU", then multiply the amount by 1.2.
+3. If the record is active (i.e., `active` is not `false`), then set the status to "archived".
+
+Now, let's apply these rules to each input record.
+
+### Input Records
+
+1. Record rec_000:
+   - type: premium
+   - region: APAC
+   - amount: 142
+   - active: True
+
+2. Record rec_001:
+   - type: standard
+   - region: EU
+   - amount: 417
+   - active: False
+
+3. Record rec_002:
+   - type: trial
+   - region: EU
+   - amount: 797
+   - active: False
+
+4. Record rec_003:
+   - type: trial
+   - region: US
+   - amount: 138
+   - active: False
+
+5. Record rec_004:
+   - type: trial
+   - region: US
+   - amount: 470
+   - active: False
+
+6. Record rec_005:
+   - type: trial
+   - region: APAC
+   - amount: 362
+   - active: True
+
+7. Record rec_006:
+   - type: trial
+   - region: APAC
+   - amount: 611
+   - active: True
+
+8. Record rec_007:
+   - type: standard
+   - region: EU
+   - amount: 524
+   - active: True
+
+9. Record rec_008:
+   - type: standard
+   - region: APAC
+   - amount: 166
+   - active: False
+
+10. Record rec_009:
+    - type: standard
+    - region: US
+    - amount: 340
+    - active: True
+
+11. Record rec_010:
+    - type: premium
+    - region: APAC
+    - amount: 926
+    - active: False
+
+12. Record rec_011:
+    - type: standard
+    - region: EU
+    - amount: 211
+    - active: False
+
+13. Record rec_012:
+    - type: standard
+    - region: APAC
+    - amount: 320
+    - active: True
+
+14. Record rec_013:
+    - type: trial
+    - region: APAC
+    - amount: 182
+    - active: True
+
+15. Record rec_014:
+    - type: standard
+    - region: APAC
+    - amount: 649
+    - active: False
+
+### Applying Transformation Rules
+
+1. rec_000:
+   - type != "premium" is False, so amount remains 142.
+   - region != "EU" is True, so amount → 142 × 1.2 = 170.4.
+   - active != false is True, so status → "archived".
+   - Transformed: {type: "premium", region: "APAC", amount: 170.4, active: True, status: "archived"}
+
+2. rec_001:
+   - type != "premium" is True, so amount → 417 × 1.1 = 458.7.
+   - region != "EU" is False, so amount remains 458.7.
+   - active != false is False, so status is not set.
+   - Transformed: {type: "standard", region: "EU", amount: 458.7, active: False}
+
+3. rec_002:
+   - type != "premium" is True, so amount → 797 × 1.1 = 876.7.
+   - region != "EU" is False, so amount remains 876.7.
+   - active != false is False, so status is not set.
+   - Transformed: {type: "trial", region: "EU", amount: 876.7, active: False}
+
+4. rec_003:
+   - type != "premium" is True, so amount → 138 × 1.1 = 151.8.
+   - region != "EU" is True, so amount → 151.8 × 1.2 = 182.16.
+   - active != false is False, so status is not set.
+   - Transformed: {type: "trial", region: "US", amount: 182.16, active: False}
+
+5. rec_004:
+   - type != "premium" is True, so amount → 470 × 1.1 = 517.
+   - region != "EU" is True, so amount → 517 × 1.2 = 620.4.
+   - active != false is False, so status is not set.
+   - Transformed: {type: "trial", region: "US", amount: 620.4, active: False}
+
+6. rec_005:
+   - type != "premium" is True, so amount → 362 × 1.1 = 398.2.
+   - region != "EU" is True, so amount → 398.2 × 1.2 = 477.84.
+   - active != false is True, so status → "archived".
+   - Transformed: {type: "trial", region: "APAC", amount: 477.84, active: True, status: "archived"}
+
+7. rec_006:
+   - type != "premium" is True, so amount → 611 × 1.1 = 672.1.
+   - region != "EU" is True, so amount → 672.1 × 1.2 = 806.52.
+   - active != false is True, so status → "archived".
+   - Transformed: {type: "trial", region: "APAC", amount: 806.52, active: True, status: "archived"}
+
+8. rec_007:
+   - type != "premium" is True, so amount → 524 × 1.1 = 576.4.
+   - region != "EU" is False, so amount remains 576.4.
+   - active != false is True, so status → "archived".
+   - Transformed: {type: "standard", region: "EU", amount: 576.4, active: True, status: "archived"}
+
+9. rec_008:
+   - type != "premium" is True, so amount → 166 × 1.1 = 182.6.
+   - region != "EU" is True, so amount → 182.6 × 1.2 = 219.12.
+   - active != false is False, so status is not set.
+   - Transformed: {type: "standard", region: "APAC", amount: 219.12, active: False}
+
+10. rec_009:
+    - type != "premium" is True, so amount → 340 × 1.1 = 374.
+    - region != "EU" is True, so amount → 374 × 1.2 = 448.8.
+    - active != false is True, so status → "archived".
+    - Transformed: {type: "standard", region: "US", amount: 448.8, active: True, status: "archived"}
+
+11. rec_010:
+    - type != "premium" is False, so amount remains 926.
+    - region != "EU" is True, so amount → 926 × 1.2 = 1111.2.
+    - active != false is False, so status is not set.
+    - Transformed: {type: "premium", region: "APAC", amount: 1111.2, active: False}
+
+12. rec_011:
+    - type != "premium" is True, so amount → 211 × 1.1 = 232.1.
+    - region != "EU" is False, so amount remains 232.1.
+    - active != false is False, so status is not set.
+    - Transformed: {type: "standard", region: "EU", amount: 232.1, active: False}
+
+13. rec_012:
+    - type != "premium" is True, so amount → 320 × 1.1 = 352.
+    - region != "EU" is True, so amount → 352 × 1.2 = 422.4.
+    - active != false is True, so status → "archived".
+    - Transformed: {type: "standard", region: "APAC", amount: 422.4, active: True, status: "archived"}
+
+14. rec_013:
+    - type != "premium" is True, so amount → 182 × 1.1 = 200.2.
+    - region != "EU" is True, so amount → 200.2 × 1.2 = 240.24.
+    - active != false is True, so status → "archived".
+    - Transformed

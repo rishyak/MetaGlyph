@@ -1,1 +1,8 @@
-[]
+```json
+{
+  "company": "Global Solutions",
+  "sender_title": "Director",
+  "recipient": "david.brown@example.com",
+  "date": "2024-07-23"
+}
+```

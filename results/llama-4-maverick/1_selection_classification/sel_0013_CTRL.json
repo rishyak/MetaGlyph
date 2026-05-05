@@ -1,0 +1,60 @@
+{
+  "prompt_id": "sel_0013_CTRL",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this problem, we need to follow the given instruction: `SELECT x | x.size ∉ {medium} → [x.name]`. This means we need to select animals from the given list where the size is not 'medium' and return their names.",
+    "First, let's list the animals with their sizes:",
+    "Cat: small",
+    "Snake: medium",
+    "Dog: medium",
+    "Goldfish: small",
+    "Penguin: medium",
+    "Eagle: medium",
+    "Whale: large",
+    "Parrot: small",
+    "Lion: large",
+    "Shark: large",
+    "Now, let's filter out the animals that are not 'medium' in size:",
+    "Cat: small (included)",
+    "Snake: medium (excluded)",
+    "Dog: medium (excluded)",
+    "Goldfish: small (included)",
+    "Penguin: medium (excluded)",
+    "Eagle: medium (excluded)",
+    "Whale: large (included)",
+    "Parrot: small (included)",
+    "Lion: large (included)",
+    "Shark: large (included)",
+    "Now, let's extract their names:",
+    "Cat",
+    "Goldfish",
+    "Parrot",
+    "Whale",
+    "Lion",
+    "Shark"
+  ],
+  "gold_output": [
+    "dog",
+    "eagle",
+    "penguin",
+    "snake"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=4, extra=30"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

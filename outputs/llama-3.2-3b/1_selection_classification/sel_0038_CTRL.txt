@@ -1,0 +1,36 @@
+### Solution
+```json
+[
+  "Elephant",
+  "Whale",
+  "Crocodile",
+  "Dog",
+  "Cat",
+  "Hamster",
+  "Eagle",
+  "Goldfish",
+  "Snake"
+]
+```
+
+### Explanation
+To solve this problem, we need to identify the animals that are not classified as "large" and are commonly kept as pets. We can do this by filtering the input data based on the given conditions.
+
+The conditions are:
+- The animal is not a reptile (i.e., it is a mammal or a bird).
+- The animal is not classified as "large".
+- The animal is commonly kept as a pet (i.e., its domestic status is True).
+
+Based on these conditions, we can filter the input data as follows:
+
+- Elephant: not a reptile, large, not a pet
+- Turtle: reptile, not a pet
+- Whale: not a reptile, large, not a pet
+- Dog: mammal, not large, pet
+- Cat: mammal, not large, pet
+- Hamster: mammal, not large, pet
+- Eagle: bird, not large, pet
+- Goldfish: fish, not large, pet
+- Snake: reptile, not large, not a pet
+
+Therefore, the output will be the names of the animals that meet the conditions.

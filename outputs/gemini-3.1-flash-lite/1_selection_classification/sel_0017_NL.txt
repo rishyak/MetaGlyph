@@ -1,0 +1,10 @@
+[
+  "Cat",
+  "Lion",
+  "Penguin",
+  "Crocodile",
+  "Dog",
+  "Whale",
+  "Parrot",
+  "Turtle"
+]

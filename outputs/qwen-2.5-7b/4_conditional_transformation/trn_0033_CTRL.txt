@@ -1,0 +1,120 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 633,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 253,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 254,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 478,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 621,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 598,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 308,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 371,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 201,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 79,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 54,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 775,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 363,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 653,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 784,
+        "active": false,
+        "status": "archived"
+    }
+]
+```
+
+Explanation:
+- For `rec_000`, the `type` is `trial`, so it gets archived.
+- For `rec_001`, the `region` is `EU`, but the `type` is not `premium`, so no change in amount and no archiving.
+- For `rec_002`, the `region` is `US`, so no change in amount and no archiving.
+- For `rec_003`, the `type` is `trial` and `active` is `true`, so it gets archived.
+- For `rec_004`, the `region` is `EU`, but the `type` is not `premium`, so no change in amount and no archiving.
+- For `rec_005`, the `type` is `trial` and `active` is `true`, so it gets archived.
+- For `rec_006`, the `type` is `trial` and `active` is `false`, so no change in amount and no archiving.
+- For `rec_007`, the `type` is `trial` and `active` is `true`, so it gets archived.
+- For `rec_008`, the `type` is `trial` and `active` is `true`, so it gets archived.
+- For `rec_009`, the `type` is `trial` and `active` is `true`, so it gets archived.
+- For `rec_010`, the `type` is `premium`, so no change in amount and no archiving.
+- For `rec_011`, the `type` is `premium` and `active` is `true`, so no change in amount and no archiving.
+- For `rec_012`, the `type` is `premium` and `active` is `true`, so no change in amount and no archiving.
+- For `rec_013`, the `type` is `trial` and `active` is `true`, so it gets archived.
+- For `rec_014`, the `type` is `trial` and `active` is `false`, so no change in amount and no archiving.

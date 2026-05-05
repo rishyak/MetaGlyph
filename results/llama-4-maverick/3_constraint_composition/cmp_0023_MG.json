@@ -1,0 +1,71 @@
+{
+  "prompt_id": "cmp_0023_MG",
+  "model": "llama-4-maverick",
+  "family": "3_constraint_composition",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": {
+    "selected_ids": [
+      "item_002",
+      "item_003",
+      "item_004",
+      "item_005",
+      "item_007",
+      "item_010",
+      "item_012",
+      "item_013",
+      "item_014",
+      "item_016",
+      "item_017",
+      "item_018",
+      "item_019"
+    ],
+    "count": 13
+  },
+  "gold_output": {
+    "selected_ids": [
+      "item_000",
+      "item_002",
+      "item_003",
+      "item_004",
+      "item_005",
+      "item_007",
+      "item_010",
+      "item_012",
+      "item_013",
+      "item_014",
+      "item_016",
+      "item_017",
+      "item_018",
+      "item_019"
+    ],
+    "count": 14
+  },
+  "exact_match": false,
+  "accuracy": 0.9285714285714286,
+  "f1_score": 0.962962962962963,
+  "operator_fidelity": [
+    {
+      "operator": "∪",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    },
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    },
+    {
+      "operator": "¬",
+      "checked": true,
+      "passed": false,
+      "details": "Negation check"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.93",
+  "semantic_equivalence_pass": false
+}

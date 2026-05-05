@@ -1,0 +1,43 @@
+To solve this problem, we need to follow the given instruction: `SELECT x | x.domestic ∉ {True} → [x.name]`. This means we need to select the names of animals that are not domestic.
+
+First, let's analyze the given data:
+
+1. Snake: type: reptile, domestic: False, size: medium
+2. Salmon: type: fish, domestic: False, size: medium
+3. Parrot: type: bird, domestic: True, size: small
+4. Hamster: type: mammal, domestic: True, size: small
+5. Whale: type: mammal, domestic: False, size: large
+6. Penguin: type: bird, domestic: False, size: medium
+7. Goldfish: type: fish, domestic: True, size: small
+8. Eagle: type: bird, domestic: False, size: medium
+9. Lion: type: mammal, domestic: False, size: large
+10. Cat: type: mammal, domestic: True, size: small
+
+The condition `x.domestic ∉ {True}` translates to selecting animals where `domestic` is not `True`, meaning `domestic` is `False`.
+
+Let's filter the animals based on this condition:
+
+- Snake: domestic: False
+- Salmon: domestic: False
+- Whale: domestic: False
+- Penguin: domestic: False
+- Eagle: domestic: False
+- Lion: domestic: False
+
+These are the animals that satisfy the condition `x.domestic ∉ {True}` or `x.domestic == False`.
+
+Now, we need to extract their names:
+
+1. Snake
+2. Salmon
+3. Whale
+4. Penguin
+5. Eagle
+6. Lion
+
+The instruction requires us to return the answer as a JSON array of strings. So, we will format the names as a JSON array.
+
+The final answer is:
+```json
+["Snake", "Salmon", "Whale", "Penguin", "Eagle", "Lion"]
+```

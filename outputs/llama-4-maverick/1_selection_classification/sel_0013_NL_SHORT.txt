@@ -1,0 +1,40 @@
+To solve this task, we need to carefully review the given list of animals and their attributes, and then identify the animals whose size equals "medium".
+
+The given list is as follows:
+- Cat: type: mammal, domestic: True, size: small
+- Snake: type: reptile, domestic: False, size: medium
+- Dog: type: mammal, domestic: True, size: medium
+- Goldfish: type: fish, domestic: True, size: small
+- Penguin: type: bird, domestic: False, size: medium
+- Eagle: type: bird, domestic: False, size: medium
+- Whale: type: mammal, domestic: False, size: large
+- Parrot: type: bird, domestic: True, size: small
+- Lion: type: mammal, domestic: False, size: large
+- Shark: type: fish, domestic: False, size: large
+
+Let's examine the size attribute for each animal:
+- Cat: small
+- Snake: medium
+- Dog: medium
+- Goldfish: small
+- Penguin: medium
+- Eagle: medium
+- Whale: large
+- Parrot: small
+- Lion: large
+- Shark: large
+
+The animals with a size of "medium" are:
+- Snake
+- Dog
+- Penguin
+- Eagle
+
+Therefore, the item names whose size equals "medium" are ["Snake", "Dog", "Penguin", "Eagle"].
+
+To present this in the required JSON array format, the answer is:
+```json
+["Snake", "Dog", "Penguin", "Eagle"]
+```
+
+The final response is: ["Snake", "Dog", "Penguin", "Eagle"]

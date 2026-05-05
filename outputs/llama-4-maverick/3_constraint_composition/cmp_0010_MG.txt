@@ -1,0 +1,85 @@
+To solve this problem, we need to filter the given dataset based on the condition provided in the instruction: `x.id | x.priority ∈ {high} ∪ x.status ∉ {inactive}`. This condition means we need to select items where either the priority is 'high' or the status is not 'inactive'.
+
+Let's break down the condition:
+
+1. `x.priority ∈ {high}` means the priority of the item is 'high'.
+2. `x.status ∉ {inactive}` means the status of the item is not 'inactive'.
+3. `∪` denotes the union of the two conditions, so an item is selected if either condition 1 or condition 2 (or both) is true.
+
+Now, let's apply this condition to the given dataset:
+
+1. ID: item_000 - Priority: high, Status: pending → Selected (high priority)
+2. ID: item_001 - Priority: low, Status: active → Selected (not inactive)
+3. ID: item_002 - Priority: low, Status: pending → Selected (not inactive)
+4. ID: item_003 - Priority: medium, Status: pending → Selected (not inactive)
+5. ID: item_004 - Priority: low, Status: active → Selected (not inactive)
+6. ID: item_005 - Priority: low, Status: pending → Selected (not inactive)
+7. ID: item_006 - Priority: high, Status: inactive → Selected (high priority)
+8. ID: item_007 - Priority: low, Status: pending → Selected (not inactive)
+9. ID: item_008 - Priority: high, Status: inactive → Selected (high priority)
+10. ID: item_009 - Priority: high, Status: pending → Selected (high priority)
+11. ID: item_010 - Priority: medium, Status: inactive 
+12. ID: item_011 - Priority: high, Status: inactive → Selected (high priority)
+13. ID: item_012 - Priority: medium, Status: active → Selected (not inactive)
+14. ID: item_013 - Priority: high, Status: pending → Selected (high priority)
+15. ID: item_014 - Priority: medium, Status: pending → Selected (not inactive)
+16. ID: item_015 - Priority: high, Status: pending → Selected (high priority)
+17. ID: item_016 - Priority: low, Status: active → Selected (not inactive)
+18. ID: item_017 - Priority: medium, Status: active → Selected (not inactive)
+19. ID: item_018 - Priority: medium, Status: pending → Selected (not inactive)
+20. ID: item_019 - Priority: medium, Status: inactive 
+
+Items that are not selected are:
+- item_010 (Priority: medium, Status: inactive)
+- item_019 (Priority: medium, Status: inactive)
+
+All other items are selected based on the given conditions.
+
+Selected IDs are:
+- item_000
+- item_001
+- item_002
+- item_003
+- item_004
+- item_005
+- item_006
+- item_007
+- item_008
+- item_009
+- item_011
+- item_012
+- item_013
+- item_014
+- item_015
+- item_016
+- item_017
+- item_018
+
+There are 18 selected IDs.
+
+The output in JSON format is:
+```json
+{
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_004",
+    "item_005",
+    "item_006",
+    "item_007",
+    "item_008",
+    "item_009",
+    "item_011",
+    "item_012",
+    "item_013",
+    "item_014",
+    "item_015",
+    "item_016",
+    "item_017",
+    "item_018"
+  ],
+  "count": 18
+}
+```

@@ -1,3 +1,10 @@
+Looking at the instruction, I need to select all animals where `type ∈ {fish}` and return their names.
+
+Reviewing the animal list for entries with `type: fish`:
+
+1. **Shark**: type: fish, domestic: False, size: large ✓
+2. **Salmon**: type: fish, domestic: False, size: medium ✓
+
 ```json
-["Cat", "Dog", "Hamster"]
+["Shark", "Salmon"]
 ```

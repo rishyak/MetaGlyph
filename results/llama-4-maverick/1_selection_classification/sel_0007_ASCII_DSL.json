@@ -1,0 +1,46 @@
+{
+  "prompt_id": "sel_0007_ASCII_DSL",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this problem, we need to follow the given instruction and filter the products based on the conditions provided.",
+    "This means we need to select products where:",
+    "The category is \"electronics\".",
+    "The product is not portable (i.e., `portable` is `False`).",
+    "Let's examine the given list of products:",
+    "Desk: category: furniture, price_range: medium, portable: False",
+    "Notebook: category: stationery, price_range: low, portable: True",
+    "Stapler: category: stationery, price_range: low, portable: True",
+    "Chair: category: furniture, price_range: medium, portable: True",
+    "Tablet: category: electronics, price_range: high, portable: True",
+    "Pen: category: stationery, price_range: low, portable: True",
+    "Microwave: category: appliances, price_range: medium, portable: True",
+    "Headphones: category: electronics, price_range: medium, portable: True",
+    "Refrigerator: category: appliances, price_range: high, portable: False",
+    "Smartphone: category: electronics, price_range: high, portable: True",
+    "Now, let's apply the conditions:",
+    "Category is \"electronics\": This includes Tablet, Headphones, and Smartphone.",
+    "Portable is False: None of the electronics listed are not portable.",
+    "Upon closer inspection, we see that all electronics (Tablet, Headphones, Smartphone) are portable. Therefore, none of the products in the \"electronics\" category are not portable.",
+    "So, when we apply the given conditions, we find that there are no products that satisfy both conditions.",
+    "Thus, the output should be an empty JSON array, as there are no product names to return."
+  ],
+  "gold_output": [],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "extra=21"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

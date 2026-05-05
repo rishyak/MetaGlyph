@@ -1,0 +1,8 @@
+SELECT 
+  x.id, 
+  x.value >= 50 AND x.category = 'A' AS selected, 
+  COUNT(*) AS count 
+FROM 
+  item x 
+GROUP BY 
+  x.id

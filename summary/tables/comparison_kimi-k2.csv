@@ -1,5 +1,5 @@
 Family,Model,NL Accuracy,MG Accuracy,CTRL Accuracy,MG-NL Diff,MG-CTRL Diff,Significant
+3_constraint_composition,kimi-k2,0.000,0.000,0.000,+0.000,+0.000,No
 1_selection_classification,kimi-k2,0.908,1.000,0.899,+0.092,+0.101,Yes
 2_structured_extraction,kimi-k2,0.000,0.000,0.000,+0.000,+0.000,No
-3_constraint_composition,kimi-k2,0.000,0.000,0.000,+0.000,+0.000,No
 4_conditional_transformation,kimi-k2,0.353,0.346,0.346,-0.007,+0.001,No

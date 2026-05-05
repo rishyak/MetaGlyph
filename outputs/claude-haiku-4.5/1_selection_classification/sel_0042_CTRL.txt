@@ -1,11 +1,22 @@
+I need to parse the query: `SELECT x | (x.portable ∈ {False}) ∪ (x.price_range ∈ {low}) → [x.name]`
+
+This means: Select all items x where either:
+- `x.portable ∈ {False}` (portable is False), OR
+- `x.price_range ∈ {low}` (price_range is low)
+
+Let me check each product:
+
+1. **Refrigerator**: portable: False ✓ → Include
+2. **Pen**: price_range: low ✓ → Include
+3. **Headphones**: portable: True, price_range: medium ✗ → Exclude
+4. **Microwave**: portable: True, price_range: medium ✗ → Exclude
+5. **Stapler**: price_range: low ✓ → Include
+6. **Laptop**: portable: True, price_range: high ✗ → Exclude
+7. **Smartphone**: portable: True, price_range: high ✗ → Exclude
+8. **Chair**: portable: True, price_range: medium ✗ → Exclude
+9. **Notebook**: price_range: low ✓ → Include
+10. **Desk**: portable: False ✓ → Include
+
 ```json
-[]
+["Refrigerator", "Pen", "Stapler", "Notebook", "Desk"]
 ```
-
-The query requests items that are:
-- ⊙(mammal) - must be a mammal
-- ⊗ ⊙(pet) - AND must be a pet
-- ⊗ ⊖(bird) - AND must NOT be a bird
-- ⊗ ⊖(farm_animal) - AND must NOT be a farm animal
-
-None of the items in the provided inventory have attributes related to being mammals, pets, birds, or farm animals. All items are inanimate objects (appliances, stationery, electronics, furniture), so no items match the selection criteria.

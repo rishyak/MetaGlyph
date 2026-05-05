@@ -1,0 +1,4 @@
+Given the provided list of products, the items that satisfy both conditions (category 'electronics' and 'portable' attribute value 'False') are:
+
+- Microwave: category: appliances, price_range: medium, portable: False
+- Refrigerator: category: appliances, price_range: high, portable: False

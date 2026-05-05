@@ -1,0 +1,18 @@
+I need to find all animals where the type is NOT "bird" and return their names.
+
+Let me go through the list:
+
+1. **Parrot**: type = bird → EXCLUDE (is a bird)
+2. **Salmon**: type = fish → INCLUDE (not a bird)
+3. **Cat**: type = mammal → INCLUDE (not a bird)
+4. **Eagle**: type = bird → EXCLUDE (is a bird)
+5. **Crocodile**: type = reptile → INCLUDE (not a bird)
+6. **Hamster**: type = mammal → INCLUDE (not a bird)
+7. **Shark**: type = fish → INCLUDE (not a bird)
+8. **Lion**: type = mammal → INCLUDE (not a bird)
+9. **Snake**: type = reptile → INCLUDE (not a bird)
+10. **Elephant**: type = mammal → INCLUDE (not a bird)
+
+```json
+["Salmon", "Cat", "Crocodile", "Hamster", "Shark", "Lion", "Snake", "Elephant"]
+```

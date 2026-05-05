@@ -1,0 +1,22 @@
+To extract the requested fields from the given email document, we need to identify the "sender", "sender_name", "date", and "recipient" from the provided text.
+
+1. **Sender**: The sender's email address is found in the "From:" field. Here, it is `bob.johnson@innovationlabs.com`.
+2. **Sender_Name**: The sender's name is typically found in the signature or the body of the email. In this case, the email is signed off by "Bob Johnson".
+3. **Date**: The date of the email is specified in the "Date:" field, which is `2024-10-24`.
+4. **Recipient**: The recipient's email address is listed in the "To:" field, which is `bob.johnson@example.com`.
+
+Now, let's compile these details into a JSON object as per the specified output format.
+
+```json
+{
+  "sender": "bob.johnson@innovationlabs.com",
+  "sender_name": "Bob Johnson",
+  "date": "2024-10-24",
+  "recipient": "bob.johnson@example.com"
+}
+```
+
+The final answer is: 
+```json
+{"sender": "bob.johnson@innovationlabs.com", "sender_name": "Bob Johnson", "date": "2024-10-24", "recipient": "bob.johnson@example.com"}
+```

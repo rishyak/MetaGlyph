@@ -1,11 +1,37 @@
 ```json
 {
   "selected_ids": [
-    "item_001",
+    "item_000",
+    "item_004",
+    "item_005",
     "item_007",
     "item_008",
-    "item_019"
+    "item_009",
+    "item_011",
+    "item_013",
+    "item_014",
+    "item_015",
+    "item_016",
+    "item_018"
   ],
-  "count": 4
+  "count": 12
 }
 ```
+
+**Explanation:**
+
+The query selects items where: `(x.value >= 50) OR (x.category ∈ {A})`
+
+**Items selected:**
+- **item_000**: Category A ✓
+- **item_004**: Category A ✓ AND Value 64 >= 50 ✓
+- **item_005**: Category A ✓ AND Value 69 >= 50 ✓
+- **item_007**: Value 70 >= 50 ✓
+- **item_008**: Value 94 >= 50 ✓
+- **item_009**: Category A ✓
+- **item_011**: Category A ✓
+- **item_013**: Category A ✓ AND Value 70 >= 50 ✓
+- **item_014**: Value 51 >= 50 ✓
+- **item_015**: Value 59 >= 50 ✓
+- **item_016**: Category A ✓ AND Value 83 >= 50 ✓
+- **item_018**: Value 73 >= 50 ✓

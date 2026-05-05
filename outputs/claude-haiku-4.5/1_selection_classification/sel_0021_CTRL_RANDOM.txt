@@ -1,0 +1,16 @@
+Looking at the instruction: `SELECT x | x.domestic ※ {False} ↯ [x.name]`
+
+This appears to be a query asking to select items where `x.domestic` equals `False`, and return their names.
+
+Filtering the animals where `domestic: False`:
+
+- Penguin: domestic: False
+- Snake: domestic: False
+- Salmon: domestic: False
+- Eagle: domestic: False
+- Whale: domestic: False
+- Crocodile: domestic: False
+
+```json
+["Penguin", "Snake", "Salmon", "Eagle", "Whale", "Crocodile"]
+```

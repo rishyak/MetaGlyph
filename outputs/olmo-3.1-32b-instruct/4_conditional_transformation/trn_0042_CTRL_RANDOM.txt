@@ -1,0 +1,122 @@
+[
+  {
+    "id": "rec_000",
+    "type": "premium",
+    "region": "EU",
+    "amount": 699.6,
+    "status": "archived",
+    "active": false
+  },
+  {
+    "id": "rec_001",
+    "type": "premium",
+    "region": "US",
+    "amount": 687.6,
+    "status": "archived",
+    "active": false
+  },
+  {
+    "id": "rec_002",
+    "type": "premium",
+    "region": "EU",
+    "amount": 1126.4,
+    "status": "active",
+    "active": true
+  },
+  {
+    "id": "rec_003",
+    "type": "premium",
+    "region": "US",
+    "amount": 334.4,
+    "status": "active",
+    "active": true
+  },
+  {
+    "id": "rec_004",
+    "type": "premium",
+    "region": "EU",
+    "amount": 817.2,
+    "status": "archived",
+    "active": false
+  },
+  {
+    "id": "rec_005",
+    "type": "trial",
+    "region": "EU",
+    "amount": 274.8,
+    "status": "active",
+    "active": true
+  },
+  {
+    "id": "rec_006",
+    "type": "trial",
+    "region": "EU",
+    "amount": 1098.0,
+    "status": "archived",
+    "active": false
+  },
+  {
+    "id": "rec_007",
+    "type": "standard",
+    "region": "US",
+    "amount": 640,
+    "status": "active",
+    "active": true
+  },
+  {
+    "id": "rec_008",
+    "type": "standard",
+    "region": "US",
+    "amount": 695,
+    "status": "active",
+    "active": true
+  },
+  {
+    "id": "rec_009",
+    "type": "trial",
+    "region": "US",
+    "amount": 63,
+    "status": "active",
+    "active": true
+  },
+  {
+    "id": "rec_010",
+    "type": "premium",
+    "region": "EU",
+    "amount": 896.8,
+    "status": "archived",
+    "active": false
+  },
+  {
+    "id": "rec_011",
+    "type": "standard",
+    "region": "APAC",
+    "amount": 799,
+    "status": "active",
+    "active": true
+  },
+  {
+    "id": "rec_012",
+    "type": "standard",
+    "region": "APAC",
+    "amount": 961,
+    "status": "active",
+    "active": true
+  },
+  {
+    "id": "rec_013",
+    "type": "premium",
+    "region": "APAC",
+    "amount": 1063.7,
+    "status": "archived",
+    "active": false
+  },
+  {
+    "id": "rec_014",
+    "type": "premium",
+    "region": "APAC",
+    "amount": 235.4,
+    "status": "archived",
+    "active": false
+  }
+]

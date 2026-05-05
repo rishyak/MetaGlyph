@@ -1,0 +1,38 @@
+{
+  "prompt_id": "sel_0004_NL_SHORT",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "NL_SHORT",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this problem, we need to review the list of animals and identify the ones that are not birds. We can do this by looking at the \"type\" attribute of each item.",
+    "From the given list, the birds are Parrot and Eagle. We will exclude these items from our output.",
+    "We will create a list of the remaining items that are not birds.",
+    "We will format the output list as a JSON array of strings."
+  ],
+  "gold_output": [
+    "cat",
+    "crocodile",
+    "elephant",
+    "hamster",
+    "lion",
+    "salmon",
+    "shark",
+    "snake"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=8, extra=4"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "incomplete",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

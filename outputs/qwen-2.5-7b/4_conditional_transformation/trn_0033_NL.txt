@@ -1,0 +1,109 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 633,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 303.6,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 254,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 478,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 621,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 478,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 308,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 371,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 201,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 79,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 61.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 873,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 363,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 653,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 784,
+        "active": false,
+        "status": "archived"
+    }
+]
+```

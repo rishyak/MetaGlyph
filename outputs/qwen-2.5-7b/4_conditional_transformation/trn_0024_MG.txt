@@ -1,0 +1,101 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 621,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 259,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 80,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 842,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 898.7,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 157.2,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 686,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 376,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 26,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 153.57,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 773,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 967.2,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 121,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 978,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 543,
+        "active": false
+    }
+]
+```
+
+Explanation:
+- For `rec_004`, the type is `premium` and it's in the US, so the amount is increased by 10%.
+- For `rec_005`, the type is `premium`, it's in the US, and it's inactive, so the status is set to "archived".
+- For `rec_011`, the type is `premium`, it's in the EU, and it's inactive, so the status is set to "archived".
+- For `rec_005`, `rec_011`, and `rec_009`, the amount is increased by 10% and then by 20% because they are in the US.
+- For all other records, no changes are made since they do not meet the conditions specified in the transformation rules.

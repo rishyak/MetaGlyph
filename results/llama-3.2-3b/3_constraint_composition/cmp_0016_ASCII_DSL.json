@@ -1,0 +1,27 @@
+{
+  "prompt_id": "cmp_0016_ASCII_DSL",
+  "model": "llama-3.2-3b",
+  "family": "3_constraint_composition",
+  "condition": "ASCII_DSL",
+  "parse_success": false,
+  "parsed_output": null,
+  "gold_output": {
+    "selected_ids": [
+      "item_000",
+      "item_005",
+      "item_007",
+      "item_009",
+      "item_011",
+      "item_016"
+    ],
+    "count": 6
+  },
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0.0,
+  "operator_fidelity": [],
+  "overall_pass": false,
+  "error_type": "parse",
+  "error_details": "Could not extract key-value pairs",
+  "semantic_equivalence_pass": false
+}

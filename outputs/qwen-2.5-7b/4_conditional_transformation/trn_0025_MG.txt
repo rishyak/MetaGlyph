@@ -1,0 +1,96 @@
+```json
+[
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 997,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 877,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 120,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 85,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 161,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 649,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 553,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 629,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 127,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 919,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 857 * 1.2,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 757 * 1.2,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 330 * 1.2,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 713,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 861,
+        "active": true
+    }
+]
+```
+
+Note: For records that meet the condition `x.type == "premium"` and `x.region == "EU"`, their amounts are multiplied by 1.2. Records with `x.active == false` have their status changed to "archived", but since the output format does not include the status field, only the amount is adjusted.

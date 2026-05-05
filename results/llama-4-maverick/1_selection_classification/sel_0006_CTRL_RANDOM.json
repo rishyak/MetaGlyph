@@ -1,0 +1,53 @@
+{
+  "prompt_id": "sel_0006_CTRL_RANDOM",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this problem, we need to break down the given instruction and apply it to the provided input.",
+    "Let's break it down:",
+    "SELECT x`: This means we are selecting or considering each item `x` from the given dataset.",
+    "(x.domestic ¤ {False})`: This condition filters items where `x.domestic` is `False`, meaning the animal is not domestic.",
+    "§`: This symbol indicates a logical AND operation between the conditions on its left and right.",
+    "(x.size ¤ {large})`: This condition filters items where `x.size` is `large`.",
+    "↯ [x.name]`: This means we are projecting or selecting the `name` of the items that satisfy the conditions.",
+    "So, the instruction is asking us to select the names of animals that are both not domestic (`domestic == False`) and large (`size == large`).",
+    "Let's examine the input data:",
+    "Eagle: type: bird, domestic: False, size: medium",
+    "Shark: type: fish, domestic: False, size: large",
+    "Dog: type: mammal, domestic: True, size: medium",
+    "Snake: type: reptile, domestic: False, size: medium",
+    "Hamster: type: mammal, domestic: True, size: small",
+    "Salmon: type: fish, domestic: False, size: medium",
+    "Cat: type: mammal, domestic: True, size: small",
+    "Crocodile: type: reptile, domestic: False, size: large",
+    "Goldfish: type: fish, domestic: True, size: small",
+    "Whale: type: mammal, domestic: False, size: large",
+    "Applying the conditions:",
+    "domestic == False`: Eagle, Shark, Snake, Salmon, Crocodile, Whale",
+    "size == large`: Shark, Crocodile, Whale",
+    "Combining both conditions with AND: Shark, Crocodile, Whale",
+    "Now, selecting their names: [\"Shark\", \"Crocodile\", \"Whale\"]"
+  ],
+  "gold_output": [
+    "crocodile",
+    "shark",
+    "whale"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "missing=3, extra=24"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

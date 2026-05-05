@@ -1,0 +1,35 @@
+{
+  "prompt_id": "sel_0047_CTRL",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": [
+    "Eagle",
+    "Elephant",
+    "Lion",
+    "Cat",
+    "Crocodile",
+    "Snake",
+    "Shark"
+  ],
+  "gold_output": [
+    "elephant",
+    "lion"
+  ],
+  "exact_match": false,
+  "accuracy": 0.2857142857142857,
+  "f1_score": 0.4444444444444445,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "missing=2, extra=7"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.29",
+  "semantic_equivalence_pass": false
+}

@@ -4,10 +4,14 @@
   "family": "1_selection_classification",
   "condition": "CTRL",
   "parse_success": true,
-  "parsed_output": [],
-  "gold_output": [
-    "refrigerator"
+  "parsed_output": [
+    "Desk",
+    "Tablet",
+    "Headphones",
+    "Refrigerator",
+    "Smartphone"
   ],
+  "gold_output": [],
   "exact_match": false,
   "accuracy": 0.0,
   "f1_score": 0,
@@ -16,7 +20,7 @@
       "operator": "∩",
       "checked": true,
       "passed": false,
-      "details": "Missing items in intersection"
+      "details": "extra=5"
     }
   ],
   "overall_pass": false,

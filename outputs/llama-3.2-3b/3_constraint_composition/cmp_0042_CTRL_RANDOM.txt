@@ -1,0 +1,1 @@
+SELECT x.id, x.priority, x.status, x.value FROM items x WHERE x.status IN ('inactive') AND x.priority IN ('high') GROUP BY x.id

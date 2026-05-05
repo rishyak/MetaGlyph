@@ -1,0 +1,24 @@
+To solve this problem, we need to filter the list of animals based on the given conditions:
+
+1. The animal must be either a bird or not domesticated.
+2. We then select the name of the animal that meets these criteria.
+
+Let's go through the list and apply the conditions:
+
+- **Hamster**: type: mammal, domestic: True -> Does not meet the condition.
+- **Snake**: type: reptile, domestic: False -> Does not meet the condition.
+- **Turtle**: type: reptile, domestic: True -> Does not meet the condition.
+- **Parrot**: type: bird, domestic: True -> Does not meet the condition.
+- **Crocodile**: type: reptile, domestic: False -> Does not meet the condition.
+- **Elephant**: type: mammal, domestic: False -> Does not meet the condition.
+- **Lion**: type: mammal, domestic: False -> Does not meet the condition.
+- **Goldfish**: type: fish, domestic: True -> Does not meet the condition.
+- **Salmon**: type: fish, domestic: False -> Does not meet the condition.
+- **Whale**: type: mammal, domestic: False -> Does not meet the condition.
+
+None of the animals in the list meet both conditions simultaneously. Therefore, there are no animals that satisfy the given criteria.
+
+### JSON Output
+```json
+[]
+```

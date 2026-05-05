@@ -1,0 +1,118 @@
+```json
+[
+  {
+    "id": "rec_000",
+    "type": "trial",
+    "region": "APAC",
+    "amount": 1254,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_001",
+    "type": "trial",
+    "region": "EU",
+    "amount": 561,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_002",
+    "type": "standard",
+    "region": "EU",
+    "amount": 999.9,
+    "active": false
+  },
+  {
+    "id": "rec_003",
+    "type": "standard",
+    "region": "US",
+    "amount": 337.92,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_004",
+    "type": "standard",
+    "region": "APAC",
+    "amount": 669.24,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_005",
+    "type": "trial",
+    "region": "US",
+    "amount": 186.12,
+    "active": false
+  },
+  {
+    "id": "rec_006",
+    "type": "trial",
+    "region": "US",
+    "amount": 370.92,
+    "active": false
+  },
+  {
+    "id": "rec_007",
+    "type": "standard",
+    "region": "APAC",
+    "amount": 1033.56,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_008",
+    "type": "trial",
+    "region": "EU",
+    "amount": 459.8,
+    "active": false
+  },
+  {
+    "id": "rec_009",
+    "type": "premium",
+    "region": "APAC",
+    "amount": 566.4,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_010",
+    "type": "standard",
+    "region": "US",
+    "amount": 99,
+    "active": false
+  },
+  {
+    "id": "rec_011",
+    "type": "standard",
+    "region": "APAC",
+    "amount": 761.64,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_012",
+    "type": "trial",
+    "region": "US",
+    "amount": 22.44,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_013",
+    "type": "trial",
+    "region": "APAC",
+    "amount": 92.4,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_014",
+    "type": "standard",
+    "region": "US",
+    "amount": 1174.8,
+    "active": false
+  }
+]
+```

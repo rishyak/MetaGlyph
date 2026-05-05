@@ -1,0 +1,12 @@
+SELECT 
+  x.id, 
+  x.category, 
+  x.status, 
+  x.selected_ids, 
+  COUNT(*) as count 
+FROM 
+  items x 
+WHERE 
+  x.status = 'active' 
+GROUP BY 
+  x.id

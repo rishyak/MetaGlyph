@@ -1,0 +1,13 @@
+Given the provided list of products, the items that satisfy both conditions (price_range: 'medium' and portable: 'False') are:
+
+- Bookshelf
+- Desk
+
+Here is the answer in the requested JSON format:
+
+```
+[
+  "Bookshelf",
+  "Desk"
+]
+```

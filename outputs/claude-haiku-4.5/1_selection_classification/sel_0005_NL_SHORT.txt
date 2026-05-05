@@ -1,0 +1,8 @@
+Looking at the list for items where **type equals "bird"** AND **domestic equals True**:
+
+- Parrot: type: bird, domestic: True ✓
+- Eagle: type: bird, domestic: False ✗
+
+```json
+["Parrot"]
+```

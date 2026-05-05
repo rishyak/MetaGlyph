@@ -1,0 +1,40 @@
+{
+  "prompt_id": "cmp_0020_MG",
+  "model": "olmo-3.1-32b-instruct",
+  "family": "3_constraint_composition",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": {
+    "selected_ids": [
+      "item_001"
+    ],
+    "count": 1
+  },
+  "gold_output": {
+    "selected_ids": [
+      "item_001"
+    ],
+    "count": 1
+  },
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    },
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    }
+  ],
+  "overall_pass": true,
+  "error_type": "none",
+  "error_details": null,
+  "semantic_equivalence_pass": false
+}

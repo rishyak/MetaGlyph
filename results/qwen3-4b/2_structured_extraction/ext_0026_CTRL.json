@@ -1,0 +1,22 @@
+{
+  "prompt_id": "ext_0026_CTRL",
+  "model": "qwen3-4b",
+  "family": "2_structured_extraction",
+  "condition": "CTRL",
+  "parse_success": false,
+  "parsed_output": null,
+  "gold_output": {
+    "date": "2024-06-25",
+    "payment_terms": "Net 30",
+    "customer_name": "David Brown",
+    "invoice_num": "2684"
+  },
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0.0,
+  "operator_fidelity": [],
+  "overall_pass": false,
+  "error_type": "parse",
+  "error_details": "Could not extract key-value pairs",
+  "semantic_equivalence_pass": false
+}

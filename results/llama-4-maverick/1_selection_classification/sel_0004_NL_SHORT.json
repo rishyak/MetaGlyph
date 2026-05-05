@@ -1,0 +1,42 @@
+{
+  "prompt_id": "sel_0004_NL_SHORT",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "NL_SHORT",
+  "parse_success": true,
+  "parsed_output": [
+    "Salmon",
+    "Cat",
+    "Crocodile",
+    "Hamster",
+    "Shark",
+    "Lion",
+    "Snake",
+    "Elephant"
+  ],
+  "gold_output": [
+    "cat",
+    "crocodile",
+    "elephant",
+    "hamster",
+    "lion",
+    "salmon",
+    "shark",
+    "snake"
+  ],
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=8, extra=8"
+    }
+  ],
+  "overall_pass": true,
+  "error_type": "logic",
+  "error_details": "Accuracy: 1.00",
+  "semantic_equivalence_pass": false
+}

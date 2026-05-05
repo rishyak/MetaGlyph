@@ -1,0 +1,8 @@
+[
+  "Chair",
+  "Smartphone",
+  "Tablet",
+  "Pen",
+  "Notebook",
+  "Microwave"
+]

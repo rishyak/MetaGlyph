@@ -1,0 +1,23 @@
+Based on the given instruction and input, we need to select the names of animals that either have a size of "large" or are not domesticated (or both). Let's go through each item in the dataset:
+
+- **Salmon**: Size: medium, Domestic: False → Does not match the criteria.
+- **Crocodile**: Size: large, Domestic: False → Matches the criteria.
+- **Eagle**: Size: medium, Domestic: False → Does not match the criteria.
+- **Hamster**: Size: small, Domestic: True → Does not match the criteria.
+- **Goldfish**: Size: small, Domestic: True → Does not match the criteria.
+- **Turtle**: Size: small, Domestic: True → Does not match the criteria.
+- **Snake**: Size: medium, Domestic: False → Does not match the criteria.
+- **Lion**: Size: large, Domestic: False → Matches the criteria.
+- **Parrot**: Size: small, Domestic: True → Does not match the criteria.
+- **Whale**: Size: large, Domestic: False → Matches the criteria.
+
+So, the animals that meet the criteria are:
+- **Crocodile**
+- **Lion**
+- **Whale**
+
+The output format is required to be a JSON array of strings, so the response will be:
+
+```json
+["Crocodile", "Lion", "Whale"]
+```

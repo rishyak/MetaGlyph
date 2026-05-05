@@ -1,0 +1,12 @@
+Looking at the instruction, I need to find all items where:
+- category is "appliances" AND
+- portable is True
+
+Let me check each product:
+
+- Refrigerator: category = appliances, portable = False ❌
+- Microwave: category = appliances, portable = True ✓
+
+```json
+["Microwave"]
+```

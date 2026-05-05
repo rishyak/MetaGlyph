@@ -1,3 +1,20 @@
+Looking at the instruction: `SELECT x | x.type ∉ {fish} → [x.name]`
+
+This means: Select all items where the type is NOT fish, and return their names.
+
+Let me identify all animals that are NOT fish:
+
+- Shark: type = fish ❌
+- Cat: type = mammal ✓
+- Lion: type = mammal ✓
+- Penguin: type = bird ✓
+- Crocodile: type = reptile ✓
+- Dog: type = mammal ✓
+- Whale: type = mammal ✓
+- Goldfish: type = fish ❌
+- Parrot: type = bird ✓
+- Turtle: type = reptile ✓
+
 ```json
-["Cat", "Dog"]
+["Cat", "Lion", "Penguin", "Crocodile", "Dog", "Whale", "Parrot", "Turtle"]
 ```

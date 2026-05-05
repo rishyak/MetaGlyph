@@ -5,8 +5,16 @@
   "condition": "CTRL",
   "parse_success": true,
   "parsed_output": {
-    "selected_ids": [],
-    "count": 0
+    "selected_ids": [
+      "item_001",
+      "item_011",
+      "item_013",
+      "item_014",
+      "item_015",
+      "item_018",
+      "item_019"
+    ],
+    "count": 7
   },
   "gold_output": {
     "selected_ids": [
@@ -31,8 +39,8 @@
     "count": 17
   },
   "exact_match": false,
-  "accuracy": 0.0,
-  "f1_score": 0,
+  "accuracy": 0.4117647058823529,
+  "f1_score": 0.5833333333333334,
   "operator_fidelity": [
     {
       "operator": "∪",
@@ -49,12 +57,12 @@
     {
       "operator": "¬",
       "checked": true,
-      "passed": true,
-      "details": "Negation check passed"
+      "passed": false,
+      "details": "Negation check"
     }
   ],
   "overall_pass": false,
   "error_type": "scope",
-  "error_details": "Accuracy: 0.00",
+  "error_details": "Accuracy: 0.41",
   "semantic_equivalence_pass": false
 }

@@ -1,0 +1,24 @@
+{
+  "prompt_id": "sel_0042_ASCII_DSL",
+  "model": "claude-haiku-4.5",
+  "family": "1_selection_classification",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": [],
+  "gold_output": [],
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": true,
+      "details": "Intersection scope correct"
+    }
+  ],
+  "overall_pass": true,
+  "error_type": "none",
+  "error_details": null,
+  "semantic_equivalence_pass": false
+}

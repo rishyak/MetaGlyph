@@ -1,0 +1,15 @@
+### Step 1: Identify the items with size equal to medium
+We need to find the items in the list that have a size equal to medium.
+
+### Step 2: Review the list of animals
+Reviewing the list, we find the following animals with size equal to medium:
+- Snake: size = medium
+- Dog: size = medium
+- Penguin: size = medium
+- Eagle: size = medium
+
+### Step 3: Return the list of items with size equal to medium
+The list of items with size equal to medium is:
+["Snake", "Dog", "Penguin", "Eagle"]
+
+The final answer is: $\boxed["Snake", "Dog", "Penguin", "Eagle"]$

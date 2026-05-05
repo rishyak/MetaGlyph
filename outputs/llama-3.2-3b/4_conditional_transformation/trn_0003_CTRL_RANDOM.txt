@@ -1,0 +1,34 @@
+```json
+[
+  {
+    "type": "premium",
+    "region": "APAC",
+    "amount": 1039.0,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 612.0,
+    "status": "archived"
+  },
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 75.0,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "US",
+    "amount": 17.0,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 70.0,
+    "status": "archived"
+  }
+]
+```

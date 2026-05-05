@@ -1,15 +1,38 @@
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_004",
+    "item_005",
+    "item_010",
+    "item_011",
+    "item_014",
+    "item_015"
+  ],
+  "count": 10
 }
 ```
 
-The query requires items that have ALL of the following attributes:
-- security: ⊙(security)
-- high_priority: ⊙(high_priority)
-- performance: ⊙(performance)
-- NOT deprecated: ⊖(deprecated)
-- NOT experimental: ⊖(experimental)
+**Explanation:**
 
-The provided dataset contains only: ID, Category, Status, Priority, and Value attributes. None of the required attributes (security, high_priority, performance, deprecated, experimental) are present in the data, so no items match the filter criteria.
+The query selects items where:
+- `x.category ∈ {A, B}` **OR** `x.status ∈ {active}`
+
+**Selected items:**
+- **item_000**: Category B ✓
+- **item_001**: Category A ✓
+- **item_002**: Category B ✓
+- **item_003**: Category B ✓
+- **item_004**: Category A ✓ AND Status active ✓
+- **item_005**: Category B ✓
+- **item_010**: Category B ✓
+- **item_011**: Category B ✓
+- **item_014**: Category A ✓
+- **item_015**: Category A ✓ AND Status active ✓
+
+**Excluded items:**
+- item_006, item_007, item_009, item_013, item_018: Category C (not in {A, B}) and only item_007 and item_018 have active status, but they don't meet the category requirement
+- item_008, item_012, item_016, item_017, item_019: Category A or B but status is inactive (not active)

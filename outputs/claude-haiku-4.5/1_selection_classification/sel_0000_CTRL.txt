@@ -1,3 +1,22 @@
+# Analysis
+
+The instruction asks me to select all animals where the type is NOT a reptile: `SELECT x | x.type ∉ {reptile} → [x.name]`
+
+Let me evaluate each animal:
+
+1. **Dog**: type = mammal ✓ (not reptile)
+2. **Whale**: type = mammal ✓ (not reptile)
+3. **Salmon**: type = fish ✓ (not reptile)
+4. **Eagle**: type = bird ✓ (not reptile)
+5. **Shark**: type = fish ✓ (not reptile)
+6. **Elephant**: type = mammal ✓ (not reptile)
+7. **Cat**: type = mammal ✓ (not reptile)
+8. **Penguin**: type = bird ✓ (not reptile)
+9. **Parrot**: type = bird ✓ (not reptile)
+10. **Turtle**: type = reptile ✗ (IS reptile - exclude)
+
+### Answer
+
 ```json
-["Cat", "Dog"]
+["Dog", "Whale", "Salmon", "Eagle", "Shark", "Elephant", "Cat", "Penguin", "Parrot"]
 ```

@@ -1,0 +1,12 @@
+```json
+{
+  "selected_ids": ["item_006", "item_014", "item_015", "item_017"],
+  "count": 4
+}
+```
+
+Explanation:
+- The condition `x.id | x.category ∈ {A, B} ∩ x.status ∈ {active}` is applied to each item in the dataset.
+- Items that meet both conditions (`category` is either A or B and `status` is active) are selected.
+- The selected items are `item_006`, `item_014`, `item_015`, and `item_017`.
+- The count of these selected items is 4.

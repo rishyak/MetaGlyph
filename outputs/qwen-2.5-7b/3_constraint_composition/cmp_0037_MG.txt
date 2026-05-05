@@ -1,0 +1,16 @@
+```json
+{
+  "selected_ids": ["item_004", "item_008", "item_009", "item_014", "item_015"],
+  "count": 5
+}
+```
+
+Explanation:
+- The query filters items where the category is either 'A' or 'B' and the status is 'active'.
+- The selected items based on the given dataset are:
+  - item_004 (Category: A, Status: active)
+  - item_008 (Category: B, Status: active)
+  - item_009 (Category: A, Status: active)
+  - item_014 (Category: B, Status: active)
+  - item_015 (Category: A, Status: active)
+- There are 5 such items in total.

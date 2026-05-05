@@ -1,0 +1,1 @@
+["Chair", "Headphones", "Microwave", "Tablet"]

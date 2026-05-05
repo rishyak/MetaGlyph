@@ -1,0 +1,48 @@
+To solve this problem, we need to filter the given dataset based on the conditions specified in the instruction: `x.priority ∈ {high} ∩ x.status ∉ {inactive}`. This means we are looking for items where the priority is 'high' and the status is not 'inactive'.
+
+Let's examine the dataset:
+
+1. ID: item_000, Priority: low, Status: inactive
+2. ID: item_001, Priority: low, Status: pending
+3. ID: item_002, Priority: medium, Status: pending
+4. ID: item_003, Priority: low, Status: pending
+5. ID: item_004, Priority: low, Status: inactive
+6. ID: item_005, Priority: medium, Status: active
+7. ID: item_006, Priority: high, Status: pending
+8. ID: item_007, Priority: medium, Status: inactive
+9. ID: item_008, Priority: low, Status: pending
+10. ID: item_009, Priority: high, Status: pending
+11. ID: item_010, Priority: medium, Status: active
+12. ID: item_011, Priority: low, Status: inactive
+13. ID: item_012, Priority: low, Status: pending
+14. ID: item_013, Priority: high, Status: active
+15. ID: item_014, Priority: medium, Status: active
+16. ID: item_015, Priority: medium, Status: inactive
+17. ID: item_016, Priority: high, Status: pending
+18. ID: item_017, Priority: medium, Status: inactive
+19. ID: item_018, Priority: low, Status: inactive
+20. ID: item_019, Priority: low, Status: inactive
+
+Now, let's filter the items based on the given conditions:
+
+- `x.priority ∈ {high}` means the priority should be 'high'.
+- `x.status ∉ {inactive}` means the status should not be 'inactive'.
+
+Items that satisfy both conditions:
+
+1. ID: item_006, Priority: high, Status: pending
+2. ID: item_009, Priority: high, Status: pending
+3. ID: item_013, Priority: high, Status: active
+4. ID: item_016, Priority: high, Status: pending
+
+The IDs of these items are: `item_006`, `item_009`, `item_013`, `item_016`.
+
+So, `selected_ids = [item_006, item_009, item_013, item_016]` and `count = 4`.
+
+The output in JSON format is:
+```json
+{
+  "selected_ids": ["item_006", "item_009", "item_013", "item_016"],
+  "count": 4
+}
+```

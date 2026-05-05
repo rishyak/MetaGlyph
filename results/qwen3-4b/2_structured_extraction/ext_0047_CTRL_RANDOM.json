@@ -1,0 +1,22 @@
+{
+  "prompt_id": "ext_0047_CTRL_RANDOM",
+  "model": "qwen3-4b",
+  "family": "2_structured_extraction",
+  "condition": "CTRL_RANDOM",
+  "parse_success": false,
+  "parsed_output": null,
+  "gold_output": {
+    "due_date": "2024-08-19",
+    "date": "2024-08-08",
+    "customer_name": "David Brown",
+    "invoice_num": "5569"
+  },
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0.0,
+  "operator_fidelity": [],
+  "overall_pass": false,
+  "error_type": "parse",
+  "error_details": "Could not extract key-value pairs",
+  "semantic_equivalence_pass": false
+}

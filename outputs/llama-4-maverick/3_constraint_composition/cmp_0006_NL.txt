@@ -1,0 +1,45 @@
+```json
+{
+  "selected_ids": ["item_007", "item_017"],
+  "count": 2
+}
+```
+
+### Explanation
+
+To solve this problem, we need to review each item in the given dataset and check if it meets two conditions: 
+1. The 'value' is >= 50.
+2. The 'category' is 'A'.
+
+Let's go through the dataset:
+
+1. **item_000**: Category = C, Value = 21. Does not meet either condition.
+2. **item_001**: Category = A, Value = 23. Meets the category condition but not the value condition.
+3. **item_002**: Category = C, Value = 86. Meets the value condition but not the category condition.
+4. **item_003**: Category = C, Value = 21. Does not meet either condition.
+5. **item_004**: Category = C, Value = 5. Does not meet either condition.
+6. **item_005**: Category = B, Value = 59. Meets the value condition but not the category condition.
+7. **item_006**: Category = B, Value = 29. Does not meet either condition.
+8. **item_007**: Category = A, Value = 52. Meets both conditions.
+9. **item_008**: Category = B, Value = 99. Meets the value condition but not the category condition.
+10. **item_009**: Category = B, Value = 66. Meets the value condition but not the category condition.
+11. **item_010**: Category = B, Value = 43. Does not meet either condition.
+12. **item_011**: Category = A, Value = 23. Meets the category condition but not the value condition.
+13. **item_012**: Category = C, Value = 14. Does not meet either condition.
+14. **item_013**: Category = C, Value = 94. Meets the value condition but not the category condition.
+15. **item_014**: Category = B, Value = 66. Meets the value condition but not the category condition.
+16. **item_015**: Category = A, Value = 25. Meets the category condition but not the value condition.
+17. **item_016**: Category = B, Value = 56. Meets the value condition but not the category condition.
+18. **item_017**: Category = A, Value = 88. Meets both conditions.
+19. **item_018**: Category = C, Value = 86. Meets the value condition but not the category condition.
+20. **item_019**: Category = A, Value = 9. Meets the category condition but not the value condition.
+
+From the dataset, only **item_007** and **item_017** meet both conditions. Therefore, the IDs of the selected items are ["item_007", "item_017"], and the count is 2.
+
+The result is returned as a JSON object:
+```json
+{
+  "selected_ids": ["item_007", "item_017"],
+  "count": 2
+}
+```

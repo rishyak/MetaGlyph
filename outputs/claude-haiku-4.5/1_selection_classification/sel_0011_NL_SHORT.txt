@@ -1,0 +1,18 @@
+Looking at the instruction, I need to return items where `domestic` is **not False** (meaning domestic is True).
+
+Reviewing each entry:
+
+- Eagle: domestic: False ❌
+- Goldfish: domestic: True ✓
+- Cat: domestic: True ✓
+- Parrot: domestic: True ✓
+- Lion: domestic: False ❌
+- Whale: domestic: False ❌
+- Penguin: domestic: False ❌
+- Elephant: domestic: False ❌
+- Shark: domestic: False ❌
+- Snake: domestic: False ❌
+
+```json
+["Goldfish", "Cat", "Parrot"]
+```

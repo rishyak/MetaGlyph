@@ -1,0 +1,105 @@
+```json
+[
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 115,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 526,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 734,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 545,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 1043.9,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 984.36,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 63,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 116.6,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 826.1,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 606,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 1100,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 729,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 444.55,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 729,
+        "active": true
+    }
+]
+```
+
+Explanation:
+- For `rec_000`, the type is not "premium", so no changes.
+- For `rec_001`, the type is not "premium", and it's in the US, so no changes.
+- For `rec_002`, the type is not "premium", and it's in the US, so no changes.
+- For `rec_003`, the type is "premium", but it's in APAC, so only the amount is increased by 10%.
+- For `rec_004`, the type is "premium", it's in EU, and it's inactive, so the amount is increased by 10% and status is set to "archived".
+- For `rec_005`, the type is "premium", it's in EU, and it's inactive, so the amount is increased by 10% and status is set to "archived".
+- For `rec_006`, the type is not "premium", and it's in APAC, so no changes.
+- For `rec_007`, the type is not "premium", and it's in EU, so only the amount is increased by 10%.
+- For `rec_008`, the type is "premium", it's in EU, and it's active, so only the amount is increased by 10%.
+- For `rec_009`, the type is not "premium", and it's in US, so no changes.
+- For `rec_010`, the type is "premium", it's in EU, and it's inactive, so the amount is increased by 10% and status is set to "archived".
+- For `rec_011`, the type is not "premium", and it's in APAC, so no changes.
+- For `rec_012`, the type is "premium", it's in APAC, and it's inactive, so the amount is increased by 10% and status is set to "archived".
+- For `rec_013`, the type is not "premium", and it's in APAC, so no changes.
+- For `rec_014`, the type is not "premium", and it's in APAC, so no changes.

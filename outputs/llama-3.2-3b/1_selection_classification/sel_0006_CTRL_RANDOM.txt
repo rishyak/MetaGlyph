@@ -1,0 +1,35 @@
+Given the provided list of animals with their attributes, we can filter the results based on the given conditions:
+
+- Eagle: type: bird, domestic: False, size: medium
+- Shark: type: fish, domestic: False, size: large
+- Dog: type: mammal, domestic: True, size: medium
+- Snake: type: reptile, domestic: False, size: medium
+- Hamster: type: mammal, domestic: True, size: small
+- Salmon: type: fish, domestic: False, size: medium
+- Cat: type: mammal, domestic: True, size: small
+- Crocodile: type: reptile, domestic: False, size: large
+- Goldfish: type: fish, domestic: True, size: small
+- Whale: type: mammal, domestic: False, size: large
+
+To filter the results, we need to find animals that are mammals, not domestic, and medium in size. The filtered list is:
+
+- Eagle: type: bird, domestic: False, size: medium
+- Snake: type: reptile, domestic: False, size: medium
+- Salmon: type: fish, domestic: False, size: medium
+- Whale: type: mammal, domestic: False, size: large
+
+However, the Whale is large, not medium. So, the filtered list is:
+
+- Eagle: type: bird, domestic: False, size: medium
+- Snake: type: reptile, domestic: False, size: medium
+- Salmon: type: fish, domestic: False, size: medium
+
+Here is the final answer in JSON format:
+
+```
+[
+  "Eagle",
+  "Snake",
+  "Salmon"
+]
+```

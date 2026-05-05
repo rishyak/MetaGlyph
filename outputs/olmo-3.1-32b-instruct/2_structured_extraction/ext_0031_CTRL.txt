@@ -1,0 +1,1 @@
+{"company": null, "sender_title": "Director, Global Solutions", "recipient": "david.brown@example.com", "date": "2024-07-23"}

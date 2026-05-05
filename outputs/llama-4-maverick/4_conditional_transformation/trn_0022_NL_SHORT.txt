@@ -1,0 +1,260 @@
+To solve this problem, we will apply the given rules to each record and then return the transformed records in JSON format.
+
+### Step 1: Define the Input Records
+
+First, let's define the input records as given in the problem statement.
+
+```json
+[
+  {
+    "id": "rec_000",
+    "type": "premium",
+    "region": "EU",
+    "amount": 44,
+    "active": false
+  },
+  {
+    "id": "rec_001",
+    "type": "trial",
+    "region": "US",
+    "amount": 102,
+    "active": false
+  },
+  {
+    "id": "rec_002",
+    "type": "premium",
+    "region": "APAC",
+    "amount": 435,
+    "active": true
+  },
+  {
+    "id": "rec_003",
+    "type": "standard",
+    "region": "US",
+    "amount": 815,
+    "active": false
+  },
+  {
+    "id": "rec_004",
+    "type": "trial",
+    "region": "APAC",
+    "amount": 945,
+    "active": false
+  },
+  {
+    "id": "rec_005",
+    "type": "standard",
+    "region": "EU",
+    "amount": 945,
+    "active": false
+  },
+  {
+    "id": "rec_006",
+    "type": "premium",
+    "region": "APAC",
+    "amount": 901,
+    "active": false
+  },
+  {
+    "id": "rec_007",
+    "type": "standard",
+    "region": "EU",
+    "amount": 996,
+    "active": true
+  },
+  {
+    "id": "rec_008",
+    "type": "standard",
+    "region": "US",
+    "amount": 890,
+    "active": false
+  },
+  {
+    "id": "rec_009",
+    "type": "trial",
+    "region": "EU",
+    "amount": 102,
+    "active": false
+  },
+  {
+    "id": "rec_010",
+    "type": "standard",
+    "region": "EU",
+    "amount": 559,
+    "active": true
+  },
+  {
+    "id": "rec_011",
+    "type": "premium",
+    "region": "EU",
+    "amount": 698,
+    "active": false
+  },
+  {
+    "id": "rec_012",
+    "type": "trial",
+    "region": "EU",
+    "amount": 852,
+    "active": false
+  },
+  {
+    "id": "rec_013",
+    "type": "standard",
+    "region": "APAC",
+    "amount": 249,
+    "active": false
+  },
+  {
+    "id": "rec_014",
+    "type": "standard",
+    "region": "APAC",
+    "amount": 915,
+    "active": false
+  }
+]
+```
+
+### Step 2: Apply the Transformation Rules
+
+The rules to apply are:
+1. If `type` == "premium", multiply `amount` by 1.1.
+2. If `region` == "EU", multiply `amount` by 1.2.
+3. If `active` == `false`, set `status` to "archived".
+
+Let's apply these rules to each record.
+
+### Step 3: Transform the Records
+
+We'll iterate through each record and apply the rules.
+
+1. For `rec_000`: `type` == "premium", so `amount` = 44 * 1.1 = 48.4; `region` == "EU", so `amount` = 48.4 * 1.2 = 58.08; `active` == `false`, so `status` = "archived".
+2. For `rec_001`: `active` == `false`, so `status` = "archived".
+3. For `rec_002`: `type` == "premium", so `amount` = 435 * 1.1 = 478.5.
+4. For `rec_003`: `active` == `false`, so `status` = "archived".
+5. For `rec_004`: `active` == `false`, so `status` = "archived".
+6. For `rec_005`: `region` == "EU", so `amount` = 945 * 1.2 = 1134; `active` == `false`, so `status` = "archived".
+7. For `rec_006`: `type` == "premium", so `amount` = 901 * 1.1 = 991.1; `active` == `false`, so `status` = "archived".
+8. For `rec_007`: `region` == "EU", so `amount` = 996 * 1.2 = 1195.2.
+9. For `rec_008`: `active` == `false`, so `status` = "archived".
+10. For `rec_009`: `region` == "EU", so `amount` = 102 * 1.2 = 122.4; `active` == `false`, so `status` = "archived".
+11. For `rec_010`: `region` == "EU", so `amount` = 559 * 1.2 = 670.8.
+12. For `rec_011`: `type` == "premium", so `amount` = 698 * 1.1 = 767.8; `region` == "EU", so `amount` = 767.8 * 1.2 = 921.36; `active` == `false`, so `status` = "archived".
+13. For `rec_012`: `region` == "EU", so `amount` = 852 * 1.2 = 1022.4; `active` == `false`, so `status` = "archived".
+14. For `rec_013`: `active` == `false`, so `status` = "archived".
+15. For `rec_014`: `active` == `false`, so `status` = "archived".
+
+### Step 4: Output the Transformed Records
+
+After applying the rules, the transformed records are:
+
+```json
+[
+  {
+    "id": "rec_000",
+    "type": "premium",
+    "region": "EU",
+    "amount": 58.08,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "id": "rec_001",
+    "type": "trial",
+    "region": "US",
+    "amount": 102,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "id": "rec_002",
+    "type": "premium",
+    "region": "APAC",
+    "amount": 478.5,
+    "active": true
+  },
+  {
+    "id": "rec_003",
+    "type": "standard",
+    "region": "US",
+    "amount": 815,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "id": "rec_004",
+    "type": "trial",
+    "region": "APAC",
+    "amount": 945,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "id": "rec_005",
+    "type": "standard",
+    "region": "EU",
+    "amount": 1134,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "id": "rec_006",
+    "type": "premium",
+    "region": "APAC",
+    "amount": 991.1,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "id": "rec_007",
+    "type": "standard",
+    "region": "EU",
+    "amount": 1195.2,
+    "active": true
+  },
+  {
+    "id": "rec_008",
+    "type": "standard",
+    "region": "US",
+    "amount": 890,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "id": "rec_009",
+    "type": "trial",
+    "region": "EU",
+    "amount": 122.4,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "id": "rec_010",
+    "type": "standard",
+    "region": "EU",
+    "amount": 670.8,
+    "active": true
+  },
+  {
+    "id": "rec_011",
+    "type": "premium",
+    "region": "EU",
+    "amount": 921.36,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "id": "rec_012",
+    "type": "trial",
+    "region": "EU",
+    "amount": 1022.4,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "id": "rec_013",
+    "type": "standard",
+    "region": "APAC",
+    "amount": 249,
+    "active": false,
+    "status": "archived"
+ 

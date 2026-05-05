@@ -1,0 +1,24 @@
+I need to interpret the query: `SELECT x | x.domestic NOT IN {False} -> [x.name]`
+
+This means: Select all items where `domestic` is NOT in the set {False}, and return their names.
+
+In other words, select all items where `domestic` is NOT False, which means `domestic` must be True.
+
+Let me check each animal:
+
+- Eagle: domestic = False ❌
+- Goldfish: domestic = True ✓
+- Cat: domestic = True ✓
+- Parrot: domestic = True ✓
+- Lion: domestic = False ❌
+- Whale: domestic = False ❌
+- Penguin: domestic = False ❌
+- Elephant: domestic = False ❌
+- Shark: domestic = False ❌
+- Snake: domestic = False ❌
+
+The animals with `domestic = True` are: Goldfish, Cat, and Parrot.
+
+```json
+["Goldfish", "Cat", "Parrot"]
+```

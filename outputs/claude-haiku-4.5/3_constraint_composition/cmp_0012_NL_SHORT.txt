@@ -1,0 +1,12 @@
+```json
+{
+  "selected_ids": ["item_009"],
+  "count": 1
+}
+```
+
+**Explanation:**
+- Filtering for category in ['A', 'B'] AND status in ['active']
+- Only item_009 matches both conditions:
+  - Category: A ✓
+  - Status: active ✓

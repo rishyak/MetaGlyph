@@ -1,0 +1,13 @@
+Looking at the query `SELECT x | x.type ¤ {fish} ↯ [x.name]`:
+
+This appears to be a query asking me to:
+1. Select items `x` where the type is fish (`x.type ¤ {fish}`)
+2. Return their names (`↯ [x.name]`)
+
+From the provided list, the animals with `type: fish` are:
+- Shark
+- Salmon
+
+```json
+["Shark", "Salmon"]
+```

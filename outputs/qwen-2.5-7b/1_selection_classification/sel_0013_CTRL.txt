@@ -1,0 +1,33 @@
+Based on the provided instruction and input data, we need to select the names of animals where the size is not "small". Let's go through the list:
+
+- Cat: size: small
+- Snake: size: medium
+- Dog: size: medium
+- Goldfish: size: small
+- Penguin: size: medium
+- Eagle: size: medium
+- Whale: size: large
+- Parrot: size: small
+- Lion: size: large
+- Shark: size: large
+
+Now, let's filter out the animals that have a size of "small":
+
+- Cat (size: small)
+- Goldfish (size: small)
+- Parrot (size: small)
+
+The remaining animals are:
+
+- Snake (size: medium)
+- Dog (size: medium)
+- Penguin (size: medium)
+- Whale (size: large)
+- Lion (size: large)
+- Shark (size: large)
+
+So, the output should be the names of these animals:
+
+```json
+["Snake", "Dog", "Penguin", "Whale", "Lion", "Shark"]
+```

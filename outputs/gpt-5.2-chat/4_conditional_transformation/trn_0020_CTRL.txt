@@ -1,0 +1,19 @@
+```json
+[
+  {"id":"rec_000","type":"trial","region":"APAC","amount":526.68,"active":false},
+  {"id":"rec_001","type":"trial","region":"APAC","amount":1211.76,"active":false},
+  {"id":"rec_002","type":"trial","region":"US","amount":847.44,"active":true,"status":"archived"},
+  {"id":"rec_003","type":"standard","region":"APAC","amount":937.2,"active":false},
+  {"id":"rec_004","type":"standard","region":"APAC","amount":134.64,"active":false},
+  {"id":"rec_005","type":"standard","region":"APAC","amount":963.6,"active":true,"status":"archived"},
+  {"id":"rec_006","type":"premium","region":"US","amount":864,"active":false},
+  {"id":"rec_007","type":"standard","region":"US","amount":451.44,"active":true,"status":"archived"},
+  {"id":"rec_008","type":"premium","region":"EU","amount":393,"active":false},
+  {"id":"rec_009","type":"standard","region":"US","amount":729.96,"active":false},
+  {"id":"rec_010","type":"trial","region":"APAC","amount":1083.72,"active":true,"status":"archived"},
+  {"id":"rec_011","type":"standard","region":"US","amount":118.8,"active":false},
+  {"id":"rec_012","type":"trial","region":"APAC","amount":337.92,"active":false},
+  {"id":"rec_013","type":"trial","region":"US","amount":326.04,"active":false},
+  {"id":"rec_014","type":"trial","region":"EU","amount":528,"active":false}
+]
+```

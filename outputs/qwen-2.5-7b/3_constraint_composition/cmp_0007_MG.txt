@@ -1,0 +1,12 @@
+```json
+{
+  "selected_ids": ["item_004", "item_015"],
+  "count": 2
+}
+```
+
+Explanation:
+- The condition `x.id | x.category ∈ {A, B}` means that the item's category should be either A or B.
+- The condition `x.status ∈ {active}` means that the item's status should be active.
+- Combining these conditions, we select items where the category is either A or B and the status is active.
+- From the dataset, only `item_004` and `item_015` meet these criteria.

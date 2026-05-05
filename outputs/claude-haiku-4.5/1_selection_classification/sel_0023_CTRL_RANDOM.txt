@@ -1,0 +1,15 @@
+Looking at the query `SELECT x | x.size ※ {small} ↯ [x.name]`:
+
+This appears to be a custom query syntax requesting:
+- Select items (x) where size equals "small"
+- Return the names in a list
+
+From the animal list, the animals with **size: small** are:
+
+1. Cat
+2. Turtle
+3. Goldfish
+
+```json
+["Cat", "Turtle", "Goldfish"]
+```

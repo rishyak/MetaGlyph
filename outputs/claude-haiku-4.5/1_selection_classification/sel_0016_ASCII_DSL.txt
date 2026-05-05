@@ -1,0 +1,21 @@
+Looking at the instruction: `SELECT x | x.category NOT IN {stationery} -> [x.name]`
+
+This asks me to select all items where the category is NOT "stationery" and return their names.
+
+**Items to exclude (stationery category):**
+- Stapler
+- Pen
+- Notebook
+
+**Items to include (NOT stationery):**
+- Smartphone (electronics)
+- Chair (furniture)
+- Headphones (electronics)
+- Bookshelf (furniture)
+- Microwave (appliances)
+- Refrigerator (appliances)
+- Tablet (electronics)
+
+```json
+["Smartphone", "Chair", "Headphones", "Bookshelf", "Microwave", "Refrigerator", "Tablet"]
+```

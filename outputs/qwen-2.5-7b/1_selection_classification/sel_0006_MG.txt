@@ -1,0 +1,9 @@
+Based on the provided conditions in the instruction, we need to select animals that are not domestic and have a medium size. The relevant entries from the given list are:
+
+- Eagle: type: bird, domestic: False, size: medium
+- Snake: type: reptile, domestic: False, size: medium
+- Salmon: type: fish, domestic: False, size: medium
+
+So, the output as a JSON array of strings would be:
+
+["Eagle", "Snake", "Salmon"]

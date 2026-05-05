@@ -1,0 +1,25 @@
+### Step 1: Identify the animals that are not birds
+We need to exclude the animals that are classified as birds from the output.
+
+### Step 2: Identify the animals that are not domestic
+We need to exclude the animals that are commonly kept as pets from the output.
+
+### Step 3: Identify the animals that are not small in size
+We need to exclude the animals that weigh less than 10kg from the output.
+
+### Step 4: Combine the conditions
+We need to combine the conditions from steps 1, 2, and 3 to get the final output.
+
+### Step 5: Write the SQL query
+SELECT x.name FROM animals x WHERE x.type != 'bird' AND x.domestic = False AND x.size > 10
+
+### Step 6: Execute the SQL query
+Executing the query on the given data, we get:
+
+- Whale: type: mammal, domestic: False, size: large
+- Shark: type: fish, domestic: False, size: large
+
+### Step 7: Format the output as a JSON array
+The output should be in the format of a JSON array: ["Whale", "Shark"]
+
+The final answer is: $\boxed["Whale", "Shark"]$

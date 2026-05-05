@@ -1,0 +1,30 @@
+To solve this problem, we need to filter the list of animals based on the given conditions and then return the names of the animals that meet these conditions.
+
+The conditions are:
+- The animal's size is either "medium" or it is domesticated.
+
+Let's go through the list and apply these conditions:
+
+1. **Crocodile**: size: large, domestic: False -> does not meet the condition
+2. **Shark**: size: large, domestic: False -> does not meet the condition
+3. **Cat**: size: small, domestic: True -> meets the condition
+4. **Lion**: size: large, domestic: False -> does not meet the condition
+5. **Elephant**: size: large, domestic: False -> does not meet the condition
+6. **Whale**: size: large, domestic: False -> does not meet the condition
+7. **Penguin**: size: medium, domestic: False -> meets the condition
+8. **Snake**: size: medium, domestic: False -> meets the condition
+9. **Hamster**: size: small, domestic: True -> meets the condition
+10. **Eagle**: size: medium, domestic: False -> meets the condition
+
+Based on the conditions, the animals that meet the criteria are:
+- Cat
+- Penguin
+- Snake
+- Hamster
+- Eagle
+
+So, the output in JSON format would be:
+
+```json
+["Cat", "Penguin", "Snake", "Hamster", "Eagle"]
+```

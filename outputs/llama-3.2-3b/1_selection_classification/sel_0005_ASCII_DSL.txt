@@ -1,0 +1,14 @@
+### Step 1: Filter the dataset to include only animals that are birds and are domestic.
+We will use the given SQL query to filter the dataset: `SELECT x | (x.domestic IN {True}) AND (x.type IN {bird}) -> [x.name]`
+
+### Step 2: Identify the birds in the dataset that are domestic.
+From the given dataset, the birds that are domestic are:
+- Parrot
+- Cat (note: Cat is a mammal, not a bird, so it should be excluded from the result)
+- Goldfish (note: Goldfish is a fish, not a bird, so it should be excluded from the result)
+
+### Step 3: Return the names of the domestic birds.
+The domestic birds in the dataset are:
+- Parrot
+
+The final answer is: $\boxed{["Parrot"]}$

@@ -1,0 +1,35 @@
+To solve this task, we need to review the given list of animals and their attributes, and then identify the items whose type equals "fish".
+
+The given list is as follows:
+- Crocodile: type: reptile, domestic: False, size: large
+- Hamster: type: mammal, domestic: True, size: small
+- Dog: type: mammal, domestic: True, size: medium
+- Elephant: type: mammal, domestic: False, size: large
+- Snake: type: reptile, domestic: False, size: medium
+- Shark: type: fish, domestic: False, size: large
+- Eagle: type: bird, domestic: False, size: medium
+- Salmon: type: fish, domestic: False, size: medium
+- Cat: type: mammal, domestic: True, size: small
+- Turtle: type: reptile, domestic: True, size: small
+
+We will go through the list and identify the animals whose type is "fish".
+
+1. Crocodile: type is reptile, not fish.
+2. Hamster: type is mammal, not fish.
+3. Dog: type is mammal, not fish.
+4. Elephant: type is mammal, not fish.
+5. Snake: type is reptile, not fish.
+6. Shark: type is fish.
+7. Eagle: type is bird, not fish.
+8. Salmon: type is fish.
+9. Cat: type is mammal, not fish.
+10. Turtle: type is reptile, not fish.
+
+From the given list, the animals that are classified as "fish" are Shark and Salmon.
+
+Therefore, the item names whose type equals "fish" are ["Shark", "Salmon"].
+
+The response in the required JSON format is:
+```json
+["Shark", "Salmon"]
+```

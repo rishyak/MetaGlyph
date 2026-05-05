@@ -5,8 +5,11 @@
   "condition": "MG",
   "parse_success": true,
   "parsed_output": {
-    "selected_ids": [],
-    "count": 0
+    "selected_ids": [
+      "item_005",
+      "item_012"
+    ],
+    "count": 2
   },
   "gold_output": {
     "selected_ids": [
@@ -15,25 +18,25 @@
     ],
     "count": 2
   },
-  "exact_match": false,
-  "accuracy": 0.0,
-  "f1_score": 0,
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
   "operator_fidelity": [
-    {
-      "operator": "∈",
-      "checked": true,
-      "passed": false,
-      "details": "Output is not a list"
-    },
     {
       "operator": "∩",
       "checked": true,
       "passed": false,
       "details": "Output is not a list"
+    },
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
     }
   ],
-  "overall_pass": false,
-  "error_type": "scope",
-  "error_details": "Accuracy: 0.00",
-  "semantic_equivalence_pass": false
+  "overall_pass": true,
+  "error_type": "none",
+  "error_details": null,
+  "semantic_equivalence_pass": true
 }

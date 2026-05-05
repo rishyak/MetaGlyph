@@ -1,0 +1,133 @@
+{
+  "prompt_id": "trn_0029_MG",
+  "model": "qwen3-4b",
+  "family": "4_conditional_transformation",
+  "condition": "MG",
+  "parse_success": false,
+  "parsed_output": null,
+  "gold_output": [
+    {
+      "id": "rec_000",
+      "type": "standard",
+      "region": "US",
+      "amount": 159,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_001",
+      "type": "standard",
+      "region": "US",
+      "amount": 626,
+      "active": true
+    },
+    {
+      "id": "rec_002",
+      "type": "trial",
+      "region": "US",
+      "amount": 191,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_003",
+      "type": "premium",
+      "region": "APAC",
+      "amount": 866.8,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_004",
+      "type": "trial",
+      "region": "APAC",
+      "amount": 668,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_005",
+      "type": "trial",
+      "region": "EU",
+      "amount": 196.8,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_006",
+      "type": "standard",
+      "region": "EU",
+      "amount": 554.4,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_007",
+      "type": "premium",
+      "region": "APAC",
+      "amount": 73.7,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_008",
+      "type": "trial",
+      "region": "US",
+      "amount": 327,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_009",
+      "type": "premium",
+      "region": "US",
+      "amount": 74.8,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_010",
+      "type": "premium",
+      "region": "US",
+      "amount": 737.0,
+      "active": true
+    },
+    {
+      "id": "rec_011",
+      "type": "trial",
+      "region": "APAC",
+      "amount": 529,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "id": "rec_012",
+      "type": "premium",
+      "region": "APAC",
+      "amount": 634.7,
+      "active": true
+    },
+    {
+      "id": "rec_013",
+      "type": "premium",
+      "region": "APAC",
+      "amount": 744.7,
+      "active": true
+    },
+    {
+      "id": "rec_014",
+      "type": "premium",
+      "region": "APAC",
+      "amount": 546.7,
+      "active": true
+    }
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0.0,
+  "operator_fidelity": [],
+  "overall_pass": false,
+  "error_type": "parse",
+  "error_details": "Could not extract key-value pairs",
+  "semantic_equivalence_pass": false
+}

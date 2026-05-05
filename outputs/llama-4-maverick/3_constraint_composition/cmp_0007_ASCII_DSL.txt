@@ -1,0 +1,39 @@
+To solve this problem, we need to filter the given dataset based on the conditions provided in the instruction: `x.category IN {A, B} AND x.status IN {active}`. This means we are looking for items where the category is either 'A' or 'B' and the status is 'active'.
+
+Let's go through the dataset and apply these conditions:
+
+1. **ID: item_000** - Category: B, Status: pending. Does not match because status is not 'active'.
+2. **ID: item_001** - Category: A, Status: pending. Does not match because status is not 'active'.
+3. **ID: item_002** - Category: B, Status: pending. Does not match because status is not 'active'.
+4. **ID: item_003** - Category: B, Status: pending. Does not match because status is not 'active'.
+5. **ID: item_004** - Category: A, Status: active. Matches because category is 'A' and status is 'active'.
+6. **ID: item_005** - Category: B, Status: pending. Does not match because status is not 'active'.
+7. **ID: item_006** - Category: C, Status: pending. Does not match because category is not 'A' or 'B'.
+8. **ID: item_007** - Category: C, Status: active. Does not match because category is not 'A' or 'B'.
+9. **ID: item_008** - Category: A, Status: inactive. Does not match because status is not 'active'.
+10. **ID: item_009** - Category: C, Status: inactive. Does not match because category is not 'A' or 'B' and status is not 'active'.
+11. **ID: item_010** - Category: B, Status: pending. Does not match because status is not 'active'.
+12. **ID: item_011** - Category: B, Status: pending. Does not match because status is not 'active'.
+13. **ID: item_012** - Category: A, Status: inactive. Does not match because status is not 'active'.
+14. **ID: item_013** - Category: C, Status: pending. Does not match because category is not 'A' or 'B'.
+15. **ID: item_014** - Category: A, Status: pending. Does not match because status is not 'active'.
+16. **ID: item_015** - Category: A, Status: active. Matches because category is 'A' and status is 'active'.
+17. **ID: item_016** - Category: A, Status: inactive. Does not match because status is not 'active'.
+18. **ID: item_017** - Category: A, Status: inactive. Does not match because status is not 'active'.
+19. **ID: item_018** - Category: C, Status: active. Does not match because category is not 'A' or 'B'.
+20. **ID: item_019** - Category: B, Status: inactive. Does not match because status is not 'active'.
+
+From the dataset, the items that match the given conditions are:
+- **ID: item_004** - Category: A, Status: active
+- **ID: item_015** - Category: A, Status: active
+
+Therefore, the selected IDs are `['item_004', 'item_015']`, and the count is `2`.
+
+The output in the required JSON format is:
+
+```json
+{
+  "selected_ids": ["item_004", "item_015"],
+  "count": 2
+}
+```

@@ -1,8 +1,19 @@
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": ["item_001"],
+  "count": 1
 }
 ```
 
-The query filters for projects that are in "security" category AND in "high_priority" AND/OR in "performance" category, while excluding deprecated and experimental items. The provided dataset contains items with Category (A, B, C), Status, Priority, and Value attributes, but does not contain the "security", "high_priority", "performance", "deprecated", or "experimental" attributes referenced in the filter expression. Therefore, no items match the specified criteria.
+**Explanation:**
+
+The query filters for items where:
+- `x.value >= 50` (value is 50 or greater) AND
+- `x.category ∈ {A}` (category is A)
+
+Checking all items in category A:
+- **item_001**: Category A, Value 99 ✓ (meets both conditions)
+- **item_005**: Category A, Value 41 ✗ (value < 50)
+- **item_008**: Category A, Value 13 ✗ (value < 50)
+
+Only **item_001** satisfies both conditions.

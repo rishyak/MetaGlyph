@@ -1,0 +1,99 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 633,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 253,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 254,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 478,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 621,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 598,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 308,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 371,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 201,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 79,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 54 * 1.1 * 1.2,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 775 * 1.1,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 363,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 653,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 784,
+        "active": false
+    }
+]
+```
+
+Explanation:
+- For `rec_010`, the `type` is `premium` and `region` is `EU`, so the `amount` is transformed to `54 * 1.1 * 1.2`.
+- For `rec_011`, the `type` is `premium` and `region` is `EU`, but `active` is `true`, so only the `amount` is transformed to `775 * 1.1`.
+- The other records remain unchanged because they do not meet the conditions specified in the transformation rules.

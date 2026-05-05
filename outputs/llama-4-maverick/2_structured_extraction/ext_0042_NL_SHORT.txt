@@ -1,0 +1,52 @@
+To solve this task, we need to extract the required fields from the given email document and return them as a JSON object. The fields to be extracted are: company, sender, sender_name, and recipient.
+
+First, let's analyze the given email document:
+
+==================================================
+From: alice.smith@innovationlabs.com
+To: bob.johnson@example.com
+Subject: Q4 Report
+Date: 2024-11-02
+
+Dear Alice,
+
+I wanted to follow up on our recent discussion regarding the project timeline. Please review the attached documents and let me know your thoughts.
+
+Best regards,
+Alice Smith
+Director
+Global Solutions
+==================================================
+
+1. **Sender**: The sender's email address is given in the "From:" field, which is `alice.smith@innovationlabs.com`.
+2. **Sender_Name**: The sender's name is mentioned at the end of the email as `Alice Smith`.
+3. **Recipient**: The recipient's email address is given in the "To:" field, which is `bob.johnson@example.com`.
+4. **Company**: The company can be inferred from the sender's email address or the context. The sender's email address is `@innovationlabs.com`, and their title is `Director, Global Solutions`. This suggests that the company is likely "Innovation Labs".
+
+Now, let's extract these fields and format them into a JSON object:
+
+- `company`: "Innovation Labs"
+- `sender`: "alice.smith@innovationlabs.com"
+- `sender_name`: "Alice Smith"
+- `recipient`: "bob.johnson@example.com"
+
+Here is the JSON object with the extracted fields:
+
+```json
+{
+  "company": "Innovation Labs",
+  "sender": "alice.smith@innovationlabs.com",
+  "sender_name": "Alice Smith",
+  "recipient": "bob.johnson@example.com"
+}
+```
+
+The final answer is: 
+```json
+{
+  "company": "Innovation Labs",
+  "sender": "alice.smith@innovationlabs.com",
+  "sender_name": "Alice Smith",
+  "recipient": "bob.johnson@example.com"
+}
+```

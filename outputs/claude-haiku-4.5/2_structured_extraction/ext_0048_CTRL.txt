@@ -1,19 +1,8 @@
 ```json
-[
-  {
-    "risk_name": "Invoice Date Discrepancy",
-    "affected_component": "financial",
-    "severity": "high"
-  },
-  {
-    "risk_name": "Due Date Before Invoice Date",
-    "affected_component": "financial",
-    "severity": "high"
-  },
-  {
-    "risk_name": "Arithmetic Error in Calculation",
-    "affected_component": "financial",
-    "severity": "medium"
-  }
-]
+{
+  "total": "$4765.2",
+  "customer_name": "Alice Smith",
+  "due_date": "2024-05-18",
+  "date": "2024-10-23"
+}
 ```

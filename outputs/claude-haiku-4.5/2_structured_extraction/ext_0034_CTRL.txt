@@ -1,19 +1,8 @@
 ```json
-[
-  {
-    "risk_name": "Date Inconsistency",
-    "affected_component": "financial",
-    "severity": "high"
-  },
-  {
-    "risk_name": "Invalid Due Date",
-    "affected_component": "financial",
-    "severity": "high"
-  },
-  {
-    "risk_name": "Calculation Discrepancy",
-    "affected_component": "financial",
-    "severity": "medium"
-  }
-]
+{
+  "total": "$1486.95",
+  "invoice_num": "7790",
+  "payment_terms": "Net 30",
+  "date": "2024-11-19"
+}
 ```

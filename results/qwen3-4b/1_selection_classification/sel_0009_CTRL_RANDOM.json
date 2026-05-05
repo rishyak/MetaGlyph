@@ -1,0 +1,19 @@
+{
+  "prompt_id": "sel_0009_CTRL_RANDOM",
+  "model": "qwen3-4b",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": false,
+  "parsed_output": null,
+  "gold_output": [
+    "refrigerator"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0.0,
+  "operator_fidelity": [],
+  "overall_pass": false,
+  "error_type": "parse",
+  "error_details": "Could not parse comma-separated values",
+  "semantic_equivalence_pass": false
+}

@@ -1,0 +1,8 @@
+Based on the instruction provided, you want to select the names of animals where the type is "fish". From the given list of animals, the only ones that fall into this category are:
+
+- Salmon
+- Goldfish
+
+Therefore, the output in the specified JSON format would be:
+
+["Salmon", "Goldfish"]

@@ -1,0 +1,15 @@
+Looking at the query: `SELECT x | x.type ※ {fish} ↯ [x.name]`
+
+This appears to be a custom query syntax where:
+- `SELECT x` - select items
+- `x.type ※ {fish}` - where type matches "fish"
+- `↯ [x.name]` - return the names
+
+From the input data, I need to identify all animals where `type: fish`:
+
+1. **Shark**: type: fish ✓
+2. **Goldfish**: type: fish ✓
+
+```json
+["Shark", "Goldfish"]
+```

@@ -1,0 +1,14 @@
+### Step 1: Filter the animals based on the given conditions
+We need to filter the animals that are either not domestic or are mammals.
+
+### Step 2: Identify the animals that meet the conditions
+Based on the given conditions, the animals that meet the criteria are:
+- Eagle: type = bird, domestic = False, size = medium
+- Elephant: type = mammal, domestic = False, size = large
+- Lion: type = mammal, domestic = False, size = large
+- Snake: type = reptile, domestic = False, size = medium
+- Crocodile: type = reptile, domestic = False, size = large
+- Shark: type = fish, domestic = False, size = large
+
+### Step 3: Format the output as a JSON array
+The final answer is: $\boxed [{"name": "Eagle"}, {"name": "Elephant"}, {"name": "Lion"}, {"name": "Snake"}, {"name": "Crocodile"}, {"name": "Shark"}]$

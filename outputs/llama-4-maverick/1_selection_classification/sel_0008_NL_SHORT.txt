@@ -1,0 +1,33 @@
+To solve this problem, we need to analyze the given data and filter it based on the conditions provided: `domestic` equals `True` and `type` equals `reptile`.
+
+First, let's list the given data in a structured format:
+
+1. Shark: type: fish, domestic: False, size: large
+2. Cat: type: mammal, domestic: True, size: small
+3. Elephant: type: mammal, domestic: False, size: large
+4. Turtle: type: reptile, domestic: True, size: small
+5. Parrot: type: bird, domestic: True, size: small
+6. Hamster: type: mammal, domestic: True, size: small
+7. Crocodile: type: reptile, domestic: False, size: large
+8. Goldfish: type: fish, domestic: True, size: small
+9. Eagle: type: bird, domestic: False, size: medium
+10. Salmon: type: fish, domestic: False, size: medium
+
+Now, let's apply the given conditions to this data:
+
+- `domestic` equals `True`
+- `type` equals `reptile`
+
+From the given data, we can see that only "Turtle" satisfies both conditions:
+- Its `type` is `reptile`.
+- Its `domestic` status is `True`.
+
+Therefore, the item name that meets the criteria is "Turtle".
+
+To return this as a JSON array of strings as per the output format, we have:
+
+```json
+["Turtle"]
+```
+
+The final answer is: $\boxed{["Turtle"]}$

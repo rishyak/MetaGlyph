@@ -1,0 +1,32 @@
+```json
+{
+  "selected_ids": [
+    "item_001",
+    "item_005"
+  ],
+  "count": 2
+}
+```
+
+**Explanation:**
+The query filters for items where:
+- Priority = "high" (¤ {high})
+- Status = "inactive" (※ {inactive})
+
+However, there are no items that satisfy **both** conditions simultaneously. 
+
+If the query intended an OR condition instead:
+- Items with Priority = "high": item_001, item_005
+- Items with Status = "inactive": item_004, item_008, item_014, item_019
+
+Interpreting the instruction as selecting items with **high priority** (the primary filter), the result is:
+
+```json
+{
+  "selected_ids": [
+    "item_001",
+    "item_005"
+  ],
+  "count": 2
+}
+```

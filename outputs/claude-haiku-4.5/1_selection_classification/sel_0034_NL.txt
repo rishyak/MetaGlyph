@@ -1,5 +1,17 @@
-```json
-[]
-```
+Looking at the product list, I need to identify all items where `portable: False`.
 
-The provided list contains only inanimate objects (appliances, stationery, electronics, and furniture). None of the items are mammals or animals of any kind, therefore no items satisfy the first condition of belonging to the category of mammals and being commonly kept as pets.
+Reviewing each item:
+- Refrigerator: portable: **False** ✓
+- Notebook: portable: True ✗
+- Headphones: portable: True ✗
+- Desk: portable: **False** ✓
+- Chair: portable: True ✗
+- Microwave: portable: True ✗
+- Pen: portable: True ✗
+- Stapler: portable: True ✗
+- Smartphone: portable: True ✗
+- Bookshelf: portable: **False** ✓
+
+```json
+["Refrigerator", "Desk", "Bookshelf"]
+```

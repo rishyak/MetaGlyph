@@ -1,0 +1,117 @@
+```json
+[
+  {
+    "id": "rec_000",
+    "type": "premium",
+    "region": "EU",
+    "amount": 671,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_001",
+    "type": "standard",
+    "region": "APAC",
+    "amount": 788.04,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_002",
+    "type": "trial",
+    "region": "APAC",
+    "amount": 990,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_003",
+    "type": "standard",
+    "region": "EU",
+    "amount": 1004.3,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_004",
+    "type": "standard",
+    "region": "EU",
+    "amount": 897.6,
+    "active": false
+  },
+  {
+    "id": "rec_005",
+    "type": "standard",
+    "region": "APAC",
+    "amount": 1313.4,
+    "active": false
+  },
+  {
+    "id": "rec_006",
+    "type": "standard",
+    "region": "US",
+    "amount": 415.8,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_007",
+    "type": "premium",
+    "region": "EU",
+    "amount": 475,
+    "active": false
+  },
+  {
+    "id": "rec_008",
+    "type": "standard",
+    "region": "APAC",
+    "amount": 645.48,
+    "active": false
+  },
+  {
+    "id": "rec_009",
+    "type": "standard",
+    "region": "US",
+    "amount": 459.36,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_010",
+    "type": "trial",
+    "region": "EU",
+    "amount": 740.3,
+    "active": false
+  },
+  {
+    "id": "rec_011",
+    "type": "trial",
+    "region": "US",
+    "amount": 31.68,
+    "active": false
+  },
+  {
+    "id": "rec_012",
+    "type": "premium",
+    "region": "APAC",
+    "amount": 840,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "id": "rec_013",
+    "type": "standard",
+    "region": "APAC",
+    "amount": 1169.52,
+    "active": false
+  },
+  {
+    "id": "rec_014",
+    "type": "premium",
+    "region": "APAC",
+    "amount": 414,
+    "active": true,
+    "status": "archived"
+  }
+]
+```

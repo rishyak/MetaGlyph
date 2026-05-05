@@ -1,0 +1,23 @@
+Based on the instruction `SELECT x | x.portable ∉ {True} → [x.name]`, we need to select the names of products that are not portable. Here is the breakdown:
+
+- **Refrigerator**: Not portable (`portable: False`)
+- **Notebook**: Portable (`portable: True`)
+- **Headphones**: Portable (`portable: True`)
+- **Desk**: Not portable (`portable: False`)
+- **Chair**: Portable (`portable: True`)
+- **Microwave**: Portable (`portable: True`)
+- **Pen**: Portable (`portable: True`)
+- **Stapler**: Portable (`portable: True`)
+- **Smartphone**: Portable (`portable: True`)
+- **Bookshelf**: Not portable (`portable: False`)
+
+From this list, the non-portable items are:
+- Refrigerator
+- Desk
+- Chair
+- Bookshelf
+
+So the output in the required JSON format would be:
+```json
+["Refrigerator", "Desk", "Chair", "Bookshelf"]
+```

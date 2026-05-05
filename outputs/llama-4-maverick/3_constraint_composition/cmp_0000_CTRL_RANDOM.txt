@@ -1,0 +1,48 @@
+To solve this problem, we need to break down the given instruction and apply it to the provided dataset.
+
+The instruction is: `SELECT x.id | x.priority ¤ {high} ¶ x.status ※ {inactive} ↯ {selected_ids: [...], count: n}`
+
+Let's decode the instruction step by step:
+
+1. `SELECT x.id`: This indicates we are selecting the `id` attribute from the dataset.
+
+2. `| x.priority ¤ {high}`: The `|` symbol typically denotes a filtering operation. `¤ {high}` suggests filtering where `x.priority` equals `high`. So, this step filters the dataset to include only items where the priority is `high`.
+
+3. `¶ x.status ※ {inactive}`: `¶` could indicate another filtering operation. `※ {inactive}` suggests filtering where `x.status` is not equal to `inactive` (since `※` might imply "not in" or a similar negation operation). Thus, this step further filters the dataset to exclude items where the status is `inactive`.
+
+4. `↯ {selected_ids: [...], count: n}`: This indicates the output format. `↯` suggests outputting the result in a specific format. The required output is a JSON object with two keys: `selected_ids` (an array of the selected `id`s) and `count` (the number of selected `id`s).
+
+Now, let's apply these steps to the dataset:
+
+1. Filter the dataset where `x.priority` equals `high`:
+   - item_002 (ID: item_002, Priority: high)
+   - item_003 (ID: item_003, Priority: high)
+   - item_005 (ID: item_005, Priority: high)
+   - item_006 (ID: item_006, Priority: high)
+   - item_013 (ID: item_013, Priority: high)
+   - item_015 (ID: item_015, Priority: high)
+   - item_017 (ID: item_017, Priority: high)
+
+2. Further filter the dataset to exclude items where `x.status` equals `inactive`:
+   - Exclude item_015 because its status is `inactive`.
+   - The remaining items with `high` priority and not `inactive` status are:
+     - item_002
+     - item_003
+     - item_005
+     - item_006
+     - item_013
+     - item_017
+
+The `id`s of these items are: `item_002`, `item_003`, `item_005`, `item_006`, `item_013`, `item_017`.
+
+Now, let's prepare the output:
+- `selected_ids`: [`item_002`, `item_003`, `item_005`, `item_006`, `item_013`, `item_017`]
+- `count`: 6 (since there are 6 items)
+
+The output in JSON format is:
+```json
+{
+  "selected_ids": ["item_002", "item_003", "item_005", "item_006", "item_013", "item_017"],
+  "count": 6
+}
+```

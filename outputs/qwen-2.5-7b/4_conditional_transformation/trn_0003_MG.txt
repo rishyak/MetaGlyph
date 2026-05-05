@@ -1,0 +1,47 @@
+Based on the provided instruction and input records, we need to transform the records according to the given rules:
+
+1. If `x.type` is "premium", then `x.amount` should be increased by 10%.
+2. If `x.region` is "EU", then `x.amount` should be increased by 20%.
+3. If `x.active` is `False`, then `x.status` should be set to "archived".
+
+We will apply these rules sequentially to each record. Here's the transformation process for each record:
+
+- **rec_000**: Type is "trial", so no changes.
+- **rec_001**: Type is "trial", so no changes.
+- **rec_002**: Type is "standard", and `region` is "EU", and `active` is `False`. Thus, `amount` will be increased by 20%, and `status` will be set to "archived".
+- **rec_003**: Type is "standard", and `region` is "US", and `active` is `True`. So, no changes.
+- **rec_004**: Type is "standard", and `region` is "APAC", and `active` is `True`. So, no changes.
+- **rec_005**: Type is "trial", and `region` is "US", and `active` is `False`. Thus, `amount` will be increased by 20%, and `status` will be set to "archived".
+- **rec_006**: Type is "trial", and `region` is "US", and `active` is `False`. Thus, `amount` will be increased by 20%, and `status` will be set to "archived".
+- **rec_007**: Type is "standard", and `region` is "APAC", and `active` is `True`. So, no changes.
+- **rec_008**: Type is "trial", and `region` is "EU", and `active` is `False`. Thus, `amount` will be increased by 20%, and `status` will be set to "archived".
+- **rec_009**: Type is "premium", and `region` is "APAC", and `active` is `True`. Thus, `amount` will be increased by 10%.
+- **rec_010**: Type is "standard", and `region` is "US", and `active` is `False`. So, no changes.
+- **rec_011**: Type is "standard", and `region` is "APAC", and `active` is `True`. So, no changes.
+- **rec_012**: Type is "trial", and `region` is "US", and `active` is `True`. So, no changes.
+- **rec_013**: Type is "trial", and `region` is "APAC", and `active` is `True`. So, no changes.
+- **rec_014**: Type is "standard", and `region` is "US", and `active` is `False`. Thus, `amount` will be increased by 20%, and `status` will be set to "archived".
+
+Now, let's transform the records accordingly:
+
+```json
+[
+    {"type": "trial", "region": "APAC", "amount": 950, "active": true, "status": null},
+    {"type": "trial", "region": "EU", "amount": 510, "active": true, "status": null},
+    {"type": "standard", "region": "EU", "amount": 909 * 1.2, "active": false, "status": "archived"},
+    {"type": "standard", "region": "US", "amount": 256, "active": true, "status": null},
+    {"type": "standard", "region": "APAC", "amount": 507, "active": true, "status": null},
+    {"type": "trial", "region": "US", "amount": 141 * 1.2, "active": false, "status": "archived"},
+    {"type": "trial", "region": "US", "amount": 281 * 1.2, "active": false, "status": "archived"},
+    {"type": "standard", "region": "APAC", "amount": 783, "active": true, "status": null},
+    {"type": "trial", "region": "EU", "amount": 418 * 1.2, "active": false, "status": "archived"},
+    {"type": "premium", "region": "APAC", "amount": 472 * 1.1, "active": true, "status": null},
+    {"type": "standard", "region": "US", "amount": 75, "active": false, "status": "archived"},
+    {"type": "standard", "region": "APAC", "amount": 577, "active": true, "status": null},
+    {"type": "trial", "region": "US", "amount": 17, "active": true, "status": null},
+    {"type": "trial", "region": "APAC", "amount": 70, "active": true, "status": null},
+    {"type": "standard", "region": "US", "amount": 890 * 1.2, "active": false, "status": "archived"}
+]
+```
+
+Note that for the records where `active` is `False`, the `amount` is adjusted based on the region rule first, and then the status is set to "archived". For other records, only one of the conditions may apply or none at all.

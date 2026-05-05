@@ -1,12 +1,49 @@
 ```json
 {
   "selected_ids": [
+    "item_000",
     "item_001",
+    "item_002",
     "item_003",
+    "item_004",
+    "item_005",
+    "item_007",
+    "item_008",
+    "item_009",
     "item_010",
+    "item_013",
+    "item_014",
+    "item_015",
+    "item_016",
     "item_017",
+    "item_018",
     "item_019"
   ],
-  "count": 5
+  "count": 17
 }
 ```
+
+**Explanation:**
+The selection criteria is: priority = "high" OR status ≠ "inactive"
+
+Items selected:
+- **item_000**: priority=high ✓
+- **item_001**: priority=high ✓
+- **item_002**: status=pending (not inactive) ✓
+- **item_003**: priority=high ✓
+- **item_004**: status=pending (not inactive) ✓
+- **item_005**: priority=high ✓
+- **item_006**: EXCLUDED (status=inactive AND priority≠high)
+- **item_007**: status=pending (not inactive) ✓
+- **item_008**: priority=high ✓
+- **item_009**: status=active (not inactive) ✓
+- **item_010**: priority=high ✓
+- **item_011**: EXCLUDED (status=inactive AND priority≠high)
+- **item_012**: EXCLUDED (status=inactive AND priority≠high)
+- **item_013**: status=active (not inactive) ✓
+- **item_014**: status=pending (not inactive) ✓
+- **item_015**: status=active (not inactive) ✓
+- **item_016**: status=pending (not inactive) ✓
+- **item_017**: priority=high ✓
+- **item_018**: status=pending (not inactive) ✓
+- **item_019**: priority=high ✓

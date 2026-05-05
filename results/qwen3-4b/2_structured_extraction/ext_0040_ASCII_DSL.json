@@ -1,0 +1,22 @@
+{
+  "prompt_id": "ext_0040_ASCII_DSL",
+  "model": "qwen3-4b",
+  "family": "2_structured_extraction",
+  "condition": "ASCII_DSL",
+  "parse_success": false,
+  "parsed_output": null,
+  "gold_output": {
+    "invoice_num": "8657",
+    "payment_terms": "Due on Receipt",
+    "customer_name": "David Brown",
+    "total": 7194.68
+  },
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0.0,
+  "operator_fidelity": [],
+  "overall_pass": false,
+  "error_type": "parse",
+  "error_details": "Could not extract key-value pairs",
+  "semantic_equivalence_pass": false
+}

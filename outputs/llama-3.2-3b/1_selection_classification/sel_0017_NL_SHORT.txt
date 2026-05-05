@@ -1,0 +1,23 @@
+### Solution
+```json
+[
+  "Cat",
+  "Lion",
+  "Dog",
+  "Parrot",
+  "Turtle"
+]
+```
+
+### Explanation
+To solve this problem, we need to identify the items that are not fish. We can do this by iterating over the list of items and checking their type. If the type is not "fish", we add the item to our result array.
+
+Here is the step-by-step process:
+
+1. Initialize an empty array to store the result.
+2. Iterate over each item in the list.
+3. Check if the item's type is not "fish".
+4. If it's not a fish, add the item to the result array.
+5. Return the result array.
+
+In this case, the items that are not fish are "Cat", "Lion", "Dog", "Parrot", and "Turtle".

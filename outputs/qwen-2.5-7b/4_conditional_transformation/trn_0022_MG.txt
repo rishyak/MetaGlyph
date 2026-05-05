@@ -1,0 +1,219 @@
+Based on the provided instruction and input records, we need to apply a series of transformations to the records where applicable. Here's how the transformations are applied step-by-step:
+
+1. **Premium in EU**: Multiply `amount` by 1.1 and then by 1.2.
+2. **Not Active**: Change `status` to "archived".
+3. **All Other Cases**: No changes needed.
+
+Let's transform each record accordingly:
+
+- **rec_000**:
+  - `type`: premium
+  - `region`: EU
+  - `amount`: 44
+  - Apply both transformations:
+    - `amount = 44 * 1.1 = 48.4`
+    - `amount = 48.4 * 1.2 = 58.08`
+  - `active`: False
+  - Apply the not active transformation: `status = "archived"`
+
+- **rec_001**:
+  - `type`: trial
+  - `region`: US
+  - `amount`: 102
+  - No transformations needed.
+
+- **rec_002**:
+  - `type`: premium
+  - `region`: APAC
+  - `amount`: 435
+  - No transformations needed.
+
+- **rec_003**:
+  - `type`: standard
+  - `region`: US
+  - `amount`: 815
+  - No transformations needed.
+
+- **rec_004**:
+  - `type`: trial
+  - `region`: APAC
+  - `amount`: 945
+  - No transformations needed.
+
+- **rec_005**:
+  - `type`: standard
+  - `region`: EU
+  - `amount`: 945
+  - No transformations needed.
+
+- **rec_006**:
+  - `type`: premium
+  - `region`: APAC
+  - `amount`: 901
+  - No transformations needed.
+
+- **rec_007**:
+  - `type`: standard
+  - `region`: EU
+  - `amount`: 996
+  - No transformations needed.
+
+- **rec_008**:
+  - `type`: standard
+  - `region`: US
+  - `amount`: 890
+  - No transformations needed.
+
+- **rec_009**:
+  - `type`: trial
+  - `region`: EU
+  - `amount`: 102
+  - No transformations needed.
+
+- **rec_010**:
+  - `type`: standard
+  - `region`: EU
+  - `amount`: 559
+  - No transformations needed.
+
+- **rec_011**:
+  - `type`: premium
+  - `region`: EU
+  - `amount`: 698
+  - Apply both transformations:
+    - `amount = 698 * 1.1 = 767.8`
+    - `amount = 767.8 * 1.2 = 921.36`
+  - `active`: False
+  - Apply the not active transformation: `status = "archived"`
+
+- **rec_012**:
+  - `type`: trial
+  - `region`: EU
+  - `amount`: 852
+  - No transformations needed.
+
+- **rec_013**:
+  - `type`: standard
+  - `region`: APAC
+  - `amount`: 249
+  - No transformations needed.
+
+- **rec_014**:
+  - `type`: standard
+  - `region`: APAC
+  - `amount`: 915
+  - No transformations needed.
+
+Now, let's summarize the transformed records:
+
+```json
+[
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 58.08,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 102,
+        "active": false,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 435,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 815,
+        "active": false,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 945,
+        "active": false,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 945,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 901,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 996,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 890,
+        "active": false,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 102,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 559,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 921.36,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 852,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 249,
+        "active": false,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 915,
+        "active": false,
+        "status": null
+    }
+]
+```
+
+This is the final output of the transformed records based on the given instructions.

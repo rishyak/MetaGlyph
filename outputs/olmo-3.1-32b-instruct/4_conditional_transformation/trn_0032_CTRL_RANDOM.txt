@@ -1,0 +1,122 @@
+[
+  {
+    "id": "rec_000",
+    "type": "standard",
+    "region": "APAC",
+    "amount": 151,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "id": "rec_001",
+    "type": "standard",
+    "region": "APAC",
+    "amount": 602.4,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "id": "rec_002",
+    "type": "trial",
+    "region": "US",
+    "amount": 738,
+    "active": true,
+    "status": "active"
+  },
+  {
+    "id": "rec_003",
+    "type": "premium",
+    "region": "US",
+    "amount": 869.1,
+    "active": true,
+    "status": "active"
+  },
+  {
+    "id": "rec_004",
+    "type": "premium",
+    "region": "EU",
+    "amount": 1148.4,
+    "active": true,
+    "status": "active"
+  },
+  {
+    "id": "rec_005",
+    "type": "premium",
+    "region": "US",
+    "amount": 1076.9,
+    "active": true,
+    "status": "active"
+  },
+  {
+    "id": "rec_006",
+    "type": "premium",
+    "region": "EU",
+    "amount": 1154.4,
+    "active": true,
+    "status": "active"
+  },
+  {
+    "id": "rec_007",
+    "type": "premium",
+    "region": "US",
+    "amount": 453.5,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "id": "rec_008",
+    "type": "standard",
+    "region": "EU",
+    "amount": 111.6,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "id": "rec_009",
+    "type": "standard",
+    "region": "US",
+    "amount": 336,
+    "active": true,
+    "status": "active"
+  },
+  {
+    "id": "rec_010",
+    "type": "trial",
+    "region": "APAC",
+    "amount": 353,
+    "active": true,
+    "status": "active"
+  },
+  {
+    "id": "rec_011",
+    "type": "standard",
+    "region": "US",
+    "amount": 303,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "id": "rec_012",
+    "type": "trial",
+    "region": "US",
+    "amount": 787,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "id": "rec_013",
+    "type": "premium",
+    "region": "APAC",
+    "amount": 16.5,
+    "active": true,
+    "status": "active"
+  },
+  {
+    "id": "rec_014",
+    "type": "standard",
+    "region": "EU",
+    "amount": 276,
+    "active": true,
+    "status": "active"
+  }
+]

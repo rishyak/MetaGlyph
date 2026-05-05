@@ -1,0 +1,42 @@
+{
+  "prompt_id": "sel_0045_NL",
+  "model": "gemini-3.1-flash-lite",
+  "family": "1_selection_classification",
+  "condition": "NL",
+  "parse_success": true,
+  "parsed_output": [
+    "Desk",
+    "Microwave",
+    "Laptop",
+    "Chair",
+    "Bookshelf",
+    "Smartphone",
+    "Refrigerator",
+    "Tablet"
+  ],
+  "gold_output": [
+    "bookshelf",
+    "chair",
+    "desk",
+    "laptop",
+    "microwave",
+    "refrigerator",
+    "smartphone",
+    "tablet"
+  ],
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=8, extra=8"
+    }
+  ],
+  "overall_pass": true,
+  "error_type": "logic",
+  "error_details": "Accuracy: 1.00",
+  "semantic_equivalence_pass": true
+}

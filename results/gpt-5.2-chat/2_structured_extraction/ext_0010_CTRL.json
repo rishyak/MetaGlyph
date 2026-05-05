@@ -4,38 +4,12 @@
   "family": "2_structured_extraction",
   "condition": "CTRL",
   "parse_success": true,
-  "parsed_output": [
-    {
-      "risk_name": "Inconsistent Invoice Dates",
-      "affected_component": "Billing Schedule",
-      "severity": "High"
-    },
-    {
-      "risk_name": "Subtotal Does Not Match Line Items",
-      "affected_component": "Financial Calculations",
-      "severity": "High"
-    },
-    {
-      "risk_name": "Tax Calculated on Potentially Incorrect Subtotal",
-      "affected_component": "Tax Computation",
-      "severity": "Medium"
-    },
-    {
-      "risk_name": "Payment Terms Conflict With Due Date",
-      "affected_component": "Accounts Receivable Process",
-      "severity": "Medium"
-    },
-    {
-      "risk_name": "Potential Invoice Data Integrity Issue",
-      "affected_component": "Accounting Records",
-      "severity": "Medium"
-    },
-    {
-      "risk_name": "Potential Billing or Fraud Exposure",
-      "affected_component": "Financial Controls",
-      "severity": "Low"
-    }
-  ],
+  "parsed_output": {
+    "payment_terms": "Net 30",
+    "invoice_num": "6310",
+    "due_date": "2024-02-12",
+    "total": "$2883.3"
+  },
   "gold_output": {
     "total": 2883.3,
     "invoice_num": "6310",
@@ -43,18 +17,18 @@
     "due_date": "2024-02-12"
   },
   "exact_match": false,
-  "accuracy": 0.0,
-  "f1_score": 0.0,
+  "accuracy": 0.75,
+  "f1_score": 0.75,
   "operator_fidelity": [
     {
       "operator": "→",
       "checked": true,
       "passed": false,
-      "details": "Transformation check"
+      "details": "Wrong values: ['total']"
     }
   ],
   "overall_pass": false,
-  "error_type": "format",
-  "error_details": "Accuracy: 0.00",
+  "error_type": "logic",
+  "error_details": "Accuracy: 0.75",
   "semantic_equivalence_pass": false
 }

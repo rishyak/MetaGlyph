@@ -1,0 +1,9 @@
+```json
+{
+  "tool_name": "filter_data",
+  "parameters": {
+    "category": ["A", "B"],
+    "status": ["active"]
+  }
+}
+```

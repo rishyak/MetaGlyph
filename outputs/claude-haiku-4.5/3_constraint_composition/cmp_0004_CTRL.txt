@@ -1,13 +1,33 @@
 ```json
 {
   "selected_ids": [
+    "item_001",
     "item_003",
     "item_004",
     "item_005",
     "item_008",
     "item_009",
+    "item_013",
     "item_018"
   ],
-  "count": 6
+  "count": 8
 }
 ```
+
+**Explanation:**
+The query selects items where:
+- Priority ∈ {high} (priority is "high")
+- AND Status ∉ {inactive} (status is NOT "inactive")
+
+Items matching both conditions:
+- item_001: high priority, pending status ✓
+- item_003: high priority, active status ✓
+- item_004: high priority, active status ✓
+- item_005: high priority, active status ✓
+- item_008: high priority, active status ✓
+- item_009: high priority, active status ✓
+- item_013: high priority, pending status ✓
+- item_018: high priority, active status ✓
+
+Items excluded:
+- item_011: high priority but inactive status ✗

@@ -1,0 +1,6 @@
+Given the extensive repetition of the same text in the input, I will provide a concise response based on the first occurrence of the 'category' attribute with the value 'appliances'.
+
+The matching items are:
+
+- Refrigerator: category: appliances, price_range: high, portable: False
+- Microwave: category: appliances, price_range: medium, portable: True

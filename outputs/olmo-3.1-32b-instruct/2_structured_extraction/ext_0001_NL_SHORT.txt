@@ -1,0 +1,6 @@
+{
+  "sender_name": "Alice Smith",
+  "sender_title": "Manager",
+  "date": "2024-08-19",
+  "subject": "Meeting Request"
+}

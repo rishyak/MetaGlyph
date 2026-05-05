@@ -1,3 +1,8 @@
 ```json
-[]
+{
+  "payment_terms": "Net 60",
+  "date": "2024-05-07",
+  "customer_name": "Carol Williams",
+  "due_date": "2024-07-26"
+}
 ```

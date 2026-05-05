@@ -1,0 +1,16 @@
+```json
+{
+  "selected_ids": ["item_003", "item_012", "item_014"],
+  "count": 3
+}
+```
+
+Explanation:
+- The condition `x.id | x.category ∈ {A, B}` means that the category should be either A or B.
+- The condition `x.status ∈ {active}` means that the status should be active.
+- The items that meet both conditions are:
+  - `item_003` (Category: C, Status: active)
+  - `item_012` (Category: B, Status: active)
+  - `item_014` (Category: A, Status: active)
+
+Thus, the selected IDs are `["item_003", "item_012", "item_014"]` and the count is 3.

@@ -1,0 +1,27 @@
+To extract the required fields from the given email document, let's analyze the content:
+
+1. **'company'**: The email document does not directly mention a company name. However, we can infer some information from the email addresses and the signature. The sender's email is `alice.smith@innovationlabs.com`, and the recipient's email is `bob.johnson@example.com`. The sender's company could be "Innovation Labs" based on their email address, and the signature mentions "Global Solutions," which could be a department or another company. Without more context, we'll consider "Innovation Labs" as the potential company for the sender. However, the task does not specify whether to extract the company for the sender or recipient, and there's no explicit mention of a company. Thus, we will consider this field as null because it's not directly stated.
+
+2. **'sender'**: The sender's email address is `alice.smith@innovationlabs.com`, as indicated in the "From:" field.
+
+3. **'sender_name'**: The sender's name is "Alice Smith," as found in the signature at the end of the email.
+
+4. **'recipient'**: The recipient's email address is `bob.johnson@example.com`, as indicated in the "To:" field.
+
+Based on this analysis, the extracted fields are:
+
+- 'company': null
+- 'sender': `alice.smith@innovationlabs.com`
+- 'sender_name': `Alice Smith`
+- 'recipient': `bob.johnson@example.com`
+
+The JSON object with the extracted data is:
+
+```json
+{
+  "company": null,
+  "sender": "alice.smith@innovationlabs.com",
+  "sender_name": "Alice Smith",
+  "recipient": "bob.johnson@example.com"
+}
+```

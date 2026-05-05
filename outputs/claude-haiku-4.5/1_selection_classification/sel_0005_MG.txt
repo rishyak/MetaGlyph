@@ -1,3 +1,20 @@
+I need to find all animals where:
+1. `domestic` = `True` AND
+2. `type` = `bird`
+
+Let me check each animal:
+
+- Turtle: domestic: True, type: reptile ❌ (not a bird)
+- Salmon: domestic: False, type: fish ❌ (not domestic)
+- Whale: domestic: False, type: mammal ❌ (not domestic)
+- Crocodile: domestic: False, type: reptile ❌ (not domestic)
+- **Parrot: domestic: True, type: bird ✓** (matches both conditions)
+- Cat: domestic: True, type: mammal ❌ (not a bird)
+- Elephant: domestic: False, type: mammal ❌ (not domestic)
+- Eagle: domestic: False, type: bird ❌ (not domestic)
+- Goldfish: domestic: True, type: fish ❌ (not a bird)
+- Lion: domestic: False, type: mammal ❌ (not domestic)
+
 ```json
-["Cat"]
+["Parrot"]
 ```

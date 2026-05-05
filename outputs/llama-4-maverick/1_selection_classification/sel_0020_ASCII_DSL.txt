@@ -1,0 +1,29 @@
+To solve this task, we need to follow the given instruction: `SELECT x | x.size IN {small} -> [x.name]`. This means we have to select the names of animals from the given list where the size of the animal is 'small'.
+
+First, let's list the animals with their sizes as given in the input:
+1. Shark - large
+2. Elephant - large
+3. Cat - small
+4. Goldfish - small
+5. Parrot - small
+6. Eagle - medium
+7. Hamster - small
+8. Turtle - small
+9. Salmon - medium
+10. Lion - large
+
+Now, we filter the animals based on their size being 'small':
+- Cat: small
+- Goldfish: small
+- Parrot: small
+- Hamster: small
+- Turtle: small
+
+The names of these animals are: Cat, Goldfish, Parrot, Hamster, Turtle.
+
+To present the answer in the required JSON format, we create an array of these names: `["Cat", "Goldfish", "Parrot", "Hamster", "Turtle"]`.
+
+The final answer is: 
+```json
+["Cat", "Goldfish", "Parrot", "Hamster", "Turtle"]
+```

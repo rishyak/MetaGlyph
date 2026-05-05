@@ -1,0 +1,42 @@
+{
+  "prompt_id": "sel_0000_MG",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this task, we need to follow the given instruction: `SELECT x | x.type ∈ {reptile} → [x.name]`. This means we have to select the names of animals where the type is 'reptile'.",
+    "First, let's examine the given input data:",
+    "Dog: type: mammal, domestic: True, size: medium",
+    "Whale: type: mammal, domestic: False, size: large",
+    "Salmon: type: fish, domestic: False, size: medium",
+    "Eagle: type: bird, domestic: False, size: medium",
+    "Shark: type: fish, domestic: False, size: large",
+    "Elephant: type: mammal, domestic: False, size: large",
+    "Cat: type: mammal, domestic: True, size: small",
+    "Penguin: type: bird, domestic: False, size: medium",
+    "Parrot: type: bird, domestic: True, size: small",
+    "Turtle: type: reptile, domestic: True, size: small",
+    "We need to filter the animals based on their type being 'reptile'. From the given list, only 'Turtle' is classified as a 'reptile'.",
+    "Therefore, the name of the animal that satisfies the condition is 'Turtle'.",
+    "To present the answer in the required JSON array format, we have: `[\"Turtle\"]`."
+  ],
+  "gold_output": [
+    "turtle"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=1, extra=15"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

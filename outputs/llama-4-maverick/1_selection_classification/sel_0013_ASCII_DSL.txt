@@ -1,0 +1,35 @@
+To solve this problem, we need to follow the given instruction: `SELECT x | x.size IN {medium} -> [x.name]`. This means we have to select the names of animals from the given list where the size of the animal is 'medium'.
+
+First, let's list the animals with their sizes based on the provided information:
+- Cat: size: small
+- Snake: size: medium
+- Dog: size: medium
+- Goldfish: size: small
+- Penguin: size: medium
+- Eagle: size: medium
+- Whale: size: large
+- Parrot: size: small
+- Lion: size: large
+- Shark: size: large
+
+Now, we filter the animals with 'medium' size:
+- Snake: size: medium
+- Dog: size: medium
+- Penguin: size: medium
+- Eagle: size: medium
+
+The instruction asks for the names of these animals. So, we extract the names:
+- Snake
+- Dog
+- Penguin
+- Eagle
+
+Finally, we format the output as a JSON array of strings as requested:
+```json
+["Snake", "Dog", "Penguin", "Eagle"]
+```
+
+The final answer is: 
+```json
+["Snake", "Dog", "Penguin", "Eagle"]
+```

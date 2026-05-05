@@ -1,0 +1,72 @@
+To solve this problem, we need to filter the given dataset based on the conditions provided in the instruction: `x.category IN {A, B} AND x.status IN {active}`.
+
+First, let's identify the items that match the condition `x.category IN {A, B}`:
+- Category A: item_000 is not A, item_005 is A, item_006 is A, item_008 is A, item_010 is A, item_018 is A, item_019 is A. So, the items with Category A are item_005, item_006, item_008, item_010, item_018, item_019.
+- Category B: item_002 is B, item_003 is B, item_007 is B, item_009 is B, item_012 is B, item_013 is B, item_014 is B, item_015 is B. So, the items with Category B are item_002, item_003, item_007, item_009, item_012, item_013, item_014, item_015.
+
+Combining these, the items with Category A or B are: item_002, item_003, item_005, item_006, item_007, item_008, item_009, item_010, item_012, item_013, item_014, item_015, item_018, item_019.
+
+Next, we filter these items based on the condition `x.status IN {active}`:
+- Status active: item_003 is active, item_010 is active, item_011 is active (but category is C, so not included), item_014 is active, item_019 is active. So, the items that are active are item_003, item_010, item_014, item_019.
+
+Now, we combine both conditions:
+- The items that are either A or B and are active are: item_003, item_010, item_014, item_019.
+
+The IDs of these items are: item_003, item_010, item_014, item_019.
+
+Thus, `selected_ids = [item_003, item_010, item_014, item_019]` and `count = 4`.
+
+Here is the JSON output:
+
+```json
+{
+  "selected_ids": ["item_003", "item_010", "item_014", "item_019"],
+  "count": 4
+}
+```
+
+To achieve this using a tool or a programming language like Python, you would typically read the dataset, filter it based on the given conditions, and then output the result in the required format.
+
+Let's assume we have a Python dictionary `data` where each key is an item ID and its corresponding value is another dictionary containing the attributes of the item.
+
+```python
+def filter_data(data):
+    selected_ids = [item_id for item_id, item in data.items() if item['Category'] in ['A', 'B'] and item['Status'] == 'active']
+    count = len(selected_ids)
+    return {"selected_ids": selected_ids, "count": count}
+
+# Example data
+data = {
+    "item_000": {"Category": "C", "Status": "active"},
+    "item_001": {"Category": "C", "Status": "inactive"},
+    "item_002": {"Category": "B", "Status": "pending"},
+    "item_003": {"Category": "B", "Status": "active"},
+    "item_004": {"Category": "C", "Status": "pending"},
+    "item_005": {"Category": "A", "Status": "pending"},
+    "item_006": {"Category": "A", "Status": "pending"},
+    "item_007": {"Category": "B", "Status": "inactive"},
+    "item_008": {"Category": "A", "Status": "inactive"},
+    "item_009": {"Category": "B", "Status": "pending"},
+    "item_010": {"Category": "A", "Status": "active"},
+    "item_011": {"Category": "C", "Status": "active"},
+    "item_012": {"Category": "B", "Status": "inactive"},
+    "item_013": {"Category": "B", "Status": "pending"},
+    "item_014": {"Category": "B", "Status": "active"},
+    "item_015": {"Category": "B", "Status": "inactive"},
+    "item_016": {"Category": "C", "Status": "pending"},
+    "item_017": {"Category": "C", "Status": "pending"},
+    "item_018": {"Category": "A", "Status": "inactive"},
+    "item_019": {"Category": "A", "Status": "active"},
+}
+
+result = filter_data(data)
+print(result)
+```
+
+This will output:
+```json
+{
+  "selected_ids": ["item_003", "item_010", "item_014", "item_019"],
+  "count": 4
+}
+```

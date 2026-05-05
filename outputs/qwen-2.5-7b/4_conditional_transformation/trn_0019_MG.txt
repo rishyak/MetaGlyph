@@ -1,0 +1,123 @@
+```json
+[
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 283,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 315,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 561,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 632.5,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 990,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 595,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 54,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 732,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 821,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 154.9,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 112,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 157,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 86,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 712.8,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 979.2,
+        "active": false,
+        "status": "archived"
+    }
+]
+```
+
+Explanation:
+- For `rec_000`, the type is "premium" but the region is not "EU", so no transformation is applied.
+- For `rec_001`, the type is "premium" and the region is "APAC", so no transformation is applied.
+- For `rec_002`, the type is "standard" and the region is "EU", so it gets archived.
+- For `rec_003`, the type is "premium" and the region is "EU", so the amount is increased by 10% and then by 20%, resulting in an amount of 632.5, and it gets archived.
+- For `rec_004`, the type is "premium" and the region is "EU", so the amount is increased by 10% and then by 20%, resulting in an amount of 990, and it remains active.
+- For `rec_005`, the type is "trial" and the region is "US", so it gets archived.
+- For `rec_006`, the type is "standard" and the region is "EU", so it gets archived.
+- For `rec_007`, the type is "trial" and the region is "EU", so it gets archived.
+- For `rec_008`, the type is "premium" but the region is not "EU", so no transformation is applied.
+- For `rec_009`, the type is "premium" and the region is "US", so the amount is increased by 10%, resulting in an amount of 154.9, and it gets archived.
+- For `rec_010`, the type is "standard" and the region is "EU", so it gets archived.
+- For `rec_011`, the type is "standard" but the region is not "EU", so no transformation is applied.
+- For `rec_012`, the type is "trial" and the region is "US", so it gets archived.
+- For `rec_013`, the type is "premium" and the region is "EU", so the amount is increased by 10% and then by 20%, resulting in an amount of 712.8, and it gets archived.
+- For `rec_014`, the type is "trial" and the region is "US", so it gets archived.

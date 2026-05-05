@@ -1,11 +1,21 @@
+Looking at the instruction: `SELECT x | x.category ∉ {furniture} → [x.name]`
+
+This means: Select all items where the category is NOT in the furniture set, and return their names.
+
+Items with category = "furniture":
+- Chair
+- Desk
+
+All other items have categories that are NOT furniture:
+- Stapler (stationery)
+- Microwave (appliances)
+- Pen (stationery)
+- Notebook (stationery)
+- Refrigerator (appliances)
+- Smartphone (electronics)
+- Headphones (electronics)
+- Laptop (electronics)
+
 ```json
-[]
+["Stapler", "Microwave", "Pen", "Notebook", "Refrigerator", "Smartphone", "Headphones", "Laptop"]
 ```
-
-The instruction requests items that are:
-- ∈(mammal) - members of the mammal category
-- ∩ ∈(pet) - AND members of the pet category
-- ∩ ¬(bird) - AND NOT birds
-- ∩ ¬(farm_animal) - AND NOT farm animals
-
-None of the items in the provided inventory (Chair, Stapler, Microwave, Pen, Notebook, Refrigerator, Smartphone, Headphones, Laptop, Desk) have attributes indicating they are mammals or pets. The inventory contains only inanimate objects categorized by furniture, stationery, appliances, and electronics.

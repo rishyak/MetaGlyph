@@ -1,1 +1,6 @@
-[]
+{
+  "subject": "Project Update",
+  "sender": "bob.johnson@digitalsystems.com",
+  "date": "2024-11-23",
+  "recipient": "david.brown@example.com"
+}

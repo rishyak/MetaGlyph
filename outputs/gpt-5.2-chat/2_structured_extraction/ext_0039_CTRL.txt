@@ -1,34 +1,8 @@
 ```json
-[
-  {
-    "risk_name": "Invoice Date and Due Date Inconsistency",
-    "affected_component": "Accounts Receivable",
-    "severity": "Medium"
-  },
-  {
-    "risk_name": "Line Item and Subtotal Mismatch",
-    "affected_component": "Billing Calculation",
-    "severity": "High"
-  },
-  {
-    "risk_name": "Incorrect Total Amount",
-    "affected_component": "Financial Reporting",
-    "severity": "High"
-  },
-  {
-    "risk_name": "Conflicting Payment Terms",
-    "affected_component": "Contractual Terms Management",
-    "severity": "Medium"
-  },
-  {
-    "risk_name": "Potential Invoice Dispute",
-    "affected_component": "Cash Flow Forecasting",
-    "severity": "Medium"
-  },
-  {
-    "risk_name": "Data Integrity Error",
-    "affected_component": "Invoice Generation System",
-    "severity": "Medium"
-  }
-]
+{
+  "invoice_num": "5892",
+  "payment_terms": "Net 60",
+  "date": "2024-07-28",
+  "customer_name": "Bob Johnson"
+}
 ```

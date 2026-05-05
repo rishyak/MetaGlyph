@@ -4,7 +4,11 @@
   "family": "1_selection_classification",
   "condition": "CTRL",
   "parse_success": true,
-  "parsed_output": [],
+  "parsed_output": [
+    "Bookshelf",
+    "Desk",
+    "Refrigerator"
+  ],
   "gold_output": [
     "chair",
     "headphones",
@@ -21,8 +25,8 @@
     {
       "operator": "∈",
       "checked": true,
-      "passed": true,
-      "details": "Inclusion constraint satisfied"
+      "passed": false,
+      "details": "missing=7, extra=3"
     }
   ],
   "overall_pass": false,

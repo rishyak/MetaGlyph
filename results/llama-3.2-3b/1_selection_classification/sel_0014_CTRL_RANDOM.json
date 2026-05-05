@@ -1,0 +1,37 @@
+{
+  "prompt_id": "sel_0014_CTRL_RANDOM",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "Crocodile: type: reptile, domestic: False, size: large",
+    "Dog: type: mammal, domestic: True, size: medium",
+    "Snake: type: reptile, domestic: False, size: medium",
+    "Cat: type: mammal, domestic: True, size: small",
+    "Penguin: type: bird, domestic: False, size: medium",
+    "Eagle: type: bird, domestic: False, size: medium",
+    "Salmon: type: fish, domestic: False, size: medium",
+    "Lion: type: mammal, domestic: False, size: large",
+    "Whale: type: mammal, domestic: False, size: large",
+    "Turtle: type: reptile, domestic: True, size: small"
+  ],
+  "gold_output": [
+    "salmon"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=1, extra=10"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

@@ -1,0 +1,40 @@
+### Solution
+```json
+[
+  "Notebook",
+  "Headphones",
+  "Pen",
+  "Stapler",
+  "Smartphone"
+]
+```
+
+### Explanation
+To solve this problem, we need to filter the list of items to include only those that are portable and have a price range of "low". We can do this by iterating over the list of items and checking the "portable" and "price_range" attributes for each item. If an item meets both conditions, we add its name to the output list.
+
+Here is the Python code that implements this solution:
+```python
+def filter_items(items):
+    return [item["name"] for item in items if item["portable"] and item["price_range"] == "low"]
+
+# Define the list of items
+items = [
+    {"name": "Refrigerator", "category": "appliances", "price_range": "high", "portable": False},
+    {"name": "Notebook", "category": "stationery", "price_range": "low", "portable": True},
+    {"name": "Headphones", "category": "electronics", "price_range": "medium", "portable": True},
+    {"name": "Desk", "category": "furniture", "price_range": "medium", "portable": False},
+    {"name": "Chair", "category": "furniture", "price_range": "medium", "portable": True},
+    {"name": "Microwave", "category": "appliances", "price_range": "medium", "portable": True},
+    {"name": "Pen", "category": "stationery", "price_range": "low", "portable": True},
+    {"name": "Stapler", "category": "stationery", "price_range": "low", "portable": True},
+    {"name": "Smartphone", "category": "electronics", "price_range": "high", "portable": True},
+    {"name": "Bookshelf", "category": "furniture", "price_range": "medium", "portable": False}
+]
+
+# Filter the items
+filtered_items = filter_items(items)
+
+# Print the result
+print(filtered_items)
+```
+This code defines a function `filter_items` that takes a list of items as input and returns a list of item names that meet the conditions. The function uses a list comprehension to iterate over the input list and checks the "portable" and "price_range" attributes for each item. If an item meets both conditions, its name is added to the output list. The code then defines the list of items and calls the `filter_items` function to get the filtered list. Finally, the code prints the result.

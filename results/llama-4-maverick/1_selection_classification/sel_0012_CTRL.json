@@ -1,0 +1,48 @@
+{
+  "prompt_id": "sel_0012_CTRL",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": [
+    "From the given list:",
+    "Chair: price_range = medium",
+    "Headphones: price_range = medium",
+    "Stapler: price_range = low",
+    "Notebook: price_range = low",
+    "Refrigerator: price_range = high",
+    "Pen: price_range = low",
+    "Microwave: price_range = medium",
+    "Desk: price_range = medium",
+    "Bookshelf: price_range = medium",
+    "Tablet: price_range = high",
+    "Products with price_range = 'low' or 'high' are:",
+    "Stapler (low)",
+    "Notebook (low)",
+    "Pen (low)",
+    "Refrigerator (high)",
+    "Tablet (high)"
+  ],
+  "gold_output": [
+    "bookshelf",
+    "chair",
+    "desk",
+    "headphones",
+    "microwave"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=5, extra=17"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

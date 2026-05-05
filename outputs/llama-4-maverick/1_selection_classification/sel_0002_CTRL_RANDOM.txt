@@ -1,0 +1,28 @@
+To solve this problem, we need to follow the given instruction: `SELECT x | x.type ※ {bird} ↯ [x.name]`. Let's break it down:
+
+1. **Understanding the Instruction**:
+   - `SELECT x`: This implies we are selecting or filtering items from a given dataset.
+   - `x.type ※ {bird}`: This means we are filtering the items where `x.type` is equal to `bird`. The symbol `※` is being used here to denote a kind of "is in" or equality check with a set or a specific value. Given the context, it seems to mean we are looking for items where `type` equals `bird`.
+   - `↯ [x.name]`: This indicates that after filtering, we are projecting or selecting the `name` attribute of the filtered items. The symbol `↯` suggests a transformation or mapping to the attribute `name`.
+
+2. **Applying the Instruction to the Input**:
+   - First, we need to identify all animals where `type` equals `bird`.
+   - From the given dataset:
+     - Eagle: type: bird, domestic: False, size: medium
+     - Parrot: type: bird, domestic: True, size: small
+   - These are the only two entries where `type` equals `bird`.
+   - Next, we extract the `name` attribute from these entries:
+     - Eagle's name is "Eagle".
+     - Parrot's name is "Parrot".
+
+3. **Formatting the Output**:
+   - The instruction requires us to return the result as a JSON array of strings.
+   - Therefore, we need to format `["Eagle", "Parrot"]` as a JSON array.
+
+### Solution
+
+```json
+["Eagle", "Parrot"]
+```
+
+This solution directly follows from applying the given instruction to the provided dataset and formatting the result according to the specified output format.

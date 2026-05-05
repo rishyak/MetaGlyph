@@ -1,0 +1,16 @@
+Looking at the query `SELECT x | x.type ¤ {mammal} ↯ [x.name]`:
+
+This appears to be a query asking to:
+- SELECT items x
+- WHERE x.type equals mammal (¤ represents equality/membership)
+- RETURN [x.name] (↯ represents the return/output operator)
+
+From the provided dataset, the animals with `type: mammal` are:
+
+1. Cat
+2. Whale
+3. Elephant
+
+```json
+["Cat", "Whale", "Elephant"]
+```

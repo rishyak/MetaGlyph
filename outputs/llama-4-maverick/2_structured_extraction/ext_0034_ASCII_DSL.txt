@@ -1,0 +1,33 @@
+To extract the requested fields from the given invoice document, we need to identify the relevant information and map it to the required fields: "date", "invoice_num", "total", and "payment_terms".
+
+1. **Date**: The document mentions "Date: 2024-11-19". This is the date we need to extract.
+2. **Invoice Number**: The invoice number is given as "INVOICE #7790", so the invoice number is "7790".
+3. **Total**: The total amount is stated as "Total: $1486.95". Thus, the total is "1486.95".
+4. **Payment Terms**: The payment terms are specified as "Payment Terms: Net 30". Therefore, the payment terms are "Net 30".
+
+Now, let's map these values to the required fields and format them as a JSON object.
+
+- "date" => "2024-11-19"
+- "invoice_num" => "7790"
+- "total" => "1486.95"
+- "payment_terms" => "Net 30"
+
+The JSON object with the extracted fields is:
+```json
+{
+  "date": "2024-11-19",
+  "invoice_num": "7790",
+  "total": "1486.95",
+  "payment_terms": "Net 30"
+}
+```
+
+The final answer is: 
+```json
+{
+  "date": "2024-11-19",
+  "invoice_num": "7790",
+  "total": "1486.95",
+  "payment_terms": "Net 30"
+}
+```

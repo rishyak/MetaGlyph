@@ -1,0 +1,20 @@
+Looking at the criteria:
+- **domestic equals True** AND
+- **type equals reptile**
+
+Reviewing each entry:
+
+- Shark: fish, domestic: False ❌
+- Cat: mammal, domestic: True ❌ (not reptile)
+- Elephant: mammal, domestic: False ❌
+- **Turtle: reptile, domestic: True ✓**
+- Parrot: bird, domestic: True ❌ (not reptile)
+- Hamster: mammal, domestic: True ❌ (not reptile)
+- Crocodile: reptile, domestic: False ❌ (not domestic)
+- Goldfish: fish, domestic: True ❌ (not reptile)
+- Eagle: bird, domestic: False ❌
+- Salmon: fish, domestic: False ❌
+
+```json
+["Turtle"]
+```

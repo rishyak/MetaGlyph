@@ -1,0 +1,37 @@
+{
+  "prompt_id": "sel_0012_CTRL",
+  "model": "olmo-3.1-32b-instruct",
+  "family": "1_selection_classification",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": [
+    "Chair",
+    "Headphones",
+    "Refrigerator",
+    "Desk",
+    "Bookshelf",
+    "Tablet"
+  ],
+  "gold_output": [
+    "bookshelf",
+    "chair",
+    "desk",
+    "headphones",
+    "microwave"
+  ],
+  "exact_match": false,
+  "accuracy": 0.5714285714285714,
+  "f1_score": 0.7272727272727272,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=5, extra=6"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.57",
+  "semantic_equivalence_pass": false
+}

@@ -1,3 +1,20 @@
+I need to identify all animals where:
+1. `domestic` = `False` AND
+2. `size` = `large`
+
+Let me review each animal:
+
+- Eagle: domestic: False, size: medium ❌ (size is not large)
+- Shark: domestic: False, size: large ✅ (both conditions met)
+- Dog: domestic: True, size: medium ❌ (domestic is True)
+- Snake: domestic: False, size: medium ❌ (size is not large)
+- Hamster: domestic: True, size: small ❌ (domestic is True)
+- Salmon: domestic: False, size: medium ❌ (size is not large)
+- Cat: domestic: True, size: small ❌ (domestic is True)
+- Crocodile: domestic: False, size: large ✅ (both conditions met)
+- Goldfish: domestic: True, size: small ❌ (domestic is True)
+- Whale: domestic: False, size: large ✅ (both conditions met)
+
 ```json
-["Cat", "Dog", "Hamster"]
+["Shark", "Crocodile", "Whale"]
 ```

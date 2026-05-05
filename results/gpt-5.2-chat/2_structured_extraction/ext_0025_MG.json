@@ -4,7 +4,12 @@
   "family": "2_structured_extraction",
   "condition": "MG",
   "parse_success": true,
-  "parsed_output": [],
+  "parsed_output": {
+    "sender": "Alice Smith",
+    "subject": "Q4 Report",
+    "sender_title": "Analyst",
+    "company": "Global Solutions"
+  },
   "gold_output": {
     "sender": "alice.smith@techcorpinc.com",
     "subject": "Q4 Report",
@@ -12,18 +17,18 @@
     "company": "Global Solutions"
   },
   "exact_match": false,
-  "accuracy": 0.0,
-  "f1_score": 0.0,
+  "accuracy": 0.75,
+  "f1_score": 0.75,
   "operator_fidelity": [
     {
       "operator": "→",
       "checked": true,
       "passed": false,
-      "details": "Transformation check"
+      "details": "Wrong values: ['sender']"
     }
   ],
   "overall_pass": false,
-  "error_type": "format",
-  "error_details": "Accuracy: 0.00",
+  "error_type": "logic",
+  "error_details": "Accuracy: 0.75",
   "semantic_equivalence_pass": false
 }

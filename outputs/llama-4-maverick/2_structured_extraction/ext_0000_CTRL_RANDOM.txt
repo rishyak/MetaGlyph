@@ -1,0 +1,33 @@
+To solve this task, we need to extract the required fields from the given email document. The fields to be extracted are "sender", "company", "sender_title", and "recipient".
+
+1. **Sender**: The sender's email address is given in the "From" field of the email header. The email address is `alice.smith@innovationlabs.com`. The name of the sender is mentioned at the end of the email as "Alice Smith". So, the sender's name is "Alice Smith".
+
+2. **Company**: The company name can be inferred from the sender's email address or the context provided in the email. The sender's email address is `alice.smith@innovationlabs.com`, suggesting that the company is "Innovation Labs".
+
+3. **Sender Title**: The sender's title is mentioned below their name at the end of the email. It is stated as "Manager, Digital Systems". For the purpose of this extraction, we can consider "Manager" as the sender's title.
+
+4. **Recipient**: The recipient's email address is given in the "To" field of the email header, which is `bob.johnson@example.com`. The name of the recipient is not directly mentioned in the "To" field, but the email starts with "Dear Alice,". However, given that the sender's name is Alice Smith, it seems there might be a confusion in the greeting. Nonetheless, the recipient's email address is `bob.johnson@example.com`, and if we were to infer a name, it would be "Bob Johnson".
+
+Now, let's extract the required information:
+- **Sender**: Alice Smith
+- **Company**: Innovation Labs (derived from the sender's email address)
+- **Sender Title**: Manager
+- **Recipient**: bob.johnson@example.com (or Bob Johnson if we consider the name)
+
+Given the information and the required output format (JSON object), the extracted fields can be represented as follows:
+
+```json
+{
+  "sender": "Alice Smith",
+  "company": "Innovation Labs",
+  "sender_title": "Manager",
+  "recipient": "bob.johnson@example.com"
+}
+```
+
+This JSON object contains the extracted fields as per the instruction. 
+
+The final answer is: 
+```json
+{"sender": "Alice Smith", "company": "Innovation Labs", "sender_title": "Manager", "recipient": "bob.johnson@example.com"}
+```

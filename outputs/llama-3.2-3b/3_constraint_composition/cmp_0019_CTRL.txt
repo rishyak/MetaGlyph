@@ -1,0 +1,8 @@
+SELECT 
+  x.id, 
+  x.value >= 50, 
+  x.category = 'A' 
+FROM 
+  item x 
+WHERE 
+  x.value >= 50 OR x.category = 'A'

@@ -1,0 +1,33 @@
+### Step 1: Identify the items that are not birds
+We need to review the list of animals and identify the ones that are not birds. According to the classification, birds are identified as "type: bird".
+
+### Step 2: Review the list of animals
+- Whale: type: mammal, domestic: False, size: large
+- Hamster: type: mammal, domestic: True, size: small
+- Snake: type: reptile, domestic: False, size: medium
+- Salmon: type: fish, domestic: False, size: medium
+- Elephant: type: mammal, domestic: False, size: large
+- Eagle: type: bird, domestic: False, size: medium
+- Parrot: type: bird, domestic: True, size: small
+- Cat: type: mammal, domestic: True, size: small
+- Dog: type: mammal, domestic: True, size: medium
+- Goldfish: type: fish, domestic: True, size: small
+
+### Step 3: Exclude birds from the list
+We will exclude the items that are identified as birds, which are:
+- Whale
+- Hamster
+- Snake
+- Salmon
+- Elephant
+- Eagle
+- Parrot
+- Cat
+- Dog
+- Goldfish
+
+### Step 4: Create the output
+The items that are not birds are:
+["Whale", "Hamster", "Snake", "Salmon", "Elephant", "Cat", "Dog", "Goldfish"]
+
+The final answer is: $\boxed([\"Whale\", \"Hamster\", \"Snake\", \"Salmon\", \"Elephant\", \"Cat\", \"Dog\", \"Goldfish\"])$

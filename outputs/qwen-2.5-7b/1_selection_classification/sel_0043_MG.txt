@@ -1,0 +1,26 @@
+To solve the provided instruction, we need to select names of animals where the `domestic` attribute is not `True`. Let's analyze the data:
+
+- Snake: domestic: False
+- Salmon: domestic: False
+- Parrot: domestic: True
+- Hamster: domestic: True
+- Whale: domestic: False
+- Penguin: domestic: False
+- Goldfish: domestic: True
+- Eagle: domestic: False
+- Lion: domestic: False
+- Cat: domestic: True
+
+From the list, the animals with `domestic: False` are:
+- Snake
+- Salmon
+- Whale
+- Penguin
+- Eagle
+- Lion
+
+So, the output in JSON array format will be:
+
+```json
+["Snake", "Salmon", "Whale", "Penguin", "Eagle", "Lion"]
+```

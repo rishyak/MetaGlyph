@@ -1,0 +1,129 @@
+[
+  {
+    "rec_000": {
+      "type": "standard",
+      "region": "APAC",
+      "amount": 654,
+      "active": false,
+      "status": "archived"
+    },
+    {
+      "rec_001": {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 258,
+        "active": true
+      }
+    },
+    {
+      "rec_002": {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 122,
+        "active": true
+      }
+    },
+    {
+      "rec_003": {
+        "type": "standard",
+        "region": "EU",
+        "amount": 397.2,
+        "active": false,
+        "status": "archived"
+      }
+    },
+    {
+      "rec_004": {
+        "type": "standard",
+        "region": "EU",
+        "amount": 860.4,
+        "active": true
+      }
+    },
+    {
+      "rec_005": {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 885.3,
+        "active": false,
+        "status": "archived"
+      }
+    },
+    {
+      "rec_006": {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 73,
+        "active": true
+      }
+    },
+    {
+      "rec_007": {
+        "type": "trial",
+        "region": "US",
+        "amount": 584,
+        "active": false,
+        "status": "archived"
+      }
+    },
+    {
+      "rec_008": {
+        "type": "trial",
+        "region": "EU",
+        "amount": 658.4,
+        "active": false,
+        "status": "archived"
+      }
+    },
+    {
+      "rec_009": {
+        "type": "premium",
+        "region": "US",
+        "amount": 528.0,
+        "active": false,
+        "status": "archived"
+      }
+    },
+    {
+      "rec_010": {
+        "type": "trial",
+        "region": "EU",
+        "amount": 842.4,
+        "active": false,
+        "status": "archived"
+      }
+    },
+    {
+      "rec_011": {
+        "type": "trial",
+        "region": "EU",
+        "amount": 247.2,
+        "active": true
+      }
+    },
+    {
+      "rec_012": {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 346.5,
+        "active": true
+      }
+    },
+    {
+      "rec_013": {
+        "type": "premium",
+        "region": "EU",
+        "amount": 878.2,
+        "active": true
+      }
+    },
+    {
+      "rec_014": {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 510,
+        "active": false,
+        "status": "archived"
+      }
+    }
+  ]

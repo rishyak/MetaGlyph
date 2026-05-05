@@ -1,0 +1,15 @@
+Looking at the instruction `SELECT x | x.size IN {small} -> [x.name]`, I need to:
+
+1. Filter all animals where `size` equals `small`
+2. Return their names
+
+From the input data, animals with `size: small` are:
+- Cat
+- Goldfish
+- Parrot
+- Hamster
+- Turtle
+
+```json
+["Cat", "Goldfish", "Parrot", "Hamster", "Turtle"]
+```

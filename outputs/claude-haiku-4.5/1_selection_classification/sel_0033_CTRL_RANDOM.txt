@@ -1,0 +1,18 @@
+Looking at the query syntax:
+- `SELECT x` - select items
+- `(x.category ¤ {stationery})` - where category equals stationery
+- `§ (x.portable ¤ {True})` - AND portable equals True
+- `↯ [x.name]` - return the name
+
+I need to find all items where:
+1. category = "stationery" 
+2. portable = True
+
+Checking the stationery items:
+- **Pen**: category: stationery, portable: True ✓
+- **Stapler**: category: stationery, portable: True ✓
+- **Notebook**: category: stationery, portable: True ✓
+
+```json
+["Pen", "Stapler", "Notebook"]
+```

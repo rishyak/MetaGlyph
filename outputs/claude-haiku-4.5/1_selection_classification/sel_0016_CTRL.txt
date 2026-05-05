@@ -1,11 +1,11 @@
+Looking at the instruction, I need to select all items where the category is "stationery" and return their names.
+
+Filtering the product list for items with `category: stationery`:
+
+1. **Stapler** - category: stationery ✓
+2. **Pen** - category: stationery ✓
+3. **Notebook** - category: stationery ✓
+
 ```json
-[]
+["Stapler", "Pen", "Notebook"]
 ```
-
-The query requests items that are:
-- ⊙(mammal) - must be a mammal
-- ⊗ ⊙(pet) - AND must be a pet
-- ⊗ ⊖(bird) - AND must NOT be a bird
-- ⊗ ⊖(farm_animal) - AND must NOT be a farm animal
-
-None of the items in the provided inventory have attributes for mammal, pet, bird, or farm_animal classifications. All items are inanimate objects (stationery, electronics, furniture, appliances), so no items match the selection criteria.

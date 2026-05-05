@@ -1,0 +1,8 @@
+### Step 1: Review the given dataset to identify animals that are commonly kept as pets.
+From the provided list, the animals that are commonly kept as pets are Goldfish, Cat, and Parrot.
+
+### Step 2: Format the output according to the specified format.
+The output should be a JSON array of strings representing the names of the pet animals.
+
+### Step 3: Write the final answer in the required format.
+The final answer is: $\boxed [{"Goldfish","Cat","Parrot"}]$

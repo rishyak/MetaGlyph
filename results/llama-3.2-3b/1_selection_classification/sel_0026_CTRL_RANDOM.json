@@ -1,0 +1,36 @@
+{
+  "prompt_id": "sel_0026_CTRL_RANDOM",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "### Step 1: Identify the animals that are commonly kept as pets.\nThe animals that are commonly kept as pets are Dog",
+    "Parrot",
+    "Turtle",
+    "and Goldfish.\n\n### Step 2: Filter the list to only include the animals that are mammals.\nThe mammals that are commonly kept as pets are Dog and Parrot.\n\n### Step 3: Filter the list to only include the animals that are of medium size.\nThe medium-sized mammals that are commonly kept as pets are Dog.\n\n### Step 4: Return the list of animals that meet all the conditions.\nThe list of animals that meet all the conditions is \"Dog\".\n\n### Step 5: Format the output as a JSON array of strings.\nThe output is \"Dog\".\n\nThe final answer is: $\\boxed\"Dog\"$"
+  ],
+  "gold_output": [
+    "elephant",
+    "lion",
+    "salmon",
+    "shark",
+    "snake",
+    "whale"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=6, extra=4"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "incomplete",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

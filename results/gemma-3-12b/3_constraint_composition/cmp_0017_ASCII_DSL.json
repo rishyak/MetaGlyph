@@ -1,0 +1,68 @@
+{
+  "prompt_id": "cmp_0017_ASCII_DSL",
+  "model": "gemma-3-12b",
+  "family": "3_constraint_composition",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": {
+    "selected_ids": [
+      "item_000",
+      "item_001",
+      "item_003",
+      "item_005",
+      "item_010",
+      "item_017",
+      "item_019"
+    ],
+    "count": 7
+  },
+  "gold_output": {
+    "selected_ids": [
+      "item_000",
+      "item_001",
+      "item_002",
+      "item_003",
+      "item_004",
+      "item_005",
+      "item_007",
+      "item_008",
+      "item_009",
+      "item_010",
+      "item_013",
+      "item_014",
+      "item_015",
+      "item_016",
+      "item_017",
+      "item_018",
+      "item_019"
+    ],
+    "count": 17
+  },
+  "exact_match": false,
+  "accuracy": 0.4117647058823529,
+  "f1_score": 0.5833333333333334,
+  "operator_fidelity": [
+    {
+      "operator": "∪",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    },
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    },
+    {
+      "operator": "¬",
+      "checked": true,
+      "passed": false,
+      "details": "Negation check"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.41",
+  "semantic_equivalence_pass": false
+}

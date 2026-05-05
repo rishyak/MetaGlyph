@@ -1,0 +1,22 @@
+{
+  "prompt_id": "ext_0004_NL_SHORT",
+  "model": "qwen3-4b",
+  "family": "2_structured_extraction",
+  "condition": "NL_SHORT",
+  "parse_success": false,
+  "parsed_output": null,
+  "gold_output": {
+    "invoice_num": "3664",
+    "total": 8280.8,
+    "date": "2024-06-12",
+    "due_date": "2024-04-22"
+  },
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0.0,
+  "operator_fidelity": [],
+  "overall_pass": false,
+  "error_type": "parse",
+  "error_details": "Could not extract key-value pairs",
+  "semantic_equivalence_pass": false
+}

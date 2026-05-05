@@ -1,0 +1,5 @@
+```json
+["Parrot", "Turtle"]
+```
+
+Explanation: The instruction `SELECT x | x.domestic ∈ {True} → [x.name]` means to select the names of animals that have a domestic attribute of `True`. From the given list, only Parrot and Turtle have a domestic status of `True`.

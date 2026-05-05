@@ -1,0 +1,60 @@
+{
+  "prompt_id": "sel_0035_CTRL",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this problem, we need to follow the given instruction and apply it to the provided input data.",
+    "This means we need to select the names of animals where either the size is 'medium' or the domestic status is 'False'.",
+    "Let's analyze the given data:",
+    "Salmon: type: fish, domestic: False, size: medium",
+    "Size is 'medium' and domestic is 'False', so it qualifies.",
+    "Crocodile: type: reptile, domestic: False, size: large",
+    "Domestic is 'False', so it qualifies.",
+    "Eagle: type: bird, domestic: False, size: medium",
+    "Size is 'medium' and domestic is 'False', so it qualifies.",
+    "Hamster: type: mammal, domestic: True, size: small",
+    "Neither condition is met, so it doesn't qualify.",
+    "Goldfish: type: fish, domestic: True, size: small",
+    "Neither condition is met, so it doesn't qualify.",
+    "Turtle: type: reptile, domestic: True, size: small",
+    "Neither condition is met, so it doesn't qualify.",
+    "Snake: type: reptile, domestic: False, size: medium",
+    "Size is 'medium' and domestic is 'False', so it qualifies.",
+    "Lion: type: mammal, domestic: False, size: large",
+    "Domestic is 'False', so it qualifies.",
+    "Parrot: type: bird, domestic: True, size: small",
+    "Neither condition is met, so it doesn't qualify.",
+    "Whale: type: mammal, domestic: False, size: large",
+    "Domestic is 'False', so it qualifies.",
+    "Now, let's list the animals that qualify based on the given conditions:",
+    "Salmon (size: medium, domestic: False)",
+    "Crocodile (domestic: False)",
+    "Eagle (size: medium, domestic: False)",
+    "Snake (size: medium, domestic: False)",
+    "Lion (domestic: False)",
+    "Whale (domestic: False)",
+    "To present the answer in the required JSON format, we need to create an array of these names."
+  ],
+  "gold_output": [
+    "eagle",
+    "salmon",
+    "snake"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "missing=3, extra=24"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

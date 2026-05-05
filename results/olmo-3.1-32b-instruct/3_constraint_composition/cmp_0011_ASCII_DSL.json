@@ -1,0 +1,43 @@
+{
+  "prompt_id": "cmp_0011_ASCII_DSL",
+  "model": "olmo-3.1-32b-instruct",
+  "family": "3_constraint_composition",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": {
+    "selected_ids": [
+      "item_003",
+      "item_015"
+    ],
+    "count": 2
+  },
+  "gold_output": {
+    "selected_ids": [
+      "item_003",
+      "item_015",
+      "item_019"
+    ],
+    "count": 3
+  },
+  "exact_match": false,
+  "accuracy": 0.6666666666666666,
+  "f1_score": 0.8,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    },
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.67",
+  "semantic_equivalence_pass": false
+}

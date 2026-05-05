@@ -1,0 +1,28 @@
+```json
+{
+  "selected_ids": [
+    "item_001",
+    "item_008",
+    "item_009",
+    "item_010"
+  ],
+  "count": 4
+}
+```
+
+**Explanation:**
+The query filters for items where:
+- Priority = "high" (¤ {high})
+- Status = "inactive" (※ {inactive})
+
+Items matching both conditions:
+- item_001: Priority high, Status pending ❌
+- item_008: Priority high, Status inactive ✓
+- item_009: Priority high, Status inactive ✓
+- item_010: Priority high, Status inactive ✓
+- item_011: Priority high, Status pending ❌
+- item_013: Priority high, Status pending ❌
+- item_014: Priority high, Status pending ❌
+- item_015: Priority high, Status pending ❌
+- item_018: Priority high, Status pending ❌
+- item_019: Priority high, Status pending ❌

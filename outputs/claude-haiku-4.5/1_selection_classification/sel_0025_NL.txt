@@ -1,5 +1,20 @@
-```json
-[]
-```
+I need to find all items where:
+1. category = 'appliances' AND
+2. portable = True
 
-The provided list contains only inanimate objects (stationery, furniture, electronics, and appliances). None of the items are mammals or animals of any kind, therefore no items satisfy the required conditions.
+Let me review each product:
+
+- Notebook: category: stationery, portable: True ❌ (not appliances)
+- Bookshelf: category: furniture, portable: False ❌ (not appliances)
+- Chair: category: furniture, portable: True ❌ (not appliances)
+- Pen: category: stationery, portable: True ❌ (not appliances)
+- Tablet: category: electronics, portable: True ❌ (not appliances)
+- Headphones: category: electronics, portable: True ❌ (not appliances)
+- Refrigerator: category: appliances, portable: False ❌ (not portable)
+- Desk: category: furniture, portable: False ❌ (not appliances)
+- Microwave: category: appliances, portable: True ✅ (appliances AND portable)
+- Smartphone: category: electronics, portable: True ❌ (not appliances)
+
+```json
+["Microwave"]
+```

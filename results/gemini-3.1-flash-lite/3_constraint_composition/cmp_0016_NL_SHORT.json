@@ -1,0 +1,50 @@
+{
+  "prompt_id": "cmp_0016_NL_SHORT",
+  "model": "gemini-3.1-flash-lite",
+  "family": "3_constraint_composition",
+  "condition": "NL_SHORT",
+  "parse_success": true,
+  "parsed_output": {
+    "selected_ids": [
+      "item_000",
+      "item_005",
+      "item_007",
+      "item_009",
+      "item_011",
+      "item_016"
+    ],
+    "count": 6
+  },
+  "gold_output": {
+    "selected_ids": [
+      "item_000",
+      "item_005",
+      "item_007",
+      "item_009",
+      "item_011",
+      "item_016"
+    ],
+    "count": 6
+  },
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    },
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    }
+  ],
+  "overall_pass": true,
+  "error_type": "none",
+  "error_details": null,
+  "semantic_equivalence_pass": false
+}

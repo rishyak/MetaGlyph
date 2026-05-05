@@ -4,7 +4,12 @@
   "family": "2_structured_extraction",
   "condition": "MG",
   "parse_success": true,
-  "parsed_output": [],
+  "parsed_output": {
+    "company": "TechCorp Inc.",
+    "date": "2024-03-26",
+    "recipient": "Alice",
+    "sender_name": "Carol Williams"
+  },
   "gold_output": {
     "company": "TechCorp Inc.",
     "date": "2024-03-26",
@@ -12,18 +17,18 @@
     "sender_name": "Carol Williams"
   },
   "exact_match": false,
-  "accuracy": 0.0,
-  "f1_score": 0.0,
+  "accuracy": 0.75,
+  "f1_score": 0.75,
   "operator_fidelity": [
     {
       "operator": "→",
       "checked": true,
       "passed": false,
-      "details": "Transformation check"
+      "details": "Wrong values: ['recipient']"
     }
   ],
   "overall_pass": false,
-  "error_type": "format",
-  "error_details": "Accuracy: 0.00",
+  "error_type": "logic",
+  "error_details": "Accuracy: 0.75",
   "semantic_equivalence_pass": false
 }

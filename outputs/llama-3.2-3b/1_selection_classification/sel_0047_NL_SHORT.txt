@@ -1,0 +1,19 @@
+### Step 1: Identify the conditions for selection
+To select the items, we need to find the items where "domestic" equals False and "type" equals "mammal".
+
+### Step 2: Review the dataset
+Reviewing the provided dataset, we can identify the following items that meet the conditions:
+- Elephant: type = mammal, domestic = False
+- Lion: type = mammal, domestic = False
+- Shark: type = fish, domestic = False
+
+### Step 3: Compile the list of selected items
+The list of selected items is:
+- Elephant
+- Lion
+- Shark
+
+### Step 4: Format the output
+The output should be in JSON format as an array of strings.
+
+The final answer is: $\boxed [{"Elephant","Lion","Shark"}]$

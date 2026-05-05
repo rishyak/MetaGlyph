@@ -1,0 +1,46 @@
+Let's apply the given transformations to each record step by step according to the logical order specified in the instruction:
+
+1. **Premium records**: If `x.type == "premium"` then `x.amount → x.amount × 1.1`.
+2. **EU region records**: If `x.region == "EU"` then `x.amount → x.amount × 1.2`. This transformation should be applied after the "premium" transformation.
+3. **Inactive records**: If `x.active == false` then `x.status → "archived"`. This is the last transformation to be applied.
+
+Given the records:
+
+- **rec_000**: `type: trial`, no transformation needed.
+- **rec_001**: `type: trial`, no transformation needed.
+- **rec_002**: `type: trial`, no transformation needed.
+- **rec_003**: `type: standard`, no transformation needed.
+- **rec_004**: `type: standard`, no transformation needed.
+- **rec_005**: `type: standard`, no transformation needed.
+- **rec_006**: `type: premium`, `region: US`, `amount: 720` → No EU-specific transformation needed. After applying the premium transformation: `amount = 720 * 1.1 = 792`. The record remains inactive (`active: False`).
+- **rec_007**: `type: standard`, `region: US`, no transformation needed.
+- **rec_008**: `type: premium`, `region: EU`, `amount: 393` → First, apply the premium transformation: `amount = 393 * 1.1 = 432.3`. Then, apply the EU-specific transformation: `amount = 432.3 * 1.2 = 518.76`. The record remains inactive (`active: False`).
+- **rec_009**: `type: standard`, no transformation needed.
+- **rec_010**: `type: trial`, no transformation needed.
+- **rec_011**: `type: standard`, no transformation needed.
+- **rec_012**: `type: trial`, no transformation needed.
+- **rec_013**: `type: trial`, no transformation needed.
+- **rec_014**: `type: trial`, `region: EU`, `amount: 480` → Apply the EU-specific transformation first: `amount = 480 * 1.2 = 576`. The record remains active (`active: False`).
+
+Now, let's compile the transformed records:
+
+```json
+[
+    {"type": "trial", "region": "APAC", "amount": 399, "active": false},
+    {"type": "trial", "region": "APAC", "amount": 918, "active": false},
+    {"type": "trial", "region": "US", "amount": 642, "active": true},
+    {"type": "standard", "region": "APAC", "amount": 710, "active": false},
+    {"type": "standard", "region": "APAC", "amount": 102, "active": false},
+    {"type": "standard", "region": "APAC", "amount": 730, "active": true},
+    {"type": "premium", "region": "US", "amount": 792, "active": false},
+    {"type": "standard", "region": "US", "amount": 342, "active": true},
+    {"type": "premium", "region": "EU", "amount": 518.76, "active": false},
+    {"type": "standard", "region": "US", "amount": 710, "active": false},
+    {"type": "trial", "region": "APAC", "amount": 399, "active": true},
+    {"type": "standard", "region": "US", "amount": 102, "active": false},
+    {"type": "trial", "region": "US", "amount": 642, "active": false},
+    {"type": "trial", "region": "EU", "amount": 576, "active": false}
+]
+```
+
+Note that the transformation logic is applied in the correct order according to the given instruction, and the "inactive" condition affects only the `status`, which was not present in the input records but would be added if there was any need for it.

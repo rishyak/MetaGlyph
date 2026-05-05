@@ -1,0 +1,19 @@
+Looking at the list, I need to identify all items whose type is NOT "fish".
+
+Items with type "fish":
+- Shark
+- Goldfish
+
+Items with type NOT "fish":
+- Cat (mammal)
+- Lion (mammal)
+- Penguin (bird)
+- Crocodile (reptile)
+- Dog (mammal)
+- Whale (mammal)
+- Parrot (bird)
+- Turtle (reptile)
+
+```json
+["Cat", "Lion", "Penguin", "Crocodile", "Dog", "Whale", "Parrot", "Turtle"]
+```

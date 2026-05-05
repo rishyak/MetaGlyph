@@ -1,0 +1,35 @@
+### Step 1: Review the list of animals and their attributes
+The list of animals provided includes various species with their respective attributes such as type, domestic status, and size.
+
+### Step 2: Identify animals with size attribute 'small'
+The animals with the size attribute 'small' are:
+- Cat: size = small
+- Turtle: size = small
+- Goldfish: size = small
+
+### Step 3: Exclude animals with size attribute 'small'
+To get the list of animals with size attribute NOT 'small', we need to exclude the ones identified in step 2.
+
+### Step 4: Create the output JSON array
+The remaining animals with size attribute NOT 'small' are:
+- Penguin: size = medium
+- Salmon: size = medium
+- Elephant: size = large
+- Snake: size = medium
+- Eagle: size = medium
+- Whale: size = large
+- Shark: size = large
+
+### Step 5: Format the output as a JSON array
+The final output in JSON format is:
+```
+[
+  "Penguin",
+  "Salmon",
+  "Elephant",
+  "Snake",
+  "Eagle",
+  "Whale",
+  "Shark"
+]
+```

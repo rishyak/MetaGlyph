@@ -1,0 +1,5 @@
+```json
+["Parrot"]
+```
+
+Explanation: The query is looking for animals that are birds (`x.type ∈ {bird}`) and not domesticated (`x.domestic ∈ {False}`). From the given list, only the Parrot meets these criteria.

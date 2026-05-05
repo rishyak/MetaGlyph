@@ -1,0 +1,47 @@
+{
+  "prompt_id": "sel_0044_CTRL",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": [
+    "x.type ∈ {fish} means the animal is a fish.",
+    "x.domestic ∈ {False} means the animal is not domestic.",
+    "We will go through each animal in the given list and apply the condition.",
+    "Hamster: type = mammal, domestic = True. Does not satisfy either condition.",
+    "Snake: type = reptile, domestic = False. Satisfies the second condition.",
+    "Turtle: type = reptile, domestic = True. Does not satisfy either condition.",
+    "Parrot: type = bird, domestic = True. Does not satisfy either condition.",
+    "Crocodile: type = reptile, domestic = False. Satisfies the second condition.",
+    "Elephant: type = mammal, domestic = False. Satisfies the second condition.",
+    "Lion: type = mammal, domestic = False. Satisfies the second condition.",
+    "Goldfish: type = fish, domestic = True. Satisfies the first condition.",
+    "Salmon: type = fish, domestic = False. Satisfies both conditions.",
+    "Whale: type = mammal, domestic = False. Satisfies the second condition.",
+    "Snake: Satisfies because domestic = False.",
+    "Crocodile: Satisfies because domestic = False.",
+    "Elephant: Satisfies because domestic = False.",
+    "Lion: Satisfies because domestic = False.",
+    "Goldfish: Satisfies because type = fish.",
+    "Salmon: Satisfies because type = fish and domestic = False.",
+    "Whale: Satisfies because domestic = False."
+  ],
+  "gold_output": [
+    "salmon"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "missing=1, extra=20"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

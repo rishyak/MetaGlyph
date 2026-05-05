@@ -1,0 +1,29 @@
+To solve this task, we need to follow the given instruction: `SELECT x | x.type ∈ {mammal} → [x.name]`. This means we have to select the names of animals from the given list where the type is 'mammal'.
+
+First, let's review the given list of animals and their attributes:
+
+1. Crocodile: type: reptile, domestic: False, size: large
+2. Snake: type: reptile, domestic: False, size: medium
+3. Eagle: type: bird, domestic: False, size: medium
+4. Turtle: type: reptile, domestic: True, size: small
+5. Parrot: type: bird, domestic: True, size: small
+6. Cat: type: mammal, domestic: True, size: small
+7. Shark: type: fish, domestic: False, size: large
+8. Hamster: type: mammal, domestic: True, size: small
+9. Salmon: type: fish, domestic: False, size: medium
+10. Penguin: type: bird, domestic: False, size: medium
+
+Now, we will filter the list to include only those animals where `type` equals 'mammal'. From the given list, we can see that:
+
+- Cat is a mammal.
+- Hamster is a mammal.
+
+These are the only two animals classified as 'mammal'. Now, we need to extract their names.
+
+The names of these mammals are:
+1. Cat
+2. Hamster
+
+According to the output format required, we need to return the answer as a JSON array of strings.
+
+Therefore, the output will be: `["Cat", "Hamster"]`.

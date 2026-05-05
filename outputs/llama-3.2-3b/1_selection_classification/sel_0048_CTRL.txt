@@ -1,0 +1,30 @@
+### Solution
+```json
+[
+  "Smartphone",
+  "Laptop",
+  "Notebook",
+  "Tablet",
+  "Pen",
+  "Stapler"
+]
+```
+
+### Explanation
+To solve this problem, we need to select all items that are portable and not equal to False. We can do this by filtering the list of items based on the `portable` attribute.
+
+Here's the step-by-step solution:
+
+1. Filter the list to include only items where `portable` is True.
+2. Exclude items where `portable` is False.
+
+The resulting list of items that meet the condition is:
+
+* Smartphone
+* Laptop
+* Notebook
+* Tablet
+* Pen
+* Stapler
+
+These items are all portable and not equal to False, so they are included in the output list.

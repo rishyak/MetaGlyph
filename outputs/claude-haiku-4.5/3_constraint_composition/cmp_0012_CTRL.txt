@@ -1,12 +1,30 @@
 ```json
 {
   "selected_ids": [
-    "item_001",
+    "item_000",
+    "item_004",
+    "item_005",
+    "item_006",
+    "item_008",
     "item_009",
     "item_010",
+    "item_011",
     "item_012",
-    "item_013"
+    "item_013",
+    "item_015",
+    "item_016",
+    "item_017",
+    "item_018"
   ],
-  "count": 5
+  "count": 14
 }
 ```
+
+**Explanation:**
+The query selects items where:
+- Category is in {A, B} **OR** Status is "active"
+
+**Selected items:**
+- **Category A**: item_000, item_008, item_009, item_011, item_015, item_017, item_018
+- **Category B**: item_004, item_005, item_006, item_010, item_012, item_013
+- **Status active** (not in A or B): item_016 (Category C, but status is active)

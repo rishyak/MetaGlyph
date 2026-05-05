@@ -1,0 +1,19 @@
+The given instruction is to select the names of animals that are domestic. The input data contains a list of animals with their attributes. To solve this problem, we need to filter the animals based on their domestic status and then extract their names.
+
+Here's the step-by-step process:
+
+1. Review the input data and identify the animals with `domestic` status as `True`.
+2. Extract the names of these animals.
+
+From the input data, we can see that the following animals have `domestic` status as `True`:
+- Parrot
+- Turtle
+- Cat
+
+Now, let's extract their names and format the output as a JSON array of strings.
+
+To achieve this, we can directly provide the output in the required format.
+
+```json
+["Parrot", "Turtle", "Cat"]
+```

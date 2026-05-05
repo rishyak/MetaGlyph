@@ -1,0 +1,37 @@
+{
+  "prompt_id": "sel_0007_CTRL_RANDOM",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "Let's examine each item:",
+    "Desk: category: furniture, portable: False. Condition: (furniture is not 'electronics') OR (False) = True OR False = True.",
+    "Notebook: category: stationery, portable: True. Condition: (stationery is not 'electronics') OR (True) = True OR True = True.",
+    "Stapler: category: stationery, portable: True. Condition: True OR True = True.",
+    "Chair: category: furniture, portable: True. Condition: True OR True = True.",
+    "Tablet: category: electronics, portable: True. Condition: (electronics is not 'electronics') OR (True) = False OR True = True.",
+    "Pen: category: stationery, portable: True. Condition: True OR True = True.",
+    "Microwave: category: appliances, portable: True. Condition: True OR True = True.",
+    "Headphones: category: electronics, portable: True. Condition: False OR True = True.",
+    "Refrigerator: category: appliances, portable: False. Condition: True OR False = True.",
+    "Smartphone: category: electronics, portable: True. Condition: False OR True = True.",
+    "Upon evaluation, we see that all items satisfy the given condition because either they are not in the 'electronics' category or they are portable, or both."
+  ],
+  "gold_output": [],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "extra=12"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

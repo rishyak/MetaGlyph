@@ -1,0 +1,34 @@
+{
+  "prompt_id": "ext_0000_CTRL",
+  "model": "llama-3.2-3b",
+  "family": "2_structured_extraction",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": {
+    "sender_title": "Manager",
+    "company": "Digital Systems",
+    "recipient": "bob.johnson@example.com",
+    "sender": "alice.smith@innovationlabs.com"
+  },
+  "gold_output": {
+    "sender": "alice.smith@innovationlabs.com",
+    "company": "Digital Systems",
+    "sender_title": "Manager",
+    "recipient": "bob.johnson@example.com"
+  },
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
+  "operator_fidelity": [
+    {
+      "operator": "→",
+      "checked": true,
+      "passed": true,
+      "details": "Transformation values exactly match gold"
+    }
+  ],
+  "overall_pass": true,
+  "error_type": "none",
+  "error_details": null,
+  "semantic_equivalence_pass": false
+}

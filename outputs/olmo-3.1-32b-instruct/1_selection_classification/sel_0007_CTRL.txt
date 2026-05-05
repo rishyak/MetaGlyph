@@ -1,0 +1,11 @@
+[
+  "Desk",
+  "Notebook",
+  "Stapler",
+  "Chair",
+  "Tablet",
+  "Pen",
+  "Microwave",
+  "Headphones",
+  "Refrigerator"
+]

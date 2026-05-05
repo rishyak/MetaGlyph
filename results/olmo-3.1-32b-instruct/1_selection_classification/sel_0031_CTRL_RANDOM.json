@@ -1,0 +1,34 @@
+{
+  "prompt_id": "sel_0031_CTRL_RANDOM",
+  "model": "olmo-3.1-32b-instruct",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "Notebook",
+    "Pen",
+    "Refrigerator",
+    "Bookshelf",
+    "Desk",
+    "Chair"
+  ],
+  "gold_output": [
+    "bookshelf",
+    "desk"
+  ],
+  "exact_match": false,
+  "accuracy": 0.3333333333333333,
+  "f1_score": 0.5,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "missing=2, extra=6"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.33",
+  "semantic_equivalence_pass": false
+}

@@ -1,0 +1,16 @@
+The instruction is to select the names of animals that are of type "fish" and are not domestic.
+
+First, let's identify the animals that are of type "fish":
+- Goldfish: type: fish, domestic: True
+- Salmon: type: fish, domestic: False
+
+Next, let's filter out the ones that are not domestic:
+- Salmon: type: fish, domestic: False
+
+So, the animal that satisfies both conditions is "Salmon".
+
+The output should be a JSON array of strings. 
+
+```json
+["Salmon"]
+```

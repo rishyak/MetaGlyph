@@ -1,0 +1,12 @@
+Based on the provided instruction and input data, we need to select items where the size is "small". From the list of animals given, the ones that fit this criteria are:
+
+- Turtle
+- Cat
+- Hamster
+- Goldfish
+
+So, the output in the requested JSON format would be:
+
+```json
+["Turtle", "Cat", "Hamster", "Goldfish"]
+```

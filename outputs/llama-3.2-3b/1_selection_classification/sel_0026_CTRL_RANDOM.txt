@@ -1,0 +1,16 @@
+### Step 1: Identify the animals that are commonly kept as pets.
+The animals that are commonly kept as pets are Dog, Parrot, Turtle, and Goldfish.
+
+### Step 2: Filter the list to only include the animals that are mammals.
+The mammals that are commonly kept as pets are Dog and Parrot.
+
+### Step 3: Filter the list to only include the animals that are of medium size.
+The medium-sized mammals that are commonly kept as pets are Dog.
+
+### Step 4: Return the list of animals that meet all the conditions.
+The list of animals that meet all the conditions is ["Dog"].
+
+### Step 5: Format the output as a JSON array of strings.
+The output is ["Dog"].
+
+The final answer is: $\boxed{["Dog"]}$

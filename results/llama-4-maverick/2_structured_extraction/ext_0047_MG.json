@@ -1,0 +1,34 @@
+{
+  "prompt_id": "ext_0047_MG",
+  "model": "llama-4-maverick",
+  "family": "2_structured_extraction",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": {
+    "due_date": "2024-08-19",
+    "date": "2024-08-08",
+    "customer_name": "David Brown",
+    "invoice_num": "#5569"
+  },
+  "gold_output": {
+    "due_date": "2024-08-19",
+    "date": "2024-08-08",
+    "customer_name": "David Brown",
+    "invoice_num": "5569"
+  },
+  "exact_match": false,
+  "accuracy": 0.75,
+  "f1_score": 0.75,
+  "operator_fidelity": [
+    {
+      "operator": "→",
+      "checked": true,
+      "passed": false,
+      "details": "Wrong values: ['invoice_num']"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "logic",
+  "error_details": "Accuracy: 0.75",
+  "semantic_equivalence_pass": false
+}

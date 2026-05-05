@@ -1,0 +1,16 @@
+### Step 1: Filter the dataset to include only animals that are not birds
+We will create a new dataset that includes only the animals that are not birds.
+
+### Step 2: Filter the dataset to include only animals that are not domestic
+We will create a new dataset that includes only the animals that are not domestic.
+
+### Step 3: Filter the dataset to include only animals that are large in size
+We will create a new dataset that includes only the animals that are large in size.
+
+### Step 4: Combine the filtered datasets
+We will combine the three filtered datasets to get the final list of animals that meet all the criteria.
+
+### Step 5: Format the output as a JSON array
+We will format the output as a JSON array of strings.
+
+The final answer is: $\boxed[]$

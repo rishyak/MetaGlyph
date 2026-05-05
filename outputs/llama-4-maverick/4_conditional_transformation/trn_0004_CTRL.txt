@@ -1,0 +1,130 @@
+## Step 1: Understand the given transformation rule
+The transformation rule is given as ∀x: TRANSFORM x | (x.type != "premium" ⇒ x.amount → x.amount × 1.1) ∘ (x.region != "EU" ⇒ x.amount → x.amount × 1.2) ∘ (x.active != false ⇒ x.status → "archived") → [x]. This means we need to apply three conditional transformations to each record x: (1) if x is not "premium", multiply its amount by 1.1, (2) if x is not from "EU", multiply its amount by 1.2, and (3) if x is not false (i.e., true) for being active, set its status to "archived".
+
+## Step 2: Break down the transformation into individual steps
+1. If the record type is not "premium", then multiply the amount by 1.1.
+2. If the record region is not "EU", then multiply the amount by 1.2.
+3. If the record is active (i.e., active is not false, meaning it's true), then set the status to "archived".
+
+## Step 3: Apply the transformation to each given record
+Let's apply these steps to each record.
+
+### Record rec_000
+- type: standard, region: APAC, amount: 253, active: False
+1. Not "premium", so amount = 253 * 1.1 = 278.3
+2. Not "EU", so amount = 278.3 * 1.2 = 333.96
+3. Not active (False), so no change to status.
+Result: {type: "standard", region: "APAC", amount: 333.96, active: False}
+
+### Record rec_001
+- type: trial, region: EU, amount: 229, active: True
+1. Not "premium", so amount = 229 * 1.1 = 251.9
+2. "EU", so no change to amount.
+3. Active (True), so status = "archived".
+Result: {type: "trial", region: "EU", amount: 251.9, active: True, status: "archived"}
+
+### Record rec_002
+- type: trial, region: APAC, amount: 600, active: False
+1. Not "premium", so amount = 600 * 1.1 = 660
+2. Not "EU", so amount = 660 * 1.2 = 792
+3. Not active (False), so no change to status.
+Result: {type: "trial", region: "APAC", amount: 792, active: False}
+
+### Record rec_003
+- type: standard, region: EU, amount: 836, active: False
+1. Not "premium", so amount = 836 * 1.1 = 919.6
+2. "EU", so no change to amount.
+3. Not active (False), so no change to status.
+Result: {type: "standard", region: "EU", amount: 919.6, active: False}
+
+### Record rec_004
+- type: standard, region: US, amount: 109, active: False
+1. Not "premium", so amount = 109 * 1.1 = 119.9
+2. Not "EU", so amount = 119.9 * 1.2 = 143.88
+3. Not active (False), so no change to status.
+Result: {type: "standard", region: "US", amount: 143.88, active: False}
+
+### Record rec_005
+- type: premium, region: EU, amount: 430, active: False
+1. "premium", so no change to amount.
+2. "EU", so no change to amount.
+3. Not active (False), so no change to status.
+Result: {type: "premium", region: "EU", amount: 430, active: False}
+
+### Record rec_006
+- type: trial, region: US, amount: 699, active: True
+1. Not "premium", so amount = 699 * 1.1 = 768.9
+2. Not "EU", so amount = 768.9 * 1.2 = 922.68
+3. Active (True), so status = "archived".
+Result: {type: "trial", region: "US", amount: 922.68, active: True, status: "archived"}
+
+### Record rec_007
+- type: standard, region: EU, amount: 755, active: False
+1. Not "premium", so amount = 755 * 1.1 = 830.5
+2. "EU", so no change to amount.
+3. Not active (False), so no change to status.
+Result: {type: "standard", region: "EU", amount: 830.5, active: False}
+
+### Record rec_008
+- type: standard, region: US, amount: 206, active: True
+1. Not "premium", so amount = 206 * 1.1 = 226.6
+2. Not "EU", so amount = 226.6 * 1.2 = 271.92
+3. Active (True), so status = "archived".
+Result: {type: "standard", region: "US", amount: 271.92, active: True, status: "archived"}
+
+### Record rec_009
+- type: trial, region: EU, amount: 153, active: False
+1. Not "premium", so amount = 153 * 1.1 = 168.3
+2. "EU", so no change to amount.
+3. Not active (False), so no change to status.
+Result: {type: "trial", region: "EU", amount: 168.3, active: False}
+
+### Record rec_010
+- type: standard, region: EU, amount: 483, active: True
+1. Not "premium", so amount = 483 * 1.1 = 531.3
+2. "EU", so no change to amount.
+3. Active (True), so status = "archived".
+Result: {type: "standard", region: "EU", amount: 531.3, active: True, status: "archived"}
+
+### Record rec_011
+- type: standard, region: EU, amount: 837, active: True
+1. Not "premium", so amount = 837 * 1.1 = 920.7
+2. "EU", so no change to amount.
+3. Active (True), so status = "archived".
+Result: {type: "standard", region: "EU", amount: 920.7, active: True, status: "archived"}
+
+### Record rec_012
+- type: standard, region: APAC, amount: 563, active: True
+1. Not "premium", so amount = 563 * 1.1 = 619.3
+2. Not "EU", so amount = 619.3 * 1.2 = 743.16
+3. Active (True), so status = "archived".
+Result: {type: "standard", region: "APAC", amount: 743.16, active: True, status: "archived"}
+
+### Record rec_013
+- type: standard, region: US, amount: 180, active: False
+1. Not "premium", so amount = 180 * 1.1 = 198
+2. Not "EU", so amount = 198 * 1.2 = 237.6
+3. Not active (False), so no change to status.
+Result: {type: "standard", region: "US", amount: 237.6, active: False}
+
+### Record rec_014
+- type: premium, region: EU, amount: 228, active: False
+1. "premium", so no change to amount.
+2. "EU", so no change to amount.
+3. Not active (False), so no change to status.
+Result: {type: "premium", region: "EU", amount: 228, active: False}
+
+## Step 4: Compile the results into a JSON array
+Now, we compile the transformed records into a JSON array.
+
+```json
+[
+  {"type": "standard", "region": "APAC", "amount": 333.96, "active": false},
+  {"type": "trial", "region": "EU", "amount": 251.9, "active": true, "status": "archived"},
+  {"type": "trial", "region": "APAC", "amount": 792, "active": false},
+  {"type": "standard", "region": "EU", "amount": 919.6, "active": false},
+  {"type": "standard", "region": "US", "amount": 143.88, "active": false},
+  {"type": "premium", "region": "EU", "amount": 430, "active": false},
+  {"type": "trial", "region": "US", "amount": 922.68, "active": true, "status": "archived"},
+  {"type": "standard", "region": "EU", "amount": 830.5, "active": false},
+  {"type": "standard", "region": "US", "amount": 271.92, "active": true, "status":

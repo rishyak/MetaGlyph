@@ -1,0 +1,36 @@
+{
+  "prompt_id": "sel_0017_CTRL",
+  "model": "gemma-3-12b",
+  "family": "1_selection_classification",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": [
+    "Shark",
+    "Goldfish"
+  ],
+  "gold_output": [
+    "cat",
+    "crocodile",
+    "dog",
+    "lion",
+    "parrot",
+    "penguin",
+    "turtle",
+    "whale"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=8, extra=2"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "incomplete",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

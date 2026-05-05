@@ -1,0 +1,82 @@
+To solve this problem, we need to filter the given dataset based on the condition `x.priority IN {high} OR x.status NOT IN {inactive}` and then return the IDs of the filtered items along with the count of the filtered items.
+
+First, let's filter the dataset based on the given condition.
+
+1. `x.priority IN {high}` means the priority should be 'high'.
+2. `x.status NOT IN {inactive}` means the status should not be 'inactive'.
+
+Let's examine the dataset:
+
+1. ID: item_000 - Priority: medium, Status: inactive (Does not satisfy either condition)
+2. ID: item_001 - Priority: high, Status: pending (Satisfies the first condition)
+3. ID: item_002 - Priority: low, Status: active (Satisfies the second condition)
+4. ID: item_003 - Priority: high, Status: active (Satisfies the first condition)
+5. ID: item_004 - Priority: high, Status: active (Satisfies the first condition)
+6. ID: item_005 - Priority: high, Status: active (Satisfies the first condition)
+7. ID: item_006 - Priority: low, Status: pending (Satisfies the second condition)
+8. ID: item_007 - Priority: low, Status: active (Satisfies the second condition)
+9. ID: item_008 - Priority: high, Status: active (Satisfies the first condition)
+10. ID: item_009 - Priority: high, Status: active (Satisfies the first condition)
+11. ID: item_010 - Priority: low, Status: pending (Satisfies the second condition)
+12. ID: item_011 - Priority: high, Status: inactive (Satisfies the first condition)
+13. ID: item_012 - Priority: medium, Status: pending (Satisfies the second condition)
+14. ID: item_013 - Priority: high, Status: pending (Satisfies the first condition)
+15. ID: item_014 - Priority: medium, Status: inactive (Does not satisfy either condition)
+16. ID: item_015 - Priority: medium, Status: pending (Satisfies the second condition)
+17. ID: item_016 - Priority: low, Status: active (Satisfies the second condition)
+18. ID: item_017 - Priority: low, Status: pending (Satisfies the second condition)
+19. ID: item_018 - Priority: high, Status: active (Satisfies the first condition)
+20. ID: item_019 - Priority: low, Status: inactive (Does not satisfy either condition)
+
+Items that satisfy the condition:
+- item_001
+- item_002
+- item_003
+- item_004
+- item_005
+- item_006
+- item_007
+- item_008
+- item_009
+- item_010
+- item_011
+- item_012
+- item_013
+- item_015
+- item_016
+- item_017
+- item_018
+
+Now, let's count the IDs of the items that satisfy the condition and calculate the total count.
+
+Selected IDs: 
+[item_001, item_002, item_003, item_004, item_005, item_006, item_007, item_008, item_009, item_010, item_011, item_012, item_013, item_015, item_016, item_017, item_018]
+
+Count: 17
+
+The output in JSON format will be:
+
+```json
+{
+  "selected_ids": [
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_004",
+    "item_005",
+    "item_006",
+    "item_007",
+    "item_008",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_012",
+    "item_013",
+    "item_015",
+    "item_016",
+    "item_017",
+    "item_018"
+  ],
+  "count": 17
+}
+```

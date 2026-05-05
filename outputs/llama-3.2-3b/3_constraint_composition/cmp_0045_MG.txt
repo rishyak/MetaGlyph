@@ -1,0 +1,15 @@
+SELECT 
+  x.id, 
+  x.value >= 50, 
+  x.category ∈ {A} 
+FROM 
+  (SELECT 
+     id, 
+     value, 
+     category 
+   FROM 
+     items 
+   WHERE 
+     status = 'active' 
+   AND 
+     category = 'A') x

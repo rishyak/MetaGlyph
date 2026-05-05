@@ -1,0 +1,8 @@
+### Step 1: Identify the fish in the list
+The fish in the list are Shark and Salmon.
+
+### Step 2: Format the output as a JSON array
+The output should be in the format of a JSON array, with each item enclosed in double quotes.
+
+### Step 3: Write the final answer
+The final answer is: [{"name": "Shark"}, {"name": "Salmon"}]

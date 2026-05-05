@@ -1,0 +1,37 @@
+To solve this task, we need to follow the given instruction: `SELECT x | x.type NOT IN {bird} -> [x.name]`. This means we have to select the names of animals where the type is not 'bird'.
+
+First, let's analyze the given data:
+
+1. Parrot: type: bird
+2. Salmon: type: fish
+3. Cat: type: mammal
+4. Eagle: type: bird
+5. Crocodile: type: reptile
+6. Hamster: type: mammal
+7. Shark: type: fish
+8. Lion: type: mammal
+9. Snake: type: reptile
+10. Elephant: type: mammal
+
+The instruction tells us to exclude animals of type 'bird'. So, we will exclude Parrot and Eagle because they are birds.
+
+Now, let's list the names of the remaining animals:
+
+1. Salmon
+2. Cat
+3. Crocodile
+4. Hamster
+5. Shark
+6. Lion
+7. Snake
+8. Elephant
+
+To present the answer in the required JSON format, we need to put these names into a JSON array of strings.
+
+The output will be: `["Salmon", "Cat", "Crocodile", "Hamster", "Shark", "Lion", "Snake", "Elephant"]`.
+
+Here is the response in the required format:
+
+```json
+["Salmon", "Cat", "Crocodile", "Hamster", "Shark", "Lion", "Snake", "Elephant"]
+```

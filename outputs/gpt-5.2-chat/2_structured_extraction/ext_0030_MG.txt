@@ -1,1 +1,6 @@
-[]
+{
+  "date": "2024-12-14",
+  "sender": "david.brown@globalsolutions.com",
+  "subject": "Q4 Report",
+  "sender_name": "David Brown"
+}

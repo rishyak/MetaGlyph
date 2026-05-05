@@ -1,0 +1,59 @@
+To solve this problem, we will apply the given transformation rules to each record in the dataset.
+
+### Step 1: Define the Input Records
+First, let's define the input records as a JSON array for easier processing:
+
+```json
+[
+  {"id": "rec_000", "type": "premium", "region": "EU", "amount": 850, "active": true},
+  {"id": "rec_001", "type": "standard", "region": "US", "amount": 685, "active": true},
+  {"id": "rec_002", "type": "premium", "region": "EU", "amount": 295, "active": true},
+  {"id": "rec_003", "type": "premium", "region": "EU", "amount": 666, "active": false},
+  {"id": "rec_004", "type": "trial", "region": "APAC", "amount": 349, "active": true},
+  {"id": "rec_005", "type": "standard", "region": "EU", "amount": 192, "active": false},
+  {"id": "rec_006", "type": "standard", "region": "US", "amount": 620, "active": false},
+  {"id": "rec_007", "type": "premium", "region": "APAC", "amount": 815, "active": false},
+  {"id": "rec_008", "type": "premium", "region": "APAC", "amount": 533, "active": true},
+  {"id": "rec_009", "type": "premium", "region": "APAC", "amount": 204, "active": false},
+  {"id": "rec_010", "type": "standard", "region": "APAC", "amount": 456, "active": true},
+  {"id": "rec_011", "type": "trial", "region": "APAC", "amount": 713, "active": true},
+  {"id": "rec_012", "type": "premium", "region": "EU", "amount": 81, "active": false},
+  {"id": "rec_013", "type": "trial", "region": "EU", "amount": 689, "active": true},
+  {"id": "rec_014", "type": "trial", "region": "EU", "amount": 529, "active": false}
+]
+```
+
+### Step 2: Apply Transformation Rules
+Now, let's apply the transformation rules to each record.
+
+1. **Rule 1:** If `type` == "premium", then multiply `amount` by 1.1.
+2. **Rule 2:** If `region` == "EU", then multiply `amount` by 1.2.
+3. **Rule 3:** If `active` == false, then set `status` to 'archived'.
+
+Let's process each record:
+
+- **rec_000:** `type` == "premium" (Rule 1: `amount` = 850 * 1.1 = 935), `region` == "EU" (Rule 2: `amount` = 935 * 1.2 = 1122). `active` == true, so no Rule 3 applied. Result: `{"id": "rec_000", "type": "premium", "region": "EU", "amount": 1122, "active": true}`
+- **rec_001:** No rules apply. Result: `{"id": "rec_001", "type": "standard", "region": "US", "amount": 685, "active": true}`
+- **rec_002:** `type` == "premium" (Rule 1: `amount` = 295 * 1.1 = 324.5), `region` == "EU" (Rule 2: `amount` = 324.5 * 1.2 = 389.4). `active` == true. Result: `{"id": "rec_002", "type": "premium", "region": "EU", "amount": 389.4, "active": true}`
+- **rec_003:** `type` == "premium" (Rule 1: `amount` = 666 * 1.1 = 732.6), `region` == "EU" (Rule 2: `amount` = 732.6 * 1.2 = 879.12), `active` == false (Rule 3: `status` = 'archived'). Result: `{"id": "rec_003", "type": "premium", "region": "EU", "amount": 879.12, "active": false, "status": "archived"}`
+- **rec_004:** No rules apply. Result: `{"id": "rec_004", "type": "trial", "region": "APAC", "amount": 349, "active": true}`
+- **rec_005:** `region` == "EU" (Rule 2: `amount` = 192 * 1.2 = 230.4), `active` == false (Rule 3: `status` = 'archived'). Result: `{"id": "rec_005", "type": "standard", "region": "EU", "amount": 230.4, "active": false, "status": "archived"}`
+- **rec_006:** `active` == false (Rule 3: `status` = 'archived'). Result: `{"id": "rec_006", "type": "standard", "region": "US", "amount": 620, "active": false, "status": "archived"}`
+- **rec_007:** `type` == "premium" (Rule 1: `amount` = 815 * 1.1 = 896.5), `active` == false (Rule 3: `status` = 'archived'). Result: `{"id": "rec_007", "type": "premium", "region": "APAC", "amount": 896.5, "active": false, "status": "archived"}`
+- **rec_008:** `type` == "premium" (Rule 1: `amount` = 533 * 1.1 = 586.3). Result: `{"id": "rec_008", "type": "premium", "region": "APAC", "amount": 586.3, "active": true}`
+- **rec_009:** `type` == "premium" (Rule 1: `amount` = 204 * 1.1 = 224.4), `active` == false (Rule 3: `status` = 'archived'). Result: `{"id": "rec_009", "type": "premium", "region": "APAC", "amount": 224.4, "active": false, "status": "archived"}`
+- **rec_010:** No rules apply. Result: `{"id": "rec_010", "type": "standard", "region": "APAC", "amount": 456, "active": true}`
+- **rec_011:** No rules apply. Result: `{"id": "rec_011", "type": "trial", "region": "APAC", "amount": 713, "active": true}`
+- **rec_012:** `type` == "premium" (Rule 1: `amount` = 81 * 1.1 = 89.1), `region` == "EU" (Rule 2: `amount` = 89.1 * 1.2 = 106.92), `active` == false (Rule 3: `status` = 'archived'). Result: `{"id": "rec_012", "type": "premium", "region": "EU", "amount": 106.92, "active": false, "status": "archived"}`
+- **rec_013:** `region` == "EU" (Rule 2: `amount` = 689 * 1.2 = 826.8). Result: `{"id": "rec_013", "type": "trial", "region": "EU", "amount": 826.8, "active": true}`
+- **rec_014:** `region` == "EU" (Rule 2: `amount` = 529 * 1.2 = 634.8), `active` == false (Rule 3: `status` = 'archived'). Result: `{"id": "rec_014", "type": "trial", "region": "EU", "amount": 634.8, "active": false, "status": "archived"}`
+
+### Step 3: Compile the Results into a JSON Array
+
+```json
+[
+  {"id": "rec_000", "type": "premium", "region": "EU", "amount": 1122, "active": true},
+  {"id": "rec_001", "type": "standard", "region": "US", "amount": 685, "active": true},
+  {"id": "rec_002", "type": "premium", "region": "EU", "amount": 389.4, "active": true},
+  {"id": "rec_003", "type": "premium", "region": "EU", "amount": 879.12, "active": false, "status": "archived"},
+  {"

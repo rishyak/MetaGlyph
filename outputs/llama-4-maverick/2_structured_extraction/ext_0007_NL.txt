@@ -1,0 +1,30 @@
+To solve this task, we need to carefully examine the provided invoice document and extract the required fields: 'date', 'payment_terms', 'customer_name', and 'due_date'. 
+
+1. **Extracting 'date'**: The invoice document contains the line "Date: 2024-04-05". This directly corresponds to the 'date' field. Thus, the value for 'date' is "2024-04-05".
+
+2. **Extracting 'payment_terms'**: The document includes the line "Payment Terms: Net 30". This matches the 'payment_terms' field. Therefore, the value for 'payment_terms' is "Net 30".
+
+3. **Extracting 'customer_name'**: Under the "Bill To:" section, the name "Alice Smith" is listed. This is the customer's name. Hence, the value for 'customer_name' is "Alice Smith".
+
+4. **Extracting 'due_date'**: The document states "Due Date: 2024-09-16". This directly corresponds to the 'due_date' field. So, the value for 'due_date' is "2024-09-16".
+
+Now, we compile these extracted values into a JSON object with the specified field names as keys.
+
+```json
+{
+  "date": "2024-04-05",
+  "payment_terms": "Net 30",
+  "customer_name": "Alice Smith",
+  "due_date": "2024-09-16"
+}
+```
+
+The final answer is: 
+```json
+{
+  "date": "2024-04-05",
+  "payment_terms": "Net 30",
+  "customer_name": "Alice Smith",
+  "due_date": "2024-09-16"
+}
+```

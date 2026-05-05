@@ -1,0 +1,34 @@
+{
+  "prompt_id": "ext_0015_CTRL_RANDOM",
+  "model": "llama-4-maverick",
+  "family": "2_structured_extraction",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": {
+    "date": "2024-04-07",
+    "recipient": "carol.williams@example.com",
+    "subject": "Q4 Report",
+    "company": "Global Solutions"
+  },
+  "gold_output": {
+    "date": "2024-04-07",
+    "recipient": "carol.williams@example.com",
+    "subject": "Q4 Report",
+    "company": "Global Solutions"
+  },
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
+  "operator_fidelity": [
+    {
+      "operator": "→",
+      "checked": true,
+      "passed": true,
+      "details": "Transformation values exactly match gold"
+    }
+  ],
+  "overall_pass": true,
+  "error_type": "none",
+  "error_details": null,
+  "semantic_equivalence_pass": false
+}

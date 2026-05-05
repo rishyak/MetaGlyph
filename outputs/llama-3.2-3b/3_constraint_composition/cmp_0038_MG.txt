@@ -1,0 +1,12 @@
+SELECT 
+  x.id, 
+  x.priority, 
+  x.status, 
+  CASE 
+    WHEN x.priority IN ('high') OR x.status = 'active' THEN 1 
+    ELSE 0 
+  END AS selected 
+FROM 
+  item x 
+WHERE 
+  x.priority IN ('high') OR x.status != 'inactive'

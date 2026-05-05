@@ -1,0 +1,48 @@
+{
+  "prompt_id": "sel_0003_CTRL",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": [
+    "Laptop: category: electronics",
+    "Microwave: category: appliances",
+    "Headphones: category: electronics",
+    "Smartphone: category: electronics",
+    "Refrigerator: category: appliances",
+    "Stapler: category: stationery",
+    "Notebook: category: stationery",
+    "Desk: category: furniture",
+    "Pen: category: stationery",
+    "Chair: category: furniture",
+    "From the given list, the products that belong to the 'appliances' category are Microwave and Refrigerator. So, we will exclude these two products.",
+    "Laptop",
+    "Headphones",
+    "Smartphone",
+    "Stapler",
+    "Notebook",
+    "Desk",
+    "Pen",
+    "Chair",
+    "To format the output as required, we need to create a JSON array containing the names of the selected products. So, the output will be [\"Laptop\", \"Headphones\", \"Smartphone\", \"Stapler\", \"Notebook\", \"Desk\", \"Pen\", \"Chair\"]."
+  ],
+  "gold_output": [
+    "microwave",
+    "refrigerator"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=2, extra=20"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

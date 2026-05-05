@@ -1,0 +1,15 @@
+```json
+{
+  "selected_ids": ["item_003", "item_012", "item_014"],
+  "count": 3
+}
+```
+
+Explanation:
+- The condition `x.id | x.category ∈ {A, B} ∪ x.status ∈ {active}` is used to filter the dataset.
+- Items that meet this condition have either their category as A or B, or their status as active.
+- From the given dataset, the following items meet the condition:
+  - `item_003` (Category: C, Status: active)
+  - `item_012` (Category: B, Status: active)
+  - `item_014` (Category: A, Status: active)
+- Therefore, the selected IDs are `["item_003", "item_012", "item_014"]`, and the count is 3.

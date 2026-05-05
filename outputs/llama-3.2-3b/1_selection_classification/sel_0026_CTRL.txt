@@ -1,0 +1,48 @@
+### Step 1: Identify the animals that are not domestic
+To solve this problem, we need to identify the animals that are not domestic, meaning they are not commonly kept as pets. We will review the list of animals and their attributes to determine which ones do not have the attribute "domestic" set to True.
+
+### Step 2: Review the list of animals
+We will review the list of animals and their attributes to identify the ones that are not domestic.
+
+- Dog: type: mammal, domestic: True, size: medium
+- Snake: type: reptile, domestic: False, size: medium
+- Parrot: type: bird, domestic: True, size: small
+- Elephant: type: mammal, domestic: False, size: large
+- Turtle: type: reptile, domestic: True, size: small
+- Salmon: type: fish, domestic: False, size: medium
+- Whale: type: mammal, domestic: False, size: large
+- Lion: type: mammal, domestic: False, size: large
+- Goldfish: type: fish, domestic: True, size: small
+- Shark: type: fish, domestic: False, size: large
+
+### Step 3: Select the animals that are not domestic
+Based on the review, the animals that are not domestic are:
+- Snake
+- Elephant
+- Salmon
+- Whale
+- Lion
+- Shark
+
+### Step 4: Format the output as a JSON array
+We will format the output as a JSON array of strings, where each string represents the name of an animal that is not domestic.
+
+```json
+[
+  "Snake",
+  "Elephant",
+  "Salmon",
+  "Whale",
+  "Lion",
+  "Shark"
+]
+```
+
+The final answer is: $\boxed[
+  "Snake",
+  "Elephant",
+  "Salmon",
+  "Whale",
+  "Lion",
+  "Shark"
+]$

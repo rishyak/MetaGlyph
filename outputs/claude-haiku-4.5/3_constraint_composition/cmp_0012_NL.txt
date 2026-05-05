@@ -1,6 +1,15 @@
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": ["item_009"],
+  "count": 1
 }
 ```
+
+**Explanation:**
+I reviewed all items in the dataset and applied the filter criteria:
+- Category must be A or B
+- Status must be active
+
+Only **item_009** meets both conditions:
+- Category: A ✓
+- Status: active ✓

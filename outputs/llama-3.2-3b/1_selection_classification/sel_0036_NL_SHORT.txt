@@ -1,0 +1,25 @@
+### Step 1: Identify the items that are classified as mammals
+We need to review the list of animals and identify the ones that are classified as mammals.
+
+### Step 2: Review the list of animals
+- Salmon: type: fish, domestic: False, size: medium
+- Penguin: type: bird, domestic: False, size: medium
+- Turtle: type: reptile, domestic: True, size: small
+- Parrot: type: bird, domestic: True, size: small
+- Goldfish: type: fish, domestic: True, size: small
+- Snake: type: reptile, domestic: False, size: medium
+- Cat: type: mammal, domestic: True, size: small
+- Eagle: type: bird, domestic: False, size: medium
+- Whale: type: mammal, domestic: False, size: large
+- Elephant: type: mammal, domestic: False, size: large
+
+### Step 3: Select the items that are classified as mammals
+The items that are classified as mammals are:
+- Cat: type: mammal, domestic: True, size: small
+- Whale: type: mammal, domestic: False, size: large
+- Elephant: type: mammal, domestic: False, size: large
+
+### Step 4: Format the output as a JSON array
+The output should be in the format of a JSON array of strings, e.g., ["item1", "item2"].
+
+The final answer is: $\boxed [{"item": "Cat"}, {"item": "Whale"}, {"item": "Elephant"}]$

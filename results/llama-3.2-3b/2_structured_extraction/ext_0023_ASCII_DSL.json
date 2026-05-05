@@ -1,0 +1,34 @@
+{
+  "prompt_id": "ext_0023_ASCII_DSL",
+  "model": "llama-3.2-3b",
+  "family": "2_structured_extraction",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": {
+    "sender_name": "Alice Smith",
+    "date": "2024-10-07",
+    "subject": "Project Update",
+    "sender": "alice.smith@globalsolutions.com"
+  },
+  "gold_output": {
+    "sender_name": "Alice Smith",
+    "date": "2024-10-07",
+    "subject": "Project Update",
+    "sender": "alice.smith@globalsolutions.com"
+  },
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
+  "operator_fidelity": [
+    {
+      "operator": "→",
+      "checked": true,
+      "passed": true,
+      "details": "Transformation values exactly match gold"
+    }
+  ],
+  "overall_pass": true,
+  "error_type": "none",
+  "error_details": null,
+  "semantic_equivalence_pass": false
+}

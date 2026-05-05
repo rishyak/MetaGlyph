@@ -1,0 +1,8 @@
+```json
+{
+  "date": "2024-04-04",
+  "company": "Globalsolutions",
+  "sender_title": "Analyst",
+  "sender": "david.brown@globalsolutions.com"
+}
+```

@@ -1,0 +1,26 @@
+Based on the provided instruction and input data, the task is to select items where the size is not "large". From the given list of animals:
+
+- Penguin: size: medium
+- Salmon: size: medium
+- Elephant: size: large
+- Snake: size: medium
+- Cat: size: small
+- Eagle: size: medium
+- Whale: size: large
+- Shark: size: large
+- Turtle: size: small
+- Goldfish: size: small
+
+We need to return the names of the animals whose size is not "large". Therefore, the output will be the names of the animals that are either "small" or "medium".
+
+Here is the JSON array of the names of such animals:
+
+```json
+["Penguin", "Salmon", "Snake", "Eagle", "Cat", "Turtle", "Goldfish"]
+```
+
+So the final output in the required format is:
+
+```json
+["Penguin", "Salmon", "Snake", "Eagle", "Cat", "Turtle", "Goldfish"]
+```

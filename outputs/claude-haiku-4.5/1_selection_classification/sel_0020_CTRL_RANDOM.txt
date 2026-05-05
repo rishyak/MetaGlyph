@@ -1,0 +1,14 @@
+Looking at the query: `SELECT x | x.size ¤ {small} ↯ [x.name]`
+
+This appears to be asking for all items where size equals "small", returning their names.
+
+From the dataset, the animals with size: small are:
+- Cat
+- Goldfish
+- Parrot
+- Hamster
+- Turtle
+
+```json
+["Cat", "Goldfish", "Parrot", "Hamster", "Turtle"]
+```

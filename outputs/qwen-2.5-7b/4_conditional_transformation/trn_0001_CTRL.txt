@@ -1,0 +1,236 @@
+To apply the specified transformations to the records, we need to evaluate each condition individually and apply the corresponding transformation if the condition is met. The conditions are:
+
+1. `x.type != "premium" ⇒ x.amount → x.amount × 1.1`
+2. `x.region != "EU" ⇒ x.amount → x.amount × 1.2`
+3. `x.active != false ⇒ x.status → "archived"`
+
+Let's go through each record and apply the transformations step by step.
+
+### Record rec_000:
+- **type**: trial (condition 1 is true)
+  - **Transform**: `x.amount → x.amount × 1.1` → \( 731 \times 1.1 = 804.1 \)
+- **region**: US (condition 2 is true)
+  - **Transform**: `x.amount → x.amount × 1.2` → \( 804.1 \times 1.2 = 964.92 \)
+- **active**: True (condition 3 is true)
+  - **Transform**: `x.status → "archived"`
+  
+  **Final Record**: 
+  ```json
+  {
+    "type": "trial",
+    "region": "US",
+    "amount": 964.92,
+    "status": "archived"
+  }
+  ```
+
+### Record rec_001:
+- **type**: standard (condition 1 is false)
+  - **No Transform**
+- **region**: APAC (condition 2 is true)
+  - **Transform**: `x.amount → x.amount × 1.2` → \( 243 \times 1.2 = 291.6 \)
+- **active**: False (condition 3 is true)
+  - **Transform**: `x.status → "archived"`
+  
+  **Final Record**: 
+  ```json
+  {
+    "type": "standard",
+    "region": "APAC",
+    "amount": 291.6,
+    "status": "archived"
+  }
+  ```
+
+### Record rec_002:
+- **type**: standard (condition 1 is false)
+  - **No Transform**
+- **region**: US (condition 2 is true)
+  - **Transform**: `x.amount → x.amount × 1.2` → \( 897 \times 1.2 = 1076.4 \)
+- **active**: True (condition 3 is true)
+  - **Transform**: `x.status → "archived"`
+  
+  **Final Record**: 
+  ```json
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 1076.4,
+    "status": "archived"
+  }
+  ```
+
+### Record rec_003:
+- **type**: premium (condition 1 is false)
+  - **No Transform**
+- **region**: EU (condition 2 is false)
+  - **No Transform**
+- **active**: False (condition 3 is true)
+  - **Transform**: `x.status → "archived"`
+  
+  **Final Record**: 
+  ```json
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 474,
+    "status": "archived"
+  }
+  ```
+
+### Record rec_004:
+- **type**: standard (condition 1 is false)
+  - **No Transform**
+- **region**: EU (condition 2 is false)
+  - **No Transform**
+- **active**: True (condition 3 is false)
+  - **No Transform**
+  
+  **Final Record**: 
+  ```json
+  {
+    "type": "standard",
+    "region": "EU",
+    "amount": 373,
+    "status": "active"
+  }
+  ```
+
+### Record rec_005:
+- **type**: trial (condition 1 is true)
+  - **Transform**: `x.amount → x.amount × 1.1` → \( 728 \times 1.1 = 800.8 \)
+- **region**: EU (condition 2 is false)
+  - **No Transform**
+- **active**: True (condition 3 is true)
+  - **Transform**: `x.status → "archived"`
+  
+  **Final Record**: 
+  ```json
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 800.8,
+    "status": "archived"
+  }
+  ```
+
+### Record rec_006:
+- **type**: trial (condition 1 is true)
+  - **Transform**: `x.amount → x.amount × 1.1` → \( 185 \times 1.1 = 203.5 \)
+- **region**: APAC (condition 2 is true)
+  - **Transform**: `x.amount → x.amount × 1.2` → \( 203.5 \times 1.2 = 244.2 \)
+- **active**: True (condition 3 is true)
+  - **Transform**: `x.status → "archived"`
+  
+  **Final Record**: 
+  ```json
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 244.2,
+    "status": "archived"
+  }
+  ```
+
+### Record rec_007:
+- **type**: standard (condition 1 is false)
+  - **No Transform**
+- **region**: EU (condition 2 is false)
+  - **No Transform**
+- **active**: False (condition 3 is true)
+  - **Transform**: `x.status → "archived"`
+  
+  **Final Record**: 
+  ```json
+  {
+    "type": "standard",
+    "region": "EU",
+    "amount": 398,
+    "status": "archived"
+  }
+  ```
+
+### Record rec_008:
+- **type**: trial (condition 1 is true)
+  - **Transform**: `x.amount → x.amount × 1.1` → \( 580 \times 1.1 = 638 \)
+- **region**: APAC (condition 2 is true)
+  - **Transform**: `x.amount → x.amount × 1.2` → \( 638 \times 1.2 = 765.6 \)
+- **active**: True (condition 3 is true)
+  - **Transform**: `x.status → "archived"`
+  
+  **Final Record**: 
+  ```json
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 765.6,
+    "status": "archived"
+  }
+  ```
+
+### Record rec_009:
+- **type**: trial (condition 1 is true)
+  - **Transform**: `x.amount → x.amount × 1.1` → \( 873 \times 1.1 = 960.3 \)
+- **region**: EU (condition 2 is false)
+  - **No Transform**
+- **active**: True (condition 3 is true)
+  - **Transform**: `x.status → "archived"`
+  
+  **Final Record**: 
+  ```json
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 960.3,
+    "status": "archived"
+  }
+  ```
+
+### Record rec_010:
+- **type**: standard (condition 1 is false)
+  - **No Transform**
+- **region**: US (condition 2 is true)
+  - **Transform**: `x.amount → x.amount × 1.2` → \( 834 \times 1.2 = 1000.8 \)
+- **active**: False (condition 3 is true)
+  - **Transform**: `x.status → "archived"`
+  
+  **Final Record**: 
+  ```json
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 1000.8,
+    "status": "archived"
+  }
+  ```
+
+### Record rec_011:
+- **type**: premium (condition 1 is false)
+  - **No Transform**
+- **region**: EU (condition 2 is false)
+  - **No Transform**
+- **active**: True (condition 3 is true)
+  - **Transform**: `x.status → "archived"`
+  
+  **Final Record**: 
+  ```json
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 77,
+    "status": "archived"
+  }
+  ```
+
+### Record rec_012:
+- **type**: trial (condition 1 is true)
+  - **Transform**: `x.amount → x.amount × 1.1` → \( 332 \times 1.1 = 365.2 \)
+- **region**: APAC (condition 2 is true)
+  - **Transform**: `x.amount → x.amount × 1.2` → \( 365.2 \times 1.2 = 438.24 \)
+- **active**: True (condition 3 is true)
+  - **Transform**: `x.status → "archived"`
+  
+  **Final Record**: 
+  ```json
+  {
+    "type": "trial",

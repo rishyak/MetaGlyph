@@ -1,6 +1,34 @@
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_005",
+    "item_006",
+    "item_007",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_012",
+    "item_013",
+    "item_015",
+    "item_016",
+    "item_017",
+    "item_018"
+  ],
+  "count": 16
 }
 ```
+
+**Explanation:**
+The selection criteria is: priority = "high" OR status ≠ "inactive"
+
+- **Excluded items** (priority is NOT high AND status IS inactive):
+  - item_004: priority=low, status=inactive ❌
+  - item_008: priority=medium, status=inactive ❌
+  - item_014: priority=low, status=inactive ❌
+  - item_019: priority=low, status=inactive ❌
+
+- **All other items** (16 total) meet the criteria because they either have high priority or are not inactive.

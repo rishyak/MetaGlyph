@@ -1,0 +1,47 @@
+To solve this problem, we need to filter the given dataset based on the conditions provided: category is one of ['A', 'B'] and status is one of ['active'].
+
+First, let's identify the records that match these conditions.
+
+1. **Category is one of ['A', 'B']**: This means we are looking for items where Category is either 'A' or 'B'.
+2. **Status is one of ['active']**: This means the Status of the item should be 'active'.
+
+Let's examine the dataset:
+
+- item_000: Category = 'C', Status = 'pending' (Does not match)
+- item_001: Category = 'B', Status = 'inactive' (Does not match)
+- item_002: Category = 'B', Status = 'pending' (Does not match)
+- item_003: Category = 'C', Status = 'pending' (Does not match)
+- item_004: Category = 'C', Status = 'inactive' (Does not match)
+- item_005: Category = 'C', Status = 'inactive' (Does not match)
+- item_006: Category = 'C', Status = 'pending' (Does not match)
+- item_007: Category = 'B', Status = 'inactive' (Does not match)
+- item_008: Category = 'A', Status = 'inactive' (Does not match)
+- item_009: Category = 'A', Status = 'inactive' (Does not match)
+- item_010: Category = 'A', Status = 'pending' (Does not match)
+- item_011: Category = 'B', Status = 'active' (Matches)
+- item_012: Category = 'B', Status = 'inactive' (Does not match)
+- item_013: Category = 'A', Status = 'inactive' (Does not match)
+- item_014: Category = 'C', Status = 'active' (Does not match because Category is 'C')
+- item_015: Category = 'A', Status = 'active' (Matches)
+- item_016: Category = 'C', Status = 'inactive' (Does not match)
+- item_017: Category = 'C', Status = 'inactive' (Does not match)
+- item_018: Category = 'B', Status = 'active' (Matches)
+- item_019: Category = 'C', Status = 'pending' (Does not match)
+
+The items that match the given conditions are:
+- item_011
+- item_015
+- item_018
+
+So, `selected_ids` = ['item_011', 'item_015', 'item_018'].
+
+The `count` of such items is 3.
+
+Therefore, the output in JSON format is:
+
+```json
+{
+  "selected_ids": ["item_011", "item_015", "item_018"],
+  "count": 3
+}
+```

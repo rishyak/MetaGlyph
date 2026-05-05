@@ -1,0 +1,20 @@
+Based on the instruction provided, you want to select the names of animals that are not mammals. From the given list:
+
+- Dog: type: mammal
+- Whale: type: mammal
+- Salmon: type: fish
+- Eagle: type: bird
+- Shark: type: fish
+- Elephant: type: mammal
+- Cat: type: mammal
+- Penguin: type: bird
+- Parrot: type: bird
+- Turtle: type: reptile
+
+The animals that are not mammals are Salmon, Eagle, Shark, Penguin, Parrot, and Turtle.
+
+Here is the output in the requested JSON format:
+
+```json
+["Salmon", "Eagle", "Shark", "Penguin", "Parrot", "Turtle"]
+```

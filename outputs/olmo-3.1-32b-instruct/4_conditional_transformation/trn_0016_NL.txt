@@ -1,0 +1,136 @@
+[
+  {
+    "rec_000": {
+      "type": "trial",
+      "region": "APAC",
+      "amount": 71,
+      "active": true,
+      "status": null
+    },
+    {
+      "rec_001": {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 271.2,
+        "active": false,
+        "status": "archived"
+      }
+    },
+    {
+      "rec_002": {
+        "type": "trial",
+        "region": "US",
+        "amount": 170,
+        "active": true,
+        "status": null
+      }
+    },
+    {
+      "rec_003": {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 86,
+        "active": true,
+        "status": null
+      }
+    },
+    {
+      "rec_004": {
+        "type": "standard",
+        "region": "EU",
+        "amount": 565.2,
+        "active": false,
+        "status": "archived"
+      }
+    },
+    {
+      "rec_005": {
+        "type": "premium",
+        "region": "US",
+        "amount": 271.7,
+        "active": false,
+        "status": "archived"
+      }
+    },
+    {
+      "rec_006": {
+        "type": "trial",
+        "region": "EU",
+        "amount": 874.8,
+        "active": false,
+        "status": "archived"
+      }
+    },
+    {
+      "rec_007": {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 298.8,
+        "active": false,
+        "status": "archived"
+      }
+    },
+    {
+      "rec_008": {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 687,
+        "active": true,
+        "status": null
+      }
+    },
+    {
+      "rec_009": {
+        "type": "premium",
+        "region": "US",
+        "amount": 623.1,
+        "active": true,
+        "status": null
+      }
+    },
+    {
+      "rec_010": {
+        "type": "trial",
+        "region": "US",
+        "amount": 940,
+        "active": false,
+        "status": "archived"
+      }
+    },
+    {
+      "rec_011": {
+        "type": "standard",
+        "region": "US",
+        "amount": 71,
+        "active": true,
+        "status": null
+      }
+    },
+    {
+      "rec_012": {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 853.6,
+        "active": false,
+        "status": "archived"
+      }
+    },
+    {
+      "rec_013": {
+        "type": "premium",
+        "region": "US",
+        "amount": 537.9,
+        "active": false,
+        "status": "archived"
+      }
+    },
+    {
+      "rec_014": {
+        "type": "trial",
+        "region": "EU",
+        "amount": 1170.0,
+        "active": false,
+        "status": "archived"
+      }
+    }
+  ]

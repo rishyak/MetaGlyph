@@ -1,0 +1,13 @@
+### Step 1: Review the given dataset to identify animals that are commonly kept as pets.
+The dataset contains information about various animals, including their type, domestic status, and size. We need to focus on identifying animals that are commonly kept as pets, which means they are domesticated.
+
+### Step 2: Identify the domesticated animals from the dataset.
+From the given dataset, the domesticated animals are:
+- Dog: type: mammal, domestic: True, size: medium
+- Goldfish: type: fish, domestic: True, size: small
+- Parrot: type: bird, domestic: True, size: small
+
+### Step 3: Format the output as a JSON array of strings.
+The domesticated animals that are commonly kept as pets should be listed in a JSON array.
+
+The final answer is: $\boxed [{"Dog","Goldfish","Parrot"}]$

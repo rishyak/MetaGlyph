@@ -1,0 +1,24 @@
+### Step 1: Identify the animals that are classified as "medium" in size and are commonly kept as pets.
+From the given dataset, we need to find the animals that have a size category of "medium" and are classified as "domestic".
+
+### Step 2: List the animals that meet the criteria.
+The animals that meet the criteria are:
+- Snake: type: reptile, domestic: False, size: medium
+- Dog: type: mammal, domestic: True, size: medium
+- Penguin: type: bird, domestic: False, size: medium
+- Eagle: type: bird, domestic: False, size: medium
+- Parrot: type: bird, domestic: True, size: small
+
+### Step 3: Filter out the animals that do not meet the size criteria.
+The animals that meet the size criteria of "medium" are:
+- Snake: type: reptile, domestic: False, size: medium
+- Dog: type: mammal, domestic: True, size: medium
+- Penguin: type: bird, domestic: False, size: medium
+- Eagle: type: bird, domestic: False, size: medium
+
+### Step 4: Filter out the animals that do not meet the domestic criteria.
+The animals that meet the domestic criteria are:
+- Dog: type: mammal, domestic: True, size: medium
+
+### Step 5: Combine the results into a JSON array.
+The final result is: ["Dog"]

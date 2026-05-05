@@ -1,0 +1,18 @@
+Looking at the query syntax:
+- `SELECT x |` - select items
+- `(x.category ¤ {appliances})` - where category is appliances
+- `§ (x.portable ¤ {False})` - AND portable is False
+- `↯ [x.name]` - return the name
+
+I need to find items where:
+1. category = "appliances" 
+2. portable = False
+
+Reviewing the product list:
+- **Refrigerator**: category: appliances, portable: False ✓
+
+This is the only item that matches both conditions.
+
+```json
+["Refrigerator"]
+```

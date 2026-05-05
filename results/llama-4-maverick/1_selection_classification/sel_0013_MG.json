@@ -1,0 +1,48 @@
+{
+  "prompt_id": "sel_0013_MG",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this task, we need to follow the given instruction: `SELECT x | x.size ∈ {medium} → [x.name]`. This means we have to select the names of animals that have a medium size.",
+    "First, let's review the given data:",
+    "Cat: type: mammal, domestic: True, size: small",
+    "Snake: type: reptile, domestic: False, size: medium",
+    "Dog: type: mammal, domestic: True, size: medium",
+    "Goldfish: type: fish, domestic: True, size: small",
+    "Penguin: type: bird, domestic: False, size: medium",
+    "Eagle: type: bird, domestic: False, size: medium",
+    "Whale: type: mammal, domestic: False, size: large",
+    "Parrot: type: bird, domestic: True, size: small",
+    "Lion: type: mammal, domestic: False, size: large",
+    "Shark: type: fish, domestic: False, size: large",
+    "Now, let's filter the animals based on their size being 'medium':",
+    "Snake: size: medium",
+    "Dog: size: medium",
+    "Penguin: size: medium",
+    "Eagle: size: medium",
+    "To present the answer in the required JSON format, we need to create an array of these names."
+  ],
+  "gold_output": [
+    "dog",
+    "eagle",
+    "penguin",
+    "snake"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=4, extra=18"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

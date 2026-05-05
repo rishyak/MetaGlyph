@@ -1,0 +1,115 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 483,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 540,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 650 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 283,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 911 * 1.1 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 655,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 328,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 105 * 1.2,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 979 * 1.2,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 520 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 289,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 259 * 1.1 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 402 * 1.2,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 774,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 801 * 1.2,
+        "active": false,
+        "status": "archived"
+    }
+]
+```
+
+Explanation:
+- `rec_000` and `rec_002`: The record was marked as 'archived' because `active` is `False`.
+- `rec_004`: The record was marked as 'archived' and the `amount` was multiplied by 1.1 and 1.2 because it has both `type: premium` and `region: EU`.
+- `rec_006`, `rec_008`, and `rec_012`: The `amount` was only multiplied by 1.2 since they have `region: EU`.
+- `rec_009`, `rec_010`, `rec_013`, and `rec_014`: The record was marked as 'archived' because `active` is `False`. The `amount` of `rec_011` was also multiplied by 1.1 and 1.2 because it has both `type: premium` and `region: EU`.

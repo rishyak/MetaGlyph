@@ -5,7 +5,13 @@
   "condition": "CTRL",
   "parse_success": true,
   "parsed_output": [
-    "Cat"
+    "Whale",
+    "Shark",
+    "Lion",
+    "Salmon",
+    "Eagle",
+    "Crocodile",
+    "Snake"
   ],
   "gold_output": [
     "cat",
@@ -13,18 +19,18 @@
     "turtle"
   ],
   "exact_match": false,
-  "accuracy": 0.3333333333333333,
-  "f1_score": 0.5,
+  "accuracy": 0.0,
+  "f1_score": 0,
   "operator_fidelity": [
     {
       "operator": "∈",
       "checked": true,
       "passed": false,
-      "details": "Extra items: 1"
+      "details": "missing=3, extra=7"
     }
   ],
   "overall_pass": false,
-  "error_type": "incomplete",
-  "error_details": "Accuracy: 0.33",
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
   "semantic_equivalence_pass": false
 }

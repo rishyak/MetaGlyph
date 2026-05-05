@@ -1,0 +1,14 @@
+Looking at the instruction `SELECT x | x.price_range ※ {low} ↯ [x.name]`, I need to interpret this query:
+
+- `SELECT x` - select items
+- `x.price_range ※ {low}` - where price_range equals "low"
+- `↯ [x.name]` - return the names
+
+Filtering the product list for items with `price_range: low`:
+
+1. **Stapler** - category: stationery, price_range: **low**, portable: True
+2. **Notebook** - category: stationery, price_range: **low**, portable: True
+
+```json
+["Stapler", "Notebook"]
+```

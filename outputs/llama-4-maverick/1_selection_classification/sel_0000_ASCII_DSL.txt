@@ -1,0 +1,22 @@
+To solve this task, we need to follow the given instruction: `SELECT x | x.type IN {reptile} -> [x.name]`. This means we have to select the names of animals from the given list where the type is 'reptile'.
+
+First, let's review the given list of animals:
+
+1. Dog: type: mammal, domestic: True, size: medium
+2. Whale: type: mammal, domestic: False, size: large
+3. Salmon: type: fish, domestic: False, size: medium
+4. Eagle: type: bird, domestic: False, size: medium
+5. Shark: type: fish, domestic: False, size: large
+6. Elephant: type: mammal, domestic: False, size: large
+7. Cat: type: mammal, domestic: True, size: small
+8. Penguin: type: bird, domestic: False, size: medium
+9. Parrot: type: bird, domestic: True, size: small
+10. Turtle: type: reptile, domestic: True, size: small
+
+We need to identify animals with `type: reptile`. From the given list, only "Turtle" is classified as a 'reptile'.
+
+Therefore, the name of the animal that satisfies the condition is "Turtle".
+
+The output should be a JSON array of strings. Since there's only one animal that fits the criteria, the array will contain a single string.
+
+The final answer is: ["Turtle"]

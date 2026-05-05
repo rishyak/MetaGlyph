@@ -1,0 +1,8 @@
+```json
+{
+  "company": "TechCorp Inc.",
+  "date": "2024-03-26",
+  "recipient": "Alice",
+  "sender_name": "Carol Williams"
+}
+```

@@ -1,0 +1,10 @@
+### Step 1: Identify the items with a price range of "medium"
+We need to find the items in the inventory that have a price range of "medium".
+
+### Step 2: Filter the inventory based on the price range
+From the given inventory, we can see that the items "Chair", "Headphones", "Desk", "Bookshelf", and "Microwave" have a price range of "medium".
+
+### Step 3: Return the item names as a JSON array
+We will return the names of these items as a JSON array.
+
+The final answer is: $\boxed["Chair", "Headphones", "Desk", "Bookshelf", "Microwave"]$

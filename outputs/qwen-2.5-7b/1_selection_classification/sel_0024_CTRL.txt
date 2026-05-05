@@ -1,0 +1,18 @@
+Based on the provided instruction and input data, we need to select the names of animals whose size is not "large". From the list given:
+
+- Turtle: size is small
+- Shark: size is large
+- Penguin: size is medium
+- Salmon: size is medium
+- Crocodile: size is large
+- Cat: size is small
+- Elephant: size is large
+- Whale: size is large
+- Dog: size is medium
+- Hamster: size is small
+
+So the animals that do not have a size of "large" are: Turtle, Penguin, Salmon, Cat, Dog, and Hamster.
+
+Here is the output in the requested JSON format:
+
+["Turtle", "Penguin", "Salmon", "Cat", "Dog", "Hamster"]

@@ -1,0 +1,16 @@
+### Step 1: Identify the relevant items
+The problem asks to select items from the given list that belong to the category "stationery". We need to identify all items with the category "stationery".
+
+### Step 2: Filter the items
+From the given list, the items that belong to the category "stationery" are:
+- Stapler
+- Pen
+- Notebook
+
+### Step 3: Extract the names of the selected items
+We need to extract the names of the selected items, which are "Stapler", "Pen", and "Notebook".
+
+### Step 4: Format the output
+The output should be a JSON array of strings, so we need to format the extracted names as a JSON array.
+
+The final answer is: $\boxed["Stapler", "Pen", "Notebook"]$

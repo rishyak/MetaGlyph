@@ -1,0 +1,41 @@
+To solve this problem, we need to filter the given dataset based on two conditions: 
+1. The category of the item is either 'A' or 'B'.
+2. The status of the item is 'active'.
+
+Let's go through the dataset and apply these conditions.
+
+1. ID: item_000, Category: B, Status: pending - Does not satisfy condition 2.
+2. ID: item_001, Category: C, Status: pending - Does not satisfy condition 1.
+3. ID: item_002, Category: C, Status: inactive - Does not satisfy both conditions.
+4. ID: item_003, Category: C, Status: pending - Does not satisfy condition 1.
+5. ID: item_004, Category: B, Status: pending - Does not satisfy condition 2.
+6. ID: item_005, Category: B, Status: pending - Does not satisfy condition 2.
+7. ID: item_006, Category: B, Status: active - Satisfies both conditions.
+8. ID: item_007, Category: C, Status: active - Does not satisfy condition 1.
+9. ID: item_008, Category: B, Status: pending - Does not satisfy condition 2.
+10. ID: item_009, Category: A, Status: pending - Does not satisfy condition 2.
+11. ID: item_010, Category: C, Status: pending - Does not satisfy condition 1.
+12. ID: item_011, Category: C, Status: active - Does not satisfy condition 1.
+13. ID: item_012, Category: A, Status: pending - Does not satisfy condition 2.
+14. ID: item_013, Category: C, Status: inactive - Does not satisfy both conditions.
+15. ID: item_014, Category: A, Status: active - Satisfies both conditions.
+16. ID: item_015, Category: A, Status: active - Satisfies both conditions.
+17. ID: item_016, Category: B, Status: inactive - Does not satisfy condition 2.
+18. ID: item_017, Category: C, Status: active - Does not satisfy condition 1.
+19. ID: item_018, Category: C, Status: inactive - Does not satisfy both conditions.
+20. ID: item_019, Category: A, Status: pending - Does not satisfy condition 2.
+
+The items that satisfy both conditions are:
+- ID: item_006, Category: B, Status: active
+- ID: item_014, Category: A, Status: active
+- ID: item_015, Category: A, Status: active
+
+So, the selected IDs are ['item_006', 'item_014', 'item_015'] and the count is 3.
+
+The output in JSON format is:
+```json
+{
+  "selected_ids": ["item_006", "item_014", "item_015"],
+  "count": 3
+}
+```

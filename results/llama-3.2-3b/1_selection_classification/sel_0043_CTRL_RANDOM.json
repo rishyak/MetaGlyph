@@ -1,0 +1,37 @@
+{
+  "prompt_id": "sel_0043_CTRL_RANDOM",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "From the given dataset, the animals that are commonly kept as pets are:",
+    "Parrot: type: bird, domestic: True, size: small",
+    "Hamster: type: mammal, domestic: True, size: small",
+    "Goldfish: type: fish, domestic: True, size: small",
+    "Cat: type: mammal, domestic: True, size: small"
+  ],
+  "gold_output": [
+    "eagle",
+    "lion",
+    "penguin",
+    "salmon",
+    "snake",
+    "whale"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=6, extra=5"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "incomplete",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

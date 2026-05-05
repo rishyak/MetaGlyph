@@ -1,3 +1,20 @@
+I need to find all items where either:
+1. category is "appliances" OR
+2. portable is "True"
+
+Let me check each product:
+
+- **Notebook**: category: stationery, portable: True → ✓ (portable is True)
+- **Bookshelf**: category: furniture, portable: False → ✗ (neither condition met)
+- **Chair**: category: furniture, portable: True → ✓ (portable is True)
+- **Pen**: category: stationery, portable: True → ✓ (portable is True)
+- **Tablet**: category: electronics, portable: True → ✓ (portable is True)
+- **Headphones**: category: electronics, portable: True → ✓ (portable is True)
+- **Refrigerator**: category: appliances, portable: False → ✓ (category is appliances)
+- **Desk**: category: furniture, portable: False → ✗ (neither condition met)
+- **Microwave**: category: appliances, portable: True → ✓ (both conditions met)
+- **Smartphone**: category: electronics, portable: True → ✓ (portable is True)
+
 ```json
-[]
+["Notebook", "Chair", "Pen", "Tablet", "Headphones", "Refrigerator", "Microwave", "Smartphone"]
 ```

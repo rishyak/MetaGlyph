@@ -1,0 +1,9 @@
+### Solution
+```json
+[
+  "Salmon"
+]
+```
+
+### Explanation
+The only item in the list that is classified as a fish is "Salmon".

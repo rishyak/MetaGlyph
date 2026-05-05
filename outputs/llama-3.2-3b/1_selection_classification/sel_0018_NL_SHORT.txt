@@ -1,0 +1,13 @@
+### Step 1: Identify the items with price_range equal to "high" and portable equal to False
+We need to find the items that have a price_range equal to "high" and portable equal to False.
+
+### Step 2: Review the given list of products
+From the given list, we can see that the following items have a price_range equal to "high" and portable equal to False:
+- Refrigerator
+- Desk
+- Bookshelf
+
+### Step 3: Return the item names as a JSON array
+We will return the item names as a JSON array.
+
+The final answer is: $\boxed["Refrigerator", "Desk", "Bookshelf"]$

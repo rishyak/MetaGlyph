@@ -1,0 +1,111 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 673,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 1105.2,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 154.8,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 321,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 250,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 437.9,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 754,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 111,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 1165.2,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 389,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 1181.6,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 712,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 377,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 225.44,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 756.64,
+        "active": true
+    }
+]
+```
+
+Explanation:
+- For `rec_000`, the type is `trial` and no transformations apply.
+- For `rec_001`, the region is `EU` and the amount is increased by 20% due to the region condition.
+- For `rec_002`, the region is `EU` and the amount is increased by 20%, but since it's inactive, its status is changed to "archived".
+- For `rec_003`, the type is `standard` and no transformations apply.
+- For `rec_004`, the type is `standard` and no transformations apply.
+- For `rec_005`, the type is `premium` and the region is `EU`. The amount is increased by 10% due to the type condition and then by 20% due to the region condition.
+- For `rec_006`, the type is `trial` and no transformations apply.
+- For `rec_007`, the type is `premium` and the region is `APAC`. The amount is increased by 10% due to the type condition.
+- For `rec_008`, the region is `EU` and the amount is increased by 20% due to the region condition.
+- For `rec_009`, the type is `standard` and no transformations apply.
+- For `rec_010`, the type is `premium` and the region is `EU`. The amount is increased by 10% due to the type condition and then by 20% due to the region condition.
+- For `rec_011`, the type is `premium` and the region is `US`. The amount is increased by 10% due to the type condition.
+- For `rec_012`, the type is `trial` and no transformations apply.
+- For `rec_013`, the type is `premium` and the region is `EU`. The amount is increased by 10% due to the type condition and then by 20% due to the region condition.
+- For `rec_014`, the type is `premium` and the region is `US`. The amount is increased by 10% due to the type condition.

@@ -1,0 +1,5 @@
+```json
+["Pen", "Stapler", "Notebook"]
+```
+
+These items match the criteria specified in the query: they belong to the "stationery" category and are portable.

@@ -2,12 +2,26 @@
 {
   "selected_ids": [
     "item_002",
-    "item_004",
-    "item_007",
+    "item_008",
     "item_013",
-    "item_014",
-    "item_015"
+    "item_014"
   ],
-  "count": 6
+  "count": 4
 }
 ```
+
+**Explanation:**
+I filtered all items where:
+1. Value >= 50 AND
+2. Category = A
+
+Results:
+- item_002: Category A, Value 90 ✓
+- item_008: Category A, Value 92 ✓
+- item_013: Category A, Value 76 ✓
+- item_014: Category A, Value 65 ✓
+
+Items excluded:
+- item_004: Category A, but Value 18 < 50
+- item_005: Category A, but Value 47 < 50
+- item_015: Category A, but Value 20 < 50

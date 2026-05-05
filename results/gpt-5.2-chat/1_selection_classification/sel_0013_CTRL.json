@@ -6,7 +6,11 @@
   "parse_success": true,
   "parsed_output": [
     "Cat",
-    "Dog"
+    "Goldfish",
+    "Whale",
+    "Parrot",
+    "Lion",
+    "Shark"
   ],
   "gold_output": [
     "dog",
@@ -15,18 +19,18 @@
     "snake"
   ],
   "exact_match": false,
-  "accuracy": 0.2,
-  "f1_score": 0.3333333333333333,
+  "accuracy": 0.0,
+  "f1_score": 0,
   "operator_fidelity": [
     {
       "operator": "∈",
       "checked": true,
       "passed": false,
-      "details": "Extra items: 2"
+      "details": "missing=4, extra=6"
     }
   ],
   "overall_pass": false,
-  "error_type": "incomplete",
-  "error_details": "Accuracy: 0.20",
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
   "semantic_equivalence_pass": false
 }

@@ -1,0 +1,31 @@
+### Solution
+```json
+[
+  "Elephant",
+  "Whale",
+  "Crocodile",
+  "Goldfish"
+]
+```
+
+### Explanation
+To solve this problem, we need to identify the animals that are classified as "large" and "domestic". We can do this by reviewing the provided list of animals and their attributes.
+
+- Elephant: type: mammal, domestic: False, size: large
+- Turtle: type: reptile, domestic: True, size: small
+- Whale: type: mammal, domestic: False, size: large
+- Dog: type: mammal, domestic: True, size: medium
+- Cat: type: mammal, domestic: True, size: small
+- Hamster: type: mammal, domestic: True, size: small
+- Eagle: type: bird, domestic: False, size: medium
+- Crocodile: type: reptile, domestic: False, size: large
+- Goldfish: type: fish, domestic: True, size: small
+- Snake: type: reptile, domestic: False, size: medium
+
+Based on the provided attributes, the animals that are classified as "large" and "domestic" are:
+
+- Elephant
+- Whale
+- Crocodile
+
+These animals meet the criteria of being classified as "large" and "domestic". Therefore, the output will be a JSON array containing their names.

@@ -1,0 +1,90 @@
+```json
+[
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 19,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 112,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 528,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 912,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 301,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 730,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 551,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 316,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 128,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 169,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 225 * 1.1,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 659,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 351,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 267,
+        "status": "archived"
+    }
+]
+```
+
+Note: I've applied the transformations as per the given rules. In Rule 1, any record with `type` equal to "premium" has its `amount` multiplied by 1.1. There were no records with `region` equal to "EU" that also had `type` equal to "premium", so that rule applies only to the `amount` when `region` is "EU". In Rule 3, any record with `active` set to `False` has its `status` set to "archived". Multiple rules can apply to the same record, but the rules are applied in order, and the first condition that matches is processed. In this case, if `active` is `False`, Rule 3 overrides the need to check for other conditions.

@@ -1,0 +1,34 @@
+To solve this task, we need to follow the given instruction, which is to select the names of animals that are domestic (i.e., their `domestic` attribute is `True`).
+
+1. **Understanding the Instruction**: The instruction is given in a formal query-like syntax: `SELECT x | x.domestic ∈ {True} → [x.name]`. This means we need to select the `name` of animals (`x`) where the `domestic` attribute is `True`.
+
+2. **Reviewing the Input Data**: The input data is a list of animals with their attributes. We have:
+   - Snake: `domestic: False`
+   - Salmon: `domestic: False`
+   - Parrot: `domestic: True`
+   - Hamster: `domestic: True`
+   - Whale: `domestic: False`
+   - Penguin: `domestic: False`
+   - Goldfish: `domestic: True`
+   - Eagle: `domestic: False`
+   - Lion: `domestic: False`
+   - Cat: `domestic: True`
+
+3. **Applying the Instruction to the Data**:
+   - We need to filter the animals based on their `domestic` status being `True`.
+   - The animals with `domestic: True` are Parrot, Hamster, Goldfish, and Cat.
+
+4. **Extracting the Names**: The names of the animals that are domestic are:
+   - Parrot
+   - Hamster
+   - Goldfish
+   - Cat
+
+5. **Formatting the Output**: The output should be a JSON array of strings containing the names of the domestic animals.
+
+The JSON array with the names of the domestic animals is: `["Parrot", "Hamster", "Goldfish", "Cat"]`.
+
+The final answer is:
+```json
+["Parrot", "Hamster", "Goldfish", "Cat"]
+```

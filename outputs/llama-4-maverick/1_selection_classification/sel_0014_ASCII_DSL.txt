@@ -1,0 +1,28 @@
+To solve this task, we need to follow the given instruction: `SELECT x | x.type IN {fish} -> [x.name]`. This means we have to select the names of animals from the given list where the type is 'fish'.
+
+First, let's analyze the given data:
+
+1. Crocodile: type: reptile, domestic: False, size: large
+2. Dog: type: mammal, domestic: True, size: medium
+3. Snake: type: reptile, domestic: False, size: medium
+4. Cat: type: mammal, domestic: True, size: small
+5. Penguin: type: bird, domestic: False, size: medium
+6. Eagle: type: bird, domestic: False, size: medium
+7. Salmon: type: fish, domestic: False, size: medium
+8. Lion: type: mammal, domestic: False, size: large
+9. Whale: type: mammal, domestic: False, size: large
+10. Turtle: type: reptile, domestic: True, size: small
+
+The instruction specifies that we need to select the names of animals where `x.type IN {fish}`. This implies we are looking for animals whose type is 'fish'.
+
+From the given data, the only animal that is classified as 'fish' is:
+- Salmon: type: fish, domestic: False, size: medium
+
+Therefore, the name of the animal that satisfies the condition is "Salmon".
+
+To present the answer in the required JSON array format, we have:
+```json
+["Salmon"]
+```
+
+The final answer is: $\boxed{["Salmon"]}$

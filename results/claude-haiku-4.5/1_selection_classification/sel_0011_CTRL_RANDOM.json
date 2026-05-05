@@ -1,0 +1,36 @@
+{
+  "prompt_id": "sel_0011_CTRL_RANDOM",
+  "model": "claude-haiku-4.5",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "Eagle",
+    "Lion",
+    "Whale",
+    "Penguin",
+    "Elephant",
+    "Shark",
+    "Snake"
+  ],
+  "gold_output": [
+    "cat",
+    "goldfish",
+    "parrot"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=3, extra=7"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

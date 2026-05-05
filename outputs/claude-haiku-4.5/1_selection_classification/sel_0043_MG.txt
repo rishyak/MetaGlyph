@@ -1,3 +1,22 @@
+# Analysis
+
+The instruction asks me to select all items where `domestic ∉ {True}`, which means selecting animals where domestic is NOT True (i.e., domestic = False).
+
+Let me evaluate each animal:
+
+- Snake: domestic = False ✓
+- Salmon: domestic = False ✓
+- Parrot: domestic = True ✗
+- Hamster: domestic = True ✗
+- Whale: domestic = False ✓
+- Penguin: domestic = False ✓
+- Goldfish: domestic = True ✗
+- Eagle: domestic = False ✓
+- Lion: domestic = False ✓
+- Cat: domestic = True ✗
+
+### Answer
+
 ```json
-["Cat", "Hamster"]
+["Snake", "Salmon", "Whale", "Penguin", "Eagle", "Lion"]
 ```

@@ -1,0 +1,58 @@
+### Solution
+```json
+[
+  "Tablet",
+  "Smartphone",
+  "Laptop",
+  "Pen",
+  "Notebook",
+  "Headphones"
+]
+```
+
+### Explanation
+To solve this problem, we need to identify the items that are not portable. We can do this by iterating over the list of items and checking the "portable" attribute. If the attribute is False, we add the item to our result list.
+
+Here is the step-by-step solution in Python:
+
+1. Initialize an empty list to store the non-portable items.
+2. Iterate over each item in the list.
+3. Check if the item's "portable" attribute is False.
+4. If it is, add the item's name to the result list.
+5. Return the result list.
+
+Here is the Python code that implements this solution:
+```python
+def get_non_portable_items(items):
+    non_portable_items = []
+    for item in items:
+        if not item['portable']:
+            non_portable_items.append(item['name'])
+    return non_portable_items
+
+# Define the list of items
+items = [
+  {"name": "Tablet", "category": "electronics", "price_range": "high", "portable": True},
+  {"name": "Bookshelf", "category": "furniture", "price_range": "medium", "portable": False},
+  {"name": "Smartphone", "category": "electronics", "price_range": "high", "portable": True},
+  {"name": "Laptop", "category": "electronics", "price_range": "high", "portable": True},
+  {"name": "Pen", "category": "stationery", "price_range": "low", "portable": True},
+  {"name": "Notebook", "category": "stationery", "price_range": "low", "portable": True},
+  {"name": "Chair", "category": "furniture", "price_range": "medium", "portable": True},
+  {"name": "Desk", "category": "furniture", "price_range": "medium", "portable": False},
+  {"name": "Headphones", "category": "electronics", "price_range": "medium", "portable": True},
+  {"name": "Refrigerator", "category": "appliances", "price_range": "high", "portable": False}
+]
+
+# Call the function and print the result
+print(get_non_portable_items(items))
+```
+
+### Output
+```json
+[
+  "Bookshelf",
+  "Desk",
+  "Refrigerator"
+]
+```

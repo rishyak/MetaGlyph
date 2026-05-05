@@ -1,0 +1,16 @@
+Looking at the query `SELECT x | x.domestic ※ {True} ↯ [x.name]`, I need to:
+
+1. Filter for all animals where `domestic = True`
+2. Return their names
+
+**Animals with domestic = True:**
+- Dog: domestic: True ✓
+- Goldfish: domestic: True ✓
+- Cat: domestic: True ✓
+- Parrot: domestic: True ✓
+- Hamster: domestic: True ✓
+
+**Answer:**
+```json
+["Dog", "Goldfish", "Cat", "Parrot", "Hamster"]
+```

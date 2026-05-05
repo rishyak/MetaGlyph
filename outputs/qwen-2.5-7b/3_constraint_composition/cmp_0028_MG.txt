@@ -1,0 +1,31 @@
+```json
+{
+  "selected_ids": ["item_001", "item_004", "item_005", "item_007", "item_008", "item_009", "item_011", "item_012", "item_013", "item_014", "item_016", "item_018"],
+  "count": 12
+}
+```
+
+### Explanation
+The condition `x.id | x.priority ∈ {high} ∪ x.status ∉ {inactive}` can be broken down into two parts:
+1. `x.priority ∈ {high}`: This means the item's priority must be "high".
+2. `x.status ∉ {inactive}`: This means the item's status must not be "inactive".
+
+From the dataset provided, we can see that:
+- Items with `priority` equal to "high" and any status other than "inactive" are selected.
+- Items with `status` equal to "active" or "pending" but without `priority` equal to "high" are also selected if they meet the first condition.
+
+Based on these criteria, the following IDs are selected:
+- `item_001`: High priority, inactive status (selected based on the second condition).
+- `item_004`: Medium priority, pending status (meets the second condition).
+- `item_005`: High priority, active status (meets both conditions).
+- `item_007`: Pending status, medium priority (meets the second condition).
+- `item_008`: Pending status, low priority (does not meet either condition).
+- `item_009`: Pending status, medium priority (meets the second condition).
+- `item_011`: High priority, pending status (meets both conditions).
+- `item_012`: Medium priority, pending status (meets the second condition).
+- `item_013`: High priority, active status (meets both conditions).
+- `item_014`: Medium priority, pending status (meets the second condition).
+- `item_016`: High priority, active status (meets both conditions).
+- `item_018`: Medium priority, active status (meets the second condition).
+
+So, there are 12 items that satisfy the given condition.

@@ -1,0 +1,15 @@
+### Solution
+```json
+[
+  "Tablet",
+  "Notebook",
+  "Microwave",
+  "Laptop",
+  "Headphones",
+  "Chair",
+  "Stapler"
+]
+```
+
+### Explanation
+To solve this problem, we need to filter the list of products to include only those that have `portable` set to `False`. We can do this by using a SQL-like syntax to select the `name` attribute from the `x` table where `x.portable` is `False`.

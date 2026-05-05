@@ -1,0 +1,33 @@
+{
+  "prompt_id": "sel_0022_CTRL_RANDOM",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "We need to select items that are portable and have a price range of \"medium\" or \"high\". The items that meet this criteria are:",
+    "Tablet: category: electronics, price_range: high, portable: True",
+    "Laptop: category: electronics, price_range: high, portable: True",
+    "Microwave: category: appliances, price_range: medium, portable: True",
+    "Headphones: category: electronics, price_range: medium, portable: True"
+  ],
+  "gold_output": [
+    "desk",
+    "refrigerator"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=2, extra=5"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

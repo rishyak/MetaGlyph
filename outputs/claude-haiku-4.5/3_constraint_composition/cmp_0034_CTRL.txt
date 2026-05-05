@@ -1,10 +1,42 @@
 ```json
 {
   "selected_ids": [
+    "item_000",
     "item_001",
     "item_002",
-    "item_015"
+    "item_003",
+    "item_005",
+    "item_006",
+    "item_009",
+    "item_012",
+    "item_013",
+    "item_015",
+    "item_019"
   ],
-  "count": 3
+  "count": 11
 }
 ```
+
+**Explanation:**
+
+The query selects items where **either** `value >= 50` **OR** `category ∈ {A}`:
+
+**Items with value >= 50:**
+- item_000 (92) ✓
+- item_001 (99) ✓
+- item_003 (62) ✓
+- item_005 (99) ✓
+- item_009 (96) ✓
+- item_012 (70) ✓
+- item_013 (65) ✓
+- item_015 (59) ✓
+- item_019 (55) ✓
+
+**Items with category A (regardless of value):**
+- item_000 (already counted)
+- item_002 (21) ✓
+- item_006 (30) ✓
+- item_008 (5) - value < 50, but category A ✓
+- item_017 (38) - value < 50, but category A ✓
+
+**Note:** item_008 and item_017 are included because they belong to category A, even though their values are below 50.

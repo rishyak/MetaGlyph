@@ -1,10 +1,33 @@
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_005",
+    "item_006",
+    "item_007",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_012",
+    "item_013",
+    "item_015",
+    "item_016",
+    "item_017",
+    "item_018"
+  ],
+  "count": 15
 }
 ```
 
-The query requires items that are in the "security" category AND in the "high_priority" category (or in the "performance" category), while NOT being deprecated and NOT being experimental. 
+**Explanation:**
+The condition is: `x.priority ∈ {high} ∪ x.status ∉ {inactive}`
 
-The provided dataset contains only Category A, B, and C attributes with Status and Priority fields. There are no "security", "high_priority", "performance", "deprecated", or "experimental" attributes in the dataset, so no items match the filter criteria.
+This means: Select items where priority is "high" **OR** status is not "inactive"
+
+- **Priority = high**: item_001, item_005
+- **Status ≠ inactive**: item_000, item_001, item_002, item_003, item_005, item_006, item_007, item_009, item_010, item_011, item_012, item_013, item_015, item_016, item_017, item_018
+
+Combined (union): All items except those with status = "inactive" AND priority ≠ "high"
+- Excluded: item_004, item_008, item_014, item_019 (all have status = inactive)

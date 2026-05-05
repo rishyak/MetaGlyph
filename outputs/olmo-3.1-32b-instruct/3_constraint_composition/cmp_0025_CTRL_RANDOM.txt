@@ -1,0 +1,9 @@
+{
+  "selected_ids": [
+    "item_001",
+    "item_009",
+    "item_010",
+    "item_012"
+  ],
+  "count": 4
+}

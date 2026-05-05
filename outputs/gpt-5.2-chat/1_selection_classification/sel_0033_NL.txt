@@ -1,1 +1,1 @@
-[]
+["Pen", "Stapler", "Notebook"]

@@ -1,0 +1,20 @@
+### Step 1: Identify the attributes and their values for each animal
+- Salmon: type = fish, domestic = False, size = medium
+- Crocodile: type = reptile, domestic = False, size = large
+- Eagle: type = bird, domestic = False, size = medium
+- Hamster: type = mammal, domestic = True, size = small
+- Goldfish: type = fish, domestic = True, size = small
+- Turtle: type = reptile, domestic = True, size = small
+- Snake: type = reptile, domestic = False, size = medium
+- Lion: type = mammal, domestic = False, size = large
+- Parrot: type = bird, domestic = True, size = small
+- Whale: type = mammal, domestic = False, size = large
+
+### Step 2: Filter the animals that meet both conditions
+- Only include animals with size = medium and domestic = False
+- The animals that meet both conditions are: Salmon, Eagle, Snake, Lion, Whale
+
+### Step 3: Format the output as a JSON array of strings
+- The output will be a JSON array of the names of the animals that meet both conditions.
+
+The final answer is: $\boxed["Salmon", "Eagle", "Snake", "Lion", "Whale"]$

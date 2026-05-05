@@ -1,0 +1,20 @@
+To solve this problem, we need to filter out animals that are not domesticated and then return their names. The condition `x.domestic ∉ {False}` means we are looking for animals where `domestic` is `True`.
+
+Given the input data:
+
+- Hamster: type: mammal, domestic: True, size: small
+- Turtle: type: reptile, domestic: True, size: small
+- Goldfish: type: fish, domestic: True, size: small
+- Parrot: type: bird, domestic: True, size: small
+- Penguin: type: bird, domestic: False, size: medium
+- Snake: type: reptile, domestic: False, size: medium
+- Salmon: type: fish, domestic: False, size: medium
+- Eagle: type: bird, domestic: False, size: medium
+- Whale: type: mammal, domestic: False, size: large
+- Crocodile: type: reptile, domestic: False, size: large
+
+We can see that only the first four items meet the criteria (`domestic: True`). Therefore, the output should be:
+
+```json
+["Hamster", "Turtle", "Goldfish", "Parrot"]
+```

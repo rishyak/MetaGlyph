@@ -1,3 +1,20 @@
+I need to identify items where BOTH conditions are met:
+1. category = 'stationery'
+2. portable = True
+
+Let me review each product:
+
+- Laptop: category: electronics, portable: True ❌ (not stationery)
+- Headphones: category: electronics, portable: True ❌ (not stationery)
+- Tablet: category: electronics, portable: True ❌ (not stationery)
+- Chair: category: furniture, portable: True ❌ (not stationery)
+- Pen: category: stationery, portable: True ✅ (matches both)
+- Bookshelf: category: furniture, portable: False ❌ (not stationery)
+- Stapler: category: stationery, portable: True ✅ (matches both)
+- Desk: category: furniture, portable: False ❌ (not stationery)
+- Notebook: category: stationery, portable: True ✅ (matches both)
+- Refrigerator: category: appliances, portable: False ❌ (not stationery)
+
 ```json
-[]
+["Pen", "Stapler", "Notebook"]
 ```

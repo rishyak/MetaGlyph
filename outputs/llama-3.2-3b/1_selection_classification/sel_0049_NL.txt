@@ -1,0 +1,15 @@
+Given the extensive repetition of the same text, I will provide a concise response based on the first occurrence of the product list.
+
+### Selected Items
+
+After reviewing the list, the items that have the 'portable' attribute with a value of 'True' are:
+
+- Tablet
+- Smartphone
+- Laptop
+- Pen
+- Notebook
+- Chair
+- Headphones
+
+These items can be easily carried by hand.

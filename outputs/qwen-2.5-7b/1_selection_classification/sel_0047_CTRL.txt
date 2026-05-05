@@ -1,0 +1,30 @@
+Based on the given instruction and input data, we need to select names of animals that are either not domestic or of the type 'bird'. Let's break down the conditions:
+
+- `x.domestic ∈ {False}`: This means we only want animals that are not commonly kept as pets.
+- `x.type ∈ {bird}`: This means we only want birds regardless of their domestic status.
+
+Given these two conditions combined with a union (`∪`), we will list all animals that meet either one of the conditions.
+
+Let's go through the list:
+- Eagle: type: bird, domestic: False
+- Elephant: type: mammal, domestic: False
+- Lion: type: mammal, domestic: False
+- Turtle: type: reptile, domestic: True
+- Cat: type: mammal, domestic: True
+- Goldfish: type: fish, domestic: True
+- Crocodile: type: reptile, domestic: False
+- Parrot: type: bird, domestic: True
+- Snake: type: reptile, domestic: False
+- Shark: type: fish, domestic: False
+
+From this list, the animals that satisfy either condition are:
+- Eagle (domestic: False)
+- Parrot (type: bird)
+- Crocodile (domestic: False)
+- Snake (domestic: False)
+- Shark (domestic: False)
+
+So, the output in the specified format would be:
+```json
+["Eagle", "Parrot", "Crocodile", "Snake", "Shark"]
+```

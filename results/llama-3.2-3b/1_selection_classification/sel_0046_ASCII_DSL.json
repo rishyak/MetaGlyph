@@ -1,0 +1,36 @@
+{
+  "prompt_id": "sel_0046_ASCII_DSL",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": [
+    "Smartphone",
+    "Laptop",
+    "Tablet",
+    "Headphones",
+    "Stapler",
+    "Chair"
+  ],
+  "gold_output": [
+    "headphones",
+    "laptop",
+    "smartphone",
+    "tablet"
+  ],
+  "exact_match": false,
+  "accuracy": 0.6666666666666666,
+  "f1_score": 0.8,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=4, extra=6"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.67",
+  "semantic_equivalence_pass": false
+}

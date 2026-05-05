@@ -1,0 +1,6 @@
+{
+  "company": "Global Solutions",
+  "date": "2024-06-18",
+  "sender_name": "Carol Williams",
+  "recipient": "carol.williams@example.com"
+}

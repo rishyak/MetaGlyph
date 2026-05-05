@@ -1,0 +1,8 @@
+```json
+{
+  "subject": "Meeting Request",
+  "sender_title": "null",
+  "date": "2024-02-02",
+  "recipient": "alice.smith@example.com"
+}
+```

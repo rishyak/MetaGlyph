@@ -1,0 +1,120 @@
+```json
+[
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 253,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 229 * 1.2,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 600,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 836 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 109,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 430 * 1.1 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 699,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 755 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 206,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 153 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 483 * 1.2,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 837 * 1.2,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 563,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 228,
+        "active": false,
+        "status": "archived"
+    }
+]
+```
+
+Explanation:
+- `rec_000`: No rule applies directly, but since its `active` field is False, it gets set to 'archived'.
+- `rec_001`: Rule 2: `region == EU`, so we multiply `amount` by 1.2.
+- `rec_002`: Only Rule 3 applies: `active == False`, so we set `status` to 'archived'.
+- `rec_003`: Rule 2: `region == EU`, so we multiply `amount` by 1.2.
+- `rec_004`: Only Rule 3 applies: `active == False`, so we set `status` to 'archived'.
+- `rec_005`: Rule 1: `type == premium`, and Rule 2: `region == EU`, so we apply both transformations.
+- `rec_006`: No rule applies.
+- `rec_007`: Rule 2: `region == EU`, so we multiply `amount` by 1.2.
+- `rec_008`: No rule applies.
+- `rec_009`: Rule 3: `active == False`, so we set `status` to 'archived'.
+- `rec_010`: Rule 2: `region == EU`, so we multiply `amount` by 1.2.
+- `rec_011`: Rule 2: `region == EU`, so we multiply `amount` by 1.2.
+- `rec_012`: No rule applies.
+- `rec_013`: No rule applies, but since its `active` field is False, it gets set to 'archived'.
+- `rec_014`: Rule 1: `type == premium`, and Rule 2: `region == EU`, so we apply both transformations.
+```

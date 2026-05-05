@@ -1,0 +1,39 @@
+To solve this problem, we need to filter the given dataset based on the conditions specified in the instruction: `x.priority ∈ {high} ∩ x.status ∉ {inactive}`. This means we are looking for items where the priority is 'high' and the status is not 'inactive'.
+
+Let's go through the dataset and apply these conditions:
+
+1. **ID: item_000** - Priority: high, Status: inactive (Does not satisfy the condition because it's inactive)
+2. **ID: item_001** - Priority: high, Status: pending (Satisfies the condition)
+3. **ID: item_002** - Priority: low, Status: active (Does not satisfy the condition because priority is not high)
+4. **ID: item_003** - Priority: low, Status: active (Does not satisfy the condition because priority is not high)
+5. **ID: item_004** - Priority: medium, Status: pending (Does not satisfy the condition because priority is not high)
+6. **ID: item_005** - Priority: low, Status: inactive (Does not satisfy the condition because priority is not high and it's inactive)
+7. **ID: item_006** - Priority: high, Status: inactive (Does not satisfy the condition because it's inactive)
+8. **ID: item_007** - Priority: medium, Status: active (Does not satisfy the condition because priority is not high)
+9. **ID: item_008** - Priority: high, Status: pending (Satisfies the condition)
+10. **ID: item_009** - Priority: medium, Status: active (Does not satisfy the condition because priority is not high)
+11. **ID: item_010** - Priority: medium, Status: pending (Does not satisfy the condition because priority is not high)
+12. **ID: item_011** - Priority: high, Status: active (Satisfies the condition)
+13. **ID: item_012** - Priority: medium, Status: inactive (Does not satisfy the condition because priority is not high and it's inactive)
+14. **ID: item_013** - Priority: low, Status: pending (Does not satisfy the condition because priority is not high)
+15. **ID: item_014** - Priority: low, Status: active (Does not satisfy the condition because priority is not high)
+16. **ID: item_015** - Priority: medium, Status: inactive (Does not satisfy the condition because priority is not high and it's inactive)
+17. **ID: item_016** - Priority: medium, Status: pending (Does not satisfy the condition because priority is not high)
+18. **ID: item_017** - Priority: low, Status: pending (Does not satisfy the condition because priority is not high)
+19. **ID: item_018** - Priority: low, Status: active (Does not satisfy the condition because priority is not high)
+20. **ID: item_019** - Priority: medium, Status: pending (Does not satisfy the condition because priority is not high)
+
+The items that satisfy the condition are:
+- **item_001**
+- **item_008**
+- **item_011**
+
+So, the `selected_ids` are `["item_001", "item_008", "item_011"]` and the `count` is `3`.
+
+The output in JSON format is:
+```json
+{
+  "selected_ids": ["item_001", "item_008", "item_011"],
+  "count": 3
+}
+```

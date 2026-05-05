@@ -1,12 +1,6 @@
-[
-  {
-    "risk_name": "Invoice date inconsistency",
-    "affected_component": "Billing data integrity",
-    "severity": "High"
-  },
-  {
-    "risk_name": "Incorrect subtotal calculation",
-    "affected_component": "Invoice calculation engine",
-    "severity": "High"
-  }
-]
+{
+  "date": "2024-10-19",
+  "invoice_num": "8508",
+  "customer_name": "Bob Johnson",
+  "due_date": "2024-02-03"
+}

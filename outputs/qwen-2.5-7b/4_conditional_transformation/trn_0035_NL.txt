@@ -1,0 +1,120 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 568,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 91 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 323 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 446,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 369 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 900,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 291 * 1.2,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 830 * 1.1 * 1.2,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 879,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 78,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 380 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 629,
+        "active": true,
+        "status": null
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 981 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 830 * 1.1,
+        "active": true,
+        "status": null
+    }
+]
+```
+
+In this output, for each record:
+
+- `rec_000` is not premium and not in the EU, so no changes are made.
+- `rec_001` is premium and not in the EU, so it's only transformed according to Rule 1.
+- `rec_002` is trial but in the EU, so it's transformed according to both Rule 2 and Rule 3.
+- `rec_003` remains unchanged because it doesn’t meet any of the specified conditions.
+- `rec_004` is trial but in the EU, so it's transformed according to both Rule 2 and Rule 3.
+- `rec_005` remains unchanged.
+- `rec_006` remains unchanged.
+- `rec_007` is premium and in the EU, so it's transformed according to all three rules.
+- `rec_008` remains unchanged.
+- `rec_009` remains unchanged.
+- `rec_010` remains unchanged.
+- `rec_011` is trial but in the EU, so it's transformed according to both Rule 2 and Rule 3.
+- `rec_012` remains unchanged.
+- `rec_013` is trial and in the EU, so it's transformed according to both Rule 2 and Rule 3.
+- `rec_014` is premium and in the EU, so it's transformed according to all three rules.

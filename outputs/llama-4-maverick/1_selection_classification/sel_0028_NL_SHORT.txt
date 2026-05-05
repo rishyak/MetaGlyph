@@ -1,0 +1,24 @@
+To solve this task, we need to carefully review the given list of animals and their attributes, and then identify the animals whose type equals 'mammal'.
+
+1. **Review the list of animals and their attributes:**
+   - Crocodile: type: reptile, domestic: False, size: large
+   - Snake: type: reptile, domestic: False, size: medium
+   - Eagle: type: bird, domestic: False, size: medium
+   - Turtle: type: reptile, domestic: True, size: small
+   - Parrot: type: bird, domestic: True, size: small
+   - Cat: type: mammal, domestic: True, size: small
+   - Shark: type: fish, domestic: False, size: large
+   - Hamster: type: mammal, domestic: True, size: small
+   - Salmon: type: fish, domestic: False, size: medium
+   - Penguin: type: bird, domestic: False, size: medium
+
+2. **Identify animals whose type equals 'mammal':**
+   - From the given list, we can see that 'Cat' and 'Hamster' are classified as 'mammal'.
+
+3. **Format the output as a JSON array of strings:**
+   - The item names that are of type 'mammal' are "Cat" and "Hamster". Thus, the output should be formatted as ["Cat", "Hamster"].
+
+The final answer is:
+```json
+["Cat", "Hamster"]
+```

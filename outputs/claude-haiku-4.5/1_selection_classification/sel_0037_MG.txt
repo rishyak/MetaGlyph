@@ -1,3 +1,22 @@
+# Analysis
+
+The instruction asks me to select all items where `domestic ∉ {True}`, which means selecting animals where the domestic attribute is **NOT** True (i.e., where domestic = False).
+
+Let me filter through the list:
+
+- Dog: domestic: True ❌
+- Eagle: domestic: False ✓
+- Lion: domestic: False ✓
+- Goldfish: domestic: True ❌
+- Cat: domestic: True ❌
+- Parrot: domestic: True ❌
+- Hamster: domestic: True ❌
+- Shark: domestic: False ✓
+- Snake: domestic: False ✓
+- Penguin: domestic: False ✓
+
+### Answer
+
 ```json
-["Cat", "Dog", "Hamster"]
+["Eagle", "Lion", "Shark", "Snake", "Penguin"]
 ```

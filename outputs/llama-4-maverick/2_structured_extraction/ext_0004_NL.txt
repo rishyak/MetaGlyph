@@ -1,0 +1,52 @@
+To solve this task, we need to carefully examine the provided invoice document and extract the required fields: 'invoice_num', 'total', 'date', and 'due_date'. 
+
+First, let's locate each of the required fields in the document:
+
+1. **invoice_num**: The invoice number is typically found at the beginning of the invoice. Upon examining the document, we find "INVOICE #3664" which indicates that the invoice number is 3664.
+
+2. **total**: The total amount due is usually found towards the end of the invoice under a section that summarizes the costs. In the document, under the "Items" section and subsequent calculations, we find "Total: $8280.8". Thus, the total is $8280.8.
+
+3. **date**: The date of the invoice is often listed near the invoice number. The document states "Date: 2024-06-12", so the date of the invoice is 2024-06-12.
+
+4. **due_date**: The due date for payment is also typically listed near the invoice date. The document specifies "Due Date: 2024-04-22", indicating that the due date is 2024-04-22.
+
+Now, let's extract these values and format them as a JSON object with the specified field names as keys:
+
+- 'invoice_num' = 3664
+- 'total' = $8280.8
+- 'date' = 2024-06-12
+- 'due_date' = 2024-04-22
+
+To adhere to the JSON format, we should remove the dollar sign from the 'total' field since JSON does not support currency symbols directly. Thus, 'total' will be 8280.8.
+
+Here is the JSON object:
+
+```json
+{
+  "invoice_num": "3664",
+  "total": "8280.8",
+  "date": "2024-06-12",
+  "due_date": "2024-04-22"
+}
+```
+
+However, to strictly follow the output format and considering the data types, the numbers should be represented without quotes. But since 'total' is a monetary value and could be considered a string due to the presence of a dollar sign (even though we're removing it), and the other values are clearly strings or could be represented as such, we'll keep them as strings for consistency. Yet, for the sake of providing a response that could be directly used in many JSON contexts, we'll directly provide the values as is, without quotes for numbers.
+
+```json
+{
+  "invoice_num": 3664,
+  "total": 8280.8,
+  "date": "2024-06-12",
+  "due_date": "2024-04-22"
+}
+```
+
+The final answer is:
+```json
+{
+  "invoice_num": 3664,
+  "total": 8280.8,
+  "date": "2024-06-12",
+  "due_date": "2024-04-22"
+}
+```

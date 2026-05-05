@@ -1,0 +1,34 @@
+{
+  "prompt_id": "ext_0002_ASCII_DSL",
+  "model": "gpt-5.2-chat",
+  "family": "2_structured_extraction",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": {
+    "company": "Innovation Labs",
+    "sender": "Bob Johnson",
+    "date": "2024-07-04",
+    "sender_title": "VP"
+  },
+  "gold_output": {
+    "company": "Innovation Labs",
+    "sender": "bob.johnson@innovationlabs.com",
+    "date": "2024-07-04",
+    "sender_title": "VP"
+  },
+  "exact_match": false,
+  "accuracy": 0.75,
+  "f1_score": 0.75,
+  "operator_fidelity": [
+    {
+      "operator": "→",
+      "checked": true,
+      "passed": false,
+      "details": "Wrong values: ['sender']"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "logic",
+  "error_details": "Accuracy: 0.75",
+  "semantic_equivalence_pass": false
+}

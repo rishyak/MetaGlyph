@@ -1,0 +1,43 @@
+To solve this problem, we need to filter the given dataset based on the conditions provided: the category should be one of ['A', 'B'] and the status should be one of ['active']. We then need to return the IDs of the items that satisfy these conditions in an array called 'selected_ids' and the count of such items as an integer called 'count'.
+
+Let's analyze the given dataset:
+
+1. item_000: Category = B, Status = inactive (Does not satisfy the condition)
+2. item_001: Category = C, Status = active (Does not satisfy the condition because Category is not A or B)
+3. item_002: Category = B, Status = active (Satisfies the condition)
+4. item_003: Category = C, Status = pending (Does not satisfy the condition)
+5. item_004: Category = B, Status = pending (Does not satisfy the condition)
+6. item_005: Category = A, Status = inactive (Does not satisfy the condition)
+7. item_006: Category = C, Status = active (Does not satisfy the condition because Category is not A or B)
+8. item_007: Category = C, Status = pending (Does not satisfy the condition)
+9. item_008: Category = A, Status = pending (Does not satisfy the condition)
+10. item_009: Category = B, Status = pending (Does not satisfy the condition)
+11. item_010: Category = B, Status = active (Satisfies the condition)
+12. item_011: Category = C, Status = pending (Does not satisfy the condition)
+13. item_012: Category = C, Status = pending (Does not satisfy the condition)
+14. item_013: Category = B, Status = active (Satisfies the condition)
+15. item_014: Category = A, Status = active (Satisfies the condition)
+16. item_015: Category = B, Status = active (Satisfies the condition)
+17. item_016: Category = A, Status = active (Satisfies the condition)
+18. item_017: Category = C, Status = pending (Does not satisfy the condition)
+19. item_018: Category = A, Status = pending (Does not satisfy the condition)
+20. item_019: Category = C, Status = active (Does not satisfy the condition because Category is not A or B)
+
+The items that satisfy the given conditions are:
+- item_002: ID = item_002
+- item_010: ID = item_010
+- item_013: ID = item_013
+- item_014: ID = item_014
+- item_015: ID = item_015
+- item_016: ID = item_016
+
+Therefore, the 'selected_ids' array will contain ['item_002', 'item_010', 'item_013', 'item_014', 'item_015', 'item_016'] and the 'count' will be 6.
+
+The response in the required JSON format is:
+
+```json
+{
+  "selected_ids": ["item_002", "item_010", "item_013", "item_014", "item_015", "item_016"],
+  "count": 6
+}
+```

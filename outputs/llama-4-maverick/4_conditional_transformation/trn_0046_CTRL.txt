@@ -1,0 +1,133 @@
+To solve this problem, we need to apply the given transformation rules to each input record and then output the transformed records in JSON format.
+
+The transformation rules are given as:
+∀x: TRANSFORM x | (x.type != "premium" ⇒ x.amount → x.amount × 1.1) ∘ (x.region != "EU" ⇒ x.amount → x.amount × 1.2) ∘ (x.active != false ⇒ x.status → "archived") → [x]
+
+Let's break down the transformation rules:
+
+1. If the record type is not "premium", then multiply the amount by 1.1.
+2. If the record region is not "EU", then multiply the amount by 1.2.
+3. If the record is active (i.e., `active` is not `false`), then set the status to "archived".
+
+Let's apply these rules to each record:
+
+### Record Transformations
+
+1. **rec_000**:
+   - type: premium, region: EU, amount: 469, active: False
+   - Rule 1: amount remains 469 (since type is "premium")
+   - Rule 2: amount remains 469 (since region is "EU")
+   - Rule 3: Does not apply (since active is False)
+   - Transformed: {type: "premium", region: "EU", amount: 469, active: false}
+
+2. **rec_001**:
+   - type: premium, region: US, amount: 709, active: True
+   - Rule 1: amount remains 709
+   - Rule 2: amount → 709 × 1.2 = 850.8
+   - Rule 3: status → "archived"
+   - Transformed: {type: "premium", region: "US", amount: 850.8, active: true, status: "archived"}
+
+3. **rec_002**:
+   - type: trial, region: EU, amount: 131, active: True
+   - Rule 1: amount → 131 × 1.1 = 144.1
+   - Rule 2: amount remains 144.1
+   - Rule 3: status → "archived"
+   - Transformed: {type: "trial", region: "EU", amount: 144.1, active: true, status: "archived"}
+
+4. **rec_003**:
+   - type: trial, region: EU, amount: 551, active: True
+   - Rule 1: amount → 551 × 1.1 = 606.1
+   - Rule 2: amount remains 606.1
+   - Rule 3: status → "archived"
+   - Transformed: {type: "trial", region: "EU", amount: 606.1, active: true, status: "archived"}
+
+5. **rec_004**:
+   - type: trial, region: US, amount: 864, active: True
+   - Rule 1: amount → 864 × 1.1 = 950.4
+   - Rule 2: amount → 950.4 × 1.2 = 1140.48
+   - Rule 3: status → "archived"
+   - Transformed: {type: "trial", region: "US", amount: 1140.48, active: true, status: "archived"}
+
+6. **rec_005**:
+   - type: standard, region: EU, amount: 484, active: False
+   - Rule 1: amount → 484 × 1.1 = 532.4
+   - Rule 2: amount remains 532.4
+   - Rule 3: Does not apply
+   - Transformed: {type: "standard", region: "EU", amount: 532.4, active: false}
+
+7. **rec_006**:
+   - type: trial, region: EU, amount: 853, active: True
+   - Rule 1: amount → 853 × 1.1 = 938.3
+   - Rule 2: amount remains 938.3
+   - Rule 3: status → "archived"
+   - Transformed: {type: "trial", region: "EU", amount: 938.3, active: true, status: "archived"}
+
+8. **rec_007**:
+   - type: standard, region: EU, amount: 364, active: True
+   - Rule 1: amount → 364 × 1.1 = 400.4
+   - Rule 2: amount remains 400.4
+   - Rule 3: status → "archived"
+   - Transformed: {type: "standard", region: "EU", amount: 400.4, active: true, status: "archived"}
+
+9. **rec_008**:
+   - type: premium, region: US, amount: 969, active: True
+   - Rule 1: amount remains 969
+   - Rule 2: amount → 969 × 1.2 = 1162.8
+   - Rule 3: status → "archived"
+   - Transformed: {type: "premium", region: "US", amount: 1162.8, active: true, status: "archived"}
+
+10. **rec_009**:
+    - type: standard, region: APAC, amount: 439, active: True
+    - Rule 1: amount → 439 × 1.1 = 482.9
+    - Rule 2: amount → 482.9 × 1.2 = 579.48
+    - Rule 3: status → "archived"
+    - Transformed: {type: "standard", region: "APAC", amount: 579.48, active: true, status: "archived"}
+
+11. **rec_010**:
+    - type: standard, region: US, amount: 78, active: True
+    - Rule 1: amount → 78 × 1.1 = 85.8
+    - Rule 2: amount → 85.8 × 1.2 = 102.96
+    - Rule 3: status → "archived"
+    - Transformed: {type: "standard", region: "US", amount: 102.96, active: true, status: "archived"}
+
+12. **rec_011**:
+    - type: trial, region: US, amount: 467, active: True
+    - Rule 1: amount → 467 × 1.1 = 513.7
+    - Rule 2: amount → 513.7 × 1.2 = 616.44
+    - Rule 3: status → "archived"
+    - Transformed: {type: "trial", region: "US", amount: 616.44, active: true, status: "archived"}
+
+13. **rec_012**:
+    - type: standard, region: APAC, amount: 55, active: False
+    - Rule 1: amount → 55 × 1.1 = 60.5
+    - Rule 2: amount → 60.5 × 1.2 = 72.6
+    - Rule 3: Does not apply
+    - Transformed: {type: "standard", region: "APAC", amount: 72.6, active: false}
+
+14. **rec_013**:
+    - type: premium, region: US, amount: 562, active: True
+    - Rule 1: amount remains 562
+    - Rule 2: amount → 562 × 1.2 = 674.4
+    - Rule 3: status → "archived"
+    - Transformed: {type: "premium", region: "US", amount: 674.4, active: true, status: "archived"}
+
+15. **rec_014**:
+    - type: standard, region: US, amount: 525, active: False
+    - Rule 1: amount → 525 × 1.1 = 577.5
+    - Rule 2: amount → 577.5 × 1.2 = 693
+    - Rule 3: Does not apply
+    - Transformed: {type: "standard", region: "US", amount: 693, active: false}
+
+### JSON Output
+
+```json
+[
+  {"type": "premium", "region": "EU", "amount": 469, "active": false},
+  {"type": "premium", "region": "US", "amount": 850.8, "active": true, "status": "archived"},
+  {"type": "trial", "region": "EU", "amount": 144.1, "active": true, "status": "archived"},
+  {"type": "trial", "region": "EU", "amount": 606.1, "active": true, "status": "archived"},
+  {"type": "trial", "region": "US", "amount": 1140.48, "active": true, "status": "archived"},
+  {"type": "standard", "region": "EU", "amount": 532.4, "active": false},
+  {"type": "trial", "region": "EU", "amount": 938.3, "active": true, "status": "archived"},
+  {"type": "standard", "region": "EU", "amount": 400.4, "active": true, "status": "archived"},
+ 

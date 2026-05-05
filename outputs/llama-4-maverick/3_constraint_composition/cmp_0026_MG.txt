@@ -1,0 +1,57 @@
+To solve this problem, we need to filter the given dataset based on two conditions: the category should be either 'A' or 'B', and the status should be 'active'. We then need to collect the IDs of the items that satisfy these conditions and count how many such items exist.
+
+### Step 1: Filter the Dataset
+
+First, let's go through the dataset and identify items that match the given conditions.
+
+1. **Category ∈ {A, B}**: The category should be either 'A' or 'B'.
+2. **Status ∈ {active}**: The status should be 'active'.
+
+Let's examine the dataset:
+
+- item_000: Category = A, Status = inactive (Does not match)
+- item_001: Category = A, Status = pending (Does not match)
+- item_002: Category = C, Status = active (Does not match)
+- item_003: Category = B, Status = active (Matches)
+- item_004: Category = C, Status = pending (Does not match)
+- item_005: Category = A, Status = inactive (Does not match)
+- item_006: Category = A, Status = active (Matches)
+- item_007: Category = C, Status = pending (Does not match)
+- item_008: Category = A, Status = inactive (Does not match)
+- item_009: Category = A, Status = pending (Does not match)
+- item_010: Category = A, Status = pending (Does not match)
+- item_011: Category = B, Status = active (Matches)
+- item_012: Category = A, Status = pending (Does not match)
+- item_013: Category = C, Status = pending (Does not match)
+- item_014: Category = B, Status = active (Matches)
+- item_015: Category = C, Status = pending (Does not match)
+- item_016: Category = B, Status = inactive (Does not match)
+- item_017: Category = B, Status = inactive (Does not match)
+- item_018: Category = A, Status = inactive (Does not match)
+- item_019: Category = A, Status = pending (Does not match)
+
+### Step 2: Identify Matching Items
+
+From the dataset, the items that match both conditions are:
+- item_003: ID = item_003
+- item_006: ID = item_006
+- item_011: ID = item_011
+- item_014: ID = item_014
+
+### Step 3: Prepare the Output
+
+The IDs of the matching items are: `item_003`, `item_006`, `item_011`, `item_014`.
+
+- **selected_ids**: [`item_003`, `item_006`, `item_011`, `item_014`]
+- **count**: 4 (since there are 4 items that match the conditions)
+
+### Output
+
+```json
+{
+  "selected_ids": ["item_003", "item_006", "item_011", "item_014"],
+  "count": 4
+}
+```
+
+This JSON object represents the IDs of the items that are either in category 'A' or 'B' and are 'active', along with the total count of such items.

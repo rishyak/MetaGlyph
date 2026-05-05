@@ -1,0 +1,30 @@
+To solve this problem, we need to follow the given instruction: `SELECT x | x.portable ∉ {True} → [x.name]`. This means we have to select the names of items from the given list where the item is not portable.
+
+First, let's analyze the given list of products:
+
+1. Tablet: portable: True
+2. Bookshelf: portable: False
+3. Smartphone: portable: True
+4. Laptop: portable: True
+5. Pen: portable: True
+6. Notebook: portable: True
+7. Chair: portable: True
+8. Desk: portable: False
+9. Headphones: portable: True
+10. Refrigerator: portable: False
+
+The condition `x.portable ∉ {True}` translates to selecting items where `portable` is not `True`, meaning we are looking for items where `portable` is `False`.
+
+From the given list, the items that are not portable (`portable: False`) are:
+- Bookshelf
+- Desk
+- Refrigerator
+
+So, we need to return their names as a JSON array of strings.
+
+The names of the non-portable items are: ["Bookshelf", "Desk", "Refrigerator"].
+
+Therefore, the output in the required JSON format is:
+```json
+["Bookshelf", "Desk", "Refrigerator"]
+```

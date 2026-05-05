@@ -1,0 +1,29 @@
+### Solution
+```json
+[
+  "Shark",
+  "Salmon"
+]
+```
+### Explanation
+To solve this problem, we need to iterate through the list of animals and check if the type of each animal is "fish". We will return the names of the animals that meet this condition.
+
+### Code
+```python
+animals = [
+    {"name": "Crocodile", "type": "reptile", "domestic": False, "size": "large"},
+    {"name": "Hamster", "type": "mammal", "domestic": True, "size": "small"},
+    {"name": "Dog", "type": "mammal", "domestic": True, "size": "medium"},
+    {"name": "Elephant", "type": "mammal", "domestic": False, "size": "large"},
+    {"name": "Snake", "type": "reptile", "domestic": False, "size": "medium"},
+    {"name": "Shark", "type": "fish", "domestic": False, "size": "large"},
+    {"name": "Eagle", "type": "bird", "domestic": False, "size": "medium"},
+    {"name": "Salmon", "type": "fish", "domestic": False, "size": "medium"},
+    {"name": "Cat", "type": "mammal", "domestic": True, "size": "small"},
+    {"name": "Turtle", "type": "reptile", "domestic": True, "size": "small"}
+]
+
+result = [animal["name"] for animal in animals if animal["type"] == "fish"]
+print(result)
+```
+This code uses a list comprehension to iterate through the list of animals and checks if the type of each animal is "fish". If it is, the name of the animal is added to the result list. The final result is printed to the console.

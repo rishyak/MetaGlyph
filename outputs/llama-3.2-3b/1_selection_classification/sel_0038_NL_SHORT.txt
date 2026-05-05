@@ -1,0 +1,10 @@
+### Step 1: Review the given dataset to identify the animals with a size category of "large".
+The dataset contains the following animals with a size category of "large": Elephant, Whale, and Crocodile.
+
+### Step 2: Filter the dataset to only include the animals with a size category of "large".
+The filtered dataset contains the following animals with a size category of "large": Elephant, Whale, and Crocodile.
+
+### Step 3: Return the names of the animals with a size category of "large" as a JSON array.
+The names of the animals with a size category of "large" are: Elephant, Whale, and Crocodile.
+
+The final answer is: $\boxed["Elephant", "Whale", "Crocodile"]$

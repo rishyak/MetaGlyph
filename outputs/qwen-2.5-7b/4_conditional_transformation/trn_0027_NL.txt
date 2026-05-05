@@ -1,0 +1,127 @@
+```json
+[
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 553,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 474 * 1.1 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 329 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 96,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 782,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 288,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 507 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 230 * 1.1 * 1.2,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 123 * 1.1 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 617,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 325,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 623 * 1.2,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 318,
+        "active": true,
+        "status": "active"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 306 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 519,
+        "active": false,
+        "status": "archived"
+    }
+]
+```
+
+Explanation:
+
+- `rec_000` does not meet any of the conditions.
+- `rec_001` meets both Rule 1 and Rule 2, so it gets multiplied by 1.1 and 1.2, and its status changes to 'archived'.
+- `rec_002` meets Rule 2, so it gets multiplied by 1.2, and its status changes to 'archived'.
+- `rec_003` does not meet any of the conditions.
+- `rec_004` does not meet any of the conditions.
+- `rec_005` does not meet any of the conditions.
+- `rec_006` meets Rule 3, so its status changes to 'archived'.
+- `rec_007` meets both Rule 1 and Rule 2, so it gets multiplied by 1.1 and 1.2, and its status remains 'active'.
+- `rec_008` meets both Rule 1 and Rule 2, so it gets multiplied by 1.1 and 1.2, and its status changes to 'archived'.
+- `rec_009` does not meet any of the conditions.
+- `rec_010` does not meet any of the conditions.
+- `rec_011` does not meet any of the conditions.
+- `rec_012` does not meet any of the conditions.
+- `rec_013` meets Rule 2, so it gets multiplied by 1.2, and its status changes to 'archived'.
+- `rec_014` meets Rule 2, so it gets multiplied by 1.2, and its status remains 'active'.

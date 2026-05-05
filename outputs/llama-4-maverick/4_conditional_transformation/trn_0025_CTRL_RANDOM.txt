@@ -1,0 +1,128 @@
+To solve this problem, we need to apply the given transformation rules to each record and then output the transformed records in JSON format.
+
+The transformation rule is given as: `(x.type == "premium" ◇ x.amount ↯ x.amount × 1.1) ◆ (x.region == "EU" ◇ x.amount ↯ x.amount × 1.2) ◆ (x.active == false ◇ x.status ↯ "archived") ↯ [x]`.
+
+Let's break down the transformation rule:
+
+1. If the record's type is "premium", then multiply its amount by 1.1.
+2. If the record's region is "EU", then multiply its amount by 1.2.
+3. If the record is not active (i.e., `x.active == false`), then set its status to "archived".
+4. Regardless of the above conditions, output the record (with any changes applied).
+
+Let's apply these rules to each record:
+
+### Record Transformation
+
+1. **rec_000**:
+   - Type: premium, so amount = 997 × 1.1 = 1096.7
+   - Region: Not EU
+   - Active: True
+   - Output: `{type: "premium", region: "APAC", amount: 1096.7, active: True}`
+
+2. **rec_001**:
+   - Type: Not premium
+   - Region: EU, so amount = 877 × 1.2 = 1052.4
+   - Active: False, so status = "archived"
+   - Output: `{type: "standard", region: "EU", amount: 1052.4, active: False, status: "archived"}`
+
+3. **rec_002**:
+   - Type: premium, so amount = 120 × 1.1 = 132
+   - Region: Not EU
+   - Active: False, so status = "archived"
+   - Output: `{type: "premium", region: "APAC", amount: 132, active: False, status: "archived"}`
+
+4. **rec_003**:
+   - Type: Not premium
+   - Region: EU, so amount = 85 × 1.2 = 102
+   - Active: True
+   - Output: `{type: "trial", region: "EU", amount: 102, active: True}`
+
+5. **rec_004**:
+   - Type: premium, so amount = 161 × 1.1 = 177.1
+   - Region: Not EU
+   - Active: True
+   - Output: `{type: "premium", region: "APAC", amount: 177.1, active: True}`
+
+6. **rec_005**:
+   - Type: Not premium
+   - Region: EU, so amount = 649 × 1.2 = 778.8
+   - Active: False, so status = "archived"
+   - Output: `{type: "standard", region: "EU", amount: 778.8, active: False, status: "archived"}`
+
+7. **rec_006**:
+   - Type: premium, so amount = 553 × 1.1 = 608.3
+   - Region: Not EU
+   - Active: False, so status = "archived"
+   - Output: `{type: "premium", region: "APAC", amount: 608.3, active: False, status: "archived"}`
+
+8. **rec_007**:
+   - Type: premium, so amount = 629 × 1.1 = 691.9
+   - Region: Not EU
+   - Active: False, so status = "archived"
+   - Output: `{type: "premium", region: "APAC", amount: 691.9, active: False, status: "archived"}`
+
+9. **rec_008**:
+   - Type: Not premium
+   - Region: Not EU
+   - Active: True
+   - Output: `{type: "standard", region: "APAC", amount: 127, active: True}`
+
+10. **rec_009**:
+    - Type: premium, so amount = 919 × 1.1 = 1010.9
+    - Region: EU, so amount = 1010.9 × 1.2 = 1213.08
+    - Active: True
+    - Output: `{type: "premium", region: "EU", amount: 1213.08, active: True}`
+
+11. **rec_010**:
+    - Type: premium, so amount = 857 × 1.1 = 942.7
+    - Region: EU, so amount = 942.7 × 1.2 = 1131.24
+    - Active: False, so status = "archived"
+    - Output: `{type: "premium", region: "EU", amount: 1131.24, active: False, status: "archived"}`
+
+12. **rec_011**:
+    - Type: premium, so amount = 757 × 1.1 = 832.7
+    - Region: EU, so amount = 832.7 × 1.2 = 999.24
+    - Active: True
+    - Output: `{type: "premium", region: "EU", amount: 999.24, active: True}`
+
+13. **rec_012**:
+    - Type: premium, so amount = 330 × 1.1 = 363
+    - Region: EU, so amount = 363 × 1.2 = 435.6
+    - Active: False, so status = "archived"
+    - Output: `{type: "premium", region: "EU", amount: 435.6, active: False, status: "archived"}`
+
+14. **rec_013**:
+    - Type: premium, so amount = 713 × 1.1 = 784.3
+    - Region: Not EU
+    - Active: False, so status = "archived"
+    - Output: `{type: "premium", region: "US", amount: 784.3, active: False, status: "archived"}`
+
+15. **rec_014**:
+    - Type: Not premium
+    - Region: Not EU
+    - Active: True
+    - Output: `{type: "standard", region: "US", amount: 861, active: True}`
+
+### JSON Output
+
+```json
+[
+  {"type": "premium", "region": "APAC", "amount": 1096.7, "active": true},
+  {"type": "standard", "region": "EU", "amount": 1052.4, "active": false, "status": "archived"},
+  {"type": "premium", "region": "APAC", "amount": 132, "active": false, "status": "archived"},
+  {"type": "trial", "region": "EU", "amount": 102, "active": true},
+  {"type": "premium", "region": "APAC", "amount": 177.1, "active": true},
+  {"type": "standard", "region": "EU", "amount": 778.8, "active": false, "status": "archived"},
+  {"type": "premium", "region": "APAC", "amount": 608.3, "active": false, "status": "archived"},
+  {"type": "premium", "region": "APAC", "amount": 691.9, "active": false, "status": "archived"},
+  {"type": "standard", "region": "APAC", "amount": 127, "active": true},
+  {"type": "premium", "region": "EU", "amount": 1213.08, "active": true},
+  {"type": "premium", "region": "EU", "amount": 1131.24, "active": false, "status": "archived"},
+  {"type": "premium", "region": "EU", "amount": 999.24, "active": true},
+  {"type": "premium", "region": "EU", "amount": 435.6, "active": false, "status": "archived"},
+  {"type": "premium", "region": "US", "amount": 784.3, "active": false, "status": "archived"},
+  {"type": "standard", "region": "US", "amount": 861, "active": true}
+]
+```
+
+Note that in the JSON output, `true` and `false` are used instead of `True` and `False` as JSON is case-sensitive and uses lowercase for boolean values.

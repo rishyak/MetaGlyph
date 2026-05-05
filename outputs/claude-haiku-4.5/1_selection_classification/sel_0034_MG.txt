@@ -1,5 +1,22 @@
-```json
-[]
-```
+I need to interpret the instruction: `SELECT x | x.portable ∉ {True} → [x.name]`
 
-The query requests items that are members of both "mammal" and "pet" categories, while excluding birds and farm animals. None of the items in the provided inventory list have attributes indicating they are mammals or pets. All items are inanimate objects (appliances, stationery, electronics, and furniture), so no items match the selection criteria.
+This means: Select all items where `portable` is NOT in the set {True}, and return their names.
+
+In other words, I need to find all items where `portable` is `False`.
+
+Let me go through the list:
+
+- Refrigerator: portable: **False** ✓
+- Notebook: portable: True ✗
+- Headphones: portable: True ✗
+- Desk: portable: **False** ✓
+- Chair: portable: True ✗
+- Microwave: portable: True ✗
+- Pen: portable: True ✗
+- Stapler: portable: True ✗
+- Smartphone: portable: True ✗
+- Bookshelf: portable: **False** ✓
+
+```json
+["Refrigerator", "Desk", "Bookshelf"]
+```

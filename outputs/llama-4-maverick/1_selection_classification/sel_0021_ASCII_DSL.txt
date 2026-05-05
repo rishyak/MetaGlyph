@@ -1,0 +1,40 @@
+To solve this task, we need to follow the given instruction and apply it to the provided input.
+
+The instruction is: `SELECT x | x.domestic NOT IN {False} -> [x.name]`
+
+This means we need to select the names of animals where the `domestic` attribute is not `False`. In other words, we are looking for animals where `domestic` is `True`.
+
+Let's examine the input data:
+
+1. Hamster: type: mammal, domestic: True, size: small
+2. Turtle: type: reptile, domestic: True, size: small
+3. Goldfish: type: fish, domestic: True, size: small
+4. Parrot: type: bird, domestic: True, size: small
+5. Penguin: type: bird, domestic: False, size: medium
+6. Snake: type: reptile, domestic: False, size: medium
+7. Salmon: type: fish, domestic: False, size: medium
+8. Eagle: type: bird, domestic: False, size: medium
+9. Whale: type: mammal, domestic: False, size: large
+10. Crocodile: type: reptile, domestic: False, size: large
+
+We will filter this data based on the `domestic` attribute being `True`.
+
+- Hamster: domestic: True
+- Turtle: domestic: True
+- Goldfish: domestic: True
+- Parrot: domestic: True
+
+These are the animals with `domestic` equal to `True`. Now, we will extract their names.
+
+The names are: Hamster, Turtle, Goldfish, Parrot
+
+To present the answer in the required format, we will put these names into a JSON array of strings.
+
+```json
+["Hamster", "Turtle", "Goldfish", "Parrot"]
+```
+
+The final answer is: 
+```json
+["Hamster", "Turtle", "Goldfish", "Parrot"]
+```

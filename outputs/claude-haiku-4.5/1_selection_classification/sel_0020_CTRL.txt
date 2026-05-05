@@ -1,3 +1,22 @@
+# Analysis
+
+The instruction asks me to select all items where `x.size ∉ {small}`, meaning I need to find all animals whose size is NOT "small".
+
+Let me review each animal:
+
+- **Shark**: size: large ✓ (not small)
+- **Elephant**: size: large ✓ (not small)
+- **Cat**: size: small ✗ (is small)
+- **Goldfish**: size: small ✗ (is small)
+- **Parrot**: size: small ✗ (is small)
+- **Eagle**: size: medium ✓ (not small)
+- **Hamster**: size: small ✗ (is small)
+- **Turtle**: size: small ✗ (is small)
+- **Salmon**: size: medium ✓ (not small)
+- **Lion**: size: large ✓ (not small)
+
+### Output
+
 ```json
-["Cat", "Hamster"]
+["Shark", "Elephant", "Eagle", "Salmon", "Lion"]
 ```

@@ -1,0 +1,7 @@
+```json
+["Dog", "Whale", "Elephant", "Cat"]
+```
+
+Explanation:
+- The query `SELECT x | x.type ∈ {mammal} → [x.name]` means to select the names of all animals that belong to the category "mammal".
+- From the provided list, the mammals are: Dog, Whale, Elephant, and Cat.

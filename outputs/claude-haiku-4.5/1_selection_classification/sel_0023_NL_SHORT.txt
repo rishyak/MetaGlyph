@@ -1,0 +1,21 @@
+Looking at the list, I need to identify all animals whose size is **not small** (i.e., size is either medium or large).
+
+**Animals with size = medium:**
+- Penguin
+- Salmon
+- Snake
+- Eagle
+
+**Animals with size = large:**
+- Elephant
+- Whale
+- Shark
+
+**Animals with size = small (excluded):**
+- Cat
+- Turtle
+- Goldfish
+
+```json
+["Penguin", "Salmon", "Snake", "Eagle", "Elephant", "Whale", "Shark"]
+```

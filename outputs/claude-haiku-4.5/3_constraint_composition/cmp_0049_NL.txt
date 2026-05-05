@@ -1,8 +1,16 @@
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": ["item_011", "item_015", "item_018"],
+  "count": 3
 }
 ```
 
-**Explanation:** The dataset provided contains only item IDs with categories (A, B, C), statuses, priorities, and values. There are no attributes indicating "security," "performance," "deprecated," or "experimental" status. Without these required attributes to match against the selection criteria, no items can be selected.
+**Explanation:**
+I filtered the dataset for items where:
+- Category is A OR B (one of: A, B)
+- AND Status is active
+
+Results:
+- **item_011**: Category B, Status active ✓
+- **item_015**: Category A, Status active ✓
+- **item_018**: Category B, Status active ✓

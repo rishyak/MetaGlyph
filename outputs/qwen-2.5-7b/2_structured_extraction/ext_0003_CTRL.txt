@@ -1,0 +1,8 @@
+```json
+{
+  "payment_terms": "Net 60",
+  "date": "2024-10-07",
+  "total": "1530.1",
+  "invoice_num": "6925"
+}
+```

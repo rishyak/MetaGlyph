@@ -1,0 +1,34 @@
+{
+  "prompt_id": "ext_0044_MG",
+  "model": "llama-3.2-3b",
+  "family": "2_structured_extraction",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": {
+    "payment_terms": "Due on Receipt",
+    "date": "2024-10-22",
+    "invoice_num": "6111",
+    "due_date": "2024-07-13"
+  },
+  "gold_output": {
+    "payment_terms": "Due on Receipt",
+    "date": "2024-10-22",
+    "invoice_num": "6111",
+    "due_date": "2024-07-13"
+  },
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
+  "operator_fidelity": [
+    {
+      "operator": "→",
+      "checked": true,
+      "passed": true,
+      "details": "Transformation values exactly match gold"
+    }
+  ],
+  "overall_pass": true,
+  "error_type": "none",
+  "error_details": null,
+  "semantic_equivalence_pass": false
+}

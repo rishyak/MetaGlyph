@@ -1,0 +1,18 @@
+### Step 1: Filter the dataset to include only animals that are birds and have a size of "large".
+We will select the rows where the "type" is "bird" and the "size" is "large".
+
+### Step 2: Extract the names of the selected animals.
+We will extract the "name" column from the filtered dataset.
+
+### Step 3: Return the extracted names as a JSON array.
+We will format the extracted names as a JSON array.
+
+
+```json
+[
+  "Eagle",
+  "Penguin",
+  "Shark",
+  "Crocodile"
+]
+```

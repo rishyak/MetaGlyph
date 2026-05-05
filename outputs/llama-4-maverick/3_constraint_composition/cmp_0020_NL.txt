@@ -1,0 +1,45 @@
+```json
+{
+  "selected_ids": ["item_001"],
+  "count": 1
+}
+```
+
+### Explanation
+
+To solve this problem, we need to review each item in the given dataset and check if it meets two conditions: 
+1. The 'value' is >= 50.
+2. The 'category' is 'A'.
+
+Let's examine the dataset:
+
+1. **item_000**: Category = C, Value = 90. Does not meet condition 2.
+2. **item_001**: Category = A, Value = 99. Meets both conditions.
+3. **item_002**: Category = C, Value = 56. Does not meet condition 2.
+4. **item_003**: Category = B, Value = 44. Does not meet either condition.
+5. **item_004**: Category = B, Value = 94. Does not meet condition 2.
+6. **item_005**: Category = A, Value = 41. Does not meet condition 1.
+7. **item_006**: Category = C, Value = 20. Does not meet condition 1 or 2.
+8. **item_007**: Category = C, Value = 12. Does not meet condition 1 or 2.
+9. **item_008**: Category = A, Value = 13. Does not meet condition 1.
+10. **item_009**: Category = C, Value = 17. Does not meet condition 1 or 2.
+11. **item_010**: Category = C, Value = 72. Does not meet condition 2.
+12. **item_011**: Category = C, Value = 16. Does not meet condition 1 or 2.
+13. **item_012**: Category = B, Value = 97. Does not meet condition 2.
+14. **item_013**: Category = B, Value = 37. Does not meet either condition.
+15. **item_014**: Category = C, Value = 14. Does not meet condition 1 or 2.
+16. **item_015**: Category = C, Value = 20. Does not meet condition 1 or 2.
+17. **item_016**: Category = C, Value = 14. Does not meet condition 1 or 2.
+18. **item_017**: Category = B, Value = 15. Does not meet either condition.
+19. **item_018**: Category = B, Value = 55. Does not meet condition 2.
+20. **item_019**: Category = C, Value = 87. Does not meet condition 2.
+
+Only **item_001** meets both conditions (Category = A and Value = 99 >= 50). Therefore, the ID of the selected item is "item_001", and the count is 1.
+
+The result is returned as a JSON object:
+```json
+{
+  "selected_ids": ["item_001"],
+  "count": 1
+}
+```

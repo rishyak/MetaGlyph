@@ -4,7 +4,12 @@
   "family": "2_structured_extraction",
   "condition": "MG",
   "parse_success": true,
-  "parsed_output": [],
+  "parsed_output": {
+    "sender": "Alice Smith",
+    "company": "Innovation Labs",
+    "sender_title": "Manager, Digital Systems",
+    "recipient": "bob.johnson@example.com"
+  },
   "gold_output": {
     "sender": "alice.smith@innovationlabs.com",
     "company": "Digital Systems",
@@ -12,18 +17,18 @@
     "recipient": "bob.johnson@example.com"
   },
   "exact_match": false,
-  "accuracy": 0.0,
-  "f1_score": 0.0,
+  "accuracy": 0.25,
+  "f1_score": 0.25,
   "operator_fidelity": [
     {
       "operator": "→",
       "checked": true,
       "passed": false,
-      "details": "Transformation check"
+      "details": "Wrong values: ['sender', 'company', 'sender_title']"
     }
   ],
   "overall_pass": false,
-  "error_type": "format",
-  "error_details": "Accuracy: 0.00",
-  "semantic_equivalence_pass": false
+  "error_type": "logic",
+  "error_details": "Accuracy: 0.25",
+  "semantic_equivalence_pass": true
 }

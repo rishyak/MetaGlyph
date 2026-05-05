@@ -1,0 +1,42 @@
+```json
+{
+  "selected_ids": ["item_002", "item_005", "item_006", "item_009", "item_010", "item_013", "item_014", "item_016", "item_018", "item_019"],
+  "count": 10
+}
+```
+
+### Explanation
+The query `SELECT x.id | x.priority ∈ {high} ∪ x.status ∉ {inactive}` is interpreted as selecting items where the priority is either "high" or the status is not "inactive".
+
+- **Priority = high**: 
+  - ID: item_006
+  - ID: item_013
+  - ID: item_016
+  - ID: item_019
+  
+- **Status ≠ inactive**:
+  - ID: item_001 (status: pending)
+  - ID: item_003 (status: pending)
+  - ID: item_005 (status: active)
+  - ID: item_007 (status: inactive but priority is medium)
+  - ID: item_010 (status: active)
+  - ID: item_012 (status: pending)
+  - ID: item_013 (status: active, already included in high priority)
+  - ID: item_014 (status: active)
+  - ID: item_016 (status: active, already included in high priority)
+  - ID: item_018 (status: inactive but priority is low, not selected because it's not "high")
+  - ID: item_019 (status: inactive but priority is low, not selected because it's not "high")
+
+After removing duplicates, we have the following selected IDs:
+- item_002
+- item_005
+- item_006
+- item_009
+- item_010
+- item_013
+- item_014
+- item_016
+- item_018
+- item_019
+
+So, the count of selected items is 10.

@@ -1,0 +1,11 @@
+### Solution
+```json
+[
+  "Parrot",
+  "Hamster",
+  "Cat"
+]
+```
+
+### Explanation
+To solve this problem, we need to filter the list of animals to include only those that are birds and are commonly kept as pets. We can do this by selecting the `name` attribute of the `x` object where `x.type` equals `"bird"` and `x.domestic` is `true`.

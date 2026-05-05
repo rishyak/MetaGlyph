@@ -2,10 +2,32 @@
 {
   "selected_ids": [
     "item_000",
-    "item_003",
+    "item_002",
+    "item_004",
     "item_005",
-    "item_006"
+    "item_006",
+    "item_011",
+    "item_015",
+    "item_016",
+    "item_017",
+    "item_018"
   ],
-  "count": 4
+  "count": 10
 }
 ```
+
+**Explanation:**
+The query selects items where:
+- Category is in {A, B} **OR** Status is "active"
+
+**Selected items:**
+- item_000: Category B ✓
+- item_002: Status active ✓
+- item_004: Status active ✓
+- item_005: Category A ✓
+- item_006: Status active ✓
+- item_011: Status active ✓
+- item_015: Category B AND Status active ✓
+- item_016: Status active ✓
+- item_017: Category B AND Status active ✓
+- item_018: Category A AND Status active ✓

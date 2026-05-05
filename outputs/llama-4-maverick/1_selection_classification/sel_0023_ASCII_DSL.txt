@@ -1,0 +1,42 @@
+To solve this problem, we need to follow the given instruction: `SELECT x | x.size NOT IN {small} -> [x.name]`. This means we have to select the names of animals whose size is not small.
+
+First, let's analyze the given data:
+
+1. Penguin: size: medium
+2. Salmon: size: medium
+3. Elephant: size: large
+4. Snake: size: medium
+5. Cat: size: small
+6. Eagle: size: medium
+7. Whale: size: large
+8. Shark: size: large
+9. Turtle: size: small
+10. Goldfish: size: small
+
+We need to filter out animals with size 'small'. The animals with size 'small' are:
+- Cat
+- Turtle
+- Goldfish
+
+So, the animals whose size is not 'small' are:
+- Penguin
+- Salmon
+- Elephant
+- Snake
+- Eagle
+- Whale
+- Shark
+
+Now, we will extract the names of these animals.
+
+The names are: Penguin, Salmon, Elephant, Snake, Eagle, Whale, Shark.
+
+To present this in the required JSON array format, we will list these names as strings in an array.
+
+The output will be: `["Penguin", "Salmon", "Elephant", "Snake", "Eagle", "Whale", "Shark"]`.
+
+Here is the response in the required format:
+
+```json
+["Penguin", "Salmon", "Elephant", "Snake", "Eagle", "Whale", "Shark"]
+```

@@ -1,0 +1,26 @@
+Based on the provided instruction and input data, we need to select items where the size is not "large". Here is the relevant information from the dataset:
+
+- Shark: size: large
+- Elephant: size: large
+- Cat: size: small
+- Goldfish: size: small
+- Parrot: size: small
+- Eagle: size: medium
+- Hamster: size: small
+- Turtle: size: small
+- Salmon: size: medium
+- Lion: size: large
+
+From this, the items that do not have a size of "large" are:
+- Cat
+- Goldfish
+- Parrot
+- Hamster
+- Turtle
+- Salmon
+
+Thus, the output in the requested JSON format would be:
+
+```json
+["Cat", "Goldfish", "Parrot", "Hamster", "Turtle", "Salmon"]
+```

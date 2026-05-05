@@ -1,0 +1,1 @@
+{"sender_title": "Manager", "date": "2024-11-18", "sender_name": "Alice Smith", "recipient": "alice.smith@example.com"}

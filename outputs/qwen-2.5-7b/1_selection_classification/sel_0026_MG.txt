@@ -1,0 +1,5 @@
+```json
+["Snake", "Elephant", "Turtle", "Salmon", "Whale", "Lion", "Shark"]
+```
+
+Explanation: The query `SELECT x | x.domestic ∈ {False} → [x.name]` asks for the names of animals that are not domesticated. From the provided list, these include Snake, Elephant, Turtle, Salmon, Whale, Lion, and Shark.

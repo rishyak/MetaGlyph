@@ -1,12 +1,17 @@
 ```json
 {
-  "selected_ids": [
-    "item_000",
-    "item_003",
-    "item_007",
-    "item_010",
-    "item_015"
-  ],
-  "count": 5
+  "selected_ids": ["item_000", "item_019"],
+  "count": 2
 }
 ```
+
+**Explanation:**
+I reviewed all items and selected those where:
+- Value >= 50 AND
+- Category = A
+
+Results:
+- **item_000**: Category A, Value 97 ✓
+- **item_019**: Category A, Value 76 ✓
+
+All other items with Category A had values below 50, and items with values >= 50 but different categories were excluded.

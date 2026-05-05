@@ -1,0 +1,27 @@
+To extract the requested fields from the given invoice document and return them as a JSON object, we need to identify the values for "total", "invoice_num", "payment_terms", and "due_date" within the document.
+
+1. **Invoice Number (invoice_num):** The document clearly states "INVOICE #6310", so the invoice number is 6310.
+
+2. **Total:** The total amount is mentioned under "Total: $2883.3", so the total is 2883.3.
+
+3. **Payment Terms:** The payment terms are specified as "Payment Terms: Net 30", so the payment terms are "Net 30".
+
+4. **Due Date:** The due date is given as "Due Date: 2024-02-12", so the due date is 2024-02-12.
+
+Now, let's compile these values into a JSON object as per the required format.
+
+```json
+{
+  "total": 2883.3,
+  "invoice_num": 6310,
+  "payment_terms": "Net 30",
+  "due_date": "2024-02-12"
+}
+```
+
+To adhere strictly to the output format and ensure the response is correctly formatted, we should directly provide this JSON object as the solution.
+
+The final answer is: 
+```json
+{"total": 2883.3, "invoice_num": 6310, "payment_terms": "Net 30", "due_date": "2024-02-12"}
+```

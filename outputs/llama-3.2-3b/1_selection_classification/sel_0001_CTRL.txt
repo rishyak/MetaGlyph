@@ -1,0 +1,28 @@
+### Solution
+```json
+[
+  "Goldfish",
+  "Turtle",
+  "Hamster",
+  "Cat",
+  "Parrot"
+]
+```
+
+### Explanation
+To solve this problem, we need to identify the animals that are not classified as "large" and are kept as pets. We can do this by filtering the input data based on the "size" and "domestic" attributes.
+
+Here's the step-by-step process:
+
+1. Filter out the animals that are classified as "large" (i.e., have a size greater than 100kg).
+2. Filter out the animals that are not kept as pets (i.e., have a "domestic" status of False).
+
+After applying these filters, we are left with the following animals:
+
+* Goldfish (size: small, domestic: True)
+* Turtle (size: small, domestic: True)
+* Hamster (size: small, domestic: True)
+* Cat (size: small, domestic: True)
+* Parrot (size: small, domestic: True)
+
+These animals meet the criteria and should be included in the output.

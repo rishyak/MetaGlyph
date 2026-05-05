@@ -1,0 +1,49 @@
+{
+  "prompt_id": "sel_0036_NL_SHORT",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "NL_SHORT",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this task, we need to carefully review the given list of animals and their attributes, and then identify the items whose type equals \"mammal\".",
+    "**Review the list of animals**: The list provided contains detailed information about various animals, including their type, domestic status, and size.",
+    "**Identify the relevant attribute**: We are interested in the \"type\" attribute of each animal.",
+    "**Filter animals based on type**: We need to go through the list and select animals where the type is \"mammal\".",
+    "Let's examine the list:",
+    "Salmon: type: fish",
+    "Penguin: type: bird",
+    "Turtle: type: reptile",
+    "Parrot: type: bird",
+    "Goldfish: type: fish",
+    "Snake: type: reptile",
+    "Cat: type: mammal",
+    "Eagle: type: bird",
+    "Whale: type: mammal",
+    "Elephant: type: mammal",
+    "From the given list, the animals that are classified as \"mammal\" are:",
+    "Cat",
+    "Whale",
+    "Elephant",
+    "**Format the output**: The task requires the output to be in a JSON array of strings. So, we need to format the names of the mammals identified into a JSON array."
+  ],
+  "gold_output": [
+    "cat",
+    "elephant",
+    "whale"
+  ],
+  "exact_match": false,
+  "accuracy": 0.15,
+  "f1_score": 0.2608695652173913,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=3, extra=20"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.15",
+  "semantic_equivalence_pass": false
+}

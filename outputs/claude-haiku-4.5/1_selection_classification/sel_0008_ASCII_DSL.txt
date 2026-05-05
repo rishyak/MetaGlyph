@@ -1,0 +1,22 @@
+Looking at the query: `SELECT x | (x.domestic IN {True}) AND (x.type IN {reptile}) -> [x.name]`
+
+This asks for all animals where:
+- `domestic` = True AND
+- `type` = reptile
+
+Let me check each animal:
+
+- Shark: type: fish, domestic: False ❌
+- Cat: type: mammal, domestic: True ❌
+- Elephant: type: mammal, domestic: False ❌
+- **Turtle: type: reptile, domestic: True ✓**
+- Parrot: type: bird, domestic: True ❌
+- Hamster: type: mammal, domestic: True ❌
+- Crocodile: type: reptile, domestic: False ❌
+- Goldfish: type: fish, domestic: True ❌
+- Eagle: type: bird, domestic: False ❌
+- Salmon: type: fish, domestic: False ❌
+
+```json
+["Turtle"]
+```

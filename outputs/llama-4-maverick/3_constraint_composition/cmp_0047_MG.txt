@@ -1,0 +1,69 @@
+To solve this problem, we need to filter the given dataset based on the condition `x.priority ∈ {high} ∪ x.status ∉ {inactive}` and then return the IDs of the filtered items along with the count of the filtered items.
+
+Let's break down the condition:
+1. `x.priority ∈ {high}` means the priority should be 'high'.
+2. `x.status ∉ {inactive}` means the status should not be 'inactive'.
+3. `∪` represents a union (OR operation), so an item is selected if either its priority is 'high' or its status is not 'inactive'.
+
+Here's how we can process the given dataset:
+
+1. **Item_000**: Priority = high, Status = inactive. Condition: high (True) OR not inactive (False) = True
+2. **Item_001**: Priority = low, Status = active. Condition: low (False) OR not inactive (True) = True
+3. **Item_002**: Priority = low, Status = inactive. Condition: low (False) OR not inactive (False) = False
+4. **Item_003**: Priority = medium, Status = inactive. Condition: medium (False) OR not inactive (False) = False
+5. **Item_004**: Priority = medium, Status = pending. Condition: medium (False) OR not inactive (True) = True
+6. **Item_005**: Priority = medium, Status = inactive. Condition: medium (False) OR not inactive (False) = False
+7. **Item_006**: Priority = medium, Status = active. Condition: medium (False) OR not inactive (True) = True
+8. **Item_007**: Priority = high, Status = inactive. Condition: high (True) OR not inactive (False) = True
+9. **Item_008**: Priority = medium, Status = inactive. Condition: medium (False) OR not inactive (False) = False
+10. **Item_009**: Priority = low, Status = pending. Condition: low (False) OR not inactive (True) = True
+11. **Item_010**: Priority = high, Status = pending. Condition: high (True) OR not inactive (True) = True
+12. **Item_011**: Priority = high, Status = active. Condition: high (True) OR not inactive (True) = True
+13. **Item_012**: Priority = low, Status = inactive. Condition: low (False) OR not inactive (False) = False
+14. **Item_013**: Priority = medium, Status = inactive. Condition: medium (False) OR not inactive (False) = False
+15. **Item_014**: Priority = low, Status = pending. Condition: low (False) OR not inactive (True) = True
+16. **Item_015**: Priority = high, Status = inactive. Condition: high (True) OR not inactive (False) = True
+17. **Item_016**: Priority = low, Status = active. Condition: low (False) OR not inactive (True) = True
+18. **Item_017**: Priority = low, Status = active. Condition: low (False) OR not inactive (True) = True
+19. **Item_018**: Priority = low, Status = inactive. Condition: low (False) OR not inactive (False) = False
+20. **Item_019**: Priority = low, Status = pending. Condition: low (False) OR not inactive (True) = True
+
+Selected IDs:
+- item_000
+- item_001
+- item_004
+- item_006
+- item_007
+- item_009
+- item_010
+- item_011
+- item_014
+- item_015
+- item_016
+- item_017
+- item_019
+
+Count = 13
+
+Here's the JSON output:
+
+```json
+{
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_004",
+    "item_006",
+    "item_007",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_014",
+    "item_015",
+    "item_016",
+    "item_017",
+    "item_019"
+  ],
+  "count": 13
+}
+```

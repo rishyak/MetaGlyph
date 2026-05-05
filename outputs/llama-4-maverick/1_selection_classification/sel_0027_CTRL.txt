@@ -1,0 +1,24 @@
+### Query Explanation
+The given instruction is to select the names of animals where the type is 'bird'. This involves filtering the provided dataset to include only entries where the animal's type is classified as a bird and then extracting their names.
+
+### Step-by-Step Solution
+1. **Review the Dataset**: The dataset contains a list of animals with their attributes such as type, domestic status, and size.
+2. **Filter by Type**: Identify animals where the type is 'bird'.
+3. **Extract Names**: Extract the names of the animals identified as birds.
+4. **Format the Output**: Present the extracted names in a JSON array format.
+
+### Filtering the Dataset
+From the provided dataset, the animals with 'type: bird' are:
+- Penguin: type: bird, domestic: False, size: medium
+- Parrot: type: bird, domestic: True, size: small
+- Eagle: type: bird, domestic: False, size: medium
+
+### Extracting Names
+The names of these birds are Penguin, Parrot, and Eagle.
+
+### Output
+To comply with the output format requirement, the names are presented as a JSON array of strings.
+
+```json
+["Penguin", "Parrot", "Eagle"]
+```

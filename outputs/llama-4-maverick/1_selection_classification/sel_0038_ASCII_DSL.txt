@@ -1,0 +1,32 @@
+To solve this task, we need to follow the given instruction: `SELECT x | x.size IN {large} -> [x.name]`. This means we have to select the names of animals from the given list where the size of the animal is 'large'.
+
+First, let's analyze the given data:
+
+1. Elephant: type: mammal, domestic: False, size: large
+2. Turtle: type: reptile, domestic: True, size: small
+3. Whale: type: mammal, domestic: False, size: large
+4. Dog: type: mammal, domestic: True, size: medium
+5. Cat: type: mammal, domestic: True, size: small
+6. Hamster: type: mammal, domestic: True, size: small
+7. Eagle: type: bird, domestic: False, size: medium
+8. Crocodile: type: reptile, domestic: False, size: large
+9. Goldfish: type: fish, domestic: True, size: small
+10. Snake: type: reptile, domestic: False, size: medium
+
+We need to filter the animals based on their size being 'large'. The animals that fit this criterion are:
+- Elephant
+- Whale
+- Crocodile
+
+Now, we extract the names of these animals to form our output.
+
+The required output format is a JSON array of strings. So, we will list the names of the animals with 'large' size in a JSON array.
+
+The names are: Elephant, Whale, Crocodile.
+
+Thus, the output in JSON format is: `["Elephant", "Whale", "Crocodile"]`.
+
+The final answer is:
+```json
+["Elephant", "Whale", "Crocodile"]
+```

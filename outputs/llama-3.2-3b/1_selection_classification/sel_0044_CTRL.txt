@@ -1,0 +1,16 @@
+### Step 1: Filter the animals based on the given conditions
+We need to select the animals that are either fish or not domestic.
+
+### Step 2: Identify the fish
+The fish in the list are Goldfish and Salmon.
+
+### Step 3: Identify the non-domestic animals
+The non-domestic animals in the list are Snake, Crocodile, Elephant, Lion, and Whale.
+
+### Step 4: Combine the results
+Combine the fish and non-domestic animals into a single list.
+
+### Step 5: Format the output
+Format the output as a JSON array of strings.
+
+The final answer is: $\boxed [{"Goldfish","Salmon","Snake","Crocodile","Elephant","Lion","Whale"}]$

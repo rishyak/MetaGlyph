@@ -1,0 +1,58 @@
+To solve this problem, we need to filter the given dataset based on the conditions provided: the category should be either 'A' or 'B', and the status should be 'active'. We will then return the IDs of the items that satisfy these conditions in an array called 'selected_ids' and the count of such items as 'count' in a JSON object.
+
+### Step 1: Filter the Dataset
+
+First, let's go through the dataset and identify the items that match the given criteria.
+
+1. ID: item_000 - Category: A, Status: active (Matches)
+2. ID: item_001 - Category: C, Status: active (Does not match - Category is not A or B)
+3. ID: item_002 - Category: A, Status: inactive (Does not match - Status is not active)
+4. ID: item_003 - Category: C, Status: active (Does not match - Category is not A or B)
+5. ID: item_004 - Category: B, Status: pending (Does not match - Status is not active)
+6. ID: item_005 - Category: C, Status: active (Does not match - Category is not A or B)
+7. ID: item_006 - Category: A, Status: inactive (Does not match - Status is not active)
+8. ID: item_007 - Category: B, Status: inactive (Does not match - Status is not active)
+9. ID: item_008 - Category: B, Status: pending (Does not match - Status is not active)
+10. ID: item_009 - Category: A, Status: active (Matches)
+11. ID: item_010 - Category: B, Status: active (Matches)
+12. ID: item_011 - Category: B, Status: pending (Does not match - Status is not active)
+13. ID: item_012 - Category: C, Status: active (Does not match - Category is not A or B)
+14. ID: item_013 - Category: A, Status: inactive (Does not match - Status is not active)
+15. ID: item_014 - Category: A, Status: inactive (Does not match - Status is not active)
+16. ID: item_015 - Category: B, Status: inactive (Does not match - Status is not active)
+17. ID: item_016 - Category: A, Status: inactive (Does not match - Status is not active)
+18. ID: item_017 - Category: A, Status: inactive (Does not match - Status is not active)
+19. ID: item_018 - Category: A, Status: active (Matches)
+20. ID: item_019 - Category: C, Status: pending (Does not match - Category is not A or B and Status is not active)
+
+### Step 2: Identify Matching Records
+
+The IDs that match the criteria are:
+- item_000
+- item_009
+- item_010
+- item_018
+
+### Step 3: Prepare the Output
+
+Now, we will prepare the output in the required JSON format.
+
+- 'selected_ids' will contain the IDs of the matching records: ['item_000', 'item_009', 'item_010', 'item_018']
+- 'count' will be the number of matching records: 4
+
+### Output
+
+```json
+{
+  "selected_ids": ["item_000", "item_009", "item_010", "item_018"],
+  "count": 4
+}
+```
+
+The final answer is: 
+```json
+{
+  "selected_ids": ["item_000", "item_009", "item_010", "item_018"],
+  "count": 4
+}
+```

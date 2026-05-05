@@ -1,0 +1,31 @@
+### Step 1: Identify the animals that are not mammals
+To solve this problem, we need to identify the animals that are not classified as mammals. We will review the list of animals and exclude those that are classified as mammals.
+
+### Step 2: Review the list of animals
+The list of animals is as follows:
+- Crocodile: type: reptile, domestic: False, size: large
+- Snake: type: reptile, domestic: False, size: medium
+- Eagle: type: bird, domestic: False, size: medium
+- Turtle: type: reptile, domestic: True, size: small
+- Parrot: type: bird, domestic: True, size: small
+- Cat: type: mammal, domestic: True, size: small
+- Shark: type: fish, domestic: False, size: large
+- Hamster: type: mammal, domestic: True, size: small
+- Salmon: type: fish, domestic: False, size: medium
+- Penguin: type: bird, domestic: False, size: medium
+
+### Step 3: Exclude mammals from the list
+The animals that are not classified as mammals are:
+- Crocodile: type: reptile, domestic: False, size: large
+- Snake: type: reptile, domestic: False, size: medium
+- Eagle: type: bird, domestic: False, size: medium
+- Turtle: type: reptile, domestic: True, size: small
+- Parrot: type: bird, domestic: True, size: small
+- Shark: type: fish, domestic: False, size: large
+- Salmon: type: fish, domestic: False, size: medium
+- Penguin: type: bird, domestic: False, size: medium
+
+### Step 4: Format the output as a JSON array
+The output will be a JSON array of the names of the non-mammal animals.
+
+The final answer is: $\boxed [{"Crocodile","Snake","Eagle","Turtle","Parrot","Shark","Salmon","Penguin"}]$

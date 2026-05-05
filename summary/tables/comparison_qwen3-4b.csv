@@ -1,5 +1,5 @@
 Family,Model,NL Accuracy,MG Accuracy,CTRL Accuracy,MG-NL Diff,MG-CTRL Diff,Significant
+3_constraint_composition,qwen3-4b,0.000,0.000,0.000,+0.000,+0.000,No
 1_selection_classification,qwen3-4b,0.000,0.000,0.000,+0.000,+0.000,No
 2_structured_extraction,qwen3-4b,0.000,0.000,0.000,+0.000,+0.000,No
-3_constraint_composition,qwen3-4b,0.000,0.000,0.000,+0.000,+0.000,No
 4_conditional_transformation,qwen3-4b,0.000,0.000,0.000,+0.000,+0.000,No

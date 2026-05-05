@@ -1,0 +1,10 @@
+### Step 1: Identify the type of animals that are classified as "bird"
+The animals that are classified as "bird" are Parrot, Penguin, and Eagle.
+
+### Step 2: Filter the list to include only the "bird" type
+The filtered list of "bird" type is: ["Parrot", "Penguin", "Eagle"].
+
+### Step 3: Format the output as a JSON array
+The formatted output is: ["Parrot", "Penguin", "Eagle"].
+
+The final answer is: $\boxed["Parrot", "Penguin", "Eagle"]$

@@ -1,0 +1,10 @@
+### Step 1: Identify the bird species from the given list
+From the provided list, the bird species are: Penguin, Parrot, Eagle.
+
+### Step 2: Filter the bird species based on their domestic status
+The bird species that are commonly kept as pets are: Parrot.
+
+### Step 3: Format the output as a JSON array
+The output should be in the format of a JSON array, which is ["Parrot"].
+
+The final answer is: $\boxed{["Parrot"]}$

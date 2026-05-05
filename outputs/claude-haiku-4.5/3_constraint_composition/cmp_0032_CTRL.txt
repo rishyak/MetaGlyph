@@ -1,14 +1,32 @@
 ```json
 {
   "selected_ids": [
+    "item_000",
     "item_004",
     "item_005",
+    "item_006",
     "item_008",
-    "item_010",
-    "item_011",
+    "item_009",
     "item_012",
-    "item_014"
+    "item_014",
+    "item_015",
+    "item_017"
   ],
-  "count": 7
+  "count": 10
 }
 ```
+
+**Explanation:**
+The query selects items where: `(category ∈ {A, B}) OR (status ∈ {active})`
+
+**Selected items:**
+- **item_000**: Category B ✓
+- **item_004**: Category B ✓
+- **item_005**: Category B ✓
+- **item_006**: Category B ✓ (also active)
+- **item_008**: Category B ✓
+- **item_009**: Category A ✓
+- **item_012**: Category A ✓
+- **item_014**: Category A ✓ (also active)
+- **item_015**: Category A ✓ (also active)
+- **item_017**: Status active ✓ (Category C, but active status qualifies it)

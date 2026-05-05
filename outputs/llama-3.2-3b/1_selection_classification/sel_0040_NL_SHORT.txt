@@ -1,0 +1,27 @@
+### Step 1: Identify the items that are domestic
+We need to find the items whose domestic status is True.
+
+### Step 2: Review the list of items
+We will review the list of items to identify which ones have domestic status as True.
+
+- Whale: type: mammal, domestic: False, size: large
+- Shark: type: fish, domestic: False, size: large
+- Lion: type: mammal, domestic: False, size: large
+- Parrot: type: bird, domestic: True, size: small
+- Salmon: type: fish, domestic: False, size: medium
+- Eagle: type: bird, domestic: False, size: medium
+- Turtle: type: reptile, domestic: True, size: small
+- Crocodile: type: reptile, domestic: False, size: large
+- Snake: type: reptile, domestic: False, size: medium
+- Cat: type: mammal, domestic: True, size: small
+
+### Step 3: Select the items with domestic status as True
+The items with domestic status as True are:
+- Parrot
+- Turtle
+- Cat
+
+### Step 4: Format the output as a JSON array
+The output will be a JSON array of the selected items.
+
+The final answer is: $\boxed [{"Parrot","Turtle","Cat"}]$

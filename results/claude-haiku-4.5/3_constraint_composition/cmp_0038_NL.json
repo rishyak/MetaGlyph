@@ -6,12 +6,20 @@
   "parse_success": true,
   "parsed_output": {
     "selected_ids": [
+      "item_001",
+      "item_002",
+      "item_003",
+      "item_005",
       "item_006",
+      "item_008",
       "item_009",
+      "item_010",
+      "item_012",
       "item_013",
+      "item_014",
       "item_016"
     ],
-    "count": 4
+    "count": 12
   },
   "gold_output": {
     "selected_ids": [
@@ -30,9 +38,9 @@
     ],
     "count": 12
   },
-  "exact_match": false,
-  "accuracy": 0.3333333333333333,
-  "f1_score": 0.5,
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
   "operator_fidelity": [
     {
       "operator": "∪",
@@ -50,11 +58,11 @@
       "operator": "¬",
       "checked": true,
       "passed": true,
-      "details": "Negation check passed"
+      "details": "Negation check"
     }
   ],
-  "overall_pass": false,
-  "error_type": "scope",
-  "error_details": "Accuracy: 0.33",
-  "semantic_equivalence_pass": false
+  "overall_pass": true,
+  "error_type": "none",
+  "error_details": null,
+  "semantic_equivalence_pass": true
 }

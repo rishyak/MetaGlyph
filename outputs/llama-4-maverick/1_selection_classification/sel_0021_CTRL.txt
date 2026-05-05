@@ -1,0 +1,36 @@
+To solve this task, we need to follow the given instruction and apply it to the provided input.
+
+The instruction is: `SELECT x | x.domestic ∈ {False} → [x.name]`
+
+This means we need to select the names of animals where the `domestic` attribute is `False`.
+
+Let's examine the input data:
+
+1. Hamster: type: mammal, domestic: True, size: small
+2. Turtle: type: reptile, domestic: True, size: small
+3. Goldfish: type: fish, domestic: True, size: small
+4. Parrot: type: bird, domestic: True, size: small
+5. Penguin: type: bird, domestic: False, size: medium
+6. Snake: type: reptile, domestic: False, size: medium
+7. Salmon: type: fish, domestic: False, size: medium
+8. Eagle: type: bird, domestic: False, size: medium
+9. Whale: type: mammal, domestic: False, size: large
+10. Crocodile: type: reptile, domestic: False, size: large
+
+We will filter the animals based on their `domestic` status being `False` and then extract their names.
+
+Animals with `domestic` = `False` are:
+- Penguin
+- Snake
+- Salmon
+- Eagle
+- Whale
+- Crocodile
+
+Their names are: `["Penguin", "Snake", "Salmon", "Eagle", "Whale", "Crocodile"]`
+
+Therefore, the output in the required JSON format is:
+
+```json
+["Penguin", "Snake", "Salmon", "Eagle", "Whale", "Crocodile"]
+```

@@ -1,0 +1,40 @@
+{
+  "prompt_id": "sel_0040_CTRL",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": [
+    "We will go through each item in the list and check if the \"domestic\" attribute is not True.",
+    "Whale: False, so it is included.",
+    "Shark: False, so it is included.",
+    "Lion: False, so it is included.",
+    "Parrot: True, so it is excluded.",
+    "Salmon: False, so it is included.",
+    "Eagle: False, so it is included.",
+    "Turtle: True, so it is excluded.",
+    "Crocodile: False, so it is included.",
+    "Snake: False, so it is included.",
+    "Cat: True, so it is excluded."
+  ],
+  "gold_output": [
+    "cat",
+    "parrot",
+    "turtle"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=3, extra=11"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

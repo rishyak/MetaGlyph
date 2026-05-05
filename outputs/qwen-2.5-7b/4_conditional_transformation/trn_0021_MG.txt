@@ -1,0 +1,133 @@
+Let's break down the transformation rules and apply them to each record:
+
+1. **Premium Records in EU**: Increase the amount by 1.1 (10%) and then by 1.2 (20%).
+2. **Non-premium Records in EU**: Set the status to "archived".
+3. **All other records**: No changes to the amount.
+
+Let's transform each record step by step:
+
+- **rec_000**:
+  - `type`: trial
+  - `region`: US
+  - `amount`: 930
+  - No changes needed.
+  - **Transformed record**: {"type": "trial", "region": "US", "amount": 930, "status": null}
+
+- **rec_001**:
+  - `type`: premium
+  - `region`: APAC
+  - `amount`: 569
+  - No changes needed.
+  - **Transformed record**: {"type": "premium", "region": "APAC", "amount": 569, "status": null}
+
+- **rec_002**:
+  - `type`: standard
+  - `region`: EU
+  - `amount`: 977
+  - Set the status to "archived".
+  - **Transformed record**: {"type": "standard", "region": "EU", "amount": 977, "status": "archived"}
+
+- **rec_003**:
+  - `type`: trial
+  - `region`: EU
+  - `amount`: 664
+  - Set the status to "archived".
+  - **Transformed record**: {"type": "trial", "region": "EU", "amount": 664, "status": "archived"}
+
+- **rec_004**:
+  - `type`: trial
+  - `region`: EU
+  - `amount`: 477
+  - Set the status to "archived".
+  - **Transformed record**: {"type": "trial", "region": "EU", "amount": 477, "status": "archived"}
+
+- **rec_005**:
+  - `type`: standard
+  - `region`: EU
+  - `amount`: 883
+  - Set the status to "archived".
+  - **Transformed record**: {"type": "standard", "region": "EU", "amount": 883, "status": "archived"}
+
+- **rec_006**:
+  - `type`: trial
+  - `region`: US
+  - `amount`: 400
+  - No changes needed.
+  - **Transformed record**: {"type": "trial", "region": "US", "amount": 400, "status": null}
+
+- **rec_007**:
+  - `type`: trial
+  - `region`: EU
+  - `amount`: 726
+  - Set the status to "archived".
+  - **Transformed record**: {"type": "trial", "region": "EU", "amount": 726, "status": "archived"}
+
+- **rec_008**:
+  - `type`: standard
+  - `region`: APAC
+  - `amount`: 415
+  - No changes needed.
+  - **Transformed record**: {"type": "standard", "region": "APAC", "amount": 415, "status": null}
+
+- **rec_009**:
+  - `type`: standard
+  - `region`: APAC
+  - `amount`: 895
+  - No changes needed.
+  - **Transformed record**: {"type": "standard", "region": "APAC", "amount": 895, "status": null}
+
+- **rec_010**:
+  - `type`: trial
+  - `region`: APAC
+  - `amount`: 518
+  - No changes needed.
+  - **Transformed record**: {"type": "trial", "region": "APAC", "amount": 518, "status": null}
+
+- **rec_011**:
+  - `type`: standard
+  - `region`: APAC
+  - `amount`: 831
+  - No changes needed.
+  - **Transformed record**: {"type": "standard", "region": "APAC", "amount": 831, "status": null}
+
+- **rec_012**:
+  - `type`: standard
+  - `region`: APAC
+  - `amount`: 204
+  - No changes needed.
+  - **Transformed record**: {"type": "standard", "region": "APAC", "amount": 204, "status": null}
+
+- **rec_013**:
+  - `type`: trial
+  - `region`: APAC
+  - `amount`: 795
+  - No changes needed.
+  - **Transformed record**: {"type": "trial", "region": "APAC", "amount": 795, "status": null}
+
+- **rec_014**:
+  - `type`: trial
+  - `region`: US
+  - `amount`: 935
+  - No changes needed.
+  - **Transformed record**: {"type": "trial", "region": "US", "amount": 935, "status": null}
+
+Here is the final JSON array:
+
+```json
+[
+    {"type": "trial", "region": "US", "amount": 930, "status": null},
+    {"type": "premium", "region": "APAC", "amount": 569, "status": null},
+    {"type": "standard", "region": "EU", "amount": 977, "status": "archived"},
+    {"type": "trial", "region": "EU", "amount": 664, "status": "archived"},
+    {"type": "trial", "region": "EU", "amount": 477, "status": "archived"},
+    {"type": "standard", "region": "EU", "amount": 883, "status": "archived"},
+    {"type": "trial", "region": "US", "amount": 400, "status": null},
+    {"type": "trial", "region": "EU", "amount": 726, "status": "archived"},
+    {"type": "standard", "region": "APAC", "amount": 415, "status": null},
+    {"type": "standard", "region": "APAC", "amount": 895, "status": null},
+    {"type": "trial", "region": "APAC", "amount": 518, "status": null},
+    {"type": "standard", "region": "APAC", "amount": 831, "status": null},
+    {"type": "standard", "region": "APAC", "amount": 204, "status": null},
+    {"type": "trial", "region": "US", "amount": 935, "status": null}
+]
+```

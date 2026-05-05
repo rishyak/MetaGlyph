@@ -5,7 +5,9 @@
   "condition": "CTRL",
   "parse_success": true,
   "parsed_output": [
-    "Dog"
+    "Dog",
+    "Goldfish",
+    "Parrot"
   ],
   "gold_output": [
     "crocodile",
@@ -24,7 +26,7 @@
       "operator": "∈",
       "checked": true,
       "passed": false,
-      "details": "Extra items: 1"
+      "details": "missing=7, extra=3"
     }
   ],
   "overall_pass": false,

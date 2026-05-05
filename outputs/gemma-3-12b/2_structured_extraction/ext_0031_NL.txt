@@ -1,0 +1,8 @@
+```json
+{
+  "date": "2024-07-23",
+  "sender_title": "Director",
+  "company": "Innovation Labs",
+  "recipient": "david.brown@example.com"
+}
+```

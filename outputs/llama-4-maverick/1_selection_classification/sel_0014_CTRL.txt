@@ -1,0 +1,39 @@
+To solve this task, we need to follow the given instruction: `SELECT x | x.type ∉ {fish} → [x.name]`. This means we have to select the names of animals where the type is not 'fish'.
+
+First, let's list the given animals with their types:
+1. Crocodile: type: reptile
+2. Dog: type: mammal
+3. Snake: type: reptile
+4. Cat: type: mammal
+5. Penguin: type: bird
+6. Eagle: type: bird
+7. Salmon: type: fish
+8. Lion: type: mammal
+9. Whale: type: mammal
+10. Turtle: type: reptile
+
+Now, we filter out the animals that are of type 'fish'. The only animal of type 'fish' is Salmon. So, we exclude Salmon.
+
+The remaining animals are:
+1. Crocodile
+2. Dog
+3. Snake
+4. Cat
+5. Penguin
+6. Eagle
+7. Lion
+8. Whale
+9. Turtle
+
+We need to return their names as a JSON array of strings.
+
+## Step 1: List the names of the animals that are not of type 'fish'.
+The names are: Crocodile, Dog, Snake, Cat, Penguin, Eagle, Lion, Whale, Turtle.
+
+## Step 2: Format the names into a JSON array of strings.
+To format the names into a JSON array, we enclose each name in double quotes and separate them with commas, then enclose the whole list in square brackets.
+
+## Step 3: Write down the JSON array.
+["Crocodile", "Dog", "Snake", "Cat", "Penguin", "Eagle", "Lion", "Whale", "Turtle"]
+
+The final answer is: $\boxed{["Crocodile", "Dog", "Snake", "Cat", "Penguin", "Eagle", "Lion", "Whale", "Turtle"]}$

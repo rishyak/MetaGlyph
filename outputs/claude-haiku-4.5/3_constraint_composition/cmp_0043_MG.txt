@@ -1,8 +1,51 @@
+I need to apply the filter: `x.priority ∈ {high} ∪ x.status ∉ {inactive}`
+
+This means: SELECT items where (priority is high) OR (status is NOT inactive)
+
+Let me evaluate each item:
+
+- item_000: priority=low, status=inactive → ✗ (not high, and is inactive)
+- item_001: priority=high, status=pending → ✓ (high priority)
+- item_002: priority=low, status=pending → ✓ (not inactive)
+- item_003: priority=low, status=pending → ✓ (not inactive)
+- item_004: priority=low, status=pending → ✓ (not inactive)
+- item_005: priority=low, status=inactive → ✗ (not high, and is inactive)
+- item_006: priority=medium, status=active → ✓ (not inactive)
+- item_007: priority=medium, status=pending → ✓ (not inactive)
+- item_008: priority=high, status=inactive → ✓ (high priority)
+- item_009: priority=high, status=inactive → ✓ (high priority)
+- item_010: priority=high, status=inactive → ✓ (high priority)
+- item_011: priority=high, status=pending → ✓ (high priority)
+- item_012: priority=low, status=active → ✓ (not inactive)
+- item_013: priority=high, status=pending → ✓ (high priority)
+- item_014: priority=high, status=pending → ✓ (high priority)
+- item_015: priority=high, status=pending → ✓ (high priority)
+- item_016: priority=medium, status=inactive → ✗ (not high, and is inactive)
+- item_017: priority=medium, status=active → ✓ (not inactive)
+- item_018: priority=high, status=pending → ✓ (high priority)
+- item_019: priority=high, status=pending → ✓ (high priority)
+
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_004",
+    "item_006",
+    "item_007",
+    "item_008",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_012",
+    "item_013",
+    "item_014",
+    "item_015",
+    "item_017",
+    "item_018",
+    "item_019"
+  ],
+  "count": 17
 }
 ```
-
-The query filters for items that are in "security" OR "high_priority" OR "performance" categories, excluding deprecated and experimental items. However, the dataset provided contains only Category attributes (A, B, C) and Status/Priority fields - there are no "security", "high_priority", "performance", "deprecated", or "experimental" attributes present in any of the items. Therefore, no items match the specified criteria.

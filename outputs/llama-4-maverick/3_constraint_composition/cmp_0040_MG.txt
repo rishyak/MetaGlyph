@@ -1,0 +1,100 @@
+To solve this problem, we need to filter the given dataset based on the condition `x.priority ∈ {high} ∪ x.status ∉ {inactive}` and then return the IDs of the filtered items along with the count of the filtered items.
+
+First, let's break down the condition:
+
+1. `x.priority ∈ {high}` means the priority of the item is 'high'.
+2. `x.status ∉ {inactive}` means the status of the item is not 'inactive'.
+3. `∪` denotes the union of the two conditions, so an item is selected if either its priority is 'high' or its status is not 'inactive'.
+
+Let's examine the dataset:
+
+1. item_000: Priority = high, Status = inactive (high is true, but inactive is false, so it's selected because of 'high')
+2. item_001: Priority = high, Status = pending (selected)
+3. item_002: Priority = low, Status = active (selected because status is not inactive)
+4. item_003: Priority = low, Status = active (selected)
+5. item_004: Priority = medium, Status = pending (selected)
+6. item_005: Priority = low, Status = inactive (not selected)
+7. item_006: Priority = high, Status = inactive (selected because of 'high')
+8. item_007: Priority = medium, Status = active (selected)
+9. item_008: Priority = high, Status = pending (selected)
+10. item_009: Priority = medium, Status = active (selected)
+11. item_010: Priority = medium, Status = pending (selected)
+12. item_011: Priority = high, Status = active (selected)
+13. item_012: Priority = medium, Status = inactive (not selected)
+14. item_013: Priority = low, Status = pending (selected)
+15. item_014: Priority = low, Status = active (selected)
+16. item_015: Priority = medium, Status = inactive (not selected)
+17. item_016: Priority = medium, Status = pending (selected)
+18. item_017: Priority = low, Status = pending (selected)
+19. item_018: Priority = low, Status = active (selected)
+20. item_019: Priority = medium, Status = pending (selected)
+
+Now, let's filter the items based on the given condition:
+
+- item_000: high priority, so selected.
+- item_001: high priority, so selected.
+- item_002: active status, so selected.
+- item_003: active status, so selected.
+- item_004: pending status, so selected.
+- item_005: inactive status and low priority, so not selected.
+- item_006: high priority, so selected.
+- item_007: active status, so selected.
+- item_008: high priority, so selected.
+- item_009: active status, so selected.
+- item_010: pending status, so selected.
+- item_011: high priority, so selected.
+- item_012: inactive status and not high priority, so not selected.
+- item_013: pending status, so selected.
+- item_014: active status, so selected.
+- item_015: inactive status and not high priority, so not selected.
+- item_016: pending status, so selected.
+- item_017: pending status, so selected.
+- item_018: active status, so selected.
+- item_019: pending status, so selected.
+
+Selected IDs:
+- item_000
+- item_001
+- item_002
+- item_003
+- item_004
+- item_006
+- item_007
+- item_008
+- item_009
+- item_010
+- item_011
+- item_013
+- item_014
+- item_016
+- item_017
+- item_018
+- item_019
+
+Count = 17
+
+The output in JSON format is:
+```json
+{
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_004",
+    "item_006",
+    "item_007",
+    "item_008",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_013",
+    "item_014",
+    "item_016",
+    "item_017",
+    "item_018",
+    "item_019"
+  ],
+  "count": 17
+}
+```

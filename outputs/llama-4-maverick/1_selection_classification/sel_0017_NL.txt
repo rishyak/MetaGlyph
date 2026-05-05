@@ -1,0 +1,38 @@
+To solve this task, we need to carefully review the list of animals provided and identify the items where the 'type' attribute is not 'fish'. Let's examine the list:
+
+1. Shark: type: fish, domestic: False, size: large
+2. Cat: type: mammal, domestic: True, size: small
+3. Lion: type: mammal, domestic: False, size: large
+4. Penguin: type: bird, domestic: False, size: medium
+5. Crocodile: type: reptile, domestic: False, size: large
+6. Dog: type: mammal, domestic: True, size: medium
+7. Whale: type: mammal, domestic: False, size: large
+8. Goldfish: type: fish, domestic: True, size: small
+9. Parrot: type: bird, domestic: True, size: small
+10. Turtle: type: reptile, domestic: True, size: small
+
+We will go through each item and check its 'type' attribute.
+
+- Shark: type is 'fish', so exclude it.
+- Cat: type is 'mammal', so include it.
+- Lion: type is 'mammal', so include it.
+- Penguin: type is 'bird', so include it.
+- Crocodile: type is 'reptile', so include it.
+- Dog: type is 'mammal', so include it.
+- Whale: type is 'mammal', so include it.
+- Goldfish: type is 'fish', so exclude it.
+- Parrot: type is 'bird', so include it.
+- Turtle: type is 'reptile', so include it.
+
+The items that do not have 'fish' as their 'type' are: Cat, Lion, Penguin, Crocodile, Dog, Whale, Parrot, Turtle.
+
+Now, let's compile the names of these items into a JSON array of strings.
+
+```json
+["Cat", "Lion", "Penguin", "Crocodile", "Dog", "Whale", "Parrot", "Turtle"]
+```
+
+The final answer is: 
+```json
+["Cat", "Lion", "Penguin", "Crocodile", "Dog", "Whale", "Parrot", "Turtle"]
+```

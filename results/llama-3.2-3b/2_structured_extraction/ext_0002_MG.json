@@ -1,0 +1,34 @@
+{
+  "prompt_id": "ext_0002_MG",
+  "model": "llama-3.2-3b",
+  "family": "2_structured_extraction",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": {
+    "company": "Innovation Labs",
+    "sender": "bob.johnson@innovationlabs.com",
+    "date": "2024-07-04",
+    "sender_title": "VP"
+  },
+  "gold_output": {
+    "company": "Innovation Labs",
+    "sender": "bob.johnson@innovationlabs.com",
+    "date": "2024-07-04",
+    "sender_title": "VP"
+  },
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
+  "operator_fidelity": [
+    {
+      "operator": "→",
+      "checked": true,
+      "passed": true,
+      "details": "Transformation values exactly match gold"
+    }
+  ],
+  "overall_pass": true,
+  "error_type": "none",
+  "error_details": null,
+  "semantic_equivalence_pass": false
+}

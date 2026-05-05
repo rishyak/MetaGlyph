@@ -1,0 +1,10 @@
+### Step 1: Identify the mammal category
+The mammal category includes the following animals: Salmon is not a mammal, Penguin is a bird, Turtle is a reptile, Parrot is a bird, Goldfish is a fish, Cat is a mammal, Snake is a reptile, Eagle is a bird, Whale is a mammal, and Elephant is a mammal.
+
+### Step 2: Filter the mammal category
+The mammal category includes the following animals: Cat and Whale and Elephant.
+
+### Step 3: Format the output as a JSON array
+The output should be in the format of a JSON array of strings, e.g., ["item1", "item2"].
+
+The final answer is: $\boxed [{"name": "Cat"}, {"name": "Whale"}, {"name": "Elephant"}]$

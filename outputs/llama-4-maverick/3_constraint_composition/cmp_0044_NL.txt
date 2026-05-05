@@ -1,0 +1,18 @@
+```json
+{
+  "selected_ids": [],
+  "count": 0
+}
+```
+
+### Explanation
+
+To solve this problem, we need to review each item in the given dataset and check if it meets two conditions: 
+1. The 'category' is either A or B.
+2. The 'status' is 'active'.
+
+Upon reviewing the dataset, we notice that none of the items have a 'status' of 'active'. All items have either 'inactive' or 'pending' status. Therefore, despite some items having a 'category' of A or B, none of them satisfy both conditions simultaneously because none have an 'active' status.
+
+As a result, the list of IDs that meet the specified criteria is empty. The count of such items is also 0.
+
+Thus, the output is a JSON object with 'selected_ids' as an empty array and 'count' as 0.

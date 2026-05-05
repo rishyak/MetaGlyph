@@ -1,0 +1,51 @@
+### Step 1: Identify the animals that are not birds
+To solve this problem, we need to identify the animals that are not birds. We can do this by looking at the "type" attribute of each animal and checking if it is not equal to "bird".
+
+### Step 2: Filter the animals that are not birds
+We will filter the animals that are not birds and include their names in the output.
+
+### Step 3: Create the output array
+We will create an array of strings containing the names of the animals that are not birds.
+
+### Step 4: Return the output array
+We will return the output array as a JSON array.
+
+Here is the Python code to solve the problem:
+
+```python
+import json
+
+# Define the list of animals
+animals = [
+    {"name": "Parrot", "type": "bird", "domestic": True, "size": "small"},
+    {"name": "Salmon", "type": "fish", "domestic": False, "size": "medium"},
+    {"name": "Cat", "type": "mammal", "domestic": True, "size": "small"},
+    {"name": "Eagle", "type": "bird", "domestic": False, "size": "medium"},
+    {"name": "Crocodile", "type": "reptile", "domestic": False, "size": "large"},
+    {"name": "Hamster", "type": "mammal", "domestic": True, "size": "small"},
+    {"name": "Shark", "type": "fish", "domestic": False, "size": "large"},
+    {"name": "Lion", "type": "mammal", "domestic": False, "size": "large"},
+    {"name": "Snake", "type": "reptile", "domestic": False, "size": "medium"},
+    {"name": "Elephant", "type": "mammal", "domestic": False, "size": "large"}
+]
+
+# Filter the animals that are not birds
+non_birds = [animal["name"] for animal in animals if animal["type"] != "bird"]
+
+# Create the output array
+output = non_birds
+
+# Convert the output array to a JSON array
+output_json = json.dumps(output)
+
+print(output_json)
+```
+
+### Step 5: Execute the code
+When we run the code, it will output the following:
+
+```
+["Salmon", "Cat", "Crocodile", "Hamster", "Shark", "Lion", "Snake", "Elephant"]
+```
+
+This is the final answer in the required format.

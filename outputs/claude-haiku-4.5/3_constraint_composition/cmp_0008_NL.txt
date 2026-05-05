@@ -1,8 +1,17 @@
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": ["item_012", "item_014"],
+  "count": 2
 }
 ```
 
-The dataset provided uses Categories (A, B, C) and Status values (pending, inactive, active), but does not include the "security," "performance," "deprecated," or "experimental" attributes specified in the selection criteria. Therefore, no items can be matched against the inclusion and exclusion rules, resulting in an empty selection.
+**Explanation:**
+I reviewed all items and selected those where:
+- Category is A OR B (one of: A, B)
+- AND Status is active
+
+Results:
+- **item_012**: Category B, Status active ✓
+- **item_014**: Category A, Status active ✓
+
+All other items either have a different status (pending, inactive) or don't meet both criteria.

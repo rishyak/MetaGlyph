@@ -1,0 +1,19 @@
+```json
+[
+  {"type":"standard","region":"US","amount":526.68,"active":true,"status":"archived"},
+  {"type":"trial","region":"APAC","amount":1139.16,"active":false},
+  {"type":"standard","region":"EU","amount":981.2,"active":true,"status":"archived"},
+  {"type":"premium","region":"US","amount":576,"active":true,"status":"archived"},
+  {"type":"premium","region":"APAC","amount":538.8,"active":false},
+  {"type":"trial","region":"APAC","amount":576.84,"active":false},
+  {"type":"standard","region":"EU","amount":34.1,"active":false},
+  {"type":"standard","region":"APAC","amount":634.92,"active":false},
+  {"type":"standard","region":"EU","amount":961.4,"active":true,"status":"archived"},
+  {"type":"standard","region":"EU","amount":674.3,"active":false},
+  {"type":"trial","region":"US","amount":547.8,"active":false},
+  {"type":"trial","region":"EU","amount":259.6,"active":false},
+  {"type":"standard","region":"US","amount":702.24,"active":true,"status":"archived"},
+  {"type":"trial","region":"APAC","amount":274.56,"active":false},
+  {"type":"premium","region":"APAC","amount":1189.2,"active":true,"status":"archived"}
+]
+```

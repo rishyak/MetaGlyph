@@ -1,0 +1,37 @@
+Based on the given instruction and input dataset, we need to select items where the `priority` is `high` and the `status` is not `inactive`.
+
+Let's go through the dataset and apply the conditions:
+
+- `item_000`: Priority is `low`, does not meet the condition.
+- `item_001`: Priority is `high`, status is `pending`, meets the condition.
+- `item_002`: Priority is `low`, does not meet the condition.
+- `item_003`: Priority is `low`, does not meet the condition.
+- `item_004`: Priority is `low`, does not meet the condition.
+- `item_005`: Priority is `low`, does not meet the condition.
+- `item_006`: Priority is `medium`, does not meet the condition.
+- `item_007`: Priority is `medium`, does not meet the condition.
+- `item_008`: Priority is `high`, status is `inactive`, does not meet the condition.
+- `item_009`: Priority is `high`, status is `inactive`, does not meet the condition.
+- `item_010`: Priority is `high`, status is `inactive`, does not meet the condition.
+- `item_011`: Priority is `high`, status is `pending`, meets the condition.
+- `item_012`: Priority is `low`, does not meet the condition.
+- `item_013`: Priority is `high`, status is `pending`, meets the condition.
+- `item_014`: Priority is `high`, status is `pending`, meets the condition.
+- `item_015`: Priority is `high`, status is `pending`, meets the condition.
+- `item_016`: Priority is `medium`, does not meet the condition.
+- `item_017`: Priority is `medium`, does not meet the condition.
+- `item_018`: Priority is `high`, status is `pending`, meets the condition.
+- `item_019`: Priority is `high`, status is `pending`, meets the condition.
+
+The selected IDs are: `item_001`, `item_011`, `item_013`, `item_014`, `item_015`, `item_018`, `item_019`.
+
+The count of selected items is: 7.
+
+So, the output in JSON format will be:
+
+```json
+{
+  "selected_ids": ["item_001", "item_011", "item_013", "item_014", "item_015", "item_018", "item_019"],
+  "count": 7
+}
+```

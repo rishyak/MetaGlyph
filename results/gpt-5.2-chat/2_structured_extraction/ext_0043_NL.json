@@ -4,7 +4,12 @@
   "family": "2_structured_extraction",
   "condition": "NL",
   "parse_success": true,
-  "parsed_output": [],
+  "parsed_output": {
+    "sender_name": "Bob Johnson",
+    "company": "Digital Systems",
+    "sender": "bob.johnson@digitalsystems.com",
+    "recipient": "alice.smith@example.com"
+  },
   "gold_output": {
     "sender_name": "Bob Johnson",
     "company": "Global Solutions",
@@ -12,18 +17,18 @@
     "recipient": "alice.smith@example.com"
   },
   "exact_match": false,
-  "accuracy": 0.0,
-  "f1_score": 0.0,
+  "accuracy": 0.75,
+  "f1_score": 0.75,
   "operator_fidelity": [
     {
       "operator": "→",
       "checked": true,
       "passed": false,
-      "details": "Transformation check"
+      "details": "Wrong values: ['company']"
     }
   ],
   "overall_pass": false,
-  "error_type": "format",
-  "error_details": "Accuracy: 0.00",
+  "error_type": "logic",
+  "error_details": "Accuracy: 0.75",
   "semantic_equivalence_pass": false
 }

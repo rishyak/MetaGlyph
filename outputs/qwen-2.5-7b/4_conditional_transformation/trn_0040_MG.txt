@@ -1,0 +1,111 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 635,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 413,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 1068.1,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 626,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 56,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 351,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 162,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 369.6,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 883.7,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 594.8,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 316,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 349,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 357.55,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 309.11,
+        "active": true
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 667.7,
+        "active": false
+    }
+]
+```
+
+Explanation:
+- For `rec_000`, no transformations apply.
+- For `rec_001`, no transformations apply.
+- For `rec_002`, the amount is increased by 10% because it's a `premium` type and then by 20% because it's in the `EU` region, resulting in an amount of \(971 \times 1.1 \times 1.2 = 1068.1\).
+- For `rec_003`, no transformations apply.
+- For `rec_004`, no transformations apply.
+- For `rec_005`, no transformations apply.
+- For `rec_006`, the status is changed to "archived" because it's `active: False`.
+- For `rec_007`, the amount is increased by 10% because it's a `premium` type, resulting in an amount of \(336 \times 1.1 = 369.6\).
+- For `rec_008`, the amount is increased by 10% because it's a `premium` type and then by 20% because it's in the `APAC` region, resulting in an amount of \(767 \times 1.1 \times 1.2 = 883.7\).
+- For `rec_009`, the status is changed to "archived" because it's `active: False`.
+- For `rec_010`, the status is changed to "archived" because it's `active: False`.
+- For `rec_011`, no transformations apply.
+- For `rec_012`, the amount is increased by 10% because it's a `premium` type, resulting in an amount of \(325 \times 1.1 = 357.55\).
+- For `rec_013`, the status is changed to "archived" because it's `active: False`.
+- For `rec_014`, the status is changed to "archived" because it's `active: False`.

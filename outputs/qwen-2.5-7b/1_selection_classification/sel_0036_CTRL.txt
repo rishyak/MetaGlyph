@@ -1,0 +1,28 @@
+Based on the provided instruction and input data, we need to select the names of animals whose type is not "bird".
+
+The animals and their types in the dataset are:
+- Salmon: type: fish
+- Penguin: type: bird
+- Turtle: type: reptile
+- Parrot: type: bird
+- Goldfish: type: fish
+- Snake: type: reptile
+- Cat: type: mammal
+- Eagle: type: bird
+- Whale: type: mammal
+- Elephant: type: mammal
+
+From this list, the animals that are not of type "bird" are:
+- Salmon
+- Turtle
+- Goldfish
+- Snake
+- Cat
+- Whale
+- Elephant
+
+So, the output in the requested format is:
+
+```json
+["Salmon", "Turtle", "Goldfish", "Snake", "Cat", "Whale", "Elephant"]
+```

@@ -1,0 +1,41 @@
+{
+  "prompt_id": "sel_0036_CTRL",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this problem, we need to identify the animals that are not classified as mammals. We will review the list of animals and exclude those that are classified as mammals.",
+    "Reviewing the list, we can see that the following animals are not classified as mammals:",
+    "Salmon: type: fish, domestic: False, size: medium",
+    "Penguin: type: bird, domestic: False, size: medium",
+    "Turtle: type: reptile, domestic: True, size: small",
+    "Parrot: type: bird, domestic: True, size: small",
+    "Goldfish: type: fish, domestic: True, size: small",
+    "Snake: type: reptile, domestic: False, size: medium",
+    "Eagle: type: bird, domestic: False, size: medium",
+    "Whale: type: mammal, domestic: False, size: large",
+    "Elephant: type: mammal, domestic: False, size: large",
+    "We will create a list of the non-mammal animals in the format specified."
+  ],
+  "gold_output": [
+    "cat",
+    "elephant",
+    "whale"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=3, extra=12"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

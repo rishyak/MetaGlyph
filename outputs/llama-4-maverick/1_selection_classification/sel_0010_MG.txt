@@ -1,0 +1,29 @@
+To solve this task, we need to follow the given instruction, which is to select the names of animals that are domestic.
+
+The instruction is given in a formal query language: `SELECT x | x.domestic ∈ {True} → [x.name]`. This can be translated into a simple English query: "Select the names of animals where the animal is domestic."
+
+Let's analyze the given data:
+
+1. Snake: type: reptile, domestic: False, size: medium
+2. Parrot: type: bird, domestic: True, size: small
+3. Elephant: type: mammal, domestic: False, size: large
+4. Penguin: type: bird, domestic: False, size: medium
+5. Whale: type: mammal, domestic: False, size: large
+6. Dog: type: mammal, domestic: True, size: medium
+7. Crocodile: type: reptile, domestic: False, size: large
+8. Lion: type: mammal, domestic: False, size: large
+9. Goldfish: type: fish, domestic: True, size: small
+10. Hamster: type: mammal, domestic: True, size: small
+
+We need to filter the animals based on their `domestic` status. The animals that are domestic (`domestic: True`) are:
+- Parrot
+- Dog
+- Goldfish
+- Hamster
+
+So, the names of the animals that are domestic are: `["Parrot", "Dog", "Goldfish", "Hamster"]`.
+
+The final answer in the required JSON format is: 
+```json
+["Parrot", "Dog", "Goldfish", "Hamster"]
+```

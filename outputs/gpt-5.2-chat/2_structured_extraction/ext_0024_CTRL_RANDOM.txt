@@ -1,0 +1,6 @@
+{
+  "sender_title": "VP",
+  "date": "2024-06-25",
+  "sender_name": "David Brown",
+  "company": "Innovation Labs"
+}

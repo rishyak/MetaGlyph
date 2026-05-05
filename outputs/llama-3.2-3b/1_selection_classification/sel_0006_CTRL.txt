@@ -1,0 +1,50 @@
+### Step 1: Filter the dataset based on the given conditions
+We need to select the items where the animal is not domestic (x.domestic ∈ {False}) or the size is large (x.size ∈ {large}).
+
+### Step 2: Identify the items that meet the conditions
+Based on the given conditions, the items that meet the criteria are:
+- Eagle: type: bird, domestic: False, size: medium
+- Shark: type: fish, domestic: False, size: large
+- Snake: type: reptile, domestic: False, size: medium
+- Salmon: type: fish, domestic: False, size: medium
+- Crocodile: type: reptile, domestic: False, size: large
+- Whale: type: mammal, domestic: False, size: large
+- Goldfish: type: fish, domestic: True, size: small
+
+### Step 3: Filter out the items that are domestic
+We need to exclude the items that are domestic (x.domestic ∈ {True}).
+- Dog: type: mammal, domestic: True, size: medium
+- Hamster: type: mammal, domestic: True, size: small
+- Cat: type: mammal, domestic: True, size: small
+
+### Step 4: Select the items that meet the conditions
+The items that meet the conditions are:
+- Eagle: type: bird, domestic: False, size: medium
+- Shark: type: fish, domestic: False, size: large
+- Snake: type: reptile, domestic: False, size: medium
+- Salmon: type: fish, domestic: False, size: medium
+- Crocodile: type: reptile, domestic: False, size: large
+- Whale: type: mammal, domestic: False, size: large
+- Goldfish: type: fish, domestic: True, size: small
+
+### Step 5: Filter out the items that are domestic
+We need to exclude the items that are domestic (x.domestic ∈ {True}).
+The items that meet the conditions are:
+- Eagle: type: bird, domestic: False, size: medium
+- Shark: type: fish, domestic: False, size: large
+- Snake: type: reptile, domestic: False, size: medium
+- Salmon: type: fish, domestic: False, size: medium
+- Crocodile: type: reptile, domestic: False, size: large
+- Whale: type: mammal, domestic: False, size: large
+
+### Step 6: Select the items that meet the conditions
+The items that meet the conditions are:
+- Eagle: type: bird, domestic: False, size: medium
+- Shark: type: fish, domestic: False, size: large
+- Snake: type: reptile, domestic: False, size: medium
+- Salmon: type: fish, domestic: False, size: medium
+- Crocodile: type: reptile, domestic: False, size: large
+- Whale: type: mammal, domestic: False, size: large
+
+### Step 7: Format the output as a JSON array
+The final output is: ["Eagle", "Shark", "Snake", "Salmon", "Crocodile", "Whale"]

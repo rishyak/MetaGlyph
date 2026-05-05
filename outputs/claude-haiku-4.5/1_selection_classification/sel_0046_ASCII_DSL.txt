@@ -1,0 +1,14 @@
+Looking at the instruction `SELECT x | x.category IN {electronics} -> [x.name]`, I need to:
+
+1. Filter all products where category is "electronics"
+2. Return only their names
+
+From the product list, items with category "electronics" are:
+- Smartphone
+- Laptop
+- Headphones
+- Tablet
+
+```json
+["Smartphone", "Laptop", "Headphones", "Tablet"]
+```

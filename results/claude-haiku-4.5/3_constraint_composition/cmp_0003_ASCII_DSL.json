@@ -1,0 +1,75 @@
+{
+  "prompt_id": "cmp_0003_ASCII_DSL",
+  "model": "claude-haiku-4.5",
+  "family": "3_constraint_composition",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": {
+    "selected_ids": [
+      "item_001",
+      "item_002",
+      "item_003",
+      "item_005",
+      "item_006",
+      "item_007",
+      "item_009",
+      "item_010",
+      "item_011",
+      "item_012",
+      "item_013",
+      "item_015",
+      "item_016",
+      "item_017",
+      "item_018"
+    ],
+    "count": 15
+  },
+  "gold_output": {
+    "selected_ids": [
+      "item_000",
+      "item_001",
+      "item_002",
+      "item_003",
+      "item_005",
+      "item_006",
+      "item_007",
+      "item_009",
+      "item_010",
+      "item_011",
+      "item_012",
+      "item_013",
+      "item_015",
+      "item_016",
+      "item_017",
+      "item_018"
+    ],
+    "count": 16
+  },
+  "exact_match": false,
+  "accuracy": 0.9375,
+  "f1_score": 0.967741935483871,
+  "operator_fidelity": [
+    {
+      "operator": "∪",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    },
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    },
+    {
+      "operator": "¬",
+      "checked": true,
+      "passed": false,
+      "details": "Negation check"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.94",
+  "semantic_equivalence_pass": false
+}

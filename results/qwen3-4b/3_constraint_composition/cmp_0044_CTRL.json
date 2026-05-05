@@ -1,0 +1,20 @@
+{
+  "prompt_id": "cmp_0044_CTRL",
+  "model": "qwen3-4b",
+  "family": "3_constraint_composition",
+  "condition": "CTRL",
+  "parse_success": false,
+  "parsed_output": null,
+  "gold_output": {
+    "selected_ids": [],
+    "count": 0
+  },
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0.0,
+  "operator_fidelity": [],
+  "overall_pass": false,
+  "error_type": "parse",
+  "error_details": "Could not extract key-value pairs",
+  "semantic_equivalence_pass": false
+}

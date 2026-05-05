@@ -1,5 +1,22 @@
-```json
-[]
-```
+I need to find all items where:
+- price_range ∈ {high} AND
+- portable ∈ {False}
 
-The query requests items that are members of both "mammal" and "pet" categories while excluding "bird" and "farm_animal" attributes. None of the items in the provided inventory (furniture, appliances, electronics, and stationery) have these biological classification attributes. Therefore, no items match the specified criteria.
+Let me check each product:
+
+1. **Chair**: price_range: medium, portable: True → ❌
+2. **Refrigerator**: price_range: high, portable: False → ✅
+3. **Laptop**: price_range: high, portable: True → ❌
+4. **Desk**: price_range: medium, portable: False → ❌
+5. **Tablet**: price_range: high, portable: True → ❌
+6. **Bookshelf**: price_range: medium, portable: False → ❌
+7. **Stapler**: price_range: low, portable: True → ❌
+8. **Headphones**: price_range: medium, portable: True → ❌
+9. **Pen**: price_range: low, portable: True → ❌
+10. **Smartphone**: price_range: high, portable: True → ❌
+
+Only the **Refrigerator** meets both conditions (high price range AND not portable).
+
+```json
+["Refrigerator"]
+```

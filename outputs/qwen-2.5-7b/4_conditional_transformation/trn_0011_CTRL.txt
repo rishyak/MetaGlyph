@@ -1,0 +1,97 @@
+To transform the records based on the given logical conditions, we need to apply the transformations in sequence:
+
+1. If `x.type != "premium"` then increase `x.amount` by 10%.
+2. If `x.region != "EU"` then increase `x.amount` by 20%.
+3. If `x.active != false` then change `x.status` to "archived".
+
+Let's go through each record and apply these transformations:
+
+- **rec_000**: type: standard, region: EU, amount: 427, active: False  
+  Since `active` is `False`, no changes needed.
+  
+- **rec_001**: type: trial, region: EU, amount: 435, active: True  
+  - `type` is not "premium", so increase `amount` by 10%: 435 * 1.1 = 478.5
+  - `region` is "EU", so no change needed.
+  - `active` is `True`, so change `status` to "archived".
+  Transformed: `{type: "trial", region: "EU", amount: 478.5, status: "archived"}`
+
+- **rec_002**: type: standard, region: EU, amount: 408, active: True  
+  - `type` is not "premium", so increase `amount` by 10%: 408 * 1.1 = 448.8
+  - `region` is "EU", so no change needed.
+  - `active` is `True`, so change `status` to "archived".
+  Transformed: `{type: "standard", region: "EU", amount: 448.8, status: "archived"}`
+
+- **rec_003**: type: trial, region: EU, amount: 498, active: True  
+  - `type` is not "premium", so increase `amount` by 10%: 498 * 1.1 = 547.8
+  - `region` is "EU", so no change needed.
+  - `active` is `True`, so change `status` to "archived".
+  Transformed: `{type: "trial", region: "EU", amount: 547.8, status: "archived"}`
+
+- **rec_004**: type: premium, region: EU, amount: 781, active: False  
+  No changes needed since all conditions are `False`.
+
+- **rec_005**: type: premium, region: APAC, amount: 775, active: True  
+  - `type` is "premium", so no change needed.
+  - `region` is not "EU", so increase `amount` by 20%: 775 * 1.2 = 930
+  - `active` is `True`, so change `status` to "archived".
+  Transformed: `{type: "premium", region: "APAC", amount: 930, status: "archived"}`
+
+- **rec_006**: type: premium, region: US, amount: 289, active: False  
+  - `type` is "premium", so no change needed.
+  - `region` is not "EU", so increase `amount` by 20%: 289 * 1.2 = 346.8
+  - `active` is `False`, so no change needed.
+  Transformed: `{type: "premium", region: "US", amount: 346.8, status: "active"}`
+
+- **rec_007**: type: premium, region: US, amount: 408, active: False  
+  - `type` is "premium", so no change needed.
+  - `region` is not "EU", so increase `amount` by 20%: 408 * 1.2 = 489.6
+  - `active` is `False`, so no change needed.
+  Transformed: `{type: "premium", region: "US", amount: 489.6, status: "active"}`
+
+- **rec_008**: type: trial, region: APAC, amount: 827, active: False  
+  - `type` is not "premium", so increase `amount` by 10%: 827 * 1.1 = 909.7
+  - `region` is "APAC", so no change needed.
+  - `active` is `False`, so no change needed.
+  Transformed: `{type: "trial", region: "APAC", amount: 909.7, status: "active"}`
+
+- **rec_009**: type: trial, region: US, amount: 870, active: False  
+  - `type` is not "premium", so increase `amount` by 10%: 870 * 1.1 = 957
+  - `region` is "US", so no change needed.
+  - `active` is `False`, so no change needed.
+  Transformed: `{type: "trial", region: "US", amount: 957, status: "active"}`
+
+- **rec_010**: type: standard, region: APAC, amount: 556, active: True  
+  - `type` is not "premium", so increase `amount` by 10%: 556 * 1.1 = 611.6
+  - `region` is "APAC", so no change needed.
+  - `active` is `True`, so change `status` to "archived".
+  Transformed: `{type: "standard", region: "APAC", amount: 611.6, status: "archived"}`
+
+- **rec_011**: type: premium, region: APAC, amount: 587, active: True  
+  - `type` is "premium", so no change needed.
+  - `region` is "APAC", so no change needed.
+  - `active` is `True`, so change `status` to "archived".
+  Transformed: `{type: "premium", region: "APAC", amount: 587, status: "archived"}`
+
+- **rec_012**: type: standard, region: APAC, amount: 448, active: True  
+  - `type` is not "premium", so increase `amount` by 10%: 448 * 1.1 = 492.8
+  - `region` is "APAC", so no change needed.
+  - `active` is `True`, so change `status` to "archived".
+  Transformed: `{type: "standard", region: "APAC", amount: 492.8, status: "archived"}`
+
+- **rec_013**: type: premium, region: US, amount: 61, active: False  
+  No changes needed since all conditions are `False`.
+
+- **rec_014**: type: premium, region: EU, amount: 226, active: False  
+  No changes needed since all conditions are `False`.
+
+Putting it all together, the transformed records are:
+
+```json
+[
+    {"type": "standard", "region": "EU", "amount": 448.8, "status": "archived"},
+    {"type": "trial", "region": "EU", "amount": 547.8, "status": "archived"},
+    {"type": "trial", "region": "APAC", "amount": 909.7, "status": "active"},
+    {"type": "premium", "region": "US", "amount": 489.6, "status": "active"},
+    {"type": "standard", "region": "APAC", "amount": 611.6, "status": "archived"}
+]
+```

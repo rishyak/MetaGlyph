@@ -1,3 +1,20 @@
+I need to parse the query: `SELECT x | (x.type ∈ {fish}) ∪ (x.domestic ∈ {False}) → [x.name]`
+
+This means: Select all items x where (x.type is fish) OR (x.domestic is False), and return their names.
+
+Let me evaluate each animal:
+
+1. **Hamster**: type=mammal, domestic=True → Neither condition met ❌
+2. **Snake**: type=reptile, domestic=False → domestic is False ✓
+3. **Turtle**: type=reptile, domestic=True → Neither condition met ❌
+4. **Parrot**: type=bird, domestic=True → Neither condition met ❌
+5. **Crocodile**: type=reptile, domestic=False → domestic is False ✓
+6. **Elephant**: type=mammal, domestic=False → domestic is False ✓
+7. **Lion**: type=mammal, domestic=False → domestic is False ✓
+8. **Goldfish**: type=fish, domestic=True → type is fish ✓
+9. **Salmon**: type=fish, domestic=False → type is fish AND domestic is False ✓
+10. **Whale**: type=mammal, domestic=False → domestic is False ✓
+
 ```json
-["Hamster"]
+["Snake", "Crocodile", "Elephant", "Lion", "Goldfish", "Salmon", "Whale"]
 ```

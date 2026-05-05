@@ -1,0 +1,13 @@
+### Step 1: Identify the type of animals that are not birds
+We need to find the animals that are not birds, as indicated by the "type" attribute not being "bird".
+
+### Step 2: Filter the list of animals
+We will filter the list of animals to only include those that are not birds.
+
+### Step 3: Extract the names of the filtered animals
+We will extract the names of the filtered animals.
+
+### Step 4: Return the names as a JSON array
+We will return the names of the filtered animals as a JSON array.
+
+The final answer is: $\boxed [{"name": "Salmon", "size": "medium"}, {"name": "Cat", "size": "small"}, {"name": "Crocodile", "size": "large"}, {"name": "Shark", "size": "large"}, {"name": "Lion", "size": "large"}, {"name": "Snake", "size": "medium"}, {"name": "Elephant", "size": "large"}]$

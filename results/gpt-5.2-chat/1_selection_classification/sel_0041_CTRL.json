@@ -4,10 +4,19 @@
   "family": "1_selection_classification",
   "condition": "CTRL",
   "parse_success": true,
-  "parsed_output": [],
+  "parsed_output": [
+    "Chair",
+    "Notebook",
+    "Pen",
+    "Bookshelf",
+    "Microwave",
+    "Refrigerator",
+    "Stapler",
+    "Desk"
+  ],
   "gold_output": [
-    "microwave",
-    "refrigerator"
+    "headphones",
+    "smartphone"
   ],
   "exact_match": false,
   "accuracy": 0.0,
@@ -16,12 +25,12 @@
     {
       "operator": "∈",
       "checked": true,
-      "passed": true,
-      "details": "Inclusion constraint satisfied"
+      "passed": false,
+      "details": "missing=2, extra=8"
     }
   ],
   "overall_pass": false,
-  "error_type": "incomplete",
+  "error_type": "extra",
   "error_details": "Accuracy: 0.00",
   "semantic_equivalence_pass": false
 }

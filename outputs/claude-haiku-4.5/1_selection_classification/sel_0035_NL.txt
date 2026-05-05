@@ -1,3 +1,20 @@
+I need to find all animals where:
+1. size = "medium" AND
+2. domestic = "False"
+
+Let me review each animal:
+
+- Salmon: size: medium, domestic: False ✓ **MATCH**
+- Crocodile: size: large, domestic: False ✗ (size is large, not medium)
+- Eagle: size: medium, domestic: False ✓ **MATCH**
+- Hamster: size: small, domestic: True ✗ (size is small, domestic is True)
+- Goldfish: size: small, domestic: True ✗ (size is small, domestic is True)
+- Turtle: size: small, domestic: True ✗ (size is small, domestic is True)
+- Snake: size: medium, domestic: False ✓ **MATCH**
+- Lion: size: large, domestic: False ✗ (size is large, not medium)
+- Parrot: size: small, domestic: True ✗ (size is small, domestic is True)
+- Whale: size: large, domestic: False ✗ (size is large, not medium)
+
 ```json
-["Hamster"]
+["Salmon", "Eagle", "Snake"]
 ```

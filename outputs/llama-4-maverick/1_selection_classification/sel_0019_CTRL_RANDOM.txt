@@ -1,0 +1,27 @@
+```python
+def process_data(data):
+    # Define the data
+    animals = [
+        {"name": "Salmon", "type": "fish", "domestic": False, "size": "medium"},
+        {"name": "Eagle", "type": "bird", "domestic": False, "size": "medium"},
+        {"name": "Dog", "type": "mammal", "domestic": True, "size": "medium"},
+        {"name": "Goldfish", "type": "fish", "domestic": True, "size": "small"},
+        {"name": "Penguin", "type": "bird", "domestic": False, "size": "medium"},
+        {"name": "Parrot", "type": "bird", "domestic": True, "size": "small"},
+        {"name": "Snake", "type": "reptile", "domestic": False, "size": "medium"},
+        {"name": "Whale", "type": "mammal", "domestic": False, "size": "large"},
+        {"name": "Lion", "type": "mammal", "domestic": False, "size": "large"},
+        {"name": "Crocodile", "type": "reptile", "domestic": False, "size": "large"},
+    ]
+
+    # Filter the data
+    filtered_animals = [x["name"] for x in animals if not x["domestic"]]
+
+    # Return the result as a JSON array of strings
+    return filtered_animals
+
+
+result = process_data(None)
+import json
+print(json.dumps(result))
+```

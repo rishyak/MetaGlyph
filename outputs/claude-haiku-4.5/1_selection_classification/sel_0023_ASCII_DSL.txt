@@ -1,0 +1,22 @@
+I need to find all animals where the size is NOT "small".
+
+Let me analyze the query: `SELECT x | x.size NOT IN {small} -> [x.name]`
+
+This means: Select all items where size is NOT in the set {small}, and return their names.
+
+Going through each animal:
+
+1. **Penguin**: size = medium ✓ (NOT small)
+2. **Salmon**: size = medium ✓ (NOT small)
+3. **Elephant**: size = large ✓ (NOT small)
+4. **Snake**: size = medium ✓ (NOT small)
+5. **Cat**: size = small ✗ (IS small)
+6. **Eagle**: size = medium ✓ (NOT small)
+7. **Whale**: size = large ✓ (NOT small)
+8. **Shark**: size = large ✓ (NOT small)
+9. **Turtle**: size = small ✗ (IS small)
+10. **Goldfish**: size = small ✗ (IS small)
+
+```json
+["Penguin", "Salmon", "Elephant", "Snake", "Eagle", "Whale", "Shark"]
+```

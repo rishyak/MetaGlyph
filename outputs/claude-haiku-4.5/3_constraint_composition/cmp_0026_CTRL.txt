@@ -1,15 +1,31 @@
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_005",
+    "item_006",
+    "item_008",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_012",
+    "item_014",
+    "item_016",
+    "item_017",
+    "item_018",
+    "item_019"
+  ],
+  "count": 16
 }
 ```
 
-The query requires items that simultaneously have:
-- security attribute (⊙(security))
-- high_priority attribute (⊙(high_priority))
-- performance attribute (⊙(performance))
-- NOT deprecated (⊖(deprecated))
-- NOT experimental (⊖(experimental))
+**Explanation:**
+The query selects items where: `(category ∈ {A, B}) OR (status ∈ {active})`
 
-The provided dataset contains only: ID, Category, Status, Priority, and Value attributes. None of the required attributes (security, high_priority, performance, deprecated, experimental) exist in the dataset, so no items match the filter criteria.
+- **Category A or B**: item_000, item_001, item_005, item_008, item_009, item_010, item_012, item_016, item_017, item_018, item_019 (Category A) + item_003, item_011, item_014, item_016, item_017 (Category B)
+- **Status active** (additional): item_002, item_003, item_006, item_011, item_014
+
+Combined (removing duplicates): 16 items total

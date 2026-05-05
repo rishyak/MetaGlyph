@@ -1,0 +1,42 @@
+{
+  "prompt_id": "cmp_0015_ASCII_DSL",
+  "model": "claude-haiku-4.5",
+  "family": "3_constraint_composition",
+  "condition": "ASCII_DSL",
+  "parse_success": true,
+  "parsed_output": {
+    "selected_ids": [
+      "item_005",
+      "item_012"
+    ],
+    "count": 2
+  },
+  "gold_output": {
+    "selected_ids": [
+      "item_005",
+      "item_012"
+    ],
+    "count": 2
+  },
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    },
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    }
+  ],
+  "overall_pass": true,
+  "error_type": "none",
+  "error_details": null,
+  "semantic_equivalence_pass": false
+}

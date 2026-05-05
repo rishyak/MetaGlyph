@@ -1,3 +1,17 @@
+Looking at the list, I need to identify all animals where the 'domestic' attribute is NOT 'False' (meaning domestic is either 'True' or has another value).
+
+Reviewing each entry:
+- Eagle: domestic: False ❌ (exclude)
+- Goldfish: domestic: True ✓ (include)
+- Cat: domestic: True ✓ (include)
+- Parrot: domestic: True ✓ (include)
+- Lion: domestic: False ❌ (exclude)
+- Whale: domestic: False ❌ (exclude)
+- Penguin: domestic: False ❌ (exclude)
+- Elephant: domestic: False ❌ (exclude)
+- Shark: domestic: False ❌ (exclude)
+- Snake: domestic: False ❌ (exclude)
+
 ```json
-["Cat"]
+["Goldfish", "Cat", "Parrot"]
 ```

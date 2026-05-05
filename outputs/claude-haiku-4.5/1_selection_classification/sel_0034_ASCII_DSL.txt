@@ -1,0 +1,20 @@
+I need to find all items where `portable NOT IN {True}`, which means I'm looking for items where `portable` is `False`.
+
+Let me go through the list:
+
+- Refrigerator: portable: **False** ✓
+- Notebook: portable: True ✗
+- Headphones: portable: True ✗
+- Desk: portable: **False** ✓
+- Chair: portable: True ✗
+- Microwave: portable: True ✗
+- Pen: portable: True ✗
+- Stapler: portable: True ✗
+- Smartphone: portable: True ✗
+- Bookshelf: portable: **False** ✓
+
+Items with `portable NOT IN {True}` (i.e., portable = False):
+
+```json
+["Refrigerator", "Desk", "Bookshelf"]
+```

@@ -1,0 +1,8 @@
+```json
+{
+  "company": null,
+  "sender": "alice.smith@innovationlabs.com",
+  "sender_name": "Alice Smith",
+  "recipient": "bob.johnson@example.com"
+}
+```

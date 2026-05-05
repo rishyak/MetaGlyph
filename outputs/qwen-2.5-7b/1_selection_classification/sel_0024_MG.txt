@@ -1,0 +1,14 @@
+Based on the provided criteria and the list of animals:
+
+- The size category for "large" is defined as >100kg.
+- From the list, the animals that fit this size category are:
+  - Shark
+  - Crocodile
+  - Elephant
+  - Whale
+
+Since the instruction asks for the names of animals where `x.size` is `large`, the output in the specified format is:
+
+```json
+["Shark", "Crocodile", "Elephant", "Whale"]
+```

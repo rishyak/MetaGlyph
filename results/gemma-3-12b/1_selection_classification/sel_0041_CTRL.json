@@ -1,0 +1,37 @@
+{
+  "prompt_id": "sel_0041_CTRL",
+  "model": "gemma-3-12b",
+  "family": "1_selection_classification",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": [
+    "Chair",
+    "Notebook",
+    "Pen",
+    "Bookshelf",
+    "Microwave",
+    "Refrigerator",
+    "Headphones",
+    "Stapler",
+    "Desk"
+  ],
+  "gold_output": [
+    "headphones",
+    "smartphone"
+  ],
+  "exact_match": false,
+  "accuracy": 0.1,
+  "f1_score": 0.1818181818181818,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=2, extra=9"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.10",
+  "semantic_equivalence_pass": false
+}

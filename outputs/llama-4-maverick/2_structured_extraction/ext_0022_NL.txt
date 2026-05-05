@@ -1,0 +1,30 @@
+To solve this task, we need to carefully examine the provided invoice document and extract the required fields: 'payment_terms', 'invoice_num', 'date', and 'customer_name'.
+
+1. **Extracting 'payment_terms'**: The invoice document contains the line "Payment Terms: Net 60". This directly corresponds to the 'payment_terms' field. Thus, 'payment_terms' = "Net 60".
+
+2. **Extracting 'invoice_num'**: The document starts with "INVOICE #9900", indicating that the invoice number is 9900. Therefore, 'invoice_num' = "9900".
+
+3. **Extracting 'date'**: The line "Date: 2024-12-10" provides the date of the invoice. Hence, 'date' = "2024-12-10".
+
+4. **Extracting 'customer_name'**: Under the "Bill To:" section, the name "Alice Smith" is listed. This is the customer being billed, so 'customer_name' = "Alice Smith".
+
+Now, we compile these extracted values into a JSON object with the specified field names as keys.
+
+```json
+{
+  "payment_terms": "Net 60",
+  "invoice_num": "9900",
+  "date": "2024-12-10",
+  "customer_name": "Alice Smith"
+}
+```
+
+The final answer is: 
+```json
+{
+  "payment_terms": "Net 60",
+  "invoice_num": "9900",
+  "date": "2024-12-10",
+  "customer_name": "Alice Smith"
+}
+```

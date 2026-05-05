@@ -1,0 +1,25 @@
+### Step 1: Identify the animals that are domesticated
+We need to find the animals that are commonly kept as pets, which means they have a domestic status of True.
+
+### Step 2: Filter the animals based on their domestic status
+From the given list, we can see that the following animals are domesticated:
+- Hamster
+- Turtle
+- Goldfish
+- Parrot
+- Penguin is not domesticated, so we exclude it
+- Snake is not domesticated, so we exclude it
+- Salmon is not domesticated, so we exclude it
+- Eagle is not domesticated, so we exclude it
+- Whale is not domesticated, so we exclude it
+- Crocodile is not domesticated, so we exclude it
+
+### Step 3: Format the output as a JSON array
+The domesticated animals are:
+- Hamster
+- Turtle
+- Goldfish
+- Parrot
+
+### Step 4: Write the output in the required format
+The final answer is: $\boxed["Hamster", "Turtle", "Goldfish", "Parrot"]$

@@ -1,0 +1,126 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 683.1,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 259,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 88,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 926.2,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 817,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 143,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 823.2,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 451.2,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 28.6,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 139,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 850.3,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 806,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 133.53,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 1075.78,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 597.33,
+        "active": false,
+        "status": "archived"
+    }
+]
+```
+
+Explanation of the transformations applied to each record:
+- For `rec_000`, since it is not a premium and its region is not EU, the amount is increased by 10% (`621 * 1.1 = 683.1`), and the status is set to "archived".
+- For `rec_001`, since it is in the EU, the amount remains unchanged (`259`), but the status is set to "archived".
+- For `rec_002`, since it is a trial and its region is not EU, the amount is increased by 10% (`80 * 1.1 = 88`), and the status is set to "archived".
+- For `rec_003`, since it is a trial and its region is not EU, the amount is increased by 10% (`842 * 1.1 = 926.2`), and the status is set to "archived".
+- For `rec_004`, since it is a premium, no changes are made.
+- For `rec_005`, since it is a premium and its region is not EU, no changes are made.
+- For `rec_006`, since it is a standard and its region is not EU, the amount is increased by 20% (`686 * 1.2 = 823.2`), and the status is set to "archived".
+- For `rec_007`, since it is a standard and its region is not EU, the amount is increased by 20% (`376 * 1.2 = 451.2`), and the status is set to "archived".
+- For `rec_008`, since it is a trial and its region is EU, the amount remains unchanged (`26`), but the status is set to "archived".
+- For `rec_009`, since it is a premium and its region is not EU, no changes are made.
+- For `rec_010`, since it is a trial and its region is not EU, the amount is increased by 10% (`773 * 1.1 = 850.3`), and the status is set to "archived".
+- For `rec_011`, since it is a premium and its region is EU, no changes are made.
+- For `rec_012`, since it is a trial and its region is APAC, the amount is increased by 10% (`121 * 1.1 = 133.53`), and the status is set to "archived".
+- For `rec_013`, since it is a trial and its region is not EU, the amount is increased by 10% (`978 * 1.1 = 1075.78`), and the status is set to "archived".
+- For `rec_014`, since it is a trial and its region is APAC, the amount is increased by 10% (`543 * 1.1 = 597.33`), and the status is set to "archived".

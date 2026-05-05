@@ -1,3 +1,12 @@
+Looking at the instruction: `SELECT x | x.type ∈ {fish} → [x.name]`
+
+This asks me to select all items where the type is "fish" and return their names.
+
+Reviewing the animal list for entries with `type: fish`:
+
+1. **Shark**: type: fish ✓
+2. **Goldfish**: type: fish ✓
+
 ```json
-["Cat", "Dog"]
+["Shark", "Goldfish"]
 ```

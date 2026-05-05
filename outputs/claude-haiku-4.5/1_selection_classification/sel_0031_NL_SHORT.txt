@@ -1,0 +1,18 @@
+Looking at the criteria: **price_range equals medium AND portable equals False**
+
+Let me check each item:
+
+- Smartphone: medium? No (high)
+- Notebook: medium? No (low)
+- Pen: medium? No (low)
+- Headphones: medium? Yes, portable? No (True) ❌
+- Refrigerator: medium? No (high)
+- Bookshelf: medium? Yes, portable? No (False) ✓
+- Tablet: medium? No (high)
+- Desk: medium? Yes, portable? No (False) ✓
+- Laptop: medium? No (high)
+- Chair: medium? Yes, portable? No (True) ❌
+
+```json
+["Bookshelf", "Desk"]
+```

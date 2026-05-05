@@ -1,0 +1,94 @@
+To solve this problem, we will process each record according to the given transformation rules and then output the results as a JSON array.
+
+### Step 1: Define the Input Records
+
+First, let's define the input records as given in the problem statement.
+
+```json
+[
+  {"id": "rec_000", "type": "trial", "region": "APAC", "amount": 621, "active": true},
+  {"id": "rec_001", "type": "standard", "region": "EU", "amount": 259, "active": true},
+  {"id": "rec_002", "type": "trial", "region": "US", "amount": 80, "active": true},
+  {"id": "rec_003", "type": "trial", "region": "US", "amount": 842, "active": true},
+  {"id": "rec_004", "type": "premium", "region": "US", "amount": 817, "active": true},
+  {"id": "rec_005", "type": "premium", "region": "US", "amount": 143, "active": false},
+  {"id": "rec_006", "type": "standard", "region": "US", "amount": 686, "active": true},
+  {"id": "rec_007", "type": "standard", "region": "US", "amount": 376, "active": true},
+  {"id": "rec_008", "type": "trial", "region": "EU", "amount": 26, "active": true},
+  {"id": "rec_009", "type": "premium", "region": "US", "amount": 139, "active": false},
+  {"id": "rec_010", "type": "trial", "region": "US", "amount": 773, "active": true},
+  {"id": "rec_011", "type": "premium", "region": "EU", "amount": 806, "active": false},
+  {"id": "rec_012", "type": "trial", "region": "APAC", "amount": 121, "active": false},
+  {"id": "rec_013", "type": "trial", "region": "US", "amount": 978, "active": true},
+  {"id": "rec_014", "type": "trial", "region": "APAC", "amount": 543, "active": false}
+]
+```
+
+### Step 2: Apply Transformation Rules
+
+Now, let's apply the transformation rules to each record.
+
+1. **Rule 1:** If `type` == "premium", then multiply `amount` by 1.1.
+2. **Rule 2:** If `region` == "EU", then multiply `amount` by 1.2.
+3. **Rule 3:** If `active` == false, then set `status` to 'archived'.
+
+Let's process each record:
+
+- **rec_000:** `type` != "premium", `region` != "EU", `active` == true. No changes.
+- **rec_001:** `type` != "premium", `region` == "EU", `amount` = 259 * 1.2 = 310.8. 
+- **rec_002:** No changes.
+- **rec_003:** No changes.
+- **rec_004:** `type` == "premium", `amount` = 817 * 1.1 = 898.7.
+- **rec_005:** `type` == "premium", `amount` = 143 * 1.1 = 157.3; `active` == false, `status` = 'archived'.
+- **rec_006:** No changes.
+- **rec_007:** No changes.
+- **rec_008:** `region` == "EU", `amount` = 26 * 1.2 = 31.2.
+- **rec_009:** `type` == "premium", `amount` = 139 * 1.1 = 152.9; `active` == false, `status` = 'archived'.
+- **rec_010:** No changes.
+- **rec_011:** `type` == "premium", `amount` = 806 * 1.1 = 886.6; `region` == "EU", `amount` = 886.6 * 1.2 = 1063.92; `active` == false, `status` = 'archived'.
+- **rec_012:** `active` == false, `status` = 'archived'.
+- **rec_013:** No changes.
+- **rec_014:** `active` == false, `status` = 'archived'.
+
+### Step 3: Output the Transformed Records
+
+After applying the rules, the transformed records are:
+
+```json
+[
+  {"id": "rec_000", "type": "trial", "region": "APAC", "amount": 621, "active": true},
+  {"id": "rec_001", "type": "standard", "region": "EU", "amount": 310.8, "active": true},
+  {"id": "rec_002", "type": "trial", "region": "US", "amount": 80, "active": true},
+  {"id": "rec_003", "type": "trial", "region": "US", "amount": 842, "active": true},
+  {"id": "rec_004", "type": "premium", "region": "US", "amount": 898.7, "active": true},
+  {"id": "rec_005", "type": "premium", "region": "US", "amount": 157.3, "active": false, "status": "archived"},
+  {"id": "rec_006", "type": "standard", "region": "US", "amount": 686, "active": true},
+  {"id": "rec_007", "type": "standard", "region": "US", "amount": 376, "active": true},
+  {"id": "rec_008", "type": "trial", "region": "EU", "amount": 31.2, "active": true},
+  {"id": "rec_009", "type": "premium", "region": "US", "amount": 152.9, "active": false, "status": "archived"},
+  {"id": "rec_010", "type": "trial", "region": "US", "amount": 773, "active": true},
+  {"id": "rec_011", "type": "premium", "region": "EU", "amount": 1063.92, "active": false, "status": "archived"},
+  {"id": "rec_012", "type": "trial", "region": "APAC", "amount": 121, "active": false, "status": "archived"},
+  {"id": "rec_013", "type": "trial", "region": "US", "amount": 978, "active": true},
+  {"id": "rec_014", "type": "trial", "region": "APAC", "amount": 543, "active": false, "status": "archived"}
+]
+```
+
+The final answer is:
+
+```json
+[
+  {"id": "rec_000", "type": "trial", "region": "APAC", "amount": 621, "active": true},
+  {"id": "rec_001", "type": "standard", "region": "EU", "amount": 310.8, "active": true},
+  {"id": "rec_002", "type": "trial", "region": "US", "amount": 80, "active": true},
+  {"id": "rec_003", "type": "trial", "region": "US", "amount": 842, "active": true},
+  {"id": "rec_004", "type": "premium", "region": "US", "amount": 898.7, "active": true},
+  {"id": "rec_005", "type": "premium", "region": "US", "amount": 157.3, "active": false, "status": "archived"},
+  {"id": "rec_006", "type": "standard", "region": "US", "amount": 686, "active": true},
+  {"id": "rec_007", "type": "standard", "region": "US", "amount": 376, "active": true},
+  {"id": "rec_008", "type": "trial", "region": "EU", "amount": 31.2, "active": true},
+  {"id": "rec_009", "type": "premium", "region": "US", "amount": 152.9, "active": false, "status": "archived"},
+  {"id": "rec_010", "type": "trial", "region": "US", "amount": 773, "active": true},
+  {"id": "rec_011", "type": "premium", "region": "EU", "amount": 1063.92, "active": false, "status": "archived"},
+  {"id": "rec_012", "type": "trial", "region": "APAC", "amount": 121, "active": false, "status": "archived"},
+  {"

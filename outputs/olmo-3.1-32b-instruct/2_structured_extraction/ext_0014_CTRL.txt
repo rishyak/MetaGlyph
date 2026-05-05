@@ -1,0 +1,1 @@
+{"sender_title": "Analyst", "company": "Innovation Labs", "sender": "david.brown@globalsolutions.com", "date": "2024-04-04"}

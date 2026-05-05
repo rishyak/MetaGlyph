@@ -1,0 +1,54 @@
+To solve this problem, we need to follow the given instruction, which is to select the IDs of items where the value is greater than or equal to 50 and the category is 'A', and then return these IDs in an array along with the count of such items.
+
+First, let's filter the given dataset based on the conditions:
+
+1. `Value >= 50`
+2. `Category == 'A'`
+
+Let's examine the dataset:
+
+- ID: item_000, Category: C, Value: 9 (Does not satisfy either condition)
+- ID: item_001, Category: C, Value: 39 (Does not satisfy either condition)
+- ID: item_002, Category: A, Value: 90 (Satisfies both conditions)
+- ID: item_003, Category: C, Value: 66 (Does not satisfy Category condition)
+- ID: item_004, Category: A, Value: 18 (Does not satisfy Value condition)
+- ID: item_005, Category: A, Value: 47 (Does not satisfy Value condition)
+- ID: item_006, Category: C, Value: 60 (Does not satisfy Category condition)
+- ID: item_007, Category: C, Value: 12 (Does not satisfy either condition)
+- ID: item_008, Category: A, Value: 92 (Satisfies both conditions)
+- ID: item_009, Category: C, Value: 53 (Does not satisfy Category condition)
+- ID: item_010, Category: B, Value: 17 (Does not satisfy either condition)
+- ID: item_011, Category: B, Value: 58 (Does not satisfy Category condition)
+- ID: item_012, Category: B, Value: 45 (Does not satisfy either condition)
+- ID: item_013, Category: A, Value: 76 (Satisfies both conditions)
+- ID: item_014, Category: A, Value: 65 (Satisfies both conditions)
+- ID: item_015, Category: A, Value: 20 (Does not satisfy Value condition)
+- ID: item_016, Category: B, Value: 42 (Does not satisfy either condition)
+- ID: item_017, Category: C, Value: 67 (Does not satisfy Category condition)
+- ID: item_018, Category: B, Value: 26 (Does not satisfy either condition)
+- ID: item_019, Category: C, Value: 17 (Does not satisfy either condition)
+
+Items that satisfy both conditions are:
+- item_002 (ID: item_002, Category: A, Value: 90)
+- item_008 (ID: item_008, Category: A, Value: 92)
+- item_013 (ID: item_013, Category: A, Value: 76)
+- item_014 (ID: item_014, Category: A, Value: 65)
+
+So, the IDs that satisfy the given conditions are: `item_002`, `item_008`, `item_013`, `item_014`.
+
+Now, let's prepare the output as per the required format:
+
+- `selected_ids`: Array of IDs that satisfy the condition.
+- `count`: Number of IDs that satisfy the condition.
+
+The IDs are `item_002`, `item_008`, `item_013`, `item_014`, so the array will be `["item_002", "item_008", "item_013", "item_014"]`.
+
+There are 4 items, so the count is `4`.
+
+Thus, the output in JSON format is:
+```json
+{
+  "selected_ids": ["item_002", "item_008", "item_013", "item_014"],
+  "count": 4
+}
+```

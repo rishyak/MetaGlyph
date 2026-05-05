@@ -1,0 +1,43 @@
+To determine the selected items, we evaluate each item based on the criteria: **Priority is 'high'** OR **Status is NOT 'inactive'**.
+
+*   **item_000**: Priority: high (Matches) -> **Selected**
+*   **item_001**: Status: active (Matches) -> **Selected**
+*   **item_002**: Status: inactive, Priority: low (No match)
+*   **item_003**: Status: inactive, Priority: medium (No match)
+*   **item_004**: Status: pending (Matches) -> **Selected**
+*   **item_005**: Status: inactive, Priority: medium (No match)
+*   **item_006**: Status: active (Matches) -> **Selected**
+*   **item_007**: Priority: high (Matches) -> **Selected**
+*   **item_008**: Status: inactive, Priority: medium (No match)
+*   **item_009**: Status: pending (Matches) -> **Selected**
+*   **item_010**: Priority: high (Matches) -> **Selected**
+*   **item_011**: Priority: high (Matches) -> **Selected**
+*   **item_012**: Status: inactive, Priority: low (No match)
+*   **item_013**: Status: inactive, Priority: medium (No match)
+*   **item_014**: Status: pending (Matches) -> **Selected**
+*   **item_015**: Priority: high (Matches) -> **Selected**
+*   **item_016**: Status: active (Matches) -> **Selected**
+*   **item_017**: Status: active (Matches) -> **Selected**
+*   **item_018**: Status: inactive, Priority: low (No match)
+*   **item_019**: Status: pending (Matches) -> **Selected**
+
+```json
+{
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_004",
+    "item_006",
+    "item_007",
+    "item_009",
+    "item_010",
+    "item_011",
+    "item_014",
+    "item_015",
+    "item_016",
+    "item_017",
+    "item_019"
+  ],
+  "count": 13
+}
+```

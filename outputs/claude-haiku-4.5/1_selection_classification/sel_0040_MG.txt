@@ -1,3 +1,14 @@
+Looking at the instruction `SELECT x | x.domestic ∈ {True} → [x.name]`, I need to:
+
+1. Filter all animals where `domestic` equals `True`
+2. Return their names
+
+Reviewing the dataset for animals with `domestic: True`:
+
+- **Parrot**: domestic: True ✓
+- **Turtle**: domestic: True ✓
+- **Cat**: domestic: True ✓
+
 ```json
-["Cat"]
+["Parrot", "Turtle", "Cat"]
 ```

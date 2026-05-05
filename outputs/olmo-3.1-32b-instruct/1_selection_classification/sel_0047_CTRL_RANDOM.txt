@@ -1,0 +1,7 @@
+[
+  "Eagle",
+  "Elephant",
+  "Lion",
+  "Snake",
+  "Shark"
+]

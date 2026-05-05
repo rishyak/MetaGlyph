@@ -1,0 +1,14 @@
+### Step 1: Filter the animals based on the given conditions
+We need to select animals that are mammals, have a size category of "small", and are not domestic.
+
+### Step 2: Identify the matching animals
+From the given list, we can see that the following animals match the conditions:
+- Cat: type: mammal, domestic: True, size: small
+- Hamster: type: mammal, domestic: True, size: small
+
+However, since the condition is (x.domestic IN {True}), we should exclude the cat because it is domestic. Therefore, only the Hamster matches the conditions.
+
+### Step 3: Format the output as a JSON array
+The output should be a JSON array containing the name of the matching animal.
+
+The final answer is: $\boxed{["Hamster"]}$

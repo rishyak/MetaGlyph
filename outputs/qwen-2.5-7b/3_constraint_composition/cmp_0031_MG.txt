@@ -1,0 +1,19 @@
+```json
+{
+  "selected_ids": ["item_000", "item_006", "item_011", "item_014", "item_018"],
+  "count": 5
+}
+```
+
+Explanation:
+- The condition `x.id | x.priority ∈ {high}` means that the item's priority must be "high".
+- The condition `x.status ∉ {inactive}` means that the item's status must not be "inactive".
+
+Items that meet both conditions are:
+- `item_000` (Priority: high)
+- `item_006` (Priority: high)
+- `item_011` (Priority: high)
+- `item_014` (Priority: high)
+- `item_018` (Priority: high)
+
+Thus, the selected IDs are `["item_000", "item_006", "item_011", "item_014", "item_018"]` and the count is 5.

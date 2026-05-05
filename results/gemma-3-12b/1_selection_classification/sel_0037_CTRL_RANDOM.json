@@ -1,0 +1,36 @@
+{
+  "prompt_id": "sel_0037_CTRL_RANDOM",
+  "model": "gemma-3-12b",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "Dog",
+    "Goldfish",
+    "Cat",
+    "Hamster",
+    "Parrot"
+  ],
+  "gold_output": [
+    "eagle",
+    "lion",
+    "penguin",
+    "shark",
+    "snake"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=5, extra=5"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "logic",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

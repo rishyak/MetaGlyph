@@ -1,0 +1,95 @@
+To solve this problem, we need to filter the given dataset based on the condition `x.priority ∈ {high} ∪ x.status ∉ {inactive}` and then return the IDs of the filtered items along with the count.
+
+Let's break down the condition:
+1. `x.priority ∈ {high}` means the priority should be 'high'.
+2. `x.status ∉ {inactive}` means the status should not be 'inactive'.
+3. `∪` denotes the union, so we need items that satisfy either of the conditions.
+
+Here's how we can approach this step by step:
+
+### Step 1: Filter the dataset based on the given condition.
+
+We will iterate through each item in the dataset and check if it satisfies the condition.
+
+### Step 2: Collect the IDs of items that satisfy the condition.
+
+For each item that satisfies the condition, we will collect its ID.
+
+### Step 3: Count the number of items that satisfy the condition.
+
+We will count how many items satisfy the condition.
+
+### Step 4: Prepare the output in the required JSON format.
+
+We will create a JSON object with 'selected_ids' as an array of IDs collected in Step 2 and 'count' as the count from Step 3.
+
+Let's apply this to the given dataset:
+
+1. item_000: Status = inactive, Priority = low (Does not satisfy the condition)
+2. item_001: Status = pending, Priority = low (Does not satisfy the condition)
+3. item_002: Status = pending, Priority = medium (Does not satisfy the condition)
+4. item_003: Status = pending, Priority = low (Does not satisfy the condition)
+5. item_004: Status = inactive, Priority = low (Does not satisfy the condition)
+6. item_005: Status = active, Priority = medium (Does not satisfy the condition)
+7. item_006: Status = pending, Priority = high (Satisfies the condition)
+8. item_007: Status = inactive, Priority = medium (Does not satisfy the condition)
+9. item_008: Status = pending, Priority = low (Does not satisfy the condition)
+10. item_009: Status = pending, Priority = high (Satisfies the condition)
+11. item_010: Status = active, Priority = medium (Does not satisfy the condition)
+12. item_011: Status = inactive, Priority = low (Does not satisfy the condition)
+13. item_012: Status = pending, Priority = low (Does not satisfy the condition)
+14. item_013: Status = active, Priority = high (Satisfies the condition)
+15. item_014: Status = active, Priority = medium (Does not satisfy the condition)
+16. item_015: Status = inactive, Priority = medium (Does not satisfy the condition)
+17. item_016: Status = pending, Priority = high (Satisfies the condition)
+18. item_017: Status = inactive, Priority = medium (Does not satisfy the condition)
+19. item_018: Status = inactive, Priority = low (Does not satisfy the condition)
+20. item_019: Status = inactive, Priority = low (Does not satisfy the condition)
+
+Items that satisfy the condition:
+- item_006: Status = pending, Priority = high
+- item_009: Status = pending, Priority = high
+- item_013: Status = active, Priority = high
+- item_016: Status = pending, Priority = high
+
+And items that are not 'inactive':
+- item_001: Status = pending, Priority = low
+- item_002: Status = pending, Priority = medium
+- item_003: Status = pending, Priority = low
+- item_005: Status = active, Priority = medium
+- item_006: Status = pending, Priority = high
+- item_008: Status = pending, Priority = low
+- item_009: Status = pending, Priority = high
+- item_010: Status = active, Priority = medium
+- item_012: Status = pending, Priority = low
+- item_013: Status = active, Priority = high
+- item_014: Status = active, Priority = medium
+- item_016: Status = pending, Priority = high
+
+Combining these with the condition `x.priority ∈ {high} ∪ x.status ∉ {inactive}`, the IDs that satisfy are:
+- item_001
+- item_002
+- item_003
+- item_005
+- item_006
+- item_008
+- item_009
+- item_010
+- item_012
+- item_013
+- item_014
+- item_016
+
+### IDs: 
+[item_001, item_002, item_003, item_005, item_006, item_008, item_009, item_010, item_012, item_013, item_014, item_016]
+
+### Count: 
+12
+
+The final answer is:
+```json
+{
+  "selected_ids": ["item_001", "item_002", "item_003", "item_005", "item_006", "item_008", "item_009", "item_010", "item_012", "item_013", "item_014", "item_016"],
+  "count": 12
+}
+```

@@ -1,0 +1,51 @@
+{
+  "prompt_id": "sel_0044_MG",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this problem, we need to follow the given instruction and apply it to the provided input.",
+    "This can be broken down into:",
+    "Select items where the type is \"fish\".",
+    "From the items selected in step 1, choose those that are not domestic (i.e., `domestic` is `False`).",
+    "Return the names of the items that satisfy both conditions.",
+    "Let's analyze the given data:",
+    "Hamster: type: mammal, domestic: True, size: small",
+    "Snake: type: reptile, domestic: False, size: medium",
+    "Turtle: type: reptile, domestic: True, size: small",
+    "Parrot: type: bird, domestic: True, size: small",
+    "Crocodile: type: reptile, domestic: False, size: large",
+    "Elephant: type: mammal, domestic: False, size: large",
+    "Lion: type: mammal, domestic: False, size: large",
+    "Goldfish: type: fish, domestic: True, size: small",
+    "Salmon: type: fish, domestic: False, size: medium",
+    "Whale: type: mammal, domestic: False, size: large",
+    "First, we identify items where `x.type` is \"fish\":",
+    "Goldfish: type: fish, domestic: True, size: small",
+    "Salmon: type: fish, domestic: False, size: medium",
+    "Next, we filter these items to only include those where `x.domestic` is `False`:",
+    "Salmon: type: fish, domestic: False, size: medium",
+    "Now, we extract the names (`x.name`) of the items that satisfy both conditions:",
+    "Salmon",
+    "Therefore, the output should be a JSON array containing the name \"Salmon\"."
+  ],
+  "gold_output": [
+    "salmon"
+  ],
+  "exact_match": false,
+  "accuracy": 0.047619047619047616,
+  "f1_score": 0.0909090909090909,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "missing=1, extra=21"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.05",
+  "semantic_equivalence_pass": false
+}

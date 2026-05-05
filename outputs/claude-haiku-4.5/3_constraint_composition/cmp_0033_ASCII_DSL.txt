@@ -1,0 +1,22 @@
+```json
+{
+  "selected_ids": [
+    "item_005",
+    "item_010",
+    "item_015",
+    "item_018"
+  ],
+  "count": 4
+}
+```
+
+**Explanation:**
+The query filters for items where:
+- Category is in {A, B} AND
+- Status is "active"
+
+Matching items:
+- **item_005**: Category B, Status active ✓
+- **item_010**: Category B, Status active ✓
+- **item_015**: Category A, Status active ✓
+- **item_018**: Category A, Status active ✓

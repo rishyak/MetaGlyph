@@ -1,0 +1,36 @@
+To solve this task, we need to extract the required fields from the given email document and format them into a JSON object.
+
+1. **Identify the sender**: The sender's email address is given in the "From" field of the email header. The email address is alice.smith@innovationlabs.com. The name and title of the sender are provided in the signature block: "Alice Smith, Manager, Digital Systems". Thus, the sender's name is "Alice Smith".
+
+2. **Extract the company**: The company name is not directly mentioned in the email. However, we can infer it from the sender's email address or the context. The sender's email address is alice.smith@innovationlabs.com, suggesting that the company could be "Innovation Labs".
+
+3. **Identify the sender's title**: The sender's title is given as "Manager, Digital Systems" in the signature.
+
+4. **Identify the recipient**: The recipient's email address is given in the "To" field of the email header: bob.johnson@example.com.
+
+Now, let's extract the required fields:
+- "sender" => "Alice Smith" (since the name is available and more specific than the email address)
+- "company" => "Innovation Labs" (inferred from the sender's email address)
+- "sender_title" => "Manager, Digital Systems"
+- "recipient" => "bob.johnson@example.com" (using the email address as the recipient's identifier)
+
+Let's format these into a JSON object as requested:
+
+```json
+{
+  "sender": "Alice Smith",
+  "company": "Innovation Labs",
+  "sender_title": "Manager, Digital Systems",
+  "recipient": "bob.johnson@example.com"
+}
+```
+
+The final answer is: 
+```json
+{
+  "sender": "Alice Smith",
+  "company": "Innovation Labs",
+  "sender_title": "Manager, Digital Systems",
+  "recipient": "bob.johnson@example.com"
+}
+```

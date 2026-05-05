@@ -1,0 +1,21 @@
+Based on the instruction provided, we need to return the names of animals that are not domesticated. From the given list, we have:
+
+- Whale: domestic: False
+- Shark: domestic: False
+- Lion: domestic: False
+- Salmon: domestic: False
+- Crocodile: domestic: False
+- Snake: domestic: False
+- Cat: domestic: True
+
+So, the names of the animals that are not domesticated are:
+
+```json
+["Whale", "Shark", "Lion", "Salmon", "Crocodile", "Snake"]
+```
+
+Here is the JSON array of strings for the output:
+
+```json
+["Whale", "Shark", "Lion", "Salmon", "Crocodile", "Snake"]
+```

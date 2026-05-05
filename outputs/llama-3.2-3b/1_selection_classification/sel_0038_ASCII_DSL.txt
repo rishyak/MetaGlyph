@@ -1,0 +1,10 @@
+### Step 1: Identify the animals that are classified as "large" and are commonly kept as pets.
+From the given list, we can see that the "Elephant" and "Whale" are classified as "large" but are not commonly kept as pets. The "Dog", "Cat", and "Hamster" are classified as "small" or "medium" but are commonly kept as pets.
+
+### Step 2: Filter the list to include only the animals that meet the criteria.
+The only animal that meets the criteria is the "Elephant" is not included because it is not commonly kept as a pet, but the "Crocodile" is not included because it is not small, medium or large, the "Goldfish" is not included because it is not a mammal, the "Eagle" is not included because it is not commonly kept as a pet, the "Snake" is not included because it is not commonly kept as a pet.
+
+However, the "Dog", "Cat", and "Hamster" are commonly kept as pets and are classified as small or medium.
+
+### Step 3: Format the output as a JSON array of strings.
+The final answer is: $\boxed[]{"Dog", "Cat", "Hamster"}$

@@ -1,0 +1,10 @@
+### Step 1: Identify the type of animals that are classified as "fish"
+The type of animal that is classified as "fish" is Salmon.
+
+### Step 2: Extract the name of the fish
+The name of the fish is Salmon.
+
+### Step 3: Format the output as a JSON array
+The output should be in the format of a JSON array, which is ["Salmon"].
+
+The final answer is: $\boxed{["Salmon"]}$

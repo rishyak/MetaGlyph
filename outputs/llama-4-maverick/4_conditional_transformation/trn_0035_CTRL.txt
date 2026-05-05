@@ -1,0 +1,124 @@
+To solve this problem, we need to apply the given transformation rules to each record. The transformation rules are defined as a series of conditional operations on the records.
+
+The given transformation is: ∀x: TRANSFORM x | (x.type != "premium" ⇒ x.amount → x.amount × 1.1) ∘ (x.region != "EU" ⇒ x.amount → x.amount × 1.2) ∘ (x.active != false ⇒ x.status → "archived") → [x]
+
+Let's break down the transformation rules:
+
+1. (x.type != "premium" ⇒ x.amount → x.amount × 1.1)
+2. (x.region != "EU" ⇒ x.amount → x.amount × 1.2)
+3. (x.active != false ⇒ x.status → "archived")
+
+These rules are applied in sequence (∘ denotes composition) to each record.
+
+### Step-by-Step Application of Transformation Rules
+
+#### Rule 1: (x.type != "premium" ⇒ x.amount → x.amount × 1.1)
+- For records where `type` is not "premium", multiply `amount` by 1.1.
+
+#### Rule 2: (x.region != "EU" ⇒ x.amount → x.amount × 1.2)
+- For records where `region` is not "EU", multiply `amount` by 1.2.
+
+#### Rule 3: (x.active != false ⇒ x.status → "archived")
+- For records where `active` is not `false` (i.e., `true`), set `status` to "archived". Note that if `status` is not present, it will be added.
+
+### Application to Records
+
+Let's apply these rules to the given records.
+
+1. Record rec_000:
+   - `type` = "trial", not "premium", so `amount` = 568 × 1.1 = 624.8
+   - `region` = "US", not "EU", so `amount` = 624.8 × 1.2 = 749.76
+   - `active` = False, so no change to `status`.
+   - Result: {type: "trial", region: "US", amount: 749.76, active: False}
+
+2. Record rec_001:
+   - `type` = "premium", so no change to `amount` due to Rule 1.
+   - `region` = "US", not "EU", so `amount` = 91 × 1.2 = 109.2
+   - `active` = False, so no change to `status`.
+   - Result: {type: "premium", region: "US", amount: 109.2, active: False}
+
+3. Record rec_002:
+   - `type` = "trial", not "premium", so `amount` = 323 × 1.1 = 355.3
+   - `region` = "EU", so no change to `amount` due to Rule 2.
+   - `active` = False, so no change to `status`.
+   - Result: {type: "trial", region: "EU", amount: 355.3, active: False}
+
+4. Record rec_003:
+   - `type` = "trial", not "premium", so `amount` = 446 × 1.1 = 490.6
+   - `region` = "APAC", not "EU", so `amount` = 490.6 × 1.2 = 588.72
+   - `active` = True, so `status` = "archived".
+   - Result: {type: "trial", region: "APAC", amount: 588.72, active: True, status: "archived"}
+
+5. Record rec_004:
+   - `type` = "trial", not "premium", so `amount` = 369 × 1.1 = 405.9
+   - `region` = "EU", so no change to `amount` due to Rule 2.
+   - `active` = False, so no change to `status`.
+   - Result: {type: "trial", region: "EU", amount: 405.9, active: False}
+
+6. Record rec_005:
+   - `type` = "standard", not "premium", so `amount` = 900 × 1.1 = 990
+   - `region` = "APAC", not "EU", so `amount` = 990 × 1.2 = 1188
+   - `active` = False, so no change to `status`.
+   - Result: {type: "standard", region: "APAC", amount: 1188, active: False}
+
+7. Record rec_006:
+   - `type` = "trial", not "premium", so `amount` = 291 × 1.1 = 320.1
+   - `region` = "EU", so no change to `amount` due to Rule 2.
+   - `active` = True, so `status` = "archived".
+   - Result: {type: "trial", region: "EU", amount: 320.1, active: True, status: "archived"}
+
+8. Record rec_007:
+   - `type` = "standard", not "premium", so `amount` = 662 × 1.1 = 728.2
+   - `region` = "APAC", not "EU", so `amount` = 728.2 × 1.2 = 873.84
+   - `active` = False, so no change to `status`.
+   - Result: {type: "standard", region: "APAC", amount: 873.84, active: False}
+
+9. Record rec_008:
+   - `type` = "premium", so no change to `amount` due to Rule 1.
+   - `region` = "APAC", not "EU", so `amount` = 830 × 1.2 = 996
+   - `active` = True, so `status` = "archived".
+   - Result: {type: "premium", region: "APAC", amount: 996, active: True, status: "archived"}
+
+10. Record rec_009:
+    - `type` = "standard", not "premium", so `amount` = 879 × 1.1 = 966.9
+    - `region` = "US", not "EU", so `amount` = 966.9 × 1.2 = 1160.28
+    - `active` = False, so no change to `status`.
+    - Result: {type: "standard", region: "US", amount: 1160.28, active: False}
+
+11. Record rec_010:
+    - `type` = "standard", not "premium", so `amount` = 78 × 1.1 = 85.8
+    - `region` = "US", not "EU", so `amount` = 85.8 × 1.2 = 102.96
+    - `active` = True, so `status` = "archived".
+    - Result: {type: "standard", region: "US", amount: 102.96, active: True, status: "archived"}
+
+12. Record rec_011:
+    - `type` = "trial", not "premium", so `amount` = 380 × 1.1 = 418
+    - `region` = "EU", so no change to `amount` due to Rule 2.
+    - `active` = False, so no change to `status`.
+    - Result: {type: "trial", region: "EU", amount: 418, active: False}
+
+13. Record rec_012:
+    - `type` = "trial", not "premium", so `amount` = 629 × 1.1 = 691.9
+    - `region` = "US", not "EU", so `amount` = 691.9 × 1.2 = 830.28
+    - `active` = True, so `status` = "archived".
+    - Result: {type: "trial", region: "US", amount: 830.28, active: True, status: "archived"}
+
+14. Record rec_013:
+    - `type` = "trial", not "premium", so `amount` = 981 × 1.1 = 1079.1
+    - `region` = "EU", so no change to `amount` due to Rule 2.
+    - `active` = False, so no change to `status`.
+    - Result: {type: "trial", region: "EU", amount: 1079.1, active: False}
+
+15. Record rec_014:
+    - `type` = "premium", so no change to `amount` due to Rule 1.
+    - `region` = "EU", so no change to `amount` due to Rule 2.
+    - `active` = True, so `status` = "archived".
+    - Result: {type: "premium", region: "EU", amount: 791, active: True, status: "archived"}
+
+### JSON Output
+
+```json
+[
+  {"type": "trial", "region": "US", "amount": 749.76, "active": false},
+  {"type": "premium", "region": "US", "amount": 109.2, "active": false},
+  {"type": "trial

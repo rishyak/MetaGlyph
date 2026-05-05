@@ -1,0 +1,22 @@
+### Step 1: Identify the 'type' attribute for each animal
+Review the list of animals to identify the 'type' attribute for each item.
+
+### Step 2: Select animals with 'type' attribute 'mammal'
+From the list, select the animals where the 'type' attribute is 'mammal'.
+
+- Cat: type: mammal, domestic: True, size: small
+- Whale: type: mammal, domestic: False, size: large
+- Elephant: type: mammal, domestic: False, size: large
+
+### Step 3: Create a JSON array of the selected animals
+Create a JSON array of the selected animals.
+
+```
+[
+  "Cat",
+  "Whale",
+  "Elephant"
+]
+```
+
+The final answer is: $\boxed{["Cat","Whale","Elephant"]}$

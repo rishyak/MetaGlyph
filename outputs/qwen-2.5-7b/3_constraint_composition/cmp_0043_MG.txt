@@ -1,0 +1,24 @@
+```json
+{
+  "selected_ids": ["item_001", "item_006", "item_011", "item_012", "item_013", "item_014", "item_015", "item_017", "item_018", "item_019"],
+  "count": 10
+}
+```
+
+Explanation:
+- The condition `x.id | x.priority ∈ {high}` means that the items should have a priority of "high".
+- The condition `x.status ∉ {inactive}` means that the items should not have a status of "inactive".
+
+From the given dataset, only the following items meet both conditions:
+- `item_001`: Status is "pending" and Priority is "high".
+- `item_006`: Status is "active" and Priority is "medium".
+- `item_011`: Status is "pending" and Priority is "high".
+- `item_012`: Status is "active" and Priority is "low".
+- `item_013`: Status is "pending" and Priority is "high".
+- `item_014`: Status is "pending" and Priority is "high".
+- `item_015`: Status is "pending" and Priority is "high".
+- `item_017`: Status is "active" and Priority is "medium".
+- `item_018`: Status is "pending" and Priority is "high".
+- `item_019`: Status is "pending" and Priority is "high".
+
+Therefore, the selected IDs are `["item_001", "item_006", "item_011", "item_012", "item_013", "item_014", "item_015", "item_017", "item_018", "item_019"]` and the count is 10.

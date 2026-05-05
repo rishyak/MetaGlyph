@@ -1,0 +1,12 @@
+SELECT 
+  x.id, 
+  x.priority, 
+  x.status, 
+  CASE 
+    WHEN x.priority IN ('high') AND x.status IN ('active') THEN 1
+    WHEN x.priority IN ('medium') AND x.status IN ('active') THEN 1
+    WHEN x.priority IN ('low') AND x.status IN ('active') THEN 1
+    ELSE 0
+  END AS selected
+FROM 
+  item x

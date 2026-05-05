@@ -1,0 +1,1 @@
+["Smartphone", "Laptop", "Notebook", "Pen", "Tablet"]

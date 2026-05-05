@@ -1,0 +1,26 @@
+To solve the given instruction, we need to filter the list of animals based on the condition that their `domestic` attribute is `True`. Then we return the names of these animals in a JSON array.
+
+Given the data:
+
+- Snake: type: reptile, domestic: False, size: medium
+- Salmon: type: fish, domestic: False, size: medium
+- Parrot: type: bird, domestic: True, size: small
+- Hamster: type: mammal, domestic: True, size: small
+- Whale: type: mammal, domestic: False, size: large
+- Penguin: type: bird, domestic: False, size: medium
+- Goldfish: type: fish, domestic: True, size: small
+- Eagle: type: bird, domestic: False, size: medium
+- Lion: type: mammal, domestic: False, size: large
+- Cat: type: mammal, domestic: True, size: small
+
+We can see that the animals with `domestic: True` are:
+- Parrot
+- Hamster
+- Goldfish
+- Cat
+
+So the output in JSON array format would be:
+
+```json
+["Parrot", "Hamster", "Goldfish", "Cat"]
+```

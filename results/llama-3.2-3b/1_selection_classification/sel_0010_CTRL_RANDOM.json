@@ -1,0 +1,35 @@
+{
+  "prompt_id": "sel_0010_CTRL_RANDOM",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "From the given dataset, the animals that are commonly kept as pets are:",
+    "Parrot: domestic = True",
+    "Dog: domestic = True",
+    "Goldfish: domestic = True",
+    "Hamster: domestic = True"
+  ],
+  "gold_output": [
+    "dog",
+    "goldfish",
+    "hamster",
+    "parrot"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=4, extra=5"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

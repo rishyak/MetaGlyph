@@ -1,0 +1,5 @@
+```json
+["Snake"]
+```
+
+Explanation: The query is asking for the names of animals where the type is reptile. From the given list, only the Snake is classified as a reptile.

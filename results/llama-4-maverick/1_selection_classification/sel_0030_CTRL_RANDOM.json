@@ -1,0 +1,53 @@
+{
+  "prompt_id": "sel_0030_CTRL_RANDOM",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this problem, we need to follow the given instruction: `SELECT x | x.category ※ {furniture} ↯ [x.name]`. This instruction can be broken down into several steps:",
+    "**Understanding the Instruction**:",
+    "SELECT x`: This implies we are selecting or filtering items from a given dataset.",
+    "x.category ※ {furniture}`: This means we are filtering items where the category is 'furniture'. The symbol `※` likely denotes a condition or filter, in this case, checking if `x.category` is equal to 'furniture'.",
+    "↯ [x.name]`: This indicates that after filtering, we are projecting or selecting the `name` attribute of the filtered items. The symbol `↯` likely denotes a projection or mapping operation.",
+    "**Analyzing the Input**:",
+    "The input provides a list of products with their attributes, including category, price range, and portability.",
+    "**Applying the Instruction to the Input**:",
+    "First, we filter the products based on their category being 'furniture'.",
+    "Then, we select the names of the products that pass the filter.",
+    "**Execution**:",
+    "The products with their categories are:",
+    "Chair: category: furniture",
+    "Desk: category: furniture",
+    "Other products are not in the 'furniture' category.",
+    "Filtering by 'furniture' category gives us: Chair, Desk.",
+    "Selecting the names gives us: [\"Chair\", \"Desk\"].",
+    "**Formatting the Output**:",
+    "The output should be a JSON array of strings representing the names of the products in the 'furniture' category."
+  ],
+  "gold_output": [
+    "headphones",
+    "laptop",
+    "microwave",
+    "notebook",
+    "pen",
+    "refrigerator",
+    "smartphone",
+    "stapler"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=8, extra=19"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

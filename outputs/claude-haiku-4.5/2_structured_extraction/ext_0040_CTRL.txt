@@ -1,3 +1,8 @@
 ```json
-[]
+{
+  "customer_name": "David Brown",
+  "payment_terms": "Due on Receipt",
+  "total": "$7194.68",
+  "invoice_num": "#8657"
+}
 ```

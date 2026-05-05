@@ -1,0 +1,11 @@
+```json
+{
+  "selected_ids": ["item_008", "item_013", "item_017"],
+  "count": 3
+}
+```
+
+Explanation:
+- `item_008` has a value of 92 and category A.
+- `item_013` has a value of 52 and category A.
+- `item_017` has a value of 50 and category B, which also meets the criteria since B is one of the allowed categories.

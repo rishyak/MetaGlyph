@@ -1,0 +1,115 @@
+To solve this problem, we need to apply the given transformation rules to each record in the input data. The transformation rules are defined in a specific order and are applied sequentially.
+
+1. **First Rule:** If the record type is "premium", then multiply the amount by 1.1.
+2. **Second Rule:** If the record region is "EU", then multiply the amount by 1.2.
+3. **Third Rule:** If the record is not active (active == false), then change the status to "archived". Note that the initial records do not have a "status" field, so this field will be introduced during the transformation.
+
+Let's apply these rules step by step to each record.
+
+### Initial Records
+
+1. rec_000: type = standard, region = US, amount = 370, active = False
+2. rec_001: type = trial, region = US, amount = 860, active = False
+3. rec_002: type = trial, region = EU, amount = 656, active = True
+4. rec_003: type = standard, region = US, amount = 743, active = False
+5. rec_004: type = standard, region = EU, amount = 216, active = True
+6. rec_005: type = standard, region = US, amount = 333, active = False
+7. rec_006: type = trial, region = EU, amount = 844, active = False
+8. rec_007: type = premium, region = US, amount = 781, active = True
+9. rec_008: type = premium, region = EU, amount = 892, active = True
+10. rec_009: type = trial, region = EU, amount = 289, active = True
+11. rec_010: type = premium, region = EU, amount = 920, active = False
+12. rec_011: type = trial, region = EU, amount = 926, active = False
+13. rec_012: type = premium, region = US, amount = 518, active = False
+14. rec_013: type = premium, region = APAC, amount = 283, active = True
+15. rec_014: type = trial, region = EU, amount = 90, active = False
+
+### Applying Transformation Rules
+
+#### First Rule: x.type == "premium" => x.amount -> x.amount × 1.1
+
+1. rec_000: amount = 370 (no change)
+2. rec_001: amount = 860 (no change)
+3. rec_002: amount = 656 (no change)
+4. rec_003: amount = 743 (no change)
+5. rec_004: amount = 216 (no change)
+6. rec_005: amount = 333 (no change)
+7. rec_006: amount = 844 (no change)
+8. rec_007: amount = 781 × 1.1 = 859.1
+9. rec_008: amount = 892 × 1.1 = 981.2
+10. rec_009: amount = 289 (no change)
+11. rec_010: amount = 920 × 1.1 = 1012
+12. rec_011: amount = 926 (no change)
+13. rec_012: amount = 518 × 1.1 = 569.8
+14. rec_013: amount = 283 × 1.1 = 311.3
+15. rec_014: amount = 90 (no change)
+
+#### Second Rule: x.region == "EU" => x.amount -> x.amount × 1.2
+
+1. rec_000: amount = 370 (no change)
+2. rec_001: amount = 860 (no change)
+3. rec_002: amount = 656 × 1.2 = 787.2
+4. rec_003: amount = 743 (no change)
+5. rec_004: amount = 216 × 1.2 = 259.2
+6. rec_005: amount = 333 (no change)
+7. rec_006: amount = 844 × 1.2 = 1012.8
+8. rec_007: amount = 859.1 (no change)
+9. rec_008: amount = 981.2 × 1.2 = 1177.44
+10. rec_009: amount = 289 × 1.2 = 346.8
+11. rec_010: amount = 1012 × 1.2 = 1214.4
+12. rec_011: amount = 926 × 1.2 = 1111.2
+13. rec_012: amount = 569.8 (no change)
+14. rec_013: amount = 311.3 (no change)
+15. rec_014: amount = 90 × 1.2 = 108
+
+#### Third Rule: x.active == false => x.status -> "archived"
+
+1. rec_000: active = False, status = "archived"
+2. rec_001: active = False, status = "archived"
+3. rec_002: active = True (no change)
+4. rec_003: active = False, status = "archived"
+5. rec_004: active = True (no change)
+6. rec_005: active = False, status = "archived"
+7. rec_006: active = False, status = "archived"
+8. rec_007: active = True (no change)
+9. rec_008: active = True (no change)
+10. rec_009: active = True (no change)
+11. rec_010: active = False, status = "archived"
+12. rec_011: active = False, status = "archived"
+13. rec_012: active = False, status = "archived"
+14. rec_013: active = True (no change)
+15. rec_014: active = False, status = "archived"
+
+### Transformed Records
+
+1. rec_000: type = standard, region = US, amount = 370, active = False, status = "archived"
+2. rec_001: type = trial, region = US, amount = 860, active = False, status = "archived"
+3. rec_002: type = trial, region = EU, amount = 787.2, active = True
+4. rec_003: type = standard, region = US, amount = 743, active = False, status = "archived"
+5. rec_004: type = standard, region = EU, amount = 259.2, active = True
+6. rec_005: type = standard, region = US, amount = 333, active = False, status = "archived"
+7. rec_006: type = trial, region = EU, amount = 1012.8, active = False, status = "archived"
+8. rec_007: type = premium, region = US, amount = 859.1, active = True
+9. rec_008: type = premium, region = EU, amount = 1177.44, active = True
+10. rec_009: type = trial, region = EU, amount = 346.8, active = True
+11. rec_010: type = premium, region = EU, amount = 1214.4, active = False, status = "archived"
+12. rec_011: type = trial, region = EU, amount = 1111.2, active = False, status = "archived"
+13. rec_012: type = premium, region = US, amount = 569.8, active = False, status = "archived"
+14. rec_013: type = premium, region = APAC, amount = 311.3, active = True
+15. rec_014: type = trial, region = EU, amount = 108, active = False, status = "archived"
+
+### JSON Output
+
+```json
+[
+  {"type": "standard", "region": "US", "amount": 370, "active": false, "status": "archived"},
+  {"type": "trial", "region": "US", "amount": 860, "active": false, "status": "archived"},
+  {"type": "trial", "region": "EU", "amount": 787.2, "active": true},
+  {"type": "standard", "region": "US", "amount": 743, "active": false, "status": "archived"},
+  {"type": "standard", "region": "EU", "amount": 259.2, "active": true},
+  {"type": "standard", "region": "US", "amount": 333, "active": false, "status": "archived"},
+  {"type": "trial", "region": "EU", "amount": 1012.8, "active": false, "status": "archived"},
+  {"type": "premium", "region": "US", "amount": 859.1, "active": true},
+  {"type": "premium", "region": "EU", "amount": 1177.44, "active": true},
+  {"type": "trial", "region": "EU", "amount": 346.8, "active": true},
+  {"type": "premium", "region": "EU", "amount": 1214.

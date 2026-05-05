@@ -1,0 +1,25 @@
+To solve this task, we need to carefully review the list of animals provided and identify those with a 'size' attribute equal to 'large'. The list includes various animals with their respective attributes such as type, domestic status, and size.
+
+1. **Review the list of animals and their attributes:**
+   - Eagle: type: bird, domestic: False, size: medium
+   - Penguin: type: bird, domestic: False, size: medium
+   - Goldfish: type: fish, domestic: True, size: small
+   - Dog: type: mammal, domestic: True, size: medium
+   - Shark: type: fish, domestic: False, size: large
+   - Crocodile: type: reptile, domestic: False, size: large
+   - Turtle: type: reptile, domestic: True, size: small
+   - Hamster: type: mammal, domestic: True, size: small
+   - Cat: type: mammal, domestic: True, size: small
+   - Parrot: type: bird, domestic: True, size: small
+
+2. **Identify animals with 'size' equal to 'large':**
+   - Shark: size: large
+   - Crocodile: size: large
+
+3. **Return the names of the matching items as a JSON array of strings:**
+   The names of the animals that are classified as 'large' are "Shark" and "Crocodile". Therefore, the output should be a JSON array containing these names.
+
+The final answer is:
+```json
+["Shark", "Crocodile"]
+```

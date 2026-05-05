@@ -1,0 +1,115 @@
+To solve this problem, we need to apply the given transformation rules to each input record. The transformation rules are defined as follows:
+
+1. If the record type is not "premium", then multiply the amount by 1.1.
+2. If the record region is not "EU", then multiply the amount by 1.2.
+3. If the record is active (i.e., `active` is not `false`), then set the status to "archived".
+
+Let's apply these rules step by step to each record.
+
+### Step 1: Apply the first transformation rule
+For records where `type` is not "premium", multiply `amount` by 1.1.
+
+### Step 2: Apply the second transformation rule
+For records where `region` is not "EU", multiply the `amount` (which may have been modified in Step 1) by 1.2.
+
+### Step 3: Apply the third transformation rule
+For records where `active` is not `false`, set `status` to "archived".
+
+Let's process the records:
+
+1. **rec_000**: type = "trial", region = "APAC", amount = 483, active = False
+   - Step 1: amount = 483 * 1.1 = 531.3 (since type != "premium")
+   - Step 2: amount = 531.3 * 1.2 = 637.56 (since region != "EU")
+   - Step 3: No change (since active = False)
+   - Result: {type: "trial", region: "APAC", amount: 637.56, active: False}
+
+2. **rec_001**: type = "standard", region = "US", amount = 540, active = False
+   - Step 1: amount = 540 * 1.1 = 594 (since type != "premium")
+   - Step 2: amount = 594 * 1.2 = 712.8 (since region != "EU")
+   - Step 3: No change (since active = False)
+   - Result: {type: "standard", region: "US", amount: 712.8, active: False}
+
+3. **rec_002**: type = "trial", region = "EU", amount = 650, active = False
+   - Step 1: amount = 650 * 1.1 = 715 (since type != "premium")
+   - Step 2: No change (since region = "EU")
+   - Step 3: No change (since active = False)
+   - Result: {type: "trial", region: "EU", amount: 715, active: False}
+
+4. **rec_003**: type = "standard", region = "US", amount = 283, active = True
+   - Step 1: amount = 283 * 1.1 = 311.3 (since type != "premium")
+   - Step 2: amount = 311.3 * 1.2 = 373.56 (since region != "EU")
+   - Step 3: status = "archived" (since active = True)
+   - Result: {type: "standard", region: "US", amount: 373.56, active: True, status: "archived"}
+
+5. **rec_004**: type = "premium", region = "EU", amount = 911, active = False
+   - Step 1: No change (since type = "premium")
+   - Step 2: No change (since region = "EU")
+   - Step 3: No change (since active = False)
+   - Result: {type: "premium", region: "EU", amount: 911, active: False}
+
+6. **rec_005**: type = "standard", region = "US", amount = 655, active = True
+   - Step 1: amount = 655 * 1.1 = 720.5 (since type != "premium")
+   - Step 2: amount = 720.5 * 1.2 = 864.6 (since region != "EU")
+   - Step 3: status = "archived" (since active = True)
+   - Result: {type: "standard", region: "US", amount: 864.6, active: True, status: "archived"}
+
+7. **rec_006**: type = "trial", region = "US", amount = 328, active = True
+   - Step 1: amount = 328 * 1.1 = 360.8 (since type != "premium")
+   - Step 2: amount = 360.8 * 1.2 = 432.96 (since region != "EU")
+   - Step 3: status = "archived" (since active = True)
+   - Result: {type: "trial", region: "US", amount: 432.96, active: True, status: "archived"}
+
+8. **rec_007**: type = "trial", region = "EU", amount = 105, active = True
+   - Step 1: amount = 105 * 1.1 = 115.5 (since type != "premium")
+   - Step 2: No change (since region = "EU")
+   - Step 3: status = "archived" (since active = True)
+   - Result: {type: "trial", region: "EU", amount: 115.5, active: True, status: "archived"}
+
+9. **rec_008**: type = "standard", region = "EU", amount = 979, active = True
+   - Step 1: amount = 979 * 1.1 = 1076.9 (since type != "premium")
+   - Step 2: No change (since region = "EU")
+   - Step 3: status = "archived" (since active = True)
+   - Result: {type: "standard", region: "EU", amount: 1076.9, active: True, status: "archived"}
+
+10. **rec_009**: type = "trial", region = "US", amount = 520, active = False
+    - Step 1: amount = 520 * 1.1 = 572 (since type != "premium")
+    - Step 2: amount = 572 * 1.2 = 686.4 (since region != "EU")
+    - Step 3: No change (since active = False)
+    - Result: {type: "trial", region: "US", amount: 686.4, active: False}
+
+11. **rec_010**: type = "trial", region = "APAC", amount = 289, active = False
+    - Step 1: amount = 289 * 1.1 = 317.9 (since type != "premium")
+    - Step 2: amount = 317.9 * 1.2 = 381.48 (since region != "EU")
+    - Step 3: No change (since active = False)
+    - Result: {type: "trial", region: "APAC", amount: 381.48, active: False}
+
+12. **rec_011**: type = "premium", region = "EU", amount = 259, active = False
+    - Step 1: No change (since type = "premium")
+    - Step 2: No change (since region = "EU")
+    - Step 3: No change (since active = False)
+    - Result: {type: "premium", region: "EU", amount: 259, active: False}
+
+13. **rec_012**: type = "trial", region = "US", amount = 402, active = True
+    - Step 1: amount = 402 * 1.1 = 442.2 (since type != "premium")
+    - Step 2: amount = 442.2 * 1.2 = 530.64 (since region != "EU")
+    - Step 3: status = "archived" (since active = True)
+    - Result: {type: "trial", region: "US", amount: 530.64, active: True, status: "archived"}
+
+14. **rec_013**: type = "trial", region = "APAC", amount = 774, active = True
+    - Step 1: amount = 774 * 1.1 = 851.4 (since type != "premium")
+    - Step 2: amount = 851.4 * 1.2 = 1021.68 (since region != "EU")
+    - Step 3: status = "archived" (since active = True)
+    - Result: {type: "trial", region: "APAC", amount: 1021.68, active: True, status: "archived"}
+
+15. **rec_014**: type = "standard", region = "EU", amount = 801, active = False
+    - Step 1: amount = 801 * 1.1 = 881.1 (since type != "premium")
+    - Step 2: No change (since region = "EU")
+    - Step 3: No change (since active = False)
+    - Result: {type: "standard", region: "EU", amount: 881.1, active: False}
+
+The transformed records in JSON format are as follows:
+
+```json
+[
+  {"type": "trial", "region": "APAC", "amount": 637.56, "active": false},
+  {"

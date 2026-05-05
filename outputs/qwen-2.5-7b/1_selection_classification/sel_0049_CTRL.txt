@@ -1,0 +1,11 @@
+Based on the given instruction `SELECT x | x.portable ∉ {True} → [x.name]`, we need to select the names of items that are not portable. From the provided list of products, the items that are not portable are:
+
+- Bookshelf
+- Desk
+- Refrigerator
+
+So the output in JSON format would be:
+
+```json
+["Bookshelf", "Desk", "Refrigerator"]
+```

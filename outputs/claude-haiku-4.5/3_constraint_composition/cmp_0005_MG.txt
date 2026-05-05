@@ -1,13 +1,30 @@
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_010",
+    "item_014",
+    "item_015",
+    "item_018",
+    "item_019"
+  ],
+  "count": 5
 }
 ```
 
-**Explanation:** The query requires items that match:
-- `∈(security) ∩ ∈(high_priority) ∪ ∈(performance)` - must have security AND high_priority attributes, OR performance attribute
-- `¬(deprecated)` - must not be deprecated
-- `¬(experimental)` - must not be experimental
+**Explanation:**
+The query filters for items where:
+- `x.value >= 50` (value is 50 or greater)
+- `x.category ∈ {A}` (category is A)
 
-The provided dataset contains only Category, Status, Priority, and Value attributes. There are no "security", "high_priority", "performance", "deprecated", or "experimental" attributes present in any items, so no items match the filter criteria.
+Items matching both conditions:
+- item_010: Category A, Value 99 ✓
+- item_014: Category A, Value 70 ✓
+- item_015: Category A, Value 71 ✓
+- item_018: Category A, Value 86 ✓
+- item_019: Category A, Value 53 ✓
+
+Items excluded:
+- item_007: Category A, Value 34 (value < 50)
+- item_009: Category A, Value 36 (value < 50)
+- item_011: Category A, Value 21 (value < 50)
+- item_016: Category A, Value 6 (value < 50)

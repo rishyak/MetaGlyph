@@ -1,0 +1,33 @@
+Given the repetitive notes, I will provide the solution in the required format without the redundant notes.
+
+### Input
+The following is a comprehensive list of animals with their attributes. Each entry contains detailed information about the item's properties. Please review all entries carefully before making any selections.
+
+- Elephant: type: mammal, domestic: False, size: large
+- Turtle: type: reptile, domestic: True, size: small
+- Whale: type: mammal, domestic: False, size: large
+- Dog: type: mammal, domestic: True, size: medium
+- Cat: type: mammal, domestic: True, size: small
+- Hamster: type: mammal, domestic: True, size: small
+- Eagle: type: bird, domestic: False, size: medium
+- Crocodile: type: reptile, domestic: False, size: large
+- Goldfish: type: fish, domestic: True, size: small
+- Snake: type: reptile, domestic: False, size: medium
+
+### Output
+```json
+[
+  "Elephant",
+  "Turtle",
+  "Whale",
+  "Dog",
+  "Cat",
+  "Hamster",
+  "Eagle",
+  "Crocodile",
+  "Goldfish",
+  "Snake"
+]
+```
+
+This output includes all the animals from the input list, classified by their size category.

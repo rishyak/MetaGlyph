@@ -1,0 +1,14 @@
+```json
+{
+  "selected_ids": ["item_004", "item_015"],
+  "count": 2
+}
+```
+
+**Explanation:**
+- **item_004**: Category A ✓, Status active ✓
+- **item_015**: Category A ✓, Status active ✓
+
+These are the only two records that match both conditions:
+1. Category is in ['A', 'B']
+2. Status is 'active'

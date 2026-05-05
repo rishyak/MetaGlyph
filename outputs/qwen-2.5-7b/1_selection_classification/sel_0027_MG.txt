@@ -1,0 +1,12 @@
+Based on the given instruction and input data, you're asking to return the names of animals whose type is not `fish`. Let's filter out the animals that do not belong to the `fish` category from the provided list:
+
+```json
+["Crocodile", "Whale", "Elephant", "Penguin", "Dog", "Snake", "Eagle", "Cat"]
+```
+
+Here are the steps to get this result:
+1. Iterate through each entry in the list.
+2. Check if the `type` attribute is not equal to `fish`.
+3. Collect the names of animals that meet the condition.
+
+Since there is only one fish in the list (`Shark`), all other animals will be included in the output.

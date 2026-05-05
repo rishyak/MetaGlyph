@@ -1,0 +1,46 @@
+{
+  "prompt_id": "sel_0045_MG",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": [
+    "We need to identify products where price_range is not 'low'. The price ranges are defined as: low (<$50), medium ($50-$500), high (>$500).",
+    "Desk: price_range = medium",
+    "Microwave: price_range = medium",
+    "Stapler: price_range = low",
+    "Laptop: price_range = high",
+    "Notebook: price_range = low",
+    "Chair: price_range = medium",
+    "Bookshelf: price_range = medium",
+    "Smartphone: price_range = high",
+    "Refrigerator: price_range = high",
+    "Tablet: price_range = high",
+    "Exclude products with price_range = 'low'. So, exclude Stapler and Notebook."
+  ],
+  "gold_output": [
+    "bookshelf",
+    "chair",
+    "desk",
+    "laptop",
+    "microwave",
+    "refrigerator",
+    "smartphone",
+    "tablet"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∉",
+      "checked": true,
+      "passed": false,
+      "details": "missing=8, extra=12"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

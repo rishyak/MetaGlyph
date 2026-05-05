@@ -1,0 +1,14 @@
+### Step 1: Identify the items that are not birds
+To solve this problem, we need to review the list of animals and identify the ones that are not birds. We can do this by looking at the "type" attribute of each item.
+
+### Step 2: Filter out the birds
+From the given list, the birds are Parrot and Eagle. We will exclude these items from our output.
+
+### Step 3: Create the output list
+We will create a list of the remaining items that are not birds.
+
+### Step 4: Format the output as a JSON array
+We will format the output list as a JSON array of strings.
+
+### Step 5: Provide the final answer
+The final answer is: $\boxed [{"Cat","Salmon","Crocodile","Hamster","Shark","Lion","Snake","Elephant"}]$

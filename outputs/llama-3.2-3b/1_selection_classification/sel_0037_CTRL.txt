@@ -1,0 +1,20 @@
+### Step 1: Identify the animals that are both mammals and domestic
+The animals that are both mammals and domestic are Dog, Cat, and Hamster.
+
+### Step 2: Identify the animals that are birds and domestic
+The animals that are both birds and domestic are Eagle, Parrot.
+
+### Step 3: Identify the animals that are fish and domestic
+The animals that are both fish and domestic are Goldfish.
+
+### Step 4: Identify the animals that are reptiles and domestic
+There are no animals that are reptiles and domestic.
+
+### Step 5: Identify the animals that are not domestic
+The animals that are not domestic are Lion, Shark, Snake, Penguin.
+
+### Step 6: Combine the results from steps 1-5 into a single list
+The animals that are domestic are Dog, Cat, Hamster, Eagle, Parrot, Goldfish.
+
+### Step 7: Format the output as a JSON array
+The final answer is: $\boxed["Dog", "Cat", "Hamster", "Eagle", "Parrot", "Goldfish"]$

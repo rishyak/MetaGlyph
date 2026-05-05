@@ -1,0 +1,92 @@
+[
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 789,
+    "status": "archived"
+  },
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 322,  // 268 * 1.2 (region multiplier)
+    "status": "active"  // active remains active
+  },
+  {
+    "type": "premium",
+    "region": "US",
+    "amount": 924,  // 777 * 1.2 (region multiplier)
+    "status": "active"
+  },
+  {
+    "type": "premium",
+    "region": "US",
+    "amount": 810,  // 675 * 1.2 (region multiplier)
+    "status": "active"
+  },
+  {
+    "type": "trial",
+    "region": "US",
+    "amount": 938.8, // 782 * 1.2 (region multiplier)
+    "status": "archived" // active is true, so status changes to archived
+  },
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 1043.08, // 869 * 1.2 (region multiplier)
+    "status": "archived" // active is true
+  },
+  {
+    "type": "trial",
+    "region": "US",
+    "amount": 304.8, // 254 * 1.2 (region multiplier)
+    "status": "archived" // active is true
+  },
+  {
+    "type": "premium",
+    "region": "APAC",
+    "amount": 139.7, // 127 * 1.1 (type multiplier)
+    "status": "archived" // active is true
+  },
+  {
+    "type": "premium",
+    "region": "APAC",
+    "amount": 272, // type premium, but active is false so no amount change, status becomes archived
+    "status": "archived"
+  },
+  {
+    "type": "standard",
+    "region": "APAC",
+    "amount": 631, // no type multiplier, no region multiplier, active is true but type is not premium so status unchanged
+    "status": "active"
+  },
+  {
+    "type": "standard",
+    "region": "EU",
+    "amount": 120, // no type multiplier, region is EU so no region multiplier, active is true but type not premium so status unchanged
+    "status": "active"
+  },
+  {
+    "type": "premium",
+    "region": "APAC",
+    "amount": 703, // active is false, so no amount change
+    "status": "archived"
+  },
+  {
+    "type": "premium",
+    "region": "APAC",
+    "amount": 233.3, // 213 * 1.1 (type multiplier)
+    "status": "active"
+  },
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 946, // 860 * 1.1 (type multiplier)
+    "status": "archived" // active is true
+  },
+  {
+    "type": "standard",
+    "region": "APAC",
+    "amount": 801, // active is false, so no amount change
+    "status": "archived" // active is false, so status changes to archived
+  }
+]

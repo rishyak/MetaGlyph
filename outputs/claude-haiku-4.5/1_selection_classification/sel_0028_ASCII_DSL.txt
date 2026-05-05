@@ -1,0 +1,12 @@
+Looking at the instruction `SELECT x | x.type IN {mammal} -> [x.name]`, I need to:
+
+1. Filter all animals where `type` equals `mammal`
+2. Return their names
+
+From the input data, the animals with `type: mammal` are:
+- Cat
+- Hamster
+
+```json
+["Cat", "Hamster"]
+```

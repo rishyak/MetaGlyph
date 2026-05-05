@@ -1,0 +1,16 @@
+```json
+{
+  "selected_ids": ["item_003", "item_015", "item_019"],
+  "count": 3
+}
+```
+
+**Explanation:**
+Filtering for items where `value >= 50` AND `category IN {A}`:
+
+- item_000: Category A, Value 44 ❌ (value < 50)
+- item_003: Category A, Value 53 ✅
+- item_007: Category A, Value 32 ❌ (value < 50)
+- item_015: Category A, Value 62 ✅
+- item_018: Category A, Value 47 ❌ (value < 50)
+- item_019: Category A, Value 91 ✅

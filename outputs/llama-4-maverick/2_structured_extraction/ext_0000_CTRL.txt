@@ -1,0 +1,32 @@
+To extract the requested fields from the given email document, let's analyze the content:
+
+1. **Sender**: The email is sent by `alice.smith@innovationlabs.com`, and the sender's name is `Alice Smith`. The title of the sender is `Manager`, and the company or department is `Digital Systems`.
+
+2. **Recipient**: The email is addressed to `bob.johnson@example.com`.
+
+Given this information, we need to map the extracted details to the required fields:
+- `sender_title`: The title of the sender, which is `Manager`.
+- `company`: The company or department of the sender, which is `Digital Systems`.
+- `recipient`: The recipient's email address, which is `bob.johnson@example.com`.
+- `sender`: The sender's name, which is `Alice Smith`.
+
+Now, let's construct the JSON object with the specified field names as keys:
+
+```json
+{
+  "sender_title": "Manager",
+  "company": "Digital Systems",
+  "recipient": "bob.johnson@example.com",
+  "sender": "Alice Smith"
+}
+```
+
+The final answer is: 
+```json
+{
+  "sender_title": "Manager",
+  "company": "Digital Systems",
+  "recipient": "bob.johnson@example.com",
+  "sender": "Alice Smith"
+}
+```

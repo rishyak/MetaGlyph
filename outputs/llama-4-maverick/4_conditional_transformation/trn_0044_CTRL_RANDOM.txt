@@ -1,0 +1,124 @@
+To solve this problem, we need to apply the given transformation rules to each record and then output the transformed records in JSON format.
+
+The transformation rules are given as:
+- If the record type is "premium", then multiply the amount by 1.1.
+- If the record region is "EU", then multiply the amount by 1.2.
+- If the record is not active (active == false), then change the status to "archived".
+
+Let's apply these rules to each record:
+
+1. **Record rec_000:**
+   - type: premium, region: APAC, amount: 107, active: True
+   - Apply rule 1: amount = 107 * 1.1 = 117.7
+   - Transformed: type: premium, region: APAC, amount: 117.7, active: True, status: (no change)
+
+2. **Record rec_001:**
+   - type: standard, region: EU, amount: 341, active: True
+   - Apply rule 2: amount = 341 * 1.2 = 409.2
+   - Transformed: type: standard, region: EU, amount: 409.2, active: True
+
+3. **Record rec_002:**
+   - type: standard, region: EU, amount: 402, active: True
+   - Apply rule 2: amount = 402 * 1.2 = 482.4
+   - Transformed: type: standard, region: EU, amount: 482.4, active: True
+
+4. **Record rec_003:**
+   - type: premium, region: EU, amount: 986, active: False
+   - Apply rule 1: amount = 986 * 1.1 = 1084.6
+   - Apply rule 2: amount = 1084.6 * 1.2 = 1301.52
+   - Apply rule 3: status = "archived"
+   - Transformed: type: premium, region: EU, amount: 1301.52, active: False, status: "archived"
+
+5. **Record rec_004:**
+   - type: premium, region: APAC, amount: 750, active: True
+   - Apply rule 1: amount = 750 * 1.1 = 825
+   - Transformed: type: premium, region: APAC, amount: 825, active: True
+
+6. **Record rec_005:**
+   - type: premium, region: APAC, amount: 378, active: True
+   - Apply rule 1: amount = 378 * 1.1 = 415.8
+   - Transformed: type: premium, region: APAC, amount: 415.8, active: True
+
+7. **Record rec_006:**
+   - type: standard, region: APAC, amount: 131, active: False
+   - Apply rule 3: status = "archived"
+   - Transformed: type: standard, region: APAC, amount: 131, active: False, status: "archived"
+
+8. **Record rec_007:**
+   - type: premium, region: US, amount: 425, active: False
+   - Apply rule 1: amount = 425 * 1.1 = 467.5
+   - Apply rule 3: status = "archived"
+   - Transformed: type: premium, region: US, amount: 467.5, active: False, status: "archived"
+
+9. **Record rec_008:**
+   - type: trial, region: US, amount: 664, active: False
+   - Apply rule 3: status = "archived"
+   - Transformed: type: trial, region: US, amount: 664, active: False, status: "archived"
+
+10. **Record rec_009:**
+    - type: premium, region: APAC, amount: 236, active: True
+    - Apply rule 1: amount = 236 * 1.1 = 259.6
+    - Transformed: type: premium, region: APAC, amount: 259.6, active: True
+
+11. **Record rec_010:**
+    - type: standard, region: EU, amount: 166, active: False
+    - Apply rule 2: amount = 166 * 1.2 = 199.2
+    - Apply rule 3: status = "archived"
+    - Transformed: type: standard, region: EU, amount: 199.2, active: False, status: "archived"
+
+12. **Record rec_011:**
+    - type: trial, region: APAC, amount: 392, active: False
+    - Apply rule 3: status = "archived"
+    - Transformed: type: trial, region: APAC, amount: 392, active: False, status: "archived"
+
+13. **Record rec_012:**
+    - type: trial, region: APAC, amount: 944, active: False
+    - Apply rule 3: status = "archived"
+    - Transformed: type: trial, region: APAC, amount: 944, active: False, status: "archived"
+
+14. **Record rec_013:**
+    - type: trial, region: APAC, amount: 855, active: True
+    - Transformed: (no changes)
+
+15. **Record rec_014:**
+    - type: standard, region: APAC, amount: 782, active: True
+    - Transformed: (no changes)
+
+Now, let's format the transformed records into JSON:
+
+```json
+[
+  {"type": "premium", "region": "APAC", "amount": 117.7, "active": true},
+  {"type": "standard", "region": "EU", "amount": 409.2, "active": true},
+  {"type": "standard", "region": "EU", "amount": 482.4, "active": true},
+  {"type": "premium", "region": "EU", "amount": 1301.52, "active": false, "status": "archived"},
+  {"type": "premium", "region": "APAC", "amount": 825, "active": true},
+  {"type": "premium", "region": "APAC", "amount": 415.8, "active": true},
+  {"type": "standard", "region": "APAC", "amount": 131, "active": false, "status": "archived"},
+  {"type": "premium", "region": "US", "amount": 467.5, "active": false, "status": "archived"},
+  {"type": "trial", "region": "US", "amount": 664, "active": false, "status": "archived"},
+  {"type": "premium", "region": "APAC", "amount": 259.6, "active": true},
+  {"type": "standard", "region": "EU", "amount": 199.2, "active": false, "status": "archived"},
+  {"type": "trial", "region": "APAC", "amount": 392, "active": false, "status": "archived"},
+  {"type": "trial", "region": "APAC", "amount": 944, "active": false, "status": "archived"},
+  {"type": "trial", "region": "APAC", "amount": 855, "active": true},
+  {"type": "standard", "region": "APAC", "amount": 782, "active": true}
+]
+```
+
+The final answer is: 
+```json
+[
+  {"type": "premium", "region": "APAC", "amount": 117.7, "active": true},
+  {"type": "standard", "region": "EU", "amount": 409.2, "active": true},
+  {"type": "standard", "region": "EU", "amount": 482.4, "active": true},
+  {"type": "premium", "region": "EU", "amount": 1301.52, "active": false, "status": "archived"},
+  {"type": "premium", "region": "APAC", "amount": 825, "active": true},
+  {"type": "premium", "region": "APAC", "amount": 415.8, "active": true},
+  {"type": "standard", "region": "APAC", "amount": 131, "active": false, "status": "archived"},
+  {"type": "premium", "region": "US", "amount": 467.5, "active": false, "status": "archived"},
+  {"type": "trial", "region": "US", "amount": 664, "active": false, "status": "archived"},
+  {"type": "premium", "region": "APAC", "amount": 259.6, "active": true},
+  {"type": "standard", "region": "EU", "amount": 199.2, "active": false, "status": "archived"},
+  {"type": "trial", "region": "APAC", "amount": 392, "active": false, "status": "archived"},
+  {"type": "trial", "region": "APAC", "amount": 944, "active": false, "status": "arch

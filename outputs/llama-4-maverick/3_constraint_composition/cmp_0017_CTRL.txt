@@ -1,0 +1,131 @@
+To solve this problem, we need to filter the given dataset based on the conditions specified in the instruction: `x.priority ∈ {high} ∩ x.status ∉ {inactive}`. This means we are looking for items where the priority is 'high' and the status is not 'inactive'.
+
+Let's go through the dataset and apply these conditions:
+
+1. ID: item_000
+   - Priority: high
+   - Status: pending
+   - Meets the condition: Yes
+
+2. ID: item_001
+   - Priority: high
+   - Status: active
+   - Meets the condition: Yes
+
+3. ID: item_002
+   - Priority: low
+   - Status: pending
+   - Meets the condition: No (Priority is not high)
+
+4. ID: item_003
+   - Priority: high
+   - Status: pending
+   - Meets the condition: Yes
+
+5. ID: item_004
+   - Priority: low
+   - Status: pending
+   - Meets the condition: No (Priority is not high)
+
+6. ID: item_005
+   - Priority: high
+   - Status: pending
+   - Meets the condition: Yes
+
+7. ID: item_006
+   - Priority: low
+   - Status: inactive
+   - Meets the condition: No (Priority is not high and Status is inactive)
+
+8. ID: item_007
+   - Priority: low
+   - Status: pending
+   - Meets the condition: No (Priority is not high)
+
+9. ID: item_008
+   - Priority: high
+   - Status: inactive
+   - Meets the condition: No (Status is inactive)
+
+10. ID: item_009
+    - Priority: low
+    - Status: active
+    - Meets the condition: No (Priority is not high)
+
+11. ID: item_010
+    - Priority: high
+    - Status: pending
+    - Meets the condition: Yes
+
+12. ID: item_011
+    - Priority: medium
+    - Status: inactive
+    - Meets the condition: No (Priority is not high and Status is inactive)
+
+13. ID: item_012
+    - Priority: low
+    - Status: inactive
+    - Meets the condition: No (Priority is not high and Status is inactive)
+
+14. ID: item_013
+    - Priority: low
+    - Status: active
+    - Meets the condition: No (Priority is not high)
+
+15. ID: item_014
+    - Priority: medium
+    - Status: pending
+    - Meets the condition: No (Priority is not high)
+
+16. ID: item_015
+    - Priority: medium
+    - Status: active
+    - Meets the condition: No (Priority is not high)
+
+17. ID: item_016
+    - Priority: low
+    - Status: pending
+    - Meets the condition: No (Priority is not high)
+
+18. ID: item_017
+    - Priority: high
+    - Status: pending
+    - Meets the condition: Yes
+
+19. ID: item_018
+    - Priority: medium
+    - Status: pending
+    - Meets the condition: No (Priority is not high)
+
+20. ID: item_019
+    - Priority: high
+    - Status: active
+    - Meets the condition: Yes
+
+The IDs that meet the condition are:
+- item_000
+- item_001
+- item_003
+- item_005
+- item_010
+- item_017
+- item_019
+
+There are 7 items in total that meet the specified conditions.
+
+Now, let's format the output as per the required JSON format:
+
+```json
+{
+  "selected_ids": ["item_000", "item_001", "item_003", "item_005", "item_010", "item_017", "item_019"],
+  "count": 7
+}
+```
+
+The final answer is:
+```json
+{
+  "selected_ids": ["item_000", "item_001", "item_003", "item_005", "item_010", "item_017", "item_019"],
+  "count": 7
+}
+```

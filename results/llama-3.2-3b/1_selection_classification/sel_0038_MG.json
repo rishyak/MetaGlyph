@@ -1,0 +1,33 @@
+{
+  "prompt_id": "sel_0038_MG",
+  "model": "llama-3.2-3b",
+  "family": "1_selection_classification",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": [
+    "Elephant",
+    "Whale",
+    "Crocodile",
+    "Goldfish"
+  ],
+  "gold_output": [
+    "crocodile",
+    "elephant",
+    "whale"
+  ],
+  "exact_match": false,
+  "accuracy": 0.75,
+  "f1_score": 0.8571428571428571,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=3, extra=4"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.75",
+  "semantic_equivalence_pass": false
+}

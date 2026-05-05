@@ -1,0 +1,43 @@
+To solve this problem, we need to filter the given dataset based on the conditions specified in the instruction: `x.priority ∈ {high} ∩ x.status ∉ {inactive}`. This means we are looking for items where the priority is 'high' and the status is not 'inactive'.
+
+Let's go through the dataset and apply these conditions:
+
+1. **ID: item_000** - Priority: medium, Status: pending (Does not match because priority is not 'high')
+2. **ID: item_001** - Priority: high, Status: active (Matches)
+3. **ID: item_002** - Priority: high, Status: pending (Matches)
+4. **ID: item_003** - Priority: low, Status: inactive (Does not match because priority is not 'high' and status is 'inactive')
+5. **ID: item_004** - Priority: low, Status: pending (Does not match because priority is not 'high')
+6. **ID: item_005** - Priority: low, Status: active (Does not match because priority is not 'high')
+7. **ID: item_006** - Priority: high, Status: pending (Matches)
+8. **ID: item_007** - Priority: low, Status: inactive (Does not match because priority is not 'high' and status is 'inactive')
+9. **ID: item_008** - Priority: high, Status: inactive (Does not match because status is 'inactive')
+10. **ID: item_009** - Priority: high, Status: pending (Matches)
+11. **ID: item_010** - Priority: high, Status: active (Matches)
+12. **ID: item_011** - Priority: medium, Status: pending (Does not match because priority is not 'high')
+13. **ID: item_012** - Priority: low, Status: active (Does not match because priority is not 'high')
+14. **ID: item_013** - Priority: high, Status: pending (Matches)
+15. **ID: item_014** - Priority: high, Status: inactive (Does not match because status is 'inactive')
+16. **ID: item_015** - Priority: high, Status: inactive (Does not match because status is 'inactive')
+17. **ID: item_016** - Priority: low, Status: inactive (Does not match because priority is not 'high' and status is 'inactive')
+18. **ID: item_017** - Priority: medium, Status: pending (Does not match because priority is not 'high')
+19. **ID: item_018** - Priority: medium, Status: inactive (Does not match because priority is not 'high' and status is 'inactive')
+20. **ID: item_019** - Priority: low, Status: pending (Does not match because priority is not 'high')
+
+The IDs that match the given conditions are:
+- item_001
+- item_002
+- item_006
+- item_009
+- item_010
+- item_013
+
+There are 6 items in total that match the conditions.
+
+Therefore, the output in the required JSON format is:
+
+```json
+{
+  "selected_ids": ["item_001", "item_002", "item_006", "item_009", "item_010", "item_013"],
+  "count": 6
+}
+```

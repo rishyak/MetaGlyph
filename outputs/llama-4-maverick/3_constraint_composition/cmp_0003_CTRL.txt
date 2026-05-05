@@ -1,0 +1,44 @@
+To solve this problem, we need to filter the given dataset based on the conditions specified in the instruction: `x.priority ∈ {high} ∩ x.status ∉ {inactive}`. This means we are looking for items where the priority is 'high' and the status is not 'inactive'.
+
+Let's examine the dataset:
+
+1. ID: item_000, Priority: low, Status: pending
+2. ID: item_001, Priority: high, Status: pending
+3. ID: item_002, Priority: low, Status: active
+4. ID: item_003, Priority: low, Status: pending
+5. ID: item_004, Priority: low, Status: inactive
+6. ID: item_005, Priority: high, Status: pending
+7. ID: item_006, Priority: medium, Status: active
+8. ID: item_007, Priority: low, Status: active
+9. ID: item_008, Priority: medium, Status: inactive
+10. ID: item_009, Priority: low, Status: pending
+11. ID: item_010, Priority: low, Status: pending
+12. ID: item_011, Priority: medium, Status: pending
+13. ID: item_012, Priority: low, Status: active
+14. ID: item_013, Priority: medium, Status: active
+15. ID: item_014, Priority: low, Status: inactive
+16. ID: item_015, Priority: low, Status: pending
+17. ID: item_016, Priority: low, Status: pending
+18. ID: item_017, Priority: medium, Status: active
+19. ID: item_018, Priority: medium, Status: active
+20. ID: item_019, Priority: low, Status: inactive
+
+From the dataset, we identify items that match the given conditions:
+
+- item_001: Priority is 'high' and Status is 'pending'.
+- item_005: Priority is 'high' and Status is 'pending'.
+
+These are the only items that satisfy both conditions. Now, let's prepare the output as per the required format.
+
+The `selected_ids` will be an array containing the IDs of the items that satisfy the condition, which are `item_001` and `item_005`. So, `selected_ids = ["item_001", "item_005"]`.
+
+The `count` will be the number of items in `selected_ids`, which is 2.
+
+Therefore, the output in JSON format will be:
+
+```json
+{
+  "selected_ids": ["item_001", "item_005"],
+  "count": 2
+}
+```

@@ -1,0 +1,10 @@
+SELECT 
+  x.id, 
+  x.value >= 50, 
+  x.category ∈ 'A' AS category_in_A, 
+  CASE 
+    WHEN x.value >= 50 AND x.category ∈ 'A' THEN 1 
+    ELSE 0 
+  END AS selected 
+FROM 
+  (SELECT id, value, category FROM items) x

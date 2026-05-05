@@ -1,0 +1,223 @@
+Let's break down the transformation step-by-step according to the given logical conditions:
+
+1. If `x.type` is not "premium", then `x.amount` should be transformed to `x.amount × 1.1`.
+2. If `x.region` is not "EU", then `x.amount` should be transformed to `x.amount × 1.2`.
+3. If `x.active` is not `false`, then `x.status` should be set to "archived".
+
+We will apply these transformations in order and only if the condition is met. Here’s how each record will be transformed:
+
+- **Record rec_000**: `type: standard` (not "premium" ⇒ transform amount × 1.1). `region: EU`. `active: False`. Since there are no conditions that require further transformation, this record remains unchanged.
+  
+- **Record rec_001**: `type: standard` (not "premium" ⇒ transform amount × 1.1). `region: APAC` (transform amount × 1.2). `active: False`. All conditions are met, so it transforms to:
+  ```json
+  {
+    "type": "standard",
+    "region": "APAC",
+    "amount": 71 * 1.1 * 1.2 = 81.08,
+    "active": False,
+    "status": "archived"
+  }
+  ```
+
+- **Record rec_002**: `type: trial` (not "premium" ⇒ transform amount × 1.1). `region: US`. `active: False`. All conditions are met, so it transforms to:
+  ```json
+  {
+    "type": "trial",
+    "region": "US",
+    "amount": 430 * 1.1 * 1.2 = 507.6,
+    "active": False,
+    "status": "archived"
+  }
+  ```
+
+- **Record rec_003**: `type: trial` (not "premium" ⇒ transform amount × 1.1). `region: EU`. `active: True`. Since `active` is `True`, `status` will become "archived". The `amount` is not transformed because `region` is "EU".
+  ```json
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 898 * 1.1 = 987.8,
+    "active": True,
+    "status": "archived"
+  }
+  ```
+
+- **Record rec_004**: `type: premium` (no transformation on amount). `region: APAC`. `active: False`. No further transformation needed.
+  ```json
+  {
+    "type": "premium",
+    "region": "APAC",
+    "amount": 329,
+    "active": False,
+    "status": "archived"
+  }
+  ```
+
+- **Record rec_005**: `type: standard` (not "premium" ⇒ transform amount × 1.1). `region: APAC` (transform amount × 1.2). `active: True`. Both conditions are met, so it transforms to:
+  ```json
+  {
+    "type": "standard",
+    "region": "APAC",
+    "amount": 529 * 1.1 * 1.2 = 597.96,
+    "active": True,
+    "status": "archived"
+  }
+  ```
+
+- **Record rec_006**: `type: standard` (not "premium" ⇒ transform amount × 1.1). `region: APAC` (transform amount × 1.2). `active: True`. Both conditions are met, so it transforms to:
+  ```json
+  {
+    "type": "standard",
+    "region": "APAC",
+    "amount": 503 * 1.1 * 1.2 = 553.38,
+    "active": True,
+    "status": "archived"
+  }
+  ```
+
+- **Record rec_007**: `type: standard` (not "premium" ⇒ transform amount × 1.1). `region: EU`. `active: False`. No further transformation needed.
+  ```json
+  {
+    "type": "standard",
+    "region": "EU",
+    "amount": 875 * 1.1 = 962.5,
+    "active": False,
+    "status": "archived"
+  }
+  ```
+
+- **Record rec_008**: `type: standard` (not "premium" ⇒ transform amount × 1.1). `region: EU`. `active: True`. `status` becomes "archived". No further transformation needed.
+  ```json
+  {
+    "type": "standard",
+    "region": "EU",
+    "amount": 597 * 1.1 = 656.7,
+    "active": True,
+    "status": "archived"
+  }
+  ```
+
+- **Record rec_009**: `type: premium` (no transformation on amount). `region: APAC`. `active: False`. No further transformation needed.
+  ```json
+  {
+    "type": "premium",
+    "region": "APAC",
+    "amount": 795,
+    "active": False,
+    "status": "archived"
+  }
+  ```
+
+- **Record rec_010**: `type: trial` (not "premium" ⇒ transform amount × 1.1). `region: APAC`. `active: False`. No further transformation needed.
+  ```json
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 859 * 1.1 = 944.9,
+    "active": False,
+    "status": "archived"
+  }
+  ```
+
+- **Record rec_011**: `type: standard` (not "premium" ⇒ transform amount × 1.1). `region: US`. `active: False`. No further transformation needed.
+  ```json
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 289 * 1.1 = 317.9,
+    "active": False,
+    "status": "archived"
+  }
+  ```
+
+- **Record rec_012**: `type: premium` (no transformation on amount). `region: EU`. `active: True`. `status` becomes "archived". No further transformation needed.
+  ```json
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 16,
+    "active": True,
+    "status": "archived"
+  }
+  ```
+
+- **Record rec_013**: `type: standard` (not "premium" ⇒ transform amount × 1.1). `region: APAC`. `active: False`. No further transformation needed.
+  ```json
+  {
+    "type": "standard",
+    "region": "APAC",
+    "amount": 683 * 1.1 = 751.3,
+    "active": False,
+    "status": "archived"
+  }
+  ```
+
+- **Record rec_014**: `type: standard` (not "premium" ⇒ transform amount × 1.1). `region: US`. `active: True`. `status` becomes "archived". No further transformation needed.
+  ```json
+  {
+    "type": "standard",
+    "region": "US",
+    "amount": 768 * 1.1 = 844.8,
+    "active": True,
+    "status": "archived"
+  }
+  ```
+
+Now, let's compile the transformed records into a JSON array:
+
+```json
+[
+  {
+    "type": "standard",
+    "region": "EU",
+    "amount": 108,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "type": "standard",
+    "region": "APAC",
+    "amount": 81.08,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "US",
+    "amount": 507.6,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 987.8,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "type": "premium",
+    "region": "APAC",
+    "amount": 329,
+    "active": false,
+    "status": "archived"
+  },
+  {
+    "type": "standard",
+    "region": "APAC",
+    "amount": 597.96,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "type": "standard",
+    "region": "APAC",
+    "amount": 553.38,
+    "active": true,
+    "status": "archived"
+  },
+  {
+    "type": "standard",
+    "region": "EU",
+    "amount": 962.5,
+    "active": false,
+    "

@@ -1,0 +1,56 @@
+{
+  "prompt_id": "cmp_0001_CTRL",
+  "model": "llama-4-maverick",
+  "family": "3_constraint_composition",
+  "condition": "CTRL",
+  "parse_success": true,
+  "parsed_output": {
+    "selected_ids": [
+      "item_000",
+      "item_001",
+      "item_002",
+      "item_003",
+      "item_004",
+      "item_007",
+      "item_008",
+      "item_009",
+      "item_011",
+      "item_012",
+      "item_013",
+      "item_014",
+      "item_016",
+      "item_017",
+      "item_018",
+      "item_019"
+    ],
+    "count": 16
+  },
+  "gold_output": {
+    "selected_ids": [
+      "item_008",
+      "item_016"
+    ],
+    "count": 2
+  },
+  "exact_match": false,
+  "accuracy": 0.125,
+  "f1_score": 0.2222222222222222,
+  "operator_fidelity": [
+    {
+      "operator": "∩",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    },
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "Output is not a list"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "scope",
+  "error_details": "Accuracy: 0.12",
+  "semantic_equivalence_pass": false
+}

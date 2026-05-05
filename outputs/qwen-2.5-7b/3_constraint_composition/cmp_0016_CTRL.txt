@@ -1,0 +1,12 @@
+```json
+{
+  "selected_ids": ["item_000", "item_001", "item_005", "item_007", "item_009", "item_010", "item_011", "item_016"],
+  "count": 8
+}
+```
+
+Explanation:
+- The condition `x.id | x.value >= 50` filters items where the value is greater than or equal to 50.
+- The condition `x.category ∈ {A}` ensures that only items in category A are selected.
+- Combining these conditions, we select items that meet both criteria.
+- The IDs of the selected items are then listed in the `selected_ids` array, and the count of such items is provided in the `count` field.

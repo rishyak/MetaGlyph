@@ -1,0 +1,42 @@
+### Solution
+```json
+[
+  "Tablet",
+  "Smartphone",
+  "Laptop",
+  "Pen",
+  "Notebook",
+  "Headphones",
+  "Chair"
+]
+```
+
+### Explanation
+To solve this problem, we need to filter the list of items to include only those that are portable and have a price range of "high". We can do this by iterating over the list of items and checking the "portable" and "price_range" attributes for each item. If an item meets both conditions, we add it to the output list.
+
+Here is the Python code that implements this solution:
+```python
+def filter_portable_high_price(items):
+    return [item for item in items if item['portable'] and item['price_range'] == 'high']
+
+# Define the list of items
+items = [
+  {"name": "Tablet", "category": "electronics", "price_range": "high", "portable": True},
+  {"name": "Bookshelf", "category": "furniture", "price_range": "medium", "portable": False},
+  {"name": "Smartphone", "category": "electronics", "price_range": "high", "portable": True},
+  {"name": "Laptop", "category": "electronics", "price_range": "high", "portable": True},
+  {"name": "Pen", "category": "stationery", "price_range": "low", "portable": True},
+  {"name": "Notebook", "category": "stationery", "price_range": "low", "portable": True},
+  {"name": "Chair", "category": "furniture", "price_range": "medium", "portable": True},
+  {"name": "Desk", "category": "furniture", "price_range": "medium", "portable": False},
+  {"name": "Headphones", "category": "electronics", "price_range": "medium", "portable": True},
+  {"name": "Refrigerator", "category": "appliances", "price_range": "high", "portable": False}
+]
+
+# Filter the list of items
+filtered_items = filter_portable_high_price(items)
+
+# Print the result
+print(filtered_items)
+```
+This code defines a function `filter_portable_high_price` that takes a list of items as input and returns a new list containing only the items that are portable and have a price range of "high". The function uses a list comprehension to iterate over the input list and apply the filtering conditions. The resulting list is then printed to the console.

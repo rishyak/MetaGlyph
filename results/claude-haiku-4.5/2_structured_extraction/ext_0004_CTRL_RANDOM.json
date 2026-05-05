@@ -1,0 +1,34 @@
+{
+  "prompt_id": "ext_0004_CTRL_RANDOM",
+  "model": "claude-haiku-4.5",
+  "family": "2_structured_extraction",
+  "condition": "CTRL_RANDOM",
+  "parse_success": true,
+  "parsed_output": {
+    "invoice_num": "3664",
+    "total": "$8280.8",
+    "date": "2024-06-12",
+    "due_date": "2024-04-22"
+  },
+  "gold_output": {
+    "invoice_num": "3664",
+    "total": 8280.8,
+    "date": "2024-06-12",
+    "due_date": "2024-04-22"
+  },
+  "exact_match": false,
+  "accuracy": 0.75,
+  "f1_score": 0.75,
+  "operator_fidelity": [
+    {
+      "operator": "→",
+      "checked": true,
+      "passed": false,
+      "details": "Wrong values: ['total']"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "logic",
+  "error_details": "Accuracy: 0.75",
+  "semantic_equivalence_pass": false
+}

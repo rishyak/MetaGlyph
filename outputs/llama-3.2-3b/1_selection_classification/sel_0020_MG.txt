@@ -1,0 +1,21 @@
+### Solution
+```json
+[
+  "Cat",
+  "Goldfish",
+  "Parrot",
+  "Hamster",
+  "Turtle"
+]
+```
+
+### Explanation
+To solve this problem, we need to filter the list of animals based on the given conditions. We are looking for animals that are mammals and are commonly kept as pets, and have a size category of "small". 
+
+Here's how we can do it:
+
+1. Filter the list to include only mammals: `mammal`
+2. Filter the list to include only animals that are commonly kept as pets: `domestic: True`
+3. Filter the list to include only animals with a size category of "small": `size: small`
+
+By applying these conditions, we get the list of animals that match the criteria: `Cat`, `Goldfish`, `Parrot`, `Hamster`, and `Turtle`.

@@ -1,0 +1,16 @@
+### Solution
+```sql
+SELECT 
+  x.name 
+FROM 
+  products x 
+WHERE 
+  x.category = 'stationery' 
+  AND x.portable = True;
+```
+
+### Explanation
+This SQL query selects the names of products that belong to the 'stationery' category and are portable. The `IN` operator is used to filter by category, and the `AND` operator is used to combine the two conditions. The `SELECT` statement is used to retrieve the `name` column of the filtered products.
+
+### Note
+The repeated sections of the input text are unnecessary and have been removed from the query. The query is concise and efficient, and it directly addresses the problem at hand.

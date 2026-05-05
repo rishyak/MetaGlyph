@@ -1,0 +1,13 @@
+Looking at the instruction `SELECT x | x.category ※ {stationery} ↯ [x.name]`, I need to:
+
+1. Filter for items where `category` matches "stationery"
+2. Return the `name` of matching items
+
+From the product list, items with category "stationery" are:
+- Stapler
+- Pen
+- Notebook
+
+```json
+["Stapler", "Pen", "Notebook"]
+```

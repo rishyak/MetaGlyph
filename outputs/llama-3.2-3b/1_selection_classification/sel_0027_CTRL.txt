@@ -1,0 +1,10 @@
+### Step 1: Identify the birds in the dataset
+The birds in the dataset are Penguin, Parrot, and Eagle.
+
+### Step 2: Filter the birds by their domestic status
+The birds that are commonly kept as pets are Parrot and Penguin.
+
+### Step 3: Format the output as a JSON array
+The output should be a JSON array of the names of the birds that are commonly kept as pets.
+
+The final answer is: $\boxed [{"name": "Parrot"}, {"name": "Penguin"}]$

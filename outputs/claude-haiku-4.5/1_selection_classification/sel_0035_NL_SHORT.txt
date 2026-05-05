@@ -1,0 +1,20 @@
+Looking at the criteria:
+- **size equals medium** AND
+- **domestic equals False**
+
+Let me filter through the list:
+
+1. Salmon: size: medium, domestic: False ✓
+2. Crocodile: size: large, domestic: False ✗
+3. Eagle: size: medium, domestic: False ✓
+4. Hamster: size: small, domestic: True ✗
+5. Goldfish: size: small, domestic: True ✗
+6. Turtle: size: small, domestic: True ✗
+7. Snake: size: medium, domestic: False ✓
+8. Lion: size: large, domestic: False ✗
+9. Parrot: size: small, domestic: True ✗
+10. Whale: size: large, domestic: False ✗
+
+```json
+["Salmon", "Eagle", "Snake"]
+```

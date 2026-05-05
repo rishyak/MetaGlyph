@@ -1,0 +1,10 @@
+### Solution
+```json
+[
+  "Desk",
+  "Refrigerator"
+]
+```
+
+### Explanation
+We need to return the item names whose portable equals False. We can achieve this by iterating over the list of items and checking the portable attribute of each item. If portable is False, we add the item name to our result array. In this case, the items "Desk" and "Refrigerator" have portable equal to False, so they are included in the output.

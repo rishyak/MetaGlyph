@@ -1,0 +1,134 @@
+To solve this problem, we need to apply the given transformation rules to each record in the input data. The transformation rules are specified in a specific order and are conditional based on the attributes of each record.
+
+1. **First Rule**: If the record's type is "premium", then multiply its amount by 1.1.
+2. **Second Rule**: If the record's region is "EU", then multiply its amount by 1.2. This rule is applied after the first rule.
+3. **Third Rule**: If the record is not active (active == false), then change its status to "archived". Note that the initial records do not have a "status" attribute, so we need to add it.
+
+Let's apply these rules step by step to each record.
+
+### Initial Records
+
+1. rec_000: type = premium, region = US, amount = 19, active = False
+2. rec_001: type = trial, region = APAC, amount = 112, active = True
+3. rec_002: type = trial, region = US, amount = 528, active = False
+4. rec_003: type = standard, region = EU, amount = 912, active = True
+5. rec_004: type = standard, region = EU, amount = 301, active = True
+6. rec_005: type = premium, region = APAC, amount = 730, active = False
+7. rec_006: type = trial, region = APAC, amount = 551, active = True
+8. rec_007: type = trial, region = APAC, amount = 316, active = True
+9. rec_008: type = standard, region = EU, amount = 128, active = True
+10. rec_009: type = trial, region = APAC, amount = 169, active = False
+11. rec_010: type = premium, region = APAC, amount = 225, active = False
+12. rec_011: type = standard, region = APAC, amount = 659, active = False
+13. rec_012: type = trial, region = EU, amount = 267, active = True
+14. rec_013: type = standard, region = APAC, amount = 443, active = False
+15. rec_014: type = standard, region = US, amount = 351, active = True
+
+### Applying Transformation Rules
+
+1. **rec_000**: 
+   - Type is "premium", so amount = 19 * 1.1 = 20.9.
+   - Region is not "EU", so amount remains 20.9.
+   - Active is False, so status = "archived".
+   - Transformed: type = premium, region = US, amount = 20.9, active = False, status = "archived".
+
+2. **rec_001**: 
+   - Type is not "premium", so amount remains 112.
+   - Region is not "EU", so amount remains 112.
+   - Active is True, so no status change.
+   - Transformed: type = trial, region = APAC, amount = 112, active = True.
+
+3. **rec_002**: 
+   - Type is not "premium", so amount remains 528.
+   - Region is not "EU", so amount remains 528.
+   - Active is False, so status = "archived".
+   - Transformed: type = trial, region = US, amount = 528, active = False, status = "archived".
+
+4. **rec_003**: 
+   - Type is not "premium", so amount remains 912.
+   - Region is "EU", so amount = 912 * 1.2 = 1094.4.
+   - Active is True, so no status change.
+   - Transformed: type = standard, region = EU, amount = 1094.4, active = True.
+
+5. **rec_004**: 
+   - Type is not "premium", so amount remains 301.
+   - Region is "EU", so amount = 301 * 1.2 = 361.2.
+   - Active is True, so no status change.
+   - Transformed: type = standard, region = EU, amount = 361.2, active = True.
+
+6. **rec_005**: 
+   - Type is "premium", so amount = 730 * 1.1 = 803.
+   - Region is not "EU", so amount remains 803.
+   - Active is False, so status = "archived".
+   - Transformed: type = premium, region = APAC, amount = 803, active = False, status = "archived".
+
+7. **rec_006**: 
+   - Type is not "premium", so amount remains 551.
+   - Region is not "EU", so amount remains 551.
+   - Active is True, so no status change.
+   - Transformed: type = trial, region = APAC, amount = 551, active = True.
+
+8. **rec_007**: 
+   - Type is not "premium", so amount remains 316.
+   - Region is not "EU", so amount remains 316.
+   - Active is True, so no status change.
+   - Transformed: type = trial, region = APAC, amount = 316, active = True.
+
+9. **rec_008**: 
+   - Type is not "premium", so amount remains 128.
+   - Region is "EU", so amount = 128 * 1.2 = 153.6.
+   - Active is True, so no status change.
+   - Transformed: type = standard, region = EU, amount = 153.6, active = True.
+
+10. **rec_009**: 
+    - Type is not "premium", so amount remains 169.
+    - Region is not "EU", so amount remains 169.
+    - Active is False, so status = "archived".
+    - Transformed: type = trial, region = APAC, amount = 169, active = False, status = "archived".
+
+11. **rec_010**: 
+    - Type is "premium", so amount = 225 * 1.1 = 247.5.
+    - Region is not "EU", so amount remains 247.5.
+    - Active is False, so status = "archived".
+    - Transformed: type = premium, region = APAC, amount = 247.5, active = False, status = "archived".
+
+12. **rec_011**: 
+    - Type is not "premium", so amount remains 659.
+    - Region is not "EU", so amount remains 659.
+    - Active is False, so status = "archived".
+    - Transformed: type = standard, region = APAC, amount = 659, active = False, status = "archived".
+
+13. **rec_012**: 
+    - Type is not "premium", so amount remains 267.
+    - Region is "EU", so amount = 267 * 1.2 = 320.4.
+    - Active is True, so no status change.
+    - Transformed: type = trial, region = EU, amount = 320.4, active = True.
+
+14. **rec_013**: 
+    - Type is not "premium", so amount remains 443.
+    - Region is not "EU", so amount remains 443.
+    - Active is False, so status = "archived".
+    - Transformed: type = standard, region = APAC, amount = 443, active = False, status = "archived".
+
+15. **rec_014**: 
+    - Type is not "premium", so amount remains 351.
+    - Region is not "EU", so amount remains 351.
+    - Active is True, so no status change.
+    - Transformed: type = standard, region = US, amount = 351, active = True.
+
+### JSON Output
+
+```json
+[
+  {"type": "premium", "region": "US", "amount": 20.9, "active": false, "status": "archived"},
+  {"type": "trial", "region": "APAC", "amount": 112, "active": true},
+  {"type": "trial", "region": "US", "amount": 528, "active": false, "status": "archived"},
+  {"type": "standard", "region": "EU", "amount": 1094.4, "active": true},
+  {"type": "standard", "region": "EU", "amount": 361.2, "active": true},
+  {"type": "premium", "region": "APAC", "amount": 803, "active": false, "status": "archived"},
+  {"type": "trial", "region": "APAC", "amount": 551, "active": true},
+  {"type": "trial", "region": "APAC", "amount": 316, "active": true},
+  {"type": "standard", "region": "EU", "amount": 153.6, "active": true},
+  {"type": "trial", "region": "APAC", "amount": 169, "active": false, "status": "archived"},
+  {"type": "premium", "region": "APAC", "amount": 247.5, "active": false, "status": "archived"},
+  {"type": "standard", "region": "APAC", "amount": 659, "active": false, "

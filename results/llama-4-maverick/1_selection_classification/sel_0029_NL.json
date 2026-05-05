@@ -1,0 +1,54 @@
+{
+  "prompt_id": "sel_0029_NL",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "NL",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this task, we need to carefully review the list of animals provided and identify those with a 'type' attribute equal to 'fish'. The list includes various animals along with their attributes such as type, domestic status, and size.",
+    "**Review the list**: The given list contains entries for different animals, each described with its type, domestic status, and size. The entries are as follows:",
+    "Crocodile: type: reptile, domestic: False, size: large",
+    "Hamster: type: mammal, domestic: True, size: small",
+    "Dog: type: mammal, domestic: True, size: medium",
+    "Elephant: type: mammal, domestic: False, size: large",
+    "Snake: type: reptile, domestic: False, size: medium",
+    "Shark: type: fish, domestic: False, size: large",
+    "Eagle: type: bird, domestic: False, size: medium",
+    "Salmon: type: fish, domestic: False, size: medium",
+    "Cat: type: mammal, domestic: True, size: small",
+    "Turtle: type: reptile, domestic: True, size: small",
+    "**Identify 'fish'**: We need to go through the list and identify animals where the 'type' is 'fish'.",
+    "**Examine each entry**:",
+    "Crocodile: type is 'reptile', not 'fish'.",
+    "Hamster: type is 'mammal', not 'fish'.",
+    "Dog: type is 'mammal', not 'fish'.",
+    "Elephant: type is 'mammal', not 'fish'.",
+    "Snake: type is 'reptile', not 'fish'.",
+    "Shark: type is 'fish', matches the criterion.",
+    "Eagle: type is 'bird', not 'fish'.",
+    "Salmon: type is 'fish', matches the criterion.",
+    "Cat: type is 'mammal', not 'fish'.",
+    "Turtle: type is 'reptile', not 'fish'.",
+    "**List matching items**: The animals that have 'type' equal to 'fish' are Shark and Salmon.",
+    "**Format the output**: The task requires the output to be a JSON array of strings containing the names of the matching items. Therefore, the output should be [\"Shark\", \"Salmon\"]."
+  ],
+  "gold_output": [
+    "salmon",
+    "shark"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=2, extra=26"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

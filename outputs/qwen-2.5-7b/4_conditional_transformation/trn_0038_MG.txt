@@ -1,0 +1,100 @@
+```json
+[
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 855,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 981,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 795,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 41,
+        "active": false
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 306,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 834,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 84 * 1.2,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 435,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 358,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 336,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 788,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 118,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 135,
+        "active": false
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 154,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 978,
+        "active": false
+    }
+]
+```
+
+Note that for records `rec_006` and `rec_13`, the amount was transformed by multiplying with 1.2 because their region is "EU". For records `rec_005`, `rec_010`, and `rec_013`, the status was set to "archived" because their active field is false and their type is "premium". The other records remained unchanged.

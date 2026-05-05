@@ -6,79 +6,118 @@
   "parse_success": true,
   "parsed_output": [
     {
-      "name": "rec_000",
-      "label": null,
-      "access_level": null
+      "id": "rec_000",
+      "type": "trial",
+      "region": "US",
+      "amount": 552,
+      "active": false,
+      "status": "archived"
     },
     {
-      "name": "rec_001",
-      "label": null,
-      "access_level": null
+      "id": "rec_001",
+      "type": "premium",
+      "region": "EU",
+      "amount": 891,
+      "active": false,
+      "status": "archived"
     },
     {
-      "name": "rec_002",
-      "label": null,
-      "access_level": null
+      "id": "rec_002",
+      "type": "standard",
+      "region": "US",
+      "amount": 36,
+      "active": true
     },
     {
-      "name": "rec_003",
-      "label": null,
-      "access_level": null
+      "id": "rec_003",
+      "type": "premium",
+      "region": "APAC",
+      "amount": 446.6,
+      "active": true
     },
     {
-      "name": "rec_004",
-      "label": null,
-      "access_level": null
+      "id": "rec_004",
+      "type": "premium",
+      "region": "EU",
+      "amount": 966,
+      "active": false,
+      "status": "archived"
     },
     {
-      "name": "rec_005",
-      "label": null,
-      "access_level": null
+      "id": "rec_005",
+      "type": "standard",
+      "region": "APAC",
+      "amount": 302,
+      "active": false,
+      "status": "archived"
     },
     {
-      "name": "rec_006",
-      "label": null,
-      "access_level": null
+      "id": "rec_006",
+      "type": "standard",
+      "region": "US",
+      "amount": 148,
+      "active": true
     },
     {
-      "name": "rec_007",
-      "label": null,
-      "access_level": null
+      "id": "rec_007",
+      "type": "premium",
+      "region": "US",
+      "amount": 1023,
+      "active": false,
+      "status": "archived"
     },
     {
-      "name": "rec_008",
-      "label": null,
-      "access_level": null
+      "id": "rec_008",
+      "type": "standard",
+      "region": "APAC",
+      "amount": 1000,
+      "active": false,
+      "status": "archived"
     },
     {
-      "name": "rec_009",
-      "label": null,
-      "access_level": null
+      "id": "rec_009",
+      "type": "trial",
+      "region": "EU",
+      "amount": 883.2,
+      "active": true
     },
     {
-      "name": "rec_010",
-      "label": null,
-      "access_level": null
+      "id": "rec_010",
+      "type": "trial",
+      "region": "APAC",
+      "amount": 307,
+      "active": false,
+      "status": "archived"
     },
     {
-      "name": "rec_011",
-      "label": null,
-      "access_level": null
+      "id": "rec_011",
+      "type": "standard",
+      "region": "APAC",
+      "amount": 736,
+      "active": true
     },
     {
-      "name": "rec_012",
-      "label": null,
-      "access_level": null
+      "id": "rec_012",
+      "type": "premium",
+      "region": "APAC",
+      "amount": 262.9,
+      "active": true
     },
     {
-      "name": "rec_013",
-      "label": null,
-      "access_level": null
+      "id": "rec_013",
+      "type": "standard",
+      "region": "US",
+      "amount": 252,
+      "active": false,
+      "status": "archived"
     },
     {
-      "name": "rec_014",
-      "label": null,
-      "access_level": null
+      "id": "rec_014",
+      "type": "standard",
+      "region": "EU",
+      "amount": 692.4,
+      "active": false,
+      "status": "archived"
     }
   ],
   "gold_output": [
@@ -198,24 +237,24 @@
     }
   ],
   "exact_match": false,
-  "accuracy": 0.0,
-  "f1_score": 0.0,
+  "accuracy": 0.9333333333333333,
+  "f1_score": 0.9333333333333333,
   "operator_fidelity": [
-    {
-      "operator": "⇒",
-      "checked": true,
-      "passed": false,
-      "details": "15 records with wrong transformations"
-    },
     {
       "operator": "∘",
       "checked": true,
       "passed": false,
       "details": "Composition order may be incorrect"
+    },
+    {
+      "operator": "⇒",
+      "checked": true,
+      "passed": false,
+      "details": "1 records with wrong transformations"
     }
   ],
   "overall_pass": false,
   "error_type": "logic",
-  "error_details": "Accuracy: 0.00",
+  "error_details": "Accuracy: 0.93",
   "semantic_equivalence_pass": false
 }

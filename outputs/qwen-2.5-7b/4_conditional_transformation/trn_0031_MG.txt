@@ -1,0 +1,128 @@
+```json
+[
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 326,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 980,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 150,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 874,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 865,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 907 * 1.1,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 167 * 1.2,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 799,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "EU",
+        "amount": 54,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 746,
+        "active": true,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 301 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 254,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 386 * 1.2 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 806 * 1.1,
+        "active": false,
+        "status": "archived"
+    }
+]
+```
+
+Explanation:
+- The rule `TRANSFORM x` applies a series of transformations to each record.
+- The first transformation checks if `x.type == "premium"` and multiplies `x.amount` by 1.1 if it is.
+- The second transformation checks if `x.region == "EU"` and multiplies `x.amount` by 1.2 if it is.
+- The third transformation checks if `x.active == false` and sets `x.status` to "archived".
+
+Since the transformations are applied sequentially with composition (`∘`), we need to consider each condition in order:
+
+1. For `rec_000`: `type` is not "premium", so no change to `amount`. Since `region` is "EU" and `active` is true, there is no further transformation needed.
+2. For `rec_001`: `type` is not "premium", so no change to `amount`. Since `region` is "EU" and `active` is false, `status` will be set to "archived".
+3. For `rec_002`: `region` is not "EU", so no change to `amount`. Since `active` is true, there is no further transformation needed.
+4. For `rec_003`: `type` is not "premium", so no change to `amount`. Since `region` is "EU" and `active` is true, there is no further transformation needed.
+5. For `rec_004`: `type` is not "premium", so no change to `amount`. Since `region` is "APAC" and `active` is true, there is no further transformation needed.
+6. For `rec_005`: `type` is not "premium", but since `region` is "EU" and `active` is true, there is no further transformation needed.
+7. For `rec_006`: `type` is not "premium", so no change to `amount`. Since `region` is "EU" and `active` is true, there is no further transformation needed.
+8. For `rec_007`: `region` is not "EU", so no change to `amount`. Since `active` is true, there is no further transformation needed.
+9. For `rec_008`: `type` is not "premium", but since `region` is "EU" and `active` is false, `status` will be set to "archived".
+10. For `rec_009`: `type` is "premium", so `amount` is multiplied by 1.1.
+11. For `rec_010`: `type` is "premium" and `region` is "APAC", so both `amount` and `status` are transformed.
+12. For `rec_011`: `type` is not "premium", but since `region` is "APAC" and `active` is false, `status` will be set to "archived".
+13. For `rec_012`: `type` is "premium" and `region` is "US", so `amount` is multiplied by 1.2 and then again by 1.1.
+14. For `rec_013`: `type` is "premium" and `region` is "EU", so `amount` is multiplied by 1.1.
+15. For `rec_014`: `type` is not "premium", so no change to `amount`. Since `region` is "APAC" and `active` is true, there is no further transformation needed.
+
+In cases where multiple conditions apply, the transformations are applied in the order they are given.

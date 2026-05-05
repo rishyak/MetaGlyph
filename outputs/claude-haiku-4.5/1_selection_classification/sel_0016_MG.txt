@@ -1,5 +1,21 @@
-```json
-[]
-```
+Looking at the instruction: `SELECT x | x.category ∉ {stationery} → [x.name]`
 
-The instruction requests items that are members of all four categories: mammal, pet, not bird, and not farm_animal. The provided inventory contains only inanimate objects (stationery, electronics, furniture, appliances) with no biological attributes. Therefore, no items match the criteria.
+This means: Select all items where the category is NOT in the set {stationery}, and return their names.
+
+**Items to exclude (category = stationery):**
+- Stapler
+- Pen
+- Notebook
+
+**Items to include (category ≠ stationery):**
+- Smartphone (electronics)
+- Chair (furniture)
+- Headphones (electronics)
+- Bookshelf (furniture)
+- Microwave (appliances)
+- Refrigerator (appliances)
+- Tablet (electronics)
+
+```json
+["Smartphone", "Chair", "Headphones", "Bookshelf", "Microwave", "Refrigerator", "Tablet"]
+```

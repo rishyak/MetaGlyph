@@ -1,0 +1,97 @@
+```json
+[
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 115,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "US",
+        "amount": 526,
+        "active": true
+    },
+    {
+        "type": "standard",
+        "region": "US",
+        "amount": 734,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 545,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 949 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 803 * 1.1 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "trial",
+        "region": "APAC",
+        "amount": 63,
+        "active": false
+    },
+    {
+        "type": "standard",
+        "region": "EU",
+        "amount": 106 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 751 * 1.1,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "US",
+        "amount": 606,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "EU",
+        "amount": 1000 * 1.1 * 1.2,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 735,
+        "active": true
+    },
+    {
+        "type": "premium",
+        "region": "APAC",
+        "amount": 395 * 1.1,
+        "active": false,
+        "status": "archived"
+    },
+    {
+        "type": "standard",
+        "region": "APAC",
+        "amount": 729,
+        "active": true
+    }
+]
+```
+
+Note that for `rec_004`, `rec_005`, and `rec_010`, I applied both Rule 1 and Rule 2 because their `type` was `premium` and their `region` was `EU`. Similarly, for `rec_007` and `rec_014`, I only applied Rule 2 since their `type` was not `premium`. For `rec_000`, `rec_002`, `rec_003`, `rec_006`, `rec_008`, `rec_011`, and `rec_013`, I only applied Rule 2 or Rule 3 respectively.

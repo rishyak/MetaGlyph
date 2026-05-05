@@ -1,0 +1,44 @@
+{
+  "prompt_id": "sel_0014_MG",
+  "model": "llama-4-maverick",
+  "family": "1_selection_classification",
+  "condition": "MG",
+  "parse_success": true,
+  "parsed_output": [
+    "To solve this task, we need to follow the given instruction, which is to select the names of animals where the type is 'fish'. The instruction is given in a formal query-like syntax: `SELECT x | x.type ∈ {fish} → [x.name]`. This means we need to filter the input data to include only those entries where the animal's type is 'fish' and then extract their names.",
+    "**Review the Input Data**: The input data is a list of animals with their attributes. Each animal is described with its type, domestic status, and size.",
+    "**Identify Animals of Type 'fish'**: We need to go through the list and identify animals that are classified as 'fish'.",
+    "**Extract Names**: Once we have identified the animals that are 'fish', we need to extract their names.",
+    "Let's go through the input data:",
+    "Crocodile: type: reptile",
+    "Dog: type: mammal",
+    "Snake: type: reptile",
+    "Cat: type: mammal",
+    "Penguin: type: bird",
+    "Eagle: type: bird",
+    "Salmon: type: fish",
+    "Lion: type: mammal",
+    "Whale: type: mammal",
+    "Turtle: type: reptile",
+    "From the given data, only 'Salmon' is classified as 'fish'.",
+    "**Format the Output**: The output should be a JSON array of strings containing the names of the animals that are 'fish'. Since 'Salmon' is the only fish, our output will be `[\"Salmon\"]`."
+  ],
+  "gold_output": [
+    "salmon"
+  ],
+  "exact_match": false,
+  "accuracy": 0.0,
+  "f1_score": 0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=1, extra=17"
+    }
+  ],
+  "overall_pass": false,
+  "error_type": "extra",
+  "error_details": "Accuracy: 0.00",
+  "semantic_equivalence_pass": false
+}

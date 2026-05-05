@@ -2,11 +2,24 @@
 {
   "selected_ids": [
     "item_002",
-    "item_007",
-    "item_012",
+    "item_008",
     "item_013",
-    "item_015"
+    "item_014"
   ],
-  "count": 5
+  "count": 4
 }
 ```
+
+**Explanation:**
+The query filters for items where:
+- `value >= 50` AND
+- `category ∈ {A}`
+
+Checking all Category A items:
+- item_002: value=90 ✓ (≥50)
+- item_004: value=18 ✗ (<50)
+- item_005: value=47 ✗ (<50)
+- item_008: value=92 ✓ (≥50)
+- item_013: value=76 ✓ (≥50)
+- item_014: value=65 ✓ (≥50)
+- item_015: value=20 ✗ (<50)

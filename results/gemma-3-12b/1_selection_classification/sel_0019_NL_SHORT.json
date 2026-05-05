@@ -1,0 +1,40 @@
+{
+  "prompt_id": "sel_0019_NL_SHORT",
+  "model": "gemma-3-12b",
+  "family": "1_selection_classification",
+  "condition": "NL_SHORT",
+  "parse_success": true,
+  "parsed_output": [
+    "Salmon",
+    "Eagle",
+    "Penguin",
+    "Snake",
+    "Whale",
+    "Lion",
+    "Crocodile"
+  ],
+  "gold_output": [
+    "crocodile",
+    "eagle",
+    "lion",
+    "penguin",
+    "salmon",
+    "snake",
+    "whale"
+  ],
+  "exact_match": true,
+  "accuracy": 1.0,
+  "f1_score": 1.0,
+  "operator_fidelity": [
+    {
+      "operator": "∈",
+      "checked": true,
+      "passed": false,
+      "details": "missing=7, extra=7"
+    }
+  ],
+  "overall_pass": true,
+  "error_type": "logic",
+  "error_details": "Accuracy: 1.00",
+  "semantic_equivalence_pass": false
+}

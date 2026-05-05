@@ -1,0 +1,90 @@
+To solve this problem, we need to filter the given dataset based on the conditions provided: the priority is 'high' or the status is not 'inactive'. We will then return the IDs of the filtered records along with the count of these records.
+
+### Step 1: Filter the Dataset
+
+First, let's list out the given dataset:
+
+1. ID: item_000, Status: pending, Priority: low
+2. ID: item_001, Status: pending, Priority: high
+3. ID: item_002, Status: active, Priority: low
+4. ID: item_003, Status: pending, Priority: low
+5. ID: item_004, Status: inactive, Priority: low
+6. ID: item_005, Status: pending, Priority: high
+7. ID: item_006, Status: active, Priority: medium
+8. ID: item_007, Status: active, Priority: low
+9. ID: item_008, Status: inactive, Priority: medium
+10. ID: item_009, Status: pending, Priority: low
+11. ID: item_010, Status: pending, Priority: low
+12. ID: item_011, Status: pending, Priority: medium
+13. ID: item_012, Status: active, Priority: low
+14. ID: item_013, Status: active, Priority: medium
+15. ID: item_014, Status: inactive, Priority: low
+16. ID: item_015, Status: pending, Priority: low
+17. ID: item_016, Status: pending, Priority: low
+18. ID: item_017, Status: active, Priority: medium
+19. ID: item_018, Status: active, Priority: medium
+20. ID: item_019, Status: inactive, Priority: low
+
+### Step 2: Apply the Filter Conditions
+
+We need to apply the condition: `Priority` is 'high' or `Status` is not 'inactive'.
+
+Let's go through the dataset and apply this condition:
+
+1. item_000: Priority = low, Status = pending => Status is not 'inactive', so include.
+2. item_001: Priority = high, Status = pending => Priority is 'high', so include.
+3. item_002: Priority = low, Status = active => Status is not 'inactive', so include.
+4. item_003: Priority = low, Status = pending => Status is not 'inactive', so include.
+5. item_004: Priority = low, Status = inactive => Status is 'inactive', so exclude.
+6. item_005: Priority = high, Status = pending => Priority is 'high', so include.
+7. item_006: Priority = medium, Status = active => Status is not 'inactive', so include.
+8. item_007: Priority = low, Status = active => Status is not 'inactive', so include.
+9. item_008: Priority = medium, Status = inactive => Status is 'inactive', so exclude.
+10. item_009: Priority = low, Status = pending => Status is not 'inactive', so include.
+11. item_010: Priority = low, Status = pending => Status is not 'inactive', so include.
+12. item_011: Priority = medium, Status = pending => Status is not 'inactive', so include.
+13. item_012: Priority = low, Status = active => Status is not 'inactive', so include.
+14. item_013: Priority = medium, Status = active => Status is not 'inactive', so include.
+15. item_014: Priority = low, Status = inactive => Status is 'inactive', so exclude.
+16. item_015: Priority = low, Status = pending => Status is not 'inactive', so include.
+17. item_016: Priority = low, Status = pending => Status is not 'inactive', so include.
+18. item_017: Priority = medium, Status = active => Status is not 'inactive', so include.
+19. item_018: Priority = medium, Status = active => Status is not 'inactive', so include.
+20. item_019: Priority = low, Status = inactive => Status is 'inactive', so exclude.
+
+### Step 3: List the Selected IDs and Count
+
+After applying the filter, the included items are:
+- item_000
+- item_001
+- item_002
+- item_003
+- item_005
+- item_006
+- item_007
+- item_009
+- item_010
+- item_011
+- item_012
+- item_013
+- item_015
+- item_016
+- item_017
+- item_018
+
+There are 16 items that satisfy the given condition.
+
+### Step 4: Format the Output
+
+The selected IDs are: 
+["item_000", "item_001", "item_002", "item_003", "item_005", "item_006", "item_007", "item_009", "item_010", "item_011", "item_012", "item_013", "item_015", "item_016", "item_017", "item_018"]
+
+The count is: 16
+
+### Output
+```json
+{
+  "selected_ids": ["item_000", "item_001", "item_002", "item_003", "item_005", "item_006", "item_007", "item_009", "item_010", "item_011", "item_012", "item_013", "item_015", "item_016", "item_017", "item_018"],
+  "count": 16
+}
+```

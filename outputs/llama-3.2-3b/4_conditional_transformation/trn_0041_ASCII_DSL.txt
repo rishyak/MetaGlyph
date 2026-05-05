@@ -1,0 +1,98 @@
+With the given transformation rules, we can process each record and apply the corresponding transformations. Here is the transformed data in JSON format:
+
+```json
+[
+  {
+    "type": "standard",
+    "region": "APAC",
+    "amount": 654,
+    "status": "archived"
+  },
+  {
+    "type": "standard",
+    "region": "APAC",
+    "amount": 258,
+    "active": true
+  },
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 122,
+    "active": true
+  },
+  {
+    "type": "standard",
+    "region": "EU",
+    "amount": 331,
+    "status": "archived"
+  },
+  {
+    "type": "standard",
+    "region": "EU",
+    "amount": 717,
+    "active": true
+  },
+  {
+    "type": "premium",
+    "region": "APAC",
+    "amount": 803,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 73,
+    "active": true
+  },
+  {
+    "type": "trial",
+    "region": "US",
+    "amount": 584,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 548,
+    "status": "archived"
+  },
+  {
+    "type": "premium",
+    "region": "US",
+    "amount": 480,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 702,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "EU",
+    "amount": 206,
+    "active": true
+  },
+  {
+    "type": "premium",
+    "region": "APAC",
+    "amount": 315,
+    "status": "archived"
+  },
+  {
+    "type": "premium",
+    "region": "EU",
+    "amount": 731,
+    "status": "archived"
+  },
+  {
+    "type": "trial",
+    "region": "APAC",
+    "amount": 510,
+    "status": "archived"
+  }
+]
+```
+
+Note that the `status` field is set to "archived" for records where `x.active` is `false`, regardless of the `x.type`.

@@ -1,0 +1,121 @@
+To solve this problem, we need to apply the given transformation rules to each record in the input data. The transformation rules are specified in a specific order and are conditional based on the attributes of each record.
+
+1. **First Rule**: If the record's type is "premium", then multiply its amount by 1.1.
+2. **Second Rule**: If the record's region is "EU", then multiply its amount by 1.2.
+3. **Third Rule**: If the record is not active (active == false), then change its status to "archived".
+
+Let's apply these rules step by step to each record.
+
+### Step 1: Apply the First Rule
+
+- For records where `type == "premium"`, multiply `amount` by 1.1.
+- Records with `type` other than "premium" remain unchanged.
+
+### Step 2: Apply the Second Rule
+
+- For records where `region == "EU"`, multiply the updated `amount` by 1.2.
+
+### Step 3: Apply the Third Rule
+
+- For records where `active == false`, set `status` to "archived". Note that the original records do not have a `status` field, so we will add it.
+
+Let's process the records:
+
+1. **rec_000**: `type` = "trial", `region` = "EU", `amount` = 175, `active` = False
+   - First rule: No change (amount = 175)
+   - Second rule: `amount` = 175 * 1.2 = 210
+   - Third rule: `status` = "archived"
+   - Result: `type` = "trial", `region` = "EU", `amount` = 210, `active` = False, `status` = "archived"
+
+2. **rec_001**: `type` = "trial", `region` = "APAC", `amount` = 447, `active` = True
+   - First rule: No change (amount = 447)
+   - Second rule: No change (amount = 447)
+   - Third rule: No change (active = True)
+   - Result: `type` = "trial", `region` = "APAC", `amount` = 447, `active` = True
+
+3. **rec_002**: `type` = "standard", `region` = "US", `amount` = 977, `active` = True
+   - First rule: No change (amount = 977)
+   - Second rule: No change (amount = 977)
+   - Third rule: No change (active = True)
+   - Result: `type` = "standard", `region` = "US", `amount` = 977, `active` = True
+
+4. **rec_003**: `type` = "trial", `region` = "US", `amount` = 864, `active` = False
+   - First rule: No change (amount = 864)
+   - Second rule: No change (amount = 864)
+   - Third rule: `status` = "archived"
+   - Result: `type` = "trial", `region` = "US", `amount` = 864, `active` = False, `status` = "archived"
+
+5. **rec_004**: `type` = "trial", `region` = "APAC", `amount` = 161, `active` = False
+   - First rule: No change (amount = 161)
+   - Second rule: No change (amount = 161)
+   - Third rule: `status` = "archived"
+   - Result: `type` = "trial", `region` = "APAC", `amount` = 161, `active` = False, `status` = "archived"
+
+6. **rec_005**: `type` = "standard", `region` = "US", `amount` = 325, `active` = False
+   - First rule: No change (amount = 325)
+   - Second rule: No change (amount = 325)
+   - Third rule: `status` = "archived"
+   - Result: `type` = "standard", `region` = "US", `amount` = 325, `active` = False, `status` = "archived"
+
+7. **rec_006**: `type` = "standard", `region` = "EU", `amount` = 225, `active` = True
+   - First rule: No change (amount = 225)
+   - Second rule: `amount` = 225 * 1.2 = 270
+   - Third rule: No change (active = True)
+   - Result: `type` = "standard", `region` = "EU", `amount` = 270, `active` = True
+
+8. **rec_007**: `type` = "trial", `region` = "US", `amount` = 372, `active` = False
+   - First rule: No change (amount = 372)
+   - Second rule: No change (amount = 372)
+   - Third rule: `status` = "archived"
+   - Result: `type` = "trial", `region` = "US", `amount` = 372, `active` = False, `status` = "archived"
+
+9. **rec_008**: `type` = "trial", `region` = "APAC", `amount` = 168, `active` = True
+   - First rule: No change (amount = 168)
+   - Second rule: No change (amount = 168)
+   - Third rule: No change (active = True)
+   - Result: `type` = "trial", `region` = "APAC", `amount` = 168, `active` = True
+
+10. **rec_009**: `type` = "standard", `region` = "US", `amount` = 912, `active` = False
+    - First rule: No change (amount = 912)
+    - Second rule: No change (amount = 912)
+    - Third rule: `status` = "archived"
+    - Result: `type` = "standard", `region` = "US", `amount` = 912, `active` = False, `status` = "archived"
+
+11. **rec_010**: `type` = "standard", `region` = "US", `amount` = 764, `active` = False
+    - First rule: No change (amount = 764)
+    - Second rule: No change (amount = 764)
+    - Third rule: `status` = "archived"
+    - Result: `type` = "standard", `region` = "US", `amount` = 764, `active` = False, `status` = "archived"
+
+12. **rec_011**: `type` = "premium", `region` = "APAC", `amount` = 894, `active` = True
+    - First rule: `amount` = 894 * 1.1 = 983.4
+    - Second rule: No change (amount = 983.4)
+    - Third rule: No change (active = True)
+    - Result: `type` = "premium", `region` = "APAC", `amount` = 983.4, `active` = True
+
+13. **rec_012**: `type` = "premium", `region` = "US", `amount` = 816, `active` = True
+    - First rule: `amount` = 816 * 1.1 = 897.6
+    - Second rule: No change (amount = 897.6)
+    - Third rule: No change (active = True)
+    - Result: `type` = "premium", `region` = "US", `amount` = 897.6, `active` = True
+
+14. **rec_013**: `type` = "premium", `region` = "US", `amount` = 889, `active` = False
+    - First rule: `amount` = 889 * 1.1 = 977.9
+    - Second rule: No change (amount = 977.9)
+    - Third rule: `status` = "archived"
+    - Result: `type` = "premium", `region` = "US", `amount` = 977.9, `active` = False, `status` = "archived"
+
+15. **rec_014**: `type` = "standard", `region` = "US", `amount` = 846, `active` = False
+    - First rule: No change (amount = 846)
+    - Second rule: No change (amount = 846)
+    - Third rule: `status` = "archived"
+    - Result: `type` = "standard", `region` = "US", `amount` = 846, `active` = False, `status` = "archived"
+
+### JSON Output
+
+```json
+[
+  {"type": "trial", "region": "EU", "amount": 210, "active": false, "status": "archived"},
+  {"type": "trial", "region": "APAC", "amount": 447, "active": true},
+  {"type": "standard", "region": "US", "amount": 977, "active": true},
+  {"type": "trial", "region": "US", "

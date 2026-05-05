@@ -1,0 +1,49 @@
+To solve this problem, we need to follow the given instruction: SELECT x | x.type ∉ {mammal} → [x.name]. This means we have to select the names of animals where the type is not 'mammal'.
+
+First, let's list all the animals with their types as given in the input:
+
+1. Salmon - type: fish
+2. Penguin - type: bird
+3. Turtle - type: reptile
+4. Parrot - type: bird
+5. Goldfish - type: fish
+6. Snake - type: reptile
+7. Cat - type: mammal
+8. Eagle - type: bird
+9. Whale - type: mammal
+10. Elephant - type: mammal
+
+Now, we filter out the animals that are not of type 'mammal':
+
+1. Salmon - type: fish (not mammal)
+2. Penguin - type: bird (not mammal)
+3. Turtle - type: reptile (not mammal)
+4. Parrot - type: bird (not mammal)
+5. Goldfish - type: fish (not mammal)
+6. Snake - type: reptile (not mammal)
+7. Eagle - type: bird (not mammal)
+
+The animals that are 'mammal' and should be excluded are:
+- Cat
+- Whale
+- Elephant
+
+So, the names of animals that are not 'mammal' are:
+- Salmon
+- Penguin
+- Turtle
+- Parrot
+- Goldfish
+- Snake
+- Eagle
+
+Now, we put these names into a JSON array as required by the output format:
+
+```json
+["Salmon", "Penguin", "Turtle", "Parrot", "Goldfish", "Snake", "Eagle"]
+```
+
+The final answer is: 
+```json
+["Salmon", "Penguin", "Turtle", "Parrot", "Goldfish", "Snake", "Eagle"]
+```

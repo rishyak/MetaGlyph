@@ -1,0 +1,13 @@
+```json
+{
+  "selected_ids": ["item_004", "item_006", "item_009", "item_011", "item_013", "item_014", "item_019"],
+  "count": 7
+}
+```
+
+Explanation:
+- The condition `x.id | x.value >= 50` filters items where the value is greater than or equal to 50.
+- The condition `x.category ∈ {A}` filters items where the category is 'A'.
+- Combining these conditions using the union operator (`∪`) gives us items that meet either of the conditions.
+- From the dataset, the IDs that satisfy the combined condition are: `item_004`, `item_006`, `item_011`, `item_013`, `item_014`, and `item_019`.
+- The count of such items is 7.

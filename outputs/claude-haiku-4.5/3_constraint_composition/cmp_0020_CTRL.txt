@@ -1,15 +1,46 @@
+I need to select items where either:
+- `x.value >= 50` OR
+- `x.category ∈ {A}`
+
+Let me evaluate each item:
+
+| ID | Category | Value | Value >= 50? | Category = A? | Selected? |
+|---|---|---|---|---|---|
+| item_000 | C | 90 | ✓ | ✗ | ✓ |
+| item_001 | A | 99 | ✓ | ✓ | ✓ |
+| item_002 | C | 56 | ✓ | ✗ | ✓ |
+| item_003 | B | 44 | ✗ | ✗ | ✗ |
+| item_004 | B | 94 | ✓ | ✗ | ✓ |
+| item_005 | A | 41 | ✗ | ✓ | ✓ |
+| item_006 | C | 20 | ✗ | ✗ | ✗ |
+| item_007 | C | 12 | ✗ | ✗ | ✗ |
+| item_008 | A | 13 | ✗ | ✓ | ✓ |
+| item_009 | C | 17 | ✗ | ✗ | ✗ |
+| item_010 | C | 72 | ✓ | ✗ | ✓ |
+| item_011 | C | 16 | ✗ | ✗ | ✗ |
+| item_012 | B | 97 | ✓ | ✗ | ✓ |
+| item_013 | B | 37 | ✗ | ✗ | ✗ |
+| item_014 | C | 14 | ✗ | ✗ | ✗ |
+| item_015 | C | 20 | ✗ | ✗ | ✗ |
+| item_016 | C | 14 | ✗ | ✗ | ✗ |
+| item_017 | B | 15 | ✗ | ✗ | ✗ |
+| item_018 | B | 55 | ✓ | ✗ | ✓ |
+| item_019 | C | 87 | ✓ | ✗ | ✓ |
+
 ```json
 {
-  "selected_ids": [],
-  "count": 0
+  "selected_ids": [
+    "item_000",
+    "item_001",
+    "item_002",
+    "item_004",
+    "item_005",
+    "item_008",
+    "item_010",
+    "item_012",
+    "item_018",
+    "item_019"
+  ],
+  "count": 10
 }
 ```
-
-The query requires items that simultaneously have:
-- security attribute (⊙)
-- high_priority attribute (⊙)
-- performance attribute (⊙)
-- NOT deprecated (⊖)
-- NOT experimental (⊖)
-
-None of the items in the dataset have these attributes defined. The dataset only contains: ID, Category, Status, Priority, and Value fields. Therefore, no items match the filter criteria.

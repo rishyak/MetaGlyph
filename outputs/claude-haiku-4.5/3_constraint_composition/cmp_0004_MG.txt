@@ -1,15 +1,51 @@
+I need to apply the filter: `x.priority ∈ {high} ∪ x.status ∉ {inactive}`
+
+This means: SELECT items where (priority is high) OR (status is not inactive)
+
+Let me evaluate each item:
+
+- item_000: priority=medium, status=inactive → ✗ (not high AND is inactive)
+- item_001: priority=high, status=pending → ✓ (high priority)
+- item_002: priority=low, status=active → ✓ (not inactive)
+- item_003: priority=high, status=active → ✓ (high priority)
+- item_004: priority=high, status=active → ✓ (high priority)
+- item_005: priority=high, status=active → ✓ (high priority)
+- item_006: priority=low, status=pending → ✓ (not inactive)
+- item_007: priority=low, status=active → ✓ (not inactive)
+- item_008: priority=high, status=active → ✓ (high priority)
+- item_009: priority=high, status=active → ✓ (high priority)
+- item_010: priority=low, status=pending → ✓ (not inactive)
+- item_011: priority=high, status=inactive → ✓ (high priority)
+- item_012: priority=medium, status=pending → ✓ (not inactive)
+- item_013: priority=high, status=pending → ✓ (high priority)
+- item_014: priority=medium, status=inactive → ✗ (not high AND is inactive)
+- item_015: priority=medium, status=pending → ✓ (not inactive)
+- item_016: priority=low, status=active → ✓ (not inactive)
+- item_017: priority=low, status=pending → ✓ (not inactive)
+- item_018: priority=high, status=active → ✓ (high priority)
+- item_019: priority=low, status=inactive → ✗ (not high AND is inactive)
+
 ```json
 {
   "selected_ids": [
     "item_001",
+    "item_002",
     "item_003",
     "item_004",
     "item_005",
+    "item_006",
+    "item_007",
     "item_008",
     "item_009",
+    "item_010",
+    "item_011",
+    "item_012",
     "item_013",
+    "item_015",
+    "item_016",
+    "item_017",
     "item_018"
   ],
-  "count": 8
+  "count": 17
 }
 ```

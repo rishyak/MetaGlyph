@@ -1,0 +1,10 @@
+Given the provided list of animals with their attributes, we can identify the animals that are commonly kept as pets and are classified as birds or mammals. Here is the JSON array of selected items:
+
+```
+[
+  "Parrot",
+  "Cat"
+]
+```
+
+These are the only two animals that meet the criteria of being commonly kept as pets and classified as birds or mammals.

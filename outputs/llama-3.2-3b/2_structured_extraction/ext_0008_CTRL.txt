@@ -1,0 +1,8 @@
+```json
+{
+  "subject": "Project Update",
+  "sender_title": "Manager",
+  "sender": "David Brown",
+  "company": "Innovation Labs"
+}
+```

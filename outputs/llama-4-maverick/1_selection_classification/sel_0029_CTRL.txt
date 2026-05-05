@@ -1,0 +1,39 @@
+To solve this task, we need to follow the given instruction: `SELECT x | x.type ∉ {fish} → [x.name]`. This means we have to select the names of animals where the type is not 'fish'.
+
+First, let's list the given animals with their types:
+1. Crocodile: type: reptile
+2. Hamster: type: mammal
+3. Dog: type: mammal
+4. Elephant: type: mammal
+5. Snake: type: reptile
+6. Shark: type: fish
+7. Eagle: type: bird
+8. Salmon: type: fish
+9. Cat: type: mammal
+10. Turtle: type: reptile
+
+Now, we filter out the animals that are of type 'fish':
+- Shark: type: fish
+- Salmon: type: fish
+
+The remaining animals are not of type 'fish', so we select their names:
+1. Crocodile
+2. Hamster
+3. Dog
+4. Elephant
+5. Snake
+6. Eagle
+7. Cat
+8. Turtle
+
+Thus, the names of the animals that are not 'fish' are: Crocodile, Hamster, Dog, Elephant, Snake, Eagle, Cat, Turtle.
+
+To present this in the required JSON array format, we have:
+```json
+["Crocodile", "Hamster", "Dog", "Elephant", "Snake", "Eagle", "Cat", "Turtle"]
+```
+
+The final answer is: 
+```json
+["Crocodile", "Hamster", "Dog", "Elephant", "Snake", "Eagle", "Cat", "Turtle"]
+```
