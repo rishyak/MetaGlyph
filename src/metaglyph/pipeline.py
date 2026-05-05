@@ -272,6 +272,7 @@ class Pipeline:
                 tasks_dir=self.config.tasks_dir,
                 output_dir=self.config.tokens_dir,
                 model_name=model if self.config.tokenizer_model == "model" else self.config.tokenizer_model,
+                output_label=model,
                 tolerance=self.config.token_tolerance,
             )
 
@@ -283,8 +284,15 @@ class Pipeline:
                 stats = matcher.get_compression_stats(family)
                 compression_stats.append(stats)
 
+            total_prompts = sum(len(c) for c in counts.values())
+            validation_failures = sum(
+                sum(1 for token_count in family_counts if not token_count.validated)
+                for family_counts in counts.values()
+            )
+
             results[model] = {
-                "validated_prompts": sum(len(c) for c in counts.values()),
+                "total_prompts": total_prompts,
+                "validation_failures": validation_failures,
                 "compression_stats": compression_stats,
             }
 
