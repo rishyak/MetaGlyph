@@ -6,11 +6,12 @@
   "tokenizer_model": "o200k_base",
   "models": [
     "llama-3.2-3b",
+    "qwen3-4b",
     "gemma-3-12b",
-    "qwen-2.5-7b",
-    "olmo-3-7b",
+    "olmo-3.1-32b-instruct",
     "kimi-k2",
-    "gemini-2.5-flash",
+    "llama-4-maverick",
+    "gemini-3.1-flash-lite",
     "claude-haiku-4.5",
     "gpt-5.2-chat"
   ],
@@ -22,5 +23,6 @@
   "max_tokens": 2048,
   "max_context_tokens": 8192,
   "request_delay": 0,
-  "skip_existing": true
+  "skip_existing": true,
+  "max_workers": 8
 }
