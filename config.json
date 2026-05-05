@@ -3,7 +3,7 @@
   "instances_per_family": 50,
   "seed": 42,
   "token_tolerance": 1,
-  "tokenizer_model": "simple",
+  "tokenizer_model": "o200k_base",
   "models": [
     "llama-3.2-3b",
     "gemma-3-12b",
@@ -22,5 +22,5 @@
   "max_tokens": 2048,
   "max_context_tokens": 8192,
   "request_delay": 0,
-  "skip_existing": false
+  "skip_existing": true
 }
