@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Create duplicate instances for statistical robustness.
+"""Duplicate existing task instances for statistical robustness.
 
-All instances within a task family are identical - the variation comes from
-running the same task multiple times to measure model consistency.
+This is a legacy helper for task directories that already contain
+instance_001.* files. For normal dataset generation, run Stage 1 with
+`uv run metaglyph --stage 1`.
 """
 
 import shutil
-import json
 from pathlib import Path
 
 TASK_FAMILIES = [
@@ -20,11 +20,12 @@ EXTENSIONS = [".input", ".gold", ".constraints", ".meta"]
 
 def create_instances(tasks_dir: Path, num_instances: int = 50):
     """Duplicate instance_001 to create instance_002 through instance_N."""
+    errors = []
 
     for family in TASK_FAMILIES:
         family_dir = tasks_dir / family
         if not family_dir.exists():
-            print(f"Skipping {family} - directory not found")
+            errors.append(f"{family}: directory not found at {family_dir}")
             continue
 
         # Check if instance_001 exists
@@ -32,7 +33,7 @@ def create_instances(tasks_dir: Path, num_instances: int = 50):
         missing = [ext for ext, path in source_files.items() if not path.exists()]
 
         if missing:
-            print(f"Skipping {family} - missing files: {missing}")
+            errors.append(f"{family}: missing instance_001 files for extensions {missing}")
             continue
 
         # Create instances 002 through N
@@ -58,6 +59,15 @@ def create_instances(tasks_dir: Path, num_instances: int = 50):
                     created += 1
 
         print(f"{family}: created {created} files ({num_instances - 1} instances)")
+
+    if errors:
+        error_text = "\n".join(f"- {error}" for error in errors)
+        raise FileNotFoundError(
+            "Cannot duplicate task instances because required source artifacts are missing.\n"
+            f"{error_text}\n\n"
+            "Generate tasks first with: uv run metaglyph --stage 1\n"
+            "Then run this helper only if you have legacy instance_001.* files to duplicate."
+        )
 
 
 def fix_existing_meta_files(tasks_dir: Path, num_instances: int = 50):
@@ -89,7 +99,7 @@ def fix_existing_meta_files(tasks_dir: Path, num_instances: int = 50):
 def main():
     import argparse
 
-    parser = argparse.ArgumentParser(description="Create duplicate instances for experiments")
+    parser = argparse.ArgumentParser(description="Duplicate existing task instances for experiments")
     parser.add_argument("--instances", type=int, default=50, help="Total number of instances (default: 50)")
     parser.add_argument("--tasks-dir", type=str, default="tasks", help="Tasks directory (default: tasks)")
     parser.add_argument("--fix", action="store_true", help="Fix existing .meta files with wrong instance_id")
@@ -102,9 +112,12 @@ def main():
         fixed = fix_existing_meta_files(tasks_dir, args.instances)
         print(f"Fixed {fixed} .meta files")
     else:
-        create_instances(tasks_dir, args.instances)
+        try:
+            create_instances(tasks_dir, args.instances)
+        except FileNotFoundError as exc:
+            raise SystemExit(f"error: {exc}") from exc
 
-    print("\nDone! Run the pipeline with: uv run metaglyph --stage 3-6")
+    print("\nDone! Continue with: uv run metaglyph --stage 2-6")
 
 
 if __name__ == "__main__":
