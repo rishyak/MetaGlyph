@@ -2,15 +2,21 @@
 
 This module generates three prompt variants per task instance:
 - NL: Natural language instruction (verbose)
+- NL_SHORT: Compact natural language (little word do trick)
+- ASCII_DSL: ASCII pseudocode
 - MG: MetaGlyph symbolic instruction (compact)
 - CTRL: Symbol-shaped control (same structure, broken semantics)
+- CTRL_RANDOM: Random-symbol control
 
 All variants share identical input text and output format constraints.
 
 Artifacts produced:
 - prompts/<family>/<instance_id>_NL.txt
+- prompts/<family>/<instance_id>_NL_SHORT.txt
+- prompts/<family>/<instance_id>_ASCII_DSL.txt
 - prompts/<family>/<instance_id>_MG.txt
 - prompts/<family>/<instance_id>_CTRL.txt
+- prompts/<family>/<instance_id>_CTRL_RANDOM.txt
 """
 
 from dataclasses import dataclass, asdict
@@ -73,6 +79,52 @@ class InstructionGenerator:
             "4_conditional_transformation": self._ctrl_transformation,
         }
         return generators.get(family, self._ctrl_generic)(constraints, metadata)
+
+    def generate_nl_short(self, family: str, constraints: dict, metadata: dict) -> str:
+        """Generate a compact natural-language baseline."""
+        generators = {
+            "1_selection_classification": self._nl_short_selection,
+            "2_structured_extraction": self._nl_short_extraction,
+            "3_constraint_composition": self._nl_short_composition,
+            "4_conditional_transformation": self._nl_short_transformation,
+        }
+        return generators.get(family, self._nl_short_generic)(constraints, metadata)
+
+    def generate_ascii_dsl(self, family: str, constraints: dict, metadata: dict) -> str:
+        """Generate an ASCII pseudocode baseline from the MG structure."""
+        symbolic = self.generate_mg(family, constraints, metadata)
+        replacements = {
+            "∉": "NOT IN",
+            "∈": "IN",
+            "∩": "AND",
+            "∪": "OR",
+            "⇒": "=>",
+            "→": "->",
+            "↦": "=>",
+            "∘": "THEN",
+            "∀": "FORALL",
+        }
+        for symbol, ascii_text in replacements.items():
+            symbolic = symbolic.replace(symbol, ascii_text)
+        return symbolic
+
+    def generate_ctrl_random(self, family: str, constraints: dict, metadata: dict) -> str:
+        """Generate same-shape random-symbol control without coherent operators."""
+        symbolic = self.generate_mg(family, constraints, metadata)
+        replacements = {
+            "∉": "※",
+            "∈": "¤",
+            "∩": "§",
+            "∪": "¶",
+            "⇒": "◇",
+            "→": "↯",
+            "↦": "☉",
+            "∘": "◆",
+            "∀": "◌",
+        }
+        for symbol, random_symbol in replacements.items():
+            symbolic = symbolic.replace(symbol, random_symbol)
+        return symbolic
 
     # Selection/Classification instructions
     def _nl_selection(self, constraints: dict, metadata: dict) -> str:
@@ -162,6 +214,29 @@ class InstructionGenerator:
                 )
         return self._ctrl_generic(constraints, metadata)
 
+    def _nl_short_selection(self, constraints: dict, metadata: dict) -> str:
+        """Compact natural-language instruction for selection tasks."""
+        op = constraints.get("operator", "∈")
+        if op == "∈":
+            return (
+                f"Return item names whose {constraints.get('attribute', 'type')} "
+                f"equals {constraints.get('value', '')}."
+            )
+        if op == "∉":
+            return (
+                f"Return item names whose {constraints.get('attribute', 'type')} "
+                f"is not {constraints.get('excluded_value', '')}."
+            )
+        if op == "∩":
+            criteria = constraints.get("criteria", [])
+            if len(criteria) >= 2:
+                c1, c2 = criteria[0], criteria[1]
+                return (
+                    f"Return item names where {c1['attribute']} equals {c1['value']} "
+                    f"and {c2['attribute']} equals {c2['value']}."
+                )
+        return self._nl_short_generic(constraints, metadata)
+
     # Structured Extraction instructions
     def _nl_extraction(self, constraints: dict, metadata: dict) -> str:
         """Natural language instruction for extraction tasks."""
@@ -193,6 +268,11 @@ class InstructionGenerator:
         random.Random(42).shuffle(shuffled)
         mappings = ", ".join(f'"{f}" ↦ value' for f in shuffled)
         return f"EXTRACT doc → {{{mappings}}}"
+
+    def _nl_short_extraction(self, constraints: dict, metadata: dict) -> str:
+        """Compact natural-language instruction for extraction tasks."""
+        fields = ", ".join(constraints.get("required_fields", []))
+        return f"Extract these fields from the document: {fields}. Return a JSON object."
 
     # Constraint Composition instructions
     def _nl_composition(self, constraints: dict, metadata: dict) -> str:
@@ -274,6 +354,20 @@ class InstructionGenerator:
         expr = f" {flipped} ".join(parts)  # Wrong composition
         return f"SELECT x.id | {expr} → {{selected_ids: [...], count: n}}"
 
+    def _nl_short_composition(self, constraints: dict, metadata: dict) -> str:
+        """Compact natural-language instruction for composition tasks."""
+        joiner = " and " if constraints.get("composition", "∩") == "∩" else " or "
+        parts = []
+        for c in constraints.get("constraints", []):
+            field = c.get("field")
+            if c.get("operator") == "∈":
+                parts.append(f"{field} is one of {c.get('values', [])}")
+            elif c.get("operator") == "¬":
+                parts.append(f"{field} is not one of {c.get('values', [])}")
+            elif c.get("operator") == "∀":
+                parts.append(f"{field} {c.get('condition', '>=')} {c.get('threshold', 0)}")
+        return f"Return selected_ids and count for records where {joiner.join(parts)}."
+
     # Conditional Transformation instructions
     def _nl_transformation(self, constraints: dict, metadata: dict) -> str:
         """Natural language instruction for transformation tasks."""
@@ -351,6 +445,22 @@ class InstructionGenerator:
         chain = " ∘ ".join(rule_parts)
         return f"∀x: TRANSFORM x | {chain} → [x]"
 
+    def _nl_short_transformation(self, constraints: dict, metadata: dict) -> str:
+        """Compact natural-language instruction for transformation tasks."""
+        parts = []
+        for rule in constraints.get("rules", []):
+            cond = rule.get("condition", {})
+            action = rule.get("action", {})
+            condition = f"{cond.get('field')} {cond.get('operator')} {cond.get('value')}"
+            if action.get("operation") == "multiply":
+                effect = f"multiply {action.get('field')} by {action.get('factor')}"
+            elif action.get("operation") == "set":
+                effect = f"set {action.get('field')} to {action.get('value')}"
+            else:
+                effect = f"modify {action.get('field')}"
+            parts.append(f"if {condition}, {effect}")
+        return f"Apply rules in order: {'; '.join(parts)}. Return transformed records."
+
     # Generic fallbacks
     def _nl_generic(self, constraints: dict, metadata: dict) -> str:
         """Generic natural language instruction."""
@@ -364,9 +474,15 @@ class InstructionGenerator:
         """Generic control instruction."""
         return "PROCESS input → output"
 
+    def _nl_short_generic(self, constraints: dict, metadata: dict) -> str:
+        """Generic compact natural-language instruction."""
+        return "Process the input using the constraints and return JSON."
+
 
 class PromptConstructor:
     """Main class for constructing prompts from task instances."""
+
+    CONDITIONS = ["NL", "NL_SHORT", "ASCII_DSL", "MG", "CTRL", "CTRL_RANDOM"]
 
     OUTPUT_FORMATS = {
         "1_selection_classification": "Return your answer as a JSON array of strings, e.g., [\"item1\", \"item2\"].",
@@ -417,8 +533,8 @@ class PromptConstructor:
             constraints = load_json(family_dir / f"{instance_id}.constraints")
             metadata = load_json(meta_file).get("metadata", {})
 
-            # Generate three prompt variants
-            for condition in ["NL", "MG", "CTRL"]:
+            # Generate prompt variants and controls.
+            for condition in self.CONDITIONS:
                 prompt = self._construct_prompt(
                     instance_id=instance_id,
                     family=family_name,
@@ -449,8 +565,14 @@ class PromptConstructor:
         # Generate instruction based on condition
         if condition == "NL":
             instruction = self.instruction_gen.generate_nl(family, constraints, metadata)
+        elif condition == "NL_SHORT":
+            instruction = self.instruction_gen.generate_nl_short(family, constraints, metadata)
+        elif condition == "ASCII_DSL":
+            instruction = self.instruction_gen.generate_ascii_dsl(family, constraints, metadata)
         elif condition == "MG":
             instruction = self.instruction_gen.generate_mg(family, constraints, metadata)
+        elif condition == "CTRL_RANDOM":
+            instruction = self.instruction_gen.generate_ctrl_random(family, constraints, metadata)
         else:  # CTRL
             instruction = self.instruction_gen.generate_ctrl(family, constraints, metadata)
 
