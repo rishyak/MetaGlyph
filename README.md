@@ -11,10 +11,10 @@ The work is designed to be **fully automatic, reproducible, and long-context awa
 ### 1. Setup
 
 ```bash
-# Clone and install dependencies
-git clone https://github.com/KingOfTheAce2/arXiv-Semantic-Compression-of-LLM-Instructions-via-Symbolic-Metalanguages.git
-cd arXiv-Semantic-Compression-of-LLM-Instructions-via-Symbolic-Metalanguages
-pip install -r requirements.txt
+uv sync
+
+# Optional: install the complete research/reproduction environment
+uv sync --group all
 ```
 
 ### 2. Configure API key
@@ -31,20 +31,20 @@ Get a free API key at [openrouter.ai](https://openrouter.ai).
 
 ```bash
 # Create 50 instances per task family (duplicates instance_001)
-python create_instances.py --instances 50
+uv run metaglyph-create-instances --instances 50
 ```
 
 ### 4. Run experiments
 
 ```bash
 # Run full pipeline (stages 3-6: tokens, execution, evaluation, aggregation)
-python run_pipeline.py --stage 3-6
+uv run metaglyph --stage 3-6
 
 # Run only model execution (Stage 4)
-python run_pipeline.py --stage 4
+uv run metaglyph --stage 4
 
 # Re-run evaluation and reporting only (Stage 5-6)
-python run_pipeline.py --stage 5,6
+uv run metaglyph --stage 5,6
 ```
 
 ---
@@ -177,21 +177,21 @@ MetaGlyph uses high-frequency mathematical and logical operators:
 
 ```bash
 # Full pipeline
-python run_pipeline.py
+uv run metaglyph
 
 # Specific stages
-python run_pipeline.py --stage 1        # Dataset generation only
-python run_pipeline.py --stage 1-3      # Stages 1 through 3
-python run_pipeline.py --stage 4,5,6    # Execution + evaluation
+uv run metaglyph --stage 1        # Dataset generation only
+uv run metaglyph --stage 1-3      # Stages 1 through 3
+uv run metaglyph --stage 4,5,6    # Execution + evaluation
 
 # Configuration
-python run_pipeline.py --instances 50   # 50 instances per family
-python run_pipeline.py --models llama-3.2-3b,qwen-2.5-7b
-python run_pipeline.py --backend openrouter
-python run_pipeline.py --config custom.json
+uv run metaglyph --instances 50   # 50 instances per family
+uv run metaglyph --models llama-3.2-3b,qwen-2.5-7b
+uv run metaglyph --backend openrouter
+uv run metaglyph --config custom.json
 
 # With custom config file
-python run_pipeline.py --config my_config.json
+uv run metaglyph --config my_config.json
 ```
 
 ---
@@ -201,26 +201,21 @@ python run_pipeline.py --config my_config.json
 ```
 .
 ├── src/
-│   ├── pipeline.py              # Main orchestrator
-│   ├── stages/
-│   │   ├── stage1_dataset.py    # Task generation
-│   │   ├── stage2_prompts.py    # Prompt construction
-│   │   ├── stage3_tokens.py     # Token matching
-│   │   ├── stage4_execution.py  # Model execution
-│   │   ├── stage5_evaluation.py # Scoring
-│   │   └── stage6_aggregation.py# Reporting
-│   └── utils/
-│       ├── operators.py         # Operator definitions
-│       ├── tokenizers.py        # Model tokenizers
-│       └── io_utils.py          # File I/O
+│   └── metaglyph/
+│       ├── cli.py               # uv console entry point
+│       ├── pipeline.py          # Main orchestrator
+│       ├── create_instances.py  # Instance generation CLI
+│       ├── stages/              # Pipeline stage implementations
+│       └── utils/               # Operators, tokenizers, and file I/O
 ├── tasks/                       # Task instances (generated)
 ├── prompts/                     # Prompt files
 ├── outputs/                     # Model outputs
 ├── results/                     # Evaluation results
 ├── summary/                     # Tables and figures
 ├── config.json                  # Default configuration
-├── requirements.txt
-├── run_pipeline.py              # CLI entry point
+├── pyproject.toml               # uv metadata, scripts, dependency groups, and uv_build backend
+├── uv.lock                      # Locked uv dependency resolution
+├── run_pipeline.py              # Compatibility wrapper
 └── .env                         # API keys (not committed)
 ```
 

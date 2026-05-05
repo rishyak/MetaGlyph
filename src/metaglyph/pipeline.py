@@ -12,7 +12,7 @@ Pipeline stages:
 6. Aggregation & reporting
 
 Usage:
-    from src.pipeline import Pipeline
+    from metaglyph.pipeline import Pipeline
 
     pipeline = Pipeline(config)
     pipeline.run_all()

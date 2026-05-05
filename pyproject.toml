@@ -1,0 +1,25 @@
+[project]
+name = "metaglyph"
+version = "0.1.0"
+description = "Research artifacts and evaluation pipeline for symbolic metalanguages in LLM prompting."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["requests>=2.28.0"]
+
+[project.scripts]
+metaglyph = "metaglyph.cli:main"
+metaglyph-create-instances = "metaglyph.create_instances:main"
+
+[dependency-groups]
+tokenizers = ["tiktoken>=0.5.0", "transformers>=4.35.0"]
+plotting = ["matplotlib>=3.7.0"]
+providers = ["anthropic>=0.18.0", "openai>=1.0.0"]
+all = [
+    { include-group = "tokenizers" },
+    { include-group = "plotting" },
+    { include-group = "providers" },
+]
+
+[build-system]
+requires = ["uv_build>=0.11.6,<0.12"]
+build-backend = "uv_build"
