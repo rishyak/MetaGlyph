@@ -49,11 +49,14 @@ class TokenStats:
     """Token statistics for prompts."""
     family: str
     model: str
-    nl_tokens: int
-    mg_tokens: int
-    ctrl_tokens: int
-    mg_reduction_vs_nl: float  # (NL - MG) / NL
-    mg_reduction_vs_ctrl: float  # (CTRL - MG) / CTRL
+    nl_instruction_tokens: float
+    mg_instruction_tokens: float
+    ctrl_instruction_tokens: float
+    nl_total_tokens: float
+    mg_total_tokens: float
+    ctrl_total_tokens: float
+    instruction_reduction_vs_nl: float  # (NL - MG) / NL for instructions only
+    full_prompt_reduction_vs_nl: float  # (NL - MG) / NL for full prompts
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -247,23 +250,34 @@ class TableGenerator:
 
             # Header
             writer.writerow([
-                "Family", "Avg NL Tokens", "Avg MG Tokens",
-                "Compression Ratio", "Token Savings (%)"
+                "Family",
+                "Avg NL Instruction Tokens", "Avg MG Instruction Tokens",
+                "Avg NL Total Tokens", "Avg MG Total Tokens",
+                "Instruction Compression Ratio", "Full Prompt Compression Ratio",
+                "Instruction Savings (%)", "Full Prompt Savings (%)"
             ])
 
             # Data rows
             for stats in compression_stats:
-                nl_tokens = stats.get("avg_nl_tokens", 0)
-                mg_tokens = stats.get("avg_mg_tokens", 0)
-                ratio = stats.get("avg_compression_ratio", 0)
-                savings = (1 - ratio) * 100 if ratio > 0 else 0
+                nl_tokens = stats.get("avg_nl_instruction_tokens", 0)
+                mg_tokens = stats.get("avg_mg_instruction_tokens", 0)
+                nl_total = stats.get("avg_nl_total_tokens", 0)
+                mg_total = stats.get("avg_mg_total_tokens", 0)
+                instruction_ratio = stats.get("instruction_compression_ratio", 0)
+                full_ratio = stats.get("full_prompt_compression_ratio", 0)
+                instruction_savings = (1 - instruction_ratio) * 100 if instruction_ratio > 0 else 0
+                full_savings = (1 - full_ratio) * 100 if full_ratio > 0 else 0
 
                 writer.writerow([
                     stats.get("family", ""),
                     f"{nl_tokens:.1f}",
                     f"{mg_tokens:.1f}",
-                    f"{ratio:.3f}",
-                    f"{savings:.1f}%",
+                    f"{nl_total:.1f}",
+                    f"{mg_total:.1f}",
+                    f"{instruction_ratio:.3f}",
+                    f"{full_ratio:.3f}",
+                    f"{instruction_savings:.1f}%",
+                    f"{full_savings:.1f}%",
                 ])
 
         return filepath
@@ -281,8 +295,10 @@ class TableGenerator:
 
             # Header
             writer.writerow([
-                "Model", "Family", "NL Tokens", "MG Tokens", "CTRL Tokens",
-                "MG vs NL Reduction", "MG vs CTRL Reduction"
+                "Model", "Family",
+                "NL Instruction Tokens", "MG Instruction Tokens", "CTRL Instruction Tokens",
+                "NL Total Tokens", "MG Total Tokens", "CTRL Total Tokens",
+                "Instruction Reduction vs NL", "Full Prompt Reduction vs NL"
             ])
 
             # Data rows
@@ -290,11 +306,14 @@ class TableGenerator:
                 writer.writerow([
                     stats.model,
                     stats.family,
-                    stats.nl_tokens,
-                    stats.mg_tokens,
-                    stats.ctrl_tokens,
-                    f"{stats.mg_reduction_vs_nl:.1%}",
-                    f"{stats.mg_reduction_vs_ctrl:.1%}",
+                    f"{stats.nl_instruction_tokens:.1f}",
+                    f"{stats.mg_instruction_tokens:.1f}",
+                    f"{stats.ctrl_instruction_tokens:.1f}",
+                    f"{stats.nl_total_tokens:.1f}",
+                    f"{stats.mg_total_tokens:.1f}",
+                    f"{stats.ctrl_total_tokens:.1f}",
+                    f"{stats.instruction_reduction_vs_nl:.1%}",
+                    f"{stats.full_prompt_reduction_vs_nl:.1%}",
                 ])
 
         return filepath
@@ -322,12 +341,19 @@ class FigureGenerator:
         filepath = self.output_dir / filename
 
         families = sorted(metrics_by_family.keys())
-        conditions = ["NL", "MG", "CTRL"]
+        preferred = ["NL", "NL_SHORT", "ASCII_DSL", "MG", "CTRL", "CTRL_RANDOM"]
+        present = {
+            condition
+            for family_conditions in metrics_by_family.values()
+            for condition in family_conditions.keys()
+        }
+        conditions = [condition for condition in preferred if condition in present]
+        conditions.extend(sorted(present - set(conditions)))
 
         fig, ax = plt.subplots(figsize=(12, 6))
 
         x = np.arange(len(families))
-        width = 0.25
+        width = 0.8 / max(len(conditions), 1)
 
         for i, condition in enumerate(conditions):
             accuracies = []
@@ -346,7 +372,7 @@ class FigureGenerator:
         ax.set_xlabel('Task Family')
         ax.set_ylabel('Accuracy')
         ax.set_title('Accuracy by Task Family and Instruction Condition')
-        ax.set_xticks(x + width)
+        ax.set_xticks(x + (width * (len(conditions) - 1) / 2))
         ax.set_xticklabels([f.replace('_', '\n') for f in families], fontsize=8)
         ax.legend()
         ax.set_ylim(0, 1.1)
@@ -469,52 +495,56 @@ class Aggregator:
         return summary
 
     def _calculate_token_stats(self, model: str) -> list[TokenStats]:
-        """Calculate token statistics for each family."""
-        from ..stages.stage3_tokens import SimpleTokenizer
-
-        tokenizer = SimpleTokenizer(self.tokenizer_model)
+        """Calculate token statistics for each family from Stage 3 outputs."""
         token_stats = []
 
-        if not self.prompts_dir or not self.prompts_dir.exists():
+        model_tokens_dir = self.tokens_dir / model
+        if not model_tokens_dir.exists():
             return token_stats
 
-        for family_dir in self.prompts_dir.iterdir():
+        for family_dir in model_tokens_dir.iterdir():
             if not family_dir.is_dir():
                 continue
 
             family_name = family_dir.name
+            by_condition = defaultdict(lambda: {"instruction": [], "total": []})
 
-            # Read instruction files
-            nl_path = family_dir / "NL.txt"
-            mg_path = family_dir / "MG.txt"
-            ctrl_path = family_dir / "CTRL.txt"
+            for token_file in list_files(family_dir, "*.json"):
+                counts = load_json(token_file)
+                condition = counts.get("condition") or counts.get("prompt_id", "").rsplit("_", 1)[-1]
+                by_condition[condition]["instruction"].append(counts.get("instruction_tokens", 0))
+                by_condition[condition]["total"].append(counts.get("total_tokens", 0))
 
-            nl_tokens = 0
-            mg_tokens = 0
-            ctrl_tokens = 0
+            def avg(values: list[float]) -> float:
+                return sum(values) / len(values) if values else 0.0
 
-            if nl_path.exists():
-                with open(nl_path, 'r', encoding='utf-8') as f:
-                    nl_tokens = tokenizer.count_tokens(f.read())
-            if mg_path.exists():
-                with open(mg_path, 'r', encoding='utf-8') as f:
-                    mg_tokens = tokenizer.count_tokens(f.read())
-            if ctrl_path.exists():
-                with open(ctrl_path, 'r', encoding='utf-8') as f:
-                    ctrl_tokens = tokenizer.count_tokens(f.read())
+            nl_instruction = avg(by_condition["NL"]["instruction"])
+            mg_instruction = avg(by_condition["MG"]["instruction"])
+            ctrl_instruction = avg(by_condition["CTRL"]["instruction"])
+            nl_total = avg(by_condition["NL"]["total"])
+            mg_total = avg(by_condition["MG"]["total"])
+            ctrl_total = avg(by_condition["CTRL"]["total"])
 
-            # Calculate reductions
-            mg_reduction_vs_nl = (nl_tokens - mg_tokens) / nl_tokens if nl_tokens > 0 else 0
-            mg_reduction_vs_ctrl = (ctrl_tokens - mg_tokens) / ctrl_tokens if ctrl_tokens > 0 else 0
+            instruction_reduction = (
+                (nl_instruction - mg_instruction) / nl_instruction
+                if nl_instruction > 0 else 0
+            )
+            full_prompt_reduction = (
+                (nl_total - mg_total) / nl_total
+                if nl_total > 0 else 0
+            )
 
             token_stats.append(TokenStats(
                 family=family_name,
                 model=model,
-                nl_tokens=nl_tokens,
-                mg_tokens=mg_tokens,
-                ctrl_tokens=ctrl_tokens,
-                mg_reduction_vs_nl=mg_reduction_vs_nl,
-                mg_reduction_vs_ctrl=mg_reduction_vs_ctrl,
+                nl_instruction_tokens=nl_instruction,
+                mg_instruction_tokens=mg_instruction,
+                ctrl_instruction_tokens=ctrl_instruction,
+                nl_total_tokens=nl_total,
+                mg_total_tokens=mg_total,
+                ctrl_total_tokens=ctrl_total,
+                instruction_reduction_vs_nl=instruction_reduction,
+                full_prompt_reduction_vs_nl=full_prompt_reduction,
             ))
 
         return token_stats
