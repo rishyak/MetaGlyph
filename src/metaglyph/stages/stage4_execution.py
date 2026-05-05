@@ -21,6 +21,7 @@ Artifacts produced:
 
 import time
 import json
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, asdict
 from pathlib import Path
 from typing import Any, Optional
@@ -43,6 +44,7 @@ class ExecutionConfig:
     timeout_seconds: int = 120
     seed: Optional[int] = 42  # For reproducibility where supported
     request_delay: float = 0.5  # Delay between requests (seconds) to respect rate limits
+    max_workers: int = 8
 
 
 @dataclass
@@ -358,14 +360,16 @@ class OpenRouterBackend(ModelBackend):
 
     # Model ID mapping for convenience (paid versions - no :free suffix)
     MODEL_IDS = {
-        # Smaller models (3-12B)
+        # Smaller models
         "llama-3.2-3b": "meta-llama/llama-3.2-3b-instruct",
-        "qwen-2.5-7b": "qwen/qwen-2.5-7b-instruct",
+        "qwen3-4b": "qwen/qwen3-4b",
         "gemma-3-12b": "google/gemma-3-12b-it",
-        "olmo-3-7b": "allenai/olmo-3-7b-instruct",
-        # Larger/frontier models
+        # Open / larger models
+        "olmo-3.1-32b-instruct": "allenai/olmo-3.1-32b-instruct",
         "kimi-k2": "moonshotai/kimi-k2",
-        "gemini-2.5-flash": "google/gemini-2.5-flash",
+        "llama-4-maverick": "meta-llama/llama-4-maverick",
+        # Frontier / proprietary
+        "gemini-3.1-flash-lite": "google/gemini-3.1-flash-lite-preview",
         "claude-haiku-4.5": "anthropic/claude-haiku-4.5",
         "gpt-5.2-chat": "openai/gpt-5.2-chat",
     }
@@ -400,14 +404,13 @@ class OpenRouterBackend(ModelBackend):
         """Generate using OpenRouter API."""
         import requests
 
+        import os
         start_time = time.time()
         prompt_id = hashlib.md5(prompt.encode()).hexdigest()[:8]
 
-        if not self.api_key:
-            import os
-            self.api_key = os.environ.get("OPENROUTER_API_KEY")
+        api_key = self.api_key or os.environ.get("OPENROUTER_API_KEY")
 
-        if not self.api_key:
+        if not api_key:
             return ExecutionResult(
                 prompt_id=prompt_id,
                 model=self.model_id,
@@ -421,7 +424,7 @@ class OpenRouterBackend(ModelBackend):
             )
 
         headers = {
-            "Authorization": f"Bearer {self.api_key}",
+            "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
         }
         if self.site_url:
@@ -603,60 +606,48 @@ class ModelExecutor:
         ensure_dir(output_dir)
         ensure_dir(runs_dir_model)
 
-        results = []
-
         prompt_files = [
             path for path in sorted(list_files(prompts_family_dir, "*.txt"))
             if get_prompt_condition(path.stem) in CONDITIONS
         ]
         if not prompt_files:
-            return results
+            return []
 
-        total_requests = len(prompt_files)
-
-        # Count existing (to skip)
+        to_run = []
         skipped = 0
-        if skip_existing:
-            for prompt_file in prompt_files:
-                output_path = output_dir / f"{prompt_file.stem}.txt"
-                if output_path.exists():
-                    skipped += 1
-
-        to_execute = total_requests - skipped
-        if skipped > 0:
-            print(f"  Skipping {skipped} existing, executing {to_execute} remaining...")
-
-        executed = 0
         for prompt_file in prompt_files:
-            prompt_id = prompt_file.stem
-            output_path = output_dir / f"{prompt_id}.txt"
-
-            # Skip if already processed
-            if skip_existing and output_path.exists():
-                continue
-
-            executed += 1
-            # Progress indicator
-            print(f"  [{executed}/{to_execute}] {prompt_id}...", end=" ", flush=True)
-
-            full_prompt = load_text(prompt_file)
-
-            # Execute
-            result = self._execute_single(prompt_id, full_prompt)
-            results.append(result)
-
-            # Show result
-            if result.success:
-                print(f"OK ({result.execution_time_ms}ms)")
+            if skip_existing and (output_dir / f"{prompt_file.stem}.txt").exists():
+                skipped += 1
             else:
-                print(f"FAILED: {result.error_message[:50]}")
+                to_run.append(prompt_file)
 
-            # Save outputs
+        if skipped > 0:
+            print(f"  Skipping {skipped} existing, executing {len(to_run)} remaining...")
+
+        results = []
+
+        def run_one(prompt_file: Path) -> ExecutionResult:
+            prompt_id = prompt_file.stem
+            full_prompt = load_text(prompt_file)
+            result = self._execute_single(prompt_id, full_prompt)
             self._save_result(result, output_dir, runs_dir_model)
+            return result
 
-            # Polite delay to respect rate limits
-            if self.config.request_delay > 0:
-                time.sleep(self.config.request_delay)
+        with ThreadPoolExecutor(max_workers=self.config.max_workers) as executor:
+            futures = [executor.submit(run_one, pf) for pf in to_run]
+            for i, future in enumerate(as_completed(futures), 1):
+                try:
+                    result = future.result()
+                except Exception as e:
+                    print(f"  [{i}/{len(to_run)}] UNEXPECTED ERROR: {e}")
+                    continue
+                status = (
+                    f"OK ({result.execution_time_ms}ms)"
+                    if result.success
+                    else f"FAILED: {result.error_message[:50]}"
+                )
+                print(f"  [{i}/{len(to_run)}] {result.prompt_id}... {status}")
+                results.append(result)
 
         return results
 

@@ -71,6 +71,7 @@ class PipelineConfig:
     max_context_tokens: int = 8192
     request_delay: float = 0.5  # Seconds between requests (rate limit protection)
     skip_existing: bool = True
+    max_workers: int = 8
 
     def __post_init__(self):
         """Set default directories based on base_dir."""
@@ -116,6 +117,7 @@ class PipelineConfig:
             "max_context_tokens": self.max_context_tokens,
             "request_delay": self.request_delay,
             "skip_existing": self.skip_existing,
+            "max_workers": self.max_workers,
         }
 
     @classmethod
@@ -311,6 +313,7 @@ class Pipeline:
             max_context_tokens=self.config.max_context_tokens,
             seed=self.config.seed,
             request_delay=self.config.request_delay,
+            max_workers=self.config.max_workers,
         )
 
         for model in self.config.models:
